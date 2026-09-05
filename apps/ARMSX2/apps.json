@@ -21,11 +21,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260904",
-          "date": "2026-09-04",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- Pad: bring over the ARMSX3 controller work\n- Pad: let the user choose the rumble fallback for motorless pads (#646)\n- Quick loading: drop each extracted file from the page cache\n- Affinity: Sustained Performance wins over Performance Cores\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260903...aa2a43fffc951d65807600edfc2ff85250677714",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260904/ARMSX2-nightly-20260904-aa2a43fffc-iOS-arm64.ipa",
-          "size": 26743091,
+          "version": "nightly-20260905",
+          "date": "2026-09-05",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- EE rec: outline the FPU guards' islands into the cold arena\n- GameDB: drop the Shaolin Monks divide rounding mode\n- EE FPU: root and reciprocal root at mode 3 where the ULP reaches an integer\n- EE FPU: divide unit at mode 3 where the ULP reaches an integer\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260904...6e884f11f486bca258efd2470ac09ad4c36a5a4b",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260905/ARMSX2-nightly-20260905-6e884f11f4-iOS-arm64.ipa",
+          "size": 26747445,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260904 · 04 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260904",
-      "caption": "ARMSX2 nightly-20260904 is available.",
-      "date": "2026-09-04T13:12:31Z",
+      "title": "ARMSX2 nightly-20260905 · 05 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260905",
+      "caption": "ARMSX2 nightly-20260905 is available.",
+      "date": "2026-09-05T12:21:20Z",
       "tintColor": "#3CAEFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260904"
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260905"
     }
   ]
 }
