@@ -1,0 +1,42 @@
+{
+  "name": "KMusic",
+  "subtitle": "KMusic AltStore source by AltGallery & altgen",
+  "description": "Auto-updated AltStore source for KMusic",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/icon.png",
+  "website": "https://github.com/Mac-XK/KMusic",
+  "tintColor": "#F03050",
+  "apps": [
+    {
+      "name": "KMusic",
+      "bundleIdentifier": "com.macxk.KMusic",
+      "developerName": "Mac-XK",
+      "subtitle": "基于 SwiftUI 的多源音乐聚合播放器",
+      "localizedDescription": "基于 SwiftUI 开发的多源音乐聚合播放器，支持 iOS/macOS。内置酷我、酷狗、QQ 音乐、网易云、咪咕等多平台音源，支持 LRC 歌词同步、全局搜索、后台播放与深色主题，并可通过 JS 脚本导入自定义音源。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/icon.png",
+      "tintColor": "#F03050",
+      "versions": [
+        {
+          "version": "2.3.0",
+          "date": "2026-03-12",
+          "localizedDescription": "- 优化增加各种问题",
+          "downloadURL": "https://github.com/Mac-XK/KMusic/releases/download/%E6%AD%8C%E4%B8%80%E5%88%802.3.0/_2.3.0_22.2.ipa",
+          "size": 3836900,
+          "minOSVersion": "14.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.macxk.KMusic",
+      "title": "KMusic 2.3.0 · 12 Mar 2026",
+      "identifier": "KMusic-release-歌一刀2.3.0",
+      "caption": "KMusic 2.3.0 is available.",
+      "date": "2026-03-12T08:39:59Z",
+      "tintColor": "#F03050",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Mac-XK/KMusic/releases/tag/歌一刀2.3.0"
+    }
+  ]
+}

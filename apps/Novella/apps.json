@@ -1,0 +1,47 @@
+{
+  "name": "Novella",
+  "subtitle": "Novella AltStore source by AltGallery & altgen",
+  "description": "Auto-updated AltStore source for Novella",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/icon.png",
+  "website": "https://github.com/celia-sh/Novella",
+  "tintColor": "#2E2E2E",
+  "apps": [
+    {
+      "name": "Novella",
+      "bundleIdentifier": "sh.celia.novella",
+      "developerName": "CELIA",
+      "subtitle": "轻书架第三方客户端",
+      "localizedDescription": "使用 React Native 构建的轻书架第三方客户端，面向 iOS、iPadOS。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/home.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/shelf.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/detail.png"
+      ],
+      "tintColor": "#2E2E2E",
+      "versions": [
+        {
+          "version": "2.3.0",
+          "date": "2026-08-31",
+          "localizedDescription": "<img width=\"800\" alt=\"Banner\"  src=\"https://github.com/user-attachments/assets/f561c0f2-ba77-4c31-9ad0-05e368e65695\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要带来了 **新的补签功能** 和 **社区功能的完善**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **成长系统**\r\n  新增积分商店。\r\n  支持补签并显示签到月历。\r\n  新增经验值和金币日志显示。\r\n  新增邀请码重置。\r\n\r\n* **社区**\r\n  支持编辑帖子。\r\n  支持删除帖子。\r\n  支持删除根回复和子回复。\r\n\r\n* **漫画阅读器**\r\n  新增一项双页样式的漫画设置。\r\n  默认保持原有 `1+2、3+4` 配对方式，开启后变为 `1、2+3` 。\r\n  第一页单独显示，后续页面成对显示。\r\n  宽图和超长图仍保持独占。\r\n  由于设计为自动单双页模式，所以该设置项仅在平板生效。\r\n\r\n方便的管理更新：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。",
+          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.3.0/Novella-2.3.0-release.ipa",
+          "size": 25155289,
+          "minOSVersion": "16.4"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "sh.celia.novella",
+      "title": "Novella 2.3.0 · 31 Aug 2026",
+      "identifier": "Novella-release-v2.3.0",
+      "caption": "Novella 2.3.0 is available.",
+      "date": "2026-08-31T05:21:14Z",
+      "tintColor": "#2E2E2E",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
+      "notify": true,
+      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.3.0"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "ManicEMU",
+  "subtitle": "ManicEMU AltStore source by AltGallery & altgen",
+  "description": "Auto-updated AltStore source for ManicEMU",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/icon.png",
+  "website": "https://github.com/Manic-EMU/ManicEMU",
+  "tintColor": "#F02040",
+  "apps": [
+    {
+      "name": "ManicEMU",
+      "bundleIdentifier": "com.aoshuang.manicemu",
+      "developerName": "Manic EMU Development Team",
+      "subtitle": "All-in-one retro game emulator for iOS",
+      "localizedDescription": "All-in-one retro game emulator for iOS, bringing console, arcade, computer, and mobile Java systems into one clean app with saves, cheats, custom skins, RetroAchievements, and more.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/library.jpg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/landscape.jpg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/achievements.jpg"
+      ],
+      "tintColor": "#F02040",
+      "versions": [
+        {
+          "version": "2.0.0",
+          "date": "2026-09-03",
+          "localizedDescription": "> [!NOTE]\r\n> Starting from version 2.0.0, we no longer provide builds of TrollStore JIT. You can package it yourself by following the [guide](https://github.com/Rednick16/TrollStoreJITEnabler).\r\n\r\nThis is a major release focused on a redesigned interface, expanded platform support, and advanced features. Landscape browsing, library management, and external controller navigation have been rebuilt. It also adds several new systems and brings Netplay to eligible Libretro cores.\r\n\r\n\r\n### Before You Update\r\n\r\n- Dreamcast (Flycast): Existing save states will no longer work as of 2.0.0. Convert important save states to in-game saves before updating, or back up the `Flycast/dc` folder yourself.\r\n- Wii: A BootMii-format `keys.bin` is required.\r\n- Symbian: Install firmware in Settings first (`.ROM`; S60v2 and later also need `.RPKG`).\r\n- GameCube / Wii: The core is still being optimized, so heat and frame drops should still be expected.\r\n- MAME: A number of lesser-used arcade systems have been trimmed. Some obscure titles may no longer run.\r\n\r\n### Interface\r\n\r\nLandscape\r\n\r\n- A new landscape library, with most landscape pages redesigned.\r\n- Built-in dynamic backgrounds. You can use or upload ShaderToy (GLSL) scripts to customize them. Only single-Image scripts are supported; complex scripts may increase battery use or heat.\r\n- Multiple customizable card carousel styles.\r\n- Focused background: when a game is selected, its banner can be used as the landscape focus backdrop.\r\n- background music feature in landscape mode—besides built-in tracks, you can upload your own music files to use as background music.\r\n- built in 12 sets of navigation and focus sound effects.\r\n\r\nGame Options and Shortcuts\r\n\r\n- A unified options list and interaction model throughout the app.\r\n- Available actions are automatically arranged and regrouped for the current context.\r\n- Advanced reordering: customize the order and grouping of options.\r\n- A redesigned in-game shortcut menu. Shortcuts can appear on supported skins and in the in-game menu.\r\n\r\nNavigation and Input\r\n\r\n- A global focus and navigation system for iPhone and iPad. You can browse and interact entirely with a controller or keyboard.\r\n- Hold Command or the controller’s Select button to view the shortcut cheatsheet.\r\n- A unified navigation bar for more consistent browsing and editing.\r\n- Many long-press and hidden actions have been replaced with more conventional, iOS-style interactions.\r\n- Batch management and actions.\r\n- Adaptive rotation throughout the app.\r\n- Controllers can be assigned to a player slot. On cores that expect a keyboard, controller inputs can be mapped to keyboard events.\r\n\r\n### Features\r\n\r\nLibrary and Artwork\r\n\r\n- Covers now support separate icon and banner artwork. Box art is used in regular lists, icons in square layouts, and banners as the landscape focus backdrop.\r\n- Online artwork from Libretro Thumbnails and SteamGridDB (Grids / Heroes / Logos / Icons; SteamGridDB requires your own API key).\r\n- Switching platform or category rematches cover art.\r\n\r\nGame Data\r\n\r\n- Game metadata: auto-match, search the database, or edit it yourself (developer, publisher, series, genre, release date, region, overview, and more).\r\n- ESRB ratings and matching icons. Rating icons can be hidden in Settings.\r\n- A redesigned save-state manager with import and export.\r\n- Scoped settings: the same option can be stored at game, platform, or global level, and each can be cleared or reset independently.\r\n- batch scraping for covers, icons, and banners.\r\n- \r\n\r\nShaders and Skins\r\n\r\n- Real-time shader preview, without loading the shader first.\r\n- Redesigned default GBA skin.\r\n- Flex skins now support customizing button size and position.\r\n\r\nAchievements, Cheats, and Netplay\r\n\r\n- RetroAchievements pages are easier to read and load faster.\r\n- MultiSet support: earn subset achievements without a patched ROM. Switching the achievement list only changes what is shown; it does not affect which sets you can unlock while playing.\r\n- Online cheat database: search, multi-select add, and bookmarks.\r\n- Netplay for many Libretro cores: host or join a room, public lobby, LAN scan, relay, spectator mode, and room password. Your Adventurer Card nickname is used as the Netplay display name. You can now trade treasured Pokémon with friends over the network, or go head-to-head on arcade systems.\r\n- Rewind: add it to the shortcut menu, a controller mapping, or TriggerPro, then touch and hold to use it.\r\n\r\nAdvanced Features and Import\r\n\r\n- Core Settings: intended for advanced users. Incorrect values may prevent games from launching. Settings can be reset per game or per platform.\r\n- Settings now include an Adventurer Card, with a customizable nickname and avatar.\r\n- Import games from DukeX.\r\n- Import games from Armsx2.\r\n- PS1 now supports importing `.bin` files directly.\r\n\r\n\r\n### New Systems and Cores\r\n\r\nSymbian (EKA2L1)\r\n\r\n- Supports S60v1, N-Gage 1.0, S60v2, S60v3, N-Gage 2.0, S60v5, and Symbian^3.\r\n- Touch input, firmware management, and system apps.\r\n- Legacy / PPL / TXM JIT.\r\n\r\nPC Engine (Beetle PCE)\r\n\r\n- Supports TurboGrafx-16, TurboGrafx-CD, and SuperGrafx, with subcategory switching.\r\n\r\nNeo Geo Pocket / Color (Beetle NeoPop)\r\n\r\n- Supports Neo Geo Pocket and Neo Geo Pocket Color, with subcategory switching.\r\n\r\nCommodore 64 (VICE x64sc)\r\n\r\n- Full keyboard support, with switching between gamepad and keyboard skins.\r\n\r\nAmiga (PUAE)\r\n\r\n- Full keyboard support, with switching between gamepad and keyboard skins.\r\n\r\nGameCube / Wii (Dolphin)\r\n\r\n- Legacy / PPL / TXM JIT.\r\n- Wii: Wiimote sideways mode.\r\n- Dolphin cheats, including Action Replay Max decryption.\r\n- Wiimote skins for Wii\r\n\r\nOther Cores\r\n\r\n- Mesen-S added for SNES / GB / GBC.\r\n- gpSP added for GBA, and can be switched with mGBA and VBA-M.\r\n\r\n### JIT Fixes and Improvements\r\n\r\n- Fixed JIT failing on TXM devices running iOS 26.6 and later.\r\n- Revised TXM device detection.\r\n- N64 GLideN64 and ParaLLEl RDP now both support JIT.\r\n\r\n### Core Updates\r\n\r\nThe following cores have been updated to the latest upstream stable releases.\r\n\r\n- 3DS (Azahar, Citra)\r\n- PS1 (Beetle PSX HW)\r\n- DOS (DOSBox Pure)\r\n- Dreamcast (Flycast) — see the save-state migration note above\r\n- NDS (melonDS)\r\n- PSP (PPSSPP)\r\n- N64 (Mupen64Plus)\r\n\r\n### Fixes\r\n\r\n- Numerous bug fixes and performance optimizations",
+          "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+          "size": 273393210,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.aoshuang.manicemu",
+      "title": "ManicEMU 2.0.0 · 03 Sep 2026",
+      "identifier": "ManicEMU-release-v2.0.0",
+      "caption": "ManicEMU 2.0.0 is available.",
+      "date": "2026-09-03T10:06:18Z",
+      "tintColor": "#F02040",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.0"
+    }
+  ]
+}
