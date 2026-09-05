@@ -1,0 +1,17 @@
+# render_news.py config: python3 templates/render_news.py --out apps/KMusic
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "KMusic"
+tagline = "多源音乐聚合播放器"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#F03050"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#F03050"      # bottom-right glow (default: [source] tint_color)
+# background = "#FDECEE"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#F6D2D7"        # gradient mid stop (derived from background)
+# bg_dark = "#F1BBC2"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#E04A68" # tagline text (derived from background)

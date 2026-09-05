@@ -74,6 +74,9 @@ Torrent client for iOS.
 ### <a href="https://github.com/Predidit/Kazumi"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kazumi/icon.png" alt="Kazumi icon" width="24" align="top"> Kazumi</a>
 基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率。
 
+### <a href="https://github.com/Mac-XK/KMusic"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/KMusic/icon.png" alt="KMusic icon" width="24" align="top"> KMusic</a>
+基于 SwiftUI 的多源音乐聚合播放器，支持 iOS/macOS，内置酷我、酷狗、QQ 音乐、网易云等多平台音源与 LRC 歌词同步。
+
 ### <a href="https://github.com/missuo/kumone"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kumone/icon.png" alt="Kumone icon" width="24" align="top"> Kumone</a>
 原生 NetEase Cloud Music iOS 客户端（雲の音），直连网易云音乐真实 API，支持灰色歌曲解锁与歌词。
 

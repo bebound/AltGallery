@@ -1,0 +1,42 @@
+# altgen config for the KMusic AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Mac-XK/KMusic"
+
+[source]
+name = "KMusic"
+subtitle = "KMusic AltStore source by AltGallery & altgen"
+description = "Auto-updated AltStore source for KMusic"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/icon.png"
+website = "https://github.com/Mac-XK/KMusic"
+tint_color = "#F03050"
+
+[app]
+name = "KMusic"
+bundle_identifier = "com.macxk.KMusic"
+developer_name = "Mac-XK"
+subtitle = "基于 SwiftUI 的多源音乐聚合播放器"
+description = "基于 SwiftUI 开发的多源音乐聚合播放器，支持 iOS/macOS。内置酷我、酷狗、QQ 音乐、网易云、咪咕等多平台音源，支持 LRC 歌词同步、全局搜索、后台播放与深色主题，并可通过 JS 脚本导入自定义音源。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/icon.png"
+screenshots = []
+tint_color = "#F03050"
+min_os_version = "14.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): release ipa filenames vary (2.2.0.ipa, _2.3.0_22.2.ipa, ...)
+asset_pattern = ".*\\.ipa$"
+# Release tags are prefixed (e.g. "歌一刀2.3.0"), so pull the version from
+# the ipa asset filename instead of the tag.
+version_source = "filename"
+version_pattern = "(\\d+\\.\\d+(?:\\.\\d+)?)"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by templates/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/news.png"
+
+[output]
+path = "apps.json"
