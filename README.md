@@ -95,6 +95,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <a href="https://github.com/dddevid/Musly"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Musly/icon.png" alt="Musly icon" width="24" align="top"> Musly</a>
 Free Navidrome client & Subsonic music player with an Apple Music-inspired interface.
 
+### <a href="https://github.com/celia-sh/Novella"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Novella/icon.png" alt="Novella icon" width="24" align="top"> Novella</a>
+轻书架第三方客户端，基于 React Native 构建，面向 iOS / iPadOS，支持小说与漫画阅读与社区。
+
 ### <a href="https://github.com/bggRGjQaUbCoE/PiliPlus"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PiliPlus/icon.png" alt="PiliPlus icon" width="24" align="top"> PiliPlus</a>
 使用Flutter开发的BiliBili第三方客户端。
 

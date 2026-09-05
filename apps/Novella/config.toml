@@ -1,0 +1,44 @@
+# altgen config for the Novella AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "celia-sh/Novella"
+
+[source]
+name = "Novella"
+subtitle = "Novella AltStore source by AltGallery & altgen"
+description = "Auto-updated AltStore source for Novella"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/icon.png"
+website = "https://github.com/celia-sh/Novella"
+tint_color = "#2E2E2E"
+
+[app]
+name = "Novella"
+bundle_identifier = "sh.celia.novella"
+developer_name = "CELIA"
+subtitle = "轻书架第三方客户端"
+description = "使用 React Native 构建的轻书架第三方客户端，面向 iOS、iPadOS。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/home.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/shelf.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/detail.png",
+]
+tint_color = "#2E2E2E"
+min_os_version = "16.4"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): every release ships one ipa named
+# Novella-<version>-release.ipa (e.g. Novella-2.3.0-release.ipa)
+asset_pattern = "Novella-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by templates/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png"
+
+[output]
+path = "apps.json"

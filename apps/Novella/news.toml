@@ -1,0 +1,23 @@
+# render_news.py config: python3 templates/render_news.py --out apps/Novella
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "Novella"
+tagline = "轻书架第三方客户端"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+#
+# The icon is monochrome (light gray + near-black glyphs), so
+# extract_icon_color() finds no colorful dominant and the auto background
+# would fall back to a dark base — where the near-black brand tint
+# (#2E2E2E) would be nearly invisible. A light "paper" background is pinned
+# instead so the monochrome brand reads with high contrast.
+[colors]
+background = "#E7E4DE"        # gradient base (paper-light, fits the light-gray icon)
+# bg_mid = ""                  # gradient mid stop (derived from background)
+# bg_dark = ""                 # gradient end stop (derived from background)
+# tint = "#2E2E2E"             # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#2E2E2E"         # bottom-right glow (default: [source] tint_color)
+# text_color = "#111111"       # app name (auto white/black)
+tagline_color = "#4A4A4A"     # tagline text (deeper than the auto gray for legibility on paper)
