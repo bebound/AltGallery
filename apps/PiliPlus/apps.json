@@ -8,7 +8,7 @@
   "apps": [
     {
       "name": "PiliPlus",
-      "bundleIdentifier": "com.example.PiliPlus",
+      "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "使用Flutter开发的BiliBili第三方客户端",
       "localizedDescription": "使用Flutter开发的BiliBili第三方客户端",
@@ -22,11 +22,11 @@
       "versions": [
         {
           "version": "2.1.3",
-          "buildVersion": "5314",
+          "buildVersion": "5315",
           "date": "2026-09-05",
           "localizedDescription": "限制直播聊天缓存条目\r\n音频播放页配置音量均衡 #2598 by @Eazed-Yu\r\n限制离线弹幕下载并发 #2800 by @KIDA-MNESIA\r\n关注分组支持切换排序方式 #2772 co-by @defghy\r\nLinux 支持 WebView #2843 by @Tobiichi-Origuchi\r\n支持显示定时关闭剩余时间 #2461 co-by @SXP-Simon\r\n更新直播弹幕屏蔽页面，实现直播弹幕屏蔽 #2821 by @Starfallan\r\niOS 设置 `ITSAppUsesNonExemptEncryption` 属性 #2789 by @maoawa\r\n评论输入框增加 LaTeX 公式转 Unicode 开关 #2792 by @milk2715093695\r\n修复部分视频画质切换问题 #2810 #2828 by @TomorrowX6 co-by @My-Responsitories\r\n\r\n优化字体自重 #2787 by @My-Responsitories\r\n优化/修复账号逻辑 #2794 #2797 by @KIDA-MNESIA #2817 by @My-Responsitories\r\n\r\n修复 #2709 #2816 #2836 #2837",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.3/PiliPlus_ios_2.1.3%2B5314.ipa",
-          "size": 23968767,
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.3.1/PiliPlus_ios_2.1.3%2B5315.ipa",
+          "size": 23970852,
           "minOSVersion": "14.0"
         }
       ]
@@ -34,15 +34,15 @@
   ],
   "news": [
     {
-      "appID": "com.example.PiliPlus",
+      "appID": "com.example.piliplus",
       "title": "PiliPlus 2.1.3 · 05 Sep 2026",
-      "identifier": "PiliPlus-release-2.1.3",
+      "identifier": "PiliPlus-release-2.1.3.1",
       "caption": "PiliPlus 2.1.3 is available.",
-      "date": "2026-09-05T03:28:46Z",
+      "date": "2026-09-05T04:43:21Z",
       "tintColor": "#73b480",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
       "notify": true,
-      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.1.3"
+      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.1.3.1"
     }
   ]
 }
