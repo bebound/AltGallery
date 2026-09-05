@@ -14,7 +14,7 @@ tint_color = "#00AEEF"
 
 [app]
 name = "PiliPlus"
-bundle_identifier = "com.example.PiliPlus"
+bundle_identifier = "com.example.piliplus"
 developer_name = "bggRGjQaUbCoE"
 subtitle = "使用Flutter开发的BiliBili第三方客户端"
 description = "使用Flutter开发的BiliBili第三方客户端"
@@ -30,6 +30,7 @@ min_os_version = "14.0"
 [versions]
 strip_v_prefix = true
 include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
 # asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
 # Compatible with two historical naming schemes: PiliPlus_ios_*.ipa and ios-release-no-sign.ipa
 asset_pattern = ".*\\.ipa$"
