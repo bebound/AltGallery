@@ -13,6 +13,11 @@
       "subtitle": "基于 SwiftUI 的多源音乐聚合播放器",
       "localizedDescription": "基于 SwiftUI 开发的多源音乐聚合播放器，支持 iOS/macOS。内置酷我、酷狗、QQ 音乐、网易云、咪咕等多平台音源，支持 LRC 歌词同步、全局搜索、后台播放与深色主题，并可通过 JS 脚本导入自定义音源。",
       "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/recommendation.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/playlist.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/play.png"
+      ],
       "tintColor": "#F03050",
       "versions": [
         {
