@@ -86,6 +86,9 @@ An app launcher that runs iOS apps without actually installing them, with a buil
 ### <a href="https://github.com/kodjodevf/mangayomi"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Mangayomi/icon.png" alt="Mangayomi icon" width="24" align="top"> Mangayomi</a>
 Read manga, novels, and watch anime.
 
+### <a href="https://github.com/Manic-EMU/ManicEMU"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ManicEMU/icon.png" alt="ManicEMU icon" width="24" align="top"> ManicEMU</a>
+All-in-one retro game emulator for iOS, with a clean interface and broad platform support.
+
 ### <a href="https://github.com/singleton-altman/MoviePilotLite"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MoviePilotLite/icon.png" alt="MoviePilotLite icon" width="24" align="top"> MoviePilotLite</a>
 MoviePilot 移动端，基于 Flutter 实现。
 

@@ -1,0 +1,44 @@
+# altgen config for the ManicEMU AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Manic-EMU/ManicEMU"
+
+[source]
+name = "ManicEMU"
+subtitle = "ManicEMU AltStore source by AltGallery & altgen"
+description = "Auto-updated AltStore source for ManicEMU"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/icon.png"
+website = "https://github.com/Manic-EMU/ManicEMU"
+tint_color = "#F02040"
+
+[app]
+name = "ManicEMU"
+bundle_identifier = "com.aoshuang.manicemu"
+developer_name = "Manic EMU Development Team"
+subtitle = "All-in-one retro game emulator for iOS"
+description = "All-in-one retro game emulator for iOS, bringing console, arcade, computer, and mobile Java systems into one clean app with saves, cheats, custom skins, RetroAchievements, and more."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/library.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/landscape.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/achievements.jpg",
+]
+tint_color = "#F02040"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): each release ships both a SideloadJIT
+# and a TrollStoreJIT ipa; keep the AltStore-appropriate SideloadJIT build
+asset_pattern = "SideloadJIT\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by templates/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.png"
+
+[output]
+path = "apps.json"

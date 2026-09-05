@@ -1,0 +1,14 @@
+# render_news.py config: .venv/bin/python templates/render_news.py --out apps/ManicEMU
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "ManicEMU"
+tagline = "All-in-one retro game emulation"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#F02040"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# background = "#FBDAE0"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#FCE9EC"        # gradient mid stop (derived from background)
+# bg_dark = "#F7C6CF"       # gradient end stop (derived from background)
