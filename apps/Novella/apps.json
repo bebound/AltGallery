@@ -21,11 +21,11 @@
       "tintColor": "#2E2E2E",
       "versions": [
         {
-          "version": "2.3.0",
-          "date": "2026-08-31",
-          "localizedDescription": "<img width=\"800\" alt=\"Banner\"  src=\"https://github.com/user-attachments/assets/f561c0f2-ba77-4c31-9ad0-05e368e65695\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要带来了 **新的补签功能** 和 **社区功能的完善**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **成长系统**\r\n  新增积分商店。\r\n  支持补签并显示签到月历。\r\n  新增经验值和金币日志显示。\r\n  新增邀请码重置。\r\n\r\n* **社区**\r\n  支持编辑帖子。\r\n  支持删除帖子。\r\n  支持删除根回复和子回复。\r\n\r\n* **漫画阅读器**\r\n  新增一项双页样式的漫画设置。\r\n  默认保持原有 `1+2、3+4` 配对方式，开启后变为 `1、2+3` 。\r\n  第一页单独显示，后续页面成对显示。\r\n  宽图和超长图仍保持独占。\r\n  由于设计为自动单双页模式，所以该设置项仅在平板生效。\r\n\r\n方便的管理更新：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。",
-          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.3.0/Novella-2.3.0-release.ipa",
-          "size": 25155289,
+          "version": "2.4.0",
+          "date": "2026-09-06",
+          "localizedDescription": "<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/4e4a4477-316a-49bc-8f97-22455f3ef327\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要完善了 **漫画、社区和账户相关功能**，并改进了 **连接稳定性和更新体验**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **书籍**\r\n  跟进了新 API，小说和漫画阅读已经恢复。\r\n  漫画详情、阅读、历史、书架、搜索、排行和版本切换改用具体作品。\r\n  通知支持自动识别小说和漫画。\r\n  优化漫画图片预加载。\r\n\r\n* **社区**\r\n  支持锁定和解除锁定帖子。\r\n  锁定后禁止点赞、收藏和回复。\r\n  改进评论无限滚动和加载重试。\r\n  高亮用户参与过的回复。\r\n  改进通知页面的样式。\r\n\r\n* **账户与商城**\r\n  区分永久漫画额度和每日漫画额度。\r\n  支持漫画额度卡。\r\n  完善商城购买限制状态。\r\n  修复切换账号后的商城缓存。\r\n  成长值支持实时刷新。\r\n\r\n* **通知与连接**\r\n  改进通知和成长值实时更新。\r\n  请求和实时连接增加超时保护。\r\n  短暂切后台不再断开连接。\r\n  增加 30 秒后台宽限期。\r\n  长时间后台返回后自动重新连接。\r\n\r\n* **编辑器**\r\n  改进富文本编辑器键盘跟随。\r\n  修复关闭键盘时页面回弹和跳动。\r\n  保留编辑器内部滚动。\r\n\r\n* **阅读器与界面**\r\n  移除旧的脚注弹窗。\r\n  修复部分脚注章节被错误过滤。\r\n  统一部分 Sheet 背景颜色。\r\n  调整回复高亮和界面间距。\r\n\r\n* **登录与更新**\r\n  改进冷启动、登录、注册、Token 刷新和退出登录时的路由切换。\r\n  更新检查不再受登录页面限制。\r\n  支持使用 `GitHub`、`AltStore`、`SideStore` 和 `Feather` 打开更新。\r\n  设置中新增侧载入口。\r\n\r\n* **项目整理**\r\n  移除停止维护的 Novella 下载网页和部署流程。\r\n  请切换侧载源到 [sideload.celia.sh](https://sideload.celia.sh)。\r\n  移除软件公告，该变动不影响站点公告。\r\n  更新项目横幅并清理废弃资源。\r\n\r\n方便的管理更新：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。",
+          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.4.0/Novella-2.4.0-release.ipa",
+          "size": 25323737,
           "minOSVersion": "16.4"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sh.celia.novella",
-      "title": "Novella 2.3.0 · 31 Aug 2026",
-      "identifier": "Novella-release-v2.3.0",
-      "caption": "Novella 2.3.0 is available.",
-      "date": "2026-08-31T05:21:14Z",
+      "title": "Novella 2.4.0 · 06 Sep 2026",
+      "identifier": "Novella-release-v2.4.0",
+      "caption": "Novella 2.4.0 is available.",
+      "date": "2026-09-06T07:59:03Z",
       "tintColor": "#2E2E2E",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
       "notify": true,
-      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.3.0"
+      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.4.0"
     }
   ]
 }
