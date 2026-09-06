@@ -128,6 +128,9 @@ A full featured virtual machine host for iOS — run Windows, Android, and more 
 ### <a href="https://github.com/mrdrvt99/YouProEXTRA"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/YouProEXTRA/icon.png" alt="YouProEXTRA icon" width="24" align="top"> YouProEXTRA</a>
 YouTube mod for iOS packed with customizable tweaks — no ads, background playback, downloads, and more.
 
+### <a href="https://github.com/huamurui/zhihu-minus-minus"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ZhihuMinusMinus/icon.png" alt="ZhihuMinusMinus icon" width="24" align="top"> ZhihuMinusMinus</a>
+轻量、纯净的第三方知乎客户端，基于 React Native (Expo) 构建，无广告，支持多账号切换、游客模式与深色模式。
+
 ## Project Layout
 
 ```

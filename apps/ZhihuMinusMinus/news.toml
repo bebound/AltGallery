@@ -1,0 +1,17 @@
+# render_news.py config: python3 templates/render_news.py --out apps/ZhihuMinusMinus
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "ZhihuMinusMinus"
+tagline = "轻量、纯净的知乎第三方客户端"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#0084FF"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#0084FF"      # bottom-right glow (default: [source] tint_color)
+# background = "#D6E0EB"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#E7EDF3"        # gradient mid stop (derived from background)
+# bg_dark = "#BBCBDE"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#5185BD" # tagline text (derived from background)
