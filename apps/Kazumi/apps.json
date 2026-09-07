@@ -24,11 +24,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.3.0",
-          "date": "2026-08-28",
-          "localizedDescription": "- 优化弹幕性能 (@LiggMax)\r\n- 支持规则批量导入功能 (#2486) (@chendianshuiyin)\r\n- 修复弹幕透明度调整失效的问题 (@Predidit)\r\n- 修复手动检索弹幕时部分番剧缺失的问题 (#2505) (@Predidit)\r\n- 优化无效视频来源与加载失败时的错误提示 (#435) (@Akw0od)\r\n- 修复弹幕持续时间设置在倍速下无法正确生效的问题 (#2511) (@Predidit)\r\n- 修复 Android 平台特定情况下系统媒体控制失效的问题 (@Predidit)\r\n- 修复番剧关联页混乱的过渡动画 (#2501) (@Predidit)\r\n- 现在打开下载选集将自动定位到当前播放集数 (@moonrailgun)\r\n- 其他 UI 调整 (@Predidit)\r\n- 文档更新 (@wisnotuu)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.0/Kazumi_ios_2.3.0_no_sign.ipa",
-          "size": 29656485,
+          "version": "2.3.1",
+          "date": "2026-09-07",
+          "localizedDescription": "- 重新设计的时间表页面 (@Predidit)\r\n- 重新设计的追番页面 (@Predidit)\r\n- 重新设计的我的页面 (@Predidit)\r\n- 重新设计的视频播放页面 (@Predidit)\r\n- 重新设计的规则管理页面 (@Predidit)\r\n- 重新设计的同步设置页面 (@Predidit)\r\n- 改进Bangumi同步流程 (@zhn1100)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.1/Kazumi_ios_2.3.1_no_sign.ipa",
+          "size": 29812172,
           "minOSVersion": "13.0"
         }
       ]
@@ -37,14 +37,14 @@
   "news": [
     {
       "appID": "com.example.kazumi",
-      "title": "Kazumi 2.3.0 · 28 Aug 2026",
-      "identifier": "Kazumi-release-2.3.0",
-      "caption": "Kazumi 2.3.0 is available.",
-      "date": "2026-08-28T04:25:26Z",
+      "title": "Kazumi 2.3.1 · 07 Sep 2026",
+      "identifier": "Kazumi-release-2.3.1",
+      "caption": "Kazumi 2.3.1 is available.",
+      "date": "2026-09-07T14:33:57Z",
       "tintColor": "#4CAF50",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
       "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.0"
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.1"
     }
   ]
 }
