@@ -21,11 +21,11 @@
       "tintColor": "#8050F0",
       "versions": [
         {
-          "version": "1.2.3",
-          "date": "2026-09-04",
-          "localizedDescription": "MoviePilot Release\n\n- Version: 1.2.3\n- Build Date: 2026-09-04\n- Android: Signed APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix: 修复 v3 下搜索结果显示「未知标题」（服务端 response_model 错误的客户端兜底） by @sokouu87 in https://github.com/singleton-altman/MoviePilotLite/pull/101\n* fix: 清理 v3 下已失效的旧媒体 ID 字段与消失的存储用量端点 by @sokouu87 in https://github.com/singleton-altman/MoviePilotLite/pull/102\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.2.3-2026-08-25...release-v1.2.3-2026-09-04",
-          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.2.3-2026-09-04/ios-v1.2.3-2026-09-04.ipa",
-          "size": 35155525,
+          "version": "1.2.5",
+          "date": "2026-09-07",
+          "localizedDescription": "MoviePilot Release\n\n- Version: 1.2.5\n- Build Date: 2026-09-07\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* V3 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/100\n* Dev by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/103\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.2.3-2026-09-04...release-v1.2.5-2026-09-07",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.2.5-2026-09-07/ios-v1.2.5-2026-09-07.ipa",
+          "size": 35225066,
           "minOSVersion": "15.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.altman.moviepilot",
-      "title": "MoviePilotLite 1.2.3 · 04 Sep 2026",
-      "identifier": "MoviePilotLite-release-release-v1.2.3-2026-09-04",
-      "caption": "MoviePilotLite 1.2.3 is available.",
-      "date": "2026-09-04T03:07:38Z",
+      "title": "MoviePilotLite 1.2.5 · 07 Sep 2026",
+      "identifier": "MoviePilotLite-release-release-v1.2.5-2026-09-07",
+      "caption": "MoviePilotLite 1.2.5 is available.",
+      "date": "2026-09-07T04:44:07Z",
       "tintColor": "#8050F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
       "notify": true,
-      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.3-2026-09-04"
+      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.5-2026-09-07"
     }
   ]
 }
