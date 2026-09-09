@@ -24,6 +24,8 @@ jobs:
 
       - name: Run update.sh
         run: ./update.sh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       # apps.json / all-apps.json are gitignored, so `git add -A` won't pick
       # them up. Stage them explicitly (force) so the regenerated sources can
