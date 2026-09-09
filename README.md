@@ -125,9 +125,6 @@ A full featured virtual machine host for iOS — run Windows, Android, and more 
 ### <a href="https://github.com/CyrilPeng/Venera-Next"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Venera-Next/icon.png" alt="VeneraNext icon" width="24" align="top"> VeneraNext</a>
 基于 Flutter 的跨平台漫画阅读器，支持本地漫画、WebDAV 漫画源与第三方网络漫画源。
 
-### <a href="https://github.com/jaydenjcpy/YouMod"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/YouMod/icon.png" alt="YouMod icon" width="24" align="top"> YouMod</a>
-YouTube mod for iOS recreating YTLite features for free — no ads, background playback, downloads, built-in SponsorBlock, and more.
-
 ### <a href="https://github.com/mrdrvt99/YouProEXTRA"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/YouProEXTRA/icon.png" alt="YouProEXTRA icon" width="24" align="top"> YouProEXTRA</a>
 YouTube mod for iOS packed with customizable tweaks — no ads, background playback, downloads, and more.
 
