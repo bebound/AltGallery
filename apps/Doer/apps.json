@@ -21,11 +21,11 @@
       "tintColor": "#4080E0",
       "versions": [
         {
-          "version": "1.8.5",
-          "date": "2026-09-06",
-          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.4...v1.8.5",
-          "downloadURL": "https://github.com/moliango/doer/releases/download/v1.8.5/doer-unsigned.ipa",
-          "size": 24280195,
+          "version": "1.8.5.1",
+          "date": "2026-09-10",
+          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.5...v1.8.5.1",
+          "downloadURL": "https://github.com/moliango/doer/releases/download/v1.8.5.1/doer-unsigned.ipa",
+          "size": 28076973,
           "minOSVersion": "15.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.naine.doer",
-      "title": "Doer 1.8.5 · 06 Sep 2026",
-      "identifier": "Doer-release-v1.8.5",
-      "caption": "Doer 1.8.5 is available.",
-      "date": "2026-09-06T10:38:43Z",
+      "title": "Doer 1.8.5.1 · 10 Sep 2026",
+      "identifier": "Doer-release-v1.8.5.1",
+      "caption": "Doer 1.8.5.1 is available.",
+      "date": "2026-09-10T09:28:13Z",
       "tintColor": "#4080E0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
       "notify": true,
-      "url": "https://github.com/moliango/doer/releases/tag/v1.8.5"
+      "url": "https://github.com/moliango/doer/releases/tag/v1.8.5.1"
     }
   ]
 }
