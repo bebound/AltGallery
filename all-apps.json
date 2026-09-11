@@ -746,17 +746,28 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.5.0",
-          "date": "2026-09-05",
-          "localizedDescription": "auto release by GitHub Actions\r\n\r\n下面看起来好乱我人工写一下吧...\r\n- ios 个人主页的回答/文章可以查看了，吧\r\n- 常规问题修复\r\n- 还有一大批代码方向切入做的优化，主要是\r\n  - 动画换写法（更新后很多地方应该会稍微不那么卡卡的了）\r\n  - 各种弹窗归类，颜色去掉散乱的硬编码做集中配置（之后会考虑多调几个主题看看）\r\n  - 基础的代码检查与修复，补充一些案例、测试和文档\r\n  - 不过这种改法也可能会引入许多新的问题喵喵喵\r\n\r\n## What's Changed\r\n* fix: 同步作者关注状态与提示 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/45\r\n* fix(ios): avoid duplicate cookies in signed API requests by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/46\r\n* fix: 修复用户主页、关注状态与账号会话问题 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/47\r\n* fix(comments): confirm copy from action sheet by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/49\r\n* refactor(ui): unify dialogs and bottom sheets by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/50\r\n* fix: 完善问题详情页回答列表与类型安全 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/51\r\n* feat: centralize design tokens and add theme customization by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/54\r\n* perf: smooth animations and gestures across app by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/55\r\n* Fix rich content rendering and API fixture coverage by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/53\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.4.2...v0.5.0",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.5.0/zhihu-minus-minus-v0.5.0-unsigned.ipa",
-          "size": 15639485,
+          "version": "0.6.0",
+          "date": "2026-09-11",
+          "localizedDescription": "Android 为 arm64-v8a preview APK；iOS 为未签名 IPA。SHA256SUMS.txt 可用于校验下载文件。\r\n\r\n<!-- Release notes generated using configuration in .github/release.yml at bf28d4ace7b312dc6acf0f23af85ccbb190ca37d -->\r\n\r\n## 更新内容\r\n\r\n对已有功能能力的补全与修复。\r\n\r\n* feat(comments): 支持图片上传及评论相关操作 (由 @huamurui 提交，PR #70)\r\n* feat: 增加富文本发布功能及可靠的图片上传机制 (由 @huamurui 提交，PR #73)\r\n* feat: 扩展知乎 API 支持及搜索界面 (由 @huamurui 提交，PR #74)\r\n* fix: 增加稳定的导航栏标题 (由 @huamurui 提交，PR #76)\r\n* feat: 接入用户最新发布流与已读状态 (由 @huamurui 提交，PR #78)\r\n* fix: 根据认证状态处理问题数据路由（现在未登录状态能看到的东西会多一些） (由 @huamurui 提交，PR #79)\r\n* fix: 统一处理 API HTTP 错误 (由 @huamurui 提交，PR #80)\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.5.0...v0.6.0",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.6.0/zhihu-minus-minus-v0.6.0-unsigned.ipa",
+          "size": 15783737,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.6.0 · 11 Sep 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.6.0",
+      "caption": "ZhihuMinusMinus 0.6.0 is available.",
+      "date": "2026-09-11T08:09:21Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.6.0"
+    },
     {
       "appID": "com.naine.doer",
       "title": "Doer 1.8.5.1 · 11 Sep 2026",
@@ -877,17 +888,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
       "notify": true,
       "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.1.3.1"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.5.0 · 05 Sep 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.5.0",
-      "caption": "ZhihuMinusMinus 0.5.0 is available.",
-      "date": "2026-09-05T04:25:01Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.5.0"
     },
     {
       "appID": "com.mystyle.purelive.liu",
