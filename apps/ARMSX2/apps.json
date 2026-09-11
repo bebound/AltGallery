@@ -21,11 +21,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260909",
-          "date": "2026-09-09",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- ImGui: don't abort when a font resource is missing\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260908...cb6f53582a1319f9754ab2d427794ac62b46cb8c",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260909/ARMSX2-nightly-20260909-cb6f53582a-iOS-arm64.ipa",
-          "size": 26819639,
+          "version": "nightly-20260911",
+          "date": "2026-09-11",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- Libretro: keep the VFS stream table out of static destruction entirely\n- Libretro: keep the VFS stream registry alive to the end\n- Libretro: open the disc through the frontend's file system too\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260909...9027cd3acf8bd599534e2467390efc84cc4cd060",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260911/ARMSX2-nightly-20260911-9027cd3acf-iOS-arm64.ipa",
+          "size": 26821578,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260909 · 09 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260909",
-      "caption": "ARMSX2 nightly-20260909 is available.",
-      "date": "2026-09-09T13:26:38Z",
+      "title": "ARMSX2 nightly-20260911 · 11 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260911",
+      "caption": "ARMSX2 nightly-20260911 is available.",
+      "date": "2026-09-11T13:21:17Z",
       "tintColor": "#3CAEFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260909"
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260911"
     }
   ]
 }
