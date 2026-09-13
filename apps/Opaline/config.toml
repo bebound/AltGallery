@@ -1,0 +1,53 @@
+# altgen config for the Opaline AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "verback2308/Opaline"
+
+[source]
+name = "Opaline"
+subtitle = "Opaline AltStore source by AltGallery & altgen"
+description = "Auto-updated AltStore source for Opaline"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/icon.png"
+website = "https://github.com/verback2308/Opaline"
+tint_color = "#FF0000"
+
+[app]
+name = "Opaline"
+# Bundle id kept from the YTLite era — the app was renamed in 1.8.0 but the
+# release identifier was not (see make_ipa.sh RELEASE_BUNDLE_ID).
+bundle_identifier = "com.verback.YTLite"
+developer_name = "verback2308"
+subtitle = "YouTube client for iOS 12+"
+description = "A lightweight YouTube client with SponsorBlock, Return YouTube Dislike, and up to 1080p playback. No ads, no tracking, no dependencies."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/home.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/player.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/channel.jpg",
+]
+tint_color = "#FF0000"
+min_os_version = "12.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+# The project was renamed from YTLite in 1.8.0, so releases up to 1.7.2 ship
+# YTLite_*.ipa and 1.8.0 onwards ship Opaline_*.ipa — both must match to keep
+# the full version history. The .deb assets are excluded since they don't
+# end in .ipa.
+asset_pattern = ".*\\.ipa$"
+# Only the two 1.1.0 previews carry a build number (YTLite_1.1.0_105.ipa);
+# the underscore anchor keeps the plain <Name>_<version>.ipa names from
+# matching, so those fall back to the version as their build number.
+build_version_pattern = "_([0-9]+)\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by templates/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.png"
+
+[output]
+path = "apps.json"
