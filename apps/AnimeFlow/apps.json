@@ -23,7 +23,7 @@
         {
           "version": "2.5.1",
           "date": "2026-09-12",
-          "localizedDescription": "### 🔄 更新内容\n\n## 2.5.1 更新\n\n## 新增\n\n- 更新数据源功能模块新增age源 #59\n\n## 修复\n\n- 修复登录状态频繁过期问题 #58\n- 修复播放页设置按钮在非全屏下展示问题\n\n## 优化\n\n- 使用信息的弹幕搜索api提高搜索效率，优化弹幕加载状态展示 #60\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(旧手机)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
+          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.5.1 更新\r\n\r\n## 新增\r\n\r\n- 更新数据源功能模块新增age源 #59\r\n\r\n## 修复\r\n\r\n- 修复登录状态频繁过期问题 #58\r\n- 修复播放页设置按钮在非全屏下展示问题\r\n\r\n## 优化\r\n\r\n- 使用新的弹幕搜索api提高搜索效率，优化弹幕加载状态展示 #60\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(旧手机)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
           "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.5.1/AnimeFlow-ios-2.5.1.ipa",
           "size": 28191201,
           "minOSVersion": "13.0"
