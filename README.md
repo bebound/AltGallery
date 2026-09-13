@@ -95,6 +95,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <a href="https://github.com/dddevid/Musly"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Musly/icon.png" alt="Musly icon" width="24" align="top"> Musly</a>
 Free Navidrome client & Subsonic music player with an Apple Music-inspired interface.
 
+### <a href="https://github.com/ResistanceTo/MiniWatts"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MiniWatts/icon.png" alt="MiniWatts icon" width="24" align="top"> MiniWatts</a>
+An iPhone battery and charging monitor built on Apple's private APIs — charger watts, cell power, heat loss and every temperature sensor.
+
 ### <a href="https://github.com/celia-sh/Novella"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Novella/icon.png" alt="Novella icon" width="24" align="top"> Novella</a>
 轻书架第三方客户端，基于 React Native 构建，面向 iOS / iPadOS，支持小说与漫画阅读与社区。
 

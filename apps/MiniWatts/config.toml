@@ -1,0 +1,47 @@
+# altgen config for the MiniWatts AltStore source.
+# Run: uvx altgen -c config.toml
+# Fields derived from the ResistanceTo/MiniWatts README and Xcode project
+# (no AltStore source in the repo).
+
+[github]
+repo = "ResistanceTo/MiniWatts"
+
+[source]
+name = "MiniWatts"
+subtitle = "MiniWatts AltStore source by AltGallery & altgen"
+description = "Auto-updated AltStore source for MiniWatts"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/icon.png"
+website = "https://github.com/ResistanceTo/MiniWatts"
+# Sampled from the icon's cyan lightning bolt (the app's dark-mode accent).
+tint_color = "#30E0F0"
+
+[app]
+name = "MiniWatts"
+bundle_identifier = "org.zhaohe.MiniWatts"
+developer_name = "ResistanceTo"
+subtitle = "Battery, charging and thermal instrument"
+description = "An iPhone battery and charging monitor built on Apple's private APIs: the charger's real watts, how much of that reaches the cell, where the rest goes as heat, and every temperature sensor in the phone. No network code — nothing it reads leaves your phone."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/power.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/thermal.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/adapter.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/history.jpg",
+]
+tint_color = "#30E0F0"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release ships exactly one ipa,
+# MiniWatts-unsigned.ipa (the signed variant is built locally, never released).
+asset_pattern = "MiniWatts-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by templates/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png"
+
+[output]
+path = "apps.json"

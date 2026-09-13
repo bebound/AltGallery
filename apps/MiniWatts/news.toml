@@ -1,0 +1,17 @@
+# render_news.py config: .venv/bin/python3 templates/render_news.py --out apps/MiniWatts
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "MiniWatts"
+tagline = "Charger watts, cell power and thermal sensors"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#30E0F0"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#30E0F0"      # bottom-right glow (default: [source] tint_color)
+# background = "#D6E9EB"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#E7F2F3"        # gradient mid stop (derived from background)
+# bg_dark = "#BBDADE"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#51B3BD" # tagline text (derived from background)
