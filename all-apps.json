@@ -434,11 +434,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.0.1",
-          "date": "2026-09-11",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n\n## What's Changed\n* Fix invalid zh-Hans localization format placeholders by @cylllllll in https://github.com/ResistanceTo/MiniWatts/pull/1\n\n## New Contributors\n* @cylllllll made their first contribution in https://github.com/ResistanceTo/MiniWatts/pull/1\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.0...v1.0.1",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.0.1/MiniWatts-unsigned.ipa",
-          "size": 2905130,
+          "version": "1.1.0",
+          "date": "2026-09-14",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 新功能\n\n- **主屏幕与锁屏小组件**：显示充电功率和电量。刷新时间由 iOS 决定，通常 15–60 分钟一次，每个小组件都会标明数据的读取时间。\n- **充电实时活动**：在锁屏和灵动岛显示充电功率。只在 MiniWatts 运行时更新，App 被挂起后会显示为已暂停。可以在设置里关闭。\n- **悬浮读数**：在设置里手动打开的画中画小窗，浮在其他 App 上方，每秒更新一次；开着的时候锁屏也能继续记录充电。会更耗电，用完请关掉。不会播放任何声音。\n\n## 修复\n\n- 部分机型温度读数离谱（比如充电芯片 −9199.4 °C）：物理上不可能的温度现在会被隐藏，不再显示。\n\n## 说明\n\n- 关于页加入了开源说明和 GitHub 地址。\n- 这个版本在 iPhone Air 上开发和验证。传感器的名称和换算因机型而异，其他机型可能有读数不准，欢迎带上机型标识反馈。\n- 小组件会多占用一个 App ID（免费 Apple ID 每周 10 个）。签名工具如果提示移除扩展，移除后就没有小组件了。\n\n---\n\n## New\n\n- **Home Screen and Lock Screen widget** showing charge power and level. iOS decides when it refreshes — usually every 15 to 60 minutes — and each widget shows when its numbers were taken.\n- **Charging Live Activity** on the Lock Screen and in the Dynamic Island. It updates only while MiniWatts is running and shows as paused once the app is suspended. Can be turned off in Settings.\n- **Floating meter**: a Picture in Picture window you open from Settings. It floats over other apps, updates once a second, and keeps recording the charge with the screen locked. Uses more battery, so close it when you're done. It plays no sound.\n\n## Fixed\n\n- Impossible temperatures on some models (a charge IC at −9199.4 °C) are now hidden instead of shown.\n\n## Notes\n\n- About now says MiniWatts is free and open source, with a link to this repository.\n- Built and verified on an iPhone Air. Sensor names and scaling differ between models, so some readings may be wrong on yours — please report them with your model identifier.\n- The widget extension takes one more App ID when you sign (a free Apple ID gets ten a week). If your signing tool offers to remove extensions, the widget goes with them.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.0.1...v1.1.0",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.1.0/MiniWatts-unsigned.ipa",
+          "size": 3093949,
           "minOSVersion": "17.0"
         }
       ]
@@ -770,12 +770,12 @@
       "tintColor": "#FF0000",
       "versions": [
         {
-          "version": "21.36.6",
-          "buildVersion": "21.36.6",
-          "date": "2026-09-10",
-          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K is available for A16+ devices.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock. \r\n> - for <A15 devices press share button in the arrow down panel and use external player for downloaded videos.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
-          "size": 129007319,
+          "version": "21.37.4",
+          "buildVersion": "21.37.4",
+          "date": "2026-09-14",
+          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available for A12+ devices.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock. \r\n> - for <A15 devices press share button in the arrow down panel and use external player for downloaded videos.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.37.4_1.3.1.ipa",
+          "size": 129769811,
           "minOSVersion": "16.0"
         }
       ]
@@ -806,6 +806,28 @@
     }
   ],
   "news": [
+    {
+      "appID": "org.zhaohe.MiniWatts",
+      "title": "MiniWatts 1.1.0 · 14 Sep 2026",
+      "identifier": "MiniWatts-release-v1.1.0",
+      "caption": "MiniWatts 1.1.0 is available.",
+      "date": "2026-09-14T08:16:25Z",
+      "tintColor": "#30E0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.1.0"
+    },
+    {
+      "appID": "com.google.ios.youtube",
+      "title": "YouProEXTRA 21.37.4 · 14 Sep 2026",
+      "identifier": "YouProEXTRA-release-youproextra-ipa0",
+      "caption": "YouProEXTRA 21.37.4 is available.",
+      "date": "2026-09-14T05:22:33Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa0"
+    },
     {
       "appID": "com.armsx2.ios",
       "title": "ARMSX2 nightly-20260913 · 13 Sep 2026",
@@ -862,17 +884,6 @@
       "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.5.1"
     },
     {
-      "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.0.1 · 11 Sep 2026",
-      "identifier": "MiniWatts-release-v1.0.1",
-      "caption": "MiniWatts 1.0.1 is available.",
-      "date": "2026-09-11T12:11:26Z",
-      "tintColor": "#30E0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.0.1"
-    },
-    {
       "appID": "com.huamu013.ZhihuMinusMinus",
       "title": "ZhihuMinusMinus 0.6.0 · 11 Sep 2026",
       "identifier": "ZhihuMinusMinus-release-v0.6.0",
@@ -926,17 +937,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.png",
       "notify": true,
       "url": "https://github.com/verback2308/Opaline/releases/tag/1.12.0"
-    },
-    {
-      "appID": "com.google.ios.youtube",
-      "title": "YouProEXTRA 21.36.6 · 10 Sep 2026",
-      "identifier": "YouProEXTRA-release-youproextra-ipa0",
-      "caption": "YouProEXTRA 21.36.6 is available.",
-      "date": "2026-09-10T01:19:05Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
-      "notify": true,
-      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa0"
     },
     {
       "appID": "com.suwayomi.tachideskSorayomi",

@@ -20,12 +20,12 @@
       "tintColor": "#FF0000",
       "versions": [
         {
-          "version": "21.36.6",
-          "buildVersion": "21.36.6",
-          "date": "2026-09-10",
-          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K is available for A16+ devices.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock. \r\n> - for <A15 devices press share button in the arrow down panel and use external player for downloaded videos.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
-          "size": 129007319,
+          "version": "21.37.4",
+          "buildVersion": "21.37.4",
+          "date": "2026-09-14",
+          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available for A12+ devices.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock. \r\n> - for <A15 devices press share button in the arrow down panel and use external player for downloaded videos.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.37.4_1.3.1.ipa",
+          "size": 129769811,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,10 +34,10 @@
   "news": [
     {
       "appID": "com.google.ios.youtube",
-      "title": "YouProEXTRA 21.36.6 · 10 Sep 2026",
+      "title": "YouProEXTRA 21.37.4 · 14 Sep 2026",
       "identifier": "YouProEXTRA-release-youproextra-ipa0",
-      "caption": "YouProEXTRA 21.36.6 is available.",
-      "date": "2026-09-10T01:19:05Z",
+      "caption": "YouProEXTRA 21.37.4 is available.",
+      "date": "2026-09-14T05:22:33Z",
       "tintColor": "#FF0000",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
       "notify": true,
