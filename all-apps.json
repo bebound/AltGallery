@@ -45,12 +45,12 @@
       "tintColor": "#0077B6",
       "versions": [
         {
-          "version": "5.1.0",
-          "buildVersion": "0823",
-          "date": "2026-08-26",
-          "localizedDescription": "* 新增**一起看**功能，支持创建或加入房间、同步播放进度与选集，并支持成员列表、播放控制、延迟显示及断线重连\r\n* 支持连接**其他 Syncplay 服务端**，按软件内提示填写对应服务端信息即可一起观看；同时支持 **AniBaka 站内用户聊天**\r\n* 支持通过**邀请码、邀请链接和二维码**加入房间，Android、iOS、macOS、Windows 和 Linux 均支持邀请链接唤起\r\n* Baka 页面新增**正在播放的一起看房间**展示\r\n* 新增**播放数据悬浮窗**，可查看分辨率、帧率、编码、码率、掉帧及音频等信息\r\n* 重新调整 Windows 播放器、选集、侧边栏及全屏交互\r\n* 优化**弹幕与播放状态同步、播放源解析、自动匹配及 BT 分片调度**\r\n* 优化网络请求、缓存及首页、搜索、收藏、播放记录等数据处理，提升整体性能与流畅度\r\n* 修复部分页面状态异常、播放器生命周期等问题\r\n\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.0.7+0811...5.1.0+0823",
-          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.1.0%2B0823/baka-5.1.0%2B0823-ios-unsigned.ipa",
-          "size": 20904015,
+          "version": "5.1.1",
+          "buildVersion": "0912",
+          "date": "2026-09-14",
+          "localizedDescription": "- 新增 **AI 修改/新增规则**：支持生成、修复和手动编辑视频源规则，并提供分步测试与验证。\r\n- 新增 **AI 模型配置**：支持接入 OpenAI 兼容服务，自行配置模型与 API Key。\r\n- 新增 **HLS 视频去广告**：可在播放设置中开启，自动识别并过滤部分内嵌广告片段。\r\n- 优化视频源管理与搜索结果界面，调整信息展示和操作布局。\r\n- 优化首页、番剧详情、评论区及播放器的加载与渲染，减少重复请求和不必要的界面刷新。\r\n- 优化播放源解析、媒体探测与线路切换，改善部分站点的播放兼容性。\r\n- 更新部分内置视频源规则，调整桌面端与 TV 端界面细节。\r\n- 完善 Windows 与 macOS 安装包签名及校验流程。\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.1.0+0823...5.1.1+0912",
+          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.1.1%2B0912/baka-5.1.1%2B0912-ios-unsigned.ipa",
+          "size": 20946986,
           "minOSVersion": "13.0"
         }
       ]
@@ -143,11 +143,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260913",
-          "date": "2026-09-13",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- GS: don't snap a sprite's far edge into the sprite beside it\n- Android: try the B2 texture catalog first\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260912...bb60aaf88f528bddadb2f0111fc03412b5fcb8e9",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260913/ARMSX2-nightly-20260913-bb60aaf88f-iOS-arm64.ipa",
-          "size": 26820816,
+          "version": "nightly-20260914",
+          "date": "2026-09-14",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- iOS: fixed/re-implemented Airplay (#591)\n- iOS: raise the minimum iOS version to 17.4\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260913...d7e8d01678107f066d6ec988ca178d80089bd9f5",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260914/ARMSX2-nightly-20260914-d7e8d01678-iOS-arm64.ipa",
+          "size": 26822432,
           "minOSVersion": "17.0"
         }
       ]
@@ -386,11 +386,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.2",
-          "date": "2026-09-03",
-          "localizedDescription": "## What's Changed\r\n* Add assets to constant file by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/968\r\n* fix: triage error reports and resolve reported crashes by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/970\r\n* feat(experimental): add support for Aidoku extensions by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/969\r\n* Optimize local image-folder pages and image handling by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/973\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.1...v0.9.2",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.2/Mangayomi-v0.9.2-ios.ipa",
-          "size": 114010180
+          "version": "0.9.3",
+          "date": "2026-09-14",
+          "localizedDescription": "## What's Changed\n* feat: refresh the library on a schedule by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/975\n* fix(player): persist completed episodes before navigation by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/979\n* fix(downloads): preserve queue and select the next unread chapters by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/978\n* Fixes memory and bugs where it would lag over time by @not-akari in https://github.com/kodjodevf/mangayomi/pull/977\n* fix: keep Discord chapter presence current by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/981\n* fix: decode current VOE video payloads by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/982\n* fix(restore): preserve Kotatsu category assignments by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/983\n* fix(player): retire native video surfaces safely by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/984\n* fix(download): harden workers and HLS recovery by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/985\n* fix(reader): sort local pages naturally by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/986\n* fix(library): keep read titles last in unread sort by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/988\n* fix(reader): make bulk read actions uniform by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/989\n* fix(player): preserve shortcuts when controls hide by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/990\n* fix(linux): fall back when Documents lookup fails by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/994\n* Rework API Sync Server by @not-akari in https://github.com/kodjodevf/mangayomi/pull/976\n* feat: redesign anime player by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/980\n* Add Korean translation by @jang-geon in https://github.com/kodjodevf/mangayomi/pull/1000\n* feat(l10n): complete Korean translation by @Abdellox in https://github.com/kodjodevf/mangayomi/pull/1004\n* fix(player): preserve local file URIs by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/987\n* fix(player): fall back from unsupported audio tracks by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/991\n* fix(repositories): await extension repository writes by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/993\n\n## New Contributors\n* @1Selxo made their first contribution in https://github.com/kodjodevf/mangayomi/pull/979\n* @jang-geon made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1000\n* @Abdellox made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1004\n\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.2...v0.9.3",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.3/Mangayomi-v0.9.3-ios.ipa",
+          "size": 114239272
         }
       ]
     },
@@ -807,6 +807,39 @@
   ],
   "news": [
     {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20260914 · 14 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260914",
+      "caption": "ARMSX2 nightly-20260914 is available.",
+      "date": "2026-09-14T17:02:38Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260914"
+    },
+    {
+      "appID": "com.kodjodevf.mangayomi",
+      "title": "Mangayomi 0.9.3 · 14 Sep 2026",
+      "identifier": "Mangayomi-release-v0.9.3",
+      "caption": "Mangayomi 0.9.3 is available.",
+      "date": "2026-09-14T13:37:32Z",
+      "tintColor": "#EF4444",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.3"
+    },
+    {
+      "appID": "ani.baka",
+      "title": "AniBaka 5.1.1 · 14 Sep 2026",
+      "identifier": "AniBaka-release-5.1.1+0912",
+      "caption": "AniBaka 5.1.1 is available.",
+      "date": "2026-09-14T13:37:00Z",
+      "tintColor": "#0077B6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
+      "notify": true,
+      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.1.1+0912"
+    },
+    {
       "appID": "org.zhaohe.MiniWatts",
       "title": "MiniWatts 1.1.0 · 14 Sep 2026",
       "identifier": "MiniWatts-release-v1.1.0",
@@ -827,17 +860,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
       "notify": true,
       "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa0"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260913 · 13 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260913",
-      "caption": "ARMSX2 nightly-20260913 is available.",
-      "date": "2026-09-13T13:51:35Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260913"
     },
     {
       "appID": "com.mystyle.purelive.liu",
@@ -983,17 +1005,6 @@
       "url": "https://github.com/Aidoku/Aidoku/releases/tag/v0.9"
     },
     {
-      "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.2 · 03 Sep 2026",
-      "identifier": "Mangayomi-release-v0.9.2",
-      "caption": "Mangayomi 0.9.2 is available.",
-      "date": "2026-09-03T13:58:24Z",
-      "tintColor": "#EF4444",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.2"
-    },
-    {
       "appID": "com.aoshuang.manicemu",
       "title": "ManicEMU 2.0.0 · 03 Sep 2026",
       "identifier": "ManicEMU-release-v2.0.0",
@@ -1047,17 +1058,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.png",
       "notify": true,
       "url": "https://github.com/dddevid/Musly/releases/tag/v2.0.2"
-    },
-    {
-      "appID": "ani.baka",
-      "title": "AniBaka 5.1.0 · 26 Aug 2026",
-      "identifier": "AniBaka-release-5.1.0+0823",
-      "caption": "AniBaka 5.1.0 is available.",
-      "date": "2026-08-26T11:58:52Z",
-      "tintColor": "#0077B6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
-      "notify": true,
-      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.1.0+0823"
     },
     {
       "appID": "dev.infinityf4p.tiebapure",

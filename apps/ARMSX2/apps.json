@@ -21,11 +21,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260913",
-          "date": "2026-09-13",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- GS: don't snap a sprite's far edge into the sprite beside it\n- Android: try the B2 texture catalog first\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260912...bb60aaf88f528bddadb2f0111fc03412b5fcb8e9",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260913/ARMSX2-nightly-20260913-bb60aaf88f-iOS-arm64.ipa",
-          "size": 26820816,
+          "version": "nightly-20260914",
+          "date": "2026-09-14",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- iOS: fixed/re-implemented Airplay (#591)\n- iOS: raise the minimum iOS version to 17.4\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260913...d7e8d01678107f066d6ec988ca178d80089bd9f5",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260914/ARMSX2-nightly-20260914-d7e8d01678-iOS-arm64.ipa",
+          "size": 26822432,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260913 · 13 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260913",
-      "caption": "ARMSX2 nightly-20260913 is available.",
-      "date": "2026-09-13T13:51:35Z",
+      "title": "ARMSX2 nightly-20260914 · 14 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260914",
+      "caption": "ARMSX2 nightly-20260914 is available.",
+      "date": "2026-09-14T17:02:38Z",
       "tintColor": "#3CAEFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260913"
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260914"
     }
   ]
 }

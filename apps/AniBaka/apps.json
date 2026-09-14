@@ -21,12 +21,12 @@
       "tintColor": "#0077B6",
       "versions": [
         {
-          "version": "5.1.0",
-          "buildVersion": "0823",
-          "date": "2026-08-26",
-          "localizedDescription": "* 新增**一起看**功能，支持创建或加入房间、同步播放进度与选集，并支持成员列表、播放控制、延迟显示及断线重连\r\n* 支持连接**其他 Syncplay 服务端**，按软件内提示填写对应服务端信息即可一起观看；同时支持 **AniBaka 站内用户聊天**\r\n* 支持通过**邀请码、邀请链接和二维码**加入房间，Android、iOS、macOS、Windows 和 Linux 均支持邀请链接唤起\r\n* Baka 页面新增**正在播放的一起看房间**展示\r\n* 新增**播放数据悬浮窗**，可查看分辨率、帧率、编码、码率、掉帧及音频等信息\r\n* 重新调整 Windows 播放器、选集、侧边栏及全屏交互\r\n* 优化**弹幕与播放状态同步、播放源解析、自动匹配及 BT 分片调度**\r\n* 优化网络请求、缓存及首页、搜索、收藏、播放记录等数据处理，提升整体性能与流畅度\r\n* 修复部分页面状态异常、播放器生命周期等问题\r\n\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.0.7+0811...5.1.0+0823",
-          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.1.0%2B0823/baka-5.1.0%2B0823-ios-unsigned.ipa",
-          "size": 20904015,
+          "version": "5.1.1",
+          "buildVersion": "0912",
+          "date": "2026-09-14",
+          "localizedDescription": "- 新增 **AI 修改/新增规则**：支持生成、修复和手动编辑视频源规则，并提供分步测试与验证。\r\n- 新增 **AI 模型配置**：支持接入 OpenAI 兼容服务，自行配置模型与 API Key。\r\n- 新增 **HLS 视频去广告**：可在播放设置中开启，自动识别并过滤部分内嵌广告片段。\r\n- 优化视频源管理与搜索结果界面，调整信息展示和操作布局。\r\n- 优化首页、番剧详情、评论区及播放器的加载与渲染，减少重复请求和不必要的界面刷新。\r\n- 优化播放源解析、媒体探测与线路切换，改善部分站点的播放兼容性。\r\n- 更新部分内置视频源规则，调整桌面端与 TV 端界面细节。\r\n- 完善 Windows 与 macOS 安装包签名及校验流程。\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.1.0+0823...5.1.1+0912",
+          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.1.1%2B0912/baka-5.1.1%2B0912-ios-unsigned.ipa",
+          "size": 20946986,
           "minOSVersion": "13.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "ani.baka",
-      "title": "AniBaka 5.1.0 · 26 Aug 2026",
-      "identifier": "AniBaka-release-5.1.0+0823",
-      "caption": "AniBaka 5.1.0 is available.",
-      "date": "2026-08-26T11:58:52Z",
+      "title": "AniBaka 5.1.1 · 14 Sep 2026",
+      "identifier": "AniBaka-release-5.1.1+0912",
+      "caption": "AniBaka 5.1.1 is available.",
+      "date": "2026-09-14T13:37:00Z",
       "tintColor": "#0077B6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
       "notify": true,
-      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.1.0+0823"
+      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.1.1+0912"
     }
   ]
 }
