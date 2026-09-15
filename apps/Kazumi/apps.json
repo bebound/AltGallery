@@ -24,11 +24,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.3.1",
-          "date": "2026-09-07",
-          "localizedDescription": "- 重新设计的时间表页面 (@Predidit)\r\n- 重新设计的追番页面 (@Predidit)\r\n- 重新设计的我的页面 (@Predidit)\r\n- 重新设计的视频播放页面 (@Predidit)\r\n- 重新设计的规则管理页面 (@Predidit)\r\n- 重新设计的同步设置页面 (@Predidit)\r\n- 改进Bangumi同步流程 (@zhn1100)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.1/Kazumi_ios_2.3.1_no_sign.ipa",
-          "size": 29812172,
+          "version": "2.3.3",
+          "date": "2026-09-15",
+          "localizedDescription": "> [!NOTE]\r\n> 这是 2.3.2 的热修复版本，更多更新日志参考 2.3.2",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.3/Kazumi_ios_2.3.3_no_sign.ipa",
+          "size": 29823335,
           "minOSVersion": "13.0"
         }
       ]
@@ -37,14 +37,14 @@
   "news": [
     {
       "appID": "com.example.kazumi",
-      "title": "Kazumi 2.3.1 · 07 Sep 2026",
-      "identifier": "Kazumi-release-2.3.1",
-      "caption": "Kazumi 2.3.1 is available.",
-      "date": "2026-09-07T14:33:57Z",
+      "title": "Kazumi 2.3.3 · 15 Sep 2026",
+      "identifier": "Kazumi-release-2.3.3",
+      "caption": "Kazumi 2.3.3 is available.",
+      "date": "2026-09-15T14:24:43Z",
       "tintColor": "#4CAF50",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
       "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.1"
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.3"
     }
   ]
 }
