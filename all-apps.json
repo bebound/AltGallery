@@ -143,11 +143,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260914",
-          "date": "2026-09-14",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- iOS: fixed/re-implemented Airplay (#591)\n- iOS: raise the minimum iOS version to 17.4\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260913...d7e8d01678107f066d6ec988ca178d80089bd9f5",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260914/ARMSX2-nightly-20260914-d7e8d01678-iOS-arm64.ipa",
-          "size": 26822432,
+          "version": "nightly-20260915",
+          "date": "2026-09-15",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- iOS: translate the new shader wording\n- iOS: show the CRC in Per-Game Settings during a game\n- iOS: move TV/CRT Shader to Filtering and rename the cache button\n- iOS: show readable slider names and plain shader errors\n- iOS: delete downloaded shader packs and saved presets\n- iOS: close the preset list on a pick and select a saved preset\n- iOS: say in the pause menu when a game has its own shader\n- iOS: keep saved shader presets working after an app update\n- iOS: put Preset first on the Shaders page and use plain wording\n- iOS: pick a downloaded shader straight from the download list\n- iOS: document launch links and the library export\n- iOS: translate Copy Launch Link\n- iOS: list games from external folders in the library export\n- iOS: import files opened in the app again\n- iOS: ask before a launch link replaces a running game\n- iOS: copy a game's launch link from its long-press menu\n- iOS: look up the app's own scene, not whichever one comes first\n- iOS: stop leaking a scene configuration on every scene connect\n- iOS: read the hack claim keys from s_gs_keys, where they live now\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260914...418eee65a406497320bb0dab00e5b00a36420b06",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260915/ARMSX2-nightly-20260915-418eee65a4-iOS-arm64.ipa",
+          "size": 26850704,
           "minOSVersion": "17.0"
         }
       ]
@@ -386,11 +386,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.3",
-          "date": "2026-09-14",
-          "localizedDescription": "## What's Changed\n* feat: refresh the library on a schedule by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/975\n* fix(player): persist completed episodes before navigation by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/979\n* fix(downloads): preserve queue and select the next unread chapters by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/978\n* Fixes memory and bugs where it would lag over time by @not-akari in https://github.com/kodjodevf/mangayomi/pull/977\n* fix: keep Discord chapter presence current by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/981\n* fix: decode current VOE video payloads by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/982\n* fix(restore): preserve Kotatsu category assignments by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/983\n* fix(player): retire native video surfaces safely by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/984\n* fix(download): harden workers and HLS recovery by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/985\n* fix(reader): sort local pages naturally by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/986\n* fix(library): keep read titles last in unread sort by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/988\n* fix(reader): make bulk read actions uniform by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/989\n* fix(player): preserve shortcuts when controls hide by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/990\n* fix(linux): fall back when Documents lookup fails by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/994\n* Rework API Sync Server by @not-akari in https://github.com/kodjodevf/mangayomi/pull/976\n* feat: redesign anime player by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/980\n* Add Korean translation by @jang-geon in https://github.com/kodjodevf/mangayomi/pull/1000\n* feat(l10n): complete Korean translation by @Abdellox in https://github.com/kodjodevf/mangayomi/pull/1004\n* fix(player): preserve local file URIs by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/987\n* fix(player): fall back from unsupported audio tracks by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/991\n* fix(repositories): await extension repository writes by @1Selxo in https://github.com/kodjodevf/mangayomi/pull/993\n\n## New Contributors\n* @1Selxo made their first contribution in https://github.com/kodjodevf/mangayomi/pull/979\n* @jang-geon made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1000\n* @Abdellox made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1004\n\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.2...v0.9.3",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.3/Mangayomi-v0.9.3-ios.ipa",
-          "size": 114239272
+          "version": "0.9.4",
+          "date": "2026-09-15",
+          "localizedDescription": "## What's Changed\n* Fix double/int cast crash when syncing settings by @not-akari in https://github.com/kodjodevf/mangayomi/pull/1009\n\n\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.3...v0.9.4",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.4/Mangayomi-v0.9.4-ios.ipa",
+          "size": 114238780
         }
       ]
     },
@@ -627,11 +627,11 @@
       "tintColor": "#50B0F0",
       "versions": [
         {
-          "version": "3.1.3",
-          "date": "2026-09-13",
-          "localizedDescription": "# 纯粹直播 v3.1.3\n\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n\n### 🖥️ Windows 版\n\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n\n### 🍎 macOS 版\n\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n\n### 📱 Android 版\n\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.3/ANDROID_SHA256SUM.txt)\n\n### 🐧 Linux 版\n\n- Linux x64\n- Portable tar.gz\n\n### 🍎 iOS 版\n\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n\n### 🔧 Build Metadata\n\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.3/BUILD_METADATA.json)\n\n### 📝 本次更新\n\nversion: 3.1.3\n版本更新：\n- 合并来自于@wzgrx的更新。",
-          "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.3/PureLive-3.1.3-4101-ios-arm64-trollstore.ipa",
-          "size": 60421948,
+          "version": "3.1.4",
+          "date": "2026-09-15",
+          "localizedDescription": "# 纯粹直播 v3.1.4\n\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n\n### 🖥️ Windows 版\n\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n\n### 🍎 macOS 版\n\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n\n### 📱 Android 版\n\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.4/ANDROID_SHA256SUM.txt)\n\n### 🐧 Linux 版\n\n- Linux x64\n- Portable tar.gz\n\n### 🍎 iOS 版\n\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n\n### 🔧 Build Metadata\n\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.4/BUILD_METADATA.json)\n\n### 📝 本次更新\n\nversion: 3.1.4\n版本更新：\n- 修复windows亮度。",
+          "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.4/PureLive-3.1.4-4103-ios-arm64-trollstore.ipa",
+          "size": 60444266,
           "minOSVersion": "15.6"
         }
       ]
@@ -774,7 +774,7 @@
           "buildVersion": "21.37.4",
           "date": "2026-09-14",
           "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available for A12+ devices.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock. \r\n> - for <A15 devices press share button in the arrow down panel and use external player for downloaded videos.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.37.4_1.3.1.ipa",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.37.4_1.3.1.ipa",
           "size": 129769811,
           "minOSVersion": "16.0"
         }
@@ -807,26 +807,37 @@
   ],
   "news": [
     {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260914 · 14 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260914",
-      "caption": "ARMSX2 nightly-20260914 is available.",
-      "date": "2026-09-14T17:02:38Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260914"
-    },
-    {
       "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.3 · 14 Sep 2026",
-      "identifier": "Mangayomi-release-v0.9.3",
-      "caption": "Mangayomi 0.9.3 is available.",
-      "date": "2026-09-14T13:37:32Z",
+      "title": "Mangayomi 0.9.4 · 15 Sep 2026",
+      "identifier": "Mangayomi-release-v0.9.4",
+      "caption": "Mangayomi 0.9.4 is available.",
+      "date": "2026-09-15T09:17:03Z",
       "tintColor": "#EF4444",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
       "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.3"
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.4"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20260915 · 15 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260915",
+      "caption": "ARMSX2 nightly-20260915 is available.",
+      "date": "2026-09-15T08:23:11Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260915"
+    },
+    {
+      "appID": "com.mystyle.purelive.liu",
+      "title": "PureLive 3.1.4 · 15 Sep 2026",
+      "identifier": "PureLive-release-v3.1.4",
+      "caption": "PureLive 3.1.4 is available.",
+      "date": "2026-09-15T06:45:55Z",
+      "tintColor": "#50B0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
+      "notify": true,
+      "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.4"
     },
     {
       "appID": "ani.baka",
@@ -853,24 +864,13 @@
     {
       "appID": "com.google.ios.youtube",
       "title": "YouProEXTRA 21.37.4 · 14 Sep 2026",
-      "identifier": "YouProEXTRA-release-youproextra-ipa0",
+      "identifier": "YouProEXTRA-release-youproextra-ipa2",
       "caption": "YouProEXTRA 21.37.4 is available.",
       "date": "2026-09-14T05:22:33Z",
       "tintColor": "#FF0000",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
       "notify": true,
-      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa0"
-    },
-    {
-      "appID": "com.mystyle.purelive.liu",
-      "title": "PureLive 3.1.3 · 13 Sep 2026",
-      "identifier": "PureLive-release-v3.1.3",
-      "caption": "PureLive 3.1.3 is available.",
-      "date": "2026-09-13T10:27:46Z",
-      "tintColor": "#50B0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
-      "notify": true,
-      "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.3"
+      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
     },
     {
       "appID": "com.example.piliplus",
