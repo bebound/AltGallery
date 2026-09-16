@@ -70,11 +70,11 @@
       "tintColor": "#124EB3",
       "versions": [
         {
-          "version": "2.5.1",
-          "date": "2026-09-12",
-          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.5.1 更新\r\n\r\n## 新增\r\n\r\n- 更新数据源功能模块新增age源 #59\r\n\r\n## 修复\r\n\r\n- 修复登录状态频繁过期问题 #58\r\n- 修复播放页设置按钮在非全屏下展示问题\r\n\r\n## 优化\r\n\r\n- 使用新的弹幕搜索api提高搜索效率，优化弹幕加载状态展示 #60\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(旧手机)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
-          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.5.1/AnimeFlow-ios-2.5.1.ipa",
-          "size": 28191201,
+          "version": "2.5.2",
+          "date": "2026-09-16",
+          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.5.2 更新\r\n\r\n## 新增\r\n\r\n- 添加账号修改密码功能\r\n- 在设置关于菜单中可以直接查看项目的版本更新信息\r\n- 桌面端设置中添加自定义播放器快捷键功能\r\n- 用户收藏页面番剧卡片展示更多信息\r\n- 评论区图片支持多图预览\r\n\r\n## 优化\r\n \r\n- 优化移动端输入站点验证码时图片被键盘遮挡问题\r\n- 播放器点击暂停/播放按钮重新计算控件隐藏时间\r\n- 更新时根据安卓架构推荐安装包(下个版本生效)\r\n- 更多系统架构层面优化\r\n- 更多页面ui细节优化\r\n\r\n## 修复\r\n\r\n- 修复桌面端播放器快捷键不可用问题\r\n- 修复部分番剧详情页无法显示问题\r\n- 修复移动端平凡调整亮度、音量指示器闪烁问题\r\n- 修改插件下载页面开打镜像后展示的数据会被上一次请求失败影响\r\n- 修复windows平台视频解析稳定性\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
+          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.5.2/AnimeFlow-ios-2.5.2.ipa",
+          "size": 28279194,
           "minOSVersion": "13.0"
         }
       ]
@@ -143,11 +143,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260915",
-          "date": "2026-09-15",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- iOS: install the Rust iOS target so CI builds keep shaders\n- iOS: translate the new shader wording\n- iOS: show the CRC in Per-Game Settings during a game\n- iOS: move TV/CRT Shader to Filtering and rename the cache button\n- iOS: show readable slider names and plain shader errors\n- iOS: delete downloaded shader packs and saved presets\n- iOS: close the preset list on a pick and select a saved preset\n- iOS: say in the pause menu when a game has its own shader\n- iOS: keep saved shader presets working after an app update\n- iOS: put Preset first on the Shaders page and use plain wording\n- iOS: pick a downloaded shader straight from the download list\n- iOS: document launch links and the library export\n- iOS: translate Copy Launch Link\n- iOS: list games from external folders in the library export\n- iOS: import files opened in the app again\n- iOS: ask before a launch link replaces a running game\n- iOS: copy a game's launch link from its long-press menu\n- iOS: look up the app's own scene, not whichever one comes first\n- iOS: stop leaking a scene configuration on every scene connect\n- iOS: read the hack claim keys from s_gs_keys, where they live now\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260914...736f53fa1c3c8e56a90ad53bd61f84260d09e1f0",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260915/ARMSX2-nightly-20260915-418eee65a4-iOS-arm64.ipa",
-          "size": 26850704,
+          "version": "nightly-20260916",
+          "date": "2026-09-16",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- libretro: report valid geometry without Vulkan\n- libretro: fix compilation without vulkan\n- Take whichever hardware context the frontend has, rather than one or none\n- Ask for a GL context that can run the renderer\n- Touch: take the scale from the digitizer, and gate on either axis\n- Pad: default the device-haptic fallback on for handhelds\n- GS/HW: Treat an unaligned 8 pixel shuffle strip as not a shuffle\n- GS/HW: only exempt a mode 5 sprite whose near edge is on a whole pixel\n- GS/HW: don't push a mode 5 sprite that starts on a whole pixel\n- GS/HW: give line rectangles half a device pixel of offset in every HPO mode\n- GS/HW: draw lines over exactly the pixels the GS lights\n- GS: don't auto-flush the alpha stencil counter on the hardware renderer\n- GS/HW: draw the alpha stencil counter with dual-source blending\n- GS/VK: decide the fast stencil shadow road per device\n- GameDB overlay: restore the readback-mode overrides\n- GS: remove the Tekken 5 MediaTek Mali half-pixel-offset hack\n- GameDB: bring GameIndex.yaml back to upstream PCSX2\n- GameDB overlay: keep only overrides with a reason on today's JIT and renderer\n- iOS: install the Rust iOS target so CI builds keep shaders\n- GS/SW: one coordinate grain per primitive, and the gradient on a grid under it\n- GS/SW: the coordinate's sixteenth truncates toward zero, into a signed 12.4 field\n- GS/SW: a UV-route sprite's ascending ramp seeds a sixteenth of a texel low\n- GS/SW: one floor per pixel in the colour walk, and two write-path defects\n- GS/SW: the console's logarithm is a 128-entry table, so read the table\n- GS/SW: the affine texture coordinate walks in a 12.15 accumulator\n- GS/SW: fourteen bits of reciprocal, and divide at the vertex only where affine\n- GS/SW: the measured colour interpolator -- block grid, anchor, row pairs, fog\n- GS/SW: seed each span at its own left edge, and drop the gradient to ten bits\n- GS: the auto-flush split follows the engine's level, not the hardware key\n- GS: TEX1.K is already signed, so stop sign-extending it a second time\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260915...316e20c2f33794daee8bf272d747cb508983f4e9",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260916/ARMSX2-nightly-20260916-316e20c2f3-iOS-arm64.ipa",
+          "size": 30347565,
           "minOSVersion": "17.0"
         }
       ]
@@ -579,11 +579,11 @@
       "tintColor": "#13A1FD",
       "versions": [
         {
-          "version": "0.15.0",
-          "date": "2026-08-16",
-          "localizedDescription": "## 新功能\r\n\r\n- 插画详情和全屏查看新增图片文字翻译，基于 Apple Vision OCR 识别图片文字并显示原文与译文。\r\n- 新增 VLM 图片解释功能，可使用视觉语言模型分析插画内容；设置中支持配置模型、温度、图像细节并测试服务。\r\n- 设置中新增图片磁盘缓存上限选项，超过上限则自动清理。\r\n- 用户详情页新增骨架屏加载动画。\r\n\r\n## 优化\r\n\r\n- 重构全屏图片预览，支持更高效的懒加载、分页和缩放，改善大图及多图浏览性能。\r\n- 优化相关推荐图片预取，减少重复请求并提升滑动浏览体验。\r\n- 统一加载失败提示、错误状态和重试入口，并增加全局 Toast 反馈。\r\n- 优化登录页面布局、文案和输入体验。\r\n- 更新说明弹窗支持本地化 Markdown 内容。\r\n- 优化卡片阴影渲染，降低 GPU 离屏渲染开销。\r\n\r\n## 问题修复\r\n\r\n- 修复 Bing 翻译接口失效问题，并修复小说内容接口请求问题。\r\n- 修复网页登录流程在切换应用、登录失败或已有账号登录时的状态处理问题。\r\n- 修复 macOS 插画详情滚动对齐、图片缩放更新和窗口控件图标请求问题。\r\n- 修复图片淡入动画丢失问题。\r\n- 修复 iOS 插画卡片上下文菜单无法显示的问题。\r\n- 修复推荐页和动态页用户头像点击无响应的问题。\r\n- 修复关注和取消关注用户时请求返回 400 的问题。\r\n- 修复导航返回后多个瀑布流页面滚动位置丢失的问题。\r\n- 修复分页请求使用错误账号令牌的问题。\r\n- 修复切换账号时收藏、关注、下载和阅读等异步状态串用或显示旧数据的问题。\r\n- 修复网络模式切换后请求未取消、页面未刷新的问题。\r\n- 改善并发下载文件完整性校验，并在失败时提供回退处理。\r\n- 修复部分 API 端点及数据解码问题，降低内容加载失败概率。\r\n- 修复 Ugoira 动图播放中的数组越界问题，并将部分缓存初始化失败改为降级处理。",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.15.0/Pixiv-SwiftUI.ipa",
-          "size": 10437618,
+          "version": "0.16.0",
+          "date": "2026-09-16",
+          "localizedDescription": "## 新功能\r\n\r\n- 插画详情页支持水平滑动切换插画\r\n- 插画与小说列表到详情页的过渡改为卡片式缩放展开与收起转场\r\n- 多页插画详情页支持条式阅读（垂直连续滚动）模式，可在设置中与默认翻页模式切换\r\n- 多页插画新增瀑布流浏览页\r\n- 插画详情页简介下方新增作者最新作品横向预览\r\n- 支持自定义代理配置\r\n- macOS 端新增网页登录凭据导出功能面板\r\n- 新增多页插画预取深度设置\r\n- 为详情页的标签区域引入一种根据宽度重排的优化布局，缓解标签区域出现的空白\r\n\r\n此版本对插画详情页的交互和导航做了较大重构，如有问题可通过 issue 反馈。\r\n\r\n## 优化\r\n\r\n- 优化了插画全屏预览的交互\r\n- 优化画质降级与图片预取策略，优先加载当前视口可见图片\r\n- 优化插画与小说的评论区排版与时间展示，为表情包图片设置较长的缓存时间\r\n- 参考 macOS 27 原生 App 优化了 macOS 侧边栏\r\n- 优化 iOS 设置等页面的视觉表现\r\n- 插画详情页的相关推荐卡片支持直接点击收藏\r\n- 优化直连模式连接调度与保活机制，提升网络稳定性，减少假死与无响应现象\r\n- 优化 macOS 下播放动图时的系统资源占用\r\n- 统一各页面的加载骨架屏尺寸与过渡效果，消除加载完成时的页面跳动\r\n- 增大 iOS 个人中心顶部用户卡片的可点击面积\r\n- 优化底层依赖，减小应用安装包体积\r\n\r\n## 问题修复\r\n\r\n- 修复以图搜图无法打开系统相册选图的问题\r\n- 修复插画与小说评论区点击展开子回复无响应的问题\r\n- 修复亮点（Pixivision）详情页上下滚动时画面跳动的问题\r\n- 修复切换账号后仍残留上个账号浏览记录与导航路径的问题\r\n- 修复在小说与排行榜等页面点击个人资料卡片无法进入个人主页的问题\r\n\r\n## 本地化\r\n\r\n- 新增繁体中文与日文支持。译文由 GPT-5.6-Luna 起草并由 GPT-5.6-Terra 润色。如果你发现问题，请通过 PR 或 issue 帮助改进。\r\n- 修正了一些英文本地化问题\r\n\r\npixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.15.0...v0.16.0",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.0/Pixiv-SwiftUI.ipa",
+          "size": 10165131,
           "minOSVersion": "17.0"
         }
       ]
@@ -807,6 +807,39 @@
   ],
   "news": [
     {
+      "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
+      "title": "Pixiv-SwiftUI 0.16.0 · 16 Sep 2026",
+      "identifier": "Pixiv-SwiftUI-release-v0.16.0",
+      "caption": "Pixiv-SwiftUI 0.16.0 is available.",
+      "date": "2026-09-16T14:30:25Z",
+      "tintColor": "#13A1FD",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.0"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20260916 · 16 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260916",
+      "caption": "ARMSX2 nightly-20260916 is available.",
+      "date": "2026-09-16T14:00:12Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260916"
+    },
+    {
+      "appID": "com.ligg.anime_flow",
+      "title": "AnimeFlow 2.5.2 · 16 Sep 2026",
+      "identifier": "AnimeFlow-release-v2.5.2",
+      "caption": "AnimeFlow 2.5.2 is available.",
+      "date": "2026-09-16T12:24:40Z",
+      "tintColor": "#124EB3",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
+      "notify": true,
+      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.5.2"
+    },
+    {
       "appID": "com.naine.doer",
       "title": "Doer 1.8.5.2 · 16 Sep 2026",
       "identifier": "Doer-release-v1.8.5.2",
@@ -849,17 +882,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
       "notify": true,
       "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.4"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260915 · 15 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260915",
-      "caption": "ARMSX2 nightly-20260915 is available.",
-      "date": "2026-09-15T08:23:11Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260915"
     },
     {
       "appID": "com.mystyle.purelive.liu",
@@ -915,17 +937,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
       "notify": true,
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.7.1"
-    },
-    {
-      "appID": "com.ligg.anime_flow",
-      "title": "AnimeFlow 2.5.1 · 12 Sep 2026",
-      "identifier": "AnimeFlow-release-v2.5.1",
-      "caption": "AnimeFlow 2.5.1 is available.",
-      "date": "2026-09-12T08:46:58Z",
-      "tintColor": "#124EB3",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
-      "notify": true,
-      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.5.1"
     },
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
@@ -1080,17 +1091,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
       "notify": true,
       "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.2"
-    },
-    {
-      "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
-      "title": "Pixiv-SwiftUI 0.15.0 · 16 Aug 2026",
-      "identifier": "Pixiv-SwiftUI-release-v0.15.0",
-      "caption": "Pixiv-SwiftUI 0.15.0 is available.",
-      "date": "2026-08-16T12:56:24Z",
-      "tintColor": "#13A1FD",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.15.0"
     },
     {
       "appID": "app.ehpanda",

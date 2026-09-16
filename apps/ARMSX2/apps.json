@@ -21,11 +21,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260915",
-          "date": "2026-09-15",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- iOS: install the Rust iOS target so CI builds keep shaders\n- iOS: translate the new shader wording\n- iOS: show the CRC in Per-Game Settings during a game\n- iOS: move TV/CRT Shader to Filtering and rename the cache button\n- iOS: show readable slider names and plain shader errors\n- iOS: delete downloaded shader packs and saved presets\n- iOS: close the preset list on a pick and select a saved preset\n- iOS: say in the pause menu when a game has its own shader\n- iOS: keep saved shader presets working after an app update\n- iOS: put Preset first on the Shaders page and use plain wording\n- iOS: pick a downloaded shader straight from the download list\n- iOS: document launch links and the library export\n- iOS: translate Copy Launch Link\n- iOS: list games from external folders in the library export\n- iOS: import files opened in the app again\n- iOS: ask before a launch link replaces a running game\n- iOS: copy a game's launch link from its long-press menu\n- iOS: look up the app's own scene, not whichever one comes first\n- iOS: stop leaking a scene configuration on every scene connect\n- iOS: read the hack claim keys from s_gs_keys, where they live now\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260914...736f53fa1c3c8e56a90ad53bd61f84260d09e1f0",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260915/ARMSX2-nightly-20260915-418eee65a4-iOS-arm64.ipa",
-          "size": 26850704,
+          "version": "nightly-20260916",
+          "date": "2026-09-16",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk, sideload it\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\n## What's new\n- libretro: report valid geometry without Vulkan\n- libretro: fix compilation without vulkan\n- Take whichever hardware context the frontend has, rather than one or none\n- Ask for a GL context that can run the renderer\n- Touch: take the scale from the digitizer, and gate on either axis\n- Pad: default the device-haptic fallback on for handhelds\n- GS/HW: Treat an unaligned 8 pixel shuffle strip as not a shuffle\n- GS/HW: only exempt a mode 5 sprite whose near edge is on a whole pixel\n- GS/HW: don't push a mode 5 sprite that starts on a whole pixel\n- GS/HW: give line rectangles half a device pixel of offset in every HPO mode\n- GS/HW: draw lines over exactly the pixels the GS lights\n- GS: don't auto-flush the alpha stencil counter on the hardware renderer\n- GS/HW: draw the alpha stencil counter with dual-source blending\n- GS/VK: decide the fast stencil shadow road per device\n- GameDB overlay: restore the readback-mode overrides\n- GS: remove the Tekken 5 MediaTek Mali half-pixel-offset hack\n- GameDB: bring GameIndex.yaml back to upstream PCSX2\n- GameDB overlay: keep only overrides with a reason on today's JIT and renderer\n- iOS: install the Rust iOS target so CI builds keep shaders\n- GS/SW: one coordinate grain per primitive, and the gradient on a grid under it\n- GS/SW: the coordinate's sixteenth truncates toward zero, into a signed 12.4 field\n- GS/SW: a UV-route sprite's ascending ramp seeds a sixteenth of a texel low\n- GS/SW: one floor per pixel in the colour walk, and two write-path defects\n- GS/SW: the console's logarithm is a 128-entry table, so read the table\n- GS/SW: the affine texture coordinate walks in a 12.15 accumulator\n- GS/SW: fourteen bits of reciprocal, and divide at the vertex only where affine\n- GS/SW: the measured colour interpolator -- block grid, anchor, row pairs, fog\n- GS/SW: seed each span at its own left edge, and drop the gradient to ten bits\n- GS: the auto-flush split follows the engine's level, not the hardware key\n- GS: TEX1.K is already signed, so stop sign-extending it a second time\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260915...316e20c2f33794daee8bf272d747cb508983f4e9",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260916/ARMSX2-nightly-20260916-316e20c2f3-iOS-arm64.ipa",
+          "size": 30347565,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260915 · 15 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260915",
-      "caption": "ARMSX2 nightly-20260915 is available.",
-      "date": "2026-09-15T08:23:11Z",
+      "title": "ARMSX2 nightly-20260916 · 16 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260916",
+      "caption": "ARMSX2 nightly-20260916 is available.",
+      "date": "2026-09-16T14:00:12Z",
       "tintColor": "#3CAEFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260915"
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260916"
     }
   ]
 }

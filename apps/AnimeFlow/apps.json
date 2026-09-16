@@ -21,11 +21,11 @@
       "tintColor": "#124EB3",
       "versions": [
         {
-          "version": "2.5.1",
-          "date": "2026-09-12",
-          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.5.1 更新\r\n\r\n## 新增\r\n\r\n- 更新数据源功能模块新增age源 #59\r\n\r\n## 修复\r\n\r\n- 修复登录状态频繁过期问题 #58\r\n- 修复播放页设置按钮在非全屏下展示问题\r\n\r\n## 优化\r\n\r\n- 使用新的弹幕搜索api提高搜索效率，优化弹幕加载状态展示 #60\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(旧手机)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
-          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.5.1/AnimeFlow-ios-2.5.1.ipa",
-          "size": 28191201,
+          "version": "2.5.2",
+          "date": "2026-09-16",
+          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.5.2 更新\r\n\r\n## 新增\r\n\r\n- 添加账号修改密码功能\r\n- 在设置关于菜单中可以直接查看项目的版本更新信息\r\n- 桌面端设置中添加自定义播放器快捷键功能\r\n- 用户收藏页面番剧卡片展示更多信息\r\n- 评论区图片支持多图预览\r\n\r\n## 优化\r\n \r\n- 优化移动端输入站点验证码时图片被键盘遮挡问题\r\n- 播放器点击暂停/播放按钮重新计算控件隐藏时间\r\n- 更新时根据安卓架构推荐安装包(下个版本生效)\r\n- 更多系统架构层面优化\r\n- 更多页面ui细节优化\r\n\r\n## 修复\r\n\r\n- 修复桌面端播放器快捷键不可用问题\r\n- 修复部分番剧详情页无法显示问题\r\n- 修复移动端平凡调整亮度、音量指示器闪烁问题\r\n- 修改插件下载页面开打镜像后展示的数据会被上一次请求失败影响\r\n- 修复windows平台视频解析稳定性\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
+          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.5.2/AnimeFlow-ios-2.5.2.ipa",
+          "size": 28279194,
           "minOSVersion": "13.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.ligg.anime_flow",
-      "title": "AnimeFlow 2.5.1 · 12 Sep 2026",
-      "identifier": "AnimeFlow-release-v2.5.1",
-      "caption": "AnimeFlow 2.5.1 is available.",
-      "date": "2026-09-12T08:46:58Z",
+      "title": "AnimeFlow 2.5.2 · 16 Sep 2026",
+      "identifier": "AnimeFlow-release-v2.5.2",
+      "caption": "AnimeFlow 2.5.2 is available.",
+      "date": "2026-09-16T12:24:40Z",
       "tintColor": "#124EB3",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
       "notify": true,
-      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.5.1"
+      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.5.2"
     }
   ]
 }
