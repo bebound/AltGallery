@@ -21,11 +21,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.17",
-          "date": "2026-09-10",
-          "localizedDescription": "### Added / 新增\n\n- **macOS**: a 「减少推荐」 (reduce recommendation) right-click action on un-liked songs in 每日推荐 and 私人雷达 lists — it asks NetEase to swap the song out and replaces it in place. Thanks @yamakze (#84, closes #74).\n- **macOS**：每日推荐 / 私人雷达 列表里,未收藏歌曲的右键菜单新增「减少推荐」——会请求网易云替换该歌曲并就地替换。感谢 @yamakze（#84，关闭 #74）。\n\n### Fixed / 修复\n\n- **iOS**: the lock screen and Dynamic Island Now Playing controls show previous/next track again instead of back-15s/forward-15s. Registering the ±15s skip commands (added for CarPlay in 0.3.15) made iOS pick the podcast-style skip layout system-wide and hid the track buttons; those commands are removed, so previous/next are the media buttons everywhere (CarPlay included). (#83, #87)\n- **iOS**：锁屏与灵动岛的「正在播放」控制重新显示上一首 / 下一首，而不是后退 15 秒 / 前进 15 秒。此前为 CarPlay 注册的 ±15 秒快进快退命令（0.3.15 引入）让 iOS 在全局采用了播客式布局、把切歌按钮挤掉了；现已移除这两个命令，上一首 / 下一首恢复为各处（含 CarPlay）的系统媒体按钮。（#83、#87）\n- **macOS**: the search results page no longer shows a second, empty system search box on top of the toolbar search field — the page's `.searchable` bar is now iOS-only. Thanks @yamakze (#90, closes #89).\n- **macOS**：搜索结果页不再在工具栏搜索框之外多出一个空的系统搜索框——结果页的 `.searchable` 搜索栏改为仅 iOS 使用。感谢 @yamakze（#90，关闭 #89）。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.17/Kumone-iOS-0.3.17.ipa",
-          "size": 7248832,
+          "version": "0.3.18",
+          "date": "2026-09-17",
+          "localizedDescription": "### Added / 新增\n\n- **iOS + macOS**: a sleep timer — stop playback after a set duration or at the end of the current track, from the 播放 menu (macOS) or the now-playing more-actions menu (iOS). Thanks @yamakze (#98, closes #96).\n- **iOS + macOS**：新增睡眠定时——可在设定时长后、或当前歌曲播完后停止播放,入口在「播放」菜单(macOS)或播放页的更多菜单(iOS)。感谢 @yamakze（#98，关闭 #96）。\n- **iOS + macOS**: jump from a playing track to its artist or album page (and play from there) via the artwork / track menu. Thanks @yamakze (#95, closes #80).\n- **iOS + macOS**：可从正在播放的歌曲跳转到其歌手或专辑页并从那里播放(通过封面 / 歌曲菜单)。感谢 @yamakze（#95，关闭 #80）。\n- **macOS**: an ambient background behind the main window derived from the current track's artwork — a soft color wash plus a subtle titlebar tint that follows the playing song. On by default; toggle it off or adjust the intensity in Settings. Thanks @yamakze (#86).\n- **macOS**：主窗口新增取自当前封面的氛围背景——柔和的色彩铺底 + 淡淡的标题栏染色，随播放歌曲变化。默认开启,可在设置里关闭或调节强度。感谢 @yamakze（#86）。\n- **iOS**: the artwork ambient background is now available on iOS too, with the same toggle + intensity slider in Settings. Thanks @yamakze (#99).\n- **iOS**：封面氛围背景现在 iOS 也支持,设置里同样有开关与强度滑块。感谢 @yamakze（#99）。\n\n### Fixed / 修复\n\n- **macOS**: the now-playing artwork no longer snaps out of place during the open/close transition when the image finishes loading mid-animation. Thanks @Perfect9s (#92).\n- **macOS**：进入 / 退出播放页时,封面即使在动画途中才加载完也不再错位跳动。感谢 @Perfect9s（#92）。\n- **macOS**: the main-window titlebar ambient tint now matches the app's light/dark appearance instead of lagging a step behind it. Thanks @yamakze (#93).\n- **macOS**：主窗口标题栏的氛围染色现在会正确匹配 App 的浅色 / 深色外观,不再慢一拍。感谢 @yamakze（#93）。\n- **macOS**: switching a fixed theme (Light/Dark) back to \"follow system\" now updates the native titlebars of both the main and Settings windows immediately, via `NSApp.appearance`. (#94)\n- **macOS**：把固定主题(浅色 / 深色)切回「跟随系统」时,主窗口与设置窗口的原生标题栏现在会通过 `NSApp.appearance` 立即同步。（#94）\n\n- **macOS**: the toolbar search field and the floating player bar now keep more clearance from the window's rounded corners, so their capsules no longer nearly touch the window edges and the inner/outer corner radii stop visually merging. (#88)\n- **macOS**：工具栏搜索框与悬浮播放条现在与窗口圆角保持更多间距,不再几乎贴住窗口边缘,内外圆角也不再互相干扰。（#88）\n- **macOS**: the album artwork in the player bar and the immersive now-playing page no longer shows a stray blue focus ring (macOS 27 drew the system focus ring on those decorative artwork buttons). (#97)\n- **macOS**：播放条与沉浸播放页的专辑封面不再出现多余的蓝色聚焦边框（macOS 27 会在这些装饰性封面按钮上绘制系统聚焦环）。（#97）",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.18/Kumone-iOS-0.3.18.ipa",
+          "size": 7321751,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.17 · 10 Sep 2026",
-      "identifier": "Kumone-release-v0.3.17",
-      "caption": "Kumone 0.3.17 is available.",
-      "date": "2026-09-10T14:03:06Z",
+      "title": "Kumone 0.3.18 · 17 Sep 2026",
+      "identifier": "Kumone-release-v0.3.18",
+      "caption": "Kumone 0.3.18 is available.",
+      "date": "2026-09-17T05:44:32Z",
       "tintColor": "#F0D060",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.17"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.18"
     }
   ]
 }
