@@ -21,11 +21,11 @@
       "tintColor": "#E0E000",
       "versions": [
         {
-          "version": "1.0.2",
-          "date": "2026-08-22",
-          "localizedDescription": "Mostly stuff you asked for.\n\n- You don't need an account anymore. There's a \"Continue as guest\" button on the login screen. Everything you watch is saved on the device, and if you make an account later it all gets moved over.\n- The iPhone app rotates now. Before it was stuck in portrait unless you were in the player.\n- Cleaned up the Profile tab. Email is readable now, there's one Edit Profile button, and switching/adding profiles and signing out moved into the menu at the top right.\n- Also has the fixes from 1.0.1 (play button missing on iOS 18, \"don't have permission to save the file\" on Apple TV).\n\nInstall\n\nMac: open the dmg, drag to Applications. It's notarized so it just opens.\n\niPhone/iPad: the ipa isn't signed, use Sideloadly, AltStore, SideStore, Feather or ESign with your own Apple ID. Free Apple ID = resign every 7 days (AltStore/SideStore do it for you), paid dev account = one year.\n\nApple TV: Sideloadly works over Wi-Fi. On the TV go to Settings > Remotes and Devices > Remote App and Devices so it shows up, then pick it in Sideloadly.",
-          "downloadURL": "https://github.com/donbytyqi/scenebox/releases/download/v1.0.2/SceneBox-1.0.2.ipa",
-          "size": 30349738,
+          "version": "1.0.3",
+          "date": "2026-09-17",
+          "localizedDescription": "What's new\n\n- Trakt sync. Connect your Trakt account in Profile and your watchlist and watched history stay in sync.\n- Picture in Picture on iPhone and iPad.\n- Continue Watching now resumes straight into the player from where you stopped, using the same source as last time (download, debrid link or torrent).\n- IMDb, Rotten Tomatoes and Metacritic ratings on the detail page (add an OMDb key in Settings).\n- Playback recovery: if the video freezes while the audio keeps going, the player notices and recovers by itself. Streams that drop are picked back up too.\n- Chromecast support on iPhone and iPad.\n- Apple TV: the episode row opens on the season and episode you're on, and the player controls and episode panel behave better with the remote.\n- Lots of smaller fixes.\n\nImportant: nothing in this release is signed\n\nNone of the files here are signed with a developer account, and the Mac app is not notarized anymore.\n\nMac: open the dmg and drag SceneBox to Applications. macOS will block it the first time because it isn't notarized. Either right click the app > Open, or go to System Settings > Privacy & Security and press \"Open Anyway\". If it still refuses, run this in Terminal:\n\n    xattr -dr com.apple.quarantine /Applications/SceneBox.app\n\nBecause the Mac app is unsigned it can't use the Keychain the way the signed builds did, so signing in to an account may not work on Mac. \"Continue as guest\" works fine. If you had an older signed version installed, delete it first.\n\niPhone/iPad: the ipa isn't signed (same as before), use Sideloadly, AltStore, SideStore, Feather or ESign with your own Apple ID. Free Apple ID = resign every 7 days (AltStore/SideStore do it for you), paid dev account = one year.\n\nApple TV: Sideloadly works over Wi-Fi. On the TV go to Settings > Remotes and Devices > Remote App and Devices so it shows up, then pick it in Sideloadly.",
+          "downloadURL": "https://github.com/donbytyqi/scenebox/releases/download/v1.0.3/SceneBox-1.0.3.ipa",
+          "size": 30506464,
           "minOSVersion": "18.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "app.scenebox.SceneBox",
-      "title": "SceneBox 1.0.2 · 22 Aug 2026",
-      "identifier": "SceneBox-release-v1.0.2",
-      "caption": "SceneBox 1.0.2 is available.",
-      "date": "2026-08-22T09:45:48Z",
+      "title": "SceneBox 1.0.3 · 17 Sep 2026",
+      "identifier": "SceneBox-release-v1.0.3",
+      "caption": "SceneBox 1.0.3 is available.",
+      "date": "2026-09-17T17:27:35Z",
       "tintColor": "#E0E000",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
       "notify": true,
-      "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.2"
+      "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.3"
     }
   ]
 }
