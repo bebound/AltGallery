@@ -21,11 +21,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.4",
-          "date": "2026-09-15",
-          "localizedDescription": "## What's Changed\n* Fix double/int cast crash when syncing settings by @not-akari in https://github.com/kodjodevf/mangayomi/pull/1009\n\n\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.3...v0.9.4",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.4/Mangayomi-v0.9.4-ios.ipa",
-          "size": 114238780
+          "version": "0.9.5",
+          "date": "2026-09-18",
+          "localizedDescription": "## What's Changed\r\n\r\n## Reader & Novels\r\n\r\n* **Smart Double-Page Mode** (#1008):\r\n  * Automatically switch to double-page view based on screen orientation (landscape/portrait).\r\n  * Chapter transition pages now remain isolated for a natural, seamless reading experience.\r\n* **Complete Novel Reader Overhaul** (#1014):\r\n  * Added double-page reading mode support for novels.\r\n  * Added a **Keep screen on** toggle to prevent the display from turning off while reading (#1014).\r\n  * Added smooth auto-scroll with fine-tuned speed controls.\r\n  * Redesigned Novel bottom bar and settings sheets: more compact, with quick font-size adjustments.\r\n  * Centralized all novel settings under **More > Settings > Novel Reader** (#1014).\r\n* **Smooth Webtoon Scrolling**:\r\n  * Much smoother continuous scrolling without stutter or layout jumps.\r\n  * Fluid auto-scroll that reacts instantly to touch and drag gestures.\r\n* **Reliable Page Error Recovery**:\r\n  * The **Retry** button is now immediately clickable with no menu overlay interference.\r\n  * Added a manual **Refresh** button in the reader top bar to re-fetch fresh pages from the source.\r\n* **Dedicated Page Cache**:\r\n  * Redesigned chapter caching system (100 MB disk limit with automatic cleanup of older files) to save storage and speed up loading times.\r\n\r\n---\r\n\r\n##  Features & User Experience\r\n\r\n* **Quick Resume from History** (#1005):\r\n  * Double-tap or double-click the **History** icon in the navigation bar to instantly jump straight back into your latest read chapter or watched episode (filtered by Manga, Anime, or Novel).\r\n* **One-Tap Global Search**:\r\n  * Tap any title in the entry details header to immediately search for it across all extensions (long-press continues to copy to clipboard).\r\n  * Warns you before adding an entry that is already in your library.\r\n* **Customizable Chapter Swipe Actions** (#1005):\r\n  * Configure left and right swipe gestures for chapters in Reader settings (Mark as Read/Unread, Bookmark, Download, or Disable).\r\n* **Mass Migration from Library** (#1005):\r\n  * Added a dedicated shortcut button in the multi-select bottom action bar to quickly migrate multiple selected entries at once.\r\n* **Automatic Sync** (#1012):\r\n  * Added background auto-sync support and improved sync preference handling.\r\n\r\n---\r\n\r\n## Video Player & Desktop\r\n\r\n* **Desktop Controls & Performance** (#1015):\r\n  * Eliminated stutter caused by mouse hover on the player controls.\r\n  * Added a setting to toggle hardware acceleration on Windows.\r\n* **Audio & Subtitle Tracks**:\r\n  * Better track synchronization, duplicate removal, and cleaner track labels.\r\n\r\n---\r\n\r\n##  Localization\r\n\r\n* Fully updated and completed translations across **17 languages** (French, German, Spanish, Italian, Portuguese, Russian, Chinese, Japanese, Korean, Arabic, and more).\r\n\r\n---\r\n\r\n##  Fixes & Stability\r\n\r\n* Fixed visual layout overflow issues in settings sheets and bottom bars (#1014).\r\n* Improved error handling and reliability for Kitsu discovery (#1011).\r\n* File picker improvements and stability updates (#1010).\r\n\r\n---\r\n\r\n##  Contributors\r\n\r\n* @kodjodevf \r\n* @NBA2K1 (#1010, #1011)\r\n* @not-akari\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.4...v0.9.5",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.5/Mangayomi-v0.9.5-ios.ipa",
+          "size": 114289495
         }
       ]
     }
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.4 · 15 Sep 2026",
-      "identifier": "Mangayomi-release-v0.9.4",
-      "caption": "Mangayomi 0.9.4 is available.",
-      "date": "2026-09-15T09:17:03Z",
+      "title": "Mangayomi 0.9.5 · 18 Sep 2026",
+      "identifier": "Mangayomi-release-v0.9.5",
+      "caption": "Mangayomi 0.9.5 is available.",
+      "date": "2026-09-18T16:45:07Z",
       "tintColor": "#EF4444",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
       "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.4"
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.5"
     }
   ]
 }
