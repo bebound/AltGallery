@@ -795,17 +795,28 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.6.0",
-          "date": "2026-09-11",
-          "localizedDescription": "Android 为 arm64-v8a preview APK；iOS 为未签名 IPA。SHA256SUMS.txt 可用于校验下载文件。\r\n\r\n<!-- Release notes generated using configuration in .github/release.yml at bf28d4ace7b312dc6acf0f23af85ccbb190ca37d -->\r\n\r\n## 更新内容\r\n\r\n对已有功能能力的补全与修复。\r\n\r\n* feat(comments): 支持图片上传及评论相关操作 (由 @huamurui 提交，PR #70)\r\n* feat: 增加富文本发布功能及可靠的图片上传机制 (由 @huamurui 提交，PR #73)\r\n* feat: 扩展知乎 API 支持及搜索界面 (由 @huamurui 提交，PR #74)\r\n* fix: 增加稳定的导航栏标题 (由 @huamurui 提交，PR #76)\r\n* feat: 接入用户最新发布流与已读状态 (由 @huamurui 提交，PR #78)\r\n* fix: 根据认证状态处理问题数据路由（现在未登录状态能看到的东西会多一些） (由 @huamurui 提交，PR #79)\r\n* fix: 统一处理 API HTTP 错误 (由 @huamurui 提交，PR #80)\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.5.0...v0.6.0",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.6.0/zhihu-minus-minus-v0.6.0-unsigned.ipa",
-          "size": 15783737,
+          "version": "0.6.1",
+          "date": "2026-09-18",
+          "localizedDescription": "Android 为 arm64-v8a preview APK；iOS 为未签名 IPA。 SHA256SUMS.txt 可用于校验下载文件。\r\n\r\n<!-- Release notes generated using configuration in .github/release.yml at ee3304543b6bc42e8f30bc2d0ae82c4d664c21d0 -->\r\n\r\n* fix：首页下拉刷新调整（ios 有神奇的震动效果哦）  @huamurui https://github.com/huamurui/zhihu-minus-minus/pull/84\r\n* feat：ios 首页底部 tab 对接原生元素，ios26+ 会是液态玻璃（可在外观选项处关闭）   @huamurui https://github.com/huamurui/zhihu-minus-minus/pull/86\r\n* fix：回避答案列表滚动时误选正文 @huamurui https://github.com/huamurui/zhihu-minus-minus/pull/88\r\n* fix：修复文章点赞并规范的交互状态 @huamurui https://github.com/huamurui/zhihu-minus-minus/pull/89\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.6.0...v0.6.1",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.6.1/zhihu-minus-minus-v0.6.1-unsigned.ipa",
+          "size": 15808015,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.6.1 · 18 Sep 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.6.1",
+      "caption": "ZhihuMinusMinus 0.6.1 is available.",
+      "date": "2026-09-18T12:15:30Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.6.1"
+    },
     {
       "appID": "com.aoshuang.manicemu",
       "title": "ManicEMU 2.0.1 · 18 Sep 2026",
@@ -981,17 +992,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
       "notify": true,
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.7.1"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.6.0 · 11 Sep 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.6.0",
-      "caption": "ZhihuMinusMinus 0.6.0 is available.",
-      "date": "2026-09-11T08:09:21Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.6.0"
     },
     {
       "appID": "com.verback.YTLite",
