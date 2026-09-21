@@ -21,12 +21,12 @@
       "tintColor": "#2090E0",
       "versions": [
         {
-          "version": "1.15.0",
-          "buildVersion": "223",
-          "date": "2026-08-31",
-          "localizedDescription": "### 新增\n\n- 阅读器新增跨平台夜间调光与自定义亮度控制，支持在阅读设置和底部快捷面板中实时调整，并沿用全局、设备及漫画专属设置优先级。",
-          "downloadURL": "https://github.com/CyrilPeng/Venera-Next/releases/download/v1.15.0/VeneraNext-ios-1.15.0%2B223.ipa",
-          "size": 19875257,
+          "version": "1.16.0",
+          "buildVersion": "225",
+          "date": "2026-09-21",
+          "localizedDescription": "### 新增\n\n- 新增稍后阅读：漫画详情页可一键加入或移除，本地漫画可从列表菜单操作，主页显示待看列表并可进入完整列表；复用本地收藏和数据同步，保持快速收藏独立，并处理重命名、删除及同名收藏夹（#59）。\n- PDF 漫画支持多选批量导入，按顺序逐本转换和入库，显示文件及页数两级进度，支持安全取消、同名跳过和逐项结果汇总；Android 按需准备文件并隔离临时副本，避免整批复制及同名文件覆盖。\n\n### 修复\n\n- 修复本地图片空数据不会自动重试的问题；增加有限短延迟重试及短读校验，导入复制校验图片数据、等待子目录完成，并在失败时清理未完成内容和恢复原目录，避免空图片被当作导入成功（#67）。\n- 本地漫画文件名支持自然排序，例如 `图片_1`、`图片_2`、`图片_10`；目录与 WebDAV 共用规则，旧本地漫画首次续读时按原图片迁移页码，并重建旧 WebDAV 目录快照（#68）。\n- 修复首次填写或切换漫画源仓库地址后立即添加条目时使用旧地址的问题；列表与加载地址绑定，成功刷新后保存配置，并避免旧请求覆盖新列表。统一添加和更新源的下载清理，修复失败后加载框不关闭及取消更新时已安装源被移除的问题（#64）。\n- 修复 Android 阅读器手动切换横竖屏后，退出仍将书架和设置等页面锁定在阅读方向的问题；方向限制现在仅在阅读期间生效，退出和“自动”模式均恢复系统默认策略，再次进入时重置按钮状态（#66）。\n- 修复 macOS 系统语言为中文地区代码时无法正确匹配界面语言的问题；现在会按地区识别简体或繁体中文，并在应用包中声明对应本地化支持。\n- 修复 Windows 安装后在应用列表中将版本号拼入软件名称的问题；现在 x64 与 ARM64 安装项均稳定显示为 `VeneraNext`。\n- 修复 Windows 静默安装后自动启动应用，以及已有实例时重复启动返回失败码的问题；现在会恢复已有窗口并正常退出新进程，真正的窗口或 Flutter 初始化失败仍返回非零退出码。\n\n### 维护\n\n- 修复预发布构建检查：Linux ARM64 从固定 Flutter 版本源码引导 SDK，避免稳定版归档缺少 ARM64 包；Windows 启动冒烟测试不再隐藏待检查的应用窗口，避免首帧正常渲染仍被误判为启动失败。\n- 增加有大小上限的 Windows 原生启动日志，并为安装脚本、单实例行为和日志轮转补充回归测试；Windows CI 在编译之外验证实际启动，发布构建额外检查静默安装不会自启。\n- 重构 GitHub Actions：发布与手动构建复用统一平台构建工作流，发版前强制复用代码质量检查，并补充并发控制、超时、Flutter/Gradle 缓存、严格产物校验及短期工件保留策略。\n- 修复长期失败的自动化：移除依赖 Node.js 20 的第三方 Dart Analyzer 与 Issue 检查 Action；Issue 检查默认关闭且仅提供人工复核建议，AltStore 更新仅在稳定版后运行，并在无法创建 PR 时明确失败。\n- 提升构建可复现性：固定 Windows 构建环境和中文安装器翻译版本及校验值、统一 Linux ARM64 Flutter stable 通道、移除未使用的 Windows 构建依赖，并将 Dependabot 的同类更新分组。\n- 更新 `html`、`yaml`、`archive`、`path_provider` 和 `mime` 依赖，纳入解析器安全修复、归档处理优化及平台路径与 MIME 类型表更新。\n- 将 `flutter_reorderable_grid_view` 更新到 `5.7.0`，纳入拖拽与滚动修复，并补充收藏及页面配置排序、持久化、边缘自动滚动和窗口尺寸变化的回归测试。\n- 将 GitHub Actions 的 `actions/setup-java` 更新到 v6，使用最新的 Java 环境配置实现并兼容 Node.js 24 运行时。\n- 完善 PR 质量门禁：增加修改 Dart 文件的格式检查、依赖漏洞审查和按改动范围执行的 Android/Windows 冒烟构建，并为平台构建提供统一的门禁结果。",
+          "downloadURL": "https://github.com/CyrilPeng/Venera-Next/releases/download/v1.16.0/VeneraNext-ios-1.16.0%2B225.ipa",
+          "size": 19931721,
           "minOSVersion": "14.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.github.cyrilpeng.veneranext",
-      "title": "VeneraNext 1.15.0 · 31 Aug 2026",
-      "identifier": "VeneraNext-release-v1.15.0",
-      "caption": "VeneraNext 1.15.0 is available.",
-      "date": "2026-08-31T02:23:17Z",
+      "title": "VeneraNext 1.16.0 · 21 Sep 2026",
+      "identifier": "VeneraNext-release-v1.16.0",
+      "caption": "VeneraNext 1.16.0 is available.",
+      "date": "2026-09-21T03:48:54Z",
       "tintColor": "#2090E0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
       "notify": true,
-      "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.15.0"
+      "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.16.0"
     }
   ]
 }
