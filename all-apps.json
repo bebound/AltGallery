@@ -143,11 +143,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260921",
-          "date": "2026-09-21",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\nComing from an old nightly? It is now a separate app (ARMSX2 Nightly) that installs\nbeside the stable app. The old nightly cannot install a stable over itself, because\nAndroid refuses that version downgrade, so to return to stable: back up your saves\nand memory cards, uninstall the old nightly, then install a stable APK.\n\n## What's new\n- Android: restore the CMake pin CI already assumes (3.22.1 -> 3.31.6)\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260920...e46fd5a8935ab3c1d5dcf49bef858218994d6c48",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260921/ARMSX2-nightly-20260921-e46fd5a893-iOS-arm64.ipa",
-          "size": 30514495,
+          "version": "nightly-20260922",
+          "date": "2026-09-22",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\nComing from an old nightly? It is now a separate app (ARMSX2 Nightly) that installs\nbeside the stable app. The old nightly cannot install a stable over itself, because\nAndroid refuses that version downgrade, so to return to stable: back up your saves\nand memory cards, uninstall the old nightly, then install a stable APK.\n\n## What's new\n- EE FPU: move the arm64 divide recurrence out of a header into a source file\n- EE FPU: enable the exhaustive divide sweep in the default run\n- VIF tests: pin which rows of a copy pair up\n- VIF: an unmasked V4-32 unpack copies a quadword pair at a time\n- IOP rec: the timeslice countdown sets its own flags\n- EE rec: the call-ret ring wraps in the offset field's own width\n- EE tests: pin which dispatcher a veneer hop arrives at\n- EE rec: dispatcher exits reach through a veneer\n- mVU: a held VU0 spin bounces without entering the recompiler\n- mVU: the cycle-budget break is one shared stub\n- VU tests: pin what a cycle-budget break writes back\n- mVU: the accumulate's copy of ACC folds too\n- mVU: every clamped operand folds the copy in front of it\n- mVU: the sign clamp loads its row's two bounds together\n- VU tests: pin both bounds of the single-lane clamp\n- mVU: the single-lane clamp writes its lane once\n- VU tests: pin what the flag queue reorder emits\n- mVU: the flag queue reorder opens with the shuffle that fits\n- VU tests: pin which register a three-lane write leaves the value in\n- mVU: a three-lane write keeps its own register\n- VU tests: pin which slot each half of a preload pair lands in\n- mVU: block-start VF preloads load in pairs\n- COP2: VCLIP folds its comparisons with one UZP1\n- EE tests: sweep the COP2 macro VCLIP bit layout and denormal rule\n- VU harness: say what seeding a flag register actually does\n- mVU: CLIP folds its six comparison lanes with one UZP1 and an ADDV\n- VU tests: pin CLIP's six result bits and its 24-bit history\n- EE rec: fold the base into the offset add at the sibling sites\n- EE tests: give the fuzzer a load/store base the program writes\n- mVU: the options sentinel records every setting the emitters read\n- mVU: raise the E-bit interrupt in front of the exit path\n- VU tests: pin the E-bit interrupt raise on a VU1 program end\n- VU: ILW's dest field names one lane through a two-bit code\n- VU: LQD and SQD step the address off a vi00 base too\n- VU tests: VU0's window onto VU1's registers is state under test\n- VU1: reach data memory from the pinned state pointer\n- mVU: ILW's lane offset is added at the address's own width\n- VU: sweep the load/store address path against the interpreter\n- mVU: name the model stub in the clamp-bound seam list\n- EE FPU: select the divide unit's digit with one compare on arm64\n- Reach the FPU models in the register file's own format\n- Spill the iFPUd islands for the convention they call under\n- Narrow the model stub's vector half per target\n- EE FPU model: carry the call convention down to the leaves\n- Fold the model-call spill into the stub generator\n- microVU: share the model-call seam between the sites\n- COP2: share the model-call seam between the four sites\n- mVU: hold the clamp bounds in registers\n- mVU: pin the lanes the single-lane clamp leaves alone\n- mVU: fold the clone-write copy into the operand clamp\n- mVU: one instruction for the VU1 address wrap\n- EE rec: fold the load/store base into the offset add\n- Android: serve the texture catalog from dl.ps2ktxpak.net\n- Ask libfreetype.a whether it needs HarfBuzz\n- Android: the trigger readout is per-player, and muted when pressure is off\n- Android: analog trigger pressure for L2/R2, with a response curve\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260921...2ecae98a2ca93246079d58bf38c555f5fa4758ad",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260922/ARMSX2-nightly-20260922-2ecae98a2c-iOS-arm64.ipa",
+          "size": 30518422,
           "minOSVersion": "17.0"
         }
       ]
@@ -290,11 +290,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.3.3",
-          "date": "2026-09-15",
-          "localizedDescription": "> [!NOTE]\r\n> 这是 2.3.2 的热修复版本，更多更新日志参考 2.3.2",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.3/Kazumi_ios_2.3.3_no_sign.ipa",
-          "size": 29823335,
+          "version": "2.3.4",
+          "date": "2026-09-22",
+          "localizedDescription": "- 重新设计的竖屏模式我的页面 (@Predidit)\r\n- 现在追番页面支持卡片样式与列表样式切换 (@Predidit)\r\n- 改进的弹幕检索流程 (@moonrailgun)\r\n- 修复 android 平台偶发的崩溃问题 (@Predidit)\r\n- 修复 macOS x64 应用界面闪烁的问题 (#2577) (@Predidit)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.4/Kazumi_ios_2.3.4_no_sign.ipa",
+          "size": 29106919,
           "minOSVersion": "13.0"
         }
       ]
@@ -386,11 +386,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.6",
-          "date": "2026-09-19",
-          "localizedDescription": "# What's New\r\n\r\n## 📖 Reader & Manga\r\n\r\n* **Intelligent Double-Page Spreads & RTL Reading** (#1018, #1008):\r\n  * Wide and landscape double-page spreads are now shown seamlessly on their own full-width screen instead of being awkwardly paired with single pages.\r\n  * Switching between single and double-page view, rotating your device, or changing reading modes no longer resets your progress back to chapter 1.\r\n  * Resuming chapters in Right-to-Left (manga) reading mode now starts in the correct direction without layout flipping.\r\n* **Instant Border Cropping & Cache Improvements**:\r\n  * Turning border crop on or off in Webtoon / continuous reading now applies instantly without re-downloading the images.\r\n  * Fixed an issue where resuming a chapter at a saved page could cause an infinite loading spinner for already cached images.\r\n* **Smoother Reading Experience**:\r\n  * Fixed page flickering and display glitches when scrolling quickly through continuous chapters.\r\n\r\n---\r\n\r\n## Novel Reader\r\n\r\n* **Scroll-Free E-Reader Paged Mode** (#1019):\r\n  * Read novels like a real book with page-turning swipes and taps instead of endless vertical scrolling.\r\n  * Quickly switch between **Continuous Scroll** and **Paged Reading** directly from the novel settings sheet.\r\n* **Single & Double-Page Column Layouts** (#1019):\r\n  * Added single-page and side-by-side double-page reading modes, optimized for tablets, foldable devices, and landscape screens.\r\n  * Settings sheet changes (reading mode, page mode) are now applied and previewed instantly.\r\n\r\n---\r\n\r\n## Video Player & Anime\r\n\r\n* **Player Screen Lock (Mobile)**:\r\n  * Added a dedicated screen lock button to the mobile controls to prevent accidental touches while watching.\r\n  * When locked, all on-screen controls, touch gestures (swiping to seek, volume/brightness, double-tap jump, 2x speed hold), and the skip button are completely disabled.\r\n  * Protects against accidentally exiting the player with the back button or back gesture.\r\n  * Tap anywhere on the locked screen to display a quick-unlock button in the top-left corner.\r\n* **Cleaner Seek Indicator**:\r\n  * Simplified and streamlined the swipe-to-seek visual overlay on the player.\r\n\r\n---\r\n\r\n## Features & User Experience\r\n\r\n* **Smoother Category Management**:\r\n  * Reordering categories in settings is now much more responsive and intuitive using dedicated drag handles.\r\n* **Details Header Polish**:\r\n  * Improved visual layout and formatting in the manga/anime details header.\r\n\r\n---\r\n\r\n## Fixes & Stability\r\n\r\n* **Reliable Background Sync**:\r\n  * Fixed occasional crashes and errors that could occur when closing screens or navigating away during library synchronization.\r\n\r\n---\r\n\r\n## Localization\r\n\r\n* Added translations for the new player screen lock feature across all supported languages.\r\n\r\n---\r\n\r\n## Contributors\r\n\r\n* @kodjodevf\r\n* @jikkun (#1018, #1019)\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.5...v0.9.6",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.6/Mangayomi-v0.9.6-ios.ipa",
-          "size": 114296014
+          "version": "0.9.7",
+          "date": "2026-09-22",
+          "localizedDescription": "# What's New\r\n\r\n## Reader\r\n\r\n* **Reliable Resume to Saved Position** :\r\n  * Reopening a chapter in continuous vertical reading now jumps directly and instantly to the page where you left off, even before all images have finished loading.\r\n  * Eliminated the issue where the reader would land on a neighboring page or spinner instead of the correct saved position.\r\n\r\n* **Smoother Zoomed Panning & Inertia** (#1021):\r\n  * Dragging a zoomed page now follows your finger precisely using real movement delta instead of an accumulated offset, making panning far more responsive.\r\n  * Flinging a zoomed page now carries natural momentum with a longer, smoother coast animation.\r\n  * Overscrolling past the edge of a zoomed page automatically transfers the momentum to the page list scroll, allowing seamless continued scrolling without lifting your finger.\r\n\r\n* **Fixed Grey Screen in Double-Page Mode**:\r\n  * Chapter transition pages in vertical double-page reading no longer cause a crash or a blank grey screen when the spread is reached.\r\n\r\n* **Reader Bottom Bar Positioning**:\r\n  * The page slider and quick-action bar now correctly sit above the system gesture area and home indicator on all devices, preventing them from being hidden behind system UI.\r\n\r\n* **Novel Reader Performance**:\r\n  * Page swipes in paged novel mode no longer trigger a full rebuild of the reader tree, making navigation between pages considerably faster.\r\n\r\n---\r\n\r\n## Fixes & Stability\r\n\r\n* Fixed infinite loading spinner when resuming a continuous vertical chapter mid-chapter.\r\n* Corrected the visible range check that was preventing the initial scroll anchor from being applied reliably.\r\n* Page image load events now correctly trigger a re-jump to the saved position if the list had not yet settled on the right page.\r\n\r\n---\r\n\r\n## Contributors\r\n\r\n* @kodjodevf\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.6...v0.9.7",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.7/Mangayomi-v0.9.7-ios.ipa",
+          "size": 114301894
         }
       ]
     },
@@ -807,6 +807,39 @@
   ],
   "news": [
     {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20260922 · 22 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260922",
+      "caption": "ARMSX2 nightly-20260922 is available.",
+      "date": "2026-09-22T13:55:11Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260922"
+    },
+    {
+      "appID": "com.example.kazumi",
+      "title": "Kazumi 2.3.4 · 22 Sep 2026",
+      "identifier": "Kazumi-release-2.3.4",
+      "caption": "Kazumi 2.3.4 is available.",
+      "date": "2026-09-22T12:48:01Z",
+      "tintColor": "#4CAF50",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.4"
+    },
+    {
+      "appID": "com.kodjodevf.mangayomi",
+      "title": "Mangayomi 0.9.7 · 22 Sep 2026",
+      "identifier": "Mangayomi-release-v0.9.7",
+      "caption": "Mangayomi 0.9.7 is available.",
+      "date": "2026-09-22T11:08:53Z",
+      "tintColor": "#EF4444",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.7"
+    },
+    {
       "appID": "com.ligg.anime_flow",
       "title": "AnimeFlow 2.6.0 · 22 Sep 2026",
       "identifier": "AnimeFlow-release-v2.6.0",
@@ -840,17 +873,6 @@
       "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
     },
     {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260921 · 21 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260921",
-      "caption": "ARMSX2 nightly-20260921 is available.",
-      "date": "2026-09-21T15:23:52Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260921"
-    },
-    {
       "appID": "com.github.cyrilpeng.veneranext",
       "title": "VeneraNext 1.16.0 · 21 Sep 2026",
       "identifier": "VeneraNext-release-v1.16.0",
@@ -860,17 +882,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
       "notify": true,
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.16.0"
-    },
-    {
-      "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.6 · 19 Sep 2026",
-      "identifier": "Mangayomi-release-v0.9.6",
-      "caption": "Mangayomi 0.9.6 is available.",
-      "date": "2026-09-19T16:50:53Z",
-      "tintColor": "#EF4444",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.6"
     },
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
@@ -959,17 +970,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
       "notify": true,
       "url": "https://github.com/moliango/doer/releases/tag/v1.8.5.2"
-    },
-    {
-      "appID": "com.example.kazumi",
-      "title": "Kazumi 2.3.3 · 15 Sep 2026",
-      "identifier": "Kazumi-release-2.3.3",
-      "caption": "Kazumi 2.3.3 is available.",
-      "date": "2026-09-15T14:24:43Z",
-      "tintColor": "#4CAF50",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.3"
     },
     {
       "appID": "com.mystyle.purelive.liu",

@@ -21,11 +21,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.6",
-          "date": "2026-09-19",
-          "localizedDescription": "# What's New\r\n\r\n## 📖 Reader & Manga\r\n\r\n* **Intelligent Double-Page Spreads & RTL Reading** (#1018, #1008):\r\n  * Wide and landscape double-page spreads are now shown seamlessly on their own full-width screen instead of being awkwardly paired with single pages.\r\n  * Switching between single and double-page view, rotating your device, or changing reading modes no longer resets your progress back to chapter 1.\r\n  * Resuming chapters in Right-to-Left (manga) reading mode now starts in the correct direction without layout flipping.\r\n* **Instant Border Cropping & Cache Improvements**:\r\n  * Turning border crop on or off in Webtoon / continuous reading now applies instantly without re-downloading the images.\r\n  * Fixed an issue where resuming a chapter at a saved page could cause an infinite loading spinner for already cached images.\r\n* **Smoother Reading Experience**:\r\n  * Fixed page flickering and display glitches when scrolling quickly through continuous chapters.\r\n\r\n---\r\n\r\n## Novel Reader\r\n\r\n* **Scroll-Free E-Reader Paged Mode** (#1019):\r\n  * Read novels like a real book with page-turning swipes and taps instead of endless vertical scrolling.\r\n  * Quickly switch between **Continuous Scroll** and **Paged Reading** directly from the novel settings sheet.\r\n* **Single & Double-Page Column Layouts** (#1019):\r\n  * Added single-page and side-by-side double-page reading modes, optimized for tablets, foldable devices, and landscape screens.\r\n  * Settings sheet changes (reading mode, page mode) are now applied and previewed instantly.\r\n\r\n---\r\n\r\n## Video Player & Anime\r\n\r\n* **Player Screen Lock (Mobile)**:\r\n  * Added a dedicated screen lock button to the mobile controls to prevent accidental touches while watching.\r\n  * When locked, all on-screen controls, touch gestures (swiping to seek, volume/brightness, double-tap jump, 2x speed hold), and the skip button are completely disabled.\r\n  * Protects against accidentally exiting the player with the back button or back gesture.\r\n  * Tap anywhere on the locked screen to display a quick-unlock button in the top-left corner.\r\n* **Cleaner Seek Indicator**:\r\n  * Simplified and streamlined the swipe-to-seek visual overlay on the player.\r\n\r\n---\r\n\r\n## Features & User Experience\r\n\r\n* **Smoother Category Management**:\r\n  * Reordering categories in settings is now much more responsive and intuitive using dedicated drag handles.\r\n* **Details Header Polish**:\r\n  * Improved visual layout and formatting in the manga/anime details header.\r\n\r\n---\r\n\r\n## Fixes & Stability\r\n\r\n* **Reliable Background Sync**:\r\n  * Fixed occasional crashes and errors that could occur when closing screens or navigating away during library synchronization.\r\n\r\n---\r\n\r\n## Localization\r\n\r\n* Added translations for the new player screen lock feature across all supported languages.\r\n\r\n---\r\n\r\n## Contributors\r\n\r\n* @kodjodevf\r\n* @jikkun (#1018, #1019)\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.5...v0.9.6",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.6/Mangayomi-v0.9.6-ios.ipa",
-          "size": 114296014
+          "version": "0.9.7",
+          "date": "2026-09-22",
+          "localizedDescription": "# What's New\r\n\r\n## Reader\r\n\r\n* **Reliable Resume to Saved Position** :\r\n  * Reopening a chapter in continuous vertical reading now jumps directly and instantly to the page where you left off, even before all images have finished loading.\r\n  * Eliminated the issue where the reader would land on a neighboring page or spinner instead of the correct saved position.\r\n\r\n* **Smoother Zoomed Panning & Inertia** (#1021):\r\n  * Dragging a zoomed page now follows your finger precisely using real movement delta instead of an accumulated offset, making panning far more responsive.\r\n  * Flinging a zoomed page now carries natural momentum with a longer, smoother coast animation.\r\n  * Overscrolling past the edge of a zoomed page automatically transfers the momentum to the page list scroll, allowing seamless continued scrolling without lifting your finger.\r\n\r\n* **Fixed Grey Screen in Double-Page Mode**:\r\n  * Chapter transition pages in vertical double-page reading no longer cause a crash or a blank grey screen when the spread is reached.\r\n\r\n* **Reader Bottom Bar Positioning**:\r\n  * The page slider and quick-action bar now correctly sit above the system gesture area and home indicator on all devices, preventing them from being hidden behind system UI.\r\n\r\n* **Novel Reader Performance**:\r\n  * Page swipes in paged novel mode no longer trigger a full rebuild of the reader tree, making navigation between pages considerably faster.\r\n\r\n---\r\n\r\n## Fixes & Stability\r\n\r\n* Fixed infinite loading spinner when resuming a continuous vertical chapter mid-chapter.\r\n* Corrected the visible range check that was preventing the initial scroll anchor from being applied reliably.\r\n* Page image load events now correctly trigger a re-jump to the saved position if the list had not yet settled on the right page.\r\n\r\n---\r\n\r\n## Contributors\r\n\r\n* @kodjodevf\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.6...v0.9.7",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.7/Mangayomi-v0.9.7-ios.ipa",
+          "size": 114301894
         }
       ]
     }
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.6 · 19 Sep 2026",
-      "identifier": "Mangayomi-release-v0.9.6",
-      "caption": "Mangayomi 0.9.6 is available.",
-      "date": "2026-09-19T16:50:53Z",
+      "title": "Mangayomi 0.9.7 · 22 Sep 2026",
+      "identifier": "Mangayomi-release-v0.9.7",
+      "caption": "Mangayomi 0.9.7 is available.",
+      "date": "2026-09-22T11:08:53Z",
       "tintColor": "#EF4444",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
       "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.6"
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.7"
     }
   ]
 }

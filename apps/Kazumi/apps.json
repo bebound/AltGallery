@@ -24,11 +24,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.3.3",
-          "date": "2026-09-15",
-          "localizedDescription": "> [!NOTE]\r\n> 这是 2.3.2 的热修复版本，更多更新日志参考 2.3.2",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.3/Kazumi_ios_2.3.3_no_sign.ipa",
-          "size": 29823335,
+          "version": "2.3.4",
+          "date": "2026-09-22",
+          "localizedDescription": "- 重新设计的竖屏模式我的页面 (@Predidit)\r\n- 现在追番页面支持卡片样式与列表样式切换 (@Predidit)\r\n- 改进的弹幕检索流程 (@moonrailgun)\r\n- 修复 android 平台偶发的崩溃问题 (@Predidit)\r\n- 修复 macOS x64 应用界面闪烁的问题 (#2577) (@Predidit)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.4/Kazumi_ios_2.3.4_no_sign.ipa",
+          "size": 29106919,
           "minOSVersion": "13.0"
         }
       ]
@@ -37,14 +37,14 @@
   "news": [
     {
       "appID": "com.example.kazumi",
-      "title": "Kazumi 2.3.3 · 15 Sep 2026",
-      "identifier": "Kazumi-release-2.3.3",
-      "caption": "Kazumi 2.3.3 is available.",
-      "date": "2026-09-15T14:24:43Z",
+      "title": "Kazumi 2.3.4 · 22 Sep 2026",
+      "identifier": "Kazumi-release-2.3.4",
+      "caption": "Kazumi 2.3.4 is available.",
+      "date": "2026-09-22T12:48:01Z",
       "tintColor": "#4CAF50",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
       "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.3"
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.4"
     }
   ]
 }
