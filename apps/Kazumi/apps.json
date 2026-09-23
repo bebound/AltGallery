@@ -24,11 +24,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.3.5",
+          "version": "2.3.6",
           "date": "2026-09-23",
-          "localizedDescription": "- 修复部分地区图片资源无法加载的问题 (#2581)\r\n- 修复搜索记录淘汰不正确的问题 (#2580)\r\n> [!NOTE]\r\n> 这是 2.3.4 的热修复版本，更多更新日志参考 2.3.4",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.5/Kazumi_ios_2.3.5_no_sign.ipa",
-          "size": 30404211,
+          "localizedDescription": "- 修复部分地区图片资源无法加载的问题 (#2581)\r\n> [!NOTE]\r\n> 这是 2.3.4 的热修复版本，更多更新日志参考 2.3.4",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.6/Kazumi_ios_2.3.6_no_sign.ipa",
+          "size": 30406530,
           "minOSVersion": "13.0"
         }
       ]
@@ -37,14 +37,14 @@
   "news": [
     {
       "appID": "com.example.kazumi",
-      "title": "Kazumi 2.3.5 · 23 Sep 2026",
-      "identifier": "Kazumi-release-2.3.5",
-      "caption": "Kazumi 2.3.5 is available.",
-      "date": "2026-09-23T09:36:50Z",
+      "title": "Kazumi 2.3.6 · 23 Sep 2026",
+      "identifier": "Kazumi-release-2.3.6",
+      "caption": "Kazumi 2.3.6 is available.",
+      "date": "2026-09-23T11:56:14Z",
       "tintColor": "#4CAF50",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
       "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.5"
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.6"
     }
   ]
 }

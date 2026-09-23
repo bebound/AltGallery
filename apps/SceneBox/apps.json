@@ -21,11 +21,11 @@
       "tintColor": "#E0E000",
       "versions": [
         {
-          "version": "1.0.3",
-          "date": "2026-09-17",
-          "localizedDescription": "What's new\n\n- Trakt sync. Connect your Trakt account in Profile and your watchlist and watched history stay in sync.\n- Picture in Picture on iPhone and iPad.\n- Continue Watching now resumes straight into the player from where you stopped, using the same source as last time (download, debrid link or torrent).\n- IMDb, Rotten Tomatoes and Metacritic ratings on the detail page (add an OMDb key in Settings).\n- Playback recovery: if the video freezes while the audio keeps going, the player notices and recovers by itself. Streams that drop are picked back up too.\n- Apple TV: the episode row opens on the season and episode you're on, and the player controls and episode panel behave better with the remote.\n- Lots of smaller fixes.\n\nKnown issue: a few people report that on iPhone the app closes shortly after a stream starts buffering. It's being looked into. If it hits you, please share the crash log: Settings > Privacy & Security > Analytics & Improvements > Analytics Data, look for a file starting with SceneBox, and post it in the issue. 1.0.2 doesn't have this problem if you need a fallback.\n\nImportant: this release is NOT signed. You have to allow it yourself.\n\nNothing here is signed with an Apple developer account and the Mac app is not notarized. macOS and iOS will refuse to open it until you explicitly allow it. This is expected, it's not broken.\n\nMac:\n\n1. Open the dmg and drag SceneBox to Applications.\n2. Open SceneBox. macOS will say it \"could not verify\" the app or that it's from an unidentified developer. Press Done (not Move to Trash).\n3. Go to System Settings > Privacy & Security, scroll down to Security and press \"Open Anyway\" next to SceneBox, then confirm.\n4. From then on it opens normally.\n\nIf you'd rather skip the dialog, run this in Terminal after copying the app to Applications:\n\n    xattr -dr com.apple.quarantine /Applications/SceneBox.app\n\nSigning in works on the unsigned Mac build. macOS doesn't let unsigned apps use the Keychain, so the app keeps your sign-in session and any API keys you enter in a file inside its own sandbox container instead (readable only by your user account). If you had an older signed version installed, delete it first.\n\niPhone/iPad: the ipa isn't signed, you sign it yourself with Sideloadly, AltStore, SideStore, Feather or ESign with your own Apple ID. Free Apple ID = resign every 7 days (AltStore/SideStore do it for you), paid dev account = one year.\n\nApple TV: Sideloadly works over Wi-Fi. On the TV go to Settings > Remotes and Devices > Remote App and Devices so it shows up, then pick it in Sideloadly.",
-          "downloadURL": "https://github.com/donbytyqi/scenebox/releases/download/v1.0.3/SceneBox-1.0.3.ipa",
-          "size": 30506464,
+          "version": "1.0.4",
+          "date": "2026-09-23",
+          "localizedDescription": "Fixes\n\n- Downloading a second episode from a season pack works now. Before, every episode of a pack counted as the same download, so you had to delete the finished one before the next would start. (#9)\n- Apple TV: Trakt lists open when you click them. (#10)\n- Mac: signing in works on the unsigned build. macOS doesn't let unsigned apps use the Keychain, so the app keeps your sign-in session and any API keys you enter in a file inside its own sandbox container instead (readable only by your user account).\n\nStill open\n\n- A few people report that on iPhone the app closes shortly after a stream starts buffering. I can't reproduce it on the simulator or on Mac. If it hits you, please share the crash log: Settings > Privacy & Security > Analytics & Improvements > Analytics Data, look for a file starting with SceneBox, and attach it to the issue. Also say which iPhone and what you were playing (torrent or debrid, resolution). 1.0.2 doesn't have this problem if you need a fallback.\n- Apple TV install failing in Sideloadly with \"ApplicationVerificationFailed / Invalid file\" on tvOS 26.6 (#8). The tvOS build is packaged exactly like 1.0.2 and passes Apple's bundle verification here, so this needs the full Sideloadly log: the \"Invalid file\" line names the file it choked on. Please paste that on the issue. Sideloadly also has known trouble with tvOS 26.4 and later (pairing), so try the latest Sideloadly first.\n\nImportant: this release is NOT signed. You have to allow it yourself.\n\nNothing here is signed with an Apple developer account and the Mac app is not notarized. macOS and iOS will refuse to open it until you explicitly allow it. This is expected, it's not broken.\n\nMac:\n\n1. Open the dmg and drag SceneBox to Applications.\n2. Open SceneBox. macOS will say it \"could not verify\" the app or that it's from an unidentified developer. Press Done (not Move to Trash).\n3. Go to System Settings > Privacy & Security, scroll down to Security and press \"Open Anyway\" next to SceneBox, then confirm.\n4. From then on it opens normally.\n\nIf you'd rather skip the dialog, run this in Terminal after copying the app to Applications:\n\n    xattr -dr com.apple.quarantine /Applications/SceneBox.app\n\nIf you had an older signed version installed, delete it first.\n\niPhone/iPad: the ipa isn't signed, you sign it yourself with Sideloadly, AltStore, SideStore, Feather or ESign with your own Apple ID. Free Apple ID = resign every 7 days (AltStore/SideStore do it for you), paid dev account = one year.\n\nApple TV: Sideloadly works over Wi-Fi. On the TV go to Settings > Remotes and Devices > Remote App and Devices so it shows up, then pick it in Sideloadly.",
+          "downloadURL": "https://github.com/donbytyqi/scenebox/releases/download/v1.0.4/SceneBox-1.0.4.ipa",
+          "size": 30509579,
           "minOSVersion": "18.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "app.scenebox.SceneBox",
-      "title": "SceneBox 1.0.3 · 17 Sep 2026",
-      "identifier": "SceneBox-release-v1.0.3",
-      "caption": "SceneBox 1.0.3 is available.",
-      "date": "2026-09-17T17:27:35Z",
+      "title": "SceneBox 1.0.4 · 23 Sep 2026",
+      "identifier": "SceneBox-release-v1.0.4",
+      "caption": "SceneBox 1.0.4 is available.",
+      "date": "2026-09-23T15:44:54Z",
       "tintColor": "#E0E000",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
       "notify": true,
-      "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.3"
+      "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.4"
     }
   ]
 }

@@ -143,11 +143,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260922",
-          "date": "2026-09-22",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\nComing from an old nightly? It is now a separate app (ARMSX2 Nightly) that installs\nbeside the stable app. The old nightly cannot install a stable over itself, because\nAndroid refuses that version downgrade, so to return to stable: back up your saves\nand memory cards, uninstall the old nightly, then install a stable APK.\n\n## What's new\n- EE FPU: move the arm64 divide recurrence out of a header into a source file\n- EE FPU: enable the exhaustive divide sweep in the default run\n- VIF tests: pin which rows of a copy pair up\n- VIF: an unmasked V4-32 unpack copies a quadword pair at a time\n- IOP rec: the timeslice countdown sets its own flags\n- EE rec: the call-ret ring wraps in the offset field's own width\n- EE tests: pin which dispatcher a veneer hop arrives at\n- EE rec: dispatcher exits reach through a veneer\n- mVU: a held VU0 spin bounces without entering the recompiler\n- mVU: the cycle-budget break is one shared stub\n- VU tests: pin what a cycle-budget break writes back\n- mVU: the accumulate's copy of ACC folds too\n- mVU: every clamped operand folds the copy in front of it\n- mVU: the sign clamp loads its row's two bounds together\n- VU tests: pin both bounds of the single-lane clamp\n- mVU: the single-lane clamp writes its lane once\n- VU tests: pin what the flag queue reorder emits\n- mVU: the flag queue reorder opens with the shuffle that fits\n- VU tests: pin which register a three-lane write leaves the value in\n- mVU: a three-lane write keeps its own register\n- VU tests: pin which slot each half of a preload pair lands in\n- mVU: block-start VF preloads load in pairs\n- COP2: VCLIP folds its comparisons with one UZP1\n- EE tests: sweep the COP2 macro VCLIP bit layout and denormal rule\n- VU harness: say what seeding a flag register actually does\n- mVU: CLIP folds its six comparison lanes with one UZP1 and an ADDV\n- VU tests: pin CLIP's six result bits and its 24-bit history\n- EE rec: fold the base into the offset add at the sibling sites\n- EE tests: give the fuzzer a load/store base the program writes\n- mVU: the options sentinel records every setting the emitters read\n- mVU: raise the E-bit interrupt in front of the exit path\n- VU tests: pin the E-bit interrupt raise on a VU1 program end\n- VU: ILW's dest field names one lane through a two-bit code\n- VU: LQD and SQD step the address off a vi00 base too\n- VU tests: VU0's window onto VU1's registers is state under test\n- VU1: reach data memory from the pinned state pointer\n- mVU: ILW's lane offset is added at the address's own width\n- VU: sweep the load/store address path against the interpreter\n- mVU: name the model stub in the clamp-bound seam list\n- EE FPU: select the divide unit's digit with one compare on arm64\n- Reach the FPU models in the register file's own format\n- Spill the iFPUd islands for the convention they call under\n- Narrow the model stub's vector half per target\n- EE FPU model: carry the call convention down to the leaves\n- Fold the model-call spill into the stub generator\n- microVU: share the model-call seam between the sites\n- COP2: share the model-call seam between the four sites\n- mVU: hold the clamp bounds in registers\n- mVU: pin the lanes the single-lane clamp leaves alone\n- mVU: fold the clone-write copy into the operand clamp\n- mVU: one instruction for the VU1 address wrap\n- EE rec: fold the load/store base into the offset add\n- Android: serve the texture catalog from dl.ps2ktxpak.net\n- Ask libfreetype.a whether it needs HarfBuzz\n- Android: the trigger readout is per-player, and muted when pressure is off\n- Android: analog trigger pressure for L2/R2, with a response curve\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260921...2ecae98a2ca93246079d58bf38c555f5fa4758ad",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260922/ARMSX2-nightly-20260922-2ecae98a2c-iOS-arm64.ipa",
-          "size": 30518422,
+          "version": "nightly-20260923",
+          "date": "2026-09-23",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\nComing from an old nightly? It is now a separate app (ARMSX2 Nightly) that installs\nbeside the stable app. The old nightly cannot install a stable over itself, because\nAndroid refuses that version downgrade, so to return to stable: back up your saves\nand memory cards, uninstall the old nightly, then install a stable APK.\n\n## What's new\n- DEV9, SW: include TargetConditionals.h so TARGET_OS_IPHONE is defined\n- GS: serve offset self-reads on the driver-ordered declared road with one barrier\n- GS/TC: size a move's target resize by the destination's y, not its x\n- GS: cut two comments down to what they establish\n- GS/Vulkan: print the measurement-overrides line only when one is set\n- GS: comments that still described the declared road as unreachable\n- GS: list GSCopyRoadBlendingPolicy.h in the CMake and MSVC projects\n- GS: the declared-loop experiment arms are gsrunner flags, not INI keys\n- GS: the Turnip a7xx declared-loop rule covers the Adreno 730 and up only\n- GS: an explicit OverrideTextureBarriers=1 reaches the in-tile read again\n- GS/Vulkan: declare the feedback loop per draw only on Turnip and Honeykrisp\n- GS: the barrier road's blending cap applies only where it was measured\n- GS: the alpha stencil counter takes the barrier road on the M2 only\n- GS/Vulkan: the barrier-ordered feedback-loop carry stays on the M2\n- GameDB: the schema accepts fieldShift\n- GS: list GSNativeTexelGridPolicy.h in the CMake sources\n- GS/HW: drop mode 5's texture offset from the texture-shuffle arm, where it never ran\n- GS/HW: the upscaled sprite correction leaves a channel shuffle's rebuilt quad alone\n- GS: the field-shift detector re-examines its decision\n- GS/HW: Disable Safe Features turns the upscaled point correction off, as it does for lines\n- GS: the deinterlace pad fill starts where the display rect starts\n- GS: the field-shifted merge's main draw stops where its top band starts\n- GS: the Native cull grid keeps the native targets' sample points\n- GS: every settings change re-derives the cull grid, on every parser\n- GS: scaled dither and the scan mask divide by the render target's scale\n- GS/TC: a moved rect's device extent is what its native rect owns\n- GS: drop a mistyped date from the Splashdown blending judgement\n- GS: comments state their reasons instead of citing internal experiments\n- tests: point the driver-tag convention at the public fork's README\n- GS: trust our Turnip's in-pass read ordering on Adreno 650 and up only\n- Android: split Settings into one nested data class per section\n- Do not ask thirty times before deleting deps-build\n- Android: offer the ARMSX2 Turnip packs in the driver list\n- GS: the spelling we measured the declared road with is the one it ships with\n- GS: the blending cap follows what a destination read costs, not the barrier bit\n- GS: a backend's published bits can name the road it took\n- GS: the a7xx road's cost, taken from E19's table instead of its headline\n- GS: the Vulkan backend asks the database for the a7xx road too\n- GS: the self-read road has a third entrance, and it keeps the barriers\n- GS: the driver database says which Adreno parts belong on the declared loop\n- GS: two comments still described the declared road as experiment-only\n- GS: the Vulkan backend asks the driver, and everything downstream reads the road\n- GS: the declared self-read road gets a second entrance, and it is the driver's\n- GS: the driver database can recognise a driver build that orders declared loops\n- GS: stop expanding the CLUT into a 64-bit table nobody reads\n- GS: shadow the far cursor on each side of the SPSC ring\n- gsrunner: -custom-driver, so a headless Android run can name its own driver\n- GS/Vulkan: say which path was missing instead of passing a bare null upwards\n- GS/Vulkan: let the caller say a custom driver is required, not merely preferred\n- GS/Vulkan: the custom-driver declaration was guarded wider than its definition\n- GS: the null profile's description of the counter rule outlived the rule\n- GS: the alpha stencil counter takes the barrier-ordered road too\n- GS: the guard's own comment claimed Turnip orders, and E5 says it does not\n- GS: declaring a feedback loop is not a promise that anything orders it\n- GS: name the road the barrier override actually selects\n- GS: the alpha stencil counter keys on the road, not on the texture-barrier bit\n- GS: a harness can take the alpha stencil counter on a device whose rule declines it\n- GS: a harness can take the alpha stencil counter off for a measurement\n- GS: the carry override's inertness test follows C23's renamed helper\n- GS/Vulkan: a harness can declare the feedback loop per draw instead of per pipeline\n- GS: a harness can confine the declared feedback loop to self-overlapping draws\n- GS: a harness can pin the destination alpha test to the primitive-ID road\n- GS: a harness can turn the feedback-loop carry off for a measurement\n- GS/Vulkan: a draw can declare the attachment feedback loop it reads through\n- GS: rest the Turnip self-read note on the status quo, not on comparing severities\n- GS: say what the Turnip self-read rule establishes, and what it does not\n- GS: the native texel grid needs the plain device grid and a whole frame\n- GS: a minifying nearest sprite reads its native pixel's texel\n- GS: a dump records whether its local memory was read back before the snapshot\n- GS: a dump capture reads the texture cache back before it freezes the state\n- GS: The Godfather's lamps need the software blend road\n- GS: a texture shuffle that skips a channel preloads the target it creates\n- GS/Vulkan: the feedback-loop carry follows the road's ordering, not the vendor\n- GS: Splashdown holds Minimum blending where the render target is read from a copy\n- GS/Vulkan: the feedback-loop carry reaches the attachment-layout road\n- GS: an ENABLE_GS_DEBUG_LABELS build option to drop the debug-label layer\n- GS: the alpha-test helper sets AREF for the tests that never read it\n- GS/SW: the colour walk's per-vector step is computed per vector, not per entry\n- GS/SW: a scanline rebuilds the colour walk's tables only when its row changes them\n- GS/Vulkan: drop the render-pass-narrowing mechanism, keep the clear-rect guard\n- GS/Vulkan: a render pass can be opened over its draws, and no device wants it\n- GS: the native draw rect is only maintained where it can differ\n- GS: the draw-buffering overlap test asks its question on the native grid\n- GS: the cull grid carries its phase, so it can be the device's own sample set\n- GS/gsrunner: the null device reports a named device's features, instead of none\n- GS: halfPixelOffset Native keeps the cull grid, because the margin contains its phase\n- GS: halfPixelOffset mode 5 keeps the cull grid; only mode 4 has to decline\n- GS: the fused vertex kick runs at upscale, not only at native\n- GS: the per-primitive cull grid follows the upscale, instead of a boolean\n- GS/gsrunner: a null-device arm that runs GSRendererHW with no GPU\n- GS: a test that drives the real sprite pass ordering\n- GS: the field-shifted merge falls back to the circuit's own first row\n- GS/HW: one helper for mode 5's texture offset, called from both sites\n- GS/HW: an AA1 line's pixel runs carry the GS's coverage\n- GS: at 2x and above, field mode presents the field render\n- GS: score the dither phase by contrast, not average magnitude\n- GS: scaled dither indexes the native pixel, with the matrix turned under it\n- GS/HW: a line draw the GS lights nothing for draws nothing\n- GS: dither indexes the device pixel again\n- GS: deinterlace on device rows again, and fill the band the merge never drew\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260922...92aa2174da6f93b719f63797970a86be9ff6f50b",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260923/ARMSX2-nightly-20260923-92aa2174da-iOS-arm64.ipa",
+          "size": 30551630,
           "minOSVersion": "17.0"
         }
       ]
@@ -290,11 +290,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.3.5",
+          "version": "2.3.6",
           "date": "2026-09-23",
-          "localizedDescription": "- 修复部分地区图片资源无法加载的问题 (#2581)\r\n- 修复搜索记录淘汰不正确的问题 (#2580)\r\n> [!NOTE]\r\n> 这是 2.3.4 的热修复版本，更多更新日志参考 2.3.4",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.5/Kazumi_ios_2.3.5_no_sign.ipa",
-          "size": 30404211,
+          "localizedDescription": "- 修复部分地区图片资源无法加载的问题 (#2581)\r\n> [!NOTE]\r\n> 这是 2.3.4 的热修复版本，更多更新日志参考 2.3.4",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.6/Kazumi_ios_2.3.6_no_sign.ipa",
+          "size": 30406530,
           "minOSVersion": "13.0"
         }
       ]
@@ -651,11 +651,11 @@
       "tintColor": "#E0E000",
       "versions": [
         {
-          "version": "1.0.3",
-          "date": "2026-09-17",
-          "localizedDescription": "What's new\n\n- Trakt sync. Connect your Trakt account in Profile and your watchlist and watched history stay in sync.\n- Picture in Picture on iPhone and iPad.\n- Continue Watching now resumes straight into the player from where you stopped, using the same source as last time (download, debrid link or torrent).\n- IMDb, Rotten Tomatoes and Metacritic ratings on the detail page (add an OMDb key in Settings).\n- Playback recovery: if the video freezes while the audio keeps going, the player notices and recovers by itself. Streams that drop are picked back up too.\n- Apple TV: the episode row opens on the season and episode you're on, and the player controls and episode panel behave better with the remote.\n- Lots of smaller fixes.\n\nKnown issue: a few people report that on iPhone the app closes shortly after a stream starts buffering. It's being looked into. If it hits you, please share the crash log: Settings > Privacy & Security > Analytics & Improvements > Analytics Data, look for a file starting with SceneBox, and post it in the issue. 1.0.2 doesn't have this problem if you need a fallback.\n\nImportant: this release is NOT signed. You have to allow it yourself.\n\nNothing here is signed with an Apple developer account and the Mac app is not notarized. macOS and iOS will refuse to open it until you explicitly allow it. This is expected, it's not broken.\n\nMac:\n\n1. Open the dmg and drag SceneBox to Applications.\n2. Open SceneBox. macOS will say it \"could not verify\" the app or that it's from an unidentified developer. Press Done (not Move to Trash).\n3. Go to System Settings > Privacy & Security, scroll down to Security and press \"Open Anyway\" next to SceneBox, then confirm.\n4. From then on it opens normally.\n\nIf you'd rather skip the dialog, run this in Terminal after copying the app to Applications:\n\n    xattr -dr com.apple.quarantine /Applications/SceneBox.app\n\nSigning in works on the unsigned Mac build. macOS doesn't let unsigned apps use the Keychain, so the app keeps your sign-in session and any API keys you enter in a file inside its own sandbox container instead (readable only by your user account). If you had an older signed version installed, delete it first.\n\niPhone/iPad: the ipa isn't signed, you sign it yourself with Sideloadly, AltStore, SideStore, Feather or ESign with your own Apple ID. Free Apple ID = resign every 7 days (AltStore/SideStore do it for you), paid dev account = one year.\n\nApple TV: Sideloadly works over Wi-Fi. On the TV go to Settings > Remotes and Devices > Remote App and Devices so it shows up, then pick it in Sideloadly.",
-          "downloadURL": "https://github.com/donbytyqi/scenebox/releases/download/v1.0.3/SceneBox-1.0.3.ipa",
-          "size": 30506464,
+          "version": "1.0.4",
+          "date": "2026-09-23",
+          "localizedDescription": "Fixes\n\n- Downloading a second episode from a season pack works now. Before, every episode of a pack counted as the same download, so you had to delete the finished one before the next would start. (#9)\n- Apple TV: Trakt lists open when you click them. (#10)\n- Mac: signing in works on the unsigned build. macOS doesn't let unsigned apps use the Keychain, so the app keeps your sign-in session and any API keys you enter in a file inside its own sandbox container instead (readable only by your user account).\n\nStill open\n\n- A few people report that on iPhone the app closes shortly after a stream starts buffering. I can't reproduce it on the simulator or on Mac. If it hits you, please share the crash log: Settings > Privacy & Security > Analytics & Improvements > Analytics Data, look for a file starting with SceneBox, and attach it to the issue. Also say which iPhone and what you were playing (torrent or debrid, resolution). 1.0.2 doesn't have this problem if you need a fallback.\n- Apple TV install failing in Sideloadly with \"ApplicationVerificationFailed / Invalid file\" on tvOS 26.6 (#8). The tvOS build is packaged exactly like 1.0.2 and passes Apple's bundle verification here, so this needs the full Sideloadly log: the \"Invalid file\" line names the file it choked on. Please paste that on the issue. Sideloadly also has known trouble with tvOS 26.4 and later (pairing), so try the latest Sideloadly first.\n\nImportant: this release is NOT signed. You have to allow it yourself.\n\nNothing here is signed with an Apple developer account and the Mac app is not notarized. macOS and iOS will refuse to open it until you explicitly allow it. This is expected, it's not broken.\n\nMac:\n\n1. Open the dmg and drag SceneBox to Applications.\n2. Open SceneBox. macOS will say it \"could not verify\" the app or that it's from an unidentified developer. Press Done (not Move to Trash).\n3. Go to System Settings > Privacy & Security, scroll down to Security and press \"Open Anyway\" next to SceneBox, then confirm.\n4. From then on it opens normally.\n\nIf you'd rather skip the dialog, run this in Terminal after copying the app to Applications:\n\n    xattr -dr com.apple.quarantine /Applications/SceneBox.app\n\nIf you had an older signed version installed, delete it first.\n\niPhone/iPad: the ipa isn't signed, you sign it yourself with Sideloadly, AltStore, SideStore, Feather or ESign with your own Apple ID. Free Apple ID = resign every 7 days (AltStore/SideStore do it for you), paid dev account = one year.\n\nApple TV: Sideloadly works over Wi-Fi. On the TV go to Settings > Remotes and Devices > Remote App and Devices so it shows up, then pick it in Sideloadly.",
+          "downloadURL": "https://github.com/donbytyqi/scenebox/releases/download/v1.0.4/SceneBox-1.0.4.ipa",
+          "size": 30509579,
           "minOSVersion": "18.0"
         }
       ]
@@ -807,15 +807,37 @@
   ],
   "news": [
     {
+      "appID": "app.scenebox.SceneBox",
+      "title": "SceneBox 1.0.4 · 23 Sep 2026",
+      "identifier": "SceneBox-release-v1.0.4",
+      "caption": "SceneBox 1.0.4 is available.",
+      "date": "2026-09-23T15:44:54Z",
+      "tintColor": "#E0E000",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
+      "notify": true,
+      "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.4"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20260923 · 23 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260923",
+      "caption": "ARMSX2 nightly-20260923 is available.",
+      "date": "2026-09-23T14:08:28Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260923"
+    },
+    {
       "appID": "com.example.kazumi",
-      "title": "Kazumi 2.3.5 · 23 Sep 2026",
-      "identifier": "Kazumi-release-2.3.5",
-      "caption": "Kazumi 2.3.5 is available.",
-      "date": "2026-09-23T09:36:50Z",
+      "title": "Kazumi 2.3.6 · 23 Sep 2026",
+      "identifier": "Kazumi-release-2.3.6",
+      "caption": "Kazumi 2.3.6 is available.",
+      "date": "2026-09-23T11:56:14Z",
       "tintColor": "#4CAF50",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
       "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.5"
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.6"
     },
     {
       "appID": "sb.moe.kumone",
@@ -860,17 +882,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
       "notify": true,
       "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.6.2"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260922 · 22 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260922",
-      "caption": "ARMSX2 nightly-20260922 is available.",
-      "date": "2026-09-22T13:55:11Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260922"
     },
     {
       "appID": "com.kodjodevf.mangayomi",
@@ -948,17 +959,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
       "notify": true,
       "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.5-2026-09-18"
-    },
-    {
-      "appID": "app.scenebox.SceneBox",
-      "title": "SceneBox 1.0.3 · 17 Sep 2026",
-      "identifier": "SceneBox-release-v1.0.3",
-      "caption": "SceneBox 1.0.3 is available.",
-      "date": "2026-09-17T17:27:35Z",
-      "tintColor": "#E0E000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
-      "notify": true,
-      "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.3"
     },
     {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
