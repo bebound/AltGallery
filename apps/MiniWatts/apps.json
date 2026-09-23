@@ -22,11 +22,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.3.0",
-          "date": "2026-09-17",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.2.0...v1.3.0",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.3.0/MiniWatts-unsigned.ipa",
-          "size": 3253927,
+          "version": "1.4.0",
+          "date": "2026-09-23",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.3.0...v1.4.0",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.4.0/MiniWatts-unsigned.ipa",
+          "size": 3264456,
           "minOSVersion": "17.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.3.0 · 17 Sep 2026",
-      "identifier": "MiniWatts-release-v1.3.0",
-      "caption": "MiniWatts 1.3.0 is available.",
-      "date": "2026-09-17T12:39:09Z",
+      "title": "MiniWatts 1.4.0 · 23 Sep 2026",
+      "identifier": "MiniWatts-release-v1.4.0",
+      "caption": "MiniWatts 1.4.0 is available.",
+      "date": "2026-09-23T02:58:32Z",
       "tintColor": "#30E0F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
       "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.3.0"
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.0"
     }
   ]
 }

@@ -434,11 +434,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.3.0",
-          "date": "2026-09-17",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.2.0...v1.3.0",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.3.0/MiniWatts-unsigned.ipa",
-          "size": 3253927,
+          "version": "1.4.0",
+          "date": "2026-09-23",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.3.0...v1.4.0",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.4.0/MiniWatts-unsigned.ipa",
+          "size": 3264456,
           "minOSVersion": "17.0"
         }
       ]
@@ -795,17 +795,39 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.6.1",
-          "date": "2026-09-18",
-          "localizedDescription": "Android 为 arm64-v8a preview APK；iOS 为未签名 IPA。 SHA256SUMS.txt 可用于校验下载文件。\r\n\r\n<!-- Release notes generated using configuration in .github/release.yml at ee3304543b6bc42e8f30bc2d0ae82c4d664c21d0 -->\r\n\r\n* fix：首页下拉刷新调整（ios 有神奇的震动效果哦）  @huamurui https://github.com/huamurui/zhihu-minus-minus/pull/84\r\n* feat：ios 首页底部 tab 对接原生元素，ios26+ 会是液态玻璃（可在外观选项处关闭）   @huamurui https://github.com/huamurui/zhihu-minus-minus/pull/86\r\n* fix：回避答案列表滚动时误选正文 @huamurui https://github.com/huamurui/zhihu-minus-minus/pull/88\r\n* fix：修复文章点赞并规范的交互状态 @huamurui https://github.com/huamurui/zhihu-minus-minus/pull/89\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.6.0...v0.6.1",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.6.1/zhihu-minus-minus-v0.6.1-unsigned.ipa",
-          "size": 15808015,
+          "version": "0.6.2",
+          "date": "2026-09-23",
+          "localizedDescription": "Android 默认提供已验证的 arm64-v8a preview APK；其余 compat APK 未经实机验证，供对应架构设备手动安装。iOS 为未签名 IPA。SHA256SUMS.txt 可用于校验下载文件。\r\n\r\n<!-- Release notes generated using configuration in .github/release.yml at 1a07e970d5dce71411116d0b7c9c130e0a4e4109 -->\r\n\r\n## 本次更新\r\n\r\n一些没用的小功能😉和工程优化\r\n\r\n### ✨ 新功能\r\n\r\n* **重整设置菜单并新增关于页**：重新组织设置项，新增设置搜索、版本记录、手动检查更新、反馈与开源项目信息等功能。（#92）\r\n* 支持在应用内切换 App 图标（iOS 可能有问题但不想动了）。（#93）\r\n* 支持恢复阅读位置：重新打开尚未读完的内容时，可以继续上次的阅读进度。（#95）\r\n\r\n### 🎨 界面与体验\r\n\r\n* **优化收藏页与 App 图标的视觉表现**，进一步统一界面细节。（#94）\r\n\r\n### 🔧 工程与稳定性\r\n\r\n* **新增可选择关闭的匿名遥测，并完善 CI 构建流程**。（#96）\r\n* **补全知乎接口响应类型定义**，改善类型安全和后续维护体验。（#97）\r\n* 将单元测试迁移至 Jest 与 Expo 测试环境。（#98）\r\n* 更新项目依赖**，包含 26 项 npm 依赖升级。（#100）\r\n\r\n\r\n## New Contributors\r\n* @dependabot[bot] made their first contribution in https://github.com/huamurui/zhihu-minus-minus/pull/100\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.6.1...v0.6.2",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.6.2/zhihu-minus-minus-v0.6.2-unsigned.ipa",
+          "size": 16886657,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "org.zhaohe.MiniWatts",
+      "title": "MiniWatts 1.4.0 · 23 Sep 2026",
+      "identifier": "MiniWatts-release-v1.4.0",
+      "caption": "MiniWatts 1.4.0 is available.",
+      "date": "2026-09-23T02:58:32Z",
+      "tintColor": "#30E0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.0"
+    },
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.6.2 · 23 Sep 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.6.2",
+      "caption": "ZhihuMinusMinus 0.6.2 is available.",
+      "date": "2026-09-23T00:03:40Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.6.2"
+    },
     {
       "appID": "com.armsx2.ios",
       "title": "ARMSX2 nightly-20260922 · 22 Sep 2026",
@@ -884,17 +906,6 @@
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.16.0"
     },
     {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.6.1 · 18 Sep 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.6.1",
-      "caption": "ZhihuMinusMinus 0.6.1 is available.",
-      "date": "2026-09-18T12:15:30Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.6.1"
-    },
-    {
       "appID": "com.aoshuang.manicemu",
       "title": "ManicEMU 2.0.1 · 18 Sep 2026",
       "identifier": "ManicEMU-release-v2.0.1",
@@ -926,17 +937,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
       "notify": true,
       "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.3"
-    },
-    {
-      "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.3.0 · 17 Sep 2026",
-      "identifier": "MiniWatts-release-v1.3.0",
-      "caption": "MiniWatts 1.3.0 is available.",
-      "date": "2026-09-17T12:39:09Z",
-      "tintColor": "#30E0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.3.0"
     },
     {
       "appID": "sb.moe.kumone",
