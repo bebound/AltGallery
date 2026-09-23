@@ -290,11 +290,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.3.4",
-          "date": "2026-09-22",
-          "localizedDescription": "- 重新设计的竖屏模式我的页面 (@Predidit)\r\n- 现在追番页面支持卡片样式与列表样式切换 (@Predidit)\r\n- 改进的弹幕检索流程 (@moonrailgun)\r\n- 修复 android 平台偶发的崩溃问题 (@Predidit)\r\n- 修复 macOS x64 应用界面闪烁的问题 (#2577) (@Predidit)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.4/Kazumi_ios_2.3.4_no_sign.ipa",
-          "size": 29106919,
+          "version": "2.3.5",
+          "date": "2026-09-23",
+          "localizedDescription": "- 修复部分地区图片资源无法加载的问题 (#2581)\r\n- 修复搜索记录淘汰不正确的问题 (#2580)\r\n> [!NOTE]\r\n> 这是 2.3.4 的热修复版本，更多更新日志参考 2.3.4",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.5/Kazumi_ios_2.3.5_no_sign.ipa",
+          "size": 30404211,
           "minOSVersion": "13.0"
         }
       ]
@@ -338,11 +338,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.18",
-          "date": "2026-09-17",
-          "localizedDescription": "### Added / 新增\n\n- **iOS + macOS**: a sleep timer — stop playback after a set duration or at the end of the current track, from the 播放 menu (macOS) or the now-playing more-actions menu (iOS). Thanks @yamakze (#98, closes #96).\n- **iOS + macOS**：新增睡眠定时——可在设定时长后、或当前歌曲播完后停止播放,入口在「播放」菜单(macOS)或播放页的更多菜单(iOS)。感谢 @yamakze（#98，关闭 #96）。\n- **iOS + macOS**: jump from a playing track to its artist or album page (and play from there) via the artwork / track menu. Thanks @yamakze (#95, closes #80).\n- **iOS + macOS**：可从正在播放的歌曲跳转到其歌手或专辑页并从那里播放(通过封面 / 歌曲菜单)。感谢 @yamakze（#95，关闭 #80）。\n- **macOS**: an ambient background behind the main window derived from the current track's artwork — a soft color wash plus a subtle titlebar tint that follows the playing song. On by default; toggle it off or adjust the intensity in Settings. Thanks @yamakze (#86).\n- **macOS**：主窗口新增取自当前封面的氛围背景——柔和的色彩铺底 + 淡淡的标题栏染色，随播放歌曲变化。默认开启,可在设置里关闭或调节强度。感谢 @yamakze（#86）。\n- **iOS**: the artwork ambient background is now available on iOS too, with the same toggle + intensity slider in Settings. Thanks @yamakze (#99).\n- **iOS**：封面氛围背景现在 iOS 也支持,设置里同样有开关与强度滑块。感谢 @yamakze（#99）。\n\n### Fixed / 修复\n\n- **macOS**: the now-playing artwork no longer snaps out of place during the open/close transition when the image finishes loading mid-animation. Thanks @Perfect9s (#92).\n- **macOS**：进入 / 退出播放页时,封面即使在动画途中才加载完也不再错位跳动。感谢 @Perfect9s（#92）。\n- **macOS**: the main-window titlebar ambient tint now matches the app's light/dark appearance instead of lagging a step behind it. Thanks @yamakze (#93).\n- **macOS**：主窗口标题栏的氛围染色现在会正确匹配 App 的浅色 / 深色外观,不再慢一拍。感谢 @yamakze（#93）。\n- **macOS**: switching a fixed theme (Light/Dark) back to \"follow system\" now updates the native titlebars of both the main and Settings windows immediately, via `NSApp.appearance`. (#94)\n- **macOS**：把固定主题(浅色 / 深色)切回「跟随系统」时,主窗口与设置窗口的原生标题栏现在会通过 `NSApp.appearance` 立即同步。（#94）\n\n- **macOS**: the toolbar search field and the floating player bar now keep more clearance from the window's rounded corners, so their capsules no longer nearly touch the window edges and the inner/outer corner radii stop visually merging. (#88)\n- **macOS**：工具栏搜索框与悬浮播放条现在与窗口圆角保持更多间距,不再几乎贴住窗口边缘,内外圆角也不再互相干扰。（#88）\n- **macOS**: the album artwork in the player bar and the immersive now-playing page no longer shows a stray blue focus ring (macOS 27 drew the system focus ring on those decorative artwork buttons). (#97)\n- **macOS**：播放条与沉浸播放页的专辑封面不再出现多余的蓝色聚焦边框（macOS 27 会在这些装饰性封面按钮上绘制系统聚焦环）。（#97）",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.18/Kumone-iOS-0.3.18.ipa",
-          "size": 7321751,
+          "version": "0.3.19",
+          "date": "2026-09-23",
+          "localizedDescription": "### Added\n\n- **iOS + macOS**: an optional on-disk song cache (on by default, 100–1000 MB) — recently played tracks play from local storage, so replays work offline and rapid track switching is smoother; adjust the size or clear it in Settings. Thanks @yamakze (#109, part of #106).\n- **iOS + macOS**: per-source control for grey (unavailable) tracks — enable or disable each fallback audio source (酷狗 / 酷我 / …) in Settings, plus stricter title/artist/duration match validation so a wrong song is no longer substituted. Thanks @yamakze (#104, addresses #77).\n\n### Fixed\n\n- **macOS**: the Settings 「播放页模式」 picker now offers only the two layouts macOS actually renders (黑胶 / 经典) instead of four. (#105)\n- **macOS**: the now-playing page slides in more smoothly — the titlebar and ambient tint fade out as the page rises, the arrow cursor no longer leaks from the sidebar divider onto the page, and the artwork cross-fades in. Thanks @sld272 (#100).\n- **iOS**: tapping a track's cover in a list now plays it directly instead of opening the album, and the now-playing volume control moved into a compact popover. Thanks @yamakze (#108, part of #106).\n\n---\n\n### 新增\n\n- **iOS + macOS**：可选的本地歌曲缓存(默认开启,100–1000 MB)——最近听过的歌从本地播放,断网也能重播、快速切歌更顺;可在设置里调整大小或清除。感谢 @yamakze（#109，#106 的一部分）。\n- **iOS + macOS**：灰色(无版权)歌曲的音源可逐个开关——在设置里启用 / 禁用每个备用音源(酷狗 / 酷我 / …),并加入更严格的标题 / 歌手 / 时长匹配校验,不再匹配到错误的歌曲。感谢 @yamakze（#104，缓解 #77）。\n\n### 修复\n\n- **macOS**：设置里的「播放页模式」现在只提供 macOS 实际支持的两种(黑胶 / 经典),不再显示四种。（#105）\n- **macOS**：进入播放页的动画更顺滑——标题栏与环境色随页面升起淡出,侧栏分隔条的箭头光标不再渗到播放页上,封面淡入。感谢 @sld272（#100）。\n- **iOS**：列表里点击歌曲封面现在直接播放,而不是进入专辑,播放页音量改为紧凑的弹出条。感谢 @yamakze（#108，#106 的一部分）。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.19/Kumone-iOS-0.3.19.ipa",
+          "size": 7492465,
           "minOSVersion": "16.0"
         }
       ]
@@ -506,11 +506,11 @@
       "tintColor": "#2E2E2E",
       "versions": [
         {
-          "version": "2.4.0",
-          "date": "2026-09-06",
-          "localizedDescription": "<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/4e4a4477-316a-49bc-8f97-22455f3ef327\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要完善了 **漫画、社区和账户相关功能**，并改进了 **连接稳定性和更新体验**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **书籍**\r\n  跟进了新 API，小说和漫画阅读已经恢复。\r\n  漫画详情、阅读、历史、书架、搜索、排行和版本切换改用具体作品。\r\n  通知支持自动识别小说和漫画。\r\n  优化漫画图片预加载。\r\n\r\n* **社区**\r\n  支持锁定和解除锁定帖子。\r\n  锁定后禁止点赞、收藏和回复。\r\n  改进评论无限滚动和加载重试。\r\n  高亮用户参与过的回复。\r\n  改进通知页面的样式。\r\n\r\n* **账户与商城**\r\n  区分永久漫画额度和每日漫画额度。\r\n  支持漫画额度卡。\r\n  完善商城购买限制状态。\r\n  修复切换账号后的商城缓存。\r\n  成长值支持实时刷新。\r\n\r\n* **通知与连接**\r\n  改进通知和成长值实时更新。\r\n  请求和实时连接增加超时保护。\r\n  短暂切后台不再断开连接。\r\n  增加 30 秒后台宽限期。\r\n  长时间后台返回后自动重新连接。\r\n\r\n* **编辑器**\r\n  改进富文本编辑器键盘跟随。\r\n  修复关闭键盘时页面回弹和跳动。\r\n  保留编辑器内部滚动。\r\n\r\n* **阅读器与界面**\r\n  移除旧的脚注弹窗。\r\n  修复部分脚注章节被错误过滤。\r\n  统一部分 Sheet 背景颜色。\r\n  调整回复高亮和界面间距。\r\n\r\n* **登录与更新**\r\n  改进冷启动、登录、注册、Token 刷新和退出登录时的路由切换。\r\n  更新检查不再受登录页面限制。\r\n  支持使用 `GitHub`、`AltStore`、`SideStore` 和 `Feather` 打开更新。\r\n  设置中新增侧载入口。\r\n\r\n* **项目整理**\r\n  移除停止维护的 Novella 下载网页和部署流程。\r\n  请切换侧载源到 [sideload.celia.sh](https://sideload.celia.sh)。\r\n  移除软件公告，该变动不影响站点公告。\r\n  更新项目横幅并清理废弃资源。\r\n\r\n方便的管理更新：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。",
-          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.4.0/Novella-2.4.0-release.ipa",
-          "size": 25323737,
+          "version": "2.5.0",
+          "date": "2026-09-23",
+          "localizedDescription": "<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/4deb46d9-8b91-4b8a-a4f4-5d59f9190628\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要完善了 **书架管理**，并完成了 **组件迁移**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **API**\r\n  跟进新的接口。\r\n  截止发版前 **详情页 / 书架 / 用户摘要** 已经恢复。\r\n  鉴于接口变动频繁，您可以考虑换用网页版。\r\n\r\n* **书架浏览**\r\n  新增 **全部 / 小说 / 漫画** 三种筛选方式。\r\n  文件夹支持递归筛选，子目录存在匹配内容时仍会正确显示。\r\n  进入文件夹后会保留当前筛选类型。\r\n  改进书籍详情跳转和系列信息识别。\r\n\r\n* **用户成长与签到**\r\n  新增距离下一级所需经验展示。\r\n  满级用户现在会显示对应状态。\r\n  签到调整为进入设置页面时尝试，不再需要进行繁琐操作。\r\n  增加签到并发保护，避免重复请求。\r\n  如果支持，签到会以灵动岛形式提示。\r\n\r\n* **界面组件**\r\n  移除 HeroUI Native，迁移至 **PanelUI Native**。\r\n  更新按钮、卡片、标签、输入框、验证码、头像、Skeleton 和编辑器等组件。\r\n  同步调整社区、评论、公告、书籍详情和认证相关页面。\r\n\r\n* **详情页与阅读器**\r\n  改进阅读器图片预览界面。\r\n  分享、保存和关闭操作改用 **Liquid Glass** 按钮。\r\n  修复原生阅读进度条滑块阴影被裁剪的问题。\r\n  改进详情页 BlurHash 颜色采样效果。\r\n\r\n方便的管理更新：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。",
+          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.5.0/Novella-2.5.0-release.ipa",
+          "size": 26047504,
           "minOSVersion": "16.4"
         }
       ]
@@ -807,6 +807,39 @@
   ],
   "news": [
     {
+      "appID": "com.example.kazumi",
+      "title": "Kazumi 2.3.5 · 23 Sep 2026",
+      "identifier": "Kazumi-release-2.3.5",
+      "caption": "Kazumi 2.3.5 is available.",
+      "date": "2026-09-23T09:36:50Z",
+      "tintColor": "#4CAF50",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.5"
+    },
+    {
+      "appID": "sb.moe.kumone",
+      "title": "Kumone 0.3.19 · 23 Sep 2026",
+      "identifier": "Kumone-release-v0.3.19",
+      "caption": "Kumone 0.3.19 is available.",
+      "date": "2026-09-23T07:12:20Z",
+      "tintColor": "#F0D060",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
+      "notify": true,
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.19"
+    },
+    {
+      "appID": "sh.celia.novella",
+      "title": "Novella 2.5.0 · 23 Sep 2026",
+      "identifier": "Novella-release-v2.5.0",
+      "caption": "Novella 2.5.0 is available.",
+      "date": "2026-09-23T04:19:05Z",
+      "tintColor": "#2E2E2E",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
+      "notify": true,
+      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.5.0"
+    },
+    {
       "appID": "org.zhaohe.MiniWatts",
       "title": "MiniWatts 1.4.0 · 23 Sep 2026",
       "identifier": "MiniWatts-release-v1.4.0",
@@ -838,17 +871,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260922"
-    },
-    {
-      "appID": "com.example.kazumi",
-      "title": "Kazumi 2.3.4 · 22 Sep 2026",
-      "identifier": "Kazumi-release-2.3.4",
-      "caption": "Kazumi 2.3.4 is available.",
-      "date": "2026-09-22T12:48:01Z",
-      "tintColor": "#4CAF50",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.4"
     },
     {
       "appID": "com.kodjodevf.mangayomi",
@@ -939,17 +961,6 @@
       "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.3"
     },
     {
-      "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.18 · 17 Sep 2026",
-      "identifier": "Kumone-release-v0.3.18",
-      "caption": "Kumone 0.3.18 is available.",
-      "date": "2026-09-17T05:44:32Z",
-      "tintColor": "#F0D060",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
-      "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.18"
-    },
-    {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
       "title": "Pixiv-SwiftUI 0.16.0 · 16 Sep 2026",
       "identifier": "Pixiv-SwiftUI-release-v0.16.0",
@@ -1025,17 +1036,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.png",
       "notify": true,
       "url": "https://github.com/verback2308/Opaline/releases/tag/1.12.0"
-    },
-    {
-      "appID": "sh.celia.novella",
-      "title": "Novella 2.4.0 · 06 Sep 2026",
-      "identifier": "Novella-release-v2.4.0",
-      "caption": "Novella 2.4.0 is available.",
-      "date": "2026-09-06T07:59:03Z",
-      "tintColor": "#2E2E2E",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
-      "notify": true,
-      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.4.0"
     },
     {
       "appID": "app.aidoku.Aidoku",

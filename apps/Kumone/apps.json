@@ -21,11 +21,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.18",
-          "date": "2026-09-17",
-          "localizedDescription": "### Added / 新增\n\n- **iOS + macOS**: a sleep timer — stop playback after a set duration or at the end of the current track, from the 播放 menu (macOS) or the now-playing more-actions menu (iOS). Thanks @yamakze (#98, closes #96).\n- **iOS + macOS**：新增睡眠定时——可在设定时长后、或当前歌曲播完后停止播放,入口在「播放」菜单(macOS)或播放页的更多菜单(iOS)。感谢 @yamakze（#98，关闭 #96）。\n- **iOS + macOS**: jump from a playing track to its artist or album page (and play from there) via the artwork / track menu. Thanks @yamakze (#95, closes #80).\n- **iOS + macOS**：可从正在播放的歌曲跳转到其歌手或专辑页并从那里播放(通过封面 / 歌曲菜单)。感谢 @yamakze（#95，关闭 #80）。\n- **macOS**: an ambient background behind the main window derived from the current track's artwork — a soft color wash plus a subtle titlebar tint that follows the playing song. On by default; toggle it off or adjust the intensity in Settings. Thanks @yamakze (#86).\n- **macOS**：主窗口新增取自当前封面的氛围背景——柔和的色彩铺底 + 淡淡的标题栏染色，随播放歌曲变化。默认开启,可在设置里关闭或调节强度。感谢 @yamakze（#86）。\n- **iOS**: the artwork ambient background is now available on iOS too, with the same toggle + intensity slider in Settings. Thanks @yamakze (#99).\n- **iOS**：封面氛围背景现在 iOS 也支持,设置里同样有开关与强度滑块。感谢 @yamakze（#99）。\n\n### Fixed / 修复\n\n- **macOS**: the now-playing artwork no longer snaps out of place during the open/close transition when the image finishes loading mid-animation. Thanks @Perfect9s (#92).\n- **macOS**：进入 / 退出播放页时,封面即使在动画途中才加载完也不再错位跳动。感谢 @Perfect9s（#92）。\n- **macOS**: the main-window titlebar ambient tint now matches the app's light/dark appearance instead of lagging a step behind it. Thanks @yamakze (#93).\n- **macOS**：主窗口标题栏的氛围染色现在会正确匹配 App 的浅色 / 深色外观,不再慢一拍。感谢 @yamakze（#93）。\n- **macOS**: switching a fixed theme (Light/Dark) back to \"follow system\" now updates the native titlebars of both the main and Settings windows immediately, via `NSApp.appearance`. (#94)\n- **macOS**：把固定主题(浅色 / 深色)切回「跟随系统」时,主窗口与设置窗口的原生标题栏现在会通过 `NSApp.appearance` 立即同步。（#94）\n\n- **macOS**: the toolbar search field and the floating player bar now keep more clearance from the window's rounded corners, so their capsules no longer nearly touch the window edges and the inner/outer corner radii stop visually merging. (#88)\n- **macOS**：工具栏搜索框与悬浮播放条现在与窗口圆角保持更多间距,不再几乎贴住窗口边缘,内外圆角也不再互相干扰。（#88）\n- **macOS**: the album artwork in the player bar and the immersive now-playing page no longer shows a stray blue focus ring (macOS 27 drew the system focus ring on those decorative artwork buttons). (#97)\n- **macOS**：播放条与沉浸播放页的专辑封面不再出现多余的蓝色聚焦边框（macOS 27 会在这些装饰性封面按钮上绘制系统聚焦环）。（#97）",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.18/Kumone-iOS-0.3.18.ipa",
-          "size": 7321751,
+          "version": "0.3.19",
+          "date": "2026-09-23",
+          "localizedDescription": "### Added\n\n- **iOS + macOS**: an optional on-disk song cache (on by default, 100–1000 MB) — recently played tracks play from local storage, so replays work offline and rapid track switching is smoother; adjust the size or clear it in Settings. Thanks @yamakze (#109, part of #106).\n- **iOS + macOS**: per-source control for grey (unavailable) tracks — enable or disable each fallback audio source (酷狗 / 酷我 / …) in Settings, plus stricter title/artist/duration match validation so a wrong song is no longer substituted. Thanks @yamakze (#104, addresses #77).\n\n### Fixed\n\n- **macOS**: the Settings 「播放页模式」 picker now offers only the two layouts macOS actually renders (黑胶 / 经典) instead of four. (#105)\n- **macOS**: the now-playing page slides in more smoothly — the titlebar and ambient tint fade out as the page rises, the arrow cursor no longer leaks from the sidebar divider onto the page, and the artwork cross-fades in. Thanks @sld272 (#100).\n- **iOS**: tapping a track's cover in a list now plays it directly instead of opening the album, and the now-playing volume control moved into a compact popover. Thanks @yamakze (#108, part of #106).\n\n---\n\n### 新增\n\n- **iOS + macOS**：可选的本地歌曲缓存(默认开启,100–1000 MB)——最近听过的歌从本地播放,断网也能重播、快速切歌更顺;可在设置里调整大小或清除。感谢 @yamakze（#109，#106 的一部分）。\n- **iOS + macOS**：灰色(无版权)歌曲的音源可逐个开关——在设置里启用 / 禁用每个备用音源(酷狗 / 酷我 / …),并加入更严格的标题 / 歌手 / 时长匹配校验,不再匹配到错误的歌曲。感谢 @yamakze（#104，缓解 #77）。\n\n### 修复\n\n- **macOS**：设置里的「播放页模式」现在只提供 macOS 实际支持的两种(黑胶 / 经典),不再显示四种。（#105）\n- **macOS**：进入播放页的动画更顺滑——标题栏与环境色随页面升起淡出,侧栏分隔条的箭头光标不再渗到播放页上,封面淡入。感谢 @sld272（#100）。\n- **iOS**：列表里点击歌曲封面现在直接播放,而不是进入专辑,播放页音量改为紧凑的弹出条。感谢 @yamakze（#108，#106 的一部分）。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.19/Kumone-iOS-0.3.19.ipa",
+          "size": 7492465,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.18 · 17 Sep 2026",
-      "identifier": "Kumone-release-v0.3.18",
-      "caption": "Kumone 0.3.18 is available.",
-      "date": "2026-09-17T05:44:32Z",
+      "title": "Kumone 0.3.19 · 23 Sep 2026",
+      "identifier": "Kumone-release-v0.3.19",
+      "caption": "Kumone 0.3.19 is available.",
+      "date": "2026-09-23T07:12:20Z",
       "tintColor": "#F0D060",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.18"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.19"
     }
   ]
 }
