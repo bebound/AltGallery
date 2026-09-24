@@ -1,0 +1,43 @@
+# altgen config for the Roam Control AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "seanhowarthdev/Roam-Control"
+
+[source]
+name = "Roam Control"
+subtitle = "Roam Control AltStore source by AltGallery & altgen"
+description = "Auto-updated AltStore source for Roam Control"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/icon.png"
+website = "https://github.com/seanhowarthdev/Roam-Control"
+tint_color = "#1090F0"
+
+[app]
+name = "Roam Control"
+bundle_identifier = "com.sean.roamcontrol"
+developer_name = "seanhowarthdev"
+subtitle = "Choose, test and move your iPhone's reported location"
+description = "Set a fixed reported location, preview and simulate Apple Maps walking routes, and save favourites and history — all from one map. Requires iOS 27 or newer, and guided LocalDevVPN-compatible sessions for Wi-Fi and mobile data."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/welcome.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/fixed-location.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/walking-preview.png",
+]
+tint_color = "#1090F0"
+min_os_version = "27.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): every release ships exactly one unsigned
+# ipa named RoamControl-<version>-build<build>.ipa (e.g. RoamControl-0.9.3-build63.ipa).
+asset_pattern = "^RoamControl-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by templates/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png"
+
+[output]
+path = "apps.json"
