@@ -795,17 +795,28 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.6.2",
-          "date": "2026-09-23",
-          "localizedDescription": "Android 默认提供已验证的 arm64-v8a preview APK；其余 compat APK 未经实机验证，供对应架构设备手动安装。iOS 为未签名 IPA。SHA256SUMS.txt 可用于校验下载文件。\r\n\r\n<!-- Release notes generated using configuration in .github/release.yml at 1a07e970d5dce71411116d0b7c9c130e0a4e4109 -->\r\n\r\n## 本次更新\r\n\r\n一些没用的小功能😉和工程优化\r\n\r\n### ✨ 新功能\r\n\r\n* **重整设置菜单并新增关于页**：重新组织设置项，新增设置搜索、版本记录、手动检查更新、反馈与开源项目信息等功能。（#92）\r\n* 支持在应用内切换 App 图标（iOS 可能有问题但不想动了）。（#93）\r\n* 支持恢复阅读位置：重新打开尚未读完的内容时，可以继续上次的阅读进度。（#95）\r\n\r\n### 🎨 界面与体验\r\n\r\n* **优化收藏页与 App 图标的视觉表现**，进一步统一界面细节。（#94）\r\n\r\n### 🔧 工程与稳定性\r\n\r\n* **新增可选择关闭的匿名遥测，并完善 CI 构建流程**。（#96）\r\n* **补全知乎接口响应类型定义**，改善类型安全和后续维护体验。（#97）\r\n* 将单元测试迁移至 Jest 与 Expo 测试环境。（#98）\r\n* 更新项目依赖**，包含 26 项 npm 依赖升级。（#100）\r\n\r\n\r\n## New Contributors\r\n* @dependabot[bot] made their first contribution in https://github.com/huamurui/zhihu-minus-minus/pull/100\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.6.1...v0.6.2",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.6.2/zhihu-minus-minus-v0.6.2-unsigned.ipa",
-          "size": 16886657,
+          "version": "0.6.3",
+          "date": "2026-09-24",
+          "localizedDescription": "对比 0.6.2 只为修复 ios 部分页面布局遮挡的问题，安卓可以跳过哦。\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.6.2...v0.6.3",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.6.3/zhihu-minus-minus-v0.6.3-unsigned.ipa",
+          "size": 16882424,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.6.3 · 24 Sep 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.6.3",
+      "caption": "ZhihuMinusMinus 0.6.3 is available.",
+      "date": "2026-09-24T02:39:16Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.6.3"
+    },
     {
       "appID": "app.scenebox.SceneBox",
       "title": "SceneBox 1.0.4 · 23 Sep 2026",
@@ -871,17 +882,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
       "notify": true,
       "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.0"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.6.2 · 23 Sep 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.6.2",
-      "caption": "ZhihuMinusMinus 0.6.2 is available.",
-      "date": "2026-09-23T00:03:40Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.6.2"
     },
     {
       "appID": "com.kodjodevf.mangayomi",
