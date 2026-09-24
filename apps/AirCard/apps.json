@@ -1,0 +1,42 @@
+{
+  "name": "AirCard-iOS",
+  "subtitle": "AirCard-iOS AltStore source by AltGallery & altgen",
+  "description": "Auto-updated AltStore source for AirCard-iOS",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/icon.png",
+  "website": "https://github.com/Mak5er/AirCard-iOS",
+  "tintColor": "#5020E0",
+  "apps": [
+    {
+      "name": "AirCard-iOS",
+      "bundleIdentifier": "com.mak5er.aircard",
+      "developerName": "Mak5er",
+      "subtitle": "Apple Wallet card skins, passcode themes and wallpapers",
+      "localizedDescription": "Customize Apple Wallet card artwork, lock screen passcode dialers and PosterBoard wallpapers directly on device, without a jailbreak. Requires iOS 27 or newer, LocalDevVPN running in loopback mode, and Developer Mode pairing.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/icon.png",
+      "tintColor": "#5020E0",
+      "versions": [
+        {
+          "version": "1.3",
+          "date": "2026-09-20",
+          "localizedDescription": "## What's Changed in v1.3\n\n> **Note**: AirCard-iOS currently supports **iOS 27.0 and newer (iOS 27+)**.\n\n### PosterBoard Wallpapers (.tendies)\n• Added support for importing and unpacking `.tendies` wallpaper archives.\n• Automatic PosterBoard container detection and active descriptor UUID preservation.\n• Integrated instant WebKit NeoSpring respring right after flashing (no device reboot required).\n\n### Apple Wallet & Passcode Theming\n• Added PDF artwork generation for transit passes (Suica, Pasmo, etc.).\n• Fixed keypad preview framing and TelephonyUI cache paths.\n• Cleaned up passcode number localization pickers.\n• Removed sluggish button glide animations when scanning cards and copying logs.\n\n### UI & Quality of Life\n• Centered action buttons and removed misplaced list divider lines across all tabs.\n• Removed disruptive import and install alert popups in favor of clean inline status logs.\n• Cleaned up the VPN status bar and removed redundant text labels.\n• General repository cleanup and project modernization.",
+          "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3/AirCard-iOS.ipa",
+          "size": 4452235,
+          "minOSVersion": "27.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.mak5er.aircard",
+      "title": "AirCard-iOS 1.3 · 20 Sep 2026",
+      "identifier": "AirCard-iOS-release-v1.3",
+      "caption": "AirCard-iOS 1.3 is available.",
+      "date": "2026-09-20T02:08:32Z",
+      "tintColor": "#5020E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Mak5er/AirCard-iOS/releases/tag/v1.3"
+    }
+  ]
+}

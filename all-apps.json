@@ -31,6 +31,25 @@
       ]
     },
     {
+      "name": "AirCard-iOS",
+      "bundleIdentifier": "com.mak5er.aircard",
+      "developerName": "Mak5er",
+      "subtitle": "Apple Wallet card skins, passcode themes and wallpapers",
+      "localizedDescription": "Customize Apple Wallet card artwork, lock screen passcode dialers and PosterBoard wallpapers directly on device, without a jailbreak. Requires iOS 27 or newer, LocalDevVPN running in loopback mode, and Developer Mode pairing.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/icon.png",
+      "tintColor": "#5020E0",
+      "versions": [
+        {
+          "version": "1.3",
+          "date": "2026-09-20",
+          "localizedDescription": "## What's Changed in v1.3\n\n> **Note**: AirCard-iOS currently supports **iOS 27.0 and newer (iOS 27+)**.\n\n### PosterBoard Wallpapers (.tendies)\n• Added support for importing and unpacking `.tendies` wallpaper archives.\n• Automatic PosterBoard container detection and active descriptor UUID preservation.\n• Integrated instant WebKit NeoSpring respring right after flashing (no device reboot required).\n\n### Apple Wallet & Passcode Theming\n• Added PDF artwork generation for transit passes (Suica, Pasmo, etc.).\n• Fixed keypad preview framing and TelephonyUI cache paths.\n• Cleaned up passcode number localization pickers.\n• Removed sluggish button glide animations when scanning cards and copying logs.\n\n### UI & Quality of Life\n• Centered action buttons and removed misplaced list divider lines across all tabs.\n• Removed disruptive import and install alert popups in favor of clean inline status logs.\n• Cleaned up the VPN status bar and removed redundant text labels.\n• General repository cleanup and project modernization.",
+          "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3/AirCard-iOS.ipa",
+          "size": 4452235,
+          "minOSVersion": "27.0"
+        }
+      ]
+    },
+    {
       "name": "AniBaka",
       "bundleIdentifier": "ani.baka",
       "developerName": "AniBakaBaka",
@@ -637,6 +656,30 @@
       ]
     },
     {
+      "name": "Roam Control",
+      "bundleIdentifier": "com.sean.roamcontrol",
+      "developerName": "seanhowarthdev",
+      "subtitle": "Choose, test and move your iPhone's reported location",
+      "localizedDescription": "Set a fixed reported location, preview and simulate Apple Maps walking routes, and save favourites and history — all from one map. Requires iOS 27 or newer, and guided LocalDevVPN-compatible sessions for Wi-Fi and mobile data.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/welcome.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/fixed-location.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/walking-preview.png"
+      ],
+      "tintColor": "#1090F0",
+      "versions": [
+        {
+          "version": "0.9.3",
+          "date": "2026-09-22",
+          "localizedDescription": "Roam Control 0.9.3, Build 63.\n\n### Highlights\n\n- Manual route drawing where Apple walking directions are unavailable.\n- Route planning from an active simulated location, including intermediate waypoints with a fixed destination.\n- Manual Diagnostics in Connection Health with short support codes for troubleshooting.\n- Automatic and manual release update checking.\n- Improved pairing-expiry guidance and notifications.\n- Improved timezone handling and restoration during location simulation.\n- Improved Stop & Restore, background-session and recovery messaging.\n- Improved map recentering and route-planning controls.\n- Improved Connection Health and troubleshooting information.\n\n**Known issue:** A region-specific location-selection accuracy issue remains under investigation in some configurations.\n\nSee the [full changelog](../../blob/main/CHANGELOG.md) for the complete list of changes.\n\n### Requirements\n\n- iOS 27 or newer\n- Developer Mode\n- LocalDevVPN\n- SideStore or another compatible personal-signing workflow\n\nInstall this build over the existing copy to retain local app data.\n\n### Verification\n\nSHA-256:\n\n`8067693a58821bb9a09f39ae126d74d65c64c0f4b796520bdabd6c35e55a7ce6`\n\nFile:\n\n`RoamControl-0.9.3-build63.ipa`\n\nRoam Control is intended for development, quality assurance and responsible testing on an iPhone you own and control.",
+          "downloadURL": "https://github.com/seanhowarthdev/Roam-Control/releases/download/v0.9.3/RoamControl-0.9.3-build63.ipa",
+          "size": 3581943,
+          "minOSVersion": "27.0"
+        }
+      ]
+    },
+    {
       "name": "SceneBox",
       "bundleIdentifier": "app.scenebox.SceneBox",
       "developerName": "donbytyqi",
@@ -884,6 +927,17 @@
       "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.0"
     },
     {
+      "appID": "com.sean.roamcontrol",
+      "title": "Roam Control 0.9.3 · 22 Sep 2026",
+      "identifier": "Roam Control-release-v0.9.3",
+      "caption": "Roam Control 0.9.3 is available.",
+      "date": "2026-09-22T14:33:23Z",
+      "tintColor": "#1090F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
+      "notify": true,
+      "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.3"
+    },
+    {
       "appID": "com.kodjodevf.mangayomi",
       "title": "Mangayomi 0.9.7 · 22 Sep 2026",
       "identifier": "Mangayomi-release-v0.9.7",
@@ -937,6 +991,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
       "notify": true,
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.16.0"
+    },
+    {
+      "appID": "com.mak5er.aircard",
+      "title": "AirCard-iOS 1.3 · 20 Sep 2026",
+      "identifier": "AirCard-iOS-release-v1.3",
+      "caption": "AirCard-iOS 1.3 is available.",
+      "date": "2026-09-20T02:08:32Z",
+      "tintColor": "#5020E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Mak5er/AirCard-iOS/releases/tag/v1.3"
     },
     {
       "appID": "com.aoshuang.manicemu",

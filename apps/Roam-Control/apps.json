@@ -1,0 +1,47 @@
+{
+  "name": "Roam Control",
+  "subtitle": "Roam Control AltStore source by AltGallery & altgen",
+  "description": "Auto-updated AltStore source for Roam Control",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/icon.png",
+  "website": "https://github.com/seanhowarthdev/Roam-Control",
+  "tintColor": "#1090F0",
+  "apps": [
+    {
+      "name": "Roam Control",
+      "bundleIdentifier": "com.sean.roamcontrol",
+      "developerName": "seanhowarthdev",
+      "subtitle": "Choose, test and move your iPhone's reported location",
+      "localizedDescription": "Set a fixed reported location, preview and simulate Apple Maps walking routes, and save favourites and history — all from one map. Requires iOS 27 or newer, and guided LocalDevVPN-compatible sessions for Wi-Fi and mobile data.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/welcome.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/fixed-location.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/walking-preview.png"
+      ],
+      "tintColor": "#1090F0",
+      "versions": [
+        {
+          "version": "0.9.3",
+          "date": "2026-09-22",
+          "localizedDescription": "Roam Control 0.9.3, Build 63.\n\n### Highlights\n\n- Manual route drawing where Apple walking directions are unavailable.\n- Route planning from an active simulated location, including intermediate waypoints with a fixed destination.\n- Manual Diagnostics in Connection Health with short support codes for troubleshooting.\n- Automatic and manual release update checking.\n- Improved pairing-expiry guidance and notifications.\n- Improved timezone handling and restoration during location simulation.\n- Improved Stop & Restore, background-session and recovery messaging.\n- Improved map recentering and route-planning controls.\n- Improved Connection Health and troubleshooting information.\n\n**Known issue:** A region-specific location-selection accuracy issue remains under investigation in some configurations.\n\nSee the [full changelog](../../blob/main/CHANGELOG.md) for the complete list of changes.\n\n### Requirements\n\n- iOS 27 or newer\n- Developer Mode\n- LocalDevVPN\n- SideStore or another compatible personal-signing workflow\n\nInstall this build over the existing copy to retain local app data.\n\n### Verification\n\nSHA-256:\n\n`8067693a58821bb9a09f39ae126d74d65c64c0f4b796520bdabd6c35e55a7ce6`\n\nFile:\n\n`RoamControl-0.9.3-build63.ipa`\n\nRoam Control is intended for development, quality assurance and responsible testing on an iPhone you own and control.",
+          "downloadURL": "https://github.com/seanhowarthdev/Roam-Control/releases/download/v0.9.3/RoamControl-0.9.3-build63.ipa",
+          "size": 3581943,
+          "minOSVersion": "27.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.sean.roamcontrol",
+      "title": "Roam Control 0.9.3 · 22 Sep 2026",
+      "identifier": "Roam Control-release-v0.9.3",
+      "caption": "Roam Control 0.9.3 is available.",
+      "date": "2026-09-22T14:33:23Z",
+      "tintColor": "#1090F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
+      "notify": true,
+      "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.3"
+    }
+  ]
+}
