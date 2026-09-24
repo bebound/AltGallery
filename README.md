@@ -41,6 +41,9 @@ Don't see an app you want? [Create an issue](https://github.com/bebound/AltGalle
 ### <a href="https://github.com/Aidoku/Aidoku"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Aidoku/icon.png" alt="Aidoku icon" width="24" align="top"> Aidoku</a>
 A free and open source manga reading application for iOS and iPadOS.
 
+### <a href="https://github.com/Mak5er/AirCard-iOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AirCard/icon.png" alt="AirCard-iOS icon" width="24" align="top"> AirCard-iOS</a>
+Customize Apple Wallet card artwork, passcode dialers and PosterBoard wallpapers on device without a jailbreak.
+
 ### <a href="https://github.com/AniBakaBaka/AniBaka"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AniBaka/icon.png" alt="AniBaka icon" width="24" align="top"> AniBaka</a>
 跨平台番剧聚合与弹幕客户端，多番剧源、多弹幕、高清无广告，支持动漫实时超分辨率。
 

@@ -1,0 +1,42 @@
+# altgen config for the AirCard-iOS AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Mak5er/AirCard-iOS"
+
+[source]
+name = "AirCard-iOS"
+subtitle = "AirCard-iOS AltStore source by AltGallery & altgen"
+description = "Auto-updated AltStore source for AirCard-iOS"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/icon.png"
+website = "https://github.com/Mak5er/AirCard-iOS"
+tint_color = "#5020E0"
+
+[app]
+name = "AirCard-iOS"
+bundle_identifier = "com.mak5er.aircard"
+developer_name = "Mak5er"
+subtitle = "Apple Wallet card skins, passcode themes and wallpapers"
+description = "Customize Apple Wallet card artwork, lock screen passcode dialers and PosterBoard wallpapers directly on device, without a jailbreak. Requires iOS 27 or newer, LocalDevVPN running in loopback mode, and Developer Mode pairing."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/icon.png"
+# No screenshots: the project ships none (none in its history either), so the
+# entry carries an empty list rather than pointing at images that don't exist.
+screenshots = []
+tint_color = "#5020E0"
+min_os_version = "27.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): every release ships exactly one unsigned
+# ipa named AirCard-iOS.ipa. Tags are v-prefixed but not strict semver
+# (v1.3, v1.2.5), so no version_pattern is needed once the v is stripped.
+asset_pattern = "^AirCard-iOS\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by templates/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/images/news.png"
+
+[output]
+path = "apps.json"
