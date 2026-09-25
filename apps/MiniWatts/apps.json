@@ -22,11 +22,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.4.0",
-          "date": "2026-09-23",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.3.0...v1.4.0",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.4.0/MiniWatts-unsigned.ipa",
-          "size": 3264456,
+          "version": "1.4.1",
+          "date": "2026-09-25",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 修复\n\n- **滑动时每秒卡一下**：在 iPhone 15 Pro 等机型上，任何页面匀速滑动时大约每秒会顿一下，插不插充电器都会出现，现已修复。原因有几处叠加：\n  - 表盘中间的数字滚动效果和弧线动画会被放到 CPU 上绘制，页面滚动时每一帧都要重画一次，占用了大量主线程时间。\n  - 悬浮读数（画中画）即使没有打开，也每秒在后台画一帧画面。\n  - 打开过的每个标签页即使不在前台，也会每秒跟着刷新；当前页面的导航栏和工具栏也每秒重建一次。\n  - 读取传感器改到后台线程进行，不再占用界面线程。\n\n## 变化\n\n- 表盘上的功率数字不再有滚动动画，弧线也不再有过渡动画，都和其他读数一样直接更新。\n- 切换到别的标签页再切回来时，页面会回到顶部。\n\n感谢反馈这个问题的用户。\n\n---\n\n## Fixes\n\n- **Scrolling hitched about once a second** on every screen, charging or not (reported on an iPhone 15 Pro). Several causes added up:\n  - The dial's rolling number and arc animations were drawn on the CPU and redrawn on every scroll frame.\n  - The floating meter (Picture in Picture) rendered a frame every second even when it was not open.\n  - Every tab you had visited kept refreshing in the background once a second, and the visible page rebuilt its navigation bar and toolbar on every refresh.\n  - Sensor reads now run off the main thread.\n\n## Changes\n\n- The power reading on the dial no longer rolls and its arcs no longer animate; they update in place like every other reading.\n- A tab returns to the top when you switch back to it.\n\nThanks to the user who reported it.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.4.0...v1.4.1",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.4.1/MiniWatts-unsigned.ipa",
+          "size": 3270441,
           "minOSVersion": "17.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.4.0 · 23 Sep 2026",
-      "identifier": "MiniWatts-release-v1.4.0",
-      "caption": "MiniWatts 1.4.0 is available.",
-      "date": "2026-09-23T02:58:32Z",
+      "title": "MiniWatts 1.4.1 · 25 Sep 2026",
+      "identifier": "MiniWatts-release-v1.4.1",
+      "caption": "MiniWatts 1.4.1 is available.",
+      "date": "2026-09-25T12:31:59Z",
       "tintColor": "#30E0F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
       "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.0"
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.1"
     }
   ]
 }

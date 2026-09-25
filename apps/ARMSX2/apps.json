@@ -21,11 +21,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260924",
-          "date": "2026-09-24",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\nComing from an old nightly? It is now a separate app (ARMSX2 Nightly) that installs\nbeside the stable app. The old nightly cannot install a stable over itself, because\nAndroid refuses that version downgrade, so to return to stable: back up your saves\nand memory cards, uninstall the old nightly, then install a stable APK.\n\n## What's new\n- GS/HW: copy palette blocks on the CPU sprite road instead of rasterising them\n- GS runner: -vmhash logs a hash of GS local memory at every presented frame\n- GS/SW: keep zero colour tables across walkless primitives\n- GS/SW: test that walkless primitives see zero colour and fog tables\n- GS: log where the back thread first runs\n- GS: resolve a pipelined back thread that cannot pipeline to Off, not lockstep\n- GS/Vulkan: drop EnableAdrenoFramebufferFetch; trust ROAA by rule, not by key\n- GS: unit tests for the render-pass scheduler\n- GS: delete the FieldShift setting and the fieldShift GameDB fix\n- GS: delete DisableDualSourceBlend and gsrunner -no-dual-source\n- GS: delete the DisablePS2DepthQuantization setting\n- GS/Metal: compile out MetalFX on tvOS\n- GS/Vulkan: resolve the feedback-loop carry's device facts once\n- GS: delete two C++ copies of shader expressions that only tests called\n- GS: cut the fork's GS comments down to invariants\n- GS: gather the gsrunner road overrides into one struct, drop the closed ones\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260923...19c83bf065ed21a19d8c46a1f578e37d2dab8efd",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260924/ARMSX2-nightly-20260924-19c83bf065-iOS-arm64.ipa",
-          "size": 30558226,
+          "version": "nightly-20260925",
+          "date": "2026-09-25",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\nComing from an old nightly? It is now a separate app (ARMSX2 Nightly) that installs\nbeside the stable app. The old nightly cannot install a stable over itself, because\nAndroid refuses that version downgrade, so to return to stable: back up your saves\nand memory cards, uninstall the old nightly, then install a stable APK.\n\n## What's new\n- GS/Vulkan: copy overlapping draw and sample areas into the clone once\n- GS/Vulkan: order the expansion index buffer's upload before its first draw\n- GS: clone the target for an offset read whose filter reaches its own writes\n- Android: name memory card backups .zip instead of .mcbak\n- Android: decide the data folder once, and never fall back to internal storage silently\n- GS/OpenGL: only reach for the headless EGL context where GLContextEGL is built\n- GS/HW: draw AA1 lines above native with the vertex-shader expansion\n- GS/OpenGL: let the dump runner open a GL context with no window\n- GS/Vulkan: resolve the feedback carry where its inputs are final\n- GS/Vulkan: feature-detection comments state what holds, not how it was found\n- GS: tests for the Adreno and Mali GPU profiles\n- GS/OpenGL: one Adreno depth-feedback block, not two\n- GS: give the Mali r44p1 workaround one home\n- GS/Vulkan: vendor and device-name rules live in the GPU profile\n- GS/Vulkan: split CheckFeatures into the decisions it makes\n- GS: the renderer decides each draw's feedback-loop state; Vulkan applies it\n- GS: one header for the per-draw self-read rules\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260924...59e2b17ed0aa2b44ec0aaa2b48037437b1f12d62",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260925/ARMSX2-nightly-20260925-59e2b17ed0-iOS-arm64.ipa",
+          "size": 30556571,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260924 · 24 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260924",
-      "caption": "ARMSX2 nightly-20260924 is available.",
-      "date": "2026-09-24T13:54:39Z",
+      "title": "ARMSX2 nightly-20260925 · 25 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260925",
+      "caption": "ARMSX2 nightly-20260925 is available.",
+      "date": "2026-09-25T13:56:06Z",
       "tintColor": "#3CAEFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260924"
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260925"
     }
   ]
 }
