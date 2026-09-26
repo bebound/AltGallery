@@ -21,11 +21,11 @@
       "tintColor": "#13A1FD",
       "versions": [
         {
-          "version": "0.16.0",
-          "date": "2026-09-16",
-          "localizedDescription": "## 新功能\r\n\r\n- 插画详情页支持水平滑动切换插画\r\n- 插画与小说列表到详情页的过渡改为卡片式缩放展开与收起转场\r\n- 多页插画详情页支持条式阅读（垂直连续滚动）模式，可在设置中与默认翻页模式切换\r\n- 多页插画新增瀑布流浏览页\r\n- 插画详情页简介下方新增作者最新作品横向预览\r\n- 支持自定义代理配置\r\n- macOS 端新增网页登录凭据导出功能面板\r\n- 新增多页插画预取深度设置\r\n- 为详情页的标签区域引入一种根据宽度重排的优化布局，缓解标签区域出现的空白\r\n\r\n此版本对插画详情页的交互和导航做了较大重构，如有问题可通过 issue 反馈。\r\n\r\n## 优化\r\n\r\n- 优化了插画全屏预览的交互\r\n- 优化画质降级与图片预取策略，优先加载当前视口可见图片\r\n- 优化插画与小说的评论区排版与时间展示，为表情包图片设置较长的缓存时间\r\n- 参考 macOS 27 原生 App 优化了 macOS 侧边栏\r\n- 优化 iOS 设置等页面的视觉表现\r\n- 插画详情页的相关推荐卡片支持直接点击收藏\r\n- 优化直连模式连接调度与保活机制，提升网络稳定性，减少假死与无响应现象\r\n- 优化 macOS 下播放动图时的系统资源占用\r\n- 统一各页面的加载骨架屏尺寸与过渡效果，消除加载完成时的页面跳动\r\n- 增大 iOS 个人中心顶部用户卡片的可点击面积\r\n- 优化底层依赖，减小应用安装包体积\r\n\r\n## 问题修复\r\n\r\n- 修复以图搜图无法打开系统相册选图的问题\r\n- 修复插画与小说评论区点击展开子回复无响应的问题\r\n- 修复亮点（Pixivision）详情页上下滚动时画面跳动的问题\r\n- 修复切换账号后仍残留上个账号浏览记录与导航路径的问题\r\n- 修复在小说与排行榜等页面点击个人资料卡片无法进入个人主页的问题\r\n\r\n## 本地化\r\n\r\n- 新增繁体中文与日文支持。译文由 GPT-5.6-Luna 起草并由 GPT-5.6-Terra 润色。如果你发现问题，请通过 PR 或 issue 帮助改进。\r\n- 修正了一些英文本地化问题\r\n\r\npixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.15.0...v0.16.0",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.0/Pixiv-SwiftUI.ipa",
-          "size": 10165131,
+          "version": "0.16.1",
+          "date": "2026-09-26",
+          "localizedDescription": "pixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n## 新功能\r\n\r\n- 引入基于 HTTP/3 (QUIC) 协议的新直连模式，替代原有的 SNI 直连方案，解决近期 Pixiv 调整策略导致的 403 阻断问题  \r\n- 支持图片域名切换，可在 Pixiv 官方源与镜像站之间切换，也许可以提升插画加载速度  \r\n- HTTP/3 流式分片下载支持任务内断点续传\r\n- 新增初次启动常用设置向导\r\n\r\n此版本对直连网络层进行了底层重构，如有网络连接相关问题可通过 issue 反馈。\r\n\r\n## 问题修复\r\n\r\n- 修复小说详情页收藏与取消收藏的请求参数编码问题，解决点击收藏可能引发的状态不同步 (@yamakze )  \r\n- 修复 macOS 端登录弹窗无法通过关闭按钮或 Escape 快捷键退出的问题 (@yamakze )  \r\n- 修正推荐页在网络请求失败时的界面排版\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.16.0...v0.16.1",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.1/Pixiv-SwiftUI.ipa",
+          "size": 10236041,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
-      "title": "Pixiv-SwiftUI 0.16.0 · 16 Sep 2026",
-      "identifier": "Pixiv-SwiftUI-release-v0.16.0",
-      "caption": "Pixiv-SwiftUI 0.16.0 is available.",
-      "date": "2026-09-16T14:30:25Z",
+      "title": "Pixiv-SwiftUI 0.16.1 · 26 Sep 2026",
+      "identifier": "Pixiv-SwiftUI-release-v0.16.1",
+      "caption": "Pixiv-SwiftUI 0.16.1 is available.",
+      "date": "2026-09-26T16:13:45Z",
       "tintColor": "#13A1FD",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
       "notify": true,
-      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.0"
+      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.1"
     }
   ]
 }

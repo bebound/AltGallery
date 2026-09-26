@@ -21,11 +21,11 @@
       "tintColor": "#1090F0",
       "versions": [
         {
-          "version": "0.9.3",
-          "date": "2026-09-22",
-          "localizedDescription": "Roam Control 0.9.3, Build 63.\n\n### Highlights\n\n- Manual route drawing where Apple walking directions are unavailable.\n- Route planning from an active simulated location, including intermediate waypoints with a fixed destination.\n- Manual Diagnostics in Connection Health with short support codes for troubleshooting.\n- Automatic and manual release update checking.\n- Improved pairing-expiry guidance and notifications.\n- Improved timezone handling and restoration during location simulation.\n- Improved Stop & Restore, background-session and recovery messaging.\n- Improved map recentering and route-planning controls.\n- Improved Connection Health and troubleshooting information.\n\n**Known issue:** A region-specific location-selection accuracy issue remains under investigation in some configurations.\n\nSee the [full changelog](../../blob/main/CHANGELOG.md) for the complete list of changes.\n\n### Requirements\n\n- iOS 27 or newer\n- Developer Mode\n- LocalDevVPN\n- SideStore or another compatible personal-signing workflow\n\nInstall this build over the existing copy to retain local app data.\n\n### Verification\n\nSHA-256:\n\n`8067693a58821bb9a09f39ae126d74d65c64c0f4b796520bdabd6c35e55a7ce6`\n\nFile:\n\n`RoamControl-0.9.3-build63.ipa`\n\nRoam Control is intended for development, quality assurance and responsible testing on an iPhone you own and control.",
-          "downloadURL": "https://github.com/seanhowarthdev/Roam-Control/releases/download/v0.9.3/RoamControl-0.9.3-build63.ipa",
-          "size": 3581943,
+          "version": "0.9.4",
+          "date": "2026-09-26",
+          "localizedDescription": "Roam Control 0.9.4, Build 74.\n\n### Highlights\n\n#### Backup & Restore\n\n- Added Backup & Restore for favourites, history and supported app preferences.\n- Backups can restore appearance, map style and location compatibility settings too.\n- Pairing and analytics identity are deliberately not included.\n\n#### Freehand routes and walking\n\n- Added **Freehand** route drawing alongside point-by-point route creation.\n- Switch between **Points** and **Freehand** drawing modes.\n- Draw with one finger while using two fingers to pan, zoom or rotate the map.\n- Undo freehand routes one stroke at a time.\n- Redesigned walking and route-planning controls into a more compact layout.\n- Added clearer Start and End markers.\n- Kept Pause, Resume and Stop & Restore easily accessible during active walks.\n- Refined route preview, progress and map behaviour.\n\n#### Location compatibility\n\n- Added automatic coordinate correction for searched and selected locations in Mainland China.\n- Added **Automatic**, **Off** and **Force Correction** compatibility modes.\n- Correction is applied to the simulated device location while the map marker remains where you selected it.\n- Manually entered coordinates are not changed automatically.\n\n#### Sessions, updates and VPNs\n\n- Improved Stop & Restore guidance and real-location reacquisition messaging.\n- Stable update checks now ignore GitHub drafts and prereleases.\n- Updated Connection Health guidance for compatible Personal VPNs and conflicting Device VPN connections.\n- Restored the packaged build timestamp so SideStore re-signing no longer changes the displayed build time.\n\n### Preparing for Roam Control 0.9.5\n\nRoam Control 0.9.5 will require a one-time app migration.\n\nBefore moving to 0.9.5, create a fresh backup from **Settings > Backup & Restore**. Your favourites, history and supported app preferences can then be restored after installing 0.9.5.\n\nPairing is deliberately not included in backups, so the iPhone will need to be paired again after the migration.\n\nFor this 0.9.4 update, install over your existing Roam Control copy as normal to retain your current app data and pairing.\n\nSee the [full changelog](../../blob/main/CHANGELOG.md) for the complete list of changes.\n\n### Requirements\n\n- iOS 27 or newer\n- Developer Mode\n- LocalDevVPN\n- SideStore or another compatible personal-signing workflow\n\n### Verification\n\nSHA-256:\n\n`b55bf4bf6a509dd02731a6e4e97253724857a72cc31085571bd6eda1e5d0ad20`\n\nFile:\n\n`RoamControl-0.9.4-build74.ipa`\n\nRoam Control is intended for development, quality assurance and responsible testing on an iPhone you own and control.",
+          "downloadURL": "https://github.com/seanhowarthdev/Roam-Control/releases/download/v0.9.4/RoamControl-0.9.4-build74.ipa",
+          "size": 3728223,
           "minOSVersion": "27.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.sean.roamcontrol",
-      "title": "Roam Control 0.9.3 · 22 Sep 2026",
-      "identifier": "Roam Control-release-v0.9.3",
-      "caption": "Roam Control 0.9.3 is available.",
-      "date": "2026-09-22T14:33:23Z",
+      "title": "Roam Control 0.9.4 · 26 Sep 2026",
+      "identifier": "Roam Control-release-v0.9.4",
+      "caption": "Roam Control 0.9.4 is available.",
+      "date": "2026-09-26T19:06:01Z",
       "tintColor": "#1090F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
       "notify": true,
-      "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.3"
+      "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.4"
     }
   ]
 }

@@ -603,11 +603,11 @@
       "tintColor": "#13A1FD",
       "versions": [
         {
-          "version": "0.16.0",
-          "date": "2026-09-16",
-          "localizedDescription": "## 新功能\r\n\r\n- 插画详情页支持水平滑动切换插画\r\n- 插画与小说列表到详情页的过渡改为卡片式缩放展开与收起转场\r\n- 多页插画详情页支持条式阅读（垂直连续滚动）模式，可在设置中与默认翻页模式切换\r\n- 多页插画新增瀑布流浏览页\r\n- 插画详情页简介下方新增作者最新作品横向预览\r\n- 支持自定义代理配置\r\n- macOS 端新增网页登录凭据导出功能面板\r\n- 新增多页插画预取深度设置\r\n- 为详情页的标签区域引入一种根据宽度重排的优化布局，缓解标签区域出现的空白\r\n\r\n此版本对插画详情页的交互和导航做了较大重构，如有问题可通过 issue 反馈。\r\n\r\n## 优化\r\n\r\n- 优化了插画全屏预览的交互\r\n- 优化画质降级与图片预取策略，优先加载当前视口可见图片\r\n- 优化插画与小说的评论区排版与时间展示，为表情包图片设置较长的缓存时间\r\n- 参考 macOS 27 原生 App 优化了 macOS 侧边栏\r\n- 优化 iOS 设置等页面的视觉表现\r\n- 插画详情页的相关推荐卡片支持直接点击收藏\r\n- 优化直连模式连接调度与保活机制，提升网络稳定性，减少假死与无响应现象\r\n- 优化 macOS 下播放动图时的系统资源占用\r\n- 统一各页面的加载骨架屏尺寸与过渡效果，消除加载完成时的页面跳动\r\n- 增大 iOS 个人中心顶部用户卡片的可点击面积\r\n- 优化底层依赖，减小应用安装包体积\r\n\r\n## 问题修复\r\n\r\n- 修复以图搜图无法打开系统相册选图的问题\r\n- 修复插画与小说评论区点击展开子回复无响应的问题\r\n- 修复亮点（Pixivision）详情页上下滚动时画面跳动的问题\r\n- 修复切换账号后仍残留上个账号浏览记录与导航路径的问题\r\n- 修复在小说与排行榜等页面点击个人资料卡片无法进入个人主页的问题\r\n\r\n## 本地化\r\n\r\n- 新增繁体中文与日文支持。译文由 GPT-5.6-Luna 起草并由 GPT-5.6-Terra 润色。如果你发现问题，请通过 PR 或 issue 帮助改进。\r\n- 修正了一些英文本地化问题\r\n\r\npixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.15.0...v0.16.0",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.0/Pixiv-SwiftUI.ipa",
-          "size": 10165131,
+          "version": "0.16.1",
+          "date": "2026-09-26",
+          "localizedDescription": "pixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n## 新功能\r\n\r\n- 引入基于 HTTP/3 (QUIC) 协议的新直连模式，替代原有的 SNI 直连方案，解决近期 Pixiv 调整策略导致的 403 阻断问题  \r\n- 支持图片域名切换，可在 Pixiv 官方源与镜像站之间切换，也许可以提升插画加载速度  \r\n- HTTP/3 流式分片下载支持任务内断点续传\r\n- 新增初次启动常用设置向导\r\n\r\n此版本对直连网络层进行了底层重构，如有网络连接相关问题可通过 issue 反馈。\r\n\r\n## 问题修复\r\n\r\n- 修复小说详情页收藏与取消收藏的请求参数编码问题，解决点击收藏可能引发的状态不同步 (@yamakze )  \r\n- 修复 macOS 端登录弹窗无法通过关闭按钮或 Escape 快捷键退出的问题 (@yamakze )  \r\n- 修正推荐页在网络请求失败时的界面排版\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.16.0...v0.16.1",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.1/Pixiv-SwiftUI.ipa",
+          "size": 10236041,
           "minOSVersion": "17.0"
         }
       ]
@@ -651,11 +651,11 @@
       "tintColor": "#50B0F0",
       "versions": [
         {
-          "version": "3.1.5",
-          "date": "2026-09-24",
-          "localizedDescription": "# 纯粹直播 v3.1.5\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n### 🖥️ Windows 版\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n### 🍎 macOS 版\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n### 📱 Android 版\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.5/ANDROID_SHA256SUM.txt)\n### 🐧 Linux 版\n- Linux x64\n- Portable tar.gz\n### 🍎 iOS 版\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n### 🔧 Build Metadata\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.5/BUILD_METADATA.json)\n### 📝 本次更新\nversion: 3.1.5\n版本更新：\n- 新增 23 个直播平台：百度、酷狗、淘宝、京东、六间房、LOOK、Steam、Bigo、GoodGame、Rumble、Dailymotion、NimoTV、VK、Shopee、LiveMe、17Live、Showroom、Chzzk、Kick、TikTok、YouTube 等。\n- 小红书支持导入官方直播间链接；微博、猫耳、B站、斗鱼等平台搜索、弹幕与详情体验优化。\n- 多画面卡顿恢复时保留手动选择的线路；修复黑屏、房间切换残留画面、进入房间音量被改变等问题。\n- Windows：修复 mpv 渲染释放与画中画切换问题，支持多实例配置文件，优化标题栏与托盘菜单。\n- 全大字体与无障碍适配：优化按钮、对话框与选择器布局，新增音量调节等辅助操作。\n- 收藏、标签、设置、IPTV、备份、字体等数据写入改为原子提交，避免并发场景下状态丢失。\n- WebDAV：新增局域网远程同步，支持收藏独立备份与选择性恢复。\n- 设置页新增音频输出与解码器配置；优化弹幕设置、字体选择与动态主题。\n- 升级 FFmpeg 9.0.2 原生库，Android 支持 16 KB 对齐，更新下载镜像列表，修复 Firebase 初始化阻塞启动。",
-          "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.5/PureLive-3.1.5-4104-ios-arm64-trollstore.ipa",
-          "size": 60990793,
+          "version": "3.1.6",
+          "date": "2026-09-26",
+          "localizedDescription": "# 纯粹直播 v3.1.6\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n### 🖥️ Windows 版\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n### 🍎 macOS 版\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n### 📱 Android 版\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.6/ANDROID_SHA256SUM.txt)\n### 🐧 Linux 版\n- Linux x64\n- Portable tar.gz\n### 🍎 iOS 版\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n### 🔧 Build Metadata\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.6/BUILD_METADATA.json)\n### 📝 本次更新\nversion: 3.1.6\n版本更新：\n- 快手主播搜索改用原生接口，修复此前网页版列表为空；同时下线 11 个长期无法维护的平台（GoodGame、Rumble、Dailymotion、NimoTV、VK、Shopee、淘宝直播、花椒、OPENREC、PopKonTV、TTing），其收藏、历史与分享链接仍可读并明确提示\"已下线\"。\n- 斗鱼登录态改按 Cookie 中的 JWT 判定：新增 LTP0 与 dy_did 输入，Cookie 7 天时效内自动续期，失效前自动刷新、播放失败时强制续期一次。\n- 平台播放修复：FC2 无后缀播放列表、17LIVE 与 Shopee 的 HEVC FLV 继电器、NimoTV 2026-09 流格式、VK 的 vkuser.net CDN、Kick 原生 TLS 通道、Showroom 无演出单元格、LiveMe 精选卡。\n- 分享链路：其他 App 分享的直播间链接可直接打开（冷启动等待导航完成），已下线平台的链接给出明确提示。\n- 多画面：新增一键静音全部；卡顿恢复时保留手动选择的线路。\n- 录播：可选把直播聊天记录与录像一并保存；码率改按文件实际增长计算，任务释放时等待聊天文件写完。\n- 播放器与界面：小窗不再吞掉其上方菜单的点击；双击进入竖屏全屏、再双击收起控制栏；内联控制条全屏按钮常显；房间加载失败显示重试状态而不是一直转圈。\n- Windows / Linux / Android：窗口与可执行文件使用应用名；宽窗口下设置分组不再被拉满；Linux 包内置 libmpv；Android 17 访问局域网代理时申请本地网络权限；Windows 包不再混入旧的 kernel_blob.bin。",
+          "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.6/PureLive-3.1.6-4105-ios-arm64-trollstore.ipa",
+          "size": 65178311,
           "minOSVersion": "15.6"
         }
       ]
@@ -675,11 +675,11 @@
       "tintColor": "#1090F0",
       "versions": [
         {
-          "version": "0.9.3",
-          "date": "2026-09-22",
-          "localizedDescription": "Roam Control 0.9.3, Build 63.\n\n### Highlights\n\n- Manual route drawing where Apple walking directions are unavailable.\n- Route planning from an active simulated location, including intermediate waypoints with a fixed destination.\n- Manual Diagnostics in Connection Health with short support codes for troubleshooting.\n- Automatic and manual release update checking.\n- Improved pairing-expiry guidance and notifications.\n- Improved timezone handling and restoration during location simulation.\n- Improved Stop & Restore, background-session and recovery messaging.\n- Improved map recentering and route-planning controls.\n- Improved Connection Health and troubleshooting information.\n\n**Known issue:** A region-specific location-selection accuracy issue remains under investigation in some configurations.\n\nSee the [full changelog](../../blob/main/CHANGELOG.md) for the complete list of changes.\n\n### Requirements\n\n- iOS 27 or newer\n- Developer Mode\n- LocalDevVPN\n- SideStore or another compatible personal-signing workflow\n\nInstall this build over the existing copy to retain local app data.\n\n### Verification\n\nSHA-256:\n\n`8067693a58821bb9a09f39ae126d74d65c64c0f4b796520bdabd6c35e55a7ce6`\n\nFile:\n\n`RoamControl-0.9.3-build63.ipa`\n\nRoam Control is intended for development, quality assurance and responsible testing on an iPhone you own and control.",
-          "downloadURL": "https://github.com/seanhowarthdev/Roam-Control/releases/download/v0.9.3/RoamControl-0.9.3-build63.ipa",
-          "size": 3581943,
+          "version": "0.9.4",
+          "date": "2026-09-26",
+          "localizedDescription": "Roam Control 0.9.4, Build 74.\n\n### Highlights\n\n#### Backup & Restore\n\n- Added Backup & Restore for favourites, history and supported app preferences.\n- Backups can restore appearance, map style and location compatibility settings too.\n- Pairing and analytics identity are deliberately not included.\n\n#### Freehand routes and walking\n\n- Added **Freehand** route drawing alongside point-by-point route creation.\n- Switch between **Points** and **Freehand** drawing modes.\n- Draw with one finger while using two fingers to pan, zoom or rotate the map.\n- Undo freehand routes one stroke at a time.\n- Redesigned walking and route-planning controls into a more compact layout.\n- Added clearer Start and End markers.\n- Kept Pause, Resume and Stop & Restore easily accessible during active walks.\n- Refined route preview, progress and map behaviour.\n\n#### Location compatibility\n\n- Added automatic coordinate correction for searched and selected locations in Mainland China.\n- Added **Automatic**, **Off** and **Force Correction** compatibility modes.\n- Correction is applied to the simulated device location while the map marker remains where you selected it.\n- Manually entered coordinates are not changed automatically.\n\n#### Sessions, updates and VPNs\n\n- Improved Stop & Restore guidance and real-location reacquisition messaging.\n- Stable update checks now ignore GitHub drafts and prereleases.\n- Updated Connection Health guidance for compatible Personal VPNs and conflicting Device VPN connections.\n- Restored the packaged build timestamp so SideStore re-signing no longer changes the displayed build time.\n\n### Preparing for Roam Control 0.9.5\n\nRoam Control 0.9.5 will require a one-time app migration.\n\nBefore moving to 0.9.5, create a fresh backup from **Settings > Backup & Restore**. Your favourites, history and supported app preferences can then be restored after installing 0.9.5.\n\nPairing is deliberately not included in backups, so the iPhone will need to be paired again after the migration.\n\nFor this 0.9.4 update, install over your existing Roam Control copy as normal to retain your current app data and pairing.\n\nSee the [full changelog](../../blob/main/CHANGELOG.md) for the complete list of changes.\n\n### Requirements\n\n- iOS 27 or newer\n- Developer Mode\n- LocalDevVPN\n- SideStore or another compatible personal-signing workflow\n\n### Verification\n\nSHA-256:\n\n`b55bf4bf6a509dd02731a6e4e97253724857a72cc31085571bd6eda1e5d0ad20`\n\nFile:\n\n`RoamControl-0.9.4-build74.ipa`\n\nRoam Control is intended for development, quality assurance and responsible testing on an iPhone you own and control.",
+          "downloadURL": "https://github.com/seanhowarthdev/Roam-Control/releases/download/v0.9.4/RoamControl-0.9.4-build74.ipa",
+          "size": 3728223,
           "minOSVersion": "27.0"
         }
       ]
@@ -818,12 +818,12 @@
       "tintColor": "#FF0000",
       "versions": [
         {
-          "version": "21.38.2",
-          "buildVersion": "21.38.2",
-          "date": "2026-09-21",
+          "version": "21.38.3",
+          "buildVersion": "21.38.3",
+          "date": "2026-09-26",
           "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock. (unstable in newer builds)\r\n> - for <A15 devices press share button in the arrow down panel and use external player for AV1 videos.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.38.2_1.3.1.ipa",
-          "size": 130071393,
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa3/YouProExtra_21.38.3_1.3.1.ipa",
+          "size": 130146736,
           "minOSVersion": "16.0"
         }
       ]
@@ -854,6 +854,50 @@
     }
   ],
   "news": [
+    {
+      "appID": "com.mystyle.purelive.liu",
+      "title": "PureLive 3.1.6 · 26 Sep 2026",
+      "identifier": "PureLive-release-v3.1.6",
+      "caption": "PureLive 3.1.6 is available.",
+      "date": "2026-09-26T20:12:06Z",
+      "tintColor": "#50B0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
+      "notify": true,
+      "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.6"
+    },
+    {
+      "appID": "com.sean.roamcontrol",
+      "title": "Roam Control 0.9.4 · 26 Sep 2026",
+      "identifier": "Roam Control-release-v0.9.4",
+      "caption": "Roam Control 0.9.4 is available.",
+      "date": "2026-09-26T19:06:01Z",
+      "tintColor": "#1090F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
+      "notify": true,
+      "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.4"
+    },
+    {
+      "appID": "com.google.ios.youtube",
+      "title": "YouProEXTRA 21.38.3 · 26 Sep 2026",
+      "identifier": "YouProEXTRA-release-youproextra-ipa3",
+      "caption": "YouProEXTRA 21.38.3 is available.",
+      "date": "2026-09-26T16:18:08Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa3"
+    },
+    {
+      "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
+      "title": "Pixiv-SwiftUI 0.16.1 · 26 Sep 2026",
+      "identifier": "Pixiv-SwiftUI-release-v0.16.1",
+      "caption": "Pixiv-SwiftUI 0.16.1 is available.",
+      "date": "2026-09-26T16:13:45Z",
+      "tintColor": "#13A1FD",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.1"
+    },
     {
       "appID": "org.animeko.animeko",
       "title": "Animeko 6.2.0 · 26 Sep 2026",
@@ -932,17 +976,6 @@
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.8.0"
     },
     {
-      "appID": "com.mystyle.purelive.liu",
-      "title": "PureLive 3.1.5 · 24 Sep 2026",
-      "identifier": "PureLive-release-v3.1.5",
-      "caption": "PureLive 3.1.5 is available.",
-      "date": "2026-09-24T19:33:54Z",
-      "tintColor": "#50B0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
-      "notify": true,
-      "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.5"
-    },
-    {
       "appID": "com.huamu013.ZhihuMinusMinus",
       "title": "ZhihuMinusMinus 0.6.3 · 24 Sep 2026",
       "identifier": "ZhihuMinusMinus-release-v0.6.3",
@@ -998,17 +1031,6 @@
       "url": "https://github.com/celia-sh/Novella/releases/tag/v2.5.0"
     },
     {
-      "appID": "com.sean.roamcontrol",
-      "title": "Roam Control 0.9.3 · 22 Sep 2026",
-      "identifier": "Roam Control-release-v0.9.3",
-      "caption": "Roam Control 0.9.3 is available.",
-      "date": "2026-09-22T14:33:23Z",
-      "tintColor": "#1090F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
-      "notify": true,
-      "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.3"
-    },
-    {
       "appID": "com.kodjodevf.mangayomi",
       "title": "Mangayomi 0.9.7 · 22 Sep 2026",
       "identifier": "Mangayomi-release-v0.9.7",
@@ -1029,17 +1051,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
       "notify": true,
       "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.3.3"
-    },
-    {
-      "appID": "com.google.ios.youtube",
-      "title": "YouProEXTRA 21.38.2 · 21 Sep 2026",
-      "identifier": "YouProEXTRA-release-youproextra-ipa2",
-      "caption": "YouProEXTRA 21.38.2 is available.",
-      "date": "2026-09-21T23:36:39Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
-      "notify": true,
-      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
     },
     {
       "appID": "com.github.cyrilpeng.veneranext",
@@ -1073,17 +1084,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.png",
       "notify": true,
       "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.1"
-    },
-    {
-      "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
-      "title": "Pixiv-SwiftUI 0.16.0 · 16 Sep 2026",
-      "identifier": "Pixiv-SwiftUI-release-v0.16.0",
-      "caption": "Pixiv-SwiftUI 0.16.0 is available.",
-      "date": "2026-09-16T14:30:25Z",
-      "tintColor": "#13A1FD",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.0"
     },
     {
       "appID": "com.naine.doer",
