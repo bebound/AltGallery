@@ -21,11 +21,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20260925",
-          "date": "2026-09-25",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\nComing from an old nightly? It is now a separate app (ARMSX2 Nightly) that installs\nbeside the stable app. The old nightly cannot install a stable over itself, because\nAndroid refuses that version downgrade, so to return to stable: back up your saves\nand memory cards, uninstall the old nightly, then install a stable APK.\n\n## What's new\n- GS/Vulkan: copy overlapping draw and sample areas into the clone once\n- GS/Vulkan: order the expansion index buffer's upload before its first draw\n- GS: clone the target for an offset read whose filter reaches its own writes\n- Android: name memory card backups .zip instead of .mcbak\n- Android: decide the data folder once, and never fall back to internal storage silently\n- GS/OpenGL: only reach for the headless EGL context where GLContextEGL is built\n- GS/HW: draw AA1 lines above native with the vertex-shader expansion\n- GS/OpenGL: let the dump runner open a GL context with no window\n- GS/Vulkan: resolve the feedback carry where its inputs are final\n- GS/Vulkan: feature-detection comments state what holds, not how it was found\n- GS: tests for the Adreno and Mali GPU profiles\n- GS/OpenGL: one Adreno depth-feedback block, not two\n- GS: give the Mali r44p1 workaround one home\n- GS/Vulkan: vendor and device-name rules live in the GPU profile\n- GS/Vulkan: split CheckFeatures into the decisions it makes\n- GS: the renderer decides each draw's feedback-loop state; Vulkan applies it\n- GS: one header for the per-draw self-read rules\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260924...59e2b17ed0aa2b44ec0aaa2b48037437b1f12d62",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260925/ARMSX2-nightly-20260925-59e2b17ed0-iOS-arm64.ipa",
-          "size": 30556571,
+          "version": "nightly-20260926",
+          "date": "2026-09-26",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it\n\nComing from an old nightly? It is now a separate app (ARMSX2 Nightly) that installs\nbeside the stable app. The old nightly cannot install a stable over itself, because\nAndroid refuses that version downgrade, so to return to stable: back up your saves\nand memory cards, uninstall the old nightly, then install a stable APK.\n\n## What's new\n- GunCon 2: a calibration shot for touch, and aim in surface pixels\n- USB devices: stop the keyboard switch unplugging Port 1\n- USB devices: keep the device list between games on Android\n- GunCon 2: its buttons join the touch layout, and aiming leaves the face buttons alone\n- USB devices: the port row says Not Connected, like the list below it\n- USB devices: list them with no game running, and pick one per port from a dropdown\n- Network: typing a DNS address switches that slot to Manual\n- Texture packs: make deleting a pack reliable\n- Texture packs: install a multi-region pack under the player's own serial\n- Library music: defer to media playback, not to another app's game audio\n- DEV9: bring back the Android HDD image handling\n- Keyboard: type addresses and paths\n- GameDB panel: name the copy-road blending cap and the field shift\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260925...247fa6f09499f69192c52c0542305ed16119518b",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20260926/ARMSX2-nightly-20260926-247fa6f094-iOS-arm64.ipa",
+          "size": 30555113,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20260925 · 25 Sep 2026",
-      "identifier": "ARMSX2-release-nightly-20260925",
-      "caption": "ARMSX2 nightly-20260925 is available.",
-      "date": "2026-09-25T13:56:06Z",
+      "title": "ARMSX2 nightly-20260926 · 26 Sep 2026",
+      "identifier": "ARMSX2-release-nightly-20260926",
+      "caption": "ARMSX2 nightly-20260926 is available.",
+      "date": "2026-09-26T13:22:36Z",
       "tintColor": "#3CAEFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260925"
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20260926"
     }
   ]
 }
