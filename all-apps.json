@@ -167,11 +167,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20261002",
-          "date": "2026-10-02",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- GS/HW: under the Native half-pixel offset, snap a sprite's far edge half a pixel short\n- GS: count the draws that clamp a snapped sprite's far-edge sample\n- GS/Vulkan: a snapped sprite samples no further than its last native pixel\n- Analog sticks: the switches redraw when tapped\n- common/Linux: keep the validated timer frequency instead of re-reading it\n- android: Support Exynos CPU and GPU thermal zones in OSD\n- common/Linux: Validate architected timer frequency and calibrate against CLOCK_MONOTONIC\n- GS/OpenGL: pass the index range to indexed draws over the stream buffer\n- iOS: point the texture packs help at its own page\n- iOS: keep a pack folder that took an import in iCloud backup\n- iOS: clear unfinished texture pack installs off the main thread\n- iOS: move controller focus off a removed texture pack\n- iOS: left-align a texture pack's credit line\n- Drivers: list the ARMSX2 libmali packs on Mali-G615/G715\n- iOS: put the shortcut help comment back on its view\n- iOS: list the library export prompt in the string catalog\n- iOS: keep the undo of a load when the undo could not run\n- iOS: let the undo window run out with VoiceOver on\n- iOS: keep two columns in the pause menu over the shortcut bar\n- iOS: keep the rename keyboard clear of the card behind it\n- iOS: honour a changed Undo button over menus\n- iOS: let players choose how long Undo stays up\n- iOS: move through Licenses with the D-pad and left stick\n- iOS: move into the page when Cross picks a tab\n- iOS: draw the focus box in the library's Layout and More menus\n- iOS: draw the focus ring only on the screen that gets the input\n- iOS: take the toolbar focus ring off while a library menu is open\n- iOS: write folder memory cards out when the app goes to the background\n- iOS: sign in to RetroAchievements with a controller\n- iOS: open Save States on Slot 1 with a controller\n- iOS: put the Auto-save rows in Emulator's controller order\n- iOS: drop \"Slot 10\" from the Quick Save shortcut's toast\n- iOS: draw controller buttons in Save States hints as glyphs\n- iOS: mark the latest save on its date line\n- iOS: auto-save at once when the battery gets low\n- iOS: show a cloud and a bolt on the Auto-save and Quick Save rows\n- iOS: give the pause menu's shortcut bar room and a readable surface\n- iOS: end Settings lists just above the tab bar\n- iOS: keep the controller focus ring on its button when a panel moves\n- iOS: open the pause menu when a game comes back from the background\n- iOS: auto-save while playing and when leaving the game\n- iOS: undo a save-state load, delete or save-over\n- iOS: add rename and lock to Save States\n- iOS: move Save States into the pause card, with Quick Save\n- iOS: stop a slow or stale save from breaking other saves\n- iOS: drop the controller-only top margin on Settings pages\n- iOS: show the whole top when controller focus returns to it\n- iOS: wrap controller focus at the ends of Settings pages\n- iOS: show the controller shortcut bar under the pause menu\n- iOS: focus the save state shortcut prompts as soon as they open\n- iOS: let the controller answer confirmation dialogs\n- iOS: keep focus on a row that only left the order for a moment\n- iOS: keep scrolling a Settings row that went under the title\n- iOS: start the Settings list at the top on a landscape phone\n- iOS: move focus to Overwrite after saving to an empty slot\n- iOS: return focus to the Settings row that opened a page\n- iOS: scroll Save States back to Slot 1 under its header\n- iOS: open Settings pages at the top after a relaunch\n- iOS: stop the Change Disc panel drawing a black sheet\n- iOS: give Game Info the library's glass panel\n- iOS: shrink the Cheats & Patches panel\n- iOS: keep the status bar hidden over full-screen menus\n- iOS: let players keep the theme when Game Options opens\n- iOS: let players turn off theme changes with L2 and R2\n- iOS: scroll on to the next row when the ones in view can't take focus\n- iOS: move through the Speed panel in the order it is drawn\n- iOS: show app prompts in their own window above sheets\n- iOS: skin picker keeps its layout switch, Left/Right pick Apply/Cancel\n- iOS: move through RetroAchievements with a controller\n- iOS: Square opens the game menu and Triangle adds a favorite\n- iOS: keep the Settings list's order when a page slides out\n- iOS: give the pad back to pause menu panels after a touch\n- iOS: ask before Stop in a small panel under the stop button\n- iOS: tuck the Skins search bar away in controller mode\n- iOS: reach search and the filter on the Skins page with a controller\n- iOS: move through the Skins browser in two columns\n- iOS: show the status bar in menus by default, as master does\n- iOS: fire controller macros from the D-pad only\n- iOS: make Browse Skins a controller target on the Virtual Pad page\n- iOS: keep a skin chosen while a catalog skin downloads\n- iOS: import the folder's logo and audio pack again only when they change\n- iOS: refuse a theme file the number check cannot read\n- iOS: fold the fast IPA script into build-ios-ipa.sh as --fast\n- iOS: move the BIOS page onto the shared controller navigation\n- iOS: fix the IPA scripts' Rust setup and compile Release whole-module\n- iOS: delete unused code and wrong notes\n- iOS: capture the router in OrbitKeys and play haptics through it\n- iOS: fix custom skin downloads and resets, restore the catalog source\n- iOS: keep saved per-game settings through a live preview\n- iOS: fix bugs in theme files and wallpaper updates\n- iOS: fix menu controller input and delete the unused native focus path\n- iOS: fix bugs in the game library and its prompts\n- iOS: fix settings that load wrong on upgrade or crash on open\n- Delete platforms/ios/app/src/main/assets/app_icons/controller_icons_nether/armsx2_bouncing_logo.png\n- coordinate startup video and audio handoff\n- add OrbitKeys controller keyboards\n- complete settings navigation and feedback\n- expand quick menu and gameplay overlays\n- add per-game controller skins and virtual pad tools\n- rebuild per-game settings with live preview\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20260930...e23b6a5579831058609471ea3a86fdd70c575dff",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261002/ARMSX2-nightly-20261002-e23b6a5579-iOS-arm64.ipa",
-          "size": 38987191,
+          "version": "nightly-20261003",
+          "date": "2026-10-03",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- iOS: stop Settings pages jumping down after Back on a landscape phone\n- iOS: write why an auto-save didn't happen to emulog.txt\n- iOS: auto-save when Back to Menu leaves a game\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261002...9d989ca933a85bb2f1d111fd3b9e5742ac7d2fbe",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261003/ARMSX2-nightly-20261003-9d989ca933-iOS-arm64.ipa",
+          "size": 38988244,
           "minOSVersion": "17.0"
         }
       ]
@@ -408,11 +408,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.19",
-          "date": "2026-09-23",
-          "localizedDescription": "### Added\n\n- **iOS + macOS**: an optional on-disk song cache (on by default, 100–1000 MB) — recently played tracks play from local storage, so replays work offline and rapid track switching is smoother; adjust the size or clear it in Settings. Thanks @yamakze (#109, part of #106).\n- **iOS + macOS**: per-source control for grey (unavailable) tracks — enable or disable each fallback audio source (酷狗 / 酷我 / …) in Settings, plus stricter title/artist/duration match validation so a wrong song is no longer substituted. Thanks @yamakze (#104, addresses #77).\n\n### Fixed\n\n- **macOS**: the Settings 「播放页模式」 picker now offers only the two layouts macOS actually renders (黑胶 / 经典) instead of four. (#105)\n- **macOS**: the now-playing page slides in more smoothly — the titlebar and ambient tint fade out as the page rises, the arrow cursor no longer leaks from the sidebar divider onto the page, and the artwork cross-fades in. Thanks @sld272 (#100).\n- **iOS**: tapping a track's cover in a list now plays it directly instead of opening the album, and the now-playing volume control moved into a compact popover. Thanks @yamakze (#108, part of #106).\n\n---\n\n### 新增\n\n- **iOS + macOS**：可选的本地歌曲缓存(默认开启,100–1000 MB)——最近听过的歌从本地播放,断网也能重播、快速切歌更顺;可在设置里调整大小或清除。感谢 @yamakze（#109，#106 的一部分）。\n- **iOS + macOS**：灰色(无版权)歌曲的音源可逐个开关——在设置里启用 / 禁用每个备用音源(酷狗 / 酷我 / …),并加入更严格的标题 / 歌手 / 时长匹配校验,不再匹配到错误的歌曲。感谢 @yamakze（#104，缓解 #77）。\n\n### 修复\n\n- **macOS**：设置里的「播放页模式」现在只提供 macOS 实际支持的两种(黑胶 / 经典),不再显示四种。（#105）\n- **macOS**：进入播放页的动画更顺滑——标题栏与环境色随页面升起淡出,侧栏分隔条的箭头光标不再渗到播放页上,封面淡入。感谢 @sld272（#100）。\n- **iOS**：列表里点击歌曲封面现在直接播放,而不是进入专辑,播放页音量改为紧凑的弹出条。感谢 @yamakze（#108，#106 的一部分）。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.19/Kumone-iOS-0.3.19.ipa",
-          "size": 7492465,
+          "version": "0.3.20",
+          "date": "2026-10-03",
+          "localizedDescription": "### Added\n\n- **macOS** (experimental): AutoMix — an Apple-Music-style continuous-playback mode with beat-matched transitions, optional stem separation, loudness compensation and an output-device picker, on a new dual-deck AVAudioEngine backend. Off by default; turn it on in Settings. Thanks @XerWandeRer (#102).\n- **iOS**: search and sort within the Liked Songs playlist. Thanks @yamakze (#121).\n- **Release**: every release now also ships an AltStore / SideStore source (`altstore.json`) for one-tap sideload updates. Thanks @vancez (#112).\n\n### Fixed\n\n- **iOS + macOS**: home-page loading placeholders and the 新碟上架 album cards stay within the content width instead of overflowing it. Thanks @sld272 (#119).\n\n---\n\n### 新增\n\n- **macOS**（实验性）：AutoMix——类 Apple Music 的连续播放模式,支持节拍对齐的过渡、可选的人声 / 伴奏分离、响度补偿与输出设备选择,基于全新的双 deck AVAudioEngine 后端。默认关闭,可在设置里开启。感谢 @XerWandeRer（#102）。\n- **iOS**：「我喜欢的音乐」歌单内支持搜索与排序。感谢 @yamakze（#121）。\n- **发布**：每次发布额外提供 AltStore / SideStore 源（`altstore.json`),可在 AltStore 里一键更新侧载。感谢 @vancez（#112）。\n\n### 修复\n\n- **iOS + macOS**：首页加载占位与「新碟上架」专辑卡片不再超出内容宽度。感谢 @sld272（#119）。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.20/Kumone-iOS-0.3.20.ipa",
+          "size": 7546632,
           "minOSVersion": "16.0"
         }
       ]
@@ -996,6 +996,28 @@
   ],
   "news": [
     {
+      "appID": "sb.moe.kumone",
+      "title": "Kumone 0.3.20 · 03 Oct 2026",
+      "identifier": "Kumone-release-v0.3.20",
+      "caption": "Kumone 0.3.20 is available.",
+      "date": "2026-10-03T15:42:04Z",
+      "tintColor": "#F0D060",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
+      "notify": true,
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.20"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20261003 · 03 Oct 2026",
+      "identifier": "ARMSX2-release-nightly-20261003",
+      "caption": "ARMSX2 nightly-20261003 is available.",
+      "date": "2026-10-03T13:56:46Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261003"
+    },
+    {
       "appID": "com.huamu013.ZhihuMinusMinus",
       "title": "ZhihuMinusMinus 0.7.1 · 03 Oct 2026",
       "identifier": "ZhihuMinusMinus-release-v0.7.1",
@@ -1016,17 +1038,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Madeira/images/news.png",
       "notify": true,
       "url": "https://github.com/willfaust/Madeira/releases/tag/v0.1.2"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20261002 · 02 Oct 2026",
-      "identifier": "ARMSX2-release-nightly-20261002",
-      "caption": "ARMSX2 nightly-20261002 is available.",
-      "date": "2026-10-02T15:24:35Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261002"
     },
     {
       "appID": "com.altman.moviepilot",
@@ -1247,17 +1258,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
       "notify": true,
       "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.4"
-    },
-    {
-      "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.19 · 23 Sep 2026",
-      "identifier": "Kumone-release-v0.3.19",
-      "caption": "Kumone 0.3.19 is available.",
-      "date": "2026-09-23T07:12:20Z",
-      "tintColor": "#F0D060",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
-      "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.19"
     },
     {
       "appID": "sh.celia.novella",

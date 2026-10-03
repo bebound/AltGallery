@@ -21,11 +21,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.19",
-          "date": "2026-09-23",
-          "localizedDescription": "### Added\n\n- **iOS + macOS**: an optional on-disk song cache (on by default, 100–1000 MB) — recently played tracks play from local storage, so replays work offline and rapid track switching is smoother; adjust the size or clear it in Settings. Thanks @yamakze (#109, part of #106).\n- **iOS + macOS**: per-source control for grey (unavailable) tracks — enable or disable each fallback audio source (酷狗 / 酷我 / …) in Settings, plus stricter title/artist/duration match validation so a wrong song is no longer substituted. Thanks @yamakze (#104, addresses #77).\n\n### Fixed\n\n- **macOS**: the Settings 「播放页模式」 picker now offers only the two layouts macOS actually renders (黑胶 / 经典) instead of four. (#105)\n- **macOS**: the now-playing page slides in more smoothly — the titlebar and ambient tint fade out as the page rises, the arrow cursor no longer leaks from the sidebar divider onto the page, and the artwork cross-fades in. Thanks @sld272 (#100).\n- **iOS**: tapping a track's cover in a list now plays it directly instead of opening the album, and the now-playing volume control moved into a compact popover. Thanks @yamakze (#108, part of #106).\n\n---\n\n### 新增\n\n- **iOS + macOS**：可选的本地歌曲缓存(默认开启,100–1000 MB)——最近听过的歌从本地播放,断网也能重播、快速切歌更顺;可在设置里调整大小或清除。感谢 @yamakze（#109，#106 的一部分）。\n- **iOS + macOS**：灰色(无版权)歌曲的音源可逐个开关——在设置里启用 / 禁用每个备用音源(酷狗 / 酷我 / …),并加入更严格的标题 / 歌手 / 时长匹配校验,不再匹配到错误的歌曲。感谢 @yamakze（#104，缓解 #77）。\n\n### 修复\n\n- **macOS**：设置里的「播放页模式」现在只提供 macOS 实际支持的两种(黑胶 / 经典),不再显示四种。（#105）\n- **macOS**：进入播放页的动画更顺滑——标题栏与环境色随页面升起淡出,侧栏分隔条的箭头光标不再渗到播放页上,封面淡入。感谢 @sld272（#100）。\n- **iOS**：列表里点击歌曲封面现在直接播放,而不是进入专辑,播放页音量改为紧凑的弹出条。感谢 @yamakze（#108，#106 的一部分）。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.19/Kumone-iOS-0.3.19.ipa",
-          "size": 7492465,
+          "version": "0.3.20",
+          "date": "2026-10-03",
+          "localizedDescription": "### Added\n\n- **macOS** (experimental): AutoMix — an Apple-Music-style continuous-playback mode with beat-matched transitions, optional stem separation, loudness compensation and an output-device picker, on a new dual-deck AVAudioEngine backend. Off by default; turn it on in Settings. Thanks @XerWandeRer (#102).\n- **iOS**: search and sort within the Liked Songs playlist. Thanks @yamakze (#121).\n- **Release**: every release now also ships an AltStore / SideStore source (`altstore.json`) for one-tap sideload updates. Thanks @vancez (#112).\n\n### Fixed\n\n- **iOS + macOS**: home-page loading placeholders and the 新碟上架 album cards stay within the content width instead of overflowing it. Thanks @sld272 (#119).\n\n---\n\n### 新增\n\n- **macOS**（实验性）：AutoMix——类 Apple Music 的连续播放模式,支持节拍对齐的过渡、可选的人声 / 伴奏分离、响度补偿与输出设备选择,基于全新的双 deck AVAudioEngine 后端。默认关闭,可在设置里开启。感谢 @XerWandeRer（#102）。\n- **iOS**：「我喜欢的音乐」歌单内支持搜索与排序。感谢 @yamakze（#121）。\n- **发布**：每次发布额外提供 AltStore / SideStore 源（`altstore.json`),可在 AltStore 里一键更新侧载。感谢 @vancez（#112）。\n\n### 修复\n\n- **iOS + macOS**：首页加载占位与「新碟上架」专辑卡片不再超出内容宽度。感谢 @sld272（#119）。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.20/Kumone-iOS-0.3.20.ipa",
+          "size": 7546632,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.19 · 23 Sep 2026",
-      "identifier": "Kumone-release-v0.3.19",
-      "caption": "Kumone 0.3.19 is available.",
-      "date": "2026-09-23T07:12:20Z",
+      "title": "Kumone 0.3.20 · 03 Oct 2026",
+      "identifier": "Kumone-release-v0.3.20",
+      "caption": "Kumone 0.3.20 is available.",
+      "date": "2026-10-03T15:42:04Z",
       "tintColor": "#F0D060",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.19"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.20"
     }
   ]
 }
