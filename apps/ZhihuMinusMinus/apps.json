@@ -21,11 +21,11 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.7.0",
-          "date": "2026-10-01",
-          "localizedDescription": "新增了 _“原生排版（实验）”的正文排版_  选项，这里公式划线之类的效果会好很多。  \r\n以及一大片 ai 主导的 cr 与重构。\r\n\r\n* feat(rich-content): 新增 tiqian-super-mini 双端原生排版 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/108\r\n* 全量 CR：修复数据丢失与隐私边界，完善发布及正文链路 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/109\r\n* feat: 支持关闭按压视觉反馈 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/111\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.6.3...v0.7.0",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.7.0/zhihu-minus-minus-v0.7.0-unsigned.ipa",
-          "size": 17472169,
+          "version": "0.7.1",
+          "date": "2026-10-03",
+          "localizedDescription": "- 个人主页改版：新增默认打开的“创作”分类，汇总近期发布内容。\r\n- 个人主页/问题/回答 header 调整。\r\n- 各处 action bar 与菜单调整。\r\n- 主题配色优化：背景与文字随主题色轻染。\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.7.0...v0.7.1",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.7.1/zhihu-minus-minus-v0.7.1-unsigned.ipa",
+          "size": 17579213,
           "minOSVersion": "15.1"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.7.0 · 01 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.7.0",
-      "caption": "ZhihuMinusMinus 0.7.0 is available.",
-      "date": "2026-10-01T06:19:31Z",
+      "title": "ZhihuMinusMinus 0.7.1 · 03 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.7.1",
+      "caption": "ZhihuMinusMinus 0.7.1 is available.",
+      "date": "2026-10-03T07:24:16Z",
       "tintColor": "#0084ff",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
       "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.7.0"
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.7.1"
     }
   ]
 }

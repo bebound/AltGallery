@@ -456,11 +456,11 @@
       "tintColor": "#7B68EE",
       "versions": [
         {
-          "version": "0.1.1",
-          "date": "2026-10-02",
-          "localizedDescription": "### Fixed\n- **Games start on iOS 26 again for free-Apple-ID installs.** Those installs get a smaller (63 GB) address map, on which Madeira's JIT memory setup failed, so every launch ended with \"The session could not start\". (#109)\n- Enabling JIT from StikDebug's own app list no longer crashes Madeira when a game starts. Madeira now explains how to enable JIT from its own Enable JIT button instead. (#109)\n- When a session can't start, Madeira now says why. (#109)\n- Games with a shared data section that isn't aligned to the iPhone's 16 KB memory pages now load. (#110)\n- Small 64-bit games built without relocation data now start. (#111)\n- The user profile's `AppData\\LocalLow` folder now exists. Games and Steam components that keep files there work, and some no longer crash at start. (#112)\n- A Steam launch that fails because the game couldn't be loaded now says so, instead of a generic \"code 45\". (#113)\n\n### Changed\n- Liquid metal is now a toggle in **Settings › Appearance**, off by default, with the system's Liquid Glass as the default look. It fades in and out.\n- Dark-mode metal highlights are a little dimmer. The ambient light around library cards is tighter and gentler on very bright artwork.\n- Diagnostic logs now begin with the device, system and signing set-up (`[device]` lines), with no names or identifiers.\n\n### Install\n- Requires **iOS 26 or later**.\n- The IPA is ad-hoc signed (no certificate) and carries the app's entitlements, including the increased memory limit. Sideload it with your own Apple ID (SideStore, AltStore, Sideloadly, Plume or similar), which signs it for your device.\n- Enable JIT with Madeira's **Enable JIT** button (StikDebug). Settings shows JIT and Memory+ with green checks and says **Ready to play**.\n\n### Not included\nThe Microsoft Visual C++ runtime DLLs are not redistributed (see `legal/THIRD-PARTY-NOTICES.md`). Building from source: `tools/fetch-vcruntime.md`.\n\nThanks to Nick ([@125hz](https://github.com/125hz)) for the launch and loader fixes in this release.",
-          "downloadURL": "https://github.com/willfaust/Madeira/releases/download/v0.1.1/Madeira-0.1.1.ipa",
-          "size": 142473173,
+          "version": "0.1.2",
+          "date": "2026-10-03",
+          "localizedDescription": "### Fixed\n- **Direct3D 9 and Direct3D 11 games run on iOS 26 again.** The graphics layer's built-in shader library was compiled for the newest Metal version (4.1), which only iOS 27 understands, so on iOS 26 every 64-bit D3D11 game and every 32-bit D3D9 and D3D11 game failed at start-up (\"This library is using language version 4.1 which is not supported on this OS\"). The library now targets Metal 3.1, which every supported iOS accepts. Affects v0.1.0 and v0.1.1. (#129)\n\n### Install\n- Requires **iOS 26 or later**.\n- The IPA is ad-hoc signed (no certificate) and carries the app's entitlements, including the increased memory limit. Sideload it with your own Apple ID (SideStore, AltStore, Sideloadly, Plume or similar), which signs it for your device.\n- Enable JIT with Madeira's **Enable JIT** button (StikDebug). Settings shows JIT and Memory+ with green checks and says **Ready to play**.\n\n### Not included\nThe Microsoft Visual C++ runtime DLLs are not redistributed (see `legal/THIRD-PARTY-NOTICES.md`). Building from source: `tools/fetch-vcruntime.md`.\n\nThanks to Nick ([@125hz](https://github.com/125hz)) for tracking this down.",
+          "downloadURL": "https://github.com/willfaust/Madeira/releases/download/v0.1.2/Madeira-0.1.2.ipa",
+          "size": 142471753,
           "minOSVersion": "17.0"
         }
       ]
@@ -984,17 +984,39 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.7.0",
-          "date": "2026-10-01",
-          "localizedDescription": "新增了 _“原生排版（实验）”的正文排版_  选项，这里公式划线之类的效果会好很多。  \r\n以及一大片 ai 主导的 cr 与重构。\r\n\r\n* feat(rich-content): 新增 tiqian-super-mini 双端原生排版 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/108\r\n* 全量 CR：修复数据丢失与隐私边界，完善发布及正文链路 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/109\r\n* feat: 支持关闭按压视觉反馈 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/111\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.6.3...v0.7.0",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.7.0/zhihu-minus-minus-v0.7.0-unsigned.ipa",
-          "size": 17472169,
+          "version": "0.7.1",
+          "date": "2026-10-03",
+          "localizedDescription": "- 个人主页改版：新增默认打开的“创作”分类，汇总近期发布内容。\r\n- 个人主页/问题/回答 header 调整。\r\n- 各处 action bar 与菜单调整。\r\n- 主题配色优化：背景与文字随主题色轻染。\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.7.0...v0.7.1",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.7.1/zhihu-minus-minus-v0.7.1-unsigned.ipa",
+          "size": 17579213,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.7.1 · 03 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.7.1",
+      "caption": "ZhihuMinusMinus 0.7.1 is available.",
+      "date": "2026-10-03T07:24:16Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.7.1"
+    },
+    {
+      "appID": "com.willfaust.madeora",
+      "title": "Madeira 0.1.2 · 03 Oct 2026",
+      "identifier": "Madeira-release-v0.1.2",
+      "caption": "Madeira 0.1.2 is available.",
+      "date": "2026-10-03T05:43:06Z",
+      "tintColor": "#7B68EE",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Madeira/images/news.png",
+      "notify": true,
+      "url": "https://github.com/willfaust/Madeira/releases/tag/v0.1.2"
+    },
     {
       "appID": "com.armsx2.ios",
       "title": "ARMSX2 nightly-20261002 · 02 Oct 2026",
@@ -1005,17 +1027,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261002"
-    },
-    {
-      "appID": "com.willfaust.madeora",
-      "title": "Madeira 0.1.1 · 02 Oct 2026",
-      "identifier": "Madeira-release-v0.1.1",
-      "caption": "Madeira 0.1.1 is available.",
-      "date": "2026-10-02T08:54:33Z",
-      "tintColor": "#7B68EE",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Madeira/images/news.png",
-      "notify": true,
-      "url": "https://github.com/willfaust/Madeira/releases/tag/v0.1.1"
     },
     {
       "appID": "com.altman.moviepilot",
@@ -1071,17 +1082,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
       "notify": true,
       "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.0+1001"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.7.0 · 01 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.7.0",
-      "caption": "ZhihuMinusMinus 0.7.0 is available.",
-      "date": "2026-10-01T06:19:31Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.7.0"
     },
     {
       "appID": "com.example.kazumi",
