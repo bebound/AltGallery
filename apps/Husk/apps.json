@@ -20,11 +20,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "0.5.0",
-          "date": "2026-10-01",
-          "localizedDescription": "## What's Changed\r\n* Fix guest seed packaging and snapshot preservation by @creeper4004 in https://github.com/Leviidev/Husk/pull/29\r\n* Add a light mode (Settings › Appearance) by @hernan0078 in https://github.com/Leviidev/Husk/pull/30\r\n* Fixed UI bugs by @Leviidev \r\n\r\n## New Contributors\r\n* @creeper4004 made their first contribution in https://github.com/Leviidev/Husk/pull/29\r\n* @hernan0078 made their first contribution in https://github.com/Leviidev/Husk/pull/30\r\n\r\n**Full Changelog**: https://github.com/Leviidev/Husk/compare/0.4.1...0.5.0",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.5.0/Husk.ipa",
-          "size": 40279923,
+          "version": "0.6.1",
+          "date": "2026-10-05",
+          "localizedDescription": "## What’s new?\r\n- WiFi support for Unity Games\r\n- Geometry Dash support\r\n- Minecraft Support\r\n## Notes\r\nThis release only edits the Android Translation Layer. The fully emulated android OS has not been changed this build.",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.6.1/Husk.ipa",
+          "size": 40885768,
           "minOSVersion": "16.4"
         }
       ]
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.husk.app",
-      "title": "Husk 0.5.0 · 01 Oct 2026",
-      "identifier": "Husk-release-0.5.0",
-      "caption": "Husk 0.5.0 is available.",
-      "date": "2026-10-01T23:46:10Z",
+      "title": "Husk 0.6.1 · 05 Oct 2026",
+      "identifier": "Husk-release-0.6.1",
+      "caption": "Husk 0.6.1 is available.",
+      "date": "2026-10-05T11:16:32Z",
       "tintColor": "#5949E5",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
       "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/0.5.0"
+      "url": "https://github.com/Leviidev/Husk/releases/tag/0.6.1"
     }
   ]
 }

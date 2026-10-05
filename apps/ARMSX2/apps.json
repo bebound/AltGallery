@@ -21,11 +21,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20261003",
-          "date": "2026-10-03",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- iOS: stop Settings pages jumping down after Back on a landscape phone\n- iOS: write why an auto-save didn't happen to emulog.txt\n- iOS: auto-save when Back to Menu leaves a game\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261002...9d989ca933a85bb2f1d111fd3b9e5742ac7d2fbe",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261003/ARMSX2-nightly-20261003-9d989ca933-iOS-arm64.ipa",
-          "size": 38988244,
+          "version": "nightly-20261005",
+          "date": "2026-10-05",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- pcsx2: add the DEV9 arcade-board files to the MSVC project\n- Arcade: the System 256 BIOS for every game, the 246 one for Battle Gear 3\n- Arcade controls: a layout for all arcade games\n- Arcade: Arcade controls, the player's own layout per game\n- GS/Vulkan: keep the shared DATE copy's pass untiled with one loop declaration\n- GS/Vulkan: drop the shared DATE stencil copy on a clear inside the pass\n- GS/Vulkan: share one DATE stencil copy across a run of alpha-bit shadow draws\n- GS: name GSAlphaBitLogicOp.h in the MSVC project\n- GS/Vulkan: set and clear alpha bit 7 with a logic op where a read waits per draw\n- microVU: the full-width sign clamp reads the resident clamp bounds\n- GS/HW: draw over-one (Cd - Cs) * As in two hardware passes on the copy road\n- Arcade: keep what games write to a CHD hard drive\n- Arcade: racing games' test menus can be entered\n- Arcade: say which games only reach their attract demo\n- Arcade: every arcade BIOS in use, each game on its own board's\n- Android: let libchdr open arcade hard drive CHDs\n- Android: write the data folder off the main thread, and only when needed\n- Arcade: find games where they are, instead of importing them\n- Arcade: open big hard drive CHDs, and read them like raw images\n- github: fixup templates to point to the right places for ARMSX2\n- iOS: build for the A10, the oldest chip that can install the app\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261004...8f6da1639fb10dcd4a43d84113d770b6edf2c0c1",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261005/ARMSX2-nightly-20261005-8f6da1639f-iOS-arm64.ipa",
+          "size": 39043867,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20261003 · 03 Oct 2026",
-      "identifier": "ARMSX2-release-nightly-20261003",
-      "caption": "ARMSX2 nightly-20261003 is available.",
-      "date": "2026-10-03T13:56:46Z",
+      "title": "ARMSX2 nightly-20261005 · 05 Oct 2026",
+      "identifier": "ARMSX2-release-nightly-20261005",
+      "caption": "ARMSX2 nightly-20261005 is available.",
+      "date": "2026-10-05T17:48:58Z",
       "tintColor": "#3CAEFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261003"
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261005"
     }
   ]
 }

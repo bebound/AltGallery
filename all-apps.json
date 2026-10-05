@@ -45,11 +45,11 @@
       "tintColor": "#5020E0",
       "versions": [
         {
-          "version": "1.3.1",
-          "date": "2026-10-01",
-          "localizedDescription": "## What's Changed in v1.3.1\n\n### 📲 Pairing File Import (iOS 18 – iOS 26 Support!)\n• **SideStore & LiveContainer Pairing File Support**: You can now import pairing files (`.mobiledevicepairing`, `.plist`, `.mobilepair`) directly from SideStore, LiveContainer, iLoader, AltStore, Jitterbug, or PC/Mac.\n• **No iOS 27 Required**: Users on iOS 18.0 through iOS 26 can now fully use AirCard-iOS by simply importing their pairing file from SideStore or LiveContainer.\n• **Safe Unpair / Reset**: Added a dedicated \"Delete Pairing / Unpair\" button to reset or switch pairing configurations without having to reinstall the app.\n• **In-App Pairing Guide**: Added a step-by-step setup guide sheet with exact paths to locate pairing files in the Files app (e.g. `SideStore/ALTPairingFile.mobiledevicepairing`).\n• **iOS 27+ Gated**: The \"Pair on Phone\" developer pairing block is now cleanly gated to iOS 27+, avoiding confusion on older iOS versions.\n\n### 💳 Apple Wallet & Card Customization\n• **Interactive Photo Cropper**: Added custom zoom, pan, and framing when selecting card artwork (PR #29).\n\n### 🔒 Passcode Themes (.passthm)\n• **UTF-8 Encoding Fix**: Fixed filename encoding in generated passcode theme ZIP archives to support non-ASCII characters and localization (PR #12).\n\n### 🖼 Wallpapers (.tendies)\n• **Restored Rock-Solid Wallpaper Engine**: Reverted experimental template tracking to restore proven v1.3 Tendies injection, auto-detection of PosterBoard containers, and instant WebKit NeoSpring resprings.\n\n### ❤️ Developer Support & Links\n• **Donate Tab in Credits**: Added direct donation options (PayPal, TON, USDT TRC-20, BEP-20) with one-tap copy and quick links to developer socials (@mak5er).\n• **Startup Welcome**: Clean notice highlighting developer credits and quick links.\n\n**Full Changelog**: https://github.com/Mak5er/AirCard-iOS/compare/v1.3...v1.3.1",
-          "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3.1/AirCard-iOS.ipa",
-          "size": 4597510,
+          "version": "1.3.2",
+          "date": "2026-10-04",
+          "localizedDescription": "## What's Changed in v1.3.2 🚀\n\nThis update brings full feature parity with AirCard macOS v1.2.6, restores robust card discovery across all iOS versions, introduces automatic bank/network recognition with custom card nicknames, delivers an ultra-fast tunnel cache (0.02s connections), and completely resolves wallpaper flashing for Collections and Mercury wallpapers.\n\n### 💳 Wallet Card Discovery & Bank Identification\n• **Universal Wallet Log Parser**: Ported the proven `WalletScanParser` from AirCard macOS. Captures cards from `Dashboard loading (...): for SOO+`, `passIDs[InSession]`, `passIDs[global]`, and modern JSON NFC activations (`\"identifier\": \"HEX\"`).\n• **Automatic Bank & Network Detection**: Recognizes Visa, Mastercard, American Express, UnionPay, Discover, and JCB via applet AIDs during selection.\n• **Card Nicknames (Rename)**: Added a direct **Rename** button (✏️) so you can give your cards friendly names like *\"Monobank\"*, *\"Salary Card\"*, or *\"Revolut\"*, safely persisted in app settings.\n• **28-Character Fallback Token Matcher**: Restores dependable card discovery on devices where standard log patterns are redacted.\n\n### ⚡ Ultra-Fast Tunnel Routing (from 10s to 0.02s!)\n• **Working Route Caching**: `rust-core` now caches the active RSD connection route (`LAST_WORKING_ROUTE`), eliminating repeated port and interface scanning.\n• **RSD-First Priority**: Connects directly via RemoteXPC on port 49152, bypassing slow Lockdown retries and broken pipes on iOS 18+.\n• **Eliminated Loopback Policy Drops**: Removed local loopback attempts that caused `policy drop` control channel errors.\n\n### 🖼 Wallpapers (.tendies) — Collections & Mercury Fixes\n• **Dual Injection on iOS 18+**: Wallpapers are now injected into both their primary bundle (`com.apple.WallpaperKit.CollectionsPoster` or `com.apple.MercuryPoster`) and the modern iOS 18+ application container (`com.apple.Posters.CollectionsPosterApp` / `com.apple.Posters.MercuryPosterApp`).\n• **Metadata Synchronization**: Fixed a critical issue where `Wallpaper.plist`'s numeric identifier was randomized out-of-sync with `suggestionMetadata.plist` (`7400.DYNAMIC`), causing wallpapers like Windows 11 to vanish from the Lock Screen gallery.\n• **Mercury Wallpaper Support**: Added recognition for `mercury-descriptors` container folders and registered `com.apple.Posters.MercuryPosterApp` in `PersistedPosterContainerBundleIdentifiers`.\n• **NeoSpring Respring**: Instant springboard reload to apply wallpaper preferences immediately.\n\n### 🧪 Quality & Testing\n• All 24 unit tests passing (`TendiesEngineTests`, `WalletScanParserTests`, `CardPhotoCropTests`, `CardPhotoPickerTests`).\n\n**Full Changelog**: https://github.com/Mak5er/AirCard-iOS/compare/v1.3.1...v1.3.2",
+          "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3.2/AirCard-iOS.ipa",
+          "size": 4638147,
           "minOSVersion": "27.0"
         }
       ]
@@ -94,11 +94,11 @@
       "tintColor": "#124EB3",
       "versions": [
         {
-          "version": "2.6.1",
-          "date": "2026-09-26",
-          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.1 更新\n\n## 重要修复\n\n- 修复图片加载失败问题 [ech_http](https://github.com/ech-research/ech_http)\n\n## 新增\n\n- 新番时间表添加标签过滤功能\n\n## 优化\n \n- 搜索页面点击历史记录搜索自动取消输入框焦点\n- 优化搜索页面输入框的吸附效果\n- 优化推荐首页的输入框样式\n- 优化社区在线页面布局\n\n## 修复\n\n- 修复字体设置页面开关cdn可能导致的状态错误问题\n- 修复播放页数据源弹窗在移动端搜索时输入框被遮挡问题\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
-          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.1/AnimeFlow-ios-2.6.1.ipa",
-          "size": 29694830,
+          "version": "2.6.2",
+          "date": "2026-10-04",
+          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.2 更新\n\n## 新增\n\n- 番剧收藏支持取消收藏，同步收藏时不在同步已取消的番剧 #82\n- 番剧详情页添加预览图，添加剧集封面\n- 排行榜页面支持两种布局切换 #86\n- 截图成功展示缩略图\n- 升级规则系统支持更多规则配置\n\n## 优化\n \n- 移动端部分设置页面添加全边距,统一最大宽度\n- 优化播放页弹幕设置弹窗布局\n- 删除已失效的数据源\n- 排行榜页面修改条件从新获取数据时添加加载状态反馈\n- 优化播放指示器显示隐藏逻辑\n- 视频源小于两分支不自动标记观看状态\n\n## 修复\n\n- 修复在“我的”页面中登录成功后出现两次页面刷新问题\n- 修复数据源拖拽排序异常问题\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
+          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.2/AnimeFlow-ios-2.6.2.ipa",
+          "size": 29964323,
           "minOSVersion": "13.0"
         }
       ]
@@ -167,11 +167,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20261003",
-          "date": "2026-10-03",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- iOS: stop Settings pages jumping down after Back on a landscape phone\n- iOS: write why an auto-save didn't happen to emulog.txt\n- iOS: auto-save when Back to Menu leaves a game\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261002...9d989ca933a85bb2f1d111fd3b9e5742ac7d2fbe",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261003/ARMSX2-nightly-20261003-9d989ca933-iOS-arm64.ipa",
-          "size": 38988244,
+          "version": "nightly-20261005",
+          "date": "2026-10-05",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- pcsx2: add the DEV9 arcade-board files to the MSVC project\n- Arcade: the System 256 BIOS for every game, the 246 one for Battle Gear 3\n- Arcade controls: a layout for all arcade games\n- Arcade: Arcade controls, the player's own layout per game\n- GS/Vulkan: keep the shared DATE copy's pass untiled with one loop declaration\n- GS/Vulkan: drop the shared DATE stencil copy on a clear inside the pass\n- GS/Vulkan: share one DATE stencil copy across a run of alpha-bit shadow draws\n- GS: name GSAlphaBitLogicOp.h in the MSVC project\n- GS/Vulkan: set and clear alpha bit 7 with a logic op where a read waits per draw\n- microVU: the full-width sign clamp reads the resident clamp bounds\n- GS/HW: draw over-one (Cd - Cs) * As in two hardware passes on the copy road\n- Arcade: keep what games write to a CHD hard drive\n- Arcade: racing games' test menus can be entered\n- Arcade: say which games only reach their attract demo\n- Arcade: every arcade BIOS in use, each game on its own board's\n- Android: let libchdr open arcade hard drive CHDs\n- Android: write the data folder off the main thread, and only when needed\n- Arcade: find games where they are, instead of importing them\n- Arcade: open big hard drive CHDs, and read them like raw images\n- github: fixup templates to point to the right places for ARMSX2\n- iOS: build for the A10, the oldest chip that can install the app\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261004...8f6da1639fb10dcd4a43d84113d770b6edf2c0c1",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261005/ARMSX2-nightly-20261005-8f6da1639f-iOS-arm64.ipa",
+          "size": 39043867,
           "minOSVersion": "17.0"
         }
       ]
@@ -286,11 +286,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "0.5.0",
-          "date": "2026-10-01",
-          "localizedDescription": "## What's Changed\r\n* Fix guest seed packaging and snapshot preservation by @creeper4004 in https://github.com/Leviidev/Husk/pull/29\r\n* Add a light mode (Settings › Appearance) by @hernan0078 in https://github.com/Leviidev/Husk/pull/30\r\n* Fixed UI bugs by @Leviidev \r\n\r\n## New Contributors\r\n* @creeper4004 made their first contribution in https://github.com/Leviidev/Husk/pull/29\r\n* @hernan0078 made their first contribution in https://github.com/Leviidev/Husk/pull/30\r\n\r\n**Full Changelog**: https://github.com/Leviidev/Husk/compare/0.4.1...0.5.0",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.5.0/Husk.ipa",
-          "size": 40279923,
+          "version": "0.6.1",
+          "date": "2026-10-05",
+          "localizedDescription": "## What’s new?\r\n- WiFi support for Unity Games\r\n- Geometry Dash support\r\n- Minecraft Support\r\n## Notes\r\nThis release only edits the Android Translation Layer. The fully emulated android OS has not been changed this build.",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.6.1/Husk.ipa",
+          "size": 40885768,
           "minOSVersion": "16.4"
         }
       ]
@@ -309,11 +309,11 @@
       "tintColor": "#1C1C1E",
       "versions": [
         {
-          "version": "0.1.1",
-          "date": "2026-09-29",
-          "localizedDescription": "# Iridium 0.1.1\n\nIn standalone Iridium, you can now add games from its folder in Files without opening the file picker. This release also makes it easier to import a pairing file for built-in JIT. Game support remains experimental.\n\n## Download\n\n**[Download Iridium (.ipa)](https://github.com/intraducine/iridium/releases/download/v0.1.1/Iridium-unsigned.ipa)**\n\nRequires **iOS or iPadOS 18+**, JIT, and your own game files. You only need the IPA to install.\n\n## Install\n\n1. Sign and install the IPA with a compatible sideloading tool, including its helper extension, or import it into LiveContainer.\n2. Open Iridium and configure JIT in **Launch Support**.\n3. Select **Add Game**, choose a game folder and executable, then press **Play**.\n\nBack up your saves before updating. Update the existing app or LiveContainer entry without deleting its data.\n\n## What's new\n\n- **Add games without the file picker.** In standalone Iridium, put each game in its own folder under **On My iPhone/iPad → Iridium → Games**. Choose **Add Game → Find Games in Iridium Folder**, select the game, and confirm its executable. Iridium uses the files in that folder without copying them.\n- **Import a JIT pairing file from Files.** Put `pairingFile.plist` under **On My iPhone/iPad → Iridium → StikJIT**. Choose **Settings → Launch Support → Import Pairing File → Use File in Iridium Folder**. You can still choose a file directly.\n\n## Known issues\n\n- Some games may fail to launch or have graphics, video, audio, or input problems.\n- Skyrim speech and mouse attack issues remain unverified in this build.\n- JIT and available memory depend on your device and signing setup; LiveContainer and standalone results can differ.\n\n<details>\n<summary>Source code, licenses, and build details</summary>\n\n## Source and licenses\n\nThe other release files are for source access, rebuilding, and download verification:\n\n- Download both `Iridium-corresponding-source.tar.gz.part01` and `.part02` for the complete matching source package.\n- `Iridium-source-guide.zip` contains license notices and build/relink instructions.\n- `SHA256SUMS` verifies all four files above, including the IPA.\n\nDownload all five release files into one folder, then run:\n\n```sh\nshasum -a 256 -c SHA256SUMS\ncat Iridium-corresponding-source.tar.gz.part01 Iridium-corresponding-source.tar.gz.part02 > Iridium-corresponding-source.tar.gz\n```\n\nThe source guide includes the checksum for the assembled archive and rebuild instructions. GitHub's automatic repository ZIP does not contain all required dependency sources.\n\nSource commit: bc5c30fc442f429e8be9001549300160a0934372\nBuild run: https://github.com/intraducine/iridium/actions/runs/36504918645\n\nApp and helper version: **0.1.1 (98.2)**. Source checks, build, and unsigned-package checks passed. These checks do not establish compatibility with every game or device.\n\nApple compiler-runtime notice uncertainty and unsigned-IPA contractual authorization remain documented risks. See the license guide in `Iridium-source-guide.zip`.\n\n</details>",
-          "downloadURL": "https://github.com/intraducine/iridium/releases/download/v0.1.1/Iridium-unsigned.ipa",
-          "size": 415260196,
+          "version": "0.2.0",
+          "date": "2026-10-04",
+          "localizedDescription": "# Iridium 0.2.0\n\nDownload your Steam games directly in Iridium, manage repairs and updates, and try the updated Windows runtime. Game support remains experimental.\n\n## Download\n\n**[Download Iridium (.ipa)](https://github.com/intraducine/iridium/releases/download/v0.2.0/Iridium-unsigned.ipa)**\n\nRequires **iOS or iPadOS 18+**, JIT, and games you own. You only need the IPA to install; supply your own game files or download owned games from Steam.\n\n## Install\n\n1. Sign and install the IPA and helper with a compatible sideloading tool, or import it into LiveContainer using its supported JIT setup.\n2. Open Iridium and configure JIT in **Launch Support**.\n3. Open **Downloads → Steam** to sign in and queue a game, or use **Add Game** to import a game folder. Choose its executable, add it to your library, then press **Play**.\n\nFor standalone installation, preserve `com.apple.developer.kernel.increased-memory-limit=true` in both Iridium's final app signature and provisioning profile. The anonymous ad-hoc carrier alone grants no installation or memory rights. In LiveContainer, the container process's signature, profile, and JIT setup determine effective rights; importing the guest IPA does not grant them. Both routes still need device validation.\n\nBack up your saves before updating. Update the existing app or LiveContainer entry without deleting its data. Steam repairs and updates keep older installations; saves stored inside an older game folder may need to be copied manually to the new one. Keep that older folder until you have checked your saves.\n\n## What's new\n\n- **Steam downloads in the app.** Sign in with a password or QR code, with Steam Guard support, browse your library, and choose download language, unprotected branch, 32/64-bit files, and owned DLC.\n- **A download queue with verification and repair.** Pause, resume, retry, and prioritize downloads. Check for updates or repair downloaded files while keeping the previous installation.\n- **Clearer storage warnings.** Download checks use the space available to Iridium and account for verified partial files. **Download Anyway** can bypass an estimated-space warning for one attempt; file verification and real out-of-space errors remain enforced.\n- **Updated Windows runtime.** Includes 32-bit WoW64 support and D3D9/D3D12 updates. Support still varies by game and device.\n- **Game prerequisite installers.** Run supported setup steps included with a game, or choose **Game Options → Run Installer** for an EXE or MSI installer you provide. Some installers need interaction. Closing the player requests cancellation; Iridium keeps observing the runtime's exit and reports when a restart is required.\n- **Reduced duplicate runtime data.** Identical Windows runtime files share one packaged copy. The main app's anonymous ad-hoc signature carries only the increased-memory-limit request; helpers remain unsigned until you sign them.\n\n## Known issues\n\n- Physical-device compatibility for these changes has not been established. Some games may fail to launch or have graphics, video, audio, input, save, or shutdown problems. Skyrim speech and mouse attack issues remain unverified.\n- Keep Iridium open while downloading. Downloads pause when the app goes into the background and need to be resumed. Real-account downloads and recovery after Wi-Fi or network loss still need device testing.\n- Steam Cloud, Workshop, Steam Families library discovery, password-protected branches, and desktop Steam services are not included. Games that require Steamworks/DRM, anti-cheat, or other unsupported runtime features may not launch after downloading.\n- Updates keep older game copies and need extra storage. **Download Anyway** does not create free space; exhausting device storage can also prevent other apps from saving.\n- JIT and available memory depend on your device and signing setup; LiveContainer and standalone results can differ. Built-in JIT requires standalone Iridium, debugging permission, a valid pairing file, and LocalDevVPN. Hosted Iridium uses external JIT. Recipient signing, LiveContainer hosting, and game prerequisite success still need device testing.\n\n<details>\n<summary>Source code, licenses, and build details</summary>\n\n## Source and licenses\n\nThe other release files are for source access, rebuilding, and download verification:\n\n- Download both `Iridium-corresponding-source.tar.gz.part01` and `.part02` for the complete matching source package.\n- `Iridium-source-guide.zip` contains license notices, source records, and build/relink instructions.\n- `SHA256SUMS` verifies the IPA, both source parts, and the source guide.\n\nDownload all five release files into one folder, then run:\n\n```sh\nshasum -a 256 -c SHA256SUMS\ncat Iridium-corresponding-source.tar.gz.part01 Iridium-corresponding-source.tar.gz.part02 > Iridium-corresponding-source.tar.gz\nunzip Iridium-source-guide.zip\nshasum -a 256 -c Iridium-source-guide/ASSEMBLED-SHA256SUMS\n```\n\nThe source guide includes the assembled archive's checksum and rebuild instructions. Keep the matching source and guide beside the IPA at this versioned release URL. GitHub's automatic repository ZIP does not contain all required dependency sources.\n\nSource commit: b7e24f9fb4dd17f5d940c4763123f2b00d0e121f\nBuild run: https://github.com/intraducine/iridium/actions/runs/37142663989\n\nApp and helper version: **0.2.0 (115.1)**, minimum iOS **18.0**, confirmed in the actual delivered Info.plist files. The IPA is **399,916,792 bytes**; SHA-256 `1934922a1fcf1509e305a29d6f0d26579a4318ba95dfcf5b406d5e38f88c9763`.\n\nSource checks, Steam native/simulator checks, the full app build, and final binary/package checks passed. Independent IPA inspection confirmed the exact anonymous XML/DER entitlement carrier with no CMS payload or team identity, eight unsigned non-main native binaries, strict bundle verification, runtime hashes, and ZIP modes and symlinks. Unchanged runtime component outputs were reused after provenance checks. These checks do not establish real-account login, owned-game downloads, game compatibility, recipient signing, or physical-device behavior.\n\nApple compiler-runtime notice uncertainty and unsigned-IPA contractual authorization remain documented risks. Retain the license guide in `Iridium-source-guide.zip`.\n\n</details>",
+          "downloadURL": "https://github.com/intraducine/iridium/releases/download/v0.2.0/Iridium-unsigned.ipa",
+          "size": 399916792,
           "minOSVersion": "18.0"
         }
       ]
@@ -694,12 +694,12 @@
       "tintColor": "#73b480",
       "versions": [
         {
-          "version": "2.1.5",
-          "buildVersion": "5410",
-          "date": "2026-09-25",
-          "localizedDescription": "支持自定义主题颜色 #3009\r\n综合搜索用户过滤黑名单 #3043\r\n可复制文本工具栏默认添加站内搜索按钮 #2984\r\n支持保存 SC 为图片 co-by @My-Responsitories\r\n支持 Windows deeplink #2673 by @HChaZZY\r\n支持 Linux deeplink #2931 by @Tobiichi-Origuchi\r\n降低桌面端 PIP 大小限制 #2735 #2982 by @Aclguh\r\n桌面端支持保存全部图片 #2920 #2983 by @My-Responsitories\r\nLinux 支持内嵌 WebView #3014 #3016 by @Tobiichi-Origuchi co-by @My-Responsitories\r\n其他调整 #2962 #3025 #3027 by @My-Responsitories\r\n\r\n修复分 P 视频链接 #2963\r\n修复滑动快进/退震动失效 #2966\r\n修复小窗模式下画面被 SC 遮挡 #3005\r\n修复无痕模式出现直播入场提示 #2971\r\n修复多次点击截图保存退出视频页面 #3017\r\n修复更新媒体通知、后台连播 #2761 #2943\r\n修复 iOS 静音模式下偶发视频无声修复 #3039 @sounfury\r\n修复部分安卓无法登录 #2930 #3063 by @Tobiichi-Origuchi\r\n修复 macOS 切换全屏控件无法点击 #2917 #2976 by @milk2715093695",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.5/PiliPlus_ios_2.1.5%2B5410.ipa",
-          "size": 23999265,
+          "version": "2.1.6",
+          "buildVersion": "5453",
+          "date": "2026-10-05",
+          "localizedDescription": "支持离线合集归档\r\n支持离线/更新空降片段\r\n添加视频过滤作用域详情\r\n支持切换`番剧`/`剧集`季度\r\n支持横屏时在侧栏显示`番剧`列表\r\n直播聊天显示`主播`标识 #3156\r\n直播聊天只显示点亮的牌子 #3155\r\n用户未直播时在主页显示入口按钮 #3033\r\n从视频切到直播不影响视频倍速 #3112\r\n支持转发同时评论 #3135\r\n@ 用户时置顶被`回复`/`转发`用户 #3123\r\n视频控制栏控件溢出处理 #3085\r\n添加英文文档 #3131 by @maoawa\r\n桌面端画中画记忆窗口位置大小 #2997\r\n收藏夹已满且未收藏时禁用选中 #3113\r\niOS 支持系统 PIP #3160 by @AotianNeo\r\n黑名单屏蔽扩展本地屏蔽，增加过滤搜索、评论\r\n支持按 `Enter` 保存截图 #3101 by @403bug\r\n支持从媒体会话向前/后跳转音视频 #2964 co-by @silverwolf-lv9999\r\n\r\n修复弹幕速度 #3136\r\n修复收藏夹视频跳转 #3137\r\n修复下滑关闭侧栏主页 #3160\r\n修复触控板浏览图片 https://github.com/bggRGjQaUbCoE/PiliPlus/issues/183#issuecomment-5976539299\r\n修复 Windows 26H2 任务栏不在底部时，退出全屏出现窗口偏移 #2901",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.6/PiliPlus_ios_2.1.6%2B5453.ipa",
+          "size": 24083344,
           "minOSVersion": "14.0"
         }
       ]
@@ -959,12 +959,12 @@
       "tintColor": "#FF0000",
       "versions": [
         {
-          "version": "21.39.4",
-          "buildVersion": "21.39.4",
-          "date": "2026-09-28",
-          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock. (unstable in newer builds)\r\n> - for <A15 devices press share button in the arrow down panel and use external player for AV1 videos.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.39.4_1.3.1.ipa",
-          "size": 130023447,
+          "version": "21.40.5",
+          "buildVersion": "21.40.5",
+          "date": "2026-10-05",
+          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock. (unstable in newer builds)\r\n> - for <A15 devices press share button in the arrow down panel and use external player for AV1 videos.\r\n> - downloads are unstable for <A15 devices. some will fail due to no av1 codec. \r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa3/YouProExtra_21.40.5_1.3.1.ipa",
+          "size": 129948434,
           "minOSVersion": "16.0"
         }
       ]
@@ -996,6 +996,83 @@
   ],
   "news": [
     {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20261005 · 05 Oct 2026",
+      "identifier": "ARMSX2-release-nightly-20261005",
+      "caption": "ARMSX2 nightly-20261005 is available.",
+      "date": "2026-10-05T17:48:58Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261005"
+    },
+    {
+      "appID": "com.example.piliplus",
+      "title": "PiliPlus 2.1.6 · 05 Oct 2026",
+      "identifier": "PiliPlus-release-2.1.6",
+      "caption": "PiliPlus 2.1.6 is available.",
+      "date": "2026-10-05T12:36:03Z",
+      "tintColor": "#73b480",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.1.6"
+    },
+    {
+      "appID": "com.husk.app",
+      "title": "Husk 0.6.1 · 05 Oct 2026",
+      "identifier": "Husk-release-0.6.1",
+      "caption": "Husk 0.6.1 is available.",
+      "date": "2026-10-05T11:16:32Z",
+      "tintColor": "#5949E5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Leviidev/Husk/releases/tag/0.6.1"
+    },
+    {
+      "appID": "com.google.ios.youtube",
+      "title": "YouProEXTRA 21.40.5 · 05 Oct 2026",
+      "identifier": "YouProEXTRA-release-youproextra-ipa3",
+      "caption": "YouProEXTRA 21.40.5 is available.",
+      "date": "2026-10-05T01:06:37Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa3"
+    },
+    {
+      "appID": "com.ligg.anime_flow",
+      "title": "AnimeFlow 2.6.2 · 04 Oct 2026",
+      "identifier": "AnimeFlow-release-v2.6.2",
+      "caption": "AnimeFlow 2.6.2 is available.",
+      "date": "2026-10-04T12:32:07Z",
+      "tintColor": "#124EB3",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
+      "notify": true,
+      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.2"
+    },
+    {
+      "appID": "com.mak5er.aircard",
+      "title": "AirCard-iOS 1.3.2 · 04 Oct 2026",
+      "identifier": "AirCard-iOS-release-v1.3.2",
+      "caption": "AirCard-iOS 1.3.2 is available.",
+      "date": "2026-10-04T12:22:53Z",
+      "tintColor": "#5020E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Mak5er/AirCard-iOS/releases/tag/v1.3.2"
+    },
+    {
+      "appID": "software.iridium",
+      "title": "Iridium 0.2.0 · 04 Oct 2026",
+      "identifier": "Iridium-release-v0.2.0",
+      "caption": "Iridium 0.2.0 is available.",
+      "date": "2026-10-04T02:20:31Z",
+      "tintColor": "#1C1C1E",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/news.png",
+      "notify": true,
+      "url": "https://github.com/intraducine/iridium/releases/tag/v0.2.0"
+    },
+    {
       "appID": "com.willfaust.madeora",
       "title": "Madeira 0.1.3 · 03 Oct 2026",
       "identifier": "Madeira-release-v0.1.3",
@@ -1018,17 +1095,6 @@
       "url": "https://github.com/missuo/kumone/releases/tag/v0.3.20"
     },
     {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20261003 · 03 Oct 2026",
-      "identifier": "ARMSX2-release-nightly-20261003",
-      "caption": "ARMSX2 nightly-20261003 is available.",
-      "date": "2026-10-03T13:56:46Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261003"
-    },
-    {
       "appID": "com.huamu013.ZhihuMinusMinus",
       "title": "ZhihuMinusMinus 0.7.1 · 03 Oct 2026",
       "identifier": "ZhihuMinusMinus-release-v0.7.1",
@@ -1049,28 +1115,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
       "notify": true,
       "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.5-2026-10-02"
-    },
-    {
-      "appID": "com.husk.app",
-      "title": "Husk 0.5.0 · 01 Oct 2026",
-      "identifier": "Husk-release-0.5.0",
-      "caption": "Husk 0.5.0 is available.",
-      "date": "2026-10-01T23:46:10Z",
-      "tintColor": "#5949E5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/0.5.0"
-    },
-    {
-      "appID": "com.mak5er.aircard",
-      "title": "AirCard-iOS 1.3.1 · 01 Oct 2026",
-      "identifier": "AirCard-iOS-release-v1.3.1",
-      "caption": "AirCard-iOS 1.3.1 is available.",
-      "date": "2026-10-01T23:01:18Z",
-      "tintColor": "#5020E0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Mak5er/AirCard-iOS/releases/tag/v1.3.1"
     },
     {
       "appID": "com.zarz.spotiflac",
@@ -1128,17 +1172,6 @@
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.17.0"
     },
     {
-      "appID": "software.iridium",
-      "title": "Iridium 0.1.1 · 29 Sep 2026",
-      "identifier": "Iridium-release-v0.1.1",
-      "caption": "Iridium 0.1.1 is available.",
-      "date": "2026-09-29T04:10:10Z",
-      "tintColor": "#1C1C1E",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/news.png",
-      "notify": true,
-      "url": "https://github.com/intraducine/iridium/releases/tag/v0.1.1"
-    },
-    {
       "appID": "com.christianselig.Apollo",
       "title": "Apollo for Reddit - GLASS 3.8.5 · 29 Sep 2026",
       "identifier": "Apollo for Reddit - GLASS-release-v1.15.11_3.8.5",
@@ -1148,17 +1181,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
       "notify": true,
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.8.5"
-    },
-    {
-      "appID": "com.google.ios.youtube",
-      "title": "YouProEXTRA 21.39.4 · 28 Sep 2026",
-      "identifier": "YouProEXTRA-release-youproextra-ipa2",
-      "caption": "YouProEXTRA 21.39.4 is available.",
-      "date": "2026-09-28T10:56:07Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
-      "notify": true,
-      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
     },
     {
       "appID": "com.naine.doer",
@@ -1205,17 +1227,6 @@
       "url": "https://github.com/open-ani/animeko/releases/tag/v6.2.0"
     },
     {
-      "appID": "com.ligg.anime_flow",
-      "title": "AnimeFlow 2.6.1 · 26 Sep 2026",
-      "identifier": "AnimeFlow-release-v2.6.1",
-      "caption": "AnimeFlow 2.6.1 is available.",
-      "date": "2026-09-26T12:55:01Z",
-      "tintColor": "#124EB3",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
-      "notify": true,
-      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.1"
-    },
-    {
       "appID": "com.makr.orchard",
       "title": "Orchard 0.2 · 25 Sep 2026",
       "identifier": "Orchard-release-v0.2",
@@ -1236,17 +1247,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
       "notify": true,
       "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.1"
-    },
-    {
-      "appID": "com.example.piliplus",
-      "title": "PiliPlus 2.1.5 · 25 Sep 2026",
-      "identifier": "PiliPlus-release-2.1.5",
-      "caption": "PiliPlus 2.1.5 is available.",
-      "date": "2026-09-25T04:14:09Z",
-      "tintColor": "#73b480",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.1.5"
     },
     {
       "appID": "app.scenebox.SceneBox",

@@ -21,11 +21,11 @@
       "tintColor": "#5020E0",
       "versions": [
         {
-          "version": "1.3.1",
-          "date": "2026-10-01",
-          "localizedDescription": "## What's Changed in v1.3.1\n\n### 📲 Pairing File Import (iOS 18 – iOS 26 Support!)\n• **SideStore & LiveContainer Pairing File Support**: You can now import pairing files (`.mobiledevicepairing`, `.plist`, `.mobilepair`) directly from SideStore, LiveContainer, iLoader, AltStore, Jitterbug, or PC/Mac.\n• **No iOS 27 Required**: Users on iOS 18.0 through iOS 26 can now fully use AirCard-iOS by simply importing their pairing file from SideStore or LiveContainer.\n• **Safe Unpair / Reset**: Added a dedicated \"Delete Pairing / Unpair\" button to reset or switch pairing configurations without having to reinstall the app.\n• **In-App Pairing Guide**: Added a step-by-step setup guide sheet with exact paths to locate pairing files in the Files app (e.g. `SideStore/ALTPairingFile.mobiledevicepairing`).\n• **iOS 27+ Gated**: The \"Pair on Phone\" developer pairing block is now cleanly gated to iOS 27+, avoiding confusion on older iOS versions.\n\n### 💳 Apple Wallet & Card Customization\n• **Interactive Photo Cropper**: Added custom zoom, pan, and framing when selecting card artwork (PR #29).\n\n### 🔒 Passcode Themes (.passthm)\n• **UTF-8 Encoding Fix**: Fixed filename encoding in generated passcode theme ZIP archives to support non-ASCII characters and localization (PR #12).\n\n### 🖼 Wallpapers (.tendies)\n• **Restored Rock-Solid Wallpaper Engine**: Reverted experimental template tracking to restore proven v1.3 Tendies injection, auto-detection of PosterBoard containers, and instant WebKit NeoSpring resprings.\n\n### ❤️ Developer Support & Links\n• **Donate Tab in Credits**: Added direct donation options (PayPal, TON, USDT TRC-20, BEP-20) with one-tap copy and quick links to developer socials (@mak5er).\n• **Startup Welcome**: Clean notice highlighting developer credits and quick links.\n\n**Full Changelog**: https://github.com/Mak5er/AirCard-iOS/compare/v1.3...v1.3.1",
-          "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3.1/AirCard-iOS.ipa",
-          "size": 4597510,
+          "version": "1.3.2",
+          "date": "2026-10-04",
+          "localizedDescription": "## What's Changed in v1.3.2 🚀\n\nThis update brings full feature parity with AirCard macOS v1.2.6, restores robust card discovery across all iOS versions, introduces automatic bank/network recognition with custom card nicknames, delivers an ultra-fast tunnel cache (0.02s connections), and completely resolves wallpaper flashing for Collections and Mercury wallpapers.\n\n### 💳 Wallet Card Discovery & Bank Identification\n• **Universal Wallet Log Parser**: Ported the proven `WalletScanParser` from AirCard macOS. Captures cards from `Dashboard loading (...): for SOO+`, `passIDs[InSession]`, `passIDs[global]`, and modern JSON NFC activations (`\"identifier\": \"HEX\"`).\n• **Automatic Bank & Network Detection**: Recognizes Visa, Mastercard, American Express, UnionPay, Discover, and JCB via applet AIDs during selection.\n• **Card Nicknames (Rename)**: Added a direct **Rename** button (✏️) so you can give your cards friendly names like *\"Monobank\"*, *\"Salary Card\"*, or *\"Revolut\"*, safely persisted in app settings.\n• **28-Character Fallback Token Matcher**: Restores dependable card discovery on devices where standard log patterns are redacted.\n\n### ⚡ Ultra-Fast Tunnel Routing (from 10s to 0.02s!)\n• **Working Route Caching**: `rust-core` now caches the active RSD connection route (`LAST_WORKING_ROUTE`), eliminating repeated port and interface scanning.\n• **RSD-First Priority**: Connects directly via RemoteXPC on port 49152, bypassing slow Lockdown retries and broken pipes on iOS 18+.\n• **Eliminated Loopback Policy Drops**: Removed local loopback attempts that caused `policy drop` control channel errors.\n\n### 🖼 Wallpapers (.tendies) — Collections & Mercury Fixes\n• **Dual Injection on iOS 18+**: Wallpapers are now injected into both their primary bundle (`com.apple.WallpaperKit.CollectionsPoster` or `com.apple.MercuryPoster`) and the modern iOS 18+ application container (`com.apple.Posters.CollectionsPosterApp` / `com.apple.Posters.MercuryPosterApp`).\n• **Metadata Synchronization**: Fixed a critical issue where `Wallpaper.plist`'s numeric identifier was randomized out-of-sync with `suggestionMetadata.plist` (`7400.DYNAMIC`), causing wallpapers like Windows 11 to vanish from the Lock Screen gallery.\n• **Mercury Wallpaper Support**: Added recognition for `mercury-descriptors` container folders and registered `com.apple.Posters.MercuryPosterApp` in `PersistedPosterContainerBundleIdentifiers`.\n• **NeoSpring Respring**: Instant springboard reload to apply wallpaper preferences immediately.\n\n### 🧪 Quality & Testing\n• All 24 unit tests passing (`TendiesEngineTests`, `WalletScanParserTests`, `CardPhotoCropTests`, `CardPhotoPickerTests`).\n\n**Full Changelog**: https://github.com/Mak5er/AirCard-iOS/compare/v1.3.1...v1.3.2",
+          "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3.2/AirCard-iOS.ipa",
+          "size": 4638147,
           "minOSVersion": "27.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.mak5er.aircard",
-      "title": "AirCard-iOS 1.3.1 · 01 Oct 2026",
-      "identifier": "AirCard-iOS-release-v1.3.1",
-      "caption": "AirCard-iOS 1.3.1 is available.",
-      "date": "2026-10-01T23:01:18Z",
+      "title": "AirCard-iOS 1.3.2 · 04 Oct 2026",
+      "identifier": "AirCard-iOS-release-v1.3.2",
+      "caption": "AirCard-iOS 1.3.2 is available.",
+      "date": "2026-10-04T12:22:53Z",
       "tintColor": "#5020E0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/images/news.png",
       "notify": true,
-      "url": "https://github.com/Mak5er/AirCard-iOS/releases/tag/v1.3.1"
+      "url": "https://github.com/Mak5er/AirCard-iOS/releases/tag/v1.3.2"
     }
   ]
 }
