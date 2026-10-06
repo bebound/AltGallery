@@ -167,11 +167,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20261005",
-          "date": "2026-10-05",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- pcsx2: add the DEV9 arcade-board files to the MSVC project\n- Arcade: the System 256 BIOS for every game, the 246 one for Battle Gear 3\n- Arcade controls: a layout for all arcade games\n- Arcade: Arcade controls, the player's own layout per game\n- GS/Vulkan: keep the shared DATE copy's pass untiled with one loop declaration\n- GS/Vulkan: drop the shared DATE stencil copy on a clear inside the pass\n- GS/Vulkan: share one DATE stencil copy across a run of alpha-bit shadow draws\n- GS: name GSAlphaBitLogicOp.h in the MSVC project\n- GS/Vulkan: set and clear alpha bit 7 with a logic op where a read waits per draw\n- microVU: the full-width sign clamp reads the resident clamp bounds\n- GS/HW: draw over-one (Cd - Cs) * As in two hardware passes on the copy road\n- Arcade: keep what games write to a CHD hard drive\n- Arcade: racing games' test menus can be entered\n- Arcade: say which games only reach their attract demo\n- Arcade: every arcade BIOS in use, each game on its own board's\n- Android: let libchdr open arcade hard drive CHDs\n- Android: write the data folder off the main thread, and only when needed\n- Arcade: find games where they are, instead of importing them\n- Arcade: open big hard drive CHDs, and read them like raw images\n- github: fixup templates to point to the right places for ARMSX2\n- iOS: build for the A10, the oldest chip that can install the app\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261004...8f6da1639fb10dcd4a43d84113d770b6edf2c0c1",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261005/ARMSX2-nightly-20261005-8f6da1639f-iOS-arm64.ipa",
-          "size": 39043867,
+          "version": "nightly-20261006",
+          "date": "2026-10-06",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- GS: give the shipped filters' overshoot in the clamp's comment\n- Android: Texture Upscaling is Off, RAISR 2x or RAISR 4x\n- Qt: Texture Upscaling is Off, RAISR 2x or RAISR 4x\n- GS: texture upscaling is one PS2-trained filter set, run once or twice\n- MSVC: list GSTexelAddressedDraw.h in pcsx2.vcxproj\n- Resources: add the PS2-trained RAISR filter set\n- GS: take the whole texel at a hard alpha edge in a generated upscale\n- GS: keep hard alpha edges exact in a generated upscale\n- GS: draw the guest's own texels where a draw reads a texture as swatches\n- GS: take a generated upscale's alpha range from its source texels\n- GS: clamp upscaled texels to the range of the source texels they come from\n- Android: add RAISR 4x Smooth to the texture upscaling picker\n- Qt: add RAISR 4x (Smooth) to the Texture Upscaling combo\n- GS: add a RAISR 4x (Smooth) texture upscaling mode\n- Android: add the texture upscaling picker to the Renderer tab\n- Qt: add a Texture Upscaling combo to the Texture Replacement tab\n- Tests: unit tests for the texture upscaler's queue and mip chain\n- GS: upscale textures in the background and feed them in as a generated pack\n- iOS: bundle the texture upscaler's filter sets\n- GS: add the TextureUpscaleMode setting\n- GS: use std::fma in the RAISR engine so MSVC ARM64 builds\n- Tests: unit tests for the RAISR upscaler engine\n- GS: add a RAISR 2x upscaler engine for RGBA8 textures\n- Resources: add Intel RAISR 2x filter sets for the texture upscaler\n- GS/TC: unswizzle target updates into the scratch buffer, not mapped upload memory\n- GS/TC: test what Target::Update uploads for each dirty rectangle\n- Android: show that the shader preset picker is scanning\n- Android: index shader presets once instead of on every picker open\n- GS: take a pack texture's alpha near 0x80 as 0x80 under an opaque alpha test\n- GS: make SyncWorkerThread wait for the pack worker's current job\n- GS: take the replacement-cache mutex when cancelling pending pack loads\n- GS/TC: let a replacement injected after its placeholder was evicted age out\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261005...46c06fe7ca0f1cbe94aab8b27db2a35a2330b3d5",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261006/ARMSX2-nightly-20261006-46c06fe7ca-iOS-arm64.ipa",
+          "size": 39474199,
           "minOSVersion": "17.0"
         }
       ]
@@ -286,11 +286,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "0.7.0",
+          "version": "0.8.0",
           "date": "2026-10-06",
-          "localizedDescription": "## What’s new?\r\n* Built-in StikJIT: pair on the device and enable JIT without a second app by @danperks in https://github.com/Leviidev/Husk/pull/37\r\n* Wi-Fi support for all games\r\n* UI Revamp: Now fully built with Swift\r\n* Moved Translation layer to the main 4 tabs, replacing the Discover tab\r\n## New game support\r\n* Beach Buggy Racing 2 - 60 FPS\r\n## New Contributors\r\n* @danperks made their first contribution in https://github.com/Leviidev/Husk/pull/37\r\n**Full Changelog**: https://github.com/Leviidev/Husk/compare/0.6.1...0.7.0\r\nDiscord server: https://discord.gg/xApMHWAzkh",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.7.0/Husk.ipa",
-          "size": 44993209,
+          "localizedDescription": "## What's new?\r\n- Touch Screen Gamepad for all games\r\n## New game support\r\n### Major:\r\n- Minecraft: Dungeons\r\n- GTA: San Andreas\r\n- Super Tux Kart\r\n### Minor\r\n- Rocks'n'Diamonds\r\n- Brogue CE\r\n- Infra Arcana\r\n- Dungeon Crawl Stone Soup\r\n- Anarch RE\r\n- Pekka Kana 2\r\n- Cat a shooter\r\n- Principia\r\n- Open Golf\r\n- Li-Ri\r\n- RTTT\r\n- Box Smasher\r\n- Alex vs Bus",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.8.0/Husk.ipa",
+          "size": 46478895,
           "minOSVersion": "16.4"
         }
       ]
@@ -480,11 +480,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.7",
-          "date": "2026-09-22",
-          "localizedDescription": "# What's New\r\n\r\n## Reader\r\n\r\n* **Reliable Resume to Saved Position** :\r\n  * Reopening a chapter in continuous vertical reading now jumps directly and instantly to the page where you left off, even before all images have finished loading.\r\n  * Eliminated the issue where the reader would land on a neighboring page or spinner instead of the correct saved position.\r\n\r\n* **Smoother Zoomed Panning & Inertia** (#1021):\r\n  * Dragging a zoomed page now follows your finger precisely using real movement delta instead of an accumulated offset, making panning far more responsive.\r\n  * Flinging a zoomed page now carries natural momentum with a longer, smoother coast animation.\r\n  * Overscrolling past the edge of a zoomed page automatically transfers the momentum to the page list scroll, allowing seamless continued scrolling without lifting your finger.\r\n\r\n* **Fixed Grey Screen in Double-Page Mode**:\r\n  * Chapter transition pages in vertical double-page reading no longer cause a crash or a blank grey screen when the spread is reached.\r\n\r\n* **Reader Bottom Bar Positioning**:\r\n  * The page slider and quick-action bar now correctly sit above the system gesture area and home indicator on all devices, preventing them from being hidden behind system UI.\r\n\r\n* **Novel Reader Performance**:\r\n  * Page swipes in paged novel mode no longer trigger a full rebuild of the reader tree, making navigation between pages considerably faster.\r\n\r\n---\r\n\r\n## Fixes & Stability\r\n\r\n* Fixed infinite loading spinner when resuming a continuous vertical chapter mid-chapter.\r\n* Corrected the visible range check that was preventing the initial scroll anchor from being applied reliably.\r\n* Page image load events now correctly trigger a re-jump to the saved position if the list had not yet settled on the right page.\r\n\r\n---\r\n\r\n## Contributors\r\n\r\n* @kodjodevf\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.6...v0.9.7",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.7/Mangayomi-v0.9.7-ios.ipa",
-          "size": 114301894
+          "version": "0.9.8",
+          "date": "2026-10-06",
+          "localizedDescription": "## What's Changed\r\n* fix(tracker): improve Trakt.tv multi-season mapping, watchlist, and ratings sync by @lee-gangjin in https://github.com/kodjodevf/mangayomi/pull/1024\r\n* feat(tracker): Add backlog sections (Plan to read/Watchlist), handle AniList 429 rate limits, and prioritize Trakt series by @lee-gangjin in https://github.com/kodjodevf/mangayomi/pull/1030\r\n* fix(mihon): use the Cloudflare proxy for extension-server sources by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1026\r\n* fix(mihon): identify which source of an extension a call is for by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1027\r\n* Improve LNReader extension compatibility\r\n* fix: stale chapter page lists and add WebP decoding on Linux by @MenaHere in https://github.com/kodjodevf/mangayomi/pull/1031\r\n* fix: remember window geometry on Linux; add missing libavif to AppImage to resolve closure by @MenaHere in https://github.com/kodjodevf/mangayomi/pull/1032\r\n\r\n## New Contributors\r\n* @lee-gangjin made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1024\r\n* @matsukiender-star made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1026\r\n* @MenaHere made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1031\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.7...v0.9.8",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.8/Mangayomi-v0.9.8-ios.ipa",
+          "size": 114518028
         }
       ]
     },
@@ -1008,11 +1008,11 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.7.1",
-          "date": "2026-10-03",
-          "localizedDescription": "- 个人主页改版：新增默认打开的“创作”分类，汇总近期发布内容。\r\n- 个人主页/问题/回答 header 调整。\r\n- 各处 action bar 与菜单调整。\r\n- 主题配色优化：背景与文字随主题色轻染。\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.7.0...v0.7.1",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.7.1/zhihu-minus-minus-v0.7.1-unsigned.ipa",
-          "size": 17579213,
+          "version": "0.8.0",
+          "date": "2026-10-06",
+          "localizedDescription": "本次部分功能属于破坏性更新，另外安卓自动更新不能用哦\r\n\r\nAndroid 默认提供已验证的 arm64-v8a APK；其余 compat APK 未经实机验证，供对应架构设备手动安装。  \r\niOS 为未签名 IPA，SideStore / AltStore Classic 订阅源：https://github.com/huamurui/zhihu-minus-minus/releases/latest/download/altstore-source.json 。  \r\nSHA256SUMS.txt 可用于校验下载文件。  \r\n\r\n<!-- Release notes generated using configuration in .github/release.yml at 05a8a963a21d2bd59be44fe40829bbac7b8bbbf5 -->\r\n\r\n* 移除 rnrh 默认使用新版正文渲染；两种回答阅读方式通过设置分离选择不再混用； by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/114\r\n* fix: 支持知乎视频原生播放并保留正文封面 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/115\r\n* fix: 统一悬浮操作栏底距并补足最小间距 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/116\r\n* feat: 改善应用内更新并添加 iOS 侧载订阅源 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/117\r\n* feat: 支持正则屏蔽内容，默认开启广告过滤 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/118\r\n* feat: redesign floating content action bars by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/119\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.7.1...v0.8.0",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.8.0/zhihu-minus-minus-v0.8.0-unsigned.ipa",
+          "size": 16162197,
           "minOSVersion": "15.1"
         }
       ]
@@ -1021,14 +1021,47 @@
   "news": [
     {
       "appID": "com.husk.app",
-      "title": "Husk 0.7.0 · 06 Oct 2026",
-      "identifier": "Husk-release-0.7.0",
-      "caption": "Husk 0.7.0 is available.",
-      "date": "2026-10-06T03:36:02Z",
+      "title": "Husk 0.8.0 · 06 Oct 2026",
+      "identifier": "Husk-release-0.8.0",
+      "caption": "Husk 0.8.0 is available.",
+      "date": "2026-10-06T21:57:43Z",
       "tintColor": "#5949E5",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
       "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/0.7.0"
+      "url": "https://github.com/Leviidev/Husk/releases/tag/0.8.0"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20261006 · 06 Oct 2026",
+      "identifier": "ARMSX2-release-nightly-20261006",
+      "caption": "ARMSX2 nightly-20261006 is available.",
+      "date": "2026-10-06T15:44:17Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261006"
+    },
+    {
+      "appID": "com.kodjodevf.mangayomi",
+      "title": "Mangayomi 0.9.8 · 06 Oct 2026",
+      "identifier": "Mangayomi-release-v0.9.8",
+      "caption": "Mangayomi 0.9.8 is available.",
+      "date": "2026-10-06T13:56:40Z",
+      "tintColor": "#EF4444",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.8"
+    },
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.8.0 · 06 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.8.0",
+      "caption": "ZhihuMinusMinus 0.8.0 is available.",
+      "date": "2026-10-06T04:19:42Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.8.0"
     },
     {
       "appID": "dev.playport.app",
@@ -1040,17 +1073,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/news.png",
       "notify": true,
       "url": "https://github.com/playportdev/playport/releases/tag/v0.3.3"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20261005 · 05 Oct 2026",
-      "identifier": "ARMSX2-release-nightly-20261005",
-      "caption": "ARMSX2 nightly-20261005 is available.",
-      "date": "2026-10-05T17:48:58Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261005"
     },
     {
       "appID": "com.example.piliplus",
@@ -1128,17 +1150,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
       "url": "https://github.com/missuo/kumone/releases/tag/v0.3.20"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.7.1 · 03 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.7.1",
-      "caption": "ZhihuMinusMinus 0.7.1 is available.",
-      "date": "2026-10-03T07:24:16Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.7.1"
     },
     {
       "appID": "com.altman.moviepilot",
@@ -1304,17 +1315,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
       "notify": true,
       "url": "https://github.com/celia-sh/Novella/releases/tag/v2.5.0"
-    },
-    {
-      "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.7 · 22 Sep 2026",
-      "identifier": "Mangayomi-release-v0.9.7",
-      "caption": "Mangayomi 0.9.7 is available.",
-      "date": "2026-09-22T11:08:53Z",
-      "tintColor": "#EF4444",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.7"
     },
     {
       "appID": "com.suwayomi.tachideskSorayomi",

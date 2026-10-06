@@ -20,11 +20,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "0.7.0",
+          "version": "0.8.0",
           "date": "2026-10-06",
-          "localizedDescription": "## What’s new?\r\n* Built-in StikJIT: pair on the device and enable JIT without a second app by @danperks in https://github.com/Leviidev/Husk/pull/37\r\n* Wi-Fi support for all games\r\n* UI Revamp: Now fully built with Swift\r\n* Moved Translation layer to the main 4 tabs, replacing the Discover tab\r\n## New game support\r\n* Beach Buggy Racing 2 - 60 FPS\r\n## New Contributors\r\n* @danperks made their first contribution in https://github.com/Leviidev/Husk/pull/37\r\n**Full Changelog**: https://github.com/Leviidev/Husk/compare/0.6.1...0.7.0\r\nDiscord server: https://discord.gg/xApMHWAzkh",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.7.0/Husk.ipa",
-          "size": 44993209,
+          "localizedDescription": "## What's new?\r\n- Touch Screen Gamepad for all games\r\n## New game support\r\n### Major:\r\n- Minecraft: Dungeons\r\n- GTA: San Andreas\r\n- Super Tux Kart\r\n### Minor\r\n- Rocks'n'Diamonds\r\n- Brogue CE\r\n- Infra Arcana\r\n- Dungeon Crawl Stone Soup\r\n- Anarch RE\r\n- Pekka Kana 2\r\n- Cat a shooter\r\n- Principia\r\n- Open Golf\r\n- Li-Ri\r\n- RTTT\r\n- Box Smasher\r\n- Alex vs Bus",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.8.0/Husk.ipa",
+          "size": 46478895,
           "minOSVersion": "16.4"
         }
       ]
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.husk.app",
-      "title": "Husk 0.7.0 · 06 Oct 2026",
-      "identifier": "Husk-release-0.7.0",
-      "caption": "Husk 0.7.0 is available.",
-      "date": "2026-10-06T03:36:02Z",
+      "title": "Husk 0.8.0 · 06 Oct 2026",
+      "identifier": "Husk-release-0.8.0",
+      "caption": "Husk 0.8.0 is available.",
+      "date": "2026-10-06T21:57:43Z",
       "tintColor": "#5949E5",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
       "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/0.7.0"
+      "url": "https://github.com/Leviidev/Husk/releases/tag/0.8.0"
     }
   ]
 }
