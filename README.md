@@ -128,6 +128,9 @@ Boots an arm64 macOS Ventura guest on iPhone through Apple's own chain on QEMU's
 ### <a href="https://github.com/Eslzzyl/Pixiv-SwiftUI"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Pixiv-SwiftUI/icon.png" alt="Pixiv-SwiftUI icon" width="24" align="top"> Pixiv-SwiftUI</a>
 基于 SwiftUI 的 Pixiv 第三方客户端，支持 iOS/iPadOS/macOS。
 
+### <a href="https://github.com/playportdev/playport"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Playport/icon.png" alt="Playport icon" width="24" align="top"> Playport</a>
+Run 64-bit and 32-bit Windows PC games natively on a stock, non-jailbroken iPhone — no PC, no cloud, no stream.
+
 ### <a href="https://github.com/xmiguel911x/PSX3IOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PSX3IOS/icon.png" alt="PSX3IOS icon" width="24" align="top"> PSX3IOS</a>
 A PlayStation 3 emulator for iPhone and iPad, built on RPCS3.
 

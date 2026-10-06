@@ -1,0 +1,48 @@
+# altgen config for the Playport AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "playportdev/playport"
+
+[source]
+name = "Playport"
+subtitle = "Playport AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Playport"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/icon.png"
+website = "https://github.com/playportdev/playport"
+tint_color = "#F5B544"
+
+[app]
+name = "Playport"
+# Read from the shipped Playport-0.3.3.ipa (app/xtool.yml names the same id).
+bundle_identifier = "dev.playport.app"
+developer_name = "playportdev"
+subtitle = "PC games on your iPhone. Natively, no streaming."
+description = "Playport runs Windows games, 64-bit and 32-bit, on a stock, non-jailbroken iPhone: install a game from your library onto the phone, pick up a controller and press Play. The game runs on the phone's own CPU and GPU — no PC, no cloud, no stream. Requires iOS 26 or later with JIT enabled through LocalDevVPN or StikDebug."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/icon.png"
+# Ordered as the app presents itself: the home page, then the game library, then a game's page.
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/home.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/library.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/game-page.png",
+]
+# The amber of the porthole ring in the app icon and the project's own logo/badges.
+tint_color = "#F5B544"
+# MinimumOSVersion of the shipped 0.3.3 IPA; the README badges iOS 26+.
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): each release ships Playport-<version>.ipa
+# plus a Playport-<version>-source.tar, which the end anchor excludes.
+asset_pattern = "Playport-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by templates/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/news.png"
+
+[output]
+path = "apps.json"

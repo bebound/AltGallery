@@ -1,0 +1,13 @@
+# render_news.py config: python3 templates/render_news.py --out apps/Playport
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "Playport"
+tagline = "PC games on your iPhone"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#F5B544"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# background = "..."        # gradient base (derived from the icon's dominant color)
+# text_color = "#111111"    # app name (auto white/black)
