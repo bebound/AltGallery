@@ -1,0 +1,47 @@
+{
+  "name": "Playport",
+  "subtitle": "Playport AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Playport",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/icon.png",
+  "website": "https://github.com/playportdev/playport",
+  "tintColor": "#F5B544",
+  "apps": [
+    {
+      "name": "Playport",
+      "bundleIdentifier": "dev.playport.app",
+      "developerName": "playportdev",
+      "subtitle": "PC games on your iPhone. Natively, no streaming.",
+      "localizedDescription": "Playport runs Windows games, 64-bit and 32-bit, on a stock, non-jailbroken iPhone: install a game from your library onto the phone, pick up a controller and press Play. The game runs on the phone's own CPU and GPU — no PC, no cloud, no stream. Requires iOS 26 or later with JIT enabled through LocalDevVPN or StikDebug.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/home.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/library.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/game-page.png"
+      ],
+      "tintColor": "#F5B544",
+      "versions": [
+        {
+          "version": "0.3.3",
+          "date": "2026-10-05",
+          "localizedDescription": "# Playport 0.3.3: JIT your way\r\n\r\n**Playport now works with the JIT tools you already use.** Its built-in JIT helper\r\nis still the easiest way to play. But if you already enable JIT with\r\n**StikDebug**, or run your apps inside **LiveContainer**, Playport now takes JIT\r\nfrom them too. You no longer need Playport's own pairing.\r\n\r\n## Highlights\r\n\r\n### 🔌 Choose where JIT comes from\r\nA new **JIT method** setting in **Settings › Setup check** (or press **X** on the\r\nsetup checklist's first step) offers three ways:\r\n\r\n| Method | What happens when you press Play |\r\n| --- | --- |\r\n| **Built-in** (default) | Playport's own helper enables JIT, as before. No other app, no app switch. |\r\n| **StikDebug** | Playport opens StikDebug, which enables JIT and brings you back to the game. |\r\n| **Another app** | Playport waits for JIT from the app you use, such as LiveContainer's *Launch with JIT*. |\r\n\r\nStikDebug and other apps use StikDebug's standard **`universal.js`** script.\r\nPlayport's JIT already speaks its protocol, so there is no custom script to install.\r\n\r\n### 📦 LiveContainer support\r\nLiveContainer can't start Playport's built-in helper, so Playport now notices\r\nwhen it runs inside LiveContainer and hides the Built-in method. Two ways to play:\r\n\r\n1. **Launch with JIT** (recommended): in LiveContainer, set the JIT enabler to\r\n   StikDebug with `universal.js`, and turn on *Launch with JIT* for Playport.\r\n   Playport finds JIT already there, so Play doesn't wait for it.\r\n2. **StikDebug from Playport**: choose StikDebug as the JIT method and turn on\r\n   *Use LiveContainer's Bundle ID* in LiveContainer's settings.\r\n\r\n### 🧭 A setup that fits your method\r\n- With StikDebug or another app, Playport's own **pairing is no longer a setup\r\n  step**, and a missing pairing never stops a game.\r\n- LocalDevVPN is skipped too when another app brings JIT. StikDebug still uses it.\r\n- While a game waits for JIT, the launch screen says what it is waiting for. If JIT\r\n  doesn't arrive, it tells you what to check for the method you chose.\r\n\r\n## Good to know\r\n- **One game per launch.** After a game, Playport normally restarts itself so the\r\n  next one gets fresh JIT. That restart needs Playport's pairing, and inside\r\n  LiveContainer it isn't possible at all. In those cases Playport asks you to close\r\n  it and launch it again (with JIT) before the next game.\r\n- **Built-in is unchanged** and still the default. If it works for you, there is\r\n  nothing to do.\r\n- **Not tested with StikDebug or LiveContainer yet.** Playport is tested on one\r\n  phone (iOS 27.0), which has neither. Built-in was checked with Hollow Knight. If\r\n  you play through StikDebug or LiveContainer, please tell us how it goes.\r\n\r\nThanks to the player who asked for this: *\"in app JIT enabling is cool and all,\r\nbut it doesn't work under LiveContainer\"*. Now it should: let us know.\r\n\r\nEverything else is as in 0.3.2.",
+          "downloadURL": "https://github.com/playportdev/playport/releases/download/v0.3.3/Playport-0.3.3.ipa",
+          "size": 662021812,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "dev.playport.app",
+      "title": "Playport 0.3.3 · 05 Oct 2026",
+      "identifier": "Playport-release-v0.3.3",
+      "caption": "Playport 0.3.3 is available.",
+      "date": "2026-10-05T20:29:19Z",
+      "tintColor": "#F5B544",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/news.png",
+      "notify": true,
+      "url": "https://github.com/playportdev/playport/releases/tag/v0.3.3"
+    }
+  ]
+}
