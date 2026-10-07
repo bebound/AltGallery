@@ -360,11 +360,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.3.7",
-          "date": "2026-09-30",
-          "localizedDescription": "- 改进的视频截图功能 (#1697 #1144) (@Predidit)\r\n- 新增弹幕简繁转换设置 (#1108 #1923) (@Predidit)\r\n- 番剧详情页面现在支持复制标题与保存封面 (#2575) (@Predidit)\r\n- 现在可以在滑动快进时滑至播放器边缘取消操作 (#2592) (@Predidit)\r\n- 新增 Bangumi 番剧条目 ECH 加速选项 (@Predidit)\r\n- 修复手动检索弹幕时搜索记录无法保留的问题 (@moonrailgun)\r\n- 修复部分视频来源无法触发人机验证的问题 (#2578) (@jzy834894319)\r\n- 修复 Linux 平台打开播放器、切换剧集或播放结束时可能崩溃的问题 (#2587) (@Predidit)\r\n- 修复桌面平台设置子页面窗口控制按钮重复显示的问题 (#2589) (@Predidit)\r\n- 修复切换原生标题栏设置后窗口控制按钮显示异常的问题 (@Predidit)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.7/Kazumi_ios_2.3.7_no_sign.ipa",
-          "size": 30538813,
+          "version": "2.3.8",
+          "date": "2026-10-07",
+          "localizedDescription": "- 优化截图交互 (#2599) (@Predidit)\r\n- 统一应用内下拉菜单样式 (@Predidit)\r\n- 修复大字体下番剧详情页追番按钮与其他按钮重叠而无法点击的问题 (#2622) (@Predidit)\r\n- 修复宽屏设置页重复点击已选中分类时二级页面重复嵌套的问题 (#2607) (@Predidit)\r\n- 修复鼠标悬停时播放器控制栏动画反复重启的问题 (@Predidit)\r\n- 修复分集评论标题栏显示多余副标题的问题 (@Predidit)\r\n- 其他UI改进 (@Predidit)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.3.8/Kazumi_ios_2.3.8_no_sign.ipa",
+          "size": 30463104,
           "minOSVersion": "13.0"
         }
       ]
@@ -1020,6 +1020,17 @@
   ],
   "news": [
     {
+      "appID": "com.example.kazumi",
+      "title": "Kazumi 2.3.8 · 07 Oct 2026",
+      "identifier": "Kazumi-release-2.3.8",
+      "caption": "Kazumi 2.3.8 is available.",
+      "date": "2026-10-07T03:41:05Z",
+      "tintColor": "#4CAF50",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.8"
+    },
+    {
       "appID": "com.husk.app",
       "title": "Husk 0.8.0 · 06 Oct 2026",
       "identifier": "Husk-release-0.8.0",
@@ -1183,17 +1194,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
       "notify": true,
       "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.0+1001"
-    },
-    {
-      "appID": "com.example.kazumi",
-      "title": "Kazumi 2.3.7 · 30 Sep 2026",
-      "identifier": "Kazumi-release-2.3.7",
-      "caption": "Kazumi 2.3.7 is available.",
-      "date": "2026-09-30T10:52:08Z",
-      "tintColor": "#4CAF50",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.7"
     },
     {
       "appID": "com.neogamelab.neostation",
