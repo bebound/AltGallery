@@ -20,11 +20,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "0.8.0",
-          "date": "2026-10-06",
-          "localizedDescription": "## What's new?\r\n- Touch Screen Gamepad for all games\r\n## New game support\r\n### Major:\r\n- Minecraft: Dungeons\r\n- GTA: San Andreas\r\n- Super Tux Kart\r\n### Minor\r\n- Rocks'n'Diamonds\r\n- Brogue CE\r\n- Infra Arcana\r\n- Dungeon Crawl Stone Soup\r\n- Anarch RE\r\n- Pekka Kana 2\r\n- Cat a shooter\r\n- Principia\r\n- Open Golf\r\n- Li-Ri\r\n- RTTT\r\n- Box Smasher\r\n- Alex vs Bus",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.8.0/Husk.ipa",
-          "size": 46478895,
+          "version": "0.8.1",
+          "date": "2026-10-07",
+          "localizedDescription": "## What’s new?\r\n- TrollStore/Dopamine JIT support (beta)\r\n- Per-app settings for Translation Layer Games\r\n- UI Revamp\r\n- Bug fixes\r\n## Notes:\r\nIf a game is failing to launch now, but it ran in the previous release, clear the data for the app in app settings. Your GlobalSave file may have nothing in it.",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.8.1/Husk.ipa",
+          "size": 46728037,
           "minOSVersion": "16.4"
         }
       ]
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.husk.app",
-      "title": "Husk 0.8.0 · 06 Oct 2026",
-      "identifier": "Husk-release-0.8.0",
-      "caption": "Husk 0.8.0 is available.",
-      "date": "2026-10-06T21:57:43Z",
+      "title": "Husk 0.8.1 · 07 Oct 2026",
+      "identifier": "Husk-release-0.8.1",
+      "caption": "Husk 0.8.1 is available.",
+      "date": "2026-10-07T11:26:52Z",
       "tintColor": "#5949E5",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
       "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/0.8.0"
+      "url": "https://github.com/Leviidev/Husk/releases/tag/0.8.1"
     }
   ]
 }

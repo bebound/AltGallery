@@ -21,12 +21,12 @@
       "tintColor": "#0077B6",
       "versions": [
         {
-          "version": "5.2.0",
-          "buildVersion": "1001",
-          "date": "2026-10-01",
-          "localizedDescription": "### 新增功能\r\n\r\n- **智能跳过片头片尾**：根据剧集匹配 OP / ED 区间，支持跳过后撤销、手动标注与校正，以及按片源关闭跳过；第 1 集保留正常播放。\r\n- **片头片尾标注共享**：登录后可共享标注，并对社区标注提交确认或纠错反馈。\r\n- **聚合搜索**：支持一次搜索多个视频源，覆盖自动匹配所使用的源集合。\r\n- **Windows 实验室**：新增 DLSS 实验性视频增强，提供实时播放、离线增强，以及增强强度、超分辨率和帧生成设置。\r\n\r\n### 更新时间表\r\n\r\n- **重新设计时间表页面**：采用时间线布局，放大番剧封面，按 UTC+8 放送时间排序，同一时刻的番剧集中展示。\r\n- 增加当日集数与本集标题，根据 Bangumi 章节播出日期匹配，支持长篇番剧章节加载。\r\n- 增加播放平台、平台上线时间、地区与链接信息，标明跨日上线时间。\r\n- 支持点击日期、左右滑动和方向键切换，完善下拉刷新、空列表与失败重试。\r\n- 排期服务不可用时回退到每日番剧列表，刷新失败时保留已有排期。\r\n\r\n### 体验优化\r\n\r\n- **重新设计「一起看」界面**：调整创建房间、加入房间、聊天、成员管理和邀请页面，加入当前视频预览与新的引导插画。\r\n- 优化房间聊天的消息分组、输入框和键盘避让；查看历史消息时显示新消息提示，重连期间保留输入草稿。\r\n- 优化邀请链接、邀请码与 Syncplay 配置的展示和复制操作。\r\n- 统一播放器设置、弹幕管理与投屏面板样式，改善横竖屏、小屏和大字号布局。\r\n- 播放器设置按功能重新分组，双击手势、解码与其他播放偏好集中到「更多播放设置」。\r\n- 优化投屏设备列表与播放控制，收起面板后保留投屏连接。\r\n- 优化继续播放、片头片尾跳过和下一集提示，以及弹幕匹配、选集和时间偏移调节。\r\n- 首页轮播改为展示 Bangumi 当季热门番剧，调整 Windows 首页与侧栏布局，更新应用图标。\r\n- 更新 AkiAnime、Anime7、XifanACG 等内置视频源规则，优化搜索、详情获取与播放解析。\r\n\r\n### 问题修复\r\n\r\n- 修复续播时未恢复上次观看集数、较旧记录覆盖最新观看记录的问题。\r\n- 修复切集、加载及跳转期间播放进度可能被错误保存的问题。\r\n- 优化搜索与时间表的异步请求处理，避免旧结果覆盖当前页面。\r\n- 改进播放地址缓存更新与失效处理，减少重复使用旧地址的情况。\r\n\r\n> DLSS 视频增强仅限 Windows，默认关闭，实际可用性取决于设备与运行环境。\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.1.1+0912...5.2.0+1001",
-          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.2.0%2B1001/baka-5.2.0%2B1001-ios-unsigned.ipa",
-          "size": 22426855,
+          "version": "5.2.1",
+          "buildVersion": "1007",
+          "date": "2026-10-07",
+          "localizedDescription": "- 新增视频内片头、片尾区间选择，支持拖动起止位置、预览画面并保存到本机。\r\n- 优化片头片尾管理面板，支持分别控制当前片源的跳过开关，并查看区间来源、调整标注及提交反馈。\r\n- 修复标注时拖动、试看或切换后台可能覆盖观看进度、误记为已看完的问题。\r\n- 修复部分云端历史无法正常续播的问题，完善片源重新匹配、集数与线路恢复，保留本机播放信息。\r\n- 新增视频源更新提醒，支持启动及返回应用时检查更新，并提供批量更新、进度显示和失败重试。\r\n- 完善规则版本管理，规则库连接失败时保留上次检查结果并显示提示。\r\n- 新增 MuteFun 动漫（2kdm）、七色番及 GirigiriLove Beta 内置源，移除 Anime7，更新多个现有视频源规则。\r\n- 优化网页播放地址解析与 WebView 回退流程，修复部分带签名播放地址被重复解码的问题。\r\n- 修复收藏列表加载更多异常及封面过渡动画冲突，改善移动端简介选择、滚动和评论列表位置保留。 #31 \r\n- 精简 Windows 实验性 DLSS 增强功能，统一使用内置播放器，移除独立播放与离线增强入口，改用精简运行库。\r\n- 优化异常提示，主动取消请求时不再弹出网络错误；播放历史同步失败时保留本地记录，减少播放干扰。\r\n\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.2.0+1001...5.2.1+1007",
+          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.2.1%2B1007/baka-5.2.1%2B1007-ios-unsigned.ipa",
+          "size": 22588259,
           "minOSVersion": "13.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "ani.baka",
-      "title": "AniBaka 5.2.0 · 01 Oct 2026",
-      "identifier": "AniBaka-release-5.2.0+1001",
-      "caption": "AniBaka 5.2.0 is available.",
-      "date": "2026-10-01T13:40:58Z",
+      "title": "AniBaka 5.2.1 · 07 Oct 2026",
+      "identifier": "AniBaka-release-5.2.1+1007",
+      "caption": "AniBaka 5.2.1 is available.",
+      "date": "2026-10-07T09:28:39Z",
       "tintColor": "#0077B6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
       "notify": true,
-      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.0+1001"
+      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.1+1007"
     }
   ]
 }
