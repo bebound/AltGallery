@@ -167,11 +167,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "nightly-20261006",
-          "date": "2026-10-06",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- GS: give the shipped filters' overshoot in the clamp's comment\n- Android: Texture Upscaling is Off, RAISR 2x or RAISR 4x\n- Qt: Texture Upscaling is Off, RAISR 2x or RAISR 4x\n- GS: texture upscaling is one PS2-trained filter set, run once or twice\n- MSVC: list GSTexelAddressedDraw.h in pcsx2.vcxproj\n- Resources: add the PS2-trained RAISR filter set\n- GS: take the whole texel at a hard alpha edge in a generated upscale\n- GS: keep hard alpha edges exact in a generated upscale\n- GS: draw the guest's own texels where a draw reads a texture as swatches\n- GS: take a generated upscale's alpha range from its source texels\n- GS: clamp upscaled texels to the range of the source texels they come from\n- Android: add RAISR 4x Smooth to the texture upscaling picker\n- Qt: add RAISR 4x (Smooth) to the Texture Upscaling combo\n- GS: add a RAISR 4x (Smooth) texture upscaling mode\n- Android: add the texture upscaling picker to the Renderer tab\n- Qt: add a Texture Upscaling combo to the Texture Replacement tab\n- Tests: unit tests for the texture upscaler's queue and mip chain\n- GS: upscale textures in the background and feed them in as a generated pack\n- iOS: bundle the texture upscaler's filter sets\n- GS: add the TextureUpscaleMode setting\n- GS: use std::fma in the RAISR engine so MSVC ARM64 builds\n- Tests: unit tests for the RAISR upscaler engine\n- GS: add a RAISR 2x upscaler engine for RGBA8 textures\n- Resources: add Intel RAISR 2x filter sets for the texture upscaler\n- GS/TC: unswizzle target updates into the scratch buffer, not mapped upload memory\n- GS/TC: test what Target::Update uploads for each dirty rectangle\n- Android: show that the shader preset picker is scanning\n- Android: index shader presets once instead of on every picker open\n- GS: take a pack texture's alpha near 0x80 as 0x80 under an opaque alpha test\n- GS: make SyncWorkerThread wait for the pack worker's current job\n- GS: take the replacement-cache mutex when cancelling pending pack loads\n- GS/TC: let a replacement injected after its placeholder was evicted age out\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261005...46c06fe7ca0f1cbe94aab8b27db2a35a2330b3d5",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261006/ARMSX2-nightly-20261006-46c06fe7ca-iOS-arm64.ipa",
-          "size": 39474199,
+          "version": "nightly-20261007",
+          "date": "2026-10-07",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- Android: don't tell a user to download the malisx2 pack they selected\n- Tests: pin every Mali Valhall v9 and v11 name the app can meet\n- Android: offer malisx2 on Mali Valhall v9 as well as v11\n- tools: build the Play AAB with NDK 29, like the sideload targets\n- GS/Null: add a mali-g615-malisx2 profile for the RG477V on our driver\n- Android: show the malisx2 notice the way the blending and paid-copy warnings show\n- GS/gsrunner: -no-dual-source runs Vulkan as a device without dual-source blending\n- Android: warn when a supported Mali runs Vulkan without malisx2\n- GS/Vulkan: expanded lines pair their ends by index on every device\n- Android: regenerate the PGO profile after bmd's texture hash changes\n- Android: publish a screenshot to the gallery only once the core has written all of it\n- GS/gsrunner: -no-provoking-vertex runs Vulkan as a device without provokingVertexLast\n- Android: Auto picks Vulkan on Mali Valhall v9 and v11\n- GS: allow push descriptors on malisx2 when it advertises enough of them\n- GS: exempt malisx2 from the Mali destination-read rows once it has ROAA\n- GS/TC: reuse a texture's hash while the pages it reads are unwritten\n- GS: mark local memory pages at the stores the hardware renderer makes\n- GS: stamp the pages of local memory that a store writes\n- GS/TC: hash texture blocks without copying each one into XXH3's buffer\n- GS: exempt malisx2 from the r44p1 self-read rule\n- GS: move the malisx2 identity predicate into the profile layer\n- Android: regenerate the PGO profile for 2.8.2\n- GS: log which driver-profile rules and device rules matched\n- GS: recognise the malisx2 driver as well as its old libmali name\n- Quick menu: Texture Upscaling under the internal resolution\n- i18n: bmd's Texture Upscaling picker and preset scanning in 19 languages\n- Arcade: Soul Calibur II's Conquest card goes in without a note\n- Controls: two controllers plug in Player 2's port again, wherever they play\n- Save states: keep up to five autosaves\n- Controls: several controllers can play one player\n- IOP: an ELF picked through Android's file picker boots again (#759)\n- Android: save state hotkeys always answer, and a held button is let go (#784)\n- Android: the screen resolution override keeps a portrait screen's shape (#790)\n- Touch: hidden extra widgets no longer leave dead spots (#796)\n- Arcade: Soul Calibur II starts with its Conquest card\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261006...e194ae09e6546840dc9854341c3b15424b007495",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261007/ARMSX2-nightly-20261007-e194ae09e6-iOS-arm64.ipa",
+          "size": 39480032,
           "minOSVersion": "17.0"
         }
       ]
@@ -286,11 +286,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "0.8.1",
+          "version": "0.9.0",
           "date": "2026-10-07",
-          "localizedDescription": "## What’s new?\r\n- TrollStore/Dopamine JIT support (beta)\r\n- Per-app settings for Translation Layer Games\r\n- UI Revamp\r\n- Bug fixes\r\n## Notes:\r\nIf a game is failing to launch now, but it ran in the previous release, clear the data for the app in app settings. Your GlobalSave file may have nothing in it.",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.8.1/Husk.ipa",
-          "size": 46728037,
+          "localizedDescription": "## What's new?\r\n- Sound for Unity and Java games\r\n- Turn on JIT at launch with a setting (StikJIT)\r\n- Share apps to Husk and import it (skips the file picker bugs)\r\n- New App User Interface\r\n- Game details for each game (screenshots, etc).\r\n\r\n## Info\r\nHusk's first stable release (1.0.0), is right around the corner. It will probably be the best release, fixing issues for almost all devices, but it is not out yet. This IPA may not work, and that is ok. It will be fixed soon, just open a GitHub issue",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/0.9.0/Husk.ipa",
+          "size": 46958334,
           "minOSVersion": "16.4"
         }
       ]
@@ -1021,14 +1021,25 @@
   "news": [
     {
       "appID": "com.husk.app",
-      "title": "Husk 0.8.1 · 07 Oct 2026",
-      "identifier": "Husk-release-0.8.1",
-      "caption": "Husk 0.8.1 is available.",
-      "date": "2026-10-07T11:26:52Z",
+      "title": "Husk 0.9.0 · 07 Oct 2026",
+      "identifier": "Husk-release-0.9.0",
+      "caption": "Husk 0.9.0 is available.",
+      "date": "2026-10-07T22:40:28Z",
       "tintColor": "#5949E5",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
       "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/0.8.1"
+      "url": "https://github.com/Leviidev/Husk/releases/tag/0.9.0"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 nightly-20261007 · 07 Oct 2026",
+      "identifier": "ARMSX2-release-nightly-20261007",
+      "caption": "ARMSX2 nightly-20261007 is available.",
+      "date": "2026-10-07T16:01:51Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261007"
     },
     {
       "appID": "ani.baka",
@@ -1051,17 +1062,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
       "notify": true,
       "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.8"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 nightly-20261006 · 06 Oct 2026",
-      "identifier": "ARMSX2-release-nightly-20261006",
-      "caption": "ARMSX2 nightly-20261006 is available.",
-      "date": "2026-10-06T15:44:17Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261006"
     },
     {
       "appID": "com.kodjodevf.mangayomi",
