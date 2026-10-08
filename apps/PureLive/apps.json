@@ -21,11 +21,11 @@
       "tintColor": "#50B0F0",
       "versions": [
         {
-          "version": "3.1.17",
-          "date": "2026-09-27",
-          "localizedDescription": "# 纯粹直播 v3.1.17\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n### 🖥️ Windows 版\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n### 🍎 macOS 版\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n### 📱 Android 版\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.17/ANDROID_SHA256SUM.txt)\n### 🐧 Linux 版\n- Linux x64\n- Portable tar.gz\n### 🍎 iOS 版\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n### 🔧 Build Metadata\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.17/BUILD_METADATA.json)\n### 📝 本次更新\nversion: 3.1.17\n版本更新：\n- 斗鱼原画不再每 5 分钟断流（#35）：到期前约 45 秒在后台取得新链接，旧连接继续播放，直到新连接到达一个还没播到的关键帧再接上；两条链接的时间戳在同一条时间线上，播放不卡顿、不重复、不重新缓冲。单个直播间与多画面都已接入；换链接失败时仍回退到断流自动重连。\n-  Android ARMv7 与 x86_64 改用自编 mpv 0.41.0 + FFmpeg 9.0.2 播放库，三种架构解码能力一致（包括旧式 HEVC FLV）。\n- 下线 Kick：kick.com 全部接口被 Cloudflare 按 TLS 指纹拦截，只有 Android 与 Windows 能勉强绕过。现支持 33 个直播平台 + IPTV；已关注的 Kick 主播和分享链接会提示「该平台已下线」。\n- Linux 安装包将自带 libmpv 依赖的 VA-API 等库，不再需要手动安装 libva-wayland2（源码已包含，下次发布 Linux 包时生效）。",
-          "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.17/PureLive-3.1.17-4106-ios-arm64-trollstore.ipa",
-          "size": 65187928,
+          "version": "3.1.18",
+          "date": "2026-10-08",
+          "localizedDescription": "# 纯粹直播 v3.1.18\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n### 🖥️ Windows 版\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n### 🍎 macOS 版\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n### 📱 Android 版\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.18/ANDROID_SHA256SUM.txt)\n### 🐧 Linux 版\n- Linux x64\n- **DEB 安装包**：适合 Debian/Ubuntu 及其衍生发行版\n- **Portable ZIP / tar.gz**：解压即用，无需安装\n### 🍎 iOS 版\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n### 🔧 Build Metadata\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.18/BUILD_METADATA.json)\n### 📝 本次更新\nversion: 3.1.18\n版本更新：\n- 播放内核：全平台默认 mpv 引擎，采用更安全的硬解默认值，修复 Android 硬解兼容；设置新增\"播放内核一键配置\"、分模块播放指南与 Anime4K 超分辨率，输出/超分参数改完即生效，不再需要重启。\n- 取流与线路：线路自带容器/编码声明，直连还是 FFmpeg 转封装按线路事实决定，旧式 HEVC FLV 改走重封装；带 token 与特殊 CDN（如 Steam 广播）线路走回环中继，代理与 demuxer 按源选择，TwitCasting 这类\"分片为相对地址\"的线路不再打不开。\n- 直播弹幕：AcFun、TwitCasting、LOOK、Chzzk、Bigo、Showroom、Picarto、Panda、FC2、Steam、JD、酷狗、六间房、十七 Live、MissEvan、KilaKila 等 17 站弹幕/聊天引擎全部到齐；新增弹幕设置页；Twitch 订阅/赠送/突袭事件与消息撤回进弹幕区。\n- 录像播放页：改为短视频式布局——倍速/选集分离、±10 秒跳转、可拖进度条、仅音频/截图/小窗/画中画右上角常驻；窄窗口画面在上、列表在下，退出小窗接着播；新增本地录像播放与私有目录提示。\n- 全屏与返回：安卓返回改两段语义——先退全屏、再退页面；竖屏与桌面全屏的控制栏避开刘海与手势条；画中画不再裁圆角，桌面全屏按钮不再消失。\n- 界面与设置：直播间键位收成可测键位表，新增 F 全屏、M 静音（空格暂停、Esc 退出全屏）；小窗控制层 5 秒无操作自动收起；画中画尺寸可调，站点分类平铺，平台选择器统一平台 logo；壁纸/背景覆盖更广，界面文案全部进语言包。\n- 账号与稳定性：新增\"退出所有登录\"统一入口，退出斗鱼同步清理会话；Bigo 支持登录态取流；虎牙/斗鱼连接参数更新，连接更稳。",
+          "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.18/PureLive-3.1.18-4107-ios-arm64-trollstore.ipa",
+          "size": 66853552,
           "minOSVersion": "15.6"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.mystyle.purelive.liu",
-      "title": "PureLive 3.1.17 · 27 Sep 2026",
-      "identifier": "PureLive-release-v3.1.17",
-      "caption": "PureLive 3.1.17 is available.",
-      "date": "2026-09-27T13:09:49Z",
+      "title": "PureLive 3.1.18 · 08 Oct 2026",
+      "identifier": "PureLive-release-v3.1.18",
+      "caption": "PureLive 3.1.18 is available.",
+      "date": "2026-10-08T03:24:27Z",
       "tintColor": "#50B0F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
       "notify": true,
-      "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.17"
+      "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.18"
     }
   ]
 }
