@@ -22,10 +22,10 @@
       "versions": [
         {
           "version": "1.2.5",
-          "date": "2026-10-02",
-          "localizedDescription": "MoviePilot Release\n\n- Version: 1.2.5\n- Build Date: 2026-10-02\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix: normalize V3 subscribe items for Function Hub mini-calendar by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/106\n* fix: raise iOS deployment target to 15.0 to match Xcode SDK minimum by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/107\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.2.5-2026-09-11...release-v1.2.5-2026-10-02",
-          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.2.5-2026-10-02/ios-v1.2.5-2026-10-02.ipa",
-          "size": 35212730,
+          "date": "2026-10-09",
+          "localizedDescription": "MoviePilot Release\n\n- Version: 1.2.5\n- Build Date: 2026-10-09\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(search): 修复 v3 契约服务器上「搜索资源」422,并让失败原因可见 by @anlan-home in https://github.com/singleton-altman/MoviePilotLite/pull/109\n* feat(player): 内嵌播放器集成(Exo + 原生内核) / 媒体库浏览 / 详情页直连播放 by @anlan-home in https://github.com/singleton-altman/MoviePilotLite/pull/108\n\n## New Contributors\n* @anlan-home made their first contribution in https://github.com/singleton-altman/MoviePilotLite/pull/109\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.2.5-2026-09-25...release-v1.2.5-2026-10-09",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.2.5-2026-10-09/ios-v1.2.5-2026-10-09.ipa",
+          "size": 37045206,
           "minOSVersion": "15.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.altman.moviepilot",
-      "title": "MoviePilotLite 1.2.5 · 02 Oct 2026",
-      "identifier": "MoviePilotLite-release-release-v1.2.5-2026-10-02",
+      "title": "MoviePilotLite 1.2.5 · 09 Oct 2026",
+      "identifier": "MoviePilotLite-release-release-v1.2.5-2026-10-09",
       "caption": "MoviePilotLite 1.2.5 is available.",
-      "date": "2026-10-02T04:17:54Z",
+      "date": "2026-10-09T04:52:13Z",
       "tintColor": "#8050F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
       "notify": true,
-      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.5-2026-10-02"
+      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.5-2026-10-09"
     }
   ]
 }
