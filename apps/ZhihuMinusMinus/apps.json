@@ -21,11 +21,11 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.8.0",
-          "date": "2026-10-06",
-          "localizedDescription": "本次部分功能属于破坏性更新，另外安卓自动更新不能用哦\r\n\r\nAndroid 默认提供已验证的 arm64-v8a APK；其余 compat APK 未经实机验证，供对应架构设备手动安装。  \r\niOS 为未签名 IPA，SideStore / AltStore Classic 订阅源：https://github.com/huamurui/zhihu-minus-minus/releases/latest/download/altstore-source.json 。  \r\nSHA256SUMS.txt 可用于校验下载文件。  \r\n\r\n<!-- Release notes generated using configuration in .github/release.yml at 05a8a963a21d2bd59be44fe40829bbac7b8bbbf5 -->\r\n\r\n* 移除 rnrh 默认使用新版正文渲染；两种回答阅读方式通过设置分离选择不再混用； by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/114\r\n* fix: 支持知乎视频原生播放并保留正文封面 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/115\r\n* fix: 统一悬浮操作栏底距并补足最小间距 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/116\r\n* feat: 改善应用内更新并添加 iOS 侧载订阅源 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/117\r\n* feat: 支持正则屏蔽内容，默认开启广告过滤 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/118\r\n* feat: redesign floating content action bars by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/119\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.7.1...v0.8.0",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.8.0/zhihu-minus-minus-v0.8.0-unsigned.ipa",
-          "size": 16162197,
+          "version": "0.8.1",
+          "date": "2026-10-09",
+          "localizedDescription": "更多的复用缓存与小功能补充。\r\n\r\n* 优化原生正文首载并复用问题列表回答数据 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/122\r\n* perf: reuse cached avatars and images across page mounts by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/123\r\n- feat: render content endorsements and retain list labels\r\n- feat: show stable relationship hints above detail content\r\n- feat: show member columns on profile\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.8.0...v0.8.1",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.8.1/zhihu-minus-minus-v0.8.1-unsigned.ipa",
+          "size": 16172235,
           "minOSVersion": "15.1"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.8.0 · 06 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.8.0",
-      "caption": "ZhihuMinusMinus 0.8.0 is available.",
-      "date": "2026-10-06T04:19:42Z",
+      "title": "ZhihuMinusMinus 0.8.1 · 09 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.8.1",
+      "caption": "ZhihuMinusMinus 0.8.1 is available.",
+      "date": "2026-10-09T08:07:00Z",
       "tintColor": "#0084ff",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
       "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.8.0"
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.8.1"
     }
   ]
 }

@@ -20,11 +20,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "1.0.1",
+          "version": "1.1.0",
           "date": "2026-10-09",
-          "localizedDescription": "## What's new?\r\n- Fixes a failure on logging into Google Accounts, (MissingDroidGuard)\r\n\r\n## Notes:\r\nCheck out Husk 1.0.0 release notes for all new features.\r\n\r\n## Links:\r\nDiscord Server: https://discord.gg/xApMHWAzkh\r\nX: https://x.com/leviidev01\r\nDiscord: @leviidev",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/1.0.1/Husk.ipa",
-          "size": 55925239,
+          "localizedDescription": "## Game Support\r\n- Grand Theft Auto 5 (unofficial)\r\n\r\n## What's Changed\r\n* fix: support TrollStore by @azyarashi in https://github.com/Leviidev/Husk/pull/68\r\n* feat: downloading tab, direct http or local ip by @Leviidev \r\n\r\n## New Contributors\r\n* @azyarashi made their first contribution in https://github.com/Leviidev/Husk/pull/68\r\n\r\n**Full Changelog**: https://github.com/Leviidev/Husk/compare/1.0.1...1.1.0\r\n\r\n## Links:\r\nDiscord Server: https://discord.gg/xApMHWAzkh\r\nX: https://x.com/leviidev01\r\nDiscord: @leviidev",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/1.1.0/Husk.ipa",
+          "size": 54385494,
           "minOSVersion": "16.4"
         }
       ]
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.husk.app",
-      "title": "Husk 1.0.1 · 09 Oct 2026",
-      "identifier": "Husk-release-1.0.1",
-      "caption": "Husk 1.0.1 is available.",
-      "date": "2026-10-09T01:17:20Z",
+      "title": "Husk 1.1.0 · 09 Oct 2026",
+      "identifier": "Husk-release-1.1.0",
+      "caption": "Husk 1.1.0 is available.",
+      "date": "2026-10-09T09:47:21Z",
       "tintColor": "#5949E5",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
       "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/1.0.1"
+      "url": "https://github.com/Leviidev/Husk/releases/tag/1.1.0"
     }
   ]
 }
