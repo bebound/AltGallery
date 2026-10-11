@@ -21,11 +21,11 @@
       "tintColor": "#708070",
       "versions": [
         {
-          "version": "1.4.14",
-          "date": "2026-08-24",
-          "localizedDescription": "## 修改内容\n\n- 新增帖子本地保存：支持完整楼层和楼中楼离线阅读、媒体下载、搜索、回复更新、存储管理及备份导入导出。\n- 新增内置与自定义阅读字体，并完善首页重复点击刷新。\n- 自动检测账号登录失效，提示后清理当前登录态，同时避免旧请求或网络中断误触发退出。\n- 修复 iOS 16 嵌套搜索布局递归卡死、文字选择与导航手势冲突，并将媒体、字体、语音和存储文件 I/O 移出主线程。\n- 加固本地帖子并发写入、媒体事务崩溃恢复、备份校验与字体目录一致性。\n\n## 验证\n\n- GitHub Actions ci-ok 全部通过，包含单元测试、iOS 16 兼容检查、iPhone/iPad UI 测试和 Release 构建。\n- App 与扩展均为 1.4.14 (58)、arm64、最低 iOS 16.4；IPA 压缩结构正常且未签名。\n- 发帖和回帖夹具 UI 测试通过；本次未改动认证写入路径，因此未重复进行真实账号写入测试。",
-          "downloadURL": "https://github.com/infinityf4p/TiebaPure-iOS/releases/download/v1.4.14/TiebaPure-v1.4.14-unsigned.ipa",
-          "size": 3787516,
+          "version": "1.4.15",
+          "date": "2026-10-10",
+          "localizedDescription": "## What's included\n\n- Stabilizes Home tab reselection and refresh behavior after scrolling.\n- Returning from a thread or search now closes that screen first; the next Home tap refreshes the feed.\n- A Home tap during an in-flight refresh returns to the top without creating a duplicate request.\n- Bumps the app and Open In extension to version `1.4.15` (build `59`).\n\n## Download\n\n`TiebaPure-v1.4.15-unsigned.ipa` is an intentionally unsigned arm64 IPA for local installation/signing.\n\n- Minimum iOS: `16.4`\n- Commit: `5a87225190d6a79b1e3ad3b7d846edd407d416c7`\n- SHA-256: `28fbe31e673b1f2769043456324521afd87d04ade8d92d33832e967c19c31123`\n\nCI `ci-ok` passed on PR #86, including unit tests, iOS compatibility checks, UI smoke tests, iPad layout tests, and the Release build.",
+          "downloadURL": "https://github.com/infinityf4p/TiebaPure-iOS/releases/download/v1.4.15/TiebaPure-v1.4.15-unsigned.ipa",
+          "size": 9347637,
           "minOSVersion": "16.4"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "dev.infinityf4p.tiebapure",
-      "title": "TiebaPure 1.4.14 · 24 Aug 2026",
-      "identifier": "TiebaPure-release-v1.4.14",
-      "caption": "TiebaPure 1.4.14 is available.",
-      "date": "2026-08-24T01:40:29Z",
+      "title": "TiebaPure 1.4.15 · 10 Oct 2026",
+      "identifier": "TiebaPure-release-v1.4.15",
+      "caption": "TiebaPure 1.4.15 is available.",
+      "date": "2026-10-10T06:07:37Z",
       "tintColor": "#708070",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/news.png",
       "notify": true,
-      "url": "https://github.com/infinityf4p/TiebaPure-iOS/releases/tag/v1.4.14"
+      "url": "https://github.com/infinityf4p/TiebaPure-iOS/releases/tag/v1.4.15"
     }
   ]
 }

@@ -22,11 +22,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.4.1",
-          "date": "2026-09-25",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 修复\n\n- **滑动时每秒卡一下**：在 iPhone 15 Pro 等机型上，任何页面匀速滑动时大约每秒会顿一下，插不插充电器都会出现，现已修复。原因有几处叠加：\n  - 表盘中间的数字滚动效果和弧线动画会被放到 CPU 上绘制，页面滚动时每一帧都要重画一次，占用了大量主线程时间。\n  - 悬浮读数（画中画）即使没有打开，也每秒在后台画一帧画面。\n  - 打开过的每个标签页即使不在前台，也会每秒跟着刷新；当前页面的导航栏和工具栏也每秒重建一次。\n  - 读取传感器改到后台线程进行，不再占用界面线程。\n\n## 变化\n\n- 表盘上的功率数字不再有滚动动画，弧线也不再有过渡动画，都和其他读数一样直接更新。\n- 切换到别的标签页再切回来时，页面会回到顶部。\n\n感谢反馈这个问题的用户。\n\n---\n\n## Fixes\n\n- **Scrolling hitched about once a second** on every screen, charging or not (reported on an iPhone 15 Pro). Several causes added up:\n  - The dial's rolling number and arc animations were drawn on the CPU and redrawn on every scroll frame.\n  - The floating meter (Picture in Picture) rendered a frame every second even when it was not open.\n  - Every tab you had visited kept refreshing in the background once a second, and the visible page rebuilt its navigation bar and toolbar on every refresh.\n  - Sensor reads now run off the main thread.\n\n## Changes\n\n- The power reading on the dial no longer rolls and its arcs no longer animate; they update in place like every other reading.\n- A tab returns to the top when you switch back to it.\n\nThanks to the user who reported it.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.4.0...v1.4.1",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.4.1/MiniWatts-unsigned.ipa",
-          "size": 3270441,
+          "version": "1.5.0",
+          "date": "2026-10-10",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 改进\n\n- **缺失的读数不再显示成 0。** 某一侧没有读数时（例如无线充电没有输入电流），图表在那一段断开，不再掉到 0；能量统计也只累计真正测到的时间段。\n- **充电效率更准。** \"电芯占比\"和\"负载与损耗\"只按输入侧、电池侧同时有读数的时间段计算，某一侧中途缺失不会再把结果带偏。\n- **两个标签改名。** \"以热量损失\"改为\"负载与损耗\"：这部分是手机自身耗电加上转换损耗，并不全是发热。\"效率 / 往返效率\"改为\"电芯占比\"。\n- **\"暂停充电\"的判断更稳。** 状态切换要持续 30 秒才生效，不再来回跳；没有电池电流读数时显示\"保持状态未知\"，不再直接当成暂停充电。\n- **耗电估算不再因为切到后台而清空。** 短暂离开 App 再回来，估算值还在。\n- **历史文件损坏时不再被直接覆盖。** 读不出来的历史文件会改名保留，并在\"原始数据\"页给出提示。\n- **发热相关的说明更准确。** 系统热状态只说明\"可能\"在限制充电电流，不再说成确定的原因。\n\n## 修复\n\n- 历史记录：没有测到输入侧的记录，\"输入\"和\"充电器峰值\"显示为\"—\"，不再显示 0；列表里的迷你曲线改画电池侧功率，不再空白。\n- 实时活动：灵动岛展开后，右上角的状态文字和\"结束\"按钮不再被圆角裁掉；暂停提示能完整显示。\n- 原始数据：重名的 HID 服务各占一行，不再被合并。\n\n## 注意\n\n- 升级后历史记录的格式有变化，旧版本读不了新格式。**如果从 1.5.0 降级回旧版本，历史记录会丢失。**\n\n---\n\n## Improvements\n\n- **A missing reading is no longer shown as 0.** When a rail has no reading (wireless charging has no input current, for one), the charts break there instead of dropping to zero, and energy is only counted over time that was actually measured.\n- **Charge efficiency is more accurate.** \"Cell share\" and \"Load + loss\" are computed only over the time both the input and the battery side were read, so one side dropping out no longer skews them.\n- **Two labels renamed.** \"Lost as heat\" is now \"Load + loss\": it is the phone's own consumption plus conversion loss, not all heat. \"Efficiency\" / \"Round trip\" is now \"Cell share\".\n- **\"Charging on hold\" is steadier.** A change has to last 30 seconds before it shows, so it no longer flickers; with no battery-current reading at all it says \"hold status unknown\" instead of assuming a hold.\n- **The discharge estimate survives a short trip to the background** instead of being cleared every time.\n- **An unreadable history file is no longer overwritten.** It is renamed and kept, and Raw data says so.\n- **Thermal wording is more careful.** The system thermal state says charging *may* be limited; it is no longer stated as the cause.\n\n## Fixes\n\n- History: a session whose input side was never measured shows \"—\" for Delivered and the charger's peak instead of 0, and its row draws the battery curve instead of nothing.\n- Live Activity: the expanded Dynamic Island no longer clips its status text and End button, and the paused message fits.\n- Raw data: HID services that share a name are listed as separate rows.\n\n## Note\n\n- The history file format changed and older versions cannot read it. **Downgrading from 1.5.0 loses the session history.**\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.4.1...v1.5.0",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.5.0/MiniWatts-unsigned.ipa",
+          "size": 3284306,
           "minOSVersion": "17.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.4.1 · 25 Sep 2026",
-      "identifier": "MiniWatts-release-v1.4.1",
-      "caption": "MiniWatts 1.4.1 is available.",
-      "date": "2026-09-25T12:31:59Z",
+      "title": "MiniWatts 1.5.0 · 10 Oct 2026",
+      "identifier": "MiniWatts-release-v1.5.0",
+      "caption": "MiniWatts 1.5.0 is available.",
+      "date": "2026-10-10T07:18:40Z",
       "tintColor": "#30E0F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
       "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.1"
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.5.0"
     }
   ]
 }

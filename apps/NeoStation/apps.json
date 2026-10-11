@@ -21,11 +21,11 @@
       "tintColor": "#01E989",
       "versions": [
         {
-          "version": "0.0.2",
-          "date": "2026-09-29",
-          "localizedDescription": "<p align=\"center\">\r\n  <img src=\"https://raw.githubusercontent.com/TarbleFR/neostation-ios/f4583c6a3083b8aed358da28b2f8f849256e0e8b/assets/images/fork-icon-valid.jpg\" width=\"180\" alt=\"NeoStation iOS logo\">\r\n</p>\r\n\r\n<h1 align=\"center\">🎮 NeoStation iOS — 0.0.2</h1>\r\n\r\n<p align=\"center\"><strong>JIT compatibility, DolphiniOS improvements and overall stability update.</strong></p>\r\n\r\n---\r\n\r\n## ⚡ StikJIT updated\r\n\r\nNeoStation now integrates **StikJIT 1.9.0**, replacing the previous 1.5.0 integration.\r\n\r\nThe JIT layer has been updated to improve compatibility across:\r\n\r\n- **iOS 18**\r\n- **iOS 26**\r\n- **iOS 27**\r\n\r\nPairing validation and JIT diagnostics have also been improved to help reduce silent or indefinite loading states.\r\n\r\n---\r\n\r\n## 🐬 DolphiniOS improvements\r\n\r\nThe embedded Dolphin integration receives several display and runtime improvements:\r\n\r\n- improved frame pacing\r\n- reduced micro-stutter\r\n- **120 Hz support**\r\n- improved Metal presentation\r\n- improved shader handling\r\n- cleaner resource handling between game sessions\r\n- improved display diagnostics\r\n\r\n> 120 Hz support improves presentation on compatible devices but does not turn a 30/60 FPS game into a native 120 FPS game.\r\n\r\n---\r\n\r\n## 📱 Requirements\r\n\r\n- iPhone or iPad\r\n- **iOS 18 or later**\r\n- Developer Mode enabled\r\n- NeoStation installed as a standalone IPA\r\n- compatible JIT configuration when required\r\n\r\n**LiveContainer is not supported.**\r\n\r\n---\r\n\r\n## 🎮 Game files\r\n\r\nNeoStation does not distribute ROMs, ISOs, BIOS files, firmware or copyrighted commercial game assets.\r\n\r\nNative ports such as **KartPad** and **Dusklight** require data from the user's own legally obtained supported games.\r\n\r\n---\r\n\r\n## 📦 Release\r\n\r\nDownload **NeoStation.ipa** from the Assets section.\r\n\r\n**Version:** 0.0.2  \r\n**Internal build:** 365  \r\n**Source:** f4583c6a3083b8aed358da28b2f8f849256e0e8b\r\n\r\nFull credits, licenses, source information and checksums are included with the release assets.\r\n\r\n---\r\n\r\n**One app. One library. Multiple systems.**",
-          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.2/NeoStation.ipa",
-          "size": 143767912,
+          "version": "0.0.4",
+          "date": "2026-10-10",
+          "localizedDescription": "# NeoStation iOS 0.0.4\n\nThis release brings the skin catalog and fixes for PSP and Nintendo 3DS to NeoStation iOS.\n\n## What's new\n\n- **Skin catalog:** browse the **[Provenance Skin Catalog](https://github.com/Provenance-Emu/skins)** for NeoStation's embedded Libretro consoles, install compatible skins, and choose separate portrait and landscape layouts.\n- **PSP:** fixed an issue that prevented games from launching.\n- **Nintendo 3DS:** fixed a crash that occurred when closing a game.\n\nThank you to the emulator developers and the NeoStation community for your work, feedback, and patience!\n\n## Using skins\n\nOpen **Settings → Folders → Embedded consoles**, choose a console, then **Skins**.\nUse **Browse the Provenance catalog** or **Import from Files**, then select\n**Use in portrait**, **Use in landscape** or **Use in both orientations**.\n\nSee the **[skin guide](https://github.com/TarbleFR/neostation-ios/blob/08145438cc907b22b7b860bf190d1b520040fef1/docs/SKINS.md)** for supported archive formats, default skins, game-specific choices and catalog sources.\n\nCatalog credits go to the **Provenance community**, format-reference credits to **Riley Testut and DeltaCore contributors**, and artwork credits to each **skin creator**. Community skins are optional downloads and retain their creators' terms.\n\n## Download\n\nDownload **`NeoStation-0.0.4.ipa`** below and sign it with your usual sideloading tool.\n\n`NeoStation-0.0.4-SHA256SUMS.txt` contains the IPA checksum.\n\n## Release information\n\n- **Release:** 0.0.4\n- **Internal build:** 435\n- **Source commit:** `90a4e513e3a97f642bc45963bfb689f7c4677d46`\n- **Build:** [GitHub Actions run 38072379293](https://github.com/TarbleFR/neostation-ios/actions/runs/38072379293)\n\nThis release distributes the existing Build 435 IPA. Its contents have not been rebuilt or modified; the download filename and GitHub release name use version 0.0.4. The app bundle retains its original marketing version, 0.0.2, and internal build number, 435.",
+          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.4/NeoStation-0.0.4.ipa",
+          "size": 205917388,
           "minOSVersion": "18.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.neogamelab.neostation",
-      "title": "NeoStation iOS 0.0.2 · 29 Sep 2026",
-      "identifier": "NeoStation iOS-release-0.0.2",
-      "caption": "NeoStation iOS 0.0.2 is available.",
-      "date": "2026-09-29T21:10:03Z",
+      "title": "NeoStation iOS 0.0.4 · 10 Oct 2026",
+      "identifier": "NeoStation iOS-release-0.0.4",
+      "caption": "NeoStation iOS 0.0.4 is available.",
+      "date": "2026-10-10T18:33:34Z",
       "tintColor": "#01E989",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
       "notify": true,
-      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.2"
+      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.4"
     }
   ]
 }

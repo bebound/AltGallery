@@ -144,11 +144,11 @@
       "tintColor": "#6050F0",
       "versions": [
         {
-          "version": "3.8.5",
-          "date": "2026-09-29",
-          "localizedDescription": "### Features\n\n- Add **Google Search** to the Search tab: tap the magnifier and pick Google to find Reddit threads through Google, with its snippets, Any Time and Exact Words filters, and results that open natively in Apollo (#1260: @icpryde)\n- Open the fullscreen image viewer's **Copy / Save / Share** menu where you press and hold, instead of the middle of the screen (#1254: @IllIIllIllIllII)\n- Add **Toon Bot** and **Happy Toon Bot** to the Concepts icon pack (#1253: @IllIIllIllIllII)\n\n### Performance\n\n- Make Apollo lighter on memory and quicker to launch: image caches now have size limits and are freed when iOS runs low on memory, the Deleted Comments and sidebar text hooks stay idle when they aren't needed, editing a comment no longer holds up other loads for up to 20 seconds, and launch does less work (#1169: @paradoxally, @icpryde)\n  - Also stops the comments title flashing on non-Liquid-Glass builds, and makes **Remember Post Sort** open posts from links, the inbox, or Floating Post Tabs in your saved sort straight away instead of reloading them\n- Stop the **AI comment summary** from re-running over and over while you scroll a thread (#1270: @Thetromboneman1)\n- Stop filtered posts leaving stacks of gray gaps in feeds, correcting just the affected rows instead of redrawing the whole feed (#1274: @Thetromboneman1)\n\n### Fixes\n\n- Fix a feed **crash** when several RedGIFs posts load at once, most often right after launching or switching accounts (#1251: @icpryde)\n- Fix a crash tapping \"Translated from…\" on a recovered **deleted comment** (#1222: @icpryde)\n- Fix **RedGIFs** posts showing \"RedGIFs error\" on every post after switching Wi-Fi, cellular, or VPN, and on older RedGIFs videos with no listed length (#1256, #1258: @icpryde)\n- Fix **API-Key-Free** feeds getting stuck on a spinner: avatar lookups no longer use up Reddit's request limit for your session (#1220: @icpryde)\n- Keep avatar and subreddit lookups on the active account, so avatars stop staying blank and follow and subscribe states are right when you have several accounts signed in (#1227: @icpryde)\n- Fix **Add Account** signing in with the active account's saved API key instead of the one set in Settings (#1237: @icpryde)\n- Explain what went wrong when Reddit rejects your API key during sign-in, instead of leaving a blank \"{}\" page (#1236: @icpryde)\n- Fix **Invalid Backup** when restoring backups made on 3.7.x and earlier (#1217: @icpryde)\n- Fix **Unmute Videos** swapping the sound between two playing feed videos on every frame, starting videos with sound from feeds you already left, and playing on with sound under a different fullscreen video (#1247, #1250, #1252: @icpryde)\n- Fix a post's video going grey, and the video scrubber not working, after opening the OP's profile or swiping forward back into the post (#1269: @icpryde)\n- Fix **Swipe Past Gallery to Navigate** only acting after you lift your finger, sometimes on the wrong thread: swiping past a feed gallery's first or last image now goes straight to your post swipes (vote, save, back, or forward) (#1271: @Thetromboneman1)\n- Fix tapping a post sometimes opening a gallery post from further up the feed with **Swipe Through Feed Galleries** on (#1248: @icpryde)\n- Fix **Gallery View** only playing the first video when swiping on CarPlay (CarBridge/CarCast) (#1257: @icpryde)\n- Fix **Download Video** sending the first video you shared again over Messages, and clean up the downloaded copies it left behind (#1216, #1219: @icpryde)\n- Reserve room for **inline comment images** up front, so comments no longer grow when the image finishes loading (#1273: @Thetromboneman1)\n- Explain why a **comment** couldn't post, such as the post being removed (and where the mods' reason is), the thread being locked or archived, the parent comment being removed, or a ban, instead of \"Reddit had a little hiccup\" (#1275: @icpryde)\n- Fix a just-posted **image comment** showing \"[Unknown Image]\" under the picture (#1246: @icpryde)\n- Keep the newest message above the reply bar in **modmail** and message threads on iOS 26 and 27, and bring the reply bar back after a cancelled swipe-back between threads (#1228, #1234: @icpryde)\n- Fix the **post composer**'s Post button turning white on Liquid Glass, the Media body editor's checkmark turning into Post as you type, and Command-Return submitting from the body editors instead of acting as Done (#1221, #1226, #1233: @icpryde)\n- On Liquid Glass, keep a scrolled-away feed **search bar** hidden after swiping back from a post, and the Search tab's placeholder dim after Cancel (#1249, #1261: @icpryde)\n- Fix **interactive posts**' Subscribe button doing nothing when Reddit needs your permission first, and keep Apollo's Join button and Subscriptions list in sync when a post subscribes you (#1264: @icpryde)\n- Put the post header's **translation** marker after the edited pencil instead of on top of it (#1259: @icpryde)\n- Keep feed avatars out of post titles that name their own author (#1218: @icpryde)\n- Show old-reddit sprite **user flairs** on every row of the flair picker again (#1215: @icpryde)\n- Stop **Random** and **RandNSFW** sometimes opening an empty feed that never loads (#1272: @Thetromboneman1)\n- Fix tapping a multireddit's expand arrow in the Subreddits list asking to change a favorite, and style expanded multireddit rows like the rest of the list (#1229: @nunoo)\n- Fix the Subreddits list's **Edit** mode putting moderator hide controls on the wrong rows and jumping the list up after Edit or Done (#1262: @icpryde)\n  - Swiping a row no longer turns on Edit controls, and stars stay put in Edit mode with Subreddit List Enhancements off\n- Open the multireddit editor in the Subreddits list's Edit mode again when Multireddits isn't the second section (#1267: @icpryde)\n- Make **settings section headers** match across Apollo's and Apollo Reborn's settings on iOS 26 and later, in one Title Case style that follows Text Size and your theme (#1241: @IllIIllIllIllII)\n- Fix **Settings Shortcuts**' Remove button not removing the shortcut (#1212: @IllIIllIllIllII)\n- Make **Pixel Pals** follow the real Dynamic Island on iPhone 18 Pro and newer (#1244: @JeffreyCA)\n- Fix **Open in Apollo (Legacy)** in Safari doing nothing without Link Companion installed (#1268: @Thetromboneman1)\n- Stop the **Social Links** row sometimes showing Reddit's copyright footer instead of a profile's links (#1231: @icpryde)\n- Stop forwarding Apollo's analytics to your **Notification Backend** when one is set; they're now always blocked (#1230: @DeltAndy123)",
-          "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.8.5/Apollo-Reborn-3.8.5-GLASS.ipa",
-          "size": 128072289
+          "version": "3.9.0",
+          "date": "2026-10-09",
+          "localizedDescription": "### Features\n\n- Add an **in-app update prompt**: from the next release on, Apollo Reborn checks for updates once a day and, when one is out, lets you send it to AltStore, SideStore, Feather, or FlareStore or download the IPA, with the release notes a tap away (#1343: @IllIIllIllIllII)\n  - Tap **Later** or **Skip this version** to put it off, check any time with **Check for Updates** (About), or turn off **Automatic Update Checks** (Privacy, on by default); jailbreak installs don't check\n  - What's New now shows the app icon you picked instead of the default one\n- Open the **subreddit switcher** as a native sheet when you tap a feed's title, with search, your favorites, and live results, instead of the small floating dropdown; typing a multireddit like apple+iphone still works (#1313, #1387: @IllIIllIllIllII)\n  - Press and hold the **Posts** tab to open it while a feed is open, now on Liquid Glass too, and the search field stays in place as you scroll the sheet\n- Add a **Liquid Glass** switch (Interface → Appearance, on by default) so Liquid Glass builds can use Apollo's classic look without installing a different IPA; quit and reopen Apollo for the change to apply (#1384: @IllIIllIllIllII)\n  - Shown on Liquid Glass builds on iOS 26 and later, except inside LiveContainer; while it's off, Liquid Glass-only options are hidden\n- Add a **Minimize** Hide Style for **Hide Bars on Scroll** (Interface → Tab Bar, Liquid Glass) that shrinks the tab bar into a small glass pill showing the current tab as you scroll, like Safari; tap the pill or scroll back up to bring the full bar back (#1349, #1384: @IllIIllIllIllII)\n  - With any Hide Style on Liquid Glass, a tab bar or header hidden by scrolling now slides back in when you open a page or go back or forward, and the tab bar no longer comes back on its own after 30 seconds\n- Add **Reduce Rate Limiting** (Accounts & API Keys → Experimental, off by default) so **API-Key-Free** accounts hit Reddit's request limit less often: profile pictures load in batches without their collectible frames, Community Highlights refresh every 30 minutes instead of every 2, and your sign-in is checked less often (#1369: @icpryde)\n  - Apollo offers it once: when you sign in without an API key, or, if you're already signed in, the first time you hit the limit\n  - Even with it off, API-Key-Free accounts skip repeated account requests at launch and when you come back to the app, Community Highlights wait out a rate limit, and your own profile no longer shows \"has been banned\" during one\n- Add **Kagi** to the Search tab's **Search With** menu for Kagi subscribers: paste your Kagi Session Link once, then search Reddit through Kagi with the same result cards, Read More, and filters as Google, plus each post's score, comments, and age right away (#1305: @nickclyde)\n  - Each page of results counts as one search on your Kagi plan; change or remove the link under Accounts & API Keys → Kagi Search\n- Add **Open via Nitter** (Open in App → X / Twitter, off by default) to open X and Twitter links on a Nitter instance you pick from a live list or enter yourself, so you can read posts and profiles without an X account (#1334: @nickclyde)\n  - Shared and copied links stay on x.com\n- Open **Edit Profile** (your profile's ••• menu) inside Apollo on iOS 16 and later, signed in as the current account and styled with your theme, instead of in Safari, which often wasn't signed in (#1367: @icpryde)\n  - API-key accounts without a **Reddit Web Sign-In** are asked to sign in once first\n- Add **True Black Keyboard** (Interface → Display & Navigation, off by default) to make the keyboard's background pure black for OLED screens, in dark mode, light mode, or always (#1316: @IllIIllIllIllII)\n- Add **Settings Icon Theme** (Settings → Appearance → Other, Light by default) to show settings icons as colored symbols on dark tiles, like iOS Settings in dark mode, either always (Dark) or only in dark mode (System) (#1377: @IllIIllIllIllII)\n  - Pixel Pals now gets a rounded-square icon with your current pet, and the main Settings list drops its duplicate Apollo Ultra row (it's still under About)\n- Add a **User Profiles** settings page that brings Profile Layout, **Show User Profile Pictures**, and **Profile Picture Shape** together, with a live sample comment showing how profile pictures look (#1352: @IllIIllIllIllII)\n  - Show User Profile Pictures and Profile Picture Shape move here from Interface → Display & Navigation\n- Reorganize **Subreddits** settings into Subreddit List, Subreddit Appearance, and Search Tab Sources, and redesign **Subreddit List Sections** (formerly Subreddit Sections) with a preview that looks like your real subreddit list (#1350, #1351: @IllIIllIllIllII)\n  - **Show Subreddit Icons** moves here from Apollo's Appearance settings, and Section Order rows now drag by their handle\n  - Also fixes subreddit list rows keeping the previous light or dark mode's colors with **Subreddit List Enhancements** off\n- Rework **Customize Action Menus** (Interface → Menus, formerly Action Menus) with clearer descriptions, a summary only on menus you've changed, **All Menus** showing where each action is hidden, and a **Reset Menu…** that can reset just the order (#1282, #1323, #1368: @AcornElf, @icpryde)\n  - Touch-and-hold menus on posts and comments now follow your layout too, so hidden actions stay hidden and the order matches the ••• menu\n  - Brings back **Remind Me In…** in the ••• menus on posts and comments on Liquid Glass, and lets you hide or move it\n- Add a **Comment Link** option to **Share as Image**: Include Link becomes a **Link** menu with No Link, Post Link, or Comment Link when you share a comment, and comment GIFs shared as video carry the chosen link too (#1278: @Thetromboneman1)\n  - If Include Link was on, it carries over as Post Link\n- Add tile size buttons to **Gallery View** (the − and + magnifying glasses at the top) to switch between four tile sizes, from a denser grid to a single column; your choice is remembered (#1357: @jordanearle)\n- Write **Apollo AI** summaries in your language even when the post, article, or comments are in another one, with a new **Language** setting (Apollo AI → Summaries, Device Default by default) (#1362: @icpryde)\n  - Summaries saved before this update are written again the next time you open their thread\n- Add **Custom Headers** to Apollo AI's Custom provider, for services that need extra request headers, such as the `x-opencode-session` header OpenCode Go now asks for (#1286: @icpryde)\n- Start a **crosspost**'s title as the original post's title, like reddit.com does, with an (x) to clear it; long titles now wrap onto up to five lines instead of being cut off (#1290: @icpryde)\n- Show the newest commenter's **profile picture** next to their name in the follow-thread **Live Activity** when **Show User Profile Pictures** is on (#1296: @icpryde)\n  - Needs a self-hosted Notification Backend with avatar support\n- Add **Witching Hour** and **Count Helios**, two Halloween icons, to the Helios icon pack (#1378: @IllIIllIllIllII)\n\n### Performance\n\n- Use less memory for very large images in **Gallery View**, Image Chest albums, and Chat, which now load at the size they're shown instead of at full resolution (#1320: @ryannair05)\n\n### Fixes\n\n- Fix crashes when adding or removing a **favorite** on the Subreddits list, while writing a **Media** post (for example after changing its flair), and when swiping between pages of the fullscreen **media viewer** (#1336: @icpryde)\n- Fix Apollo crashing when you switch accounts with the **Inbox** open, and a rare crash when the Inbox is closed right after it opens (#1284, #1379: @icpryde)\n- Fix very long **text posts** showing a blank body at the largest text sizes, or after Apollo had been open a while (#1381: @icpryde)\n- Fix **Continue with Google** doing nothing and **Continue with Apple** showing an error on Reddit's sign-in page; both now open Google's or Apple's sign-in in a sheet, with or without an API key (#1372: @icpryde)\n- Fix moderator tools for **API-Key-Free** moderators that came up empty, kept spinning, or silently failed (#1298, #1304, #1311: @icpryde)\n  - **Removal Reasons**, **Ban Users**, **Mute Users**, **Approved Submitters**, and Apollo's own **Moderator Mail** (with Use Modern Moderator Mail off) now load, and removing a post offers **Add Removal Reason**\n  - Bans, moderator invites, and accepting or declining an invite now reach Reddit\n- Fix **Set Post Flair** on **API-Key-Free** accounts saying \"Flair set!\" while the post kept its old flair, and **AutoModerator** saves never reaching Reddit (#1309: @icpryde)\n- Fix the subreddit **Sidebar** staying mostly empty and **Set User Flair** showing a blank or outdated current flair on **API-Key-Free** accounts (#1312, #1327: @IllIIllIllIllII, @nickclyde)\n  - Image posts in feeds and your current flair no longer rely on Old Reddit, which Reddit is starting to restrict\n- Stop the pause of a second or more between **Liquid Glass menus** when reporting a post or comment, setting post flair, or removing a post as a moderator; the next menu now opens right away (#1382: @icpryde)\n  - Moderator actions such as Remove, Approve, and Spam also go through right away, and Ban User opens without the wait\n- Fix swiping from the left edge still going back with **Disable Navigation Gestures** on (Settings → Gestures), and on Liquid Glass stop a right swipe over a comment leaving the thread instead of running the comment's swipe action (#1370: @icpryde)\n- Stop **YouTube** videos on iOS 27 playing with captions you can't turn off; captions now show only when Closed Captions + SDH is on in iOS Settings or you turn on Subtitles in the player (#1371: @icpryde)\n- Stop the search bar under the header flashing as a feed or post opens with **Header Style** set to Hard, the iOS 27 default on Liquid Glass (#1373: @icpryde)\n- Show a message instead of an endless spinner when a profile's **Comments** or **Posts** come back empty, as they do when someone hides their history, or when a feed or list fails to load (#1341: @icpryde)\n- Hide profile stats entirely when **Stat Cards** is off (User Profiles → Profile Layout) instead of falling back to Apollo's karma and account-age row (#1348: @IllIIllIllIllII)\n- Fix posts after the first from each subreddit showing an empty circle instead of their **subreddit icon** in Home, Popular, All, and multireddits (#1363: @icpryde)\n- Fix tapping the **Posts** tab sometimes stopping short of the top of a long feed; it now goes all the way up like a status-bar tap, and the **Return Button** can take you back (#1360: @IllIIllIllIllII)\n- Make the **subreddit header** and **Community Highlights** follow when you switch subreddits from the feed's title, instead of keeping the previous subreddit's (#1287: @icpryde)\n- Load **more replies** smoothly: the spinner stays until the replies fade in, and in a translated thread they arrive already translated instead of switching language and shifting the comments below (#1358: @icpryde)\n- Fix **Bulk Translation** skipping comments that start with a quote, a list, or a link, and show translated quotes, lists, bold, and italics the way Apollo shows the original (#1294: @icpryde)\n- Fix **translation** labels naming the wrong language or showing on text that wasn't translated: \"Translated from…\", the feed's 🌐 badge and the Translate button now name the language the translation service actually translated from, and skip comments and posts it returned unchanged (#1380: @icpryde)\n  - Short comments that were translated without a label before now show one\n- Stop a comment's **rich link card** image flashing each time you vote (#1356: @icpryde)\n- Say why a **RedGIFs** post couldn't load instead of \"RedGIFs error :(\", such as removed, not found, not available in your region, or RedGIFs can't be reached (#1359: @icpryde)\n- Keep a fullscreen **GIF or video** playing behind the comments sheet you open with **Swipe Up for Comments**, instead of it stopping or the screen going black (#1277: @Thetromboneman1)\n- Fade the background when you drag a fullscreen image or video away sideways or at an angle, not only straight up or down (#1320: @ryannair05)\n- Fix touching and holding a **modmail** or private message doing nothing on Liquid Glass, and long messages ending in a band of empty space (#1307, #1308: @icpryde)\n- Keep **Google** search's cookies across launches on iOS 16 and earlier, so Google stops asking you to sign in or pass its check every time (#1315: @icpryde)\n- Fix the **GIF picker**'s search bar looking double-layered on Liquid Glass (#1283: @icpryde)\n- Color the navigation and tab bars with your **custom theme**'s Bars & Chrome color on non-Liquid-Glass builds, so the swipe-down search bar in subreddits and posts sits inside the top bar instead of looking like a separate strip (#1280: @Thetromboneman1)\n- Fix **Apollo Reborn settings** footers and subtitles growing to body size under Rounded, Serif, and Monospaced theme fonts, and headers and footers keeping the old theme after you change it in **Theme Manager** (#1293, #1297, #1322: @icpryde)\n- Stop the **Apollo AI** settings list jumping while you scroll it, after a cancelled swipe-back, and when you come back to it (#1288, #1291: @icpryde)\n- Keep the section titles in **Settings Shortcuts** still when you add or remove a shortcut, and on non-Liquid-Glass builds open its menu over the screen you're on when you hold the Settings tab, instead of switching to Settings first (#1355, #1384: @icpryde, @IllIIllIllIllII)\n- Stop the **iPad** tab bar covering page titles and the Search tab's search field on Liquid Glass; titles and search fields now get their own row below the tabs (#1314: @IllIIllIllIllII)\n  - **Move Tab Bar to Bottom** is now **Tab Bar Position** (Interface → Tab Bar, Top by default), and the tabs keep their text labels in either position\n- Reduce post and comment text and icons blanking out on **Mac** when you switch to or away from Apollo (#1301: @Thetromboneman1)",
+          "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.9.0/Apollo-Reborn-3.9.0-GLASS.ipa",
+          "size": 128560322
         }
       ]
     },
@@ -191,11 +191,11 @@
       "tintColor": "#4080E0",
       "versions": [
         {
-          "version": "1.8.5.3",
-          "date": "2026-09-28",
-          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.5.2...v1.8.5.3",
-          "downloadURL": "https://github.com/moliango/doer/releases/download/v1.8.5.3/doer-unsigned.ipa",
-          "size": 28033512,
+          "version": "1.8.6",
+          "date": "2026-10-10",
+          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.5.3...v1.8.6",
+          "downloadURL": "https://github.com/moliango/doer/releases/download/v1.8.6/doer-unsigned.ipa",
+          "size": 28095758,
           "minOSVersion": "15.0"
         }
       ]
@@ -528,11 +528,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.4.1",
-          "date": "2026-09-25",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 修复\n\n- **滑动时每秒卡一下**：在 iPhone 15 Pro 等机型上，任何页面匀速滑动时大约每秒会顿一下，插不插充电器都会出现，现已修复。原因有几处叠加：\n  - 表盘中间的数字滚动效果和弧线动画会被放到 CPU 上绘制，页面滚动时每一帧都要重画一次，占用了大量主线程时间。\n  - 悬浮读数（画中画）即使没有打开，也每秒在后台画一帧画面。\n  - 打开过的每个标签页即使不在前台，也会每秒跟着刷新；当前页面的导航栏和工具栏也每秒重建一次。\n  - 读取传感器改到后台线程进行，不再占用界面线程。\n\n## 变化\n\n- 表盘上的功率数字不再有滚动动画，弧线也不再有过渡动画，都和其他读数一样直接更新。\n- 切换到别的标签页再切回来时，页面会回到顶部。\n\n感谢反馈这个问题的用户。\n\n---\n\n## Fixes\n\n- **Scrolling hitched about once a second** on every screen, charging or not (reported on an iPhone 15 Pro). Several causes added up:\n  - The dial's rolling number and arc animations were drawn on the CPU and redrawn on every scroll frame.\n  - The floating meter (Picture in Picture) rendered a frame every second even when it was not open.\n  - Every tab you had visited kept refreshing in the background once a second, and the visible page rebuilt its navigation bar and toolbar on every refresh.\n  - Sensor reads now run off the main thread.\n\n## Changes\n\n- The power reading on the dial no longer rolls and its arcs no longer animate; they update in place like every other reading.\n- A tab returns to the top when you switch back to it.\n\nThanks to the user who reported it.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.4.0...v1.4.1",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.4.1/MiniWatts-unsigned.ipa",
-          "size": 3270441,
+          "version": "1.5.0",
+          "date": "2026-10-10",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 改进\n\n- **缺失的读数不再显示成 0。** 某一侧没有读数时（例如无线充电没有输入电流），图表在那一段断开，不再掉到 0；能量统计也只累计真正测到的时间段。\n- **充电效率更准。** \"电芯占比\"和\"负载与损耗\"只按输入侧、电池侧同时有读数的时间段计算，某一侧中途缺失不会再把结果带偏。\n- **两个标签改名。** \"以热量损失\"改为\"负载与损耗\"：这部分是手机自身耗电加上转换损耗，并不全是发热。\"效率 / 往返效率\"改为\"电芯占比\"。\n- **\"暂停充电\"的判断更稳。** 状态切换要持续 30 秒才生效，不再来回跳；没有电池电流读数时显示\"保持状态未知\"，不再直接当成暂停充电。\n- **耗电估算不再因为切到后台而清空。** 短暂离开 App 再回来，估算值还在。\n- **历史文件损坏时不再被直接覆盖。** 读不出来的历史文件会改名保留，并在\"原始数据\"页给出提示。\n- **发热相关的说明更准确。** 系统热状态只说明\"可能\"在限制充电电流，不再说成确定的原因。\n\n## 修复\n\n- 历史记录：没有测到输入侧的记录，\"输入\"和\"充电器峰值\"显示为\"—\"，不再显示 0；列表里的迷你曲线改画电池侧功率，不再空白。\n- 实时活动：灵动岛展开后，右上角的状态文字和\"结束\"按钮不再被圆角裁掉；暂停提示能完整显示。\n- 原始数据：重名的 HID 服务各占一行，不再被合并。\n\n## 注意\n\n- 升级后历史记录的格式有变化，旧版本读不了新格式。**如果从 1.5.0 降级回旧版本，历史记录会丢失。**\n\n---\n\n## Improvements\n\n- **A missing reading is no longer shown as 0.** When a rail has no reading (wireless charging has no input current, for one), the charts break there instead of dropping to zero, and energy is only counted over time that was actually measured.\n- **Charge efficiency is more accurate.** \"Cell share\" and \"Load + loss\" are computed only over the time both the input and the battery side were read, so one side dropping out no longer skews them.\n- **Two labels renamed.** \"Lost as heat\" is now \"Load + loss\": it is the phone's own consumption plus conversion loss, not all heat. \"Efficiency\" / \"Round trip\" is now \"Cell share\".\n- **\"Charging on hold\" is steadier.** A change has to last 30 seconds before it shows, so it no longer flickers; with no battery-current reading at all it says \"hold status unknown\" instead of assuming a hold.\n- **The discharge estimate survives a short trip to the background** instead of being cleared every time.\n- **An unreadable history file is no longer overwritten.** It is renamed and kept, and Raw data says so.\n- **Thermal wording is more careful.** The system thermal state says charging *may* be limited; it is no longer stated as the cause.\n\n## Fixes\n\n- History: a session whose input side was never measured shows \"—\" for Delivered and the charger's peak instead of 0, and its row draws the battery curve instead of nothing.\n- Live Activity: the expanded Dynamic Island no longer clips its status text and End button, and the paused message fits.\n- Raw data: HID services that share a name are listed as separate rows.\n\n## Note\n\n- The history file format changed and older versions cannot read it. **Downgrading from 1.5.0 loses the session history.**\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.4.1...v1.5.0",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.5.0/MiniWatts-unsigned.ipa",
+          "size": 3284306,
           "minOSVersion": "17.0"
         }
       ]
@@ -600,11 +600,11 @@
       "tintColor": "#01E989",
       "versions": [
         {
-          "version": "0.0.2",
-          "date": "2026-09-29",
-          "localizedDescription": "<p align=\"center\">\r\n  <img src=\"https://raw.githubusercontent.com/TarbleFR/neostation-ios/f4583c6a3083b8aed358da28b2f8f849256e0e8b/assets/images/fork-icon-valid.jpg\" width=\"180\" alt=\"NeoStation iOS logo\">\r\n</p>\r\n\r\n<h1 align=\"center\">🎮 NeoStation iOS — 0.0.2</h1>\r\n\r\n<p align=\"center\"><strong>JIT compatibility, DolphiniOS improvements and overall stability update.</strong></p>\r\n\r\n---\r\n\r\n## ⚡ StikJIT updated\r\n\r\nNeoStation now integrates **StikJIT 1.9.0**, replacing the previous 1.5.0 integration.\r\n\r\nThe JIT layer has been updated to improve compatibility across:\r\n\r\n- **iOS 18**\r\n- **iOS 26**\r\n- **iOS 27**\r\n\r\nPairing validation and JIT diagnostics have also been improved to help reduce silent or indefinite loading states.\r\n\r\n---\r\n\r\n## 🐬 DolphiniOS improvements\r\n\r\nThe embedded Dolphin integration receives several display and runtime improvements:\r\n\r\n- improved frame pacing\r\n- reduced micro-stutter\r\n- **120 Hz support**\r\n- improved Metal presentation\r\n- improved shader handling\r\n- cleaner resource handling between game sessions\r\n- improved display diagnostics\r\n\r\n> 120 Hz support improves presentation on compatible devices but does not turn a 30/60 FPS game into a native 120 FPS game.\r\n\r\n---\r\n\r\n## 📱 Requirements\r\n\r\n- iPhone or iPad\r\n- **iOS 18 or later**\r\n- Developer Mode enabled\r\n- NeoStation installed as a standalone IPA\r\n- compatible JIT configuration when required\r\n\r\n**LiveContainer is not supported.**\r\n\r\n---\r\n\r\n## 🎮 Game files\r\n\r\nNeoStation does not distribute ROMs, ISOs, BIOS files, firmware or copyrighted commercial game assets.\r\n\r\nNative ports such as **KartPad** and **Dusklight** require data from the user's own legally obtained supported games.\r\n\r\n---\r\n\r\n## 📦 Release\r\n\r\nDownload **NeoStation.ipa** from the Assets section.\r\n\r\n**Version:** 0.0.2  \r\n**Internal build:** 365  \r\n**Source:** f4583c6a3083b8aed358da28b2f8f849256e0e8b\r\n\r\nFull credits, licenses, source information and checksums are included with the release assets.\r\n\r\n---\r\n\r\n**One app. One library. Multiple systems.**",
-          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.2/NeoStation.ipa",
-          "size": 143767912,
+          "version": "0.0.4",
+          "date": "2026-10-10",
+          "localizedDescription": "# NeoStation iOS 0.0.4\n\nThis release brings the skin catalog and fixes for PSP and Nintendo 3DS to NeoStation iOS.\n\n## What's new\n\n- **Skin catalog:** browse the **[Provenance Skin Catalog](https://github.com/Provenance-Emu/skins)** for NeoStation's embedded Libretro consoles, install compatible skins, and choose separate portrait and landscape layouts.\n- **PSP:** fixed an issue that prevented games from launching.\n- **Nintendo 3DS:** fixed a crash that occurred when closing a game.\n\nThank you to the emulator developers and the NeoStation community for your work, feedback, and patience!\n\n## Using skins\n\nOpen **Settings → Folders → Embedded consoles**, choose a console, then **Skins**.\nUse **Browse the Provenance catalog** or **Import from Files**, then select\n**Use in portrait**, **Use in landscape** or **Use in both orientations**.\n\nSee the **[skin guide](https://github.com/TarbleFR/neostation-ios/blob/08145438cc907b22b7b860bf190d1b520040fef1/docs/SKINS.md)** for supported archive formats, default skins, game-specific choices and catalog sources.\n\nCatalog credits go to the **Provenance community**, format-reference credits to **Riley Testut and DeltaCore contributors**, and artwork credits to each **skin creator**. Community skins are optional downloads and retain their creators' terms.\n\n## Download\n\nDownload **`NeoStation-0.0.4.ipa`** below and sign it with your usual sideloading tool.\n\n`NeoStation-0.0.4-SHA256SUMS.txt` contains the IPA checksum.\n\n## Release information\n\n- **Release:** 0.0.4\n- **Internal build:** 435\n- **Source commit:** `90a4e513e3a97f642bc45963bfb689f7c4677d46`\n- **Build:** [GitHub Actions run 38072379293](https://github.com/TarbleFR/neostation-ios/actions/runs/38072379293)\n\nThis release distributes the existing Build 435 IPA. Its contents have not been rebuilt or modified; the download filename and GitHub release name use version 0.0.4. The app bundle retains its original marketing version, 0.0.2, and internal build number, 435.",
+          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.4/NeoStation-0.0.4.ipa",
+          "size": 205917388,
           "minOSVersion": "18.0"
         }
       ]
@@ -695,11 +695,11 @@
       "versions": [
         {
           "version": "2.1.6",
-          "buildVersion": "5453",
-          "date": "2026-10-05",
-          "localizedDescription": "支持离线合集归档\r\n支持离线/更新空降片段\r\n添加视频过滤作用域详情\r\n支持切换`番剧`/`剧集`季度\r\n支持横屏时在侧栏显示`番剧`列表\r\n直播聊天显示`主播`标识 #3156\r\n直播聊天只显示点亮的牌子 #3155\r\n用户未直播时在主页显示入口按钮 #3033\r\n从视频切到直播不影响视频倍速 #3112\r\n支持转发同时评论 #3135\r\n@ 用户时置顶被`回复`/`转发`用户 #3123\r\n视频控制栏控件溢出处理 #3085\r\n添加英文文档 #3131 by @maoawa\r\n桌面端画中画记忆窗口位置大小 #2997\r\n收藏夹已满且未收藏时禁用选中 #3113\r\niOS 支持系统 PIP #3160 by @AotianNeo\r\n黑名单屏蔽扩展本地屏蔽，增加过滤搜索、评论\r\n支持按 `Enter` 保存截图 #3101 by @403bug\r\n支持从媒体会话向前/后跳转音视频 #2964 co-by @silverwolf-lv9999\r\n\r\n修复弹幕速度 #3136\r\n修复收藏夹视频跳转 #3137\r\n修复下滑关闭侧栏主页 #3160\r\n修复触控板浏览图片 https://github.com/bggRGjQaUbCoE/PiliPlus/issues/183#issuecomment-5976539299\r\n修复 Windows 26H2 任务栏不在底部时，退出全屏出现窗口偏移 #2901",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.6/PiliPlus_ios_2.1.6%2B5453.ipa",
-          "size": 24083344,
+          "buildVersion": "5472",
+          "date": "2026-10-10",
+          "localizedDescription": "专栏支持跳转至评论 #3213\r\n其他调整 #3208 by @My-Responsitories\r\n\r\n修复 bug\r\n修复搜索风控验证 #3106\r\n修复窗口大小变化时图片闪烁 #2685\r\n修复安卓视频暂停时画面裁切问题 #3034 by @Hdy08",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.6.2/PiliPlus_ios_2.1.6%2B5472.ipa",
+          "size": 24353925,
           "minOSVersion": "14.0"
         }
       ]
@@ -719,11 +719,11 @@
       "tintColor": "#13A1FD",
       "versions": [
         {
-          "version": "0.16.0",
-          "date": "2026-09-16",
-          "localizedDescription": "## 新功能\r\n\r\n- 插画详情页支持水平滑动切换插画\r\n- 插画与小说列表到详情页的过渡改为卡片式缩放展开与收起转场\r\n- 多页插画详情页支持条式阅读（垂直连续滚动）模式，可在设置中与默认翻页模式切换\r\n- 多页插画新增瀑布流浏览页\r\n- 插画详情页简介下方新增作者最新作品横向预览\r\n- 支持自定义代理配置\r\n- macOS 端新增网页登录凭据导出功能面板\r\n- 新增多页插画预取深度设置\r\n- 为详情页的标签区域引入一种根据宽度重排的优化布局，缓解标签区域出现的空白\r\n\r\n此版本对插画详情页的交互和导航做了较大重构，如有问题可通过 issue 反馈。\r\n\r\n## 优化\r\n\r\n- 优化了插画全屏预览的交互\r\n- 优化画质降级与图片预取策略，优先加载当前视口可见图片\r\n- 优化插画与小说的评论区排版与时间展示，为表情包图片设置较长的缓存时间\r\n- 参考 macOS 27 原生 App 优化了 macOS 侧边栏\r\n- 优化 iOS 设置等页面的视觉表现\r\n- 插画详情页的相关推荐卡片支持直接点击收藏\r\n- 优化直连模式连接调度与保活机制，提升网络稳定性，减少假死与无响应现象\r\n- 优化 macOS 下播放动图时的系统资源占用\r\n- 统一各页面的加载骨架屏尺寸与过渡效果，消除加载完成时的页面跳动\r\n- 增大 iOS 个人中心顶部用户卡片的可点击面积\r\n- 优化底层依赖，减小应用安装包体积\r\n\r\n## 问题修复\r\n\r\n- 修复以图搜图无法打开系统相册选图的问题\r\n- 修复插画与小说评论区点击展开子回复无响应的问题\r\n- 修复亮点（Pixivision）详情页上下滚动时画面跳动的问题\r\n- 修复切换账号后仍残留上个账号浏览记录与导航路径的问题\r\n- 修复在小说与排行榜等页面点击个人资料卡片无法进入个人主页的问题\r\n\r\n## 本地化\r\n\r\n- 新增繁体中文与日文支持。译文由 GPT-5.6-Luna 起草并由 GPT-5.6-Terra 润色。如果你发现问题，请通过 PR 或 issue 帮助改进。\r\n- 修正了一些英文本地化问题\r\n\r\npixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.15.0...v0.16.0",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.0/Pixiv-SwiftUI.ipa",
-          "size": 10165131,
+          "version": "0.16.2",
+          "date": "2026-10-11",
+          "localizedDescription": "## 新功能\r\n\r\n- App 更新弹窗新增“跳过此版本”选项，支持忽略指定版本的自动更新提醒\r\n- （v0.16.1 的新功能）HTTP/3 直连模式，修正此前版本的 403 问题\r\n\r\n## 优化\r\n\r\n- 优化了一系列图片的加载逻辑，改善了 v0.16.1 的高发热问题。\r\n\r\n> 性能优化还有很大空间，但暂时推不动了。有想法的朋友期待你的 PR\r\n\r\n## 问题修复\r\n\r\n- 修复手动提交搜索后未清空搜索栏输入内容的问题\r\n- 修复全屏查看图片失败时的降级回退逻辑，优先展示已加载的预览图\r\n- 修复 iOS 端在页面切换或应用切入后台后再返回时，登录弹窗意外关闭的问题\r\n\r\npixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.16.1...v0.16.2",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.2/Pixiv-SwiftUI.ipa",
+          "size": 10343925,
           "minOSVersion": "17.0"
         }
       ]
@@ -791,11 +791,11 @@
       "tintColor": "#50B0F0",
       "versions": [
         {
-          "version": "3.1.18",
-          "date": "2026-10-08",
-          "localizedDescription": "# 纯粹直播 v3.1.18\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n### 🖥️ Windows 版\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n### 🍎 macOS 版\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n### 📱 Android 版\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.18/ANDROID_SHA256SUM.txt)\n### 🐧 Linux 版\n- Linux x64\n- **DEB 安装包**：适合 Debian/Ubuntu 及其衍生发行版\n- **Portable ZIP / tar.gz**：解压即用，无需安装\n### 🍎 iOS 版\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n### 🔧 Build Metadata\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.18/BUILD_METADATA.json)\n### 📝 本次更新\nversion: 3.1.18\n版本更新：\n- 播放内核：全平台默认 mpv 引擎，采用更安全的硬解默认值，修复 Android 硬解兼容；设置新增\"播放内核一键配置\"、分模块播放指南与 Anime4K 超分辨率，输出/超分参数改完即生效，不再需要重启。\n- 取流与线路：线路自带容器/编码声明，直连还是 FFmpeg 转封装按线路事实决定，旧式 HEVC FLV 改走重封装；带 token 与特殊 CDN（如 Steam 广播）线路走回环中继，代理与 demuxer 按源选择，TwitCasting 这类\"分片为相对地址\"的线路不再打不开。\n- 直播弹幕：AcFun、TwitCasting、LOOK、Chzzk、Bigo、Showroom、Picarto、Panda、FC2、Steam、JD、酷狗、六间房、十七 Live、MissEvan、KilaKila 等 17 站弹幕/聊天引擎全部到齐；新增弹幕设置页；Twitch 订阅/赠送/突袭事件与消息撤回进弹幕区。\n- 录像播放页：改为短视频式布局——倍速/选集分离、±10 秒跳转、可拖进度条、仅音频/截图/小窗/画中画右上角常驻；窄窗口画面在上、列表在下，退出小窗接着播；新增本地录像播放与私有目录提示。\n- 全屏与返回：安卓返回改两段语义——先退全屏、再退页面；竖屏与桌面全屏的控制栏避开刘海与手势条；画中画不再裁圆角，桌面全屏按钮不再消失。\n- 界面与设置：直播间键位收成可测键位表，新增 F 全屏、M 静音（空格暂停、Esc 退出全屏）；小窗控制层 5 秒无操作自动收起；画中画尺寸可调，站点分类平铺，平台选择器统一平台 logo；壁纸/背景覆盖更广，界面文案全部进语言包。\n- 账号与稳定性：新增\"退出所有登录\"统一入口，退出斗鱼同步清理会话；Bigo 支持登录态取流；虎牙/斗鱼连接参数更新，连接更稳。",
-          "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.18/PureLive-3.1.18-4107-ios-arm64-trollstore.ipa",
-          "size": 66861211,
+          "version": "3.1.19",
+          "date": "2026-10-10",
+          "localizedDescription": "# 纯粹直播 v3.1.19\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n### 🖥️ Windows 版\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n### 🍎 macOS 版\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n### 📱 Android 版\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/ANDROID_SHA256SUM.txt)\n### 🐧 Linux 版\n- Linux x64\n- **DEB 安装包**：适合 Debian/Ubuntu 及其衍生发行版\n- **Portable ZIP / tar.gz**：解压即用，无需安装\n### 🍎 iOS 版\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n### 🔧 Build Metadata\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/BUILD_METADATA.json)\n### 📝 本次更新\nversion: 3.1.19\n版本更新：\n- 修复部分bug",
+          "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/PureLive-3.1.19-4108-ios-arm64-trollstore.ipa",
+          "size": 66858114,
           "minOSVersion": "15.6"
         }
       ]
@@ -864,11 +864,11 @@
       "tintColor": "#1DB954",
       "versions": [
         {
-          "version": "5.1.0",
-          "date": "2026-10-08",
-          "localizedDescription": "### New Features\n\n- **library**: Expand audio format and ReplayGain filters\n- **player**: Warn when muted and allow manual resume\n- **native**: Add cancellable data workers and streamed file hashing\n- **playback**: Automate mute and headphone playback controls\n- **player**: Show mixing status beside audio quality\n- **automix**: Add configurable duration and transition effects\n- **lyrics**: Add staggered spring motion to visible rows\n- **build**: Require Discord in production and keep Lite opt-in\n- **settings**: Default to built-in playback and word-synced lyrics\n- **network**: Add SMB and WebDAV libraries with streaming and uploads\n- **statistics**: Show cover artwork and artists for top tracks\n- **mornye**: Restore liquid glass with continuous draggable navigation\n- **discord**: Add opt-in mobile rich presence with track artwork\n- **extensions**: Support personal account forms and direct downloads\n- **playback**: Add local listening statistics and annual recap\n- **library**: Show recent releases from favorite artists\n- **library**: Add batch playlist and queue actions\n- **library**: Filter albums with missing tracks\n\n### Bug Fixes\n\n- **repo**: Retry initialization before adding a registry\n- **storage**: Preserve extension encryption keys on read failures\n- **extensions**: Retain packages with unreadable settings\n- **downloads**: Finalize album ReplayGain after history is saved\n- **downloads**: Preserve actual provider audio format\n- **lyrics**: Treat placeholder zero timestamps as unsynced\n- **library**: Retry transient SQLite locks before scan transactions\n- **riverpod**: Remove public notifier getters\n- **queue**: Merge startup additions before persistence and processing\n- **library**: Stage native scans before owner SQLite publication\n- **cache**: Prune detached projections under source writer barrier\n- **backup**: Publish native restores through owning SQLite connection\n- **sqlite**: Isolate native staging from live database handles\n- **queue**: Preserve restored downloads during startup flush\n- **mornye**: Show provider checkmark spacing only when selected\n- **mornye**: Use glass for download queue confirmations\n- **settings**: Retain pending preferences during asynchronous loading\n- **recents**: Preserve early edits during history loading\n- **logs**: Retain polling ownership across restart and clear\n- **network**: Close request-owned HTTP clients reliably\n- **backup**: Close archive outputs when extraction fails\n- **android**: Release temporary media on failed SAF operations\n- **playlists**: Prevent overlapping picker submissions\n- **network**: Discard stale folder browsing responses\n- **downloads**: Recover queue ownership after setup failures\n- **playlists**: Serialize collection changes and isolate domain models\n- **history**: Serialize mutations and preserve newer file metadata\n- **lyrics**: Hold current line highlight until the next lead\n- **history**: Preserve bulk deletion failure handling\n- **library**: Distinguish unavailable storage from missing files\n- **player**: Retire deleted sources and stale SAF copies\n- **library**: Remove deleted files from both library indexes\n- **downloads**: Preserve filenames after decryption and conversion\n- **glass**: Refract navbar icons through the held lens\n- **glass**: Swell navbar glass without resizing icons\n- **library**: Serialize scan admission and retain reconnect requests\n- **artwork**: Promptly dispose failed video decoders\n- **home**: Protect fresh feeds from late cache restoration\n- **search**: Reject pending completions after clearing results\n- **library**: Honor album artist filters in summary counts\n- **home**: Anchor track menus to their source cards\n- **extensions**: Use themed account option picker\n- **automix**: Diagnose crossfade fallback reasons\n- **automix**: Use themed transition effect picker\n- **lyrics**: Keep simultaneous singers highlighted and visible\n- **extensions**: Accept account forms with optional cancel actions\n- **library**: Expose failed scan files and reasons in app logs\n- **library**: Preserve album view when returning from detail screens\n- **stats**: Show artwork for top artists\n- **mornye**: Match tab highlights to the expanding glass outline\n- **library**: Scan remote SAF folders when root metadata is unavailable\n- **library**: Match SAF documents across folder tree aliases\n- **mornye**: Use liquid glass for Home download and album actions\n- **lyrics**: Grant scoped access to selected audio files\n- **mornye**: Use consistent animated oval switches across glass levels\n- **artwork**: Recover missing SAF covers after transient provider failures\n- **library**: Reject filename guesses from failed NAS metadata reads\n- **selection**: Dismiss action panels with a downward swipe\n- **android**: Preserve remote SAF descriptors for audio and artwork\n- **playback**: Refresh notification favorite and shuffle controls\n- **lyrics**: Preserve manual scrolling during control transitions\n- **mornye**: Keep lyrics scrolling stable when controls fade\n- **library**: Preserve folders during upgrades and load failures\n- **ui**: Make snackbars transient and replace stale messages\n- **ios**: Preserve Now Playing ownership with motion artwork\n- **metadata**: Recognize featured artist credits consistently\n- **library**: Make missing-file cleanup responsive for downloaded tracks\n- **lyrics**: Preserve batch track identity and report results promptly\n- **album**: Open track metadata from local album rows\n- **history**: Prevent maintenance from restoring orphan downloads\n- **artwork**: Preserve thumbnail aspect ratio during decoding\n- **library**: Restore Material playlist drag and drop\n- **library**: Restore search selection actions after re-enrich\n- **metadata**: Show re-enrich results above Library cards\n- **library**: Preserve SD card visibility during transient access failures\n- **library**: Include unindexed tracks in missing ReplayGain filter\n- **download**: Preserve native media workspace across cache eviction\n\n### Performance\n\n- **downloads**: Index queued positions for scheduling\n- **downloads**: Stop queue selection when slots fill\n- **downloads**: Index progress notification candidates\n- **downloads**: Reuse committed queue snapshots\n- **downloads**: Retain queue indexes between item removals\n- **downloads**: Check album ReplayGain readiness in one pass\n- **downloads**: Batch queue failures when folder access is lost\n- **downloads**: Enqueue selected playlists in one update\n- **downloads**: Batch queue cancellation and progress cleanup\n- **downloads**: Batch cancellation resets for retry\n- **collections**: Delete selected playlists in one transaction\n- **downloads**: Enqueue Wishlist selections in one update\n- **collections**: Remove selected tracks in one transaction\n- **network**: Prepare large SMB listings off the UI thread\n- **library**: Buffer network scan output with bounded writes\n- **lyrics**: Short-circuit content availability checks\n- **collections**: Batch Love All updates and persistence\n- **collections**: Stage large playlist additions off the UI thread\n- **collections**: Split native chunks without per-line async events\n- **library**: Load bounded browse pages without rereading prefixes\n- **backup**: Stream encoded collections without cloning model graphs\n- **queue**: Bound SQLite transfers and move large codecs off UI\n- **collections**: Hydrate native snapshots on bounded workers\n- **collections**: Isolate action and track row rebuilds\n- **collections**: Reuse membership indexes for metadata changes\n- **library**: Rank playlist search pages on bounded workers\n- **cache**: Batch cover maintenance on Rust workers\n- **collections**: Restore backups on Rust SQLite workers\n- **backup**: Stream ZIP archives on Rust workers\n- **mornye**: Prepare overlay GPU pipeline before first opening\n- **mornye**: Compose overlay glass into one backdrop pass\n- **mornye**: Streamline download source and quality picker\n- **extensions**: Decode provider responses outside the UI isolate\n- **backup**: Stream history backup codecs and restore transactions natively\n- **library**: Index scans and snapshots with native SQLite workers\n- **playlists**: Import CSV and export M3U through native workers\n- **metadata**: Parse lyrics and encode ID3 artwork in native workers\n- **audio**: Analyze AutoMix grids and spectral cutoffs natively\n- **theme**: Extract cover palettes with native quantization\n- **nas**: Process listings, artwork caches, and upload recovery natively\n- **player**: Avoid redundant lyric paints and background sampling\n- **stats**: Ignore playback position-only changes\n- **widgets**: Skip unchanged playback state updates\n- **network**: Reduce directory listing and connection allocations\n- **library**: Simplify unfiltered album queries\n- **android**: Trim platform assets and release Dart symbols\n- **android**: Reduce release APK size\n- **downloads**: Bound scheduler waiters and prevent overlapping retries\n- **glass**: Cull selection masks outside the moving lens\n- **glass**: Omit collapsed navbar backdrop layers\n- **ui**: Retain marquee content while scrolling\n- **player**: Reuse artwork decodes across Mornye transitions\n- **artwork**: Reuse decoded covers and preserve in-flight cache writes\n- **library**: Defer local providers while the feature is disabled\n- **autoplay**: Index listening history and reuse normalized metadata\n- **library**: Coalesce availability probes and reject stale indexes\n- **search**: Reduce tab switching lag\n- **widget**: Publish artwork only for installed consumers\n- **theme**: Resolve artwork cache identities asynchronously\n- **logging**: Batch UI updates and gate native log copies\n- **analysis**: Bound disk cache and protect active bundles\n- **network**: Share artwork by content hash\n- **playback**: Resolve paths lazily and batch history cleanup\n- **library**: Scan SAF CUE audio through live descriptors\n- **hires**: Analyze every channel in one audio decode pass\n- **cover**: Avoid copying originals rejected by cache budget\n- **usb**: Reuse PCM buffers and respect native ring capacity\n- **isrc**: Bound retained indexes and stream FLAC comments\n- **extensions**: Pass metadata values without internal JSON round trips\n- **bridge**: Bound metadata cache and persisted JSON bytes\n- **audio**: Reuse media session worker and bound metadata retention\n- **media**: Shrink FFmpeg while preserving HTTPS motion artwork\n- **details**: Load local albums with skeletons and bound artwork decoding\n\n### Refactoring\n\n- **player**: Isolate session writes and content URI cache ownership\n- **albums**: Share immutable track and disc ordering\n- **downloads**: Normalize completion audio and share album ReplayGain\n- **extensions**: Separate domain models from provider state\n- **downloads**: Extract completion audio and upload staging\n- **downloads**: Separate metadata resolution and embedding\n- **downloads**: Isolate typed results and audio finalization\n- **android**: Isolate native download history persistence\n- **metadata**: Separate file save persistence from editor\n- **logging**: Isolate native log transport\n- **library**: Isolate schema, row mapping and queue queries\n- **ffmpeg**: Split media operations and safely publish outputs\n- **metadata**: Separate editor state, autofill and artwork ownership\n- **player**: Isolate routes, layouts and reactive controls\n- **player**: Separate metadata state and lyrics rendering\n- **playback**: Own configuration and dependencies per runtime\n- **downloads**: Separate persistence, progress and feedback\n- **network**: Place range reader implementations before tests\n- **metadata**: Remove unused fallback parameter\n- **ios**: Remove unreachable legacy bridge routes\n- **extensions**: Align settings with Material and Mornye\n- **metadata**: Flatten track actions and remove similar songs\n\n### Documentation\n\n- **audio**: Record metadata cache retention rules\n\n### Testing\n\n- **progress**: Keep batch tests after production helpers\n- **downloads**: Measure selectors after queue removals\n- **network**: Read complete fixture requests on BSD\n- **native**: Verify private data routes through app channels\n- **sqlite**: Exercise private files and exclusive transactions\n- **native**: Verify data workers through Android and iOS channels\n- **providers**: Keep notifier fixture counters private\n- **glass**: Capture native Mornye poses and layer counts\n- **performance**: Benchmark Mornye on iOS and Android emulators\n- Align settings and support title expectations\n\n### Chores\n\n- Update AltStore source to v5.0.7 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **git**: Ignore vendored Android build outputs\n- Provision pinned Discord SDK for Android and iOS\n- Remove Pages workflow without site sources\n- **network**: Keep JSON dependency scoped to tests\n- **release**: Bump build number to 160\n- **release**: Bump app version to 5.1.0\n- **analyzer**: Exclude vendored Android audio plugin\n- **release**: Bump app version to 5.0.8\n\n\n\n\n**Full Changelog**: [v5.0.7...v5.1.0](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v5.0.7...v5.1.0)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v5.1.0-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v5.1.0-arm32.apk` (older devices)\n- `*.apk.idsig`: V4 signatures for `adb install --incremental` only; normal installs do not need them\n\n#### iOS\n- **iOS**: `SpotiFLAC-v5.1.0-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
-          "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v5.1.0/SpotiFLAC-v5.1.0-ios-unsigned.ipa",
-          "size": 33465739,
+          "version": "5.1.1",
+          "date": "2026-10-11",
+          "localizedDescription": "### New Features\n\n- **network**: Delete SMB and WebDAV tracks from the library\n- **autoplay**: Add opt-in on-device recommendation learning\n- **network**: Enable audio and hi-res analysis for network tracks\n- **mornye**: Animate squircle menus from their trigger\n- **lyrics**: Customize text size and animate active lines\n- **appearance**: Support imported TTF and OTF fonts\n- **lyrics**: Use Apple Music as the default lyrics provider\n- **appearance**: Make Mornye glass outlines optional\n\n### Bug Fixes\n\n- **mornye**: Strengthen held navigation glass refraction\n- **notifications**: Show indeterminate scans without false zero percent\n- **library**: Retire deleted downloads and stale completion cards\n- **mornye**: Unify held navigation glass contour\n- **mornye**: Hide custom font setting icon\n- **ios**: Preserve folder grants and surface picker failures\n- **mornye**: Animate queue removal icon with swipe progress\n- **l10n**: Use Indonesian wording for the built-in player\n- **ci**: Locate Discord license notices inside the iOS plugin framework\n- **webdav**: Retain tracks across equivalent parent URI encodings\n- **library**: Collapse selection actions before dismissing\n- **mornye**: Honor forced glass with increased system contrast\n- **automix**: Ease effects into playback without cutting dry audio\n- **library**: Exclude inactive NAS entries and file aliases from duplicates\n- **library**: Allow choosing duplicate copies and clear stale indexes\n- **playlists**: Preserve repeated tracks during imports\n- **playback**: Reload audio sources when switching tracks\n- **ios**: Restore lock screen controls across app transitions\n- **downloads**: Preserve browser verification and queues across restarts\n- **setup**: Recover folder permissions after Android restarts\n- **library**: Bound path-key migration batches\n- **library**: Sync local album play and pause controls\n- **metadata**: Preserve original artwork resolution for SAF files\n- **ios**: Audit Discord license in its framework bundle\n\n### Performance\n\n- **library**: Prefetch network metadata with bounded concurrency\n- **network**: Reuse HTTP connections for browsing and range reads\n\n### Documentation\n\n- Move detailed build guidance to contributing guide\n\n### Testing\n\n- **android**: Accept validated FLAC fallback across FFmpeg versions\n- **rust**: Remove TCP timing dependence from chunked fixture\n- **player**: Cover Previous audio selection and AutoMix handoff\n- **ui**: Correct context menu and lyric spacing assertions\n\n### Chores\n\n- Update AltStore source to v5.1.0 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- Ignore generated Discord plugin lockfiles\n- **ci**: Refresh action pins and align Android build toolchains\n- **android**: Update Gradle Kotlin NDK and native build dependencies\n- **rust**: Update toolchain and dependencies with preserved vendor sources\n- **flutter**: Update SDK and packages with glass and navigation compatibility\n- **release**: Bump app to 5.1.1 build 161\n\n### Build\n\n- **android**: Verify full APK integrity and publish checksums\n\n\n\n\n**Full Changelog**: [v5.1.0...v5.1.1](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v5.1.0...v5.1.1)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v5.1.1-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v5.1.1-arm32.apk` (older devices)\n- `*.apk.idsig`: V4 signatures for `adb install --incremental` only; normal installs do not need them\n\n#### iOS\n- **iOS**: `SpotiFLAC-v5.1.1-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
+          "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v5.1.1/SpotiFLAC-v5.1.1-ios-unsigned.ipa",
+          "size": 33596866,
           "minOSVersion": "16.0"
         }
       ]
@@ -888,11 +888,11 @@
       "tintColor": "#708070",
       "versions": [
         {
-          "version": "1.4.14",
-          "date": "2026-08-24",
-          "localizedDescription": "## 修改内容\n\n- 新增帖子本地保存：支持完整楼层和楼中楼离线阅读、媒体下载、搜索、回复更新、存储管理及备份导入导出。\n- 新增内置与自定义阅读字体，并完善首页重复点击刷新。\n- 自动检测账号登录失效，提示后清理当前登录态，同时避免旧请求或网络中断误触发退出。\n- 修复 iOS 16 嵌套搜索布局递归卡死、文字选择与导航手势冲突，并将媒体、字体、语音和存储文件 I/O 移出主线程。\n- 加固本地帖子并发写入、媒体事务崩溃恢复、备份校验与字体目录一致性。\n\n## 验证\n\n- GitHub Actions ci-ok 全部通过，包含单元测试、iOS 16 兼容检查、iPhone/iPad UI 测试和 Release 构建。\n- App 与扩展均为 1.4.14 (58)、arm64、最低 iOS 16.4；IPA 压缩结构正常且未签名。\n- 发帖和回帖夹具 UI 测试通过；本次未改动认证写入路径，因此未重复进行真实账号写入测试。",
-          "downloadURL": "https://github.com/infinityf4p/TiebaPure-iOS/releases/download/v1.4.14/TiebaPure-v1.4.14-unsigned.ipa",
-          "size": 3787516,
+          "version": "1.4.15",
+          "date": "2026-10-10",
+          "localizedDescription": "## What's included\n\n- Stabilizes Home tab reselection and refresh behavior after scrolling.\n- Returning from a thread or search now closes that screen first; the next Home tap refreshes the feed.\n- A Home tap during an in-flight refresh returns to the top without creating a duplicate request.\n- Bumps the app and Open In extension to version `1.4.15` (build `59`).\n\n## Download\n\n`TiebaPure-v1.4.15-unsigned.ipa` is an intentionally unsigned arm64 IPA for local installation/signing.\n\n- Minimum iOS: `16.4`\n- Commit: `5a87225190d6a79b1e3ad3b7d846edd407d416c7`\n- SHA-256: `28fbe31e673b1f2769043456324521afd87d04ade8d92d33832e967c19c31123`\n\nCI `ci-ok` passed on PR #86, including unit tests, iOS compatibility checks, UI smoke tests, iPad layout tests, and the Release build.",
+          "downloadURL": "https://github.com/infinityf4p/TiebaPure-iOS/releases/download/v1.4.15/TiebaPure-v1.4.15-unsigned.ipa",
+          "size": 9347637,
           "minOSVersion": "16.4"
         }
       ]
@@ -1020,6 +1020,105 @@
   ],
   "news": [
     {
+      "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
+      "title": "Pixiv-SwiftUI 0.16.2 · 11 Oct 2026",
+      "identifier": "Pixiv-SwiftUI-release-v0.16.2",
+      "caption": "Pixiv-SwiftUI 0.16.2 is available.",
+      "date": "2026-10-11T10:00:59Z",
+      "tintColor": "#13A1FD",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.2"
+    },
+    {
+      "appID": "com.zarz.spotiflac",
+      "title": "SpotiFLAC 5.1.1 · 11 Oct 2026",
+      "identifier": "SpotiFLAC-release-v5.1.1",
+      "caption": "SpotiFLAC 5.1.1 is available.",
+      "date": "2026-10-11T09:38:10Z",
+      "tintColor": "#1DB954",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/news.png",
+      "notify": true,
+      "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v5.1.1"
+    },
+    {
+      "appID": "com.neogamelab.neostation",
+      "title": "NeoStation iOS 0.0.4 · 10 Oct 2026",
+      "identifier": "NeoStation iOS-release-0.0.4",
+      "caption": "NeoStation iOS 0.0.4 is available.",
+      "date": "2026-10-10T18:33:34Z",
+      "tintColor": "#01E989",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
+      "notify": true,
+      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.4"
+    },
+    {
+      "appID": "com.example.piliplus",
+      "title": "PiliPlus 2.1.6 · 10 Oct 2026",
+      "identifier": "PiliPlus-release-2.1.6.2",
+      "caption": "PiliPlus 2.1.6 is available.",
+      "date": "2026-10-10T13:07:12Z",
+      "tintColor": "#73b480",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.1.6.2"
+    },
+    {
+      "appID": "com.naine.doer",
+      "title": "Doer 1.8.6 · 10 Oct 2026",
+      "identifier": "Doer-release-v1.8.6",
+      "caption": "Doer 1.8.6 is available.",
+      "date": "2026-10-10T08:03:04Z",
+      "tintColor": "#4080E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
+      "notify": true,
+      "url": "https://github.com/moliango/doer/releases/tag/v1.8.6"
+    },
+    {
+      "appID": "org.zhaohe.MiniWatts",
+      "title": "MiniWatts 1.5.0 · 10 Oct 2026",
+      "identifier": "MiniWatts-release-v1.5.0",
+      "caption": "MiniWatts 1.5.0 is available.",
+      "date": "2026-10-10T07:18:40Z",
+      "tintColor": "#30E0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.5.0"
+    },
+    {
+      "appID": "dev.infinityf4p.tiebapure",
+      "title": "TiebaPure 1.4.15 · 10 Oct 2026",
+      "identifier": "TiebaPure-release-v1.4.15",
+      "caption": "TiebaPure 1.4.15 is available.",
+      "date": "2026-10-10T06:07:37Z",
+      "tintColor": "#708070",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/news.png",
+      "notify": true,
+      "url": "https://github.com/infinityf4p/TiebaPure-iOS/releases/tag/v1.4.15"
+    },
+    {
+      "appID": "com.mystyle.purelive.liu",
+      "title": "PureLive 3.1.19 · 10 Oct 2026",
+      "identifier": "PureLive-release-v3.1.19",
+      "caption": "PureLive 3.1.19 is available.",
+      "date": "2026-10-10T04:32:55Z",
+      "tintColor": "#50B0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
+      "notify": true,
+      "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.19"
+    },
+    {
+      "appID": "com.christianselig.Apollo",
+      "title": "Apollo for Reddit - GLASS 3.9.0 · 09 Oct 2026",
+      "identifier": "Apollo for Reddit - GLASS-release-v1.15.11_3.9.0",
+      "caption": "Apollo for Reddit - GLASS 3.9.0 is available.",
+      "date": "2026-10-09T22:56:25Z",
+      "tintColor": "#6050F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.9.0"
+    },
+    {
       "appID": "com.husk.app",
       "title": "Husk 1.1.0 · 09 Oct 2026",
       "identifier": "Husk-release-1.1.0",
@@ -1064,17 +1163,6 @@
       "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.7"
     },
     {
-      "appID": "com.zarz.spotiflac",
-      "title": "SpotiFLAC 5.1.0 · 08 Oct 2026",
-      "identifier": "SpotiFLAC-release-v5.1.0",
-      "caption": "SpotiFLAC 5.1.0 is available.",
-      "date": "2026-10-08T17:23:21Z",
-      "tintColor": "#1DB954",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/news.png",
-      "notify": true,
-      "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v5.1.0"
-    },
-    {
       "appID": "com.armsx2.ios",
       "title": "ARMSX2 nightly-20261008 · 08 Oct 2026",
       "identifier": "ARMSX2-release-nightly-20261008",
@@ -1095,17 +1183,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/news.png",
       "notify": true,
       "url": "https://github.com/playportdev/playport/releases/tag/v0.4.0"
-    },
-    {
-      "appID": "com.mystyle.purelive.liu",
-      "title": "PureLive 3.1.18 · 08 Oct 2026",
-      "identifier": "PureLive-release-v3.1.18",
-      "caption": "PureLive 3.1.18 is available.",
-      "date": "2026-10-08T06:21:08Z",
-      "tintColor": "#50B0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
-      "notify": true,
-      "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.18"
     },
     {
       "appID": "ani.baka",
@@ -1139,17 +1216,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
       "notify": true,
       "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.8"
-    },
-    {
-      "appID": "com.example.piliplus",
-      "title": "PiliPlus 2.1.6 · 05 Oct 2026",
-      "identifier": "PiliPlus-release-2.1.6",
-      "caption": "PiliPlus 2.1.6 is available.",
-      "date": "2026-10-05T12:36:03Z",
-      "tintColor": "#73b480",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.1.6"
     },
     {
       "appID": "com.google.ios.youtube",
@@ -1218,17 +1284,6 @@
       "url": "https://github.com/missuo/kumone/releases/tag/v0.3.20"
     },
     {
-      "appID": "com.neogamelab.neostation",
-      "title": "NeoStation iOS 0.0.2 · 29 Sep 2026",
-      "identifier": "NeoStation iOS-release-0.0.2",
-      "caption": "NeoStation iOS 0.0.2 is available.",
-      "date": "2026-09-29T21:10:03Z",
-      "tintColor": "#01E989",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
-      "notify": true,
-      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.2"
-    },
-    {
       "appID": "com.github.cyrilpeng.veneranext",
       "title": "VeneraNext 1.17.0 · 29 Sep 2026",
       "identifier": "VeneraNext-release-v1.17.0",
@@ -1238,28 +1293,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
       "notify": true,
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.17.0"
-    },
-    {
-      "appID": "com.christianselig.Apollo",
-      "title": "Apollo for Reddit - GLASS 3.8.5 · 29 Sep 2026",
-      "identifier": "Apollo for Reddit - GLASS-release-v1.15.11_3.8.5",
-      "caption": "Apollo for Reddit - GLASS 3.8.5 is available.",
-      "date": "2026-09-29T02:39:57Z",
-      "tintColor": "#6050F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.8.5"
-    },
-    {
-      "appID": "com.naine.doer",
-      "title": "Doer 1.8.5.3 · 28 Sep 2026",
-      "identifier": "Doer-release-v1.8.5.3",
-      "caption": "Doer 1.8.5.3 is available.",
-      "date": "2026-09-28T04:11:27Z",
-      "tintColor": "#4080E0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
-      "notify": true,
-      "url": "https://github.com/moliango/doer/releases/tag/v1.8.5.3"
     },
     {
       "appID": "org.animeko.animeko",
@@ -1282,17 +1315,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/images/news.png",
       "notify": true,
       "url": "https://github.com/MakrSas/orchard-ios/releases/tag/v0.2"
-    },
-    {
-      "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.4.1 · 25 Sep 2026",
-      "identifier": "MiniWatts-release-v1.4.1",
-      "caption": "MiniWatts 1.4.1 is available.",
-      "date": "2026-09-25T12:31:59Z",
-      "tintColor": "#30E0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.4.1"
     },
     {
       "appID": "app.scenebox.SceneBox",
@@ -1339,17 +1361,6 @@
       "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.1"
     },
     {
-      "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
-      "title": "Pixiv-SwiftUI 0.16.0 · 16 Sep 2026",
-      "identifier": "Pixiv-SwiftUI-release-v0.16.0",
-      "caption": "Pixiv-SwiftUI 0.16.0 is available.",
-      "date": "2026-09-16T14:30:25Z",
-      "tintColor": "#13A1FD",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.0"
-    },
-    {
       "appID": "com.verback.YTLite",
       "title": "Opaline 1.12.0 · 10 Sep 2026",
       "identifier": "Opaline-release-1.12.0",
@@ -1392,17 +1403,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.png",
       "notify": true,
       "url": "https://github.com/dddevid/Musly/releases/tag/v2.0.2"
-    },
-    {
-      "appID": "dev.infinityf4p.tiebapure",
-      "title": "TiebaPure 1.4.14 · 24 Aug 2026",
-      "identifier": "TiebaPure-release-v1.4.14",
-      "caption": "TiebaPure 1.4.14 is available.",
-      "date": "2026-08-24T01:40:29Z",
-      "tintColor": "#708070",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/news.png",
-      "notify": true,
-      "url": "https://github.com/infinityf4p/TiebaPure-iOS/releases/tag/v1.4.14"
     },
     {
       "appID": "app.ehpanda",
