@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
+    inputs:
+      skip_failures:
+        description: 'Skip apps whose repo fails (404/renamed) instead of failing the whole run'
+        type: boolean
+        default: false
   push:
     branches:
       - master
@@ -26,6 +31,9 @@ jobs:
         run: ./update.sh
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          # Only set (to "1") when a manual run ticked the box; empty otherwise,
+          # so scheduled/push runs still fail on a broken repo.
+          SKIP_FAILURES: ${{ inputs.skip_failures && '1' || '' }}
 
       # apps.json / all-apps.json are gitignored, so `git add -A` won't pick
       # them up. Stage them explicitly (force) so the regenerated sources can
