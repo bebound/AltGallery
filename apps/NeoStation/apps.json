@@ -21,11 +21,11 @@
       "tintColor": "#01E989",
       "versions": [
         {
-          "version": "0.0.4",
-          "date": "2026-10-10",
-          "localizedDescription": "# NeoStation iOS 0.0.4\n\nThis release brings the skin catalog and fixes for PSP and Nintendo 3DS to NeoStation iOS.\n\n## What's new\n\n- **Skin catalog:** browse the **[Provenance Skin Catalog](https://github.com/Provenance-Emu/skins)** for NeoStation's embedded Libretro consoles, install compatible skins, and choose separate portrait and landscape layouts.\n- **PSP:** fixed an issue that prevented games from launching.\n- **Nintendo 3DS:** fixed a crash that occurred when closing a game.\n\nThank you to the emulator developers and the NeoStation community for your work, feedback, and patience!\n\n## Using skins\n\nOpen **Settings → Folders → Embedded consoles**, choose a console, then **Skins**.\nUse **Browse the Provenance catalog** or **Import from Files**, then select\n**Use in portrait**, **Use in landscape** or **Use in both orientations**.\n\nSee the **[skin guide](https://github.com/TarbleFR/neostation-ios/blob/08145438cc907b22b7b860bf190d1b520040fef1/docs/SKINS.md)** for supported archive formats, default skins, game-specific choices and catalog sources.\n\nCatalog credits go to the **Provenance community**, format-reference credits to **Riley Testut and DeltaCore contributors**, and artwork credits to each **skin creator**. Community skins are optional downloads and retain their creators' terms.\n\n## Download\n\nDownload **`NeoStation-0.0.4.ipa`** below and sign it with your usual sideloading tool.\n\n`NeoStation-0.0.4-SHA256SUMS.txt` contains the IPA checksum.\n\n## Release information\n\n- **Release:** 0.0.4\n- **Internal build:** 435\n- **Source commit:** `90a4e513e3a97f642bc45963bfb689f7c4677d46`\n- **Build:** [GitHub Actions run 38072379293](https://github.com/TarbleFR/neostation-ios/actions/runs/38072379293)\n\nThis release distributes the existing Build 435 IPA. Its contents have not been rebuilt or modified; the download filename and GitHub release name use version 0.0.4. The app bundle retains its original marketing version, 0.0.2, and internal build number, 435.",
-          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.4/NeoStation-0.0.4.ipa",
-          "size": 205917388,
+          "version": "0.0.5",
+          "date": "2026-10-11",
+          "localizedDescription": "# 🚀 NeoStation iOS — Update 0.0.5\n\nThis update brings new features, an expanded library, and several fixes based on your feedback!\n\n## 📚 Books & Manga\n\n- Read books and manga directly in NeoStation, with **EPUB, PDF, CBZ, and TXT** imports, reading progress tracking, and favorites.\n- Improved navigation and easier access to the back button in the readers.\n\n## 🎮 Interface & Consoles\n\n- New **Consoles** tab in the main navigation bar to add and organize the consoles displayed in your menu.\n- **120 Hz Interface** option under **Settings → General** for smoother navigation on compatible devices.\n- New **BIOS Checker** under **Settings → Tools** to identify present and missing BIOS files, whether required or optional.\n- Clearer identification of **Embedded RetroArch** in the settings.\n\n## 🌊 Dolphin — Wii & GameCube\n\n- Added a **Shake** control for Wii games, available through touch controls and configurable for a controller.\n- Improved phone shake detection with **three sensitivity levels**.\n- New display refresh-rate settings to better fine-tune smoothness.\n- Improved Dolphin display with **AirPlay and Apple TV**, including **Fit** and **Fill** modes while keeping the controls on the iPhone. **Fill** mode may crop part of the image.\n\n## 🛠️ RPCS3 & Fixes\n\n- Fixes for **PS3 save importing and exporting**, with support for folders and ZIP archives, confirmation before replacing files, and backup copies.\n- Import **.RAP licenses** using the Import button in the PS3 game library.\n\n## 🧠 NeoSwap Keeps Evolving\n\nThis update improves how memory is prepared and allocated to RPCS3 during gameplay, as well as tracking the memory actually allocated. This work draws inspiration in part from MeloNX's memory management approach.\n\n**NeoSwap is still experimental and will continue to be updated alongside improvements to RPCS3.** Work on memory management, stability, and CPU, PPU, SPU, and RSX performance will continue in future releases. Results will vary depending on the game and device.\n\n❤️ Thank you for your patience and feedback — they help NeoStation improve with every update! I hope the previously reported issues have been fixed. If you still encounter any problems, please don't hesitate to report them again. :)\n\n## Download\n\nDownload **`NeoStation-0.0.5.ipa`** from the assets below and sign/install it with your preferred sideloading method.\n\nThe **`NeoStation-0.0.5-SHA256SUMS.txt`** file contains the checksum for verifying the IPA.\n\n## Release information\n\n- **Release:** 0.0.5\n- **Internal build:** 443\n- **Source commit:** `79a5920af0f17b474bd8f1a0dcd88f798e2bede0`\n- **Build:** [GitHub Actions run 38173005985](https://github.com/TarbleFR/neostation-ios/actions/runs/38173005985)\n- **IPA SHA-256:** `af860e8b7f00fac46a1a1ab6483b0ddc59a8abd59b99dd2e4eda965118ce14d7`\n\nThis release distributes the verified Build 443 IPA. The binary has not been rebuilt or modified; only the download filename and release name use 0.0.5. The app bundle retains its originally compiled version metadata. On-device installation and performance may vary and are not independently verified by this release process.",
+          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.5/NeoStation-0.0.5.ipa",
+          "size": 207408158,
           "minOSVersion": "18.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.neogamelab.neostation",
-      "title": "NeoStation iOS 0.0.4 · 10 Oct 2026",
-      "identifier": "NeoStation iOS-release-0.0.4",
-      "caption": "NeoStation iOS 0.0.4 is available.",
-      "date": "2026-10-10T18:33:34Z",
+      "title": "NeoStation iOS 0.0.5 · 11 Oct 2026",
+      "identifier": "NeoStation iOS-release-0.0.5",
+      "caption": "NeoStation iOS 0.0.5 is available.",
+      "date": "2026-10-11T21:10:57Z",
       "tintColor": "#01E989",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
       "notify": true,
-      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.4"
+      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.5"
     }
   ]
 }
