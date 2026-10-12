@@ -172,8 +172,7 @@ AltGallery/
 │   ├── icon.svg / icon.png
 │   ├── add-alt-source.svg / add-alt-source.png
 │   └── *.jpg             # README screenshots (SideStore, SideStore News, LiveContainer)
-├── templates/            # shared news-image template + renderer
-│   ├── news_update.template.svg
+├── templates/            # shared news-image renderer
 │   └── render_news.py
 ├── apps/                 # one folder per app
 │   └── <AppName>/
