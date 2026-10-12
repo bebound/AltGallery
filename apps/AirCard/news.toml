@@ -1,4 +1,4 @@
-# render_news.py config: python3 templates/render_news.py --out apps/AirCard
+# render_news.py config: python3 tools/render_news.py --out apps/AirCard
 # Colors left unset are auto-derived: tint from config.toml, background as
 # a light shade of the icon's dominant color.
 

@@ -12,7 +12,7 @@ for app_dir in apps/*/; do
   if [[ -f "$app_dir/news.toml" ]]; then
     name="${app_dir%/}"
     echo "==> Updating $name news.png"
-    .venv/bin/python templates/render_news.py --out "$name"
+    .venv/bin/python tools/render_news.py --out "$name"
     updated+=("$name")
   fi
 done

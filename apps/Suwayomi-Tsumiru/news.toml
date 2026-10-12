@@ -1,4 +1,4 @@
-# render_news.py config: ./.venv/bin/python templates/render_news.py --out apps/Suwayomi-Tsumiru
+# render_news.py config: ./.venv/bin/python tools/render_news.py --out apps/Suwayomi-Tsumiru
 # Brand: "Indigo Night" — indigo #7c7bff → cyan #33d6ff, navy #02061d / #0b0d1a.
 # The icon's dominant sampled color is the cream stroke, so the navy background
 # is pinned here instead of auto-derived.

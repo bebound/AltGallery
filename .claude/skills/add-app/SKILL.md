@@ -139,11 +139,11 @@ re-derived from the README by hand.
 
 5. **Sample a tint color** (when the project has no official brand color in
    its AltStore source — otherwise reuse the source's `tintColor` directly):
-   call the existing sampler in `templates/render_news.py` →
+   call the existing sampler in `tools/render_news.py` →
    `extract_icon_color()` instead of re-implementing the PIL sampling (see
    AGENTS.md → [Icon Color Sampling](#icon-color-sampling-pil)):
    ```bash
-   PYTHONPATH=templates .venv/bin/python3 -c "from render_news import extract_icon_color; from pathlib import Path; print(extract_icon_color(Path('apps/<AppName>/icon.png')))"
+   PYTHONPATH=tools .venv/bin/python3 -c "from render_news import extract_icon_color; from pathlib import Path; print(extract_icon_color(Path('apps/<AppName>/icon.png')))"
    ```
    ⚠️ **Eyeball the result — human confirmation required.** Multi-color or
    pale icons may not have an obvious single brand color.
@@ -151,7 +151,7 @@ re-derived from the README by hand.
 6. **Write `news.toml`** (`name`, `tagline`, optional `[colors]`), then
    render the shared promo image (AGENTS.md → [Generating News Images]):
    ```bash
-   ./.venv/bin/python templates/render_news.py --out apps/<AppName>
+   ./.venv/bin/python tools/render_news.py --out apps/<AppName>
    ```
    Renders `apps/<AppName>/images/news.png` (1600x1200, 4:3) into the working
    tree (do not auto-commit). The image is drawn entirely with Pillow — no

@@ -7,7 +7,7 @@ identifier is the `CFBundleIdentifier` key of that bundle's `Info.plist`
 script reads it straight out of the archive.
 
 Stdlib only (`zipfile`, `plistlib`): no external tool, no venv, no Pillow —
-so the bare system `python3` runs it, unlike templates/render_news.py.
+so the bare system `python3` runs it, unlike tools/render_news.py.
 
 Usage:
   tools/ipa_bundle_id.py App.ipa             # prints: com.example.App

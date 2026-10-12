@@ -11,7 +11,7 @@ legacy `CFBundleIconFiles`), matched against the bundle's loose image files
 (`<Entry>@2x.png`, `<Entry>@3x.png`, `<Entry>~ipad.png`, …), plus any
 `*icon*.png` as a safety net. **The largest candidate wins** (by pixels, then
 file size). The winner is written untouched — store icons are flat square
-artwork; templates/render_news.py applies the rounded mask when it draws.
+artwork; tools/render_news.py applies the rounded mask when it draws.
 
 ⚠️ Modern ipas usually ship only small loose icons — `AppIcon60x60@2x.png`
 (120x120) and `AppIcon76x76@2x~ipad.png` (152x152) — while the 1024x1024

@@ -172,8 +172,10 @@ AltGallery/
 │   ├── icon.svg / icon.png
 │   ├── add-alt-source.svg / add-alt-source.png
 │   └── *.jpg             # README screenshots (SideStore, SideStore News, LiveContainer)
-├── templates/            # shared news-image renderer
-│   └── render_news.py
+├── tools/                # helper scripts
+│   ├── render_news.py    # shared news-image renderer
+│   ├── ipa_icon.py       # extract the app icon from a release .ipa
+│   └── ipa_bundle_id.py  # read bundle id / version from a release .ipa
 ├── apps/                 # one folder per app
 │   └── <AppName>/
 │       ├── config.toml   # altgen configuration
@@ -207,7 +209,7 @@ a `config.toml`, then merges the resulting sources into the repo-root
 `all-apps.json` via `uvx altgen merge -c assets/merge.toml`.
 
 `update_news.sh` renders each app's `images/news.png` from its `news.toml` using
-`templates/render_news.py`. It needs the Python venv (set up once):
+`tools/render_news.py`. It needs the Python venv (set up once):
 
 ```bash
 uv venv && uv pip install -r requirements.txt

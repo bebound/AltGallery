@@ -1,4 +1,4 @@
-# render_news.py config: ./.venv/bin/python templates/render_news.py --out apps/SpotiFLAC
+# render_news.py config: ./.venv/bin/python tools/render_news.py --out apps/SpotiFLAC
 # Colors left unset are auto-derived: tint from config.toml, background as
 # a light shade of the icon's dominant color.
 

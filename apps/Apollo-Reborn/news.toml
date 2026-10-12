@@ -1,4 +1,4 @@
-# render_news.py config: python3 templates/render_news.py --out apps/Apollo-Reborn
+# render_news.py config: python3 tools/render_news.py --out apps/Apollo-Reborn
 # Colors left unset are auto-derived from config.toml into a harmonious
 # scheme (see the [colors] section below for what you can override).
 

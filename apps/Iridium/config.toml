@@ -37,7 +37,7 @@ asset_pattern = "Iridium-unsigned\\.ipa$"
 
 [news]
 title_template = "{name} {version} · {date}"
-# shared promo image rendered by templates/render_news.py
+# shared promo image rendered by tools/render_news.py
 image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/news.png"
 
 [output]

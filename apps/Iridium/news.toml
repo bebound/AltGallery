@@ -1,4 +1,4 @@
-# render_news.py config: python3 templates/render_news.py --out apps/Iridium
+# render_news.py config: python3 tools/render_news.py --out apps/Iridium
 # Colors are pinned explicitly: Iridium's icon is pure black-on-white, so the
 # auto-derived tagline picked up a mauve cast from the icon's faint background
 # tint. A neutral grey scale matches the monochrome mark instead.

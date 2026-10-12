@@ -96,7 +96,7 @@ app's image (from each app's `news.toml`: `name`, `tagline`, optional
 ./update_news.sh
 ```
 
-or a single app with `.venv/bin/python3 templates/render_news.py --out
+or a single app with `.venv/bin/python3 tools/render_news.py --out
 apps/<AppName>`.
 Unset colors are auto-derived from `config.toml` tints and the icon's dominant
 color (needs the uv venv set up once: `uv venv && uv pip install -r
@@ -109,11 +109,11 @@ not auto-commit it.
 
 Sampling a dominant color from an icon — for a new app's `tint_color`, or the
 news background derived by `render_news.py` — is already implemented in
-`templates/render_news.py` → `extract_icon_color()` (it downsamples the icon
+`tools/render_news.py` → `extract_icon_color()` (it downsamples the icon
 with Pillow and buckets the pixels). Just call it:
 
 ```bash
-PYTHONPATH=templates .venv/bin/python3 -c \
+PYTHONPATH=tools .venv/bin/python3 -c \
   "from render_news import extract_icon_color; from pathlib import Path; \
    print(extract_icon_color(Path('apps/<AppName>/icon.png')))"
 ```
