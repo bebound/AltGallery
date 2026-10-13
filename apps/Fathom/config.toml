@@ -1,0 +1,42 @@
+# altgen config for the Fathom AltStore source.
+# Run: uvx altgen -c config.toml
+# Fathom: x86-64 PC emulator for iOS (FEXCore JIT)
+
+[github]
+repo = "Leviidev/Fathom"
+
+[source]
+name = "Fathom"
+subtitle = "Fathom AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Fathom"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/icon.png"
+website = "https://github.com/Leviidev/Fathom"
+tint_color = "#68D8D8"
+
+[app]
+name = "Fathom"
+bundle_identifier = "app.fathom.emulator"
+developer_name = "Leviidev"
+subtitle = "x86-64 PC emulator for iOS"
+description = "An x86-64 PC emulator for iOS. Fathom runs x86-64 Linux programs on an iPhone or iPad by translating them to ARM64 as they execute, using FEXCore - the dynamic recompiler behind FEX-Emu - with a native SwiftUI front end.\n\nImport a statically linked x86-64 Linux executable, open it, press Run. Fathom maps it into a guest address space, hands its instructions to FEXCore's JIT, answers its Linux syscalls, and shows you its output.\n\nJIT requires StikDebug to attach to the process and service the executable-memory traps; Fathom asks for this automatically on launch when it is missing.\n\nPlease note: only statically linked, position-independent executables (-static-pie) run today. Dynamically linked binaries and 32-bit x86 are not supported yet, and threads are not implemented, so a guest runs single-threaded."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/library.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/settings.png",
+]
+tint_color = "#68D8D8"
+min_os_version = "18.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Each release contains a single ipa: Fathom.ipa
+asset_pattern = "Fathom\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/news.png"
+
+[output]
+path = "apps.json"

@@ -1,0 +1,17 @@
+# render_news.py config: python3 tools/render_news.py --out apps/Fathom
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "Fathom"
+tagline = "x86-64 PC emulator for iOS"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#68D8D8"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#68D8D8"      # bottom-right glow (default: [source] tint_color)
+# background = "#D6EBEB"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#E7F3F3"        # gradient mid stop (derived from background)
+# bg_dark = "#BBDEDE"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#51BDBD" # tagline text (derived from background)

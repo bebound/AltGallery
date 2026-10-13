@@ -71,6 +71,9 @@ Original Xbox emulation for iOS, built from xemu with a native Swift interface.
 ### <a href="https://github.com/EhPanda-Team/EhPanda"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/EhPanda/icon.png" alt="EhPanda icon" width="24" align="top"> EhPanda</a>
 An unofficial E-Hentai App for iOS built with SwiftUI & TCA.
 
+### <a href="https://github.com/Leviidev/Fathom"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Fathom/icon.png" alt="Fathom icon" width="24" align="top"> Fathom</a>
+An x86-64 PC emulator for iOS — runs x86-64 Linux executables by translating them to ARM64 at runtime with FEXCore. Requires JIT and a debugger attached at runtime.
+
 ### <a href="https://github.com/Leviidev/Husk"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Husk/icon.png" alt="Husk icon" width="24" align="top"> Husk</a>
 Run Android apps on iOS — drop in an APK, tap it, and it opens full-screen. Requires JIT and a debugger attached at runtime.
 
