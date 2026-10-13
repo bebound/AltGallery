@@ -6,6 +6,17 @@ Generate AltStore sources (`apps.json`) for IPA projects on GitHub.
 
 - Generator: Python **AltGen**, invoked via `uvx altgen`
 
+## Commits
+
+Never ask the user whether to commit — the user commits everything
+themselves. Do not run `git add`, `git commit`, or `git push` on your own
+initiative, and do not end a turn with "shall I commit this?" either.
+
+Leaving your changes in the working tree is the expected end state: report
+what changed (files touched, what was regenerated) and stop there. This
+applies to generated files too (`apps.json`, `all-apps.json`,
+`images/news.png`) — never commit them, and never ask about committing them.
+
 ## Comments
 
 Write comments in English. Any comment you add or modify in code
