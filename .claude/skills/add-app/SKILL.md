@@ -13,6 +13,12 @@ When the project already ships its own AltStore source, extract its metadata
 first (step 2) so `config.toml` is pre-filled from the source instead of being
 re-derived from the README by hand.
 
+**Every `config.toml` in this repo follows one template — `apps/PiliPlus/config.toml`.**
+Read it and copy it when writing a new one (step 4): header comment, section
+order, shared wording, and raw-URL style all come from that file, so the skill
+never needs updating when the template changes. Only the values
+change between apps.
+
 ## Procedure
 
 1. **Create the folder**
@@ -116,26 +122,42 @@ re-derived from the README by hand.
    required, on purpose). AGENTS.md → [Extracting the App Icon from an
    IPA](../AGENTS.md#extracting-the-app-icon-from-an-ipa).
 
-4. **Write `config.toml`** modeled on `apps/PiliPlus/config.toml`:
-   - `[github]`: `repo = "owner/name"`
-   - `[source]`: name, subtitle, description, `website`, and `icon_url`
-     pointing at the new app's committed icon
-   - `[app]`: name, `bundle_identifier`, `developer_name`, subtitle,
-     description, `icon_url`, `screenshots` (the
-     `https://raw.githubusercontent.com/bebound/AltGallery/master/apps/<AppName>/images/*.png`
-     URLs), `tint_color`, `min_os_version`
-     ⚠️ `bundle_identifier` from the source (2c) or the ipa (2e) — never a
-     made-up `com.example.*`; `min_os_version` from the ipa too.
-   - `[versions]`: matching rules. ⚠️ **`asset_pattern` is a regex, not a
+4. **Write `config.toml`** — `apps/PiliPlus/config.toml` is the repo's
+   reference config. **Read it and copy it**, don't retype a remembered
+   skeleton:
+
+   ```bash
+   cat apps/PiliPlus/config.toml
+   ```
+
+   Copy the file into `apps/<AppName>/config.toml` and replace only the
+   app-specific values. Everything the template sets — the header comment,
+   the section order, the shared `[source]` wording, `[news]`,
+   `strip_v_prefix` / `include_prereleases`, the `[output]` path, the raw-URL
+   form — stays exactly as PiliPlus has it, so a future change to the
+   template reaches new apps on its own. Never freeze a copy of those values
+   into this skill: re-read the file every time.
+
+   What is app-specific:
+   - every value naming the app or its repo: `[github] repo`, `[source]`
+     `name` / `website`, `[app] name` / `developer_name` / `subtitle` /
+     `description`, and the `<AppName>` segment in each `icon_url` /
+     `screenshots` / `image_url` path
+   - the header comment's description line (one line, English — see AGENTS.md
+     → [Comments](#comments))
+   - `[app] bundle_identifier` — from the source (2c) or the ipa (2e); never
+     a made-up `com.example.*` — and `min_os_version` from the same places
+   - the tint colors — `[app] tint_color` from the source's `tintColor` (2c)
+     or, when the source has none, the icon sample (step 5);
+     `[source] tint_color` normally mirrors it, and diverges only for a
+     project with a distinct secondary brand color
+   - `[versions]` matching rules: ⚠️ **`asset_pattern` is a regex, not a
      glob** — to match any ipa use `".*\\.ipa$"`; `"*.ipa"` fails with
      `invalid regex`. Narrow it to a specific filename when each release
-     ships exactly one ipa (e.g. `"EhPanda\\.ipa$"`). Use the latest
-     `downloadURL` from step 2 to get the exact ipa filename.
-   - `[news]`: copy the PiliPlus block, point `image_url` at the new app's
-     `images/news.png`
-   - `[output]`: `path = "apps.json"`
-   - All `raw.githubusercontent.com` URLs use the `bebound/AltGallery`
-     repo path.
+     ships exactly one ipa (e.g. `"EhPanda\\.ipa$"`) — the latest
+     `downloadURL` from step 2 gives the exact name. Add `version_pattern` /
+     `build_version_pattern` only when the release tags need them (the
+     template carries PiliPlus's own — replace or drop them as appropriate).
 
 5. **Sample a tint color** (when the project has no official brand color in
    its AltStore source — otherwise reuse the source's `tintColor` directly):
@@ -148,8 +170,11 @@ re-derived from the README by hand.
    ⚠️ **Eyeball the result — human confirmation required.** Multi-color or
    pale icons may not have an obvious single brand color.
 
-6. **Write `news.toml`** (`name`, `tagline`, optional `[colors]`), then
-   render the shared promo image (AGENTS.md → [Generating News Images]):
+6. **Write `news.toml`** — copy `apps/PiliPlus/news.toml` the same way (it
+   documents every optional `[colors]` key as a comment), then change only
+   `name` and `tagline`. All keys are optional; leave the commented defaults
+   in place. Then render the shared promo image (AGENTS.md → [Generating News
+   Images]):
    ```bash
    ./.venv/bin/python tools/render_news.py --out apps/<AppName>
    ```
@@ -207,6 +232,7 @@ re-derived from the README by hand.
     screenshots are missing.
 
 ## Checklist
+- [ ] `config.toml` copied from `apps/PiliPlus/config.toml` (read at run time, not from memory) — shared header/section order/wording/URLs left untouched, only app-specific values replaced
 - [ ] fields extracted from the project's own AltStore source (when one exists); `tintColor` normalized to `#RRGGBB`
 - [ ] `bundle_identifier` and `min_os_version` from the source or the ipa (`tools/ipa_bundle_id.py`) — no `com.example.*` placeholder; ipa deleted afterwards
 - [ ] `apps/<AppName>/{config.toml, news.toml, icon.png, images/*}` all present
