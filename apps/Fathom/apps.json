@@ -1,0 +1,46 @@
+{
+  "name": "Fathom",
+  "subtitle": "Fathom AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Fathom",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/icon.png",
+  "website": "https://github.com/Leviidev/Fathom",
+  "tintColor": "#68D8D8",
+  "apps": [
+    {
+      "name": "Fathom",
+      "bundleIdentifier": "app.fathom.emulator",
+      "developerName": "Leviidev",
+      "subtitle": "x86-64 PC emulator for iOS",
+      "localizedDescription": "An x86-64 PC emulator for iOS. Fathom runs x86-64 Linux programs on an iPhone or iPad by translating them to ARM64 as they execute, using FEXCore - the dynamic recompiler behind FEX-Emu - with a native SwiftUI front end.\n\nImport a statically linked x86-64 Linux executable, open it, press Run. Fathom maps it into a guest address space, hands its instructions to FEXCore's JIT, answers its Linux syscalls, and shows you its output.\n\nJIT requires StikDebug to attach to the process and service the executable-memory traps; Fathom asks for this automatically on launch when it is missing.\n\nPlease note: only statically linked, position-independent executables (-static-pie) run today. Dynamically linked binaries and 32-bit x86 are not supported yet, and threads are not implemented, so a guest runs single-threaded.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/library.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/settings.png"
+      ],
+      "tintColor": "#68D8D8",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2026-09-14",
+          "localizedDescription": "An x86-64 PC emulator for iOS, running guest code on FEXCore.\n\n2048 and tic tac toe both run. Add them from the Library tab and play with the on-screen arrow keys.\n\n**Downloads**\n- `Fathom.ipa` - the app, unsigned, for sideloading. Needs StikDebug attached for JIT.\n- `tictactoe` - arrows move, Enter places, against a minimax bot that cannot be beaten.\n- `play2048` - arrows slide the board.\n\nCopy the two game binaries into Fathom's Programs folder, or import them from the Library tab.",
+          "downloadURL": "https://github.com/Leviidev/Fathom/releases/download/v1.0.0/Fathom.ipa",
+          "size": 1175175,
+          "minOSVersion": "18.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "app.fathom.emulator",
+      "title": "Fathom 1.0.0 · 14 Sep 2026",
+      "identifier": "Fathom-release-v1.0.0",
+      "caption": "Fathom 1.0.0 is available.",
+      "date": "2026-09-14T23:13:23Z",
+      "tintColor": "#68D8D8",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Leviidev/Fathom/releases/tag/v1.0.0"
+    }
+  ]
+}

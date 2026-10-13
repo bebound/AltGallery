@@ -21,11 +21,11 @@
       "tintColor": "#01E989",
       "versions": [
         {
-          "version": "0.0.5",
-          "date": "2026-10-11",
-          "localizedDescription": "# 🚀 NeoStation iOS — Update 0.0.5\n\nThis update brings new features, an expanded library, and several fixes based on your feedback!\n\n## 📚 Books & Manga\n\n- Read books and manga directly in NeoStation, with **EPUB, PDF, CBZ, and TXT** imports, reading progress tracking, and favorites.\n- Improved navigation and easier access to the back button in the readers.\n\n## 🎮 Interface & Consoles\n\n- New **Consoles** tab in the main navigation bar to add and organize the consoles displayed in your menu.\n- **120 Hz Interface** option under **Settings → General** for smoother navigation on compatible devices.\n- New **BIOS Checker** under **Settings → Tools** to identify present and missing BIOS files, whether required or optional.\n- Clearer identification of **Embedded RetroArch** in the settings.\n\n## 🌊 Dolphin — Wii & GameCube\n\n- Added a **Shake** control for Wii games, available through touch controls and configurable for a controller.\n- Improved phone shake detection with **three sensitivity levels**.\n- New display refresh-rate settings to better fine-tune smoothness.\n- Improved Dolphin display with **AirPlay and Apple TV**, including **Fit** and **Fill** modes while keeping the controls on the iPhone. **Fill** mode may crop part of the image.\n\n## 🛠️ RPCS3 & Fixes\n\n- Fixes for **PS3 save importing and exporting**, with support for folders and ZIP archives, confirmation before replacing files, and backup copies.\n- Import **.RAP licenses** using the Import button in the PS3 game library.\n\n## 🧠 NeoSwap Keeps Evolving\n\nThis update improves how memory is prepared and allocated to RPCS3 during gameplay, as well as tracking the memory actually allocated. This work draws inspiration in part from MeloNX's memory management approach.\n\n**NeoSwap is still experimental and will continue to be updated alongside improvements to RPCS3.** Work on memory management, stability, and CPU, PPU, SPU, and RSX performance will continue in future releases. Results will vary depending on the game and device.\n\n❤️ Thank you for your patience and feedback — they help NeoStation improve with every update! I hope the previously reported issues have been fixed. If you still encounter any problems, please don't hesitate to report them again. :)\n\n## Download\n\nDownload **`NeoStation-0.0.5.ipa`** from the assets below and sign/install it with your preferred sideloading method.\n\nThe **`NeoStation-0.0.5-SHA256SUMS.txt`** file contains the checksum for verifying the IPA.\n\n## Release information\n\n- **Release:** 0.0.5\n- **Internal build:** 443\n- **Source commit:** `79a5920af0f17b474bd8f1a0dcd88f798e2bede0`\n- **Build:** [GitHub Actions run 38173005985](https://github.com/TarbleFR/neostation-ios/actions/runs/38173005985)\n- **IPA SHA-256:** `af860e8b7f00fac46a1a1ab6483b0ddc59a8abd59b99dd2e4eda965118ce14d7`\n\nThis release distributes the verified Build 443 IPA. The binary has not been rebuilt or modified; only the download filename and release name use 0.0.5. The app bundle retains its originally compiled version metadata. On-device installation and performance may vary and are not independently verified by this release process.",
-          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.5/NeoStation-0.0.5.ipa",
-          "size": 207408158,
+          "version": "0.0.6",
+          "date": "2026-10-12",
+          "localizedDescription": "# 🚀 NeoStation iOS — Version 0.0.6 (Build 447)\r\n\r\n**NeoStation iOS 0.0.6 is now available!** 🎮✨\r\n\r\nThis update introduces exciting new features, expanded customization options, improved AirPlay support, a new storage management tool, and several improvements to enhance your NeoStation experience.\r\n\r\n### 📺 AirPlay & Apple TV\r\n- Improved fullscreen support across the NeoStation interface.\r\n- Better display scaling to reduce unwanted black bars.\r\n- Improved compatibility with external displays and embedded emulators.\r\n- Enhanced AirPlay integration for a better TV experience.\r\n\r\n### 🎮 Nintendo 3DS\r\n- Added new language selection settings.\r\n- Added support for importing compressed and uncompressed NAND backups.\r\n- Improved compatibility with data transferred from your own Nintendo 3DS.\r\n\r\n### 📚 Books & Manga\r\n- New immersive 3D covers using the original artwork of your books and manga.\r\n- More realistic book-opening and page-turning animations.\r\n- Improved reading experience, navigation, and visual presentation.\r\n\r\n### 🎨 Expanded Skin Catalogs\r\n- Added more skin catalogs to NeoStation.\r\n- Expanded the collection of available skins.\r\n- More customization options to personalize your gaming experience.\r\n\r\n### 🧹 New Storage Cleanup & Management Tool\r\n- New storage management tool available under **Settings → Tools**.\r\n- Analyze the storage space used by NeoStation.\r\n- Detect temporary files, caches, and potentially unused data.\r\n- Identify unnecessary files and leftover data from previous game imports.\r\n- Review detected files and their sizes before deleting anything.\r\n- Safe cleanup with user confirmation, designed to protect games, save files, BIOS files, and other important data.\r\n- Helps free up storage space and prevent unnecessary data accumulation.\r\n\r\n### 🔧 Additional Improvements\r\n- General stability and performance optimizations.\r\n- Various interface refinements and visual improvements.\r\n- Additional compatibility fixes.\r\n- General improvements to the overall user experience.\r\n\r\n---\r\n\r\n### ❤️ Thank You!\r\n\r\nA huge thank you to everyone supporting NeoStation and sharing feedback, suggestions, and bug reports!\r\n\r\nYour continued support helps NeoStation grow and improve with every release.\r\n\r\n**Enjoy NeoStation iOS 0.0.6!** 🎮✨\r\n\r\n**Version:** 0.0.6  \r\n**Build:** 447  \r\n**Platform:** iOS  \r\n**Distribution:** Sideloaded IPA\r\n\r\n---",
+          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.6/NeoStation-0.0.6.ipa",
+          "size": 208051121,
           "minOSVersion": "18.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.neogamelab.neostation",
-      "title": "NeoStation iOS 0.0.5 · 11 Oct 2026",
-      "identifier": "NeoStation iOS-release-0.0.5",
-      "caption": "NeoStation iOS 0.0.5 is available.",
-      "date": "2026-10-11T21:10:57Z",
+      "title": "NeoStation iOS 0.0.6 · 12 Oct 2026",
+      "identifier": "NeoStation iOS-release-0.0.6",
+      "caption": "NeoStation iOS 0.0.6 is available.",
+      "date": "2026-10-12T19:48:04Z",
       "tintColor": "#01E989",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
       "notify": true,
-      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.5"
+      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.6"
     }
   ]
 }

@@ -96,7 +96,7 @@
         {
           "version": "2.6.3",
           "date": "2026-10-12",
-          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.3 更新\n\n## 新增\n\n- 新增播放器迷你进度条(可在设置页面关闭) #101\n- 番剧角色页面补全声优信息 #105\n- 安卓端支持自定义视频下载路径\n- 用户收藏页面支持已最新观看记录排序 #100\n\n## 优化\n \n- 优化图片加载速度(在通用设置页面手动点击一次恢复ECH默认值)\n- 账户设置页面ID、账号支持复制\n- 优化多处ui细节\n- 优化新番时间表排序功能 #108\n- 优化播放资源权重排序 #98\n\n## 修复\n\n- 修复更新信息页面长按复制信息出现的白屏问题 #104\n- 修复播放器使用MDK内核快进时未使用缓冲进度导致视频重复加载\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
+          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.6.3 更新\r\n\r\n## 新增\r\n\r\n- 新增播放器迷你进度条(可在设置页面关闭) #101\r\n- 新增图片缓存清理\r\n- 番剧角色页面补全声优信息 #105\r\n- 安卓端支持自定义视频下载路径\r\n- 用户收藏页面支持已最新观看记录排序 #100\r\n\r\n## 优化\r\n \r\n- 优化图片加载速度(在通用设置页面手动点击一次恢复ECH默认值)\r\n- 账户设置页面ID、账号支持复制\r\n- 优化多处ui细节\r\n- 优化新番时间表排序功能 #108\r\n- 优化播放资源权重排序 #98\r\n\r\n## 修复\r\n\r\n- 修复更新信息页面长按复制信息出现的白屏问题 #104\r\n- 修复播放器使用MDK内核快进时未使用缓冲进度导致视频重复加载\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用) ``",
           "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.3/AnimeFlow-ios-2.6.3.ipa",
           "size": 29429482,
           "minOSVersion": "13.0"
@@ -118,11 +118,11 @@
       "tintColor": "#0050A0",
       "versions": [
         {
-          "version": "6.2.0",
-          "date": "2026-09-26",
-          "localizedDescription": "- 安卓 TV 版已发布，全新设计精美 UI，更多功能开发中\r\n- 新增显示缓冲进度条，优化缓冲机制\r\n- 新增系列关系图，直观展示正片、续集、番外与衍生作品\r\n- 新增按线路批量缓存\r\n- 支持发送自定义位置和颜色的弹幕\r\n- 搜索支持年份与季度筛选 (#3396 by @Bonger34)\r\n- 新增 GitHub 账号绑定，贡献者可认证以免除广告\r\n\r\n----\r\n\r\n- 新增 Bangumi 收藏冲突处理，可对照两侧收藏、选择保留内容或采用较新的记录，并在合并后同步刷新收藏列表\r\n- 新增「显示原名」设置，可在条目、剧集、搜索、收藏和播放等页面显示原始名称 (#3451 by @azusachino)\r\n- 桌面端图片查看器支持独立窗口、缩放、保存、复制及拖出图片到其他应用，并支持触摸板手势\r\n- 人物与角色页面支持发表评论、回复、表情、点赞和举报\r\n- 剧集卡片支持显示剧照、播放进度和已看完标记，可在设置中关闭剧照显示，翻页时及时清除上一页图片\r\n- 桌面端播放页支持拖入本地视频文件，在当前剧集中直接播放\r\n- 缓存详情页显示下载器状态、视频地址解析进度、连接情况及最近错误，便于排查下载停滞\r\n- 已缓存剧集支持显示观看进度\r\n- 账号设置支持换绑邮箱，以及在保留其他登录方式时解绑邮箱\r\n- 时间表支持显示「时间未定」，跨午夜自动切换日期，并修正剧集播出时间与开播状态判断\r\n- 首次启动直接进入主界面，网络检测失败时显示提示，主题与代理可在设置中调整\r\n- 自动选源优先使用本地缓存，在线资源无结果时可回退到 BT 资源，并优化匹配与等待策略\r\n- 优化数据源线路展示，保留网站原有名称、分组和顺序，避免同名线路被合并\r\n- 优化下载管理，批量暂停、继续和删除按操作顺序执行，减少重复创建任务，切换条目时保持标题显示\r\n- 优化列表封面加载及人物、制作人员信息缓存，减少滚动列表和返回页面时的重复加载与流量消耗\r\n- 人物与角色头像支持点击放大，移动端侧边预览中的大图可完整覆盖窗口\r\n- 宽屏条目详情页支持选择并复制标题\r\n- 调整桌面端与平板顶栏头像尺寸，使其与相邻按钮对齐\r\n- Windows ARM64 支持在应用内下载更新后自动安装 (#3408 by @NihilDigit)\r\n- 关于页新增构建信息，可查看并复制版本、分支和提交等信息，方便反馈问题\r\n- 开发者设置支持浏览主分支构建状态，并通过提交编号、合并请求、构建产物链接或安装包地址下载指定版本，在支持的平台上自动安装\r\n- Windows 与 macOS 的开发者设置支持拖入安装包，确认后自动安装并重启\r\n- 修复下载部分大体积视频时内存不足导致崩溃，甚至重启后反复崩溃的问题 (#3407 by @azusachino)\r\n- 修复 Linux Wayland 环境下内置浏览器初始化失败，导致登录和网页解析不可用的问题 (#3359 by @Vedaru)\r\n- 修复收藏列表末页不足一页时反复刷新、卡片重排和滚动跳动的问题 (#3374 by @vaz1306011)\r\n- 修复剧场版与单集作品中仅标注画质或语言的线路被错误过滤，导致资源缺失的问题 (#3345 by @GrahamZen)\r\n- 修复 Emby 中独立分季条目包含特别篇时的季度匹配错误\r\n- 修复倍速播放时无法自动跳过片头片尾的问题 (#3365 by @Tantless)\r\n- 修复长按倍速操作被中断后未恢复原播放速度的问题\r\n- 修复追番条目菜单自动关闭的问题 (#3372 by @XYenon)\r\n- 修复从播放页返回后剧集已看状态不更新，以及条目详情信息更新不同步的问题\r\n- 修复 iOS 全屏播放从后台返回后意外切换为竖屏的问题\r\n- 修复全屏播放时控件、侧边栏与倍速弹层的边距和裁切问题，改善 iOS 刘海与圆角屏幕适配\r\n- 修复桌面端按 Esc 退出全屏或关闭图片窗口时意外返回上一页的问题\r\n- 修复 iOS 视频解析结束后浏览器资源未释放造成的内存占用累积\r\n- 修复安装开发版本后点击自动更新没有反应的问题\r\n- 修复更新下载重试或切换下载地址后进度反复跳动的问题\r\n- 修复桌面端安装包版本号与发布版本不一致的问题 (#3324 by @termtate)\r\n- 修复 Anime Garden 资源大小显示为实际大小 1024 倍的问题\r\n- 修复电视版在普通启动器中的入口与电视启动器横幅显示\r\n- 修复移动端顶部时间文字颜色不清晰的问题 (#3366 by @U29kaXVt)\r\n- 修复代理测试列表中 Animeko 图标过大、撑高列表行的问题 (#3348 by @GrahamZen)\r\n- 修复桌面端登录按钮在鼠标悬停时阴影重叠的问题 (#3352 by @termtate)\r\n- Fix: 移除 AniApp 根节点 clickable，避免语义合并触发 Layout Inspector 崩溃 (#3381 by @myouo)\r\n\r\n**Full Changelog**: https://github.com/open-ani/animeko/compare/v6.1.0...v6.2.0\r\n\r\n[//]: # (ANI-SERVER-MAGIC-SEPARATOR)\r\n\r\n[//]: # (注意: api server 依赖这个特殊分隔符)\r\n\r\n[//]: # (对于所有可用的变量列表, 参考 CI release.yml 的 step release-notes)\r\n\r\n[github-win-x64]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-windows-x86_64.zip\r\n\r\n[github-win-aarch64]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-windows-aarch64.zip\r\n\r\n[github-mac-x64]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-macos-x86_64.dmg\r\n\r\n[github-mac-aarch64]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-macos-aarch64.dmg\r\n\r\n[github-android]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-universal.apk\r\n\r\n[github-android-arm64-v8a]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-arm64-v8a.apk\r\n\r\n[github-android-armeabi-v7a]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-armeabi-v7a.apk\r\n\r\n[github-android-x86_64]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-x86_64.apk\r\n\r\n[cf-win-x64]: https://d.myani.org/v6.2.0/ani-6.2.0-windows-x86_64.zip\r\n\r\n[cf-win-aarch64]: https://d.myani.org/v6.2.0/ani-6.2.0-windows-aarch64.zip\r\n\r\n[cf-linux-x64]: https://d.myani.org/v6.2.0/ani-6.2.0-linux-x86_64.appimage\r\n\r\n[cf-mac-x64]: https://d.myani.org/v6.2.0/ani-6.2.0-macos-x86_64.zip\r\n\r\n[cf-mac-aarch64]: https://d.myani.org/v6.2.0/ani-6.2.0-macos-aarch64.dmg\r\n\r\n[cf-ios]: https://d.myani.org/v6.2.0/ani-6.2.0.ipa\r\n\r\n[cf-android]: https://d.myani.org/v6.2.0/ani-6.2.0-universal.apk\r\n\r\n[cf-android-arm64-v8a]: https://d.myani.org/v6.2.0/ani-6.2.0-arm64-v8a.apk\r\n\r\n[cf-android-armeabi-v7a]: https://d.myani.org/v6.2.0/ani-6.2.0-armeabi-v7a.apk\r\n\r\n[cf-android-x86_64]: https://d.myani.org/v6.2.0/ani-6.2.0-x86_64.apk\r\n\r\n[ghproxy-win-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-windows-x86_64.zip\r\n\r\n[ghproxy-win-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-windows-aarch64.zip\r\n\r\n[ghproxy-mac-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-macos-x86_64.zip\r\n\r\n[ghproxy-linux-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-linux-x86_64.appimage\r\n\r\n[ghproxy-mac-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-macos-aarch64.dmg\r\n\r\n[ghproxy-ios]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0.ios\r\n\r\n[ghproxy-android]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-universal.apk\r\n\r\n[ghproxy-android-arm64-v8a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-arm64-v8a.apk\r\n\r\n[ghproxy-android-armeabi-v7a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-armeabi-v7a.apk\r\n\r\n[ghproxy-android-x86_64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-6.2.0-x86_64.apk\r\n\r\n[github-android-tv]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-tv-6.2.0-universal.apk\r\n\r\n[github-android-tv-arm64-v8a]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-tv-6.2.0-arm64-v8a.apk\r\n\r\n[github-android-tv-armeabi-v7a]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-tv-6.2.0-armeabi-v7a.apk\r\n\r\n[github-android-tv-x86_64]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-tv-6.2.0-x86_64.apk\r\n\r\n[cf-android-tv]: https://d.myani.org/v6.2.0/ani-tv-6.2.0-universal.apk\r\n\r\n[cf-android-tv-arm64-v8a]: https://d.myani.org/v6.2.0/ani-tv-6.2.0-arm64-v8a.apk\r\n\r\n[cf-android-tv-armeabi-v7a]: https://d.myani.org/v6.2.0/ani-tv-6.2.0-armeabi-v7a.apk\r\n\r\n[cf-android-tv-x86_64]: https://d.myani.org/v6.2.0/ani-tv-6.2.0-x86_64.apk\r\n\r\n[ghproxy-android-tv]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-tv-6.2.0-universal.apk\r\n\r\n[ghproxy-android-tv-arm64-v8a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-tv-6.2.0-arm64-v8a.apk\r\n\r\n[ghproxy-android-tv-armeabi-v7a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-tv-6.2.0-armeabi-v7a.apk\r\n\r\n[ghproxy-android-tv-x86_64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.2.0%2Fani-tv-6.2.0-x86_64.apk\r\n\r\n[macOS 无法打开解决方案]: https://myani.org/wiki/macos-unable-to-open\r\n\r\n[Windows下字体与背景颜色异常解决方案]: https://myani.org/wiki/windows-font-bg-color-issue\r\n\r\n[Linux 安装说明]: https://myani.org/wiki/linux-install\r\n\r\n[macOS Intel芯片版本安装教程]: https://myani.org/wiki/macos-intel-install\r\n\r\n[macos-intel-issue]: https://github.com/open-ani/animeko/issues/1345\r\n\r\n[linux-issue]: https://github.com/open-ani/animeko/issues/944\r\n\r\n[iOS 自签]: https://myani.org/wiki/ios-install\r\n\r\n|                  | 下载                                               | 常见问题                                        |\r\n|------------------|--------------------------------------------------|---------------------------------------------|\r\n| 安卓 手机/平板         | [主线][cf-android] / [备线][ghproxy-android]         |                                             |\r\n| 安卓 电视            | [主线][cf-android-tv] / [备线][ghproxy-android-tv]   |                                             |\r\n| iOS              | [主线][cf-ios] / [备线][ghproxy-ios]                 | 需要[自签][iOS 自签]                                  |\r\n| Windows          | [主线][cf-win-x64] / [备线][ghproxy-win-x64]         | 1. 目录不要有中文或者空格 <br/> 2. [显示异常][Windows下字体与背景颜色异常解决方案] |\r\n| Windows (ARM64)  | [主线][cf-win-aarch64] / [备线][ghproxy-win-aarch64] | 同 Windows                                                             |\r\n| macOS (M 系列芯片)   | [主线][cf-mac-aarch64] / [备线][ghproxy-mac-aarch64] | ⚠️ [安装后打不开][macOS 无法打开解决方案]                      |\r\n| macOS (Intel 芯片) | [主线][cf-mac-x64] / [备线][ghproxy-mac-x64]         | ⚠️ [安装教程][macOS Intel芯片版本安装教程]                    |\r\n| Linux AppImage   | [主线][cf-linux-x64] / [备线][ghproxy-linux-x64]     | ⚠️ [安装教程][Linux 安装说明]                        |\r\n\r\n[github-android-qr]: https://github.com/open-ani/ani/releases/download/v6.2.0/ani-6.2.0-universal.apk.github.qrcode.png\r\n\r\n[cf-android-qr]: https://d.myani.org/v6.2.0/ani-6.2.0-universal.apk.cloudflare.qrcode.png\r\n\r\n[cf-ios-qr]: https://d.myani.org/v6.2.0/ani-6.2.0.ipa.cloudflare.qrcode.png\r\n\r\n| 安卓 手机/平板                     | iOS IPA (需要[自签][iOS 自签])     | \r\n|------------------------------|--------------------------|\r\n| ![Cloudflare][cf-android-qr] | ![Cloudflare][cf-ios-qr] |\r\n\r\n\r\n<details>\r\n<summary> Android 细分架构下载 </summary>\r\n\r\n[//]: # (@formatter:off  因为\"版本\"前面不能换行)\r\n\r\n如果不知道自己是什么架构，建议下载 `universal` 版本。\r\n\r\n[//]: # (@formatter:on)\r\n\r\n| 处理器架构              | 适用于             | 下载                                                                                                      |\r\n|--------------------|-----------------|---------------------------------------------------------------------------------------------------------|\r\n| universal (推荐)     | 所有设备            | [主线][cf-android] / [备线][ghproxy-android] / [GitHub][github-android]                                     |\r\n| arm64-v8a (64 位)   | 几乎所有手机和平板       | [主线][cf-android-arm64-v8a] / [备线][ghproxy-android-arm64-v8a] / [GitHub][github-android-arm64-v8a]       |\r\n| armeabi-v7a (32 位) | 旧手机             | [主线][cf-android-armeabi-v7a] / [备线][ghproxy-android-armeabi-v7a] / [GitHub][github-android-armeabi-v7a] |\r\n| x86_64             | Chromebook 及模拟器 | [主线][cf-android-x86_64] / [备线][ghproxy-android-x86_64] / [GitHub][github-android-x86_64]                |\r\n\r\n电视版:\r\n\r\n| 处理器架构              | 适用于             | 下载                                                                                                                  |\r\n|--------------------|-----------------|---------------------------------------------------------------------------------------------------------------------|\r\n| universal (推荐)     | 所有电视和电视盒子       | [主线][cf-android-tv] / [备线][ghproxy-android-tv] / [GitHub][github-android-tv]                                        |\r\n| arm64-v8a (64 位)   | 大多数电视和电视盒子      | [主线][cf-android-tv-arm64-v8a] / [备线][ghproxy-android-tv-arm64-v8a] / [GitHub][github-android-tv-arm64-v8a]          |\r\n| armeabi-v7a (32 位) | 旧电视盒子           | [主线][cf-android-tv-armeabi-v7a] / [备线][ghproxy-android-tv-armeabi-v7a] / [GitHub][github-android-tv-armeabi-v7a]    |\r\n| x86_64             | 模拟器             | [主线][cf-android-tv-x86_64] / [备线][ghproxy-android-tv-x86_64] / [GitHub][github-android-tv-x86_64]                   |\r\n\r\n</details>",
-          "downloadURL": "https://github.com/open-ani/animeko/releases/download/v6.2.0/ani-6.2.0.ipa",
-          "size": 45401084,
+          "version": "6.3.0",
+          "date": "2026-10-13",
+          "localizedDescription": "- 数据源选择支持手动查找模式，支持直接浏览数据源剧集并记住选择，方便后续切集，同时优化 BT 资源搜索、筛选和列表展示\r\n- 新增热度排行页，可浏览完整的 Bangumi 动画热度榜\r\n- 大幅提升分季拆分放送的动画的选集准确性\r\n- Android 和 iOS 支持系统画中画播放 (#3466 by @GeneralK1ng)\r\n- 优化播放器截图体验，新增角落预览，支持查看、复制与系统分享\r\n- 观看进度支持离线处理, 上线后自动同步\r\n- 剧集列表按正片、特别篇等类型分组，上一集、下一集与自动连播只在同类型剧集之间切换\r\n- 优化 Windows 平台的兼容性和性能\r\n\r\n----\r\n\r\n新功能: \r\n- 改进在线视频插播广告过滤并默认开启，优化起播和续播速度，修复桌面端播放进度跳动，并在 iOS 提供广告过滤开关 (#3471 by @NihilDigit)\r\n- 支持折叠屏的半折叠模式，可在设置关闭 (#3446 by @U29kaXVt)\r\n- PikPak 失败时自动回退 BT 引擎 (#3444 by @NihilDigit)\r\n- Windows 支持多点触控与触控笔输入，图片查看器可双指缩放，改善触摸拖动的响应 (#3461 by @NihilDigit)\r\n- 播放器弹幕设置支持来源管理与时间校准 (#3480 by @Tsukumi233)\r\n- 重新设计数据源设置页，按订阅和自定义分组，订阅支持名称、描述、图标与详情页，可批量启用或禁用数据源，订阅内数据源改名后保留启用状态\r\n- 缓存选源支持手动查找，选定一集后可沿同一线路批量下载其他剧集\r\n- 资源自动匹配支持在主名称搜索失败时尝试季度别名和系列名，并优先使用此前搜索成功的关键词\r\n- 自动匹配与手动选集支持分段放送番剧的整季合并页及连续编号，改善后半部分的剧集对应关系\r\n- 电视版支持 Android 8.0\r\n- 电视版支持启动时自动检查更新，也可在设置中手动检查、下载并安装更新\r\n- 账号设置新增注销账号功能，确认后可永久删除账号及其数据\r\n- 收藏或评分后，条目详情页立即更新全站收藏数与评分统计\r\n- 搜索补全支持排除已看过和已抛弃的条目，最高排名筛选仅展示有 Bangumi 排名的条目\r\n- 加快应用更新的下载速度\r\n- 提升资源较多时的列表筛选速度\r\n- 自定义数据源编辑器分组展示列表规则与自动匹配设置，支持单独开关自动匹配、设置数据源等级，并精简导出配置\r\n- 自定义数据源支持通过 url template 生成详情地址，兼容搜索结果仅返回条目编号的网站 (#3574 by @wdw89)\r\n\r\n问题修复:\r\n- 网页数据源支持统一设置浏览器 UA，覆盖搜索、验证码验证、播放页解析与视频播放，并修复桌面验证码页面偶尔无法打开的问题\r\n- 移除 Selector 与 RSS 数据源中无实际作用的「使用条目名称过滤」开关\r\n- 修复存在未完成下载时，已缓存剧集无法被找到并离线播放的问题 (#3495 by @lmikey9550)\r\n- 修复 Android 切换全屏、画中画、窗口布局或切到后台后黑屏、播放中断的问题\r\n- 修复 Android 复制日志时崩溃，以及开启画质增强后切换全屏可能卡死的问题\r\n- 修复桌面端网页解析初始化较慢时网页源无法播放的问题，网页引擎不可用时提示重启应用，避免反复自动换源\r\n- 修复桌面端最小化到托盘时崩溃的问题\r\n- 修复弹弹 play 在分段放送番剧中匹配错集，以及匹配请求失败时弹幕获取异常的问题\r\n- 修复搜索结果被过滤后分页提前结束、遗漏后续结果的问题 (#3514 by @BagunoMushi)\r\n- 修复隐藏 NSFW 时仍可通过分级筛选搜出相关条目的问题，隐藏时不显示分级筛选\r\n- 修复動漫花園搜索含冒号的番剧名时结果异常和长时间翻页的问题\r\n- 修复电视版播放时屏幕自动熄灭的问题 (#3563 by @nekomoyi)\r\n- 画中画模式下隐藏一起看悬浮窗，退出后保留原来的位置 (#3567 by @GeneralK1ng)\r\n- 修复从选集对话框进入播放页后，侧滑返回手势被取消的问题\r\n- 修复桌面端全屏侧边栏开关异常，全屏默认隐藏侧边栏，并分别记住窗口与全屏模式的开关状态\r\n- 修复横屏播放时画面受屏幕挖孔影响而偏离中心的问题\r\n- 修复 iOS 退出全屏后状态栏间距消失的问题\r\n- 修复播放页手动选择的资源匹配状态显示不准确的问题\r\n- 修复探索页热度轮播在窗口变宽后出现空白且无法点击的问题\r\n- 修复下载选集页快捷选择按钮在窄屏下被挤压或遮挡的问题\r\n- 改善电视版列表刷新后的焦点恢复，当前卡片被移除时将焦点恢复到相邻项\r\n- 改善电视版探索页的无障碍朗读，避免朗读滚动进度\r\n- 修复部分界面文案显示多余反斜杠的问题\r\n- 修复sync时全部模块 androidDeviceTest 无法解析 kotlin-test (#3500 by @GeneralK1ng)\r\n\r\n**Full Changelog**: https://github.com/open-ani/animeko/compare/v6.2.0...v6.3.0\r\n\r\n[//]: # (ANI-SERVER-MAGIC-SEPARATOR)\r\n\r\n[//]: # (注意: api server 依赖这个特殊分隔符)\r\n\r\n[//]: # (对于所有可用的变量列表, 参考 CI release.yml 的 step release-notes)\r\n\r\n[github-win-x64]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-windows-x86_64.zip\r\n\r\n[github-win-aarch64]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-windows-aarch64.zip\r\n\r\n[github-mac-x64]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-macos-x86_64.dmg\r\n\r\n[github-mac-aarch64]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-macos-aarch64.dmg\r\n\r\n[github-android]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-universal.apk\r\n\r\n[github-android-arm64-v8a]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-arm64-v8a.apk\r\n\r\n[github-android-armeabi-v7a]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-armeabi-v7a.apk\r\n\r\n[github-android-x86_64]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-x86_64.apk\r\n\r\n[cf-win-x64]: https://d.myani.org/v6.3.0/ani-6.3.0-windows-x86_64.zip\r\n\r\n[cf-win-aarch64]: https://d.myani.org/v6.3.0/ani-6.3.0-windows-aarch64.zip\r\n\r\n[cf-linux-x64]: https://d.myani.org/v6.3.0/ani-6.3.0-linux-x86_64.appimage\r\n\r\n[cf-mac-x64]: https://d.myani.org/v6.3.0/ani-6.3.0-macos-x86_64.zip\r\n\r\n[cf-mac-aarch64]: https://d.myani.org/v6.3.0/ani-6.3.0-macos-aarch64.dmg\r\n\r\n[cf-ios]: https://d.myani.org/v6.3.0/ani-6.3.0.ipa\r\n\r\n[cf-android]: https://d.myani.org/v6.3.0/ani-6.3.0-universal.apk\r\n\r\n[cf-android-arm64-v8a]: https://d.myani.org/v6.3.0/ani-6.3.0-arm64-v8a.apk\r\n\r\n[cf-android-armeabi-v7a]: https://d.myani.org/v6.3.0/ani-6.3.0-armeabi-v7a.apk\r\n\r\n[cf-android-x86_64]: https://d.myani.org/v6.3.0/ani-6.3.0-x86_64.apk\r\n\r\n[ghproxy-win-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-windows-x86_64.zip\r\n\r\n[ghproxy-win-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-windows-aarch64.zip\r\n\r\n[ghproxy-mac-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-macos-x86_64.zip\r\n\r\n[ghproxy-linux-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-linux-x86_64.appimage\r\n\r\n[ghproxy-mac-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-macos-aarch64.dmg\r\n\r\n[ghproxy-ios]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0.ios\r\n\r\n[ghproxy-android]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-universal.apk\r\n\r\n[ghproxy-android-arm64-v8a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-arm64-v8a.apk\r\n\r\n[ghproxy-android-armeabi-v7a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-armeabi-v7a.apk\r\n\r\n[ghproxy-android-x86_64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-6.3.0-x86_64.apk\r\n\r\n[github-android-tv]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-tv-6.3.0-universal.apk\r\n\r\n[github-android-tv-arm64-v8a]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-tv-6.3.0-arm64-v8a.apk\r\n\r\n[github-android-tv-armeabi-v7a]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-tv-6.3.0-armeabi-v7a.apk\r\n\r\n[github-android-tv-x86_64]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-tv-6.3.0-x86_64.apk\r\n\r\n[cf-android-tv]: https://d.myani.org/v6.3.0/ani-tv-6.3.0-universal.apk\r\n\r\n[cf-android-tv-arm64-v8a]: https://d.myani.org/v6.3.0/ani-tv-6.3.0-arm64-v8a.apk\r\n\r\n[cf-android-tv-armeabi-v7a]: https://d.myani.org/v6.3.0/ani-tv-6.3.0-armeabi-v7a.apk\r\n\r\n[cf-android-tv-x86_64]: https://d.myani.org/v6.3.0/ani-tv-6.3.0-x86_64.apk\r\n\r\n[ghproxy-android-tv]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-tv-6.3.0-universal.apk\r\n\r\n[ghproxy-android-tv-arm64-v8a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-tv-6.3.0-arm64-v8a.apk\r\n\r\n[ghproxy-android-tv-armeabi-v7a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-tv-6.3.0-armeabi-v7a.apk\r\n\r\n[ghproxy-android-tv-x86_64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.3.0%2Fani-tv-6.3.0-x86_64.apk\r\n\r\n[macOS 无法打开解决方案]: https://myani.org/wiki/macos-unable-to-open\r\n\r\n[Windows下字体与背景颜色异常解决方案]: https://myani.org/wiki/windows-font-bg-color-issue\r\n\r\n[Linux 安装说明]: https://myani.org/wiki/linux-install\r\n\r\n[macOS Intel芯片版本安装教程]: https://myani.org/wiki/macos-intel-install\r\n\r\n[macos-intel-issue]: https://github.com/open-ani/animeko/issues/1345\r\n\r\n[linux-issue]: https://github.com/open-ani/animeko/issues/944\r\n\r\n[iOS 自签]: https://myani.org/wiki/ios-install\r\n\r\n|                  | 下载                                               | 常见问题                                        |\r\n|------------------|--------------------------------------------------|---------------------------------------------|\r\n| 安卓 手机/平板         | [主线][cf-android] / [备线][ghproxy-android]         |                                             |\r\n| 安卓 电视            | [主线][cf-android-tv] / [备线][ghproxy-android-tv]   |                                             |\r\n| iOS              | [主线][cf-ios] / [备线][ghproxy-ios]                 | 需要[自签][iOS 自签]                                  |\r\n| Windows          | [主线][cf-win-x64] / [备线][ghproxy-win-x64]         | 1. 目录不要有中文或者空格 <br/> 2. [显示异常][Windows下字体与背景颜色异常解决方案] |\r\n| Windows (ARM64)  | [主线][cf-win-aarch64] / [备线][ghproxy-win-aarch64] | 同 Windows                                                             |\r\n| macOS (M 系列芯片)   | [主线][cf-mac-aarch64] / [备线][ghproxy-mac-aarch64] | ⚠️ [安装后打不开][macOS 无法打开解决方案]                      |\r\n| macOS (Intel 芯片) | [主线][cf-mac-x64] / [备线][ghproxy-mac-x64]         | ⚠️ [安装教程][macOS Intel芯片版本安装教程]                    |\r\n| Linux AppImage   | [主线][cf-linux-x64] / [备线][ghproxy-linux-x64]     | ⚠️ [安装教程][Linux 安装说明]                        |\r\n\r\n[github-android-qr]: https://github.com/open-ani/ani/releases/download/v6.3.0/ani-6.3.0-universal.apk.github.qrcode.png\r\n\r\n[cf-android-qr]: https://d.myani.org/v6.3.0/ani-6.3.0-universal.apk.cloudflare.qrcode.png\r\n\r\n[cf-ios-qr]: https://d.myani.org/v6.3.0/ani-6.3.0.ipa.cloudflare.qrcode.png\r\n\r\n| 安卓 手机/平板                     | iOS IPA (需要[自签][iOS 自签])     | \r\n|------------------------------|--------------------------|\r\n| ![Cloudflare][cf-android-qr] | ![Cloudflare][cf-ios-qr] |\r\n\r\n\r\n<details>\r\n<summary> Android 细分架构下载 </summary>\r\n\r\n[//]: # (@formatter:off  因为\"版本\"前面不能换行)\r\n\r\n如果不知道自己是什么架构，建议下载 `universal` 版本。\r\n\r\n[//]: # (@formatter:on)\r\n\r\n| 处理器架构              | 适用于             | 下载                                                                                                      |\r\n|--------------------|-----------------|---------------------------------------------------------------------------------------------------------|\r\n| universal (推荐)     | 所有设备            | [主线][cf-android] / [备线][ghproxy-android] / [GitHub][github-android]                                     |\r\n| arm64-v8a (64 位)   | 几乎所有手机和平板       | [主线][cf-android-arm64-v8a] / [备线][ghproxy-android-arm64-v8a] / [GitHub][github-android-arm64-v8a]       |\r\n| armeabi-v7a (32 位) | 旧手机             | [主线][cf-android-armeabi-v7a] / [备线][ghproxy-android-armeabi-v7a] / [GitHub][github-android-armeabi-v7a] |\r\n| x86_64             | Chromebook 及模拟器 | [主线][cf-android-x86_64] / [备线][ghproxy-android-x86_64] / [GitHub][github-android-x86_64]                |\r\n\r\n电视版:\r\n\r\n| 处理器架构              | 适用于             | 下载                                                                                                                  |\r\n|--------------------|-----------------|---------------------------------------------------------------------------------------------------------------------|\r\n| universal (推荐)     | 所有电视和电视盒子       | [主线][cf-android-tv] / [备线][ghproxy-android-tv] / [GitHub][github-android-tv]                                        |\r\n| arm64-v8a (64 位)   | 大多数电视和电视盒子      | [主线][cf-android-tv-arm64-v8a] / [备线][ghproxy-android-tv-arm64-v8a] / [GitHub][github-android-tv-arm64-v8a]          |\r\n| armeabi-v7a (32 位) | 旧电视盒子           | [主线][cf-android-tv-armeabi-v7a] / [备线][ghproxy-android-tv-armeabi-v7a] / [GitHub][github-android-tv-armeabi-v7a]    |\r\n| x86_64             | 模拟器             | [主线][cf-android-tv-x86_64] / [备线][ghproxy-android-tv-x86_64] / [GitHub][github-android-tv-x86_64]                   |\r\n\r\n</details>",
+          "downloadURL": "https://github.com/open-ani/animeko/releases/download/v6.3.0/ani-6.3.0.ipa",
+          "size": 46485035,
           "minOSVersion": "14.0"
         }
       ]
@@ -269,6 +269,29 @@
           "downloadURL": "https://github.com/EhPanda-Team/EhPanda/releases/download/v2.8.1/EhPanda.ipa",
           "size": 7352364,
           "minOSVersion": "26.0"
+        }
+      ]
+    },
+    {
+      "name": "Fathom",
+      "bundleIdentifier": "app.fathom.emulator",
+      "developerName": "Leviidev",
+      "subtitle": "x86-64 PC emulator for iOS",
+      "localizedDescription": "An x86-64 PC emulator for iOS. Fathom runs x86-64 Linux programs on an iPhone or iPad by translating them to ARM64 as they execute, using FEXCore - the dynamic recompiler behind FEX-Emu - with a native SwiftUI front end.\n\nImport a statically linked x86-64 Linux executable, open it, press Run. Fathom maps it into a guest address space, hands its instructions to FEXCore's JIT, answers its Linux syscalls, and shows you its output.\n\nJIT requires StikDebug to attach to the process and service the executable-memory traps; Fathom asks for this automatically on launch when it is missing.\n\nPlease note: only statically linked, position-independent executables (-static-pie) run today. Dynamically linked binaries and 32-bit x86 are not supported yet, and threads are not implemented, so a guest runs single-threaded.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/library.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/settings.png"
+      ],
+      "tintColor": "#68D8D8",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2026-09-14",
+          "localizedDescription": "An x86-64 PC emulator for iOS, running guest code on FEXCore.\n\n2048 and tic tac toe both run. Add them from the Library tab and play with the on-screen arrow keys.\n\n**Downloads**\n- `Fathom.ipa` - the app, unsigned, for sideloading. Needs StikDebug attached for JIT.\n- `tictactoe` - arrows move, Enter places, against a minimax bot that cannot be beaten.\n- `play2048` - arrows slide the board.\n\nCopy the two game binaries into Fathom's Programs folder, or import them from the Library tab.",
+          "downloadURL": "https://github.com/Leviidev/Fathom/releases/download/v1.0.0/Fathom.ipa",
+          "size": 1175175,
+          "minOSVersion": "18.0"
         }
       ]
     },
@@ -480,11 +503,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.8",
-          "date": "2026-10-06",
-          "localizedDescription": "## What's Changed\r\n* fix(tracker): improve Trakt.tv multi-season mapping, watchlist, and ratings sync by @lee-gangjin in https://github.com/kodjodevf/mangayomi/pull/1024\r\n* feat(tracker): Add backlog sections (Plan to read/Watchlist), handle AniList 429 rate limits, and prioritize Trakt series by @lee-gangjin in https://github.com/kodjodevf/mangayomi/pull/1030\r\n* fix(mihon): use the Cloudflare proxy for extension-server sources by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1026\r\n* fix(mihon): identify which source of an extension a call is for by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1027\r\n* Improve LNReader extension compatibility\r\n* fix: stale chapter page lists and add WebP decoding on Linux by @MenaHere in https://github.com/kodjodevf/mangayomi/pull/1031\r\n* fix: remember window geometry on Linux; add missing libavif to AppImage to resolve closure by @MenaHere in https://github.com/kodjodevf/mangayomi/pull/1032\r\n\r\n## New Contributors\r\n* @lee-gangjin made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1024\r\n* @matsukiender-star made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1026\r\n* @MenaHere made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1031\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.7...v0.9.8",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.8/Mangayomi-v0.9.8-ios.ipa",
-          "size": 114518028
+          "version": "0.9.9",
+          "date": "2026-10-12",
+          "localizedDescription": "## What's Changed\n* fix(extension): enable mobile code copy by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1039\n* fix(reader): restore double-tap zoom toggle by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1037\n* feat(player): add hold-and-slide speed selector by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1038\n* fix(http): drop the quotes Linux wraps the saved user agent in by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1036\n* fix(security): show what deep links install and keep tokens out of sh… by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1041\n* chore: await dropped writes, add guard lints, localize hardcoded strings by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1042\n* refactor: move the tracker library cache from Hive to Isar by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1043\n* refactor: split large widget files and remove duplicated code by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1044\n* Try to fix chapter sorting by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/1035\n* Add a protected HLS proxy for extension playback by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1040\n* Fix reader by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1051\n* fix(mobile): improve player controls and error handling by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1047\n* fix(restore): improve error handling and reporting during restore ope… by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1052\n* fix(reader): pan a zoomed webtoon page without losing double tap by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1054\n* ci: run the test suite on pull requests and main by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1056\n* Use neutral icons for extension repositories by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1045\n* Add western recommendations and trustworthy watch orders by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1050\n* Refine portrait player controls by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1058\n* fix: recognise \"T1\" seasons and \"Episodio\" episodes by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1060\n* Hide settings, that the user disabled by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/1059\n* fix(tv): make Browse overscan safe and focus reachable by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1061\n* add useful comments to extension template by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/1057\n\n\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.8...v0.9.9",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.9/Mangayomi-v0.9.9-ios.ipa",
+          "size": 114603425
         }
       ]
     },
@@ -528,11 +551,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.5.0",
-          "date": "2026-10-10",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 改进\n\n- **缺失的读数不再显示成 0。** 某一侧没有读数时（例如无线充电没有输入电流），图表在那一段断开，不再掉到 0；能量统计也只累计真正测到的时间段。\n- **充电效率更准。** \"电芯占比\"和\"负载与损耗\"只按输入侧、电池侧同时有读数的时间段计算，某一侧中途缺失不会再把结果带偏。\n- **两个标签改名。** \"以热量损失\"改为\"负载与损耗\"：这部分是手机自身耗电加上转换损耗，并不全是发热。\"效率 / 往返效率\"改为\"电芯占比\"。\n- **\"暂停充电\"的判断更稳。** 状态切换要持续 30 秒才生效，不再来回跳；没有电池电流读数时显示\"保持状态未知\"，不再直接当成暂停充电。\n- **耗电估算不再因为切到后台而清空。** 短暂离开 App 再回来，估算值还在。\n- **历史文件损坏时不再被直接覆盖。** 读不出来的历史文件会改名保留，并在\"原始数据\"页给出提示。\n- **发热相关的说明更准确。** 系统热状态只说明\"可能\"在限制充电电流，不再说成确定的原因。\n\n## 修复\n\n- 历史记录：没有测到输入侧的记录，\"输入\"和\"充电器峰值\"显示为\"—\"，不再显示 0；列表里的迷你曲线改画电池侧功率，不再空白。\n- 实时活动：灵动岛展开后，右上角的状态文字和\"结束\"按钮不再被圆角裁掉；暂停提示能完整显示。\n- 原始数据：重名的 HID 服务各占一行，不再被合并。\n\n## 注意\n\n- 升级后历史记录的格式有变化，旧版本读不了新格式。**如果从 1.5.0 降级回旧版本，历史记录会丢失。**\n\n---\n\n## Improvements\n\n- **A missing reading is no longer shown as 0.** When a rail has no reading (wireless charging has no input current, for one), the charts break there instead of dropping to zero, and energy is only counted over time that was actually measured.\n- **Charge efficiency is more accurate.** \"Cell share\" and \"Load + loss\" are computed only over the time both the input and the battery side were read, so one side dropping out no longer skews them.\n- **Two labels renamed.** \"Lost as heat\" is now \"Load + loss\": it is the phone's own consumption plus conversion loss, not all heat. \"Efficiency\" / \"Round trip\" is now \"Cell share\".\n- **\"Charging on hold\" is steadier.** A change has to last 30 seconds before it shows, so it no longer flickers; with no battery-current reading at all it says \"hold status unknown\" instead of assuming a hold.\n- **The discharge estimate survives a short trip to the background** instead of being cleared every time.\n- **An unreadable history file is no longer overwritten.** It is renamed and kept, and Raw data says so.\n- **Thermal wording is more careful.** The system thermal state says charging *may* be limited; it is no longer stated as the cause.\n\n## Fixes\n\n- History: a session whose input side was never measured shows \"—\" for Delivered and the charger's peak instead of 0, and its row draws the battery curve instead of nothing.\n- Live Activity: the expanded Dynamic Island no longer clips its status text and End button, and the paused message fits.\n- Raw data: HID services that share a name are listed as separate rows.\n\n## Note\n\n- The history file format changed and older versions cannot read it. **Downgrading from 1.5.0 loses the session history.**\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.4.1...v1.5.0",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.5.0/MiniWatts-unsigned.ipa",
-          "size": 3284306,
+          "version": "1.5.1",
+          "date": "2026-10-13",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 改进\n\n- **输入读数不完整时，不再当作输入功率显示。** 在 iPad Pro 和 iPhone 18 Pro Max 上，输入传感器只测到了一部分功率（比如实际 43.5 W 只显示 21.8 W）。现在当进入电芯的功率比输入读数还大时，表盘改为显示\"进入电池\"的功率，不再计算效率和适配器利用率，并在功率页和适配器页说明原因。\n- **电池温度改用中位数。** 部分机型有四个同名的电池温度传感器，其中一个明显偏高。\"电池\"读数、热力图上的电池标记和分区标题现在都用中位数，四个读数仍然逐个列出。\n- **异常温度不再参与计算。** 以下读数不再计入热力图和最高温度，但仍保留在\"原始数据\"里，并注明原因：低于 −10 °C 的 PMU 传感器、高于 85 °C 而结温对不上的充电芯片温度、恰好为 0.0 °C 的传感器。\n- **支持 iPad。** 支持横竖屏，内容不再横向拉满。iPad 的传感器对应关系还没有验证，数据仅供参考。\n- **文案更准确。** \"来自充电器\"改为\"手机接口处 / 充电线圈处\"；适配器页注明额定功率是协商出的上限，不是功率计读数。\n- **原始数据更便于反馈。** 每个传感器带上服务编号，并列出被排除的读数。\n\n## 修复\n\n- 适配器：供电规格列表里不再出现\"65.5 V × 65.53 A\"这样的无效档位。\n- 实时活动：App 在前台时，读数变化 0.05 就会更新，不再等到变化 0.2 W 或 0.5 °C。\n\n## 注意\n\n- 这些修复是根据用户反馈的数据做的，没有在对应机型的真机上验证过。如果你的机型上读数仍然不对，请在 设置 → 原始数据 里复制导出并反馈。\n- iPhone 18 Pro Max 高功率充电时的完整输入功率仍然读不到，需要该机型在 45 W 状态下的原始数据导出。\n- App 退到后台后，灵动岛上的读数会停住，这是系统限制；想持续看实时读数请使用悬浮表。\n\n---\n\n## Improvements\n\n- **An incomplete input reading is no longer shown as the input.** On an iPad Pro and an iPhone 18 Pro Max the input sensors see only part of the power (21.8 W shown for a real 43.5 W, for one). When more power is reaching the cell than the input reading accounts for, the dial now shows the \"into battery\" figure, efficiency and adapter utilisation are not worked out, and the Power and Adapter pages say why.\n- **Battery temperature is a median.** Some models have four battery temperature sensors under one name, one of them reading clearly high. The Battery readout, the heat map's battery pin and the zone header all use the median now; all four are still listed.\n- **Impossible temperatures are left out.** These no longer reach the heat map or the hottest reading, and stay in Raw data with a reason: a PMU sensor below −10 °C, a charge-IC temperature above 85 °C that its junction sensor does not back up, and a sensor at exactly 0.0 °C.\n- **iPad support.** All orientations, and content no longer stretches edge to edge. The sensor mapping on iPad is unverified, so treat its numbers with care.\n- **More accurate wording.** \"From charger\" is now \"At phone port\" / \"At charging coil\", and the Adapter page says the rating is a negotiated ceiling, not a wall-meter reading.\n- **Raw data is easier to report from.** Every sensor carries its service index, and excluded readings are listed.\n\n## Fixes\n\n- Adapter: the profile list no longer shows an invalid \"65.5 V × 65.53 A\" entry.\n- Live Activity: with the app in front, it updates on a 0.05 change instead of waiting for 0.2 W or 0.5 °C.\n\n## Notes\n\n- These fixes were made from data users reported and were not verified on those devices. If readings still look wrong on your model, copy the dump from Settings → Raw data and report it.\n- On an iPhone 18 Pro Max the full input power at high-power charging still cannot be read; a Raw data dump taken at 45 W on that model is needed.\n- Once the app is in the background the Dynamic Island reading stops. That is a system limit; use the floating meter for a live reading.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.5.0...v1.5.1",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.5.1/MiniWatts-unsigned.ipa",
+          "size": 3305290,
           "minOSVersion": "17.0"
         }
       ]
@@ -600,11 +623,11 @@
       "tintColor": "#01E989",
       "versions": [
         {
-          "version": "0.0.5",
-          "date": "2026-10-11",
-          "localizedDescription": "# 🚀 NeoStation iOS — Update 0.0.5\n\nThis update brings new features, an expanded library, and several fixes based on your feedback!\n\n## 📚 Books & Manga\n\n- Read books and manga directly in NeoStation, with **EPUB, PDF, CBZ, and TXT** imports, reading progress tracking, and favorites.\n- Improved navigation and easier access to the back button in the readers.\n\n## 🎮 Interface & Consoles\n\n- New **Consoles** tab in the main navigation bar to add and organize the consoles displayed in your menu.\n- **120 Hz Interface** option under **Settings → General** for smoother navigation on compatible devices.\n- New **BIOS Checker** under **Settings → Tools** to identify present and missing BIOS files, whether required or optional.\n- Clearer identification of **Embedded RetroArch** in the settings.\n\n## 🌊 Dolphin — Wii & GameCube\n\n- Added a **Shake** control for Wii games, available through touch controls and configurable for a controller.\n- Improved phone shake detection with **three sensitivity levels**.\n- New display refresh-rate settings to better fine-tune smoothness.\n- Improved Dolphin display with **AirPlay and Apple TV**, including **Fit** and **Fill** modes while keeping the controls on the iPhone. **Fill** mode may crop part of the image.\n\n## 🛠️ RPCS3 & Fixes\n\n- Fixes for **PS3 save importing and exporting**, with support for folders and ZIP archives, confirmation before replacing files, and backup copies.\n- Import **.RAP licenses** using the Import button in the PS3 game library.\n\n## 🧠 NeoSwap Keeps Evolving\n\nThis update improves how memory is prepared and allocated to RPCS3 during gameplay, as well as tracking the memory actually allocated. This work draws inspiration in part from MeloNX's memory management approach.\n\n**NeoSwap is still experimental and will continue to be updated alongside improvements to RPCS3.** Work on memory management, stability, and CPU, PPU, SPU, and RSX performance will continue in future releases. Results will vary depending on the game and device.\n\n❤️ Thank you for your patience and feedback — they help NeoStation improve with every update! I hope the previously reported issues have been fixed. If you still encounter any problems, please don't hesitate to report them again. :)\n\n## Download\n\nDownload **`NeoStation-0.0.5.ipa`** from the assets below and sign/install it with your preferred sideloading method.\n\nThe **`NeoStation-0.0.5-SHA256SUMS.txt`** file contains the checksum for verifying the IPA.\n\n## Release information\n\n- **Release:** 0.0.5\n- **Internal build:** 443\n- **Source commit:** `79a5920af0f17b474bd8f1a0dcd88f798e2bede0`\n- **Build:** [GitHub Actions run 38173005985](https://github.com/TarbleFR/neostation-ios/actions/runs/38173005985)\n- **IPA SHA-256:** `af860e8b7f00fac46a1a1ab6483b0ddc59a8abd59b99dd2e4eda965118ce14d7`\n\nThis release distributes the verified Build 443 IPA. The binary has not been rebuilt or modified; only the download filename and release name use 0.0.5. The app bundle retains its originally compiled version metadata. On-device installation and performance may vary and are not independently verified by this release process.",
-          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.5/NeoStation-0.0.5.ipa",
-          "size": 207408158,
+          "version": "0.0.6",
+          "date": "2026-10-12",
+          "localizedDescription": "# 🚀 NeoStation iOS — Version 0.0.6 (Build 447)\r\n\r\n**NeoStation iOS 0.0.6 is now available!** 🎮✨\r\n\r\nThis update introduces exciting new features, expanded customization options, improved AirPlay support, a new storage management tool, and several improvements to enhance your NeoStation experience.\r\n\r\n### 📺 AirPlay & Apple TV\r\n- Improved fullscreen support across the NeoStation interface.\r\n- Better display scaling to reduce unwanted black bars.\r\n- Improved compatibility with external displays and embedded emulators.\r\n- Enhanced AirPlay integration for a better TV experience.\r\n\r\n### 🎮 Nintendo 3DS\r\n- Added new language selection settings.\r\n- Added support for importing compressed and uncompressed NAND backups.\r\n- Improved compatibility with data transferred from your own Nintendo 3DS.\r\n\r\n### 📚 Books & Manga\r\n- New immersive 3D covers using the original artwork of your books and manga.\r\n- More realistic book-opening and page-turning animations.\r\n- Improved reading experience, navigation, and visual presentation.\r\n\r\n### 🎨 Expanded Skin Catalogs\r\n- Added more skin catalogs to NeoStation.\r\n- Expanded the collection of available skins.\r\n- More customization options to personalize your gaming experience.\r\n\r\n### 🧹 New Storage Cleanup & Management Tool\r\n- New storage management tool available under **Settings → Tools**.\r\n- Analyze the storage space used by NeoStation.\r\n- Detect temporary files, caches, and potentially unused data.\r\n- Identify unnecessary files and leftover data from previous game imports.\r\n- Review detected files and their sizes before deleting anything.\r\n- Safe cleanup with user confirmation, designed to protect games, save files, BIOS files, and other important data.\r\n- Helps free up storage space and prevent unnecessary data accumulation.\r\n\r\n### 🔧 Additional Improvements\r\n- General stability and performance optimizations.\r\n- Various interface refinements and visual improvements.\r\n- Additional compatibility fixes.\r\n- General improvements to the overall user experience.\r\n\r\n---\r\n\r\n### ❤️ Thank You!\r\n\r\nA huge thank you to everyone supporting NeoStation and sharing feedback, suggestions, and bug reports!\r\n\r\nYour continued support helps NeoStation grow and improve with every release.\r\n\r\n**Enjoy NeoStation iOS 0.0.6!** 🎮✨\r\n\r\n**Version:** 0.0.6  \r\n**Build:** 447  \r\n**Platform:** iOS  \r\n**Distribution:** Sideloaded IPA\r\n\r\n---",
+          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.6/NeoStation-0.0.6.ipa",
+          "size": 208051121,
           "minOSVersion": "18.0"
         }
       ]
@@ -911,11 +934,11 @@
       "tintColor": "#7c7bff",
       "versions": [
         {
-          "version": "1.3.3",
-          "date": "2026-09-22",
-          "localizedDescription": "A manga and webtoon reader for your [Suwayomi](https://suwayomi.org/) server.\n\n### 🚀 Improvements\n\n- Added visible progress while checking the server connection, searching the network and signing in during setup (@aaronbamblett)\n- Collapsed **Custom HTTP headers** into an expandable row during setup, showing the number configured (@aaronbamblett)\n- Removed unused packages and updated dependencies (@yohanim)\n\n### 🧩 Fixes\n\n- Fixed large libraries failing to load beyond the first page (@SuperMario22922)\n- Fixed setup losing the entered server address and connection result (@aaronbamblett)\n- Fixed **Next** doing nothing instead of checking the connection or signing in during setup (@aaronbamblett)\n- Fixed the login form disappearing during sign-in (@aaronbamblett)\n\n## Install\n\nYou'll need a running Suwayomi server. See [Getting started](https://tsumiru.app/docs/guides/getting-started).\n\n### Mobile\n\n**Android:** download the universal APK below and open it to install. Smaller APKs for specific chip types are also attached.\n\n**iOS:** the `…-ios.ipa` below is unsigned and has to be sideloaded. Add `https://tsumiru.app/apps.json` as a source in [SideStore](https://sidestore.io/) or [AltStore](https://altstore.io/) to install it and get later releases as updates.\n\n<details>\n<summary>Which sideloading tool should I use?</summary>\n\n- **[SideStore](https://sidestore.io/)** signs and refreshes the app on the device itself, with no computer needed after setup. Best for most people.\n- **[AltStore](https://altstore.io/)** expires every 7 days and only refreshes while a computer running AltServer is switched on and on the same Wi-Fi as your phone.\n- **[TrollStore](https://ios.cfw.guide/installing-trollstore/)** installs permanently with no expiry, but only works on older iPhones and iOS versions with the required vulnerability.\n\nWith SideStore or AltStore the app is re-signed periodically, which those tools automate. There is no App Store build.\n</details>\n\n### Desktop\n\n**Windows:** download `…-windows-x64.zip`, extract it anywhere, and run `tsumiru.exe`.\n\n**macOS:** download `…-macos-x64.zip`, extract it, and move the app to Applications. If macOS blocks the first launch, approve it under System Settings → Privacy & Security.\n\n**Linux:** the Flatpak is recommended and auto-updates.\n\n```sh\nflatpak remote-add --if-not-exists tsumiru https://suwayomi.github.io/Suwayomi-Tsumiru/index.flatpakrepo\nflatpak install tsumiru io.github.aaronbamblett.tsumiru\n```\n\nFor a portable option, download `…-linux-x86_64.AppImage`, mark it executable with `chmod +x`, and run it.\n\n### Web\n\nDownload `…-web.zip` and serve its contents with any static web server.\n\n[Full documentation](https://tsumiru.app/)",
-          "downloadURL": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/download/v1.3.3/tsumiru-v1.3.3-ios.ipa",
-          "size": 19721191,
+          "version": "1.4.0",
+          "date": "2026-10-13",
+          "localizedDescription": "A manga and webtoon reader for your [Suwayomi](https://suwayomi.org/) server.\n\n### ✨ New Features\n\n- Added **SyncYomi** settings and a sync button in Library and Updates when **Sync with SyncYomi** is on (@aaronbamblett)\n- Added **KOReader Sync** settings (@aaronbamblett)\n- Added missing-chapter notices in chapter lists and reader warnings before skipping missing or filtered chapters (@theolm)\n- Added per-series chapter sorting, shared with the Suwayomi web interface for every order except alphabetical (@yohanim)\n- Added a warning in **Connection** when signing in to a remote server over unencrypted HTTP (@yohanim)\n\n### ⚙️ Changes\n\n- Changed which upcoming unread chapters are kept offline to follow each series' chosen chapter sort (@yohanim)\n- Made **Dark** mode the default for new installs (@aaronbamblett)\n- Changed selected chapter rows and chips to use the theme's colours (@aaronbamblett)\n- Made restored Android installs ask you to sign in again (@yohanim)\n\n### 🚀 Improvements\n\n- Added the series download choices, including **Next chapter** and **Unread**, to library selections, applying them to each selected series (@aaronbamblett)\n- Made screen changes, dialogs, page turns and double-tap zoom instant when Android's **Remove animations** is on (@aaronbamblett)\n- Gave every theme a light palette with clearer text, tabs and badges (@aaronbamblett)\n- Added **System**, **Light** and **Dark** choices during setup (@aaronbamblett)\n- Added arrows for browsing themes during setup and in Appearance settings (@aaronbamblett)\n- Gave new desktop installs a larger window so setup fits without scrolling (@aaronbamblett)\n- Made **Test connection** suggest a sign-in method without changing one you've chosen (@aaronbamblett)\n- Expanded **Search my network** to ports 4567 to 4570 and added a choice when several servers are found (@aaronbamblett)\n- Filled translation gaps in German, Chinese, Japanese, Portuguese and other languages (@aaronbamblett)\n- Added app and server versions and the platform to logs copied with **Copy debug log** (@aaronbamblett)\n- Reduced library and **History** loading times and cut repeated checks at launch (@yohanim)\n- Stopped reloading the library when you leave a series without changing it (@yohanim)\n- Reduced data use in Updates, library update progress and libraries with **Continue reading button** off (@yohanim)\n- Explained why Tsumiru needs access to the local network in the iOS permission prompt (@Kisnov)\n- Added connection and sign-in errors to the debug log (@yohanim)\n- Encrypted saved sign-in details for background downloads and notifications and stopped saving the sign-in password (@yohanim)\n- Removed sign-in tokens from cover and page addresses inside the mobile and desktop apps (@yohanim)\n- Reduced the app's size by removing unused images and fonts (@yohanim)\n\n### 🧩 Fixes\n\n- Fixed the offline banner disappearing while you were still viewing offline, keeping **Go online** available (@yohanim)\n- Fixed the last page of a long strip hiding under the reader menu, with **There's no next chapter** on the final card (@aaronbamblett)\n- Fixed long-strip chapters sometimes staying unread after reaching the end (@aaronbamblett)\n- Fixed reader settings showing paged controls for series that open in long-strip mode (@aaronbamblett)\n- Fixed migration sometimes failing to start on the web (@aaronbamblett)\n- Fixed new-chapter notifications using the launcher icon on Android (@aaronbamblett)\n- Fixed the white-square icon on Android background download notifications (@yohanim)\n- Fixed old unread chapters triggering notifications or background downloads after a reinstall or re-enabling notifications (@yohanim)\n- Fixed a false account-settings error flashing while Downloads and Library settings load (@yohanim)\n- Fixed Back failing to close the app from Library after visiting **History** from More (@yohanim)\n- Fixed covers, pages and background downloads starting without the saved Basic auth sign-in at launch (@yohanim)\n- Fixed unsupported device languages starting the app in Arabic instead of English (@Kisnov)\n- Fixed the iOS and macOS app language lists to include Norwegian Bokmål, Brazilian Portuguese, Tamil and Traditional Chinese (@Kisnov)\n- Fixed extra gaps above and below the reader when **Ignore Safe Area** is off (@Kisnov)\n- Fixed restoring backups with uppercase file extensions (@Kisnov)\n- Fixed source searches and filter changes mixing in results from the previous search (@yohanim)\n- Fixed Browse and Updates failing to load more pages after switching between home and remote server addresses (@yohanim)\n- Fixed Browse and Updates hiding loading errors or leaving the loading indicator spinning (@yohanim)\n- Fixed setup skipping sign-in when a server behind a proxy requires Basic auth (@aaronbamblett)\n- Fixed the reader losing your place or failing to load the next chapter after a connection change (@yohanim)\n- Fixed keep-offline downloads getting stuck after a source replaces a chapter (@yohanim)\n- Fixed background keep-offline downloads ignoring chapter numbers (@yohanim)\n- Fixed some series showing zero unread chapters in the offline library (@yohanim)\n- Fixed Browse freezing and crashing on Android 12 and newer with AVIF covers (@ArcoLuck)\n- Fixed background downloads and new-chapter checks timing out away from home after the app was last used at home (@yohanim)\n- Fixed downloaded series disappearing after switching server addresses while offline, restoring **View offline** (@aaronbamblett)\n- Fixed new chapters needing a manual library refresh after reopening the app with an expired sign-in (@yohanim)\n- Fixed sign-in errors at launch and during background downloads and new-chapter checks when the session expires (@yohanim)\n- Fixed long-strip taps scrolling with animation when **Animate page transitions** is off (@aaronbamblett)\n\n## Install\n\nYou'll need a running Suwayomi server. See [Getting started](https://tsumiru.app/docs/guides/getting-started).\n\n### Mobile\n\n**Android:** download the universal APK below and open it to install. Smaller APKs for specific chip types are also attached.\n\n**iOS:** the `…-ios.ipa` below is unsigned and has to be sideloaded. Add `https://tsumiru.app/apps.json` as a source in [SideStore](https://sidestore.io/) or [AltStore](https://altstore.io/) to install it and get later releases as updates.\n\n<details>\n<summary>Which sideloading tool should I use?</summary>\n\n- **[SideStore](https://sidestore.io/)** signs and refreshes the app on the device itself, with no computer needed after setup. Best for most people.\n- **[AltStore](https://altstore.io/)** expires every 7 days and only refreshes while a computer running AltServer is switched on and on the same Wi-Fi as your phone.\n- **[TrollStore](https://ios.cfw.guide/installing-trollstore/)** installs permanently with no expiry, but only works on older iPhones and iOS versions with the required vulnerability.\n\nWith SideStore or AltStore the app is re-signed periodically, which those tools automate. There is no App Store build.\n</details>\n\n### Desktop\n\n**Windows:** download `…-windows-x64.zip`, extract it anywhere, and run `tsumiru.exe`.\n\n**macOS:** download `…-macos-x64.zip`, extract it, and move the app to Applications. If macOS blocks the first launch, approve it under System Settings → Privacy & Security.\n\n**Linux:** the Flatpak is recommended and auto-updates.\n\n```sh\nflatpak remote-add --if-not-exists tsumiru https://suwayomi.github.io/Suwayomi-Tsumiru/index.flatpakrepo\nflatpak install tsumiru io.github.aaronbamblett.tsumiru\n```\n\nFor a portable option, download `…-linux-x86_64.AppImage`, mark it executable with `chmod +x`, and run it.\n\n### Web\n\nDownload `…-web.zip` and serve its contents with any static web server.\n\n[Full documentation](https://tsumiru.app/)",
+          "downloadURL": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/download/v1.4.0/tsumiru-v1.4.0-ios.ipa",
+          "size": 16222984,
           "minOSVersion": "14.0"
         }
       ]
@@ -1008,17 +1031,83 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.8.1",
-          "date": "2026-10-09",
-          "localizedDescription": "更多的复用缓存与小功能补充。\r\n\r\n* 优化原生正文首载并复用问题列表回答数据 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/122\r\n* perf: reuse cached avatars and images across page mounts by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/123\r\n- feat: render content endorsements and retain list labels\r\n- feat: show stable relationship hints above detail content\r\n- feat: show member columns on profile\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.8.0...v0.8.1",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.8.1/zhihu-minus-minus-v0.8.1-unsigned.ipa",
-          "size": 16172235,
+          "version": "0.9.0",
+          "date": "2026-10-13",
+          "localizedDescription": "* 修复断网恢复等待与首次游客 Feed 初始化 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/127\r\n* 恢复收藏快捷操作，统一 SVG 图标与列表收藏信息 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/128\r\n* 修复关注头像栏横滑冲突，支持最近发布左右切换用户 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/129\r\n* 支持内容导出（可能还有挺多问题） by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/130\r\n* 修复安卓偶现的页面跳转闪烁 https://github.com/huamurui/zhihu-minus-minus/commit/95c813741198b59a5faf18639b9a7cce719d3913\r\n\r\nFull Changelog: https://github.com/huamurui/zhihu-minus-minus/compare/v0.8.1...v0.9.0",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.0/zhihu-minus-minus-v0.9.0-unsigned.ipa",
+          "size": 16096852,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.9.0 · 13 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.9.0",
+      "caption": "ZhihuMinusMinus 0.9.0 is available.",
+      "date": "2026-10-13T09:10:31Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.0"
+    },
+    {
+      "appID": "org.animeko.animeko",
+      "title": "Animeko 6.3.0 · 13 Oct 2026",
+      "identifier": "Animeko-release-v6.3.0",
+      "caption": "Animeko 6.3.0 is available.",
+      "date": "2026-10-13T06:34:15Z",
+      "tintColor": "#0050A0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Animeko/images/news.png",
+      "notify": true,
+      "url": "https://github.com/open-ani/animeko/releases/tag/v6.3.0"
+    },
+    {
+      "appID": "com.suwayomi.tachideskSorayomi",
+      "title": "Tsumiru 1.4.0 · 13 Oct 2026",
+      "identifier": "Tsumiru-release-v1.4.0",
+      "caption": "Tsumiru 1.4.0 is available.",
+      "date": "2026-10-13T05:54:44Z",
+      "tintColor": "#7c7bff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.4.0"
+    },
+    {
+      "appID": "org.zhaohe.MiniWatts",
+      "title": "MiniWatts 1.5.1 · 13 Oct 2026",
+      "identifier": "MiniWatts-release-v1.5.1",
+      "caption": "MiniWatts 1.5.1 is available.",
+      "date": "2026-10-13T02:45:39Z",
+      "tintColor": "#30E0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.5.1"
+    },
+    {
+      "appID": "com.neogamelab.neostation",
+      "title": "NeoStation iOS 0.0.6 · 12 Oct 2026",
+      "identifier": "NeoStation iOS-release-0.0.6",
+      "caption": "NeoStation iOS 0.0.6 is available.",
+      "date": "2026-10-12T19:48:04Z",
+      "tintColor": "#01E989",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
+      "notify": true,
+      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.6"
+    },
+    {
+      "appID": "com.kodjodevf.mangayomi",
+      "title": "Mangayomi 0.9.9 · 12 Oct 2026",
+      "identifier": "Mangayomi-release-v0.9.9",
+      "caption": "Mangayomi 0.9.9 is available.",
+      "date": "2026-10-12T15:52:14Z",
+      "tintColor": "#EF4444",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.9"
+    },
     {
       "appID": "com.ligg.anime_flow",
       "title": "AnimeFlow 2.6.3 · 12 Oct 2026",
@@ -1062,17 +1151,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261011"
-    },
-    {
-      "appID": "com.neogamelab.neostation",
-      "title": "NeoStation iOS 0.0.5 · 11 Oct 2026",
-      "identifier": "NeoStation iOS-release-0.0.5",
-      "caption": "NeoStation iOS 0.0.5 is available.",
-      "date": "2026-10-11T21:10:57Z",
-      "tintColor": "#01E989",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
-      "notify": true,
-      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.5"
     },
     {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
@@ -1119,17 +1197,6 @@
       "url": "https://github.com/moliango/doer/releases/tag/v1.8.6"
     },
     {
-      "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.5.0 · 10 Oct 2026",
-      "identifier": "MiniWatts-release-v1.5.0",
-      "caption": "MiniWatts 1.5.0 is available.",
-      "date": "2026-10-10T07:18:40Z",
-      "tintColor": "#30E0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.5.0"
-    },
-    {
       "appID": "dev.infinityf4p.tiebapure",
       "title": "TiebaPure 1.4.15 · 10 Oct 2026",
       "identifier": "TiebaPure-release-v1.4.15",
@@ -1161,17 +1228,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
       "notify": true,
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.9.0"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.8.1 · 09 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.8.1",
-      "caption": "ZhihuMinusMinus 0.8.1 is available.",
-      "date": "2026-10-09T08:07:00Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.8.1"
     },
     {
       "appID": "com.altman.moviepilot",
@@ -1229,17 +1285,6 @@
       "url": "https://github.com/Predidit/Kazumi/releases/tag/2.3.8"
     },
     {
-      "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.8 · 06 Oct 2026",
-      "identifier": "Mangayomi-release-v0.9.8",
-      "caption": "Mangayomi 0.9.8 is available.",
-      "date": "2026-10-06T13:56:40Z",
-      "tintColor": "#EF4444",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.8"
-    },
-    {
       "appID": "com.mak5er.aircard",
       "title": "AirCard-iOS 1.3.2 · 04 Oct 2026",
       "identifier": "AirCard-iOS-release-v1.3.2",
@@ -1295,17 +1340,6 @@
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.17.0"
     },
     {
-      "appID": "org.animeko.animeko",
-      "title": "Animeko 6.2.0 · 26 Sep 2026",
-      "identifier": "Animeko-release-v6.2.0",
-      "caption": "Animeko 6.2.0 is available.",
-      "date": "2026-09-26T14:00:29Z",
-      "tintColor": "#0050A0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Animeko/images/news.png",
-      "notify": true,
-      "url": "https://github.com/open-ani/animeko/releases/tag/v6.2.0"
-    },
-    {
       "appID": "com.makr.orchard",
       "title": "Orchard 0.2 · 25 Sep 2026",
       "identifier": "Orchard-release-v0.2",
@@ -1339,17 +1373,6 @@
       "url": "https://github.com/celia-sh/Novella/releases/tag/v2.5.0"
     },
     {
-      "appID": "com.suwayomi.tachideskSorayomi",
-      "title": "Tsumiru 1.3.3 · 22 Sep 2026",
-      "identifier": "Tsumiru-release-v1.3.3",
-      "caption": "Tsumiru 1.3.3 is available.",
-      "date": "2026-09-22T07:11:23Z",
-      "tintColor": "#7c7bff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.3.3"
-    },
-    {
       "appID": "com.aoshuang.manicemu",
       "title": "ManicEMU 2.0.1 · 18 Sep 2026",
       "identifier": "ManicEMU-release-v2.0.1",
@@ -1359,6 +1382,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.png",
       "notify": true,
       "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.1"
+    },
+    {
+      "appID": "app.fathom.emulator",
+      "title": "Fathom 1.0.0 · 14 Sep 2026",
+      "identifier": "Fathom-release-v1.0.0",
+      "caption": "Fathom 1.0.0 is available.",
+      "date": "2026-09-14T23:13:23Z",
+      "tintColor": "#68D8D8",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Leviidev/Fathom/releases/tag/v1.0.0"
     },
     {
       "appID": "com.verback.YTLite",
