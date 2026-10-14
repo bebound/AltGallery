@@ -623,11 +623,11 @@
       "tintColor": "#01E989",
       "versions": [
         {
-          "version": "0.0.6",
-          "date": "2026-10-12",
-          "localizedDescription": "# 🚀 NeoStation iOS — Version 0.0.6 (Build 447)\r\n\r\n**NeoStation iOS 0.0.6 is now available!** 🎮✨\r\n\r\nThis update introduces exciting new features, expanded customization options, improved AirPlay support, a new storage management tool, and several improvements to enhance your NeoStation experience.\r\n\r\n### 📺 AirPlay & Apple TV\r\n- Improved fullscreen support across the NeoStation interface.\r\n- Better display scaling to reduce unwanted black bars.\r\n- Improved compatibility with external displays and embedded emulators.\r\n- Enhanced AirPlay integration for a better TV experience.\r\n\r\n### 🎮 Nintendo 3DS\r\n- Added new language selection settings.\r\n- Added support for importing compressed and uncompressed NAND backups.\r\n- Improved compatibility with data transferred from your own Nintendo 3DS.\r\n\r\n### 📚 Books & Manga\r\n- New immersive 3D covers using the original artwork of your books and manga.\r\n- More realistic book-opening and page-turning animations.\r\n- Improved reading experience, navigation, and visual presentation.\r\n\r\n### 🎨 Expanded Skin Catalogs\r\n- Added more skin catalogs to NeoStation.\r\n- Expanded the collection of available skins.\r\n- More customization options to personalize your gaming experience.\r\n\r\n### 🧹 New Storage Cleanup & Management Tool\r\n- New storage management tool available under **Settings → Tools**.\r\n- Analyze the storage space used by NeoStation.\r\n- Detect temporary files, caches, and potentially unused data.\r\n- Identify unnecessary files and leftover data from previous game imports.\r\n- Review detected files and their sizes before deleting anything.\r\n- Safe cleanup with user confirmation, designed to protect games, save files, BIOS files, and other important data.\r\n- Helps free up storage space and prevent unnecessary data accumulation.\r\n\r\n### 🔧 Additional Improvements\r\n- General stability and performance optimizations.\r\n- Various interface refinements and visual improvements.\r\n- Additional compatibility fixes.\r\n- General improvements to the overall user experience.\r\n\r\n---\r\n\r\n### ❤️ Thank You!\r\n\r\nA huge thank you to everyone supporting NeoStation and sharing feedback, suggestions, and bug reports!\r\n\r\nYour continued support helps NeoStation grow and improve with every release.\r\n\r\n**Enjoy NeoStation iOS 0.0.6!** 🎮✨\r\n\r\n**Version:** 0.0.6  \r\n**Build:** 447  \r\n**Platform:** iOS  \r\n**Distribution:** Sideloaded IPA\r\n\r\n---",
-          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.6/NeoStation-0.0.6.ipa",
-          "size": 208051121,
+          "version": "0.0.7",
+          "date": "2026-10-13",
+          "localizedDescription": "# NeoStation iOS 0.0.7 🎮\n*Build 455 · What's new since v0.0.6*\n\n- **Nintendo 3DS moves to Azahar 2127.0-alpha1**, with **Fast Interpreter** mode and improved BIOS/NAND imports, including supported console-encrypted NAND titles.\n- **AirPlay on Apple TV:** fixed how NeoStation menus are displayed.\n- **Your menu, your choice:** hide all consoles or disable embedded emulators individually.\n- **More ways to customize your games:** improved skin catalogs, new Libretro shaders and visual effects for Dolphin.\n- **Adjustable internal resolution:** choose a resolution for each supported embedded Libretro core, or set it for an individual game.\n- **Refined touch controls**, with improvements to on-screen buttons and virtual sticks.\n- **A new menu soundtrack:** “Once Upon a Time (loop)” by TAD (CC0), enabled by default and easy to turn off in Settings.\n\n📦 **Build 455 is available below.** Download **NeoStation-0.0.7.ipa** and install it with your usual sideloading tool.\n\n[Third-party licenses and notices](https://github.com/TarbleFR/neostation-ios/releases/download/0.0.7/NeoStation-0.0.7-Licenses-and-Notices.zip) · [Updated guide](https://github.com/TarbleFR/neostation-ios/blob/Claude/README.md) · [License review and remaining questions](https://github.com/TarbleFR/neostation-ios/blob/Claude/docs/RELEASE_0.0.7_LICENSE_REVIEW.md)\n\nThe supplemental notices do not modify the Build 455 IPA. SHA-256 checksums for both downloads are included below.\n\nThanks for playing and for sharing your feedback!",
+          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.7/NeoStation-0.0.7.ipa",
+          "size": 210867021,
           "minOSVersion": "18.0"
         }
       ]
@@ -1043,6 +1043,17 @@
   ],
   "news": [
     {
+      "appID": "com.neogamelab.neostation",
+      "title": "NeoStation iOS 0.0.7 · 13 Oct 2026",
+      "identifier": "NeoStation iOS-release-0.0.7",
+      "caption": "NeoStation iOS 0.0.7 is available.",
+      "date": "2026-10-13T20:17:23Z",
+      "tintColor": "#01E989",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
+      "notify": true,
+      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.7"
+    },
+    {
       "appID": "com.huamu013.ZhihuMinusMinus",
       "title": "ZhihuMinusMinus 0.9.0 · 13 Oct 2026",
       "identifier": "ZhihuMinusMinus-release-v0.9.0",
@@ -1085,17 +1096,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
       "notify": true,
       "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.5.1"
-    },
-    {
-      "appID": "com.neogamelab.neostation",
-      "title": "NeoStation iOS 0.0.6 · 12 Oct 2026",
-      "identifier": "NeoStation iOS-release-0.0.6",
-      "caption": "NeoStation iOS 0.0.6 is available.",
-      "date": "2026-10-12T19:48:04Z",
-      "tintColor": "#01E989",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
-      "notify": true,
-      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.6"
     },
     {
       "appID": "com.kodjodevf.mangayomi",
