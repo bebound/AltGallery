@@ -23,7 +23,7 @@
         {
           "version": "0.9.0",
           "date": "2026-10-13",
-          "localizedDescription": "* 修复断网恢复等待与首次游客 Feed 初始化 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/127\r\n* 恢复收藏快捷操作，统一 SVG 图标与列表收藏信息 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/128\r\n* 修复关注头像栏横滑冲突，支持最近发布左右切换用户 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/129\r\n* 支持内容导出（可能还有挺多问题） by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/130\r\n* 修复安卓偶现的页面跳转闪烁 https://github.com/huamurui/zhihu-minus-minus/commit/95c813741198b59a5faf18639b9a7cce719d3913\r\n\r\nFull Changelog: https://github.com/huamurui/zhihu-minus-minus/compare/v0.8.1...v0.9.0",
+          "localizedDescription": "* 修复断网恢复等待与首次游客 Feed 初始化 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/127\r\n* 恢复收藏快捷操作，统一 SVG 图标与列表收藏信息 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/128\r\n* 修复关注头像栏横滑冲突，支持最近发布左右切换用户 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/129\r\n* 支持内容导出（还有挺多问题） by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/130\r\n* 修复安卓偶现的页面跳转闪烁 https://github.com/huamurui/zhihu-minus-minus/commit/95c813741198b59a5faf18639b9a7cce719d3913\r\n\r\nFull Changelog: https://github.com/huamurui/zhihu-minus-minus/compare/v0.8.1...v0.9.0",
           "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.0/zhihu-minus-minus-v0.9.0-unsigned.ipa",
           "size": 16096852,
           "minOSVersion": "15.1"
