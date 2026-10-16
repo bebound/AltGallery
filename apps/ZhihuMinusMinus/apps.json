@@ -21,11 +21,11 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.9.0",
-          "date": "2026-10-13",
-          "localizedDescription": "* 修复断网恢复等待与首次游客 Feed 初始化 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/127\r\n* 恢复收藏快捷操作，统一 SVG 图标与列表收藏信息 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/128\r\n* 修复关注头像栏横滑冲突，支持最近发布左右切换用户 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/129\r\n* 支持内容导出（还有挺多问题） by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/130\r\n* 修复安卓偶现的页面跳转闪烁 https://github.com/huamurui/zhihu-minus-minus/commit/95c813741198b59a5faf18639b9a7cce719d3913\r\n\r\nFull Changelog: https://github.com/huamurui/zhihu-minus-minus/compare/v0.8.1...v0.9.0",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.0/zhihu-minus-minus-v0.9.0-unsigned.ipa",
-          "size": 16096852,
+          "version": "0.9.1",
+          "date": "2026-10-16",
+          "localizedDescription": "* 正文双击点赞/打开评论 by @AprDeci in https://github.com/huamurui/zhihu-minus-minus/pull/134\r\n* 补充知乎内容广告标志\r\n\r\n## New Contributors\r\n* @AprDeci made their first contribution in https://github.com/huamurui/zhihu-minus-minus/pull/134\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.0...v0.9.1",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.1/zhihu-minus-minus-v0.9.1-unsigned.ipa",
+          "size": 16109036,
           "minOSVersion": "15.1"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.9.0 · 13 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.9.0",
-      "caption": "ZhihuMinusMinus 0.9.0 is available.",
-      "date": "2026-10-13T09:10:31Z",
+      "title": "ZhihuMinusMinus 0.9.1 · 16 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.9.1",
+      "caption": "ZhihuMinusMinus 0.9.1 is available.",
+      "date": "2026-10-16T12:31:27Z",
       "tintColor": "#0084ff",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
       "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.0"
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.1"
     }
   ]
 }
