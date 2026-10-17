@@ -21,11 +21,11 @@
       "tintColor": "#FF375F",
       "versions": [
         {
-          "version": "0.9",
-          "date": "2026-09-03",
-          "localizedDescription": "- OCR dictionary support (iOS 18+): import Yomitan-compatible dictionaries in the app and look up words while reading.\r\n- Suwayomi built-in source: read and track from a Suwayomi instance, just like Komga and Kavita.\r\n- Auto scroll for webtoon reader: enable and press the play button to scroll without touching your device.\r\n- Fixed CloudFlare handling: CloudFlare issues that caused external sources to break should be resolved.\r\n- Overall performance improvements: the library loads much faster (@Amqx), and the webtoon reader was improved.\r\n- Source stability fixes and disable option: the issue where sources were causing the app to crash should not happen again, and now you can even disable a source that is broken until it receives an update.\r\n- Many more things: see [the website](https://aidoku.app/release-notes/) for a more complete list.",
-          "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa",
-          "size": 14731108,
+          "version": "0.9-4",
+          "date": "2026-10-16",
+          "localizedDescription": "A small build update for 0.9 with a number of bug fixes.\r\n\r\n- Fixed some pages not loading in webtoon reader\r\n- Improved webtoon reader memory usage (hopefully fixes crash after reading multiple chapters)\r\n- Fixed crash when searching anywhere in the macOS app\r\n- Various other bug fixes",
+          "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9-4/Aidoku.ipa",
+          "size": 14753154,
           "minOSVersion": "15.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "app.aidoku.Aidoku",
-      "title": "Aidoku 0.9 · 03 Sep 2026",
-      "identifier": "Aidoku-release-v0.9",
-      "caption": "Aidoku 0.9 is available.",
-      "date": "2026-09-03T20:17:08Z",
+      "title": "Aidoku 0.9-4 · 16 Oct 2026",
+      "identifier": "Aidoku-release-v0.9-4",
+      "caption": "Aidoku 0.9-4 is available.",
+      "date": "2026-10-16T22:25:27Z",
       "tintColor": "#FF375F",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/news.png",
       "notify": true,
-      "url": "https://github.com/Aidoku/Aidoku/releases/tag/v0.9"
+      "url": "https://github.com/Aidoku/Aidoku/releases/tag/v0.9-4"
     }
   ]
 }
