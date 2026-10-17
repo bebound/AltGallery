@@ -456,10 +456,10 @@
       "versions": [
         {
           "version": "nightly",
-          "date": "2026-09-18",
-          "localizedDescription": "**Commit:** [4dbe0f9a626de801184a42c0be8d2cb105058e3d](https://github.com/LiveContainer/LiveContainer/commit/4dbe0f9a626de801184a42c0be8d2cb105058e3d)\n**Message:** Update litehook: add arm64e_x1 dsc suffix\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/35404675698/attempts/1).",
+          "date": "2026-10-17",
+          "localizedDescription": "**Commit:** [9108ae624ea001f7d7696d48407f890b48fa2653](https://github.com/LiveContainer/LiveContainer/commit/9108ae624ea001f7d7696d48407f890b48fa2653)\n**Message:** fix #1644 #1655 #1666, bump bersion\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/39017541871/attempts/1).",
           "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 35926202,
+          "size": 24155286,
           "minOSVersion": "15.0"
         },
         {
@@ -1051,6 +1051,17 @@
   ],
   "news": [
     {
+      "appID": "com.kdt.livecontainer",
+      "title": "LiveContainer+SideStore nightly · 17 Oct 2026",
+      "identifier": "LiveContainer+SideStore-release-nightly",
+      "caption": "LiveContainer+SideStore nightly is available.",
+      "date": "2026-10-17T08:31:56Z",
+      "tintColor": "#0784FC",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
+      "notify": true,
+      "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/nightly"
+    },
+    {
       "appID": "com.utmapp.UTM",
       "title": "UTM 5.0.8 · 17 Oct 2026",
       "identifier": "UTM-release-v5.0.8",
@@ -1401,17 +1412,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
       "notify": true,
       "url": "https://github.com/celia-sh/Novella/releases/tag/v2.5.0"
-    },
-    {
-      "appID": "com.kdt.livecontainer",
-      "title": "LiveContainer+SideStore nightly · 18 Sep 2026",
-      "identifier": "LiveContainer+SideStore-release-nightly",
-      "caption": "LiveContainer+SideStore nightly is available.",
-      "date": "2026-09-18T23:13:08Z",
-      "tintColor": "#0784FC",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
-      "notify": true,
-      "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/nightly"
     },
     {
       "appID": "com.aoshuang.manicemu",
