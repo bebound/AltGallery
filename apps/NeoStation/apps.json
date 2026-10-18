@@ -21,11 +21,11 @@
       "tintColor": "#01E989",
       "versions": [
         {
-          "version": "0.0.7",
-          "date": "2026-10-13",
-          "localizedDescription": "# NeoStation iOS 0.0.7 🎮\r\n*Build 455 · What's new since v0.0.6*\r\n\r\n- **Nintendo 3DS moves to Azahar 2127.0-alpha1**, with **Fast Interpreter** mode and improved BIOS and NAND imports. **Encrypted game ROMs remain unsupported.**\r\n- **AirPlay on Apple TV:** fixed how NeoStation menus are displayed.\r\n- **Your menu, your choice:** hide all consoles or disable embedded emulators individually.\r\n- **More ways to customize your games:** improved skin catalogs, new Libretro shaders and visual effects for Dolphin.\r\n- **Adjustable internal resolution:** choose a resolution for each supported embedded Libretro core, or set it for an individual game.\r\n- **Refined touch controls**, with improvements to on-screen buttons and virtual sticks.\r\n- **A new menu soundtrack:** “Once Upon a Time (loop)” by TAD (CC0), enabled by default and easy to turn off in Settings.\r\n\r\n📦 **Build 455 is available below.** Download **NeoStation-0.0.7.ipa** and install it with your usual sideloading tool.\r\n\r\n[Third-party licenses and notices](https://github.com/TarbleFR/neostation-ios/releases/download/0.0.7/NeoStation-0.0.7-Licenses-and-Notices.zip) · [Updated guide](https://github.com/TarbleFR/neostation-ios/blob/Claude/README.md) · [License review and remaining questions](https://github.com/TarbleFR/neostation-ios/blob/Claude/docs/RELEASE_0.0.7_LICENSE_REVIEW.md)\r\n\r\nThe supplemental notices do not modify the Build 455 IPA. SHA-256 checksums for both downloads are included below.\r\n\r\nThanks for playing and for sharing your feedback!",
-          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.7/NeoStation-0.0.7.ipa",
-          "size": 210867021,
+          "version": "0.0.8",
+          "date": "2026-10-18",
+          "localizedDescription": "# NeoStation iOS 0.0.8 🎮\n\nThis update expands cheat support, brings more immersive touch controls and fixes several stability issues.\n\n- **Expanded unified cheat catalogue:** more sources for RetroArch cores, arcade games, PS2, PS3, GameCube and Wii, available through a single catalogue download.\n- **Simpler cheat management:** compatible cheats appear automatically for the detected game, with individual on/off switches and support for importing your own files. Matching takes available region and version identifiers into account.\n- **Faster cheat searches:** improved indexing and duplicate handling. PS2 gameplay cheats are presented separately from graphical patches.\n- **More immersive touch controls:** visible button presses on compatible skins, with improved touch handling and control layouts.\n- **Scraping crash fixed:** reduced memory usage when processing large game files, resolving the reported crash on iPhone 15 Pro Max.\n- **Improved stability:** fixes for game startup, skins, shaders and game closing.\n- **Easier first launch:** skip the initial game-folder selection and add your games later.\n\nCheat availability depends on the game, region and revision. Updated credits and third-party notices are also included.\n\n📦 Download **NeoStation-0.0.8.ipa** below and install it with your usual sideloading tool.\n\n[Source credits](https://github.com/TarbleFR/neostation-ios/blob/0.0.8/docs/CHEAT_CATALOG_SOURCES.md) · [Licenses and notices](https://github.com/TarbleFR/neostation-ios/releases/download/0.0.8/NeoStation-0.0.8-Licenses-and-Notices.zip) · [Source and packaging details](https://github.com/TarbleFR/neostation-ios/blob/0.0.8/docs/RELEASE_0.0.8_SOURCE_MANIFEST.md)",
+          "downloadURL": "https://github.com/TarbleFR/neostation-ios/releases/download/0.0.8/NeoStation-0.0.8.ipa",
+          "size": 226570105,
           "minOSVersion": "18.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.neogamelab.neostation",
-      "title": "NeoStation iOS 0.0.7 · 13 Oct 2026",
-      "identifier": "NeoStation iOS-release-0.0.7",
-      "caption": "NeoStation iOS 0.0.7 is available.",
-      "date": "2026-10-13T20:17:23Z",
+      "title": "NeoStation iOS 0.0.8 · 18 Oct 2026",
+      "identifier": "NeoStation iOS-release-0.0.8",
+      "caption": "NeoStation iOS 0.0.8 is available.",
+      "date": "2026-10-18T14:13:32Z",
       "tintColor": "#01E989",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
       "notify": true,
-      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.7"
+      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.8"
     }
   ]
 }

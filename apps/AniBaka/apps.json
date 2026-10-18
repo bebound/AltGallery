@@ -21,12 +21,12 @@
       "tintColor": "#0077B6",
       "versions": [
         {
-          "version": "5.2.1",
-          "buildVersion": "1007",
-          "date": "2026-10-07",
-          "localizedDescription": "- 新增视频内片头、片尾区间选择，支持拖动起止位置、预览画面并保存到本机。\r\n- 优化片头片尾管理面板，支持分别控制当前片源的跳过开关，并查看区间来源、调整标注及提交反馈。\r\n- 修复标注时拖动、试看或切换后台可能覆盖观看进度、误记为已看完的问题。\r\n- 修复部分云端历史无法正常续播的问题，完善片源重新匹配、集数与线路恢复，保留本机播放信息。\r\n- 新增视频源更新提醒，支持启动及返回应用时检查更新，并提供批量更新、进度显示和失败重试。\r\n- 完善规则版本管理，规则库连接失败时保留上次检查结果并显示提示。\r\n- 新增 MuteFun 动漫（2kdm）、七色番及 GirigiriLove Beta 内置源，移除 Anime7，更新多个现有视频源规则。\r\n- 优化网页播放地址解析与 WebView 回退流程，修复部分带签名播放地址被重复解码的问题。\r\n- 修复收藏列表加载更多异常及封面过渡动画冲突，改善移动端简介选择、滚动和评论列表位置保留。 #31 \r\n- 精简 Windows 实验性 DLSS 增强功能，统一使用内置播放器，移除独立播放与离线增强入口，改用精简运行库。\r\n- 优化异常提示，主动取消请求时不再弹出网络错误；播放历史同步失败时保留本地记录，减少播放干扰。\r\n\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.2.0+1001...5.2.1+1007",
-          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.2.1%2B1007/baka-5.2.1%2B1007-ios-unsigned.ipa",
-          "size": 22588259,
+          "version": "5.2.2",
+          "buildVersion": "1017",
+          "date": "2026-10-18",
+          "localizedDescription": "### 新增\r\n\r\n- 新增网络设置，支持独立开启 DoH（DNS over HTTPS）与 ECH（Encrypted Client Hello），并自定义 DoH / ECH 配置查询服务地址。\r\n- 片头、片尾标注支持分别一键“应用到全集”，同一番剧、同片源线路和时间轴可复用标注；已有单集校准优先，登录后可共享全集标注。\r\n- 新增“隐藏 NSFW 内容”开关，可在设置中控制相关内容的展示。\r\n\r\n### 优化\r\n\r\n- 重整设置页面与播放器设置面板，统一分组和控件样式，优化字体、弹幕、字幕及播放参数的调节体验。\r\n- 优化视频源的 JSON、HTML 和种子资源解析，完善资源筛选、去重及备用结果处理；MiFun 内置规则启用 HLS 广告过滤。\r\n- 优化种子下载的分片调度、数据校验及超时处理，改善边下边播的稳定性。\r\n- 优化网络异常与图片加载失败提示，减少重复提醒；弹幕服务请求失败时停止重复尝试其他标题，避免累积等待。\r\n- 加强 Windows DLSS 帧生成运行库的完整性检查与取消处理。\r\n\r\n### 修复\r\n\r\n- 修复播放页初始追番状态未正确加载、快速重复操作及异步请求覆盖较新状态的问题。\r\n- 改善 Bangumi 授权登录对临时网络错误的重试处理，避免短暂网络波动直接中断登录。\r\n- 修复 Windows 窗口初始化或销毁期间访问未就绪 Flutter 引擎的风险，并补充启动失败诊断日志。\r\n\r\n### 使用说明\r\n\r\n- DoH 与 ECH 默认关闭，保存后需重启应用生效。ECH 需要目标站点支持；仅开启 ECH 时，IP 地址仍通过系统 DNS 解析。未发布 ECH 配置的站点继续使用普通 HTTPS。\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.2.1+1007...5.2.2+1017",
+          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.2.2%2B1017/baka-5.2.2%2B1017-ios-unsigned.ipa",
+          "size": 23777025,
           "minOSVersion": "13.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "ani.baka",
-      "title": "AniBaka 5.2.1 · 07 Oct 2026",
-      "identifier": "AniBaka-release-5.2.1+1007",
-      "caption": "AniBaka 5.2.1 is available.",
-      "date": "2026-10-07T09:28:39Z",
+      "title": "AniBaka 5.2.2 · 18 Oct 2026",
+      "identifier": "AniBaka-release-5.2.2+1017",
+      "caption": "AniBaka 5.2.2 is available.",
+      "date": "2026-10-18T11:13:56Z",
       "tintColor": "#0077B6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
       "notify": true,
-      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.1+1007"
+      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.2+1017"
     }
   ]
 }
