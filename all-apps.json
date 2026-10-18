@@ -607,11 +607,11 @@
       "tintColor": "#FA243C",
       "versions": [
         {
-          "version": "2.0.2",
-          "date": "2026-08-26",
-          "localizedDescription": "## 🎉 Musly v2.0.2\n\n### 📦 Downloads\n\n**Android:**\n- `app-release.apk` (universal APK for all devices)\n\n**iOS:**\n- `musly-ios.ipa` (sideload with AltStore, Sideloadly, or similar — not signed)\n\n**Windows:**\n- `musly-setup.exe` (setup installer, run to install Musly)\n- `musly-windows.zip` (portable version, extract and run)\n\n**macOS:**\n- `musly-macos.dmg` (drag Musly.app to Applications — not notarized)\n\n**Linux:**\n- `musly-linux-x64.tar.gz` (extract and run musly)\n\n### 📝 Changelog\nSee [CHANGELOG.md](https://github.com/dddevid/Musly/blob/master/CHANGELOG.md)\n\n### 🌍 Translations\nContribute translations at [Crowdin](https://crowdin.com/project/musly)",
-          "downloadURL": "https://github.com/dddevid/Musly/releases/download/v2.0.2/musly-ios.ipa",
-          "size": 13928367,
+          "version": "2.0.3",
+          "date": "2026-10-18",
+          "localizedDescription": "## 🎉 Musly v2.0.3\n\n### 📦 Downloads\n\n**Android:**\n- `app-release.apk` (universal APK for all devices)\n\n**iOS:**\n- `musly-ios.ipa` (sideload with AltStore, Sideloadly, or similar — not signed, iOS 15.0+)\n\n**Windows:**\n- `musly-setup.exe` (setup installer, run to install Musly)\n- `musly-windows.zip` (portable version, extract and run)\n\n**macOS:**\n- `musly-macos.dmg` (drag Musly.app to Applications — not notarized)\n\n**Linux:**\n- `*.deb` (Debian, Ubuntu, Linux Mint)\n- `*.rpm` (Fedora, RHEL, openSUSE)\n- `*.pkg.tar.zst` (Arch Linux, Manjaro)\n- `*.AppImage` (Universal AppImage for any distro)\n- `*.flatpak` (Flatpak standalone bundle)\n- `*.snap` (Snap package)\n- `*.tar.gz` (portable standalone tarball)\n\n**Tizen Smart TV:**\n- `*.tpk` (Native version for Tizen 4.0+ / 2018 or newer TVs)\n\n### 📝 Changelog\nSee [CHANGELOG.md](https://github.com/dddevid/Musly/blob/master/CHANGELOG.md)\n\n### 🌍 Translations\nContribute translations at [Crowdin](https://crowdin.com/project/musly)",
+          "downloadURL": "https://github.com/dddevid/Musly/releases/download/v2.0.3/musly-ios.ipa",
+          "size": 14317899,
           "minOSVersion": "15.0"
         }
       ]
@@ -1051,6 +1051,17 @@
   ],
   "news": [
     {
+      "appID": "com.dddevid.musly",
+      "title": "Musly 2.0.3 · 18 Oct 2026",
+      "identifier": "Musly-release-v2.0.3",
+      "caption": "Musly 2.0.3 is available.",
+      "date": "2026-10-18T18:19:33Z",
+      "tintColor": "#FA243C",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.png",
+      "notify": true,
+      "url": "https://github.com/dddevid/Musly/releases/tag/v2.0.3"
+    },
+    {
       "appID": "com.ligg.anime_flow",
       "title": "AnimeFlow 2.6.4 · 18 Oct 2026",
       "identifier": "AnimeFlow-release-v2.6.4",
@@ -1456,17 +1467,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/news.png",
       "notify": true,
       "url": "https://github.com/xmiguel911x/PSX3IOS/releases/tag/v0.2.7-beta"
-    },
-    {
-      "appID": "com.dddevid.musly",
-      "title": "Musly 2.0.2 · 26 Aug 2026",
-      "identifier": "Musly-release-v2.0.2",
-      "caption": "Musly 2.0.2 is available.",
-      "date": "2026-08-26T20:40:22Z",
-      "tintColor": "#FA243C",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.png",
-      "notify": true,
-      "url": "https://github.com/dddevid/Musly/releases/tag/v2.0.2"
     },
     {
       "appID": "app.ehpanda",
