@@ -309,11 +309,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "2.0",
-          "date": "2026-10-11",
-          "localizedDescription": "## Welcome to Husk 2.0.\r\nI’ve been working hard over the past few days, and I’m glad to say, Husk 2.0 is out! You’ll enjoy it, a lot.\r\n## What’s new?\r\n- Christmas Decoration\r\n- In-app help feature\r\n- Window manager\r\n- New UI\r\n- Removed downloads tab\r\n## New App Support\r\n- Over 150+ games and apps, now running on Husk.\r\n## Notes:\r\nThank you all for the continuous support, It’s been a good few months, and I’m just amazed at how big Husk got. Thank you so much, and enjoy Husk 2.0. There is more to come.\r\n## Links:\r\n- Discord: https://discord.gg/xApMHWAzkh\r\n- X Profile: https://x.com/leviidev01\r\n- Discord User: @leviidev\r\n\r\n**Full Changelog**: https://github.com/Leviidev/Husk/compare/1.1.0...2.0",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/2.0/Husk.ipa",
-          "size": 110921859,
+          "version": "3.0",
+          "date": "2026-10-17",
+          "localizedDescription": "## Husk 3.0\r\nThe coolest and biggest Husk release yet. Hundreds of new Android games, PS4 support, and more.\r\n\r\n## What's new?\r\n- Console-style home screen\r\n- New library UI\r\n- Proper first run\r\n    - Contains full setup guide + optional walkthrough\r\n### PS4 Games\r\n- Add a game with the + button. Either a PKG, a folder of PKG's, or an extracted game folder. Updates install with their game.\r\n- Tested: Bloodborne, Minecraft: PlayStation 4 Edition, Sonic Mania\r\n- Shaders are kept inbetween launches with Shader Cache\r\n- If a game requires keyboard input, it'll open the iOS keyboard\r\n### Android\r\n- 366 newly working games - view in compatibility list\r\n- Unofficial ports: Sonic Robo Blast 2, Nethack, PokeWilds and more\r\n- GoDot 4\r\n- Store downloads include OBB files\r\n- Typing works in all games\r\n- Optional language fonts (chinese, japanese, etc)\r\n### Also\r\n- Lots of fixes\r\n- TrollStore JIT fully complete\r\n- iOS 15.5 support\r\n## Known Issues\r\n- Bloodborne runs, but very poorly.\r\n- Some Unity 6 games can render slowly\r\n## Final notes\r\nThank you all. Enjoy ❤️ \r\n\r\nDiscord Server: https://discord.gg/xApMHWAzkh",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.0/Husk.ipa",
+          "size": 140126095,
           "minOSVersion": "16.4"
         }
       ]
@@ -1051,6 +1051,17 @@
   ],
   "news": [
     {
+      "appID": "com.husk.app",
+      "title": "Husk 3.0 · 17 Oct 2026",
+      "identifier": "Husk-release-3.0",
+      "caption": "Husk 3.0 is available.",
+      "date": "2026-10-17T21:34:58Z",
+      "tintColor": "#5949E5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Leviidev/Husk/releases/tag/3.0"
+    },
+    {
       "appID": "com.kdt.livecontainer",
       "title": "LiveContainer+SideStore nightly · 17 Oct 2026",
       "identifier": "LiveContainer+SideStore-release-nightly",
@@ -1214,17 +1225,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
       "notify": true,
       "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
-    },
-    {
-      "appID": "com.husk.app",
-      "title": "Husk 2.0 · 11 Oct 2026",
-      "identifier": "Husk-release-2.0",
-      "caption": "Husk 2.0 is available.",
-      "date": "2026-10-11T22:41:49Z",
-      "tintColor": "#5949E5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/2.0"
     },
     {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
