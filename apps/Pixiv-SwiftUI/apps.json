@@ -21,11 +21,11 @@
       "tintColor": "#13A1FD",
       "versions": [
         {
-          "version": "0.16.2",
-          "date": "2026-10-11",
-          "localizedDescription": "## 新功能\r\n\r\n- App 更新弹窗新增“跳过此版本”选项，支持忽略指定版本的自动更新提醒\r\n- （v0.16.1 的新功能）HTTP/3 直连模式，修正此前版本的 403 问题\r\n\r\n## 优化\r\n\r\n- 优化了一系列图片的加载逻辑，改善了 v0.16.1 的高发热问题。\r\n\r\n> 性能优化还有很大空间，但暂时推不动了。有想法的朋友期待你的 PR\r\n\r\n## 问题修复\r\n\r\n- 修复手动提交搜索后未清空搜索栏输入内容的问题\r\n- 修复全屏查看图片失败时的降级回退逻辑，优先展示已加载的预览图\r\n- 修复 iOS 端在页面切换或应用切入后台后再返回时，登录弹窗意外关闭的问题\r\n\r\npixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.16.1...v0.16.2",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.2/Pixiv-SwiftUI.ipa",
-          "size": 10343925,
+          "version": "0.16.3",
+          "date": "2026-10-19",
+          "localizedDescription": "pixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.16.2...v0.16.3\r\n\r\n这是一个专为 iPad 优化的版本，iOS 和 macOS 用户可以直接跳过此版本。\r\n\r\n## 问题修复\r\n\r\n- 修复 iPad 竖屏插画详情页宽度未随布局更新的问题。\r\n- 修复 iPad 网格列数设置未生效的问题。\r\n- 优化 iPad 新手引导页面的底部安全区域适配。\r\n- 修复 iPad 新手引导底部背景宽度显示异常的问题。",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.3/Pixiv-SwiftUI.ipa",
+          "size": 10379203,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
-      "title": "Pixiv-SwiftUI 0.16.2 · 11 Oct 2026",
-      "identifier": "Pixiv-SwiftUI-release-v0.16.2",
-      "caption": "Pixiv-SwiftUI 0.16.2 is available.",
-      "date": "2026-10-11T10:00:59Z",
+      "title": "Pixiv-SwiftUI 0.16.3 · 19 Oct 2026",
+      "identifier": "Pixiv-SwiftUI-release-v0.16.3",
+      "caption": "Pixiv-SwiftUI 0.16.3 is available.",
+      "date": "2026-10-19T14:07:18Z",
       "tintColor": "#13A1FD",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
       "notify": true,
-      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.2"
+      "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.3"
     }
   ]
 }
