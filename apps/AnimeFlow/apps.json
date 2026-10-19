@@ -23,7 +23,7 @@
         {
           "version": "2.6.4",
           "date": "2026-10-18",
-          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.6.4 更新\r\n\r\n## 新增\r\n\r\n- 推荐页、番剧详情页添加缓存优化加载速度\r\n- 通用设置页面增加更丰富的缓存管理\r\n- 番剧详情页宽屏时展示评分柱状图\r\n\r\n## 优化\r\n \r\n- 通过优选ip优化网络延迟\r\n- 优化番剧详情、用户收藏页面改变窗口宽度时的性能\r\n- 更多的ui优化\r\n\r\n## 修复\r\n\r\n- 修复在使用MDK内核时移动端会自动熄屏问题\r\n- 修复ios端在更新信息页面复制文本出现白屏问题\r\n- 修复版本更新弹窗中更新信息部分文字未同步深浅色主题\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
+          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.6.4 更新\r\n\r\n## 新增\r\n\r\n- 推荐页、番剧详情页添加缓存优化加载速度\r\n- 通用设置页面增加更丰富的缓存管理\r\n- 番剧详情页宽屏时展示评分柱状图\r\n- 关于页面中添加项目官网预览\r\n\r\n## 优化\r\n \r\n- 通过优选ip优化网络延迟\r\n- 优化番剧详情、用户收藏页面改变窗口宽度时的性能\r\n- 更多的ui优化\r\n\r\n## 修复\r\n\r\n- 修复在使用MDK内核时移动端会自动熄屏问题\r\n- 修复ios端在更新信息页面复制文本出现白屏问题\r\n- 修复版本更新弹窗中更新信息部分文字未同步深浅色主题\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
           "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.4/AnimeFlow-ios-2.6.4.ipa",
           "size": 29497158,
           "minOSVersion": "13.0"

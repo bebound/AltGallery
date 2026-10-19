@@ -21,11 +21,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.20",
-          "date": "2026-10-03",
-          "localizedDescription": "### Added\n\n- **macOS** (experimental): AutoMix — an Apple-Music-style continuous-playback mode with beat-matched transitions, optional stem separation, loudness compensation and an output-device picker, on a new dual-deck AVAudioEngine backend. Off by default; turn it on in Settings. Thanks @XerWandeRer (#102).\n- **iOS**: search and sort within the Liked Songs playlist. Thanks @yamakze (#121).\n- **Release**: every release now also ships an AltStore / SideStore source (`altstore.json`) for one-tap sideload updates. Thanks @vancez (#112).\n\n### Fixed\n\n- **iOS + macOS**: home-page loading placeholders and the 新碟上架 album cards stay within the content width instead of overflowing it. Thanks @sld272 (#119).\n\n---\n\n### 新增\n\n- **macOS**（实验性）：AutoMix——类 Apple Music 的连续播放模式,支持节拍对齐的过渡、可选的人声 / 伴奏分离、响度补偿与输出设备选择,基于全新的双 deck AVAudioEngine 后端。默认关闭,可在设置里开启。感谢 @XerWandeRer（#102）。\n- **iOS**：「我喜欢的音乐」歌单内支持搜索与排序。感谢 @yamakze（#121）。\n- **发布**：每次发布额外提供 AltStore / SideStore 源（`altstore.json`),可在 AltStore 里一键更新侧载。感谢 @vancez（#112）。\n\n### 修复\n\n- **iOS + macOS**：首页加载占位与「新碟上架」专辑卡片不再超出内容宽度。感谢 @sld272（#119）。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.20/Kumone-iOS-0.3.20.ipa",
-          "size": 7546632,
+          "version": "0.3.21",
+          "date": "2026-10-19",
+          "localizedDescription": "### Added\n\n- **iOS + macOS**: offline downloads — download songs and whole playlists for offline listening, with a 「已下载」 library and a storage page to see usage and manage space. Thanks @xyspg (#111).\n- **macOS**: customizable keyboard shortcuts for playback actions, plus optional system-wide (global) hotkeys — set them under Settings → 快捷键. Global hotkeys are off by default. Thanks @WillowBranch127 (#125, closes #122).\n- **iOS + macOS**: iCloud sync (off by default) — continue playback where another device left off, keep settings in sync, and optionally share your sign-in between devices through iCloud Drive or a folder you choose. Shared sign-ins are encrypted with a sync password you set, and signing out revokes the session once no other device is using it. Thanks @yamakze (#138).\n\n### Fixed\n\n- **iOS + macOS**: NetEase audio now retries on the twin CDN host when one host is unreachable — fixing playback that occasionally stalled mid-queue (progress kept running) or wouldn't replay a just-played song on a poor network. Thanks @xyspg (#115, closes #106).\n- **macOS**: AutoMix no longer jumps the playhead backward (misaligning the progress bar and lyrics) when you pause and then resume. Thanks @WillowBranch127 (#126).\n- **macOS**: AutoMix no longer drops out briefly when you resume after a pause. Thanks @XerWandeRer (#140, closes #136).\n- **macOS**: scrolling the lyrics with a trackpad or mouse wheel no longer snaps back to the current line, and lines stay unblurred while you scroll. Thanks @xyspg (#139).\n- **macOS**: the window buttons stay in place on the immersive now-playing page. Thanks @yxxbc (#130, closes #128).\n- **macOS**: the Settings sub-pages (存储空间, 快捷键) have a back button that no longer overlaps the window controls, and Settings reopens on its main page. Thanks @yamakze (#135).\n\n### Improved\n\n- **iOS + macOS**: the now-playing page uses far less CPU — on macOS about 5% of a core while playing instead of about 50% — and frees its memory while the window is minimised. Thanks @yxxbc (#129, closes #131).\n- **macOS**: large playlists such as Liked Songs (1,000+ songs) scroll and load much more smoothly, artwork is decoded at the size it is shown, and the sidebar animates with less work. After updating, each cached song is downloaded once more on its next play. Thanks @morefreefg (#127).\n- **macOS**: Settings is tidier — AutoMix shows its options only when it is on, keyboard shortcuts switch between in-app and global with a segmented control, and clearing the song cache now runs right away without a confirmation. Thanks @yamakze (#135).\n- **macOS**: on macOS 26 and later the app now uses the current system window style. Thanks @yxxbc (#130).\n\n---\n\n### 新增\n\n- **iOS + macOS**：离线下载——可下载单曲和整个歌单离线收听,新增「已下载」库和存储用量 / 管理页。感谢 @xyspg（#111）。\n- **macOS**：可自定义播放等操作的键盘快捷键,并支持可选的全局(系统级)快捷键——在 设置 → 快捷键 里设置,全局快捷键默认关闭。感谢 @WillowBranch127（#125，关闭 #122）。\n- **iOS + macOS**：iCloud 同步(默认关闭)——在另一台设备上接续播放、同步设置,并可通过 iCloud 云盘或自选文件夹在设备间共享登录。共享的登录信息以你设置的同步密码加密,退出登录时若已没有其他设备在用该会话,会一并注销。感谢 @yamakze（#138）。\n\n### 修复\n\n- **iOS + macOS**：网易云音频在某个 CDN 主机不可达时会自动重试其孪生主机——修复了弱网下偶发的「队列中途卡住(进度还在走)」和「刚听过的歌无法重播」。感谢 @xyspg（#115，关闭 #106）。\n- **macOS**：AutoMix 暂停后恢复播放时,播放头不再往回跳(导致进度条和歌词错位)。感谢 @WillowBranch127（#126）。\n- **macOS**：AutoMix 暂停后恢复播放时不再短暂断音。感谢 @XerWandeRer（#140，关闭 #136）。\n- **macOS**：用触控板或鼠标滚轮翻看歌词时不再被拉回当前句,滚动期间歌词也不再模糊。感谢 @xyspg（#139）。\n- **macOS**：沉浸式播放页上的窗口按钮不再错位。感谢 @yxxbc（#130，关闭 #128）。\n- **macOS**：设置的二级页面(存储空间、快捷键)返回按钮不再与窗口控件重叠,重新打开设置时回到首页。感谢 @yamakze（#135）。\n\n### 改进\n\n- **iOS + macOS**：播放页的 CPU 占用大幅降低——macOS 上播放时约占 5% 个核心,此前约 50%——窗口最小化时还会释放内存。感谢 @yxxbc（#129，关闭 #131）。\n- **macOS**：「我喜欢的音乐」等大歌单(1000 首以上)加载和滚动更流畅,封面按显示尺寸解码,侧边栏动画开销更小。更新后,已缓存的歌曲下次播放时会重新下载一次。感谢 @morefreefg（#127）。\n- **macOS**：设置更简洁——AutoMix 仅在开启后显示子选项,快捷键用分段控件切换应用内 / 全局,清除歌曲缓存改为直接执行,不再弹出确认。感谢 @yamakze（#135）。\n- **macOS**：在 macOS 26 及以上版本,应用改用当前的系统窗口样式。感谢 @yxxbc（#130）。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.21/Kumone-iOS-0.3.21.ipa",
+          "size": 8725929,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.20 · 03 Oct 2026",
-      "identifier": "Kumone-release-v0.3.20",
-      "caption": "Kumone 0.3.20 is available.",
-      "date": "2026-10-03T15:42:04Z",
+      "title": "Kumone 0.3.21 · 19 Oct 2026",
+      "identifier": "Kumone-release-v0.3.21",
+      "caption": "Kumone 0.3.21 is available.",
+      "date": "2026-10-19T10:16:25Z",
       "tintColor": "#F0D060",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.20"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.21"
     }
   ]
 }
