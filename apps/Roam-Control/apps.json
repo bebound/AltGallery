@@ -21,11 +21,11 @@
       "tintColor": "#1090F0",
       "versions": [
         {
-          "version": "0.9.7",
-          "date": "2026-10-08",
-          "localizedDescription": "## Stability and reliability improvements\n\nRoam Control 0.9.7 is a maintenance update focused on background location-session reliability and mobile-data connectivity.\n\n### What's improved\n\n- Improved native connection handling for LocalDevVPN.\n- Corrected network-interface selection when LocalDevVPN and a separate Personal VPN are active simultaneously.\n- Improved reliability in tested background and mobile-data scenarios.\n- Verified fixed locations, Walking, Driving, Cycling, Stop & Restore and LocalDevVPN reconnection.\n\nThese improvements were validated on the developer's iPhone. Compatibility with every VPN configuration is not guaranteed.\n\nNo new features, interface changes or pairing implementation changes.\n\n### Installation\n\nRequires iOS 27 or later, Developer Mode and LocalDevVPN.\n\nThe IPA is unsigned and can be signed using SideStore.\n\n**Upgrading directly from 0.9.4?** Back up your favourites, history and supported settings before installing. The app identifier changed in 0.9.5, so existing data will not automatically transfer. Pairing must be completed again.",
-          "downloadURL": "https://github.com/seanhowarthdev/Roam-Control/releases/download/v0.9.7/RoamControl-0.9.7-Build96.ipa",
-          "size": 4111825,
+          "version": "0.9.9",
+          "date": "2026-10-20",
+          "localizedDescription": "## Highlights\n\n### 🌍 Roam Control in 10 Languages\nChoose English, Hebrew, Arabic, Simplified Chinese, Traditional Chinese, Japanese, Vietnamese, French, German or Spanish, or use System Default to select from the supported languages based on your iPhone's language preferences. Switch languages immediately, with right-to-left layout support for Hebrew and Arabic.\n\n### 🗺️ Better Maps and Routes\nRefined map controls, route handling and coordinate compatibility, with clearer handling when a route cannot be created.\n\n### 🔄 Smarter Connection Recovery\nImproved connection and location-session recovery when the app is allowed to run. iOS may suspend background apps, so unattended recovery cannot be guaranteed.\n\n### 🚶 Your Speed, Your Route\nCustom movement speeds for Walking, Cycling and Driving, refined driving targets and travel-time estimates, plus improvements to live walking-speed display.\n\n### ✨ UI Refinements\nA clearer language picker with native-language subtitles, improved recovery presentation and better handling of translated text throughout the app.\n\n## What's New\n\n### Localisation\n- Eight new languages bring the total to ten, plus System Default.\n- Language changes apply immediately without relaunching Roam Control.\n- Arabic/Hebrew right-to-left layouts and isolation of PINs, versions and place names.\n- Simplified/Traditional Chinese selection respects script and regional language preferences.\n- Improved plural forms, multi-argument messages, system permissions text and interface sizing.\n\n### Maps and Movement\n- Refined map interaction and coordinate compatibility.\n- Improvements to route handling and route-failure feedback.\n- Custom Walking, Cycling and Driving movement-speed preferences.\n- Better driving speed targets, route time estimates and walking-speed display.\n\n### Connection Health and Recovery\n- Improved reconnection and session-recovery behaviour while iOS allows background or foreground execution.\n- Refined recovery controls and user guidance.\n- Existing LocalDevVPN pairing, diagnostics and Stop & Restore remain available.\n\n## Before You Install\n- **iOS 27 or newer** and **Developer Mode** are required.\n- **LocalDevVPN is still required** for local pairing connectivity.\n- The IPA is **unsigned**. Sign and install it using SideStore or another compatible method.\n- For LiveContainer, enable **Fix Local Notifications** before the first launch.\n\n> **Upgrading directly from 0.9.4 or earlier?** Back up favourites, history and supported preferences before migrating to the newer `com.roamcontrol` app identifier. The older app's data will not automatically transfer. Pairing records are not included in backups, so you will need to pair again. See the [migration guide](https://github.com/seanhowarthdev/Roam-Control/blob/main/Documentation/Migration095.md).\n\n## Download and Integrity\n\n**IPA:** `RoamControl-0.9.9-Build105.ipa`\n\n**SHA-256:** `211f1057c70292da468226b39808d8777549c02923c14afc504d9e1d2daba86e`\n\nRead the [Installation Guide](https://github.com/seanhowarthdev/Roam-Control/blob/main/Documentation/Installation.md), [full changelog](https://github.com/seanhowarthdev/Roam-Control/blob/main/CHANGELOG.md) and [Responsible Use policy](https://github.com/seanhowarthdev/Roam-Control/blob/main/Documentation/ResponsibleUse.md).\n\nThanks to everyone who's tested Roam Control and shared feedback. Please report any issues or language improvements through GitHub Issues or our community Discord.",
+          "downloadURL": "https://github.com/seanhowarthdev/Roam-Control/releases/download/v0.9.9/RoamControl-0.9.9-Build105.ipa",
+          "size": 4627321,
           "minOSVersion": "27.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.sean.roamcontrol",
-      "title": "Roam Control 0.9.7 · 08 Oct 2026",
-      "identifier": "Roam Control-release-v0.9.7",
-      "caption": "Roam Control 0.9.7 is available.",
-      "date": "2026-10-08T19:54:46Z",
+      "title": "Roam Control 0.9.9 · 20 Oct 2026",
+      "identifier": "Roam Control-release-v0.9.9",
+      "caption": "Roam Control 0.9.9 is available.",
+      "date": "2026-10-20T19:33:03Z",
       "tintColor": "#1090F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
       "notify": true,
-      "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.7"
+      "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.9"
     }
   ]
 }
