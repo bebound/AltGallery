@@ -1,0 +1,47 @@
+{
+  "name": "StikDebug",
+  "subtitle": "StikDebug AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for StikDebug",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/icon.png",
+  "website": "https://github.com/StikDebug/StikDebug",
+  "tintColor": "#3B86F7",
+  "apps": [
+    {
+      "name": "StikDebug",
+      "bundleIdentifier": "com.stik.stikdebug",
+      "developerName": "StikDebug",
+      "subtitle": "On-device JIT enabler and device toolbox.",
+      "localizedDescription": "An on-device debugger and developer toolbox for iOS versions 17.4+ powered by idevice. Note: requires LocalDevVPN and cannot be used inside LiveContainer to enable JIT for that same LiveContainer.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/home.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/scripts.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/settings.png"
+      ],
+      "tintColor": "#3B86F7",
+      "versions": [
+        {
+          "version": "3.1.15",
+          "date": "2026-10-15",
+          "localizedDescription": "**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.14...3.1.15\r\nAttempt to fix ServiceNotFound errors, add debugging",
+          "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.15/StikDebug-3.1.15.ipa",
+          "size": 13543234,
+          "minOSVersion": "17.4"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.stik.stikdebug",
+      "title": "StikDebug 3.1.15 · 15 Oct 2026",
+      "identifier": "StikDebug-release-3.1.15",
+      "caption": "StikDebug 3.1.15 is available.",
+      "date": "2026-10-15T14:31:50Z",
+      "tintColor": "#3B86F7",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png",
+      "notify": true,
+      "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.1.15"
+    }
+  ]
+}

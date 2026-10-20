@@ -655,11 +655,11 @@
       "tintColor": "#2E2E2E",
       "versions": [
         {
-          "version": "2.5.0",
-          "date": "2026-09-23",
-          "localizedDescription": "<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/4deb46d9-8b91-4b8a-a4f4-5d59f9190628\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要完善了 **书架管理**，并完成了 **组件迁移**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **API**\r\n  跟进新的接口。\r\n  截止发版前 **详情页 / 书架 / 用户摘要** 已经恢复。\r\n  鉴于接口变动频繁，您可以考虑换用网页版。\r\n\r\n* **书架浏览**\r\n  新增 **全部 / 小说 / 漫画** 三种筛选方式。\r\n  文件夹支持递归筛选，子目录存在匹配内容时仍会正确显示。\r\n  进入文件夹后会保留当前筛选类型。\r\n  改进书籍详情跳转和系列信息识别。\r\n\r\n* **用户成长与签到**\r\n  新增距离下一级所需经验展示。\r\n  满级用户现在会显示对应状态。\r\n  签到调整为进入设置页面时尝试，不再需要进行繁琐操作。\r\n  增加签到并发保护，避免重复请求。\r\n  如果支持，签到会以灵动岛形式提示。\r\n\r\n* **界面组件**\r\n  移除 HeroUI Native，迁移至 **PanelUI Native**。\r\n  更新按钮、卡片、标签、输入框、验证码、头像、Skeleton 和编辑器等组件。\r\n  同步调整社区、评论、公告、书籍详情和认证相关页面。\r\n\r\n* **详情页与阅读器**\r\n  改进阅读器图片预览界面。\r\n  分享、保存和关闭操作改用 **Liquid Glass** 按钮。\r\n  修复原生阅读进度条滑块阴影被裁剪的问题。\r\n  改进详情页 BlurHash 颜色采样效果。\r\n\r\n方便的管理更新：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。",
-          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.5.0/Novella-2.5.0-release.ipa",
-          "size": 26047504,
+          "version": "2.6.0",
+          "date": "2026-10-20",
+          "localizedDescription": "<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/f4b680a1-ec67-4478-99b8-f31bf9b513b1\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要带来了 **iPhone Duo 适配** 和 **私信功能**，并重新设计了 **社区、公告与书籍详情**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **平板与可折叠设备**\r\n  大屏与横屏下自动切换为双栏版面。\r\n  页面内容和阅读器会避开可折叠设备的侧边栏。\r\n  窗口尺寸变化时显示过渡效果。\r\n  书籍详情新增横屏版面，完整显示封面。\r\n  统一页面边距、书籍网格间距与标题样式。\r\n\r\n* **私信**\r\n  新增私信，支持一对一交流。\r\n  会话列表显示未读数，并实时更新。\r\n  横屏下以左右分栏显示会话与聊天，临时会话同样显示在侧栏。\r\n\r\n* **社区与公告**\r\n  重新设计社区与公告页面，适配手机与横屏。\r\n  帖子支持显示图片，点击后可全屏浏览。\r\n  分类标签在滚动边缘渐隐。\r\n  个人资料卡片更加紧凑。\r\n\r\n* **阅读器**\r\n  小说分页模式显示准确页码，进度条反映实际分页进度。\r\n  加载过程中锁定阅读进度。\r\n  漫画新增多种显示方式。\r\n  在可折叠设备上，书名与进度显示在侧边栏，以提升内容紧凑性。\r\n  图片预览改为直接打开，并改进对异常章节资源的处理。\r\n\r\n* **界面与体验**\r\n  更新后首次启动时展示本版本亮点，也可在 **设置 › 关于** 中再次查看。\r\n  骨架屏动画同步，并与实际内容对齐。\r\n  圆角统一使用连续曲率。\r\n  使简介预览正确截断，修复长按书籍详情误触快速搜索。\r\n\r\n* **项目整理**\r\n  升级至 Expo SDK 58 与 React Native 0.88，使用 Xcode 27 构建。\r\n  移除对 react-native-paper 的依赖。\r\n  许可证新增附加条款：衍生作品须注明来源，且素材不在 AGPL 授权范围内。\r\n  详见 [ADDITIONAL-TERMS.md](https://github.com/celia-sh/Novella/blob/main/ADDITIONAL-TERMS.md) 与 [BRAND-ASSETS.md](https://github.com/celia-sh/Novella/blob/main/BRAND-ASSETS.md)。\r\n\r\n网页重新设计：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。\r\n\r\n<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/239bca0f-8da5-4448-b714-90ecb94cf240\" />",
+          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.6.0/Novella-2.6.0-release.ipa",
+          "size": 29979710,
           "minOSVersion": "16.4"
         }
       ]
@@ -895,12 +895,36 @@
       "tintColor": "#1DB954",
       "versions": [
         {
-          "version": "5.2.0",
-          "date": "2026-10-19",
-          "localizedDescription": "### New Features\n\n- **crash**: Show persistent crash reports on Home\n- **about**: Link the lyrics website and service status\n- **player**: Search lyrics online for files without them\n- **lyrics**: Add lrc.red and BetterLyrics, split SpotiFLAC-Mobile Lyrics\n- **home**: Greet in the header and gather listening shortcuts\n- **onboarding**: Introduce the 5.2 release tour\n- **library**: Add adaptive icons to collection tabs\n- **home**: Localize greetings and address profile names\n- **home**: Expose extension country settings and isolate regional caches\n- **lyrics**: Refresh quote sharing and load lyrics on demand\n- **android**: Refresh launcher widgets with adaptive expressive layouts\n- **player**: Add configurable full-screen cover art\n- **player**: Synchronize music haptics with local playback\n- **lyrics**: Share lyric cards and refine timed vocal transitions\n- **player**: Show audio source processing and output details\n- **equalizer**: Add multiband EQ and per-player native audio processing\n- **autoplay**: Enable personalization by default and confirm learning resets\n- **a11y**: Label controls and improve settings contrast and targets\n- **i18n**: Add player feature text and clarify built-in playback\n- **loading**: Align skeletons with collection and extension layouts\n- **player**: Share volume controls across Material and Mornye\n- **rewind**: Add yearly highlights and seasonal library banners\n- **forms**: Adopt expressive inputs with consistent form state\n- **ui**: Add themed menus and adaptive checkbox rows\n- **ui**: Unify content cards and preserve press behavior\n- **layout**: Adapt tablet navigation and center wide content\n- **listening**: Show a skeleton while statistics load\n- **listening**: Add Rewind highlights and refresh statistics\n- **player**: Refine mini-player and queue feedback\n- **library**: Add sectioned browsing and adaptive fast scrolling\n- **material**: Unify progress and surface transitions\n- **material**: Animate header action groups and collapse\n- **settings**: Connect custom Material settings rows\n- **settings**: Connect standard Material settings rows\n- **ui**: Add Material Expressive spring motion\n- **lyrics**: Add SpotiFLAC fallback for Apple Music outages\n- **ui**: Extend Material Expressive surfaces and playback controls\n- **theme**: Show a check on selected expressive switches\n- **theme**: Adopt Material Symbols and expressive components\n- **metadata**: Add per-field download tag separators\n\n### Bug Fixes\n\n- **crash**: Match the Home crash card to the error card style\n- **library**: Recover interrupted scans and stale notifications\n- **downloads**: Offer folder recovery for permission failures\n- **equalizer**: Keep headroom and limiter choices when applying a preset\n- **lyrics**: Restore QQ Music search after the desktop CGI broke\n- **player**: Restore the lighter full-screen cover scrim\n- **storage**: Retain legacy Android cipher migration support\n- **library**: Recover missing local album artwork from audio\n- **library**: Restore bit depth as the default quality badge\n- **haptics**: Analyze document audio across skips and AutoMix\n- **player**: Report Android output failures without skipping tracks\n- **network**: Request Android 17 local network access before NAS connections\n- **theme**: Retain dominant cover colors in player backgrounds\n- **automix**: Align effect handoffs and render sufficient source audio\n- **downloads**: Recover native queues when their service dies\n- **verification**: Bound browser handoffs and release expired dialogs\n- **player**: Size volume slider handle proportionally\n- **settings**: Use shared sheet for log level selection\n- **headers**: Fit artwork and unify toolbar controls\n- **metadata**: Align separator picker with Settings components\n- **settings**: Unify adaptive sheet layout and drag behavior\n- **player**: Expose favorites and shuffle in Material notifications\n- **audio**: Preserve FLAC precision in Android bit-perfect playback\n- **extensions**: Use adaptive icons for installed extension avatars\n- **library**: Align filter and sort sheet sizing and dismissal\n- **player**: Prevent overlapping titles during rapid skips\n- **storage**: Preserve audio MIME when publishing SAF downloads\n- **lyrics**: Refresh LRC sidecars in their actual SAF folder\n- **download**: Probe M4A streams before preserving requested FLAC\n- **automix**: Wait for advancing audio before starting fades\n\n### Performance\n\n- **lyrics**: Compile credit regexes once\n- **library**: Build DateFormat and RegExp once instead of per row\n- **history**: Suppress unchanged membership notifications\n- **history**: Reuse unchanged download lookup indexes\n- **releases**: Narrow weekly release provider dependencies\n- **lyrics**: Cache timed lyric segment geometry\n- **player**: Cache adjacent track titles during swipes\n\n### Refactoring\n\n- **android**: Share the SAF scan percent and CUE helpers\n- **android**: Move SAF batch exists and modtime queries out of MainActivitySafScan.kt\n- **android**: Move SAF tree listing and executors out of MainActivitySafScan.kt\n- **android**: Move SAF CUE helpers out of MainActivitySafScan.kt\n- **android**: Move SAF scan checkpointing out of MainActivitySafScan.kt\n- **android**: Move SAF file inspection out of MainActivitySafScan.kt\n- **android**: Put the SAF IO helpers on Context receivers\n- **android**: Share the foreground wake lock and start helper between the two services\n- **providers**: Share one Coalescer for single-flight request coalescing\n- **android**: Move the lifecycle backend calls into MainActivityLifecycleCalls.kt\n- **android**: Move the download service and worker backend calls into MainActivityServiceCalls.kt\n- **android**: Move the library scan backend calls into MainActivityLibraryScanCalls.kt\n- **android**: Move the metadata and tag backend calls into MainActivityMetadataCalls.kt\n- **android**: Move the SAF backend calls into MainActivitySafCalls.kt\n- **android**: Move install state, extension intents, SAF leases and small channels out of MainActivity.kt\n- **library**: Split local_library_provider.dart into source, scan and cover parts\n- **library**: Share the scan completion tail as _finishScan\n- **library**: Remove the unreachable snapshot sub-branch of the incremental scan\n- **convert**: Route single-track conversion through the shared pipeline\n- **queue**: Move the completion bridge into CompletionBridgeTracker\n- **queue**: Move library paging state into QueueLibraryPager\n- **bridge**: Share one generic cache entry and put/prune helper\n- **collections**: Move playlist cover file I/O into PlaylistCoverStore\n- **cache**: Move directory scanning and clearing into CacheMaintenanceService\n- **analysis**: Move the FFmpeg runner out of the widget\n- **analysis**: Move the analysis disk cache into audio_analysis_cache.dart\n- **analysis**: Move the pure FFmpeg builders and parsers to a service\n- **setup**: Move SharedPreferences access behind SetupProgressStore and SafMigrationPromptStore\n- **providers**: Move UI-declared providers to lib/providers\n- **rust**: Rename mod.rs modules to the foo.rs + foo/ layout\n- **concerts**: Move the calendar channel into a service\n- **repo**: Prepare install paths in the repo notifier\n- **share**: Share the widget capture helper\n- **extensions**: Share the extension health color and icon helpers\n- **playlists**: Share the playlist name prompt and dispose its controller\n- **artist**: Move the discography download into a part\n- **home**: Use downloadSingleTrack for search results\n- **storage**: Share the SAF download tree pick\n- **layout**: Share responsiveScale and effectiveTextScale\n- **layering**: Move logic files out of screens\n- **layering**: Move model files to models and fix inverted imports\n- **layering**: Move UI action helpers from services and utils to controllers\n- **core**: Add fs::write_atomic and use it for the atomic file writes\n- **rust**: Consolidate small duplicate helpers\n- **core**: Move the lenient Go-style JSON decoder to core::json\n- **metadata**: Share the sidecar publish path between save-cover and save-lyrics\n- **android**: Move RustCoreBackend.invokeApplication into its own file\n- **android**: Move Impeller helpers, the SAF tree picker and progress streams out of MainActivity.kt\n- **utils**: Share the FNV-1a 32-bit hash\n- **notifications**: Reuse formatMegabytes\n- **io**: Use isContentUri instead of inline content:// checks\n- **io**: Use deleteFileQuietly for exists-then-delete\n- **android**: Move finalizer history into NativeFinalizerHistory.kt\n- **android**: Move finalizer post-processing into NativeFinalizerPostProcess.kt\n- **android**: Move finalizer metadata into NativeFinalizerMetadata.kt\n- **android**: Move finalizer container into NativeFinalizerContainer.kt\n- **android**: Move finalizer decrypt into NativeFinalizerDecrypt.kt\n- **network**: Split client.rs into pool, stream, headers and tests, and factor execute_stream\n- **extensions**: Split manager.rs into install, lifecycle, info and tests modules\n- **player**: Move restorePlaybackSession to playback_session_restore.dart\n- **player**: Move PlayableMedia to playable_media.dart\n- **player**: Port tests to musicPlayerRuntime and delete the test-only wrappers\n- **settings**: Move log_screen widgets into a part\n- **settings**: Move extensions_page widgets into a part\n- **settings**: Move appearance_settings_page widgets into a part\n- **settings**: Move files_settings_page widgets into a part\n- **settings**: Move download_settings_page widgets into a part\n- **settings**: Move library_settings_page widgets into a part\n- **settings**: Move extension_detail_page widgets into a part\n- **extensions**: Split backend/downloads.rs helpers into submodules and move its sibling tests\n- **extensions**: Split runtime.rs into control, vm and tests modules\n- **library**: Extract the ingestion store from library_database.dart\n- **history**: Move the history schema and row mapper into their own files\n- **downloads**: Move pure queue policy helpers into download_queue_policy.dart\n- **lyrics**: Split native_lyrics into text, lrc, ttml, credits and tests modules\n- **rust**: Move inline tests and the test-only hires decoder into submodules\n- **native**: Share errorJson and retire Go-era names in native comments\n- **android**: Drop SDK checks below minSdk 24\n- **android**: Drop unreachable dispatch cases and dead channel handlers\n- **android**: Remove backend switches that became constants\n- **shell**: Move nav icons to a widget file and startup prompts into a part\n- **setup**: Move the setup step builders into a part\n- **equalizer**: Split the equalizer screen into widgets and curve parts\n- **rewind**: Split the listening rewind screen and move its providers\n- **lyrics**: Split player_lyrics.dart into line-style and word-sweep parts\n- **metadata**: Move editor form primitives into a widgets file\n- **metadata**: Split the edit sheet into cover and auto-fill parts\n- **metadata**: One option picker for provider and cover size\n- **home**: Split the home tab build into sliver-group builders\n- **home**: Move extension collection screens into their own library\n- **library**: Build the filter sheet from the sort-mode table\n- **library**: Move queue download labels, dialogs and sliver grid out of queue_tab.dart\n- **bridge**: Move platform_bridge helpers into part files\n- **providers**: Remove the unused Deezer catalogue search\n- **rust**: Restrict test-only functions\n- **network**: Drop the ignored insecure_tls parameter inside Rust\n- **services**: Clarify misleading names and drop a no-op rethrow\n- **logging**: Rename Go-era log names to native\n- **services**: Mark test-only members and privatize file-local ones\n- **services**: Remove members with no caller\n- **library**: Drop unread QueueTab page parameters and fast-scroller callbacks\n- **settings**: Migrate remaining sheet choices\n- **explore**: Centralize persistent cache storage\n- **downloads**: Centralize failed session accounting\n- **downloads**: Update queue items and indexes together\n- **ios**: Share locked backend manager snapshots\n- **playback**: Share lost route pause transitions\n- **android**: Scope Rust download state handles consistently\n- **extensions**: Share priority settings links\n- **library**: Share selection action grid layout\n- **settings**: Share selectable bottom sheet options\n- **android**: Share native album artist resolution\n- **ios**: Simplify supported OAuth session handling\n- **android**: Remove unreachable backend dispatch fallbacks\n- **metadata**: Reuse the platform tag mapper\n- **ui**: Use shared loading indicators\n- **ui**: Unify expressive actions and modal transitions\n\n### Documentation\n\n- **contributing**: Add the codebase map and architecture guide\n- **test**: Describe test layout, contracts and host tools\n- **theme**: Explain the Material and Mornye theme layer\n- **third-party**: Complete the vendored plugin patch notes\n- **rust**: Describe the backend workspace, builds and bindings\n- **integration-test**: Index the device suites and their defines\n- **android**: Document the native channel contract\n- **rust**: Add module docs to large modules without one\n- **selection**: Correct the SelectionModeMixin doc\n- **rust**: Mark the Unicode case table as frozen and generated\n- **rust**: Say that Go is the retired backend in crate docs\n- **contributing**: Name every third_party fork and scope the ffmpeg override\n- **contributing**: Match the repository (l10n, gradle, ffmpeg, test layers)\n- **readme**: Describe the lyrics providers and online search\n- **readme**: Redesign banner, sections and showcase\n- **readme**: Show the redesigned Home screen\n- **readme**: Refresh screenshots, badges and feature table\n- **l10n**: Describe network storage messages\n\n### Styling\n\n- **material**: Align tonal surfaces and control shapes\n\n### Testing\n\n- **player**: Split music_player_automix_test.dart by group\n- **queue**: Remove real waits from the startup flush test\n- **player**: Drive AutoMix transport and haptics with fake time\n- **bridge**: Inject the lookup cache persist debounce\n- **android**: Pin the extension and MIME tables\n- **android**: Assert the backend routing set matches the dispatch cases\n- Share one FixedSettingsNotifier across tests\n- Skip the automix renderer test when ffmpeg is missing\n- Poll for cover eviction instead of asserting after one event-loop turn\n- Split models_and_utils_test by domain and isolate source contracts\n- Declare the path provider interface dependency\n- **library**: Share re-enrichment settings fixtures\n\n### Chores\n\n- Update AltStore source to v5.1.1 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **lyrics**: Rename first-party provider to Zarz-LRC\n- **analysis**: Analyze hand-written l10n files and correct the lint comment\n- Retire Go-era config and rename SMB fixture servers\n- Run the Android Rust build once and cache Cargo\n- Add a dart format gate and fix the one drifted test file\n- **settings**: Clarify beta features and playback information\n- Include integration tests in Dart change detection\n- Ignore local release assets\n- **release**: Bump app to 5.2.0 build 162\n\n### Build\n\n- **rust**: Drop unused direct dependencies and centralize pins\n\n\n\n\n**Full Changelog**: [v5.1.1...v5.2.0](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v5.1.1...v5.2.0)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v5.2.0-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v5.2.0-arm32.apk` (older devices)\n- `*.apk.idsig`: V4 signatures for `adb install --incremental` only; normal installs do not need them\n\n#### iOS\n- **iOS**: `SpotiFLAC-v5.2.0-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
-          "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v5.2.0/SpotiFLAC-v5.2.0-ios-unsigned.ipa",
-          "size": 34659653,
+          "version": "5.2.1",
+          "date": "2026-10-20",
+          "localizedDescription": "### New Features\n\n- **onboarding**: Replace the 5.2 tour with a rebrand tour\n- **branding**: Use Mornye Ink for the iOS launch screen\n- **branding**: Adopt the Mornye logo across the app\n- **branding**: Rename app and native backend to Mornye\n- **player**: Swipe up on the mini player to open Now Playing\n- **playback**: Add normalization pre-amp and track or album gain\n- **ui**: Align Material screens with M3 Expressive guidance\n\n### Bug Fixes\n\n- **crash**: Reduce repeated notices and retain diagnostics\n- **player**: Prefer embedded art for local files over online covers\n- **startup**: Wait for the Activity before backend startup calls\n- **library**: Use path index for network scan cache lookups\n- **ui**: Align Material screens with the design guide\n- **concerts**: Give the Material concert page a Material layout\n- **player**: Refresh late duration updates without reopening\n- **home**: Match On repeat tracks to their Library entry\n- **home**: Show listening sections on the Mornye Home without a feed\n- **lyrics**: Ease synced line changes with a spring scroll\n- **haptics**: Render music pulses on basic motors and add tuning sliders\n- **downloads**: Embed enriched artwork across audio formats\n- **artwork**: Read padded ID3 covers and repair cached previews\n- **crash**: Exclude system memory kills from crash notices\n- **backup**: Reconcile restored iOS paths before publishing history\n- **library**: Release network scan memory and cancel active metadata reads\n- **android**: Apply renderer compatibility before shared engine creation\n\n### Performance\n\n- **ui**: Improve Material and Mornye player and library smoothness\n- **library**: Cache unchanged SMB and WebDAV scan metadata\n\n### Documentation\n\n- **readme**: Remove Related Projects section\n- **readme**: Drop heading anchors from feature cards\n\n### Chores\n\n- Update AltStore source to v5.2.0 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **branding**: Drop remaining SpotiFLAC references\n- **release**: Bump app to 5.2.1 build 163\n\n\n\n\n**Full Changelog**: [v5.2.0...v5.2.1](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v5.2.0...v5.2.1)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `Mornye-v5.2.1-arm64.apk` (recommended for modern devices)\n- **arm32**: `Mornye-v5.2.1-arm32.apk` (older devices)\n- `*.apk.idsig`: V4 signatures for `adb install --incremental` only; normal installs do not need them\n\n#### iOS\n- **iOS**: `Mornye-v5.2.1-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
+          "downloadURL": "https://github.com/mornyeapp/Mornye/releases/download/v5.2.1/Mornye-v5.2.1-ios-unsigned.ipa",
+          "size": 34515412,
           "minOSVersion": "16.0"
+        }
+      ]
+    },
+    {
+      "name": "StikDebug",
+      "bundleIdentifier": "com.stik.stikdebug",
+      "developerName": "StikDebug",
+      "subtitle": "On-device JIT enabler and device toolbox.",
+      "localizedDescription": "An on-device debugger and developer toolbox for iOS versions 17.4+ powered by idevice. Note: requires LocalDevVPN and cannot be used inside LiveContainer to enable JIT for that same LiveContainer.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/home.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/scripts.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/settings.png"
+      ],
+      "tintColor": "#3B86F7",
+      "versions": [
+        {
+          "version": "3.1.15",
+          "date": "2026-10-15",
+          "localizedDescription": "**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.14...3.1.15\r\nAttempt to fix ServiceNotFound errors, add debugging",
+          "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.15/StikDebug-3.1.15.ipa",
+          "size": 13543234,
+          "minOSVersion": "17.4"
         }
       ]
     },
@@ -1039,17 +1063,50 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.9.1",
-          "date": "2026-10-16",
-          "localizedDescription": "* 正文双击点赞/打开评论 by @AprDeci in https://github.com/huamurui/zhihu-minus-minus/pull/134\r\n* 补充知乎内容广告标志\r\n\r\n## New Contributors\r\n* @AprDeci made their first contribution in https://github.com/huamurui/zhihu-minus-minus/pull/134\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.0...v0.9.1",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.1/zhihu-minus-minus-v0.9.1-unsigned.ipa",
-          "size": 16109036,
+          "version": "0.9.2",
+          "date": "2026-10-20",
+          "localizedDescription": "* fix: 修复关注页异常响应崩溃并补齐脱敏错误诊断 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/136\r\n* 更新一个疑似内容已读的接口调用。（可能无效，即使有效也要用一段时间之后才会改善推流重复的问题）\r\n* 主题色选择修复。\r\n* 小问题 #125 #120 \r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.1...v0.9.2",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.2/zhihu-minus-minus-v0.9.2-unsigned.ipa",
+          "size": 16033253,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "sh.celia.novella",
+      "title": "Novella 2.6.0 · 20 Oct 2026",
+      "identifier": "Novella-release-v2.6.0",
+      "caption": "Novella 2.6.0 is available.",
+      "date": "2026-10-20T07:35:20Z",
+      "tintColor": "#2E2E2E",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
+      "notify": true,
+      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.6.0"
+    },
+    {
+      "appID": "com.zarz.spotiflac",
+      "title": "SpotiFLAC 5.2.1 · 20 Oct 2026",
+      "identifier": "SpotiFLAC-release-v5.2.1",
+      "caption": "SpotiFLAC 5.2.1 is available.",
+      "date": "2026-10-20T06:36:14Z",
+      "tintColor": "#1DB954",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/news.png",
+      "notify": true,
+      "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v5.2.1"
+    },
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.9.2 · 20 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.9.2",
+      "caption": "ZhihuMinusMinus 0.9.2 is available.",
+      "date": "2026-10-20T06:16:17Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.2"
+    },
     {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
       "title": "Pixiv-SwiftUI 0.16.3 · 19 Oct 2026",
@@ -1071,17 +1128,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261019"
-    },
-    {
-      "appID": "com.zarz.spotiflac",
-      "title": "SpotiFLAC 5.2.0 · 19 Oct 2026",
-      "identifier": "SpotiFLAC-release-v5.2.0",
-      "caption": "SpotiFLAC 5.2.0 is available.",
-      "date": "2026-10-19T11:04:23Z",
-      "tintColor": "#1DB954",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/news.png",
-      "notify": true,
-      "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v5.2.0"
     },
     {
       "appID": "sb.moe.kumone",
@@ -1183,17 +1229,6 @@
       "url": "https://github.com/Aidoku/Aidoku/releases/tag/v0.9-4"
     },
     {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.9.1 · 16 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.9.1",
-      "caption": "ZhihuMinusMinus 0.9.1 is available.",
-      "date": "2026-10-16T12:31:27Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.1"
-    },
-    {
       "appID": "com.altman.moviepilot",
       "title": "MoviePilotLite 1.2.5 · 16 Oct 2026",
       "identifier": "MoviePilotLite-release-release-v1.2.5-2026-10-16",
@@ -1203,6 +1238,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
       "notify": true,
       "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.5-2026-10-16"
+    },
+    {
+      "appID": "com.stik.stikdebug",
+      "title": "StikDebug 3.1.15 · 15 Oct 2026",
+      "identifier": "StikDebug-release-3.1.15",
+      "caption": "StikDebug 3.1.15 is available.",
+      "date": "2026-10-15T14:31:50Z",
+      "tintColor": "#3B86F7",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png",
+      "notify": true,
+      "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.1.15"
     },
     {
       "appID": "com.example.kazumi",
@@ -1412,17 +1458,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
       "notify": true,
       "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.4"
-    },
-    {
-      "appID": "sh.celia.novella",
-      "title": "Novella 2.5.0 · 23 Sep 2026",
-      "identifier": "Novella-release-v2.5.0",
-      "caption": "Novella 2.5.0 is available.",
-      "date": "2026-09-23T04:19:05Z",
-      "tintColor": "#2E2E2E",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
-      "notify": true,
-      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.5.0"
     },
     {
       "appID": "com.aoshuang.manicemu",

@@ -21,11 +21,11 @@
       "tintColor": "#2E2E2E",
       "versions": [
         {
-          "version": "2.5.0",
-          "date": "2026-09-23",
-          "localizedDescription": "<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/4deb46d9-8b91-4b8a-a4f4-5d59f9190628\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要完善了 **书架管理**，并完成了 **组件迁移**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **API**\r\n  跟进新的接口。\r\n  截止发版前 **详情页 / 书架 / 用户摘要** 已经恢复。\r\n  鉴于接口变动频繁，您可以考虑换用网页版。\r\n\r\n* **书架浏览**\r\n  新增 **全部 / 小说 / 漫画** 三种筛选方式。\r\n  文件夹支持递归筛选，子目录存在匹配内容时仍会正确显示。\r\n  进入文件夹后会保留当前筛选类型。\r\n  改进书籍详情跳转和系列信息识别。\r\n\r\n* **用户成长与签到**\r\n  新增距离下一级所需经验展示。\r\n  满级用户现在会显示对应状态。\r\n  签到调整为进入设置页面时尝试，不再需要进行繁琐操作。\r\n  增加签到并发保护，避免重复请求。\r\n  如果支持，签到会以灵动岛形式提示。\r\n\r\n* **界面组件**\r\n  移除 HeroUI Native，迁移至 **PanelUI Native**。\r\n  更新按钮、卡片、标签、输入框、验证码、头像、Skeleton 和编辑器等组件。\r\n  同步调整社区、评论、公告、书籍详情和认证相关页面。\r\n\r\n* **详情页与阅读器**\r\n  改进阅读器图片预览界面。\r\n  分享、保存和关闭操作改用 **Liquid Glass** 按钮。\r\n  修复原生阅读进度条滑块阴影被裁剪的问题。\r\n  改进详情页 BlurHash 颜色采样效果。\r\n\r\n方便的管理更新：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。",
-          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.5.0/Novella-2.5.0-release.ipa",
-          "size": 26047504,
+          "version": "2.6.0",
+          "date": "2026-10-20",
+          "localizedDescription": "<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/f4b680a1-ec67-4478-99b8-f31bf9b513b1\" />\r\n\r\n## **What's Changed 🧐**\r\n\r\n本次更新主要带来了 **iPhone Duo 适配** 和 **私信功能**，并重新设计了 **社区、公告与书籍详情**。\r\n**仅支持 iOS / iPadOS**。\r\n\r\n### **⚡️ 内容概要**\r\n\r\n* **平板与可折叠设备**\r\n  大屏与横屏下自动切换为双栏版面。\r\n  页面内容和阅读器会避开可折叠设备的侧边栏。\r\n  窗口尺寸变化时显示过渡效果。\r\n  书籍详情新增横屏版面，完整显示封面。\r\n  统一页面边距、书籍网格间距与标题样式。\r\n\r\n* **私信**\r\n  新增私信，支持一对一交流。\r\n  会话列表显示未读数，并实时更新。\r\n  横屏下以左右分栏显示会话与聊天，临时会话同样显示在侧栏。\r\n\r\n* **社区与公告**\r\n  重新设计社区与公告页面，适配手机与横屏。\r\n  帖子支持显示图片，点击后可全屏浏览。\r\n  分类标签在滚动边缘渐隐。\r\n  个人资料卡片更加紧凑。\r\n\r\n* **阅读器**\r\n  小说分页模式显示准确页码，进度条反映实际分页进度。\r\n  加载过程中锁定阅读进度。\r\n  漫画新增多种显示方式。\r\n  在可折叠设备上，书名与进度显示在侧边栏，以提升内容紧凑性。\r\n  图片预览改为直接打开，并改进对异常章节资源的处理。\r\n\r\n* **界面与体验**\r\n  更新后首次启动时展示本版本亮点，也可在 **设置 › 关于** 中再次查看。\r\n  骨架屏动画同步，并与实际内容对齐。\r\n  圆角统一使用连续曲率。\r\n  使简介预览正确截断，修复长按书籍详情误触快速搜索。\r\n\r\n* **项目整理**\r\n  升级至 Expo SDK 58 与 React Native 0.88，使用 Xcode 27 构建。\r\n  移除对 react-native-paper 的依赖。\r\n  许可证新增附加条款：衍生作品须注明来源，且素材不在 AGPL 授权范围内。\r\n  详见 [ADDITIONAL-TERMS.md](https://github.com/celia-sh/Novella/blob/main/ADDITIONAL-TERMS.md) 与 [BRAND-ASSETS.md](https://github.com/celia-sh/Novella/blob/main/BRAND-ASSETS.md)。\r\n\r\n网页重新设计：[**添加到侧载工具**](https://sideload.celia.sh) ↗️\r\n了解其它项目：[**celia-sh/Hana**](https://github.com/celia-sh/Hana) 🌸\r\n闲聊吹水 / 反馈问题：[**点此加入**](https://t.me/+xNDJEfc_naRlMGEx) ✈️\r\n\r\n> [!CAUTION]\r\n> **本应用与网站没有直接关系**，所以**不要在**社区发布和**本软件**相关的帖子。\r\n> 正确反馈渠道：在仓库开 Issues，或者加入交流群。\r\n> 记得**看完公告和发帖前提示**，以免被网站封禁；如果不看，我只能说：非我封禁，无能为力。\r\n> 请记清楚，这不是官方软件。\r\n\r\n<img width=\"800\" alt=\"Banner\" src=\"https://github.com/user-attachments/assets/239bca0f-8da5-4448-b714-90ecb94cf240\" />",
+          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.6.0/Novella-2.6.0-release.ipa",
+          "size": 29979710,
           "minOSVersion": "16.4"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sh.celia.novella",
-      "title": "Novella 2.5.0 · 23 Sep 2026",
-      "identifier": "Novella-release-v2.5.0",
-      "caption": "Novella 2.5.0 is available.",
-      "date": "2026-09-23T04:19:05Z",
+      "title": "Novella 2.6.0 · 20 Oct 2026",
+      "identifier": "Novella-release-v2.6.0",
+      "caption": "Novella 2.6.0 is available.",
+      "date": "2026-10-20T07:35:20Z",
       "tintColor": "#2E2E2E",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
       "notify": true,
-      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.5.0"
+      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.6.0"
     }
   ]
 }
