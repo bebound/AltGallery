@@ -21,7 +21,7 @@
       "tintColor": "#0784FC",
       "versions": [
         {
-          "version": "nightly",
+          "version": "3.8.11",
           "date": "2026-10-17",
           "localizedDescription": "**Commit:** [9108ae624ea001f7d7696d48407f890b48fa2653](https://github.com/LiveContainer/LiveContainer/commit/9108ae624ea001f7d7696d48407f890b48fa2653)\n**Message:** fix #1644 #1655 #1666, bump bersion\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/39017541871/attempts/1).",
           "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
@@ -42,9 +42,9 @@
   "news": [
     {
       "appID": "com.kdt.livecontainer",
-      "title": "LiveContainer+SideStore nightly · 17 Oct 2026",
+      "title": "LiveContainer+SideStore 3.8.11 · 17 Oct 2026",
       "identifier": "LiveContainer+SideStore-release-nightly",
-      "caption": "LiveContainer+SideStore nightly is available.",
+      "caption": "LiveContainer+SideStore 3.8.11 is available.",
       "date": "2026-10-17T08:31:56Z",
       "tintColor": "#0784FC",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
