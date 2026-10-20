@@ -149,6 +149,9 @@ Torrent streaming client for iOS, iPadOS, tvOS and Mac (Catalyst), written in Sw
 ### <a href="https://github.com/spotiflacapp/SpotiFLAC-Mobile"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/SpotiFLAC/icon.png" alt="SpotiFLAC icon" width="24" align="top"> SpotiFLAC</a>
 Flutter music downloader built around installable extensions that provide the metadata and audio, with a local library, lyrics and quality badges.
 
+### <a href="https://github.com/StikDebug/StikDebug"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/StikDebug/icon.png" alt="StikDebug icon" width="24" align="top"> StikDebug</a>
+On-device JIT enabler and device toolbox for iOS 17.4+, built on idevice.
+
 ### <a href="https://github.com/infinityf4p/TiebaPure-iOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/TiebaPure/icon.png" alt="TiebaPure icon" width="24" align="top"> TiebaPure</a>
 原生 SwiftUI 构建的非官方贴吧 iOS 客户端，支持浏览、搜索、收藏、媒体查看与本地阅读记录。
 

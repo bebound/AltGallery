@@ -1,0 +1,17 @@
+# render_news.py config: python3 tools/render_news.py --out apps/StikDebug
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "StikDebug"
+tagline = "On-device JIT enabler"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#3B86F7"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#3B86F7"      # bottom-right glow (default: [source] tint_color)
+# background = "#D6E7FD"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#E7F0FE"        # gradient mid stop (derived from background)
+# bg_dark = "#BBD3FA"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#3B86F7" # tagline text (derived from background)

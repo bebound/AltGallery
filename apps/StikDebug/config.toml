@@ -1,0 +1,42 @@
+# altgen config for the StikDebug AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "StikDebug/StikDebug"
+
+[source]
+name = "StikDebug"
+subtitle = "StikDebug AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for StikDebug"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/icon.png"
+website = "https://github.com/StikDebug/StikDebug"
+tint_color = "#3B86F7"
+
+[app]
+name = "StikDebug"
+bundle_identifier = "com.stik.stikdebug"
+developer_name = "StikDebug"
+subtitle = "On-device JIT enabler and device toolbox."
+description = "An on-device debugger and developer toolbox for iOS versions 17.4+ powered by idevice. Note: requires LocalDevVPN and cannot be used inside LiveContainer to enable JIT for that same LiveContainer."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/home.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/scripts.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/settings.png",
+]
+tint_color = "#3B86F7"
+min_os_version = "17.4"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): releases ship a single StikDebug-<version>.ipa
+asset_pattern = "StikDebug-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png"
+
+[output]
+path = "apps.json"
