@@ -35,6 +35,7 @@ include_prereleases = true
 # asset_pattern is a regex (not glob): matches any ipa asset. Nightlies ship
 # *-iOS-arm64.ipa; older iOSv* releases ship ARMSX2-iOS-*.ipa.
 asset_pattern = ".*\\.ipa$"
+version_source = "ipa"
 
 [news]
 title_template = "{name} {version} · {date}"

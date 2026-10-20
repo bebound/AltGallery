@@ -34,6 +34,7 @@ include_prereleases = true
 asset_pattern = "LiveContainer\\+SideStore\\.ipa$"
 # include nightly version and stable version
 max_versions = 2
+version_source = "ipa"
 
 [news]
 title_template = "{name} {version} · {date}"
