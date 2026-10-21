@@ -1063,17 +1063,28 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.9.2",
-          "date": "2026-10-20",
-          "localizedDescription": "* fix: 修复关注页异常响应崩溃并补齐脱敏错误诊断 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/136\r\n* 更新一个疑似内容已读的接口调用。（可能无效，即使有效也要用一段时间之后才会改善推流重复的问题）\r\n* 主题色选择修复。\r\n* 小问题 #125 #120 \r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.1...v0.9.2",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.2/zhihu-minus-minus-v0.9.2-unsigned.ipa",
-          "size": 16033253,
+          "version": "0.9.3",
+          "date": "2026-10-21",
+          "localizedDescription": "折叠卡片浏览模式的一些优化。\r\n\r\n## Changes\r\n* fix(answer-preview): 同问题只显示一次标题，补充发布时间与 IP 属地 by @NobetaSena in https://github.com/huamurui/zhihu-minus-minus/pull/137\r\n* 优化回答预览折叠判断，并支持首条回答收起 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/138\r\n\r\n## New Contributors\r\n* @NobetaSena made their first contribution in https://github.com/huamurui/zhihu-minus-minus/pull/137\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.2...v0.9.3",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.3/zhihu-minus-minus-v0.9.3-unsigned.ipa",
+          "size": 16035022,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.9.3 · 21 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.9.3",
+      "caption": "ZhihuMinusMinus 0.9.3 is available.",
+      "date": "2026-10-21T03:27:58Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.3"
+    },
     {
       "appID": "com.sean.roamcontrol",
       "title": "Roam Control 0.9.9 · 20 Oct 2026",
@@ -1128,17 +1139,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/news.png",
       "notify": true,
       "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v5.2.1"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.9.2 · 20 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.9.2",
-      "caption": "ZhihuMinusMinus 0.9.2 is available.",
-      "date": "2026-10-20T06:16:17Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.2"
     },
     {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
