@@ -21,12 +21,12 @@
       "tintColor": "#0077B6",
       "versions": [
         {
-          "version": "5.2.2",
-          "buildVersion": "1017",
-          "date": "2026-10-18",
-          "localizedDescription": "### 新增\r\n\r\n- 新增网络设置，支持独立开启 DoH（DNS over HTTPS）与 ECH（Encrypted Client Hello），并自定义 DoH / ECH 配置查询服务地址。\r\n- 片头、片尾标注支持分别一键“应用到全集”，同一番剧、同片源线路和时间轴可复用标注；已有单集校准优先，登录后可共享全集标注。\r\n- 新增“隐藏 NSFW 内容”开关，可在设置中控制相关内容的展示。\r\n\r\n### 优化\r\n\r\n- 重整设置页面与播放器设置面板，统一分组和控件样式，优化字体、弹幕、字幕及播放参数的调节体验。\r\n- 优化视频源的 JSON、HTML 和种子资源解析，完善资源筛选、去重及备用结果处理；MiFun 内置规则启用 HLS 广告过滤。\r\n- 优化种子下载的分片调度、数据校验及超时处理，改善边下边播的稳定性。\r\n- 优化网络异常与图片加载失败提示，减少重复提醒；弹幕服务请求失败时停止重复尝试其他标题，避免累积等待。\r\n- 加强 Windows DLSS 帧生成运行库的完整性检查与取消处理。\r\n\r\n### 修复\r\n\r\n- 修复播放页初始追番状态未正确加载、快速重复操作及异步请求覆盖较新状态的问题。\r\n- 改善 Bangumi 授权登录对临时网络错误的重试处理，避免短暂网络波动直接中断登录。\r\n- 修复 Windows 窗口初始化或销毁期间访问未就绪 Flutter 引擎的风险，并补充启动失败诊断日志。\r\n\r\n### 使用说明\r\n\r\n- DoH 与 ECH 默认关闭，保存后需重启应用生效。ECH 需要目标站点支持；仅开启 ECH 时，IP 地址仍通过系统 DNS 解析。未发布 ECH 配置的站点继续使用普通 HTTPS。\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.2.1+1007...5.2.2+1017",
-          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.2.2%2B1017/baka-5.2.2%2B1017-ios-unsigned.ipa",
-          "size": 23777025,
+          "version": "5.2.3",
+          "buildVersion": "1020",
+          "date": "2026-10-21",
+          "localizedDescription": "- 支持绑定、更换找回邮箱，通过邮箱验证码修改或找回密码；已填写 QQ 的账户可直接使用对应 QQ 邮箱找回。\r\n- 优化自动搜源与换源逻辑，减少重复加载，修复短标题误匹配及历史匹配记录可能关联到其他作品的问题。\r\n- 优化媒体代理、播放鉴权与 HLS 处理，更新部分内置源，改善播放兼容性与去广告处理。\r\n- 优化弹幕加载，减少重复请求，修复部分弹幕颜色解析错误，以及切集后旧弹幕加载结果覆盖当前内容的问题。\r\n- 调整番剧详情、评分、角色、收藏和评论界面，优化桌面播放器侧栏与剧集缩略图展示。\r\n- 公告与置顶评论支持关闭后记住状态，内容更新后再次提示。\r\n- 优化 Bangumi 数据缺失及请求异常的处理，完善网络设置说明。\r\n- 修复 Windows 首次构建可能遗漏原生依赖的问题，并增加发行包依赖校验。\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.2.2+1017...5.2.3+1020",
+          "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.2.3%2B1020/baka-5.2.3%2B1020-ios-unsigned.ipa",
+          "size": 23775885,
           "minOSVersion": "13.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "ani.baka",
-      "title": "AniBaka 5.2.2 · 18 Oct 2026",
-      "identifier": "AniBaka-release-5.2.2+1017",
-      "caption": "AniBaka 5.2.2 is available.",
-      "date": "2026-10-18T11:13:56Z",
+      "title": "AniBaka 5.2.3 · 21 Oct 2026",
+      "identifier": "AniBaka-release-5.2.3+1020",
+      "caption": "AniBaka 5.2.3 is available.",
+      "date": "2026-10-21T11:26:14Z",
       "tintColor": "#0077B6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
       "notify": true,
-      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.2+1017"
+      "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.3+1020"
     }
   ]
 }
