@@ -177,6 +177,31 @@
       ]
     },
     {
+      "name": "BCD",
+      "bundleIdentifier": "com.thebcd69.bcd",
+      "developerName": "thebcd69",
+      "subtitle": "Windows games on iPhone and iPad",
+      "localizedDescription": "A fast, controller-friendly launcher that runs Windows games on iOS and iPadOS with Steam and GOG built in, powered by Wine, FEX and Metal via DXMT.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/library.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/settings.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/accounts.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/controllers.png"
+      ],
+      "tintColor": "#F070F0",
+      "versions": [
+        {
+          "version": "0.1.578",
+          "date": "2026-10-21",
+          "localizedDescription": "> **Tried one of these games on an earlier build? Reset its settings first.** A game keeps the settings it had until you reset them, so without this it may start with the old ones that failed. On the game's page: **Options › Recommended settings › Reset to Recommended**, then check that **Options › Auto-tune › Auto-tune this game** is on, and start the game again.\n\nThis build fixes failures found in the logs you sent with Send Log since 0.1.576 (0.1.577 was a test build and was not released). Each fix targets the error a log showed; none of them could be tested on a device yet, so a game may now get further and still stop at a later point. If it does, please send a new log: it names the next problem.\n\n- **BeamNG.drive:** when its launcher stopped, the whole of BCD could close. The logs showed Wine's server writing to an I/O request it had already freed; the cause is fixed. BeamNG.drive's recommended settings also ask its launcher for the x64 version, because the native ARM64 version cannot start yet. If the launcher still says \"Current mode: native ARM\", click that text to switch to \"emulated x64\".\n- **Grand Theft Auto V, Red Dead Redemption 2 (Rockstar Launcher):** \"Failed to connect to the Rockstar Games Library Service\" showed up in the sessions where auto-tune had turned on AVX emulation for the game. Auto-tune no longer does that for Rockstar games, and their recommended settings turn it off. If you saw this message, reset the game's settings as described above.\n- **Dying Light:** the logs showed a crash in Wine's device setup when the game and its controller library listed devices at the same moment. Its recommended settings now use a fixed copy of that part of Wine.\n- **Grand Theft Auto: Vice City:** the logs showed the game stopping at start because part of the memory used to run code could no longer run code. BCD now leaves that memory aside.\n- **32-bit games on devices with a small address space** (iOS 18 on older iPhones): a failed memory placement now tries the next free range instead of stopping the game.\n- **Monster Hunter Stories 3 (Trial), Monster Hunter Rise:** recommended settings and auto-tune aimed at the crash in their logs.\n- **No Rest for the Wicked:** runs since 0.1.576 but ran out of memory after a few minutes; its recommended settings now load smaller compressed textures.\n- **Recommended settings for more games:** Phoenix Wright: Ace Attorney Trilogy, LEGO Party!, 1000xRESIST and Spelunky 2, also through the online list.\n- **Games that closed but stayed on screen:** when a game's program ended in a way BCD did not notice, its last frame stayed on screen as if the game had frozen (GTA IV). BCD now ends the session and says the game closed, with its exit code.\n- **BCD closing on the next tap after a game:** the logs showed BCD crashing on the first tap after some games ended (Dead Space, Tomb Raider, PES 2013, Need for Speed: Most Wanted, GTA IV): a name the app kept pointed to memory that was already gone. The cause is fixed.\n- **Marvel's Spider-Man: Miles Morales:** the logs showed the game stopping after about 40 seconds of play on a texture view that Metal refused. Its recommended settings, and auto-tune, now give such textures their full set of sizes.\n- **One-time installs, .NET Framework:** the .NET Framework setups some games run first (Batman: Arkham City and others) never finished. BCD now skips them when Wine Mono is installed, because Wine Mono provides .NET; without Wine Mono the start screen says to download it in Settings › .NET Framework.\n- **Steam games that need Steam's Windows service** (Call of Duty: Black Ops and other games whose program Steam prepares per user): \"its Windows service isn't installed\" is fixed; BCD now installs Valve's Steam Client Service the way Steam on Windows does. Some of these games may still stop at the next step; a new log will name it.\n- **Batman: Arkham City, Injustice: Gods Among Us:** the logs showed both games crashing in the same spot shortly after start. Auto-tune now tries a more exact floating-point mode after this crash, and the next log tells whether that was the cause.\n- **Tiny game windows (American Truck Simulator):** a game that goes fullscreen in a window smaller than 160x120 now gets a window the size of the screen.\n- **Touch controls:** a new built-in \"PC keyboard\" layout. Turning touch controls on with nothing on screen now puts \"PC keyboard\" there, or \"Full controller\" for Steam games.\n- **AltStore and SideStore source:** BCD can now be added as a source, so it installs and updates from there: https://thebcd69.github.io/bcd-games/source.json (thanks to le0-VV).\n- **Starting a game:** tapping Play twice in a row no longer breaks the start.\n- **Auto-tune** recognises the new failures, no longer counts a game that never drew a frame as working, reads the memory limit from the log, and recognises a game closed for memory even when a helper program failed too.\n- **Send Log:** logs name more causes (failed memory calls, the Rockstar service's own messages, the folder a game starts in, failed one-time installs, how a game window was created, how a game ended, Steam's own service logs), so the next reports lead to fixes faster.\n\nInstall help, game reports and ideas: the BCD-Games Discord is open, https://discord.gg/43TmupTVug\n\n**BCD.ipa**: the unsigned IPA, for sideloading with SideStore, AltStore or LiveContainer. It needs iOS 18 or later and JIT; the README has the details.\n**BCD-source.tar.xz**: the complete source of this build with all its submodules (GPL-3.0).",
+          "downloadURL": "https://github.com/thebcd69/bcd-games/releases/download/v0.1.578/BCD.ipa",
+          "size": 165281667,
+          "minOSVersion": "18.0"
+        }
+      ]
+    },
+    {
       "name": "Doer",
       "bundleIdentifier": "com.naine.doer",
       "developerName": "moliango",
@@ -966,11 +991,11 @@
       "tintColor": "#7c7bff",
       "versions": [
         {
-          "version": "1.5.0",
-          "date": "2026-10-20",
-          "localizedDescription": "A manga and webtoon reader for your [Suwayomi](https://suwayomi.org/) server.\n\n### ✨ New Features\n\n- Added a desktop layout for the Library (@aaronbamblett)\n- Added a desktop layout for the series page (@aaronbamblett)\n- Added search to the top of every desktop page (@aaronbamblett)\n- Added search to every main page on phones (@aaronbamblett)\n- Added search for individual settings (@aaronbamblett)\n- Added chapter swipe actions on phones (@aaronbamblett)\n- Added **Web interface** to Server settings to choose and update your server's web interface (@aaronbamblett)\n\n### ⚙️ Changes\n\n- Changed the app font to Inter (@aaronbamblett)\n- Changed the Mac app to need macOS 12 or newer (@aaronbamblett)\n- Changed **Notifications** to show only on Android, where they work (@aaronbamblett)\n- Changed new Flatpak installs to the app ID `app.tsumiru.Tsumiru` (@aaronbamblett)\n- Changed **In library** to ask before removing a series (@aaronbamblett)\n- Removed the chapter grid view (@aaronbamblett)\n- Removed the help text in **Downloads** (@aaronbamblett)\n\n### 🚀 Improvements\n\n- Merged the desktop title bar and page toolbars into one bar (@aaronbamblett)\n- Made the desktop sidebar narrower and kept it on every page (@aaronbamblett)\n- Gave tablets the desktop layout (@aaronbamblett)\n- Added keyboard navigation through search results and covers (@aaronbamblett)\n- Added **Bookmark** and **Mark previous as read** to chapter selection (@aaronbamblett)\n- Added **Undo** after marking chapters read or unread (@aaronbamblett)\n- Added scroll arrows and **See all** to cover rows on desktop (@aaronbamblett)\n- Made sources that fail in **Global Search** show **Retry** (@aaronbamblett)\n- Made **Persistent search bar** apply to every page (@aaronbamblett)\n- Made Long strip and Webtoon glide with a mouse wheel (@aaronbamblett)\n- Moved the Mac logo to the top of the sidebar (@aaronbamblett)\n- Made the logo show in full colour on every theme (@aaronbamblett)\n- Made buttons that can't be pressed look greyed out (@aaronbamblett)\n\n### 🧩 Fixes\n\n- Fixed downloaded chapters opening slowly on a slow connection (@aaronbamblett)\n- Fixed the browser version failing to connect to newer servers (@aaronbamblett)\n- Fixed broken covers in the browser version until a reload after signing in (@aaronbamblett)\n- Fixed the Mac app not opening when the keychain refuses access (@aaronbamblett)\n- Fixed crashes in some extensions' settings and on chapters that need a login (@aaronbamblett)\n- Fixed the series page looking cramped at medium window widths (@aaronbamblett)\n- Fixed resizing the window during a migration going back to the series page (@aaronbamblett)\n- Fixed the desktop app freezing while resizing the window (@aaronbamblett)\n- Fixed the desktop app crashing on close on Linux (@aaronbamblett)\n- Fixed the desktop sidebar flickering when changing pages (@aaronbamblett)\n- Fixed a bright line at the edge of cover rows on desktop (@aaronbamblett)\n- Fixed **Backup Location** showing the wrong title (@aaronbamblett)\n\n## Install\n\nYou'll need a running Suwayomi server. See [Getting started](https://tsumiru.app/docs/guides/getting-started).\n\n### Mobile\n\n**Android:** download the universal APK below and open it to install. Smaller APKs for specific chip types are also attached.\n\n**iOS:** the `…-ios.ipa` below is unsigned and has to be sideloaded. Add `https://tsumiru.app/apps.json` as a source in [SideStore](https://sidestore.io/) or [AltStore](https://altstore.io/) to install it and get later releases as updates.\n\n<details>\n<summary>Which sideloading tool should I use?</summary>\n\n- **[SideStore](https://sidestore.io/)** signs and refreshes the app on the device itself, with no computer needed after setup. Best for most people.\n- **[AltStore](https://altstore.io/)** expires every 7 days and only refreshes while a computer running AltServer is switched on and on the same Wi-Fi as your phone.\n- **[TrollStore](https://ios.cfw.guide/installing-trollstore/)** installs permanently with no expiry, but only works on older iPhones and iOS versions with the required vulnerability.\n\nWith SideStore or AltStore the app is re-signed periodically, which those tools automate. There is no App Store build.\n</details>\n\n### Desktop\n\n**Windows:** download `…-windows-x64.zip`, extract it anywhere, and run `tsumiru.exe`.\n\n**macOS:** download `…-macos-x64.zip`, extract it, and move the app to Applications. If macOS blocks the first launch, approve it under System Settings → Privacy & Security.\n\n**Linux:** the Flatpak is recommended and auto-updates.\n\n```sh\nflatpak remote-add --if-not-exists tsumiru https://flatpak.tsumiru.app/index.flatpakrepo\nflatpak install tsumiru app.tsumiru.Tsumiru\n```\n\nExisting Flatpak installs keep receiving updates under `io.github.aaronbamblett.tsumiru`; no data, settings or logins move. AppImage/deb also keep that ID.\n\nFor a portable option, download `…-linux-x86_64.AppImage`, mark it executable with `chmod +x`, and run it.\n\n### Web\n\nDownload `…-web.zip` and serve its contents with any static web server.\n\n[Full documentation](https://tsumiru.app/)",
-          "downloadURL": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/download/v1.5.0/tsumiru-v1.5.0-ios.ipa",
-          "size": 17514349,
+          "version": "1.5.1",
+          "date": "2026-10-21",
+          "localizedDescription": "A manga and webtoon reader for your [Suwayomi](https://suwayomi.org/) server.\n\n### 🚀 Improvements\n\n- Added 36 missing Norwegian Bokmål translations (@aaronbamblett)\n\n### 🧩 Fixes\n\n- Fixed locked or empty chapters leaving you stuck in the reader with no way back (@l3gitpanda)\n- Fixed **Test connection** in setup blanking the window and checking the server twice (@aaronbamblett)\n- Fixed Android updates failing when you switch between the universal APK and an APK for your device (@aaronbamblett)\n\n*Tsumiru can now be translated on [Weblate](https://hosted.weblate.org/projects/suwayomi/suwayomi-tsumiru/).*\n\n## Install\n\nYou'll need a running Suwayomi server. See [Getting started](https://tsumiru.app/docs/guides/getting-started).\n\n### Mobile\n\n**Android:** download the universal APK below and open it to install. Smaller APKs for specific chip types are also attached.\n\n**iOS:** the `…-ios.ipa` below is unsigned and has to be sideloaded. Add `https://tsumiru.app/apps.json` as a source in [SideStore](https://sidestore.io/) or [AltStore](https://altstore.io/) to install it and get later releases as updates.\n\n<details>\n<summary>Which sideloading tool should I use?</summary>\n\n- **[SideStore](https://sidestore.io/)** signs and refreshes the app on the device itself, with no computer needed after setup. Best for most people.\n- **[AltStore](https://altstore.io/)** expires every 7 days and only refreshes while a computer running AltServer is switched on and on the same Wi-Fi as your phone.\n- **[TrollStore](https://ios.cfw.guide/installing-trollstore/)** installs permanently with no expiry, but only works on older iPhones and iOS versions with the required vulnerability.\n\nWith SideStore or AltStore the app is re-signed periodically, which those tools automate. There is no App Store build.\n</details>\n\n### Desktop\n\n**Windows:** download `…-windows-x64.zip`, extract it anywhere, and run `tsumiru.exe`.\n\n**macOS:** download `…-macos-x64.zip`, extract it, and move the app to Applications. If macOS blocks the first launch, approve it under System Settings → Privacy & Security.\n\n**Linux:** the Flatpak is recommended and auto-updates.\n\n```sh\nflatpak remote-add --if-not-exists tsumiru https://flatpak.tsumiru.app/index.flatpakrepo\nflatpak install tsumiru app.tsumiru.Tsumiru\n```\n\nExisting Flatpak installs keep receiving updates under `io.github.aaronbamblett.tsumiru`; no data, settings or logins move. AppImage/deb also keep that ID.\n\nFor a portable option, download `…-linux-x86_64.AppImage`, mark it executable with `chmod +x`, and run it.\n\n### Web\n\nDownload `…-web.zip` and serve its contents with any static web server.\n\n[Full documentation](https://tsumiru.app/)",
+          "downloadURL": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/download/v1.5.1/tsumiru-v1.5.1-ios.ipa",
+          "size": 17507496,
           "minOSVersion": "14.0"
         }
       ]
@@ -1075,6 +1100,28 @@
   ],
   "news": [
     {
+      "appID": "com.thebcd69.bcd",
+      "title": "BCD 0.1.578 · 21 Oct 2026",
+      "identifier": "BCD-release-v0.1.578",
+      "caption": "BCD 0.1.578 is available.",
+      "date": "2026-10-21T11:05:55Z",
+      "tintColor": "#F070F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/news.png",
+      "notify": true,
+      "url": "https://github.com/thebcd69/bcd-games/releases/tag/v0.1.578"
+    },
+    {
+      "appID": "com.suwayomi.tachideskSorayomi",
+      "title": "Tsumiru 1.5.1 · 21 Oct 2026",
+      "identifier": "Tsumiru-release-v1.5.1",
+      "caption": "Tsumiru 1.5.1 is available.",
+      "date": "2026-10-21T03:55:10Z",
+      "tintColor": "#7c7bff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.5.1"
+    },
+    {
       "appID": "com.huamu013.ZhihuMinusMinus",
       "title": "ZhihuMinusMinus 0.9.3 · 21 Oct 2026",
       "identifier": "ZhihuMinusMinus-release-v0.9.3",
@@ -1095,17 +1142,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
       "notify": true,
       "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.9"
-    },
-    {
-      "appID": "com.suwayomi.tachideskSorayomi",
-      "title": "Tsumiru 1.5.0 · 20 Oct 2026",
-      "identifier": "Tsumiru-release-v1.5.0",
-      "caption": "Tsumiru 1.5.0 is available.",
-      "date": "2026-10-20T16:58:26Z",
-      "tintColor": "#7c7bff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.5.0"
     },
     {
       "appID": "com.armsx2.ios",
