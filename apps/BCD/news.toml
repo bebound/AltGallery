@@ -1,0 +1,17 @@
+# render_news.py config: python3 tools/render_news.py --out apps/BCD
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "BCD"
+tagline = "Windows games on iPhone and iPad"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#F070F0"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#F070F0"      # bottom-right glow (default: [source] tint_color)
+# background = "#FCE1FC"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#FDEEFD"        # gradient mid stop (derived from background)
+# bg_dark = "#F8CDF8"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#C46DC4" # tagline text (derived from background)

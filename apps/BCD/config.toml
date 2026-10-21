@@ -1,0 +1,48 @@
+# altgen config for the BCD AltStore source.
+# Run: uvx altgen -c config.toml
+# The project ships no AltStore source of its own (app/source.json is a stale
+# Madeira leftover), so bundle identifier and minimum OS come from the shipped
+# IPA's Info.plist (com.thebcd69.bcd, iOS 18.0).
+
+[github]
+repo = "thebcd69/bcd-games"
+
+[source]
+name = "BCD"
+subtitle = "BCD AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for BCD"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/icon.png"
+website = "https://github.com/thebcd69/bcd-games"
+tint_color = "#F070F0"
+
+[app]
+name = "BCD"
+bundle_identifier = "com.thebcd69.bcd"
+developer_name = "thebcd69"
+subtitle = "Windows games on iPhone and iPad"
+description = "A fast, controller-friendly launcher that runs Windows games on iOS and iPadOS with Steam and GOG built in, powered by Wine, FEX and Metal via DXMT."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/library.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/accounts.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/controllers.png",
+]
+tint_color = "#F070F0"
+min_os_version = "18.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): releases ship a single BCD.ipa alongside
+# the BCD-source.tar.xz source archive.
+asset_pattern = "^BCD\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/news.png"
+
+[output]
+path = "apps.json"
