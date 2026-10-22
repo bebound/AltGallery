@@ -19,29 +19,8 @@
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/settings.png"
       ],
       "tintColor": "#3CAEFF",
-      "versions": [
-        {
-          "version": "2.6.0-nightly.20261020.1334",
-          "date": "2026-10-20",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- GS: a 4-bit image write from an odd start X is one nibble stream, as on the console\n- DriverPacks tests: the setup-context test checks the installed count on every platform\n- DriverPacks tests: the setup-context test installs a pack only on Linux\n- GS: an odd-width 4-bit image write is one nibble stream, as on the console\n- Android: the GPU driver page recommends the ARMSX2 Turnip on Adreno 6xx and 7xx\n- Big Picture: setup step offering the ARMSX2 GPU driver on Adreno\n- Qt: setup wizard page offering the ARMSX2 GPU driver on Adreno\n- DriverPacks: decide whether the first-run setup should offer a pack\n- Android: setup page offering the ARMSX2 GPU driver built for this device\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261019...c66d053fe5cb7054d13d57ba7cca9f92222cbf12",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261020/ARMSX2-nightly-20261020-c66d053fe5-iOS-arm64.ipa",
-          "size": 40360087,
-          "minOSVersion": "17.0"
-        }
-      ]
+      "versions": []
     }
   ],
-  "news": [
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 2.6.0-nightly.20261020.1334 · 20 Oct 2026",
-      "identifier": "ARMSX2-release-nightly-20261020",
-      "caption": "ARMSX2 2.6.0-nightly.20261020.1334 is available.",
-      "date": "2026-10-20T14:16:32Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261020"
-    }
-  ]
+  "news": []
 }

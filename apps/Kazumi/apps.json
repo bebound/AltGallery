@@ -22,29 +22,8 @@
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/rules_edit.jpg"
       ],
       "tintColor": "#4CAF50",
-      "versions": [
-        {
-          "version": "2.4.0",
-          "date": "2026-10-22",
-          "localizedDescription": "- 新增 deeplink 支持 (#2628 #2281) (@samuelhe52) (@Predidit)\r\n- 现在移动平台编辑弹幕时自动暂停播放 (#2708 #933) (@JesseLee-CN)\r\n- 播放器进度条现在显示目标时间 (@rua103)\r\n- 修复部分老旧 android 设备打开视频时一直加载的问题 (#2727) (@Predidit)\r\n- 文档更新 (@0Chencc)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.4.0/Kazumi_ios_2.4.0_no_sign.ipa",
-          "size": 30514666,
-          "minOSVersion": "13.0"
-        }
-      ]
+      "versions": []
     }
   ],
-  "news": [
-    {
-      "appID": "com.example.kazumi",
-      "title": "Kazumi 2.4.0 · 22 Oct 2026",
-      "identifier": "Kazumi-release-2.4.0",
-      "caption": "Kazumi 2.4.0 is available.",
-      "date": "2026-10-22T09:47:59Z",
-      "tintColor": "#4CAF50",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.4.0"
-    }
-  ]
+  "news": []
 }
