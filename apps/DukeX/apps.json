@@ -19,8 +19,29 @@
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/game.png"
       ],
       "tintColor": "#8FCA39",
-      "versions": []
+      "versions": [
+        {
+          "version": "1.0.2",
+          "date": "2026-06-30",
+          "localizedDescription": "# DukeX v1.0.2 - Expanding the Xbox Experience\n\nDukeX v1.0.2 is our biggest step yet toward preserving the full original Xbox\nexperience, not just the games. This release introduces the first native macOS\nbuild, expands XB.Live integration, and brings richer community features to both\niOS and macOS.\n\n## What's New\n\n- Native macOS release: DukeX is now available as a Mac Catalyst desktop build\n  packaged with a nested Xemu fork, pairing desktop Xemu compatibility with the\n  DukeX interface.\n- XB.Live Rich Presence and playtime tracking: friends can see what you are\n  playing while DukeX tracks supported playtime sessions.\n- XB.Live messaging: threaded conversations, friend messaging, unread\n  indicators, supported game invites, and existing Xbox inbox support now live\n  inside DukeX.\n- XB.Live social expansion: friend requests, friend management, online presence,\n  and deeper community integration are available from the Profile experience.\n- Activity Feed: XB.Live news, friend online status, friend achievement unlocks,\n  and community updates now appear in a continuously refreshed timeline.\n- Controller Landscape Mode: on iOS, compatible controllers can switch DukeX\n  into a controller-first browsing and launch experience.\n- Expanded AirPlay and external display support: big-screen play is more\n  reliable across supported display configurations.\n\n## Improvements\n\n- Improved achievements with Games, Apps, and Cores grouping plus updated\n  artwork handling for XB.Live Core, DukeX Core, and special test titles.\n- Improved game tile spacing and cover handling across iOS and macOS.\n- Improved XB.Live cloud-save sync metadata with console identity v2,\n  content-hash dedupe, and server-assisted cross-console restore handling.\n- Fixed achievement progress rounding so time-based achievements do not show\n  100% before they are actually complete.\n\n## Availability\n\n- iOS: install `DukeX.v1.0.2.ipa` through StikStore, SideStore, or another\n  supported sideloading workflow.\n- macOS: install `DukeX.macOS.v1.0.2.dmg` by dragging DukeX to Applications.\n- Hardware requirements on iOS remain Apple A14 Bionic or Apple M1 hardware or\n  newer.\n- iOS 16.0 or later is supported, with iOS 16 support remaining experimental.\n\n## Important\n\nDukeX does not include Xbox system files, game images, BIOS files, copyrighted\ncontent, signing certificates, or user games. Users must provide their own\nlegally obtained files. DukeX is intended for legitimate emulation,\npreservation, testing, and personal library use.",
+          "downloadURL": "https://github.com/MaftyManicEMU/DukeX/releases/download/v1.0.2/DukeX.v1.0.2.ipa",
+          "size": 20345841,
+          "minOSVersion": "16.0"
+        }
+      ]
     }
   ],
-  "news": []
+  "news": [
+    {
+      "appID": "com.mafty.dukex",
+      "title": "DukeX 1.0.2 · 30 Jun 2026",
+      "identifier": "DukeX-release-v1.0.2",
+      "caption": "DukeX 1.0.2 is available.",
+      "date": "2026-06-30T12:21:27Z",
+      "tintColor": "#8FCA39",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/news.png",
+      "notify": true,
+      "url": "https://github.com/MaftyManicEMU/DukeX/releases/tag/v1.0.2"
+    }
+  ]
 }
