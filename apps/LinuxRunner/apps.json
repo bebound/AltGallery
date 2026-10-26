@@ -1,0 +1,47 @@
+{
+  "name": "LinuxRunner",
+  "subtitle": "LinuxRunner AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for LinuxRunner",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/icon.png",
+  "website": "https://github.com/mxhm11cr/LinuxRunner",
+  "tintColor": "#60B0F0",
+  "apps": [
+    {
+      "name": "LinuxRunner",
+      "bundleIdentifier": "dev.linuxrunner.app",
+      "developerName": "Leminos",
+      "subtitle": "Run ARM64 Linux apps and desktops on iOS",
+      "localizedDescription": "Run ARM64 Linux applications and desktop environments on iOS without a jailbreak, virtual machine, or JIT.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/home.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/terminal.jpg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/settings.png"
+      ],
+      "tintColor": "#60B0F0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2026-10-25",
+          "localizedDescription": "# LinuxRunner 1.0.0 \r\nLinux on your iPhone.\r\n\r\nLinuxRunner runs ARM64 Linux userspace applications and desktop environments on iOS through a custom ARM64 interpreter and Linux compatibility layer. **No jailbreak, virtual machine or JIT is required.**\r\n\r\n## What you can do\r\n\r\n- Install **Debian 13 ARM64** or use bundled **Alpine 3.24 ARM64**.\r\n- Use a Linux terminal, user accounts, `apt`, `apk`, compilers and scripting tools.\r\n- Open LinuxRunner Desktop or explore **KDE Plasma**.\r\n- Run desktop applications including Dolphin and Konsole, with browser and Blender compatibility depending on the application and workload.\r\n- Use Mesa software graphics and try experimental Metal acceleration for supported OpenGL paths.\r\n\r\n## Installation\r\n\r\n1. Download `LinuxRunner-1.0.0.ipa` from this release.\r\n2. Install it using your preferred compatible sideloading tool, such as [Sideloadly](https://sideloadly.io/) or [AltStore Classic](https://altstore.io/).\r\n3. Open LinuxRunner on your iPhone.\r\n4. Follow the in-app setup instructions to install a Linux environment.\r\n\r\n**The IPA is unsigned.** Your chosen tool must sign it; signing requirements, refresh periods and compatibility depend on the method and account. App Group access is optional. Keep the bundle identifier and App Group configuration consistent when updating, and back up important Linux files before changing signing settings.\r\n\r\n## Important limitations\r\n\r\nARM64 Linux userspace is supported; x86 applications and Linux kernel boot are not. KDE Plasma and Metal graphics acceleration are experimental. Browsers, Blender and other demanding programs may encounter unsupported features or memory limits. iOS can suspend the app in the background. Linux users and permissions are not a security boundary inside the app.\r\n\r\nThe iOS deployment target is 15.0. See the [README](https://github.com/mxhm11cr/LinuxRunner#compatibility-and-limitations) for compatibility notes and getting started.\r\n\r\n## Source and license\r\n\r\nLinuxRunner derives from [iSH](https://github.com/ish-app/ish) through [ios-linuxkit](https://github.com/rcarmo/ios-linuxkit). The combined application is GPL-3.0-covered; upstream copyright notices, contribution-specific licensing and the App Store terms are preserved. Third-party components retain their own licenses.\r\n\r\nSee the [v1.0.0 source](https://github.com/mxhm11cr/LinuxRunner/tree/v1.0.0), [license](https://github.com/mxhm11cr/LinuxRunner/blob/v1.0.0/LICENSE.md) and [third-party notices](https://github.com/mxhm11cr/LinuxRunner/blob/v1.0.0/THIRD_PARTY_NOTICES.md).\r\n\r\n## Source and license downloads\r\n\r\n`LinuxRunner-1.0.0-source.tar.gz` includes the application, pinned build dependencies,\r\nmatching Alpine package recipes and checked source inputs, and terminal renderer\r\nsources. `LICENSES.txt` provides license texts and third-party notices. Use this\r\nsource asset when you need dependency contents; GitHub automatic source archives\r\nomit submodules.\r\n\r\n`SHA256SUMS` contains checksums for the IPA, source archive and license notices.\r\n\r\n## SHA-256\r\n\r\n`LinuxRunner-1.0.0.ipa` — 14,496,024 bytes. Verify the downloaded IPA before signing; signing changes its checksum.\r\n\r\n```text\r\n710dcf42afa27c8a0fe1928352fa4d3ecbc6a3cbbd0f6801b409d23a872a686d  LinuxRunner-1.0.0.ipa\r\n```",
+          "downloadURL": "https://github.com/mxhm11cr/LinuxRunner/releases/download/v1.0.0/LinuxRunner-1.0.0.ipa",
+          "size": 14496024,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "dev.linuxrunner.app",
+      "title": "LinuxRunner 1.0.0 · 25 Oct 2026",
+      "identifier": "LinuxRunner-release-v1.0.0",
+      "caption": "LinuxRunner 1.0.0 is available.",
+      "date": "2026-10-25T21:10:18Z",
+      "tintColor": "#60B0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mxhm11cr/LinuxRunner/releases/tag/v1.0.0"
+    }
+  ]
+}
