@@ -20,12 +20,12 @@
       "tintColor": "#C09050",
       "versions": [
         {
-          "version": "1.0",
-          "buildVersion": "128.9484",
-          "date": "2026-10-25",
-          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9484/LSX4-JIT-128.9484.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9484/LSX4-iOS-JIT-128.9484-English.zip)\r\n\r\n- Fixed large PKG imports that could fail with a memory allocation error on iPhone 13, 13 Pro and 13 Pro Max.\r\n\r\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9484/INSTALLATION.txt)\r\n\r\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
-          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9484/LSX4-JIT-128.9484.ipa",
-          "size": 72149890,
+          "version": "128.9558",
+          "buildVersion": "128.9558",
+          "date": "2026-10-26",
+          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9558-r3/LSX4-JIT-128.9558.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9558-r3/LSX4-iOS-JIT-128.9558-English.zip)\n\n- PS5 support: tested with God of War: Sons of Sparta, Dreaming Sarah, and Void Terrarium++.\n- Improved iPad layouts.\n- User accounts with editable Playable/Unplayable reports.\n- Refined menus, PS4/PS5 badges, and a repositioned in-game sidebar button.\n- New settings sections.\n\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9558-r3/INSTALLATION.txt)\n\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
+          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9558-r3/LSX4-JIT-128.9558.ipa",
+          "size": 76610812,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
-      "title": "LSX4 1.0 · 25 Oct 2026",
-      "identifier": "LSX4-release-ios-jit-128.9484",
-      "caption": "LSX4 1.0 is available.",
-      "date": "2026-10-25T19:35:07Z",
+      "title": "LSX4 128.9558 · 26 Oct 2026",
+      "identifier": "LSX4-release-ios-jit-128.9558-r3",
+      "caption": "LSX4 128.9558 is available.",
+      "date": "2026-10-26T21:53:11Z",
       "tintColor": "#C09050",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
       "notify": true,
-      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9484"
+      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9558-r3"
     }
   ]
 }
