@@ -10,8 +10,8 @@ tagline = "Windows games on iPhone and iPad"
 [colors]
 # tint = "#F070F0"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
 # tint_alt = "#F070F0"      # bottom-right glow (default: [source] tint_color)
-# background = "#FCE1FC"    # gradient base (derived from the icon's dominant color)
-# bg_mid = "#FDEEFD"        # gradient mid stop (derived from background)
-# bg_dark = "#F8CDF8"       # gradient end stop (derived from background)
+# background = "#EBD6EB"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#F3E7F3"        # gradient mid stop (derived from background)
+# bg_dark = "#DEBBDE"       # gradient end stop (derived from background)
 # text_color = "#111111"    # app name (auto white/black)
-# tagline_color = "#C46DC4" # tagline text (derived from background)
+# tagline_color = "#BD51BD" # tagline text (derived from background)
