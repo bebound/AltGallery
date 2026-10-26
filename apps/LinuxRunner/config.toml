@@ -1,0 +1,43 @@
+# altgen config for the LinuxRunner AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "mxhm11cr/LinuxRunner"
+
+[source]
+name = "LinuxRunner"
+subtitle = "LinuxRunner AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for LinuxRunner"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/icon.png"
+website = "https://github.com/mxhm11cr/LinuxRunner"
+tint_color = "#60B0F0"
+
+[app]
+name = "LinuxRunner"
+bundle_identifier = "dev.linuxrunner.app"
+developer_name = "Leminos"
+subtitle = "Run ARM64 Linux apps and desktops on iOS"
+description = "Run ARM64 Linux applications and desktop environments on iOS without a jailbreak, virtual machine, or JIT."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/home.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/terminal.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/settings.png",
+]
+tint_color = "#60B0F0"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): matches LinuxRunner-<version>.ipa
+asset_pattern = "^LinuxRunner-\\d+\\.\\d+\\.\\d+\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/news.png"
+
+[output]
+path = "apps.json"
