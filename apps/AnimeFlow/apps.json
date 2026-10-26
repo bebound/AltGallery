@@ -21,11 +21,11 @@
       "tintColor": "#124EB3",
       "versions": [
         {
-          "version": "2.6.5",
-          "date": "2026-10-25",
-          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.5 更新\n\n## 新增\n\n- 添加壁纸页面\n- 发送弹幕功能支持类型选择和颜色选择(旧接口已关闭，未更新的客户端将不支持发送弹幕到服务器) #109\n- 桌面端添加更丰富的快捷键 #115\n\n## 优化\n \n- 优化系统底层架构更规范化\n- 用户数据添加本地缓存避免每次启动都重新加载\n\n## 修复\n\n- 修复使用mdk内核时退出页面出现卡顿问题\n- 修复特定情况下导的接口请求失败问题 #113\n- 修复macos登录失败问题 #113\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
-          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.5/AnimeFlow-ios-2.6.5.ipa",
-          "size": 29290778,
+          "version": "2.6.6",
+          "date": "2026-10-26",
+          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.6 更新\n\n- 这是热修版本，修复桌面端视频解析时切换视频源出现的闪退问题，具体的更新内容在 设置->关于->更新信息页面查看2.6.5更新信息\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
+          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.6/AnimeFlow-ios-2.6.6.ipa",
+          "size": 29290748,
           "minOSVersion": "13.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.ligg.anime_flow",
-      "title": "AnimeFlow 2.6.5 · 25 Oct 2026",
-      "identifier": "AnimeFlow-release-v2.6.5",
-      "caption": "AnimeFlow 2.6.5 is available.",
-      "date": "2026-10-25T11:37:13Z",
+      "title": "AnimeFlow 2.6.6 · 26 Oct 2026",
+      "identifier": "AnimeFlow-release-v2.6.6",
+      "caption": "AnimeFlow 2.6.6 is available.",
+      "date": "2026-10-26T08:58:38Z",
       "tintColor": "#124EB3",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
       "notify": true,
-      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.5"
+      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.6"
     }
   ]
 }

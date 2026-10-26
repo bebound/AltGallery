@@ -94,11 +94,11 @@
       "tintColor": "#124EB3",
       "versions": [
         {
-          "version": "2.6.5",
-          "date": "2026-10-25",
-          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.5 更新\n\n## 新增\n\n- 添加壁纸页面\n- 发送弹幕功能支持类型选择和颜色选择(旧接口已关闭，未更新的客户端将不支持发送弹幕到服务器) #109\n- 桌面端添加更丰富的快捷键 #115\n\n## 优化\n \n- 优化系统底层架构更规范化\n- 用户数据添加本地缓存避免每次启动都重新加载\n\n## 修复\n\n- 修复使用mdk内核时退出页面出现卡顿问题\n- 修复特定情况下导的接口请求失败问题 #113\n- 修复macos登录失败问题 #113\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
-          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.5/AnimeFlow-ios-2.6.5.ipa",
-          "size": 29290778,
+          "version": "2.6.6",
+          "date": "2026-10-26",
+          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.6 更新\n\n- 这是热修版本，修复桌面端视频解析时切换视频源出现的闪退问题，具体的更新内容在 设置->关于->更新信息页面查看2.6.5更新信息\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
+          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.6/AnimeFlow-ios-2.6.6.ipa",
+          "size": 29290748,
           "minOSVersion": "13.0"
         }
       ]
@@ -991,11 +991,11 @@
       "tintColor": "#7c7bff",
       "versions": [
         {
-          "version": "1.5.1",
-          "date": "2026-10-21",
-          "localizedDescription": "A manga and webtoon reader for your [Suwayomi](https://suwayomi.org/) server.\n\n### 🚀 Improvements\n\n- Added 36 missing Norwegian Bokmål translations (@aaronbamblett)\n\n### 🧩 Fixes\n\n- Fixed locked or empty chapters leaving you stuck in the reader with no way back (@l3gitpanda)\n- Fixed **Test connection** in setup blanking the window and checking the server twice (@aaronbamblett)\n- Fixed Android updates failing when you switch between the universal APK and an APK for your device (@aaronbamblett)\n\n*Tsumiru can now be translated on [Weblate](https://hosted.weblate.org/projects/suwayomi/suwayomi-tsumiru/).*\n\n## Install\n\nYou'll need a running Suwayomi server. See [Getting started](https://tsumiru.app/docs/guides/getting-started).\n\n### Mobile\n\n**Android:** download the universal APK below and open it to install. Smaller APKs for specific chip types are also attached.\n\n**iOS:** the `…-ios.ipa` below is unsigned and has to be sideloaded. Add `https://tsumiru.app/apps.json` as a source in [SideStore](https://sidestore.io/) or [AltStore](https://altstore.io/) to install it and get later releases as updates.\n\n<details>\n<summary>Which sideloading tool should I use?</summary>\n\n- **[SideStore](https://sidestore.io/)** signs and refreshes the app on the device itself, with no computer needed after setup. Best for most people.\n- **[AltStore](https://altstore.io/)** expires every 7 days and only refreshes while a computer running AltServer is switched on and on the same Wi-Fi as your phone.\n- **[TrollStore](https://ios.cfw.guide/installing-trollstore/)** installs permanently with no expiry, but only works on older iPhones and iOS versions with the required vulnerability.\n\nWith SideStore or AltStore the app is re-signed periodically, which those tools automate. There is no App Store build.\n</details>\n\n### Desktop\n\n**Windows:** download `…-windows-x64.zip`, extract it anywhere, and run `tsumiru.exe`.\n\n**macOS:** download `…-macos-x64.zip`, extract it, and move the app to Applications. If macOS blocks the first launch, approve it under System Settings → Privacy & Security.\n\n**Linux:** the Flatpak is recommended and auto-updates.\n\n```sh\nflatpak remote-add --if-not-exists tsumiru https://flatpak.tsumiru.app/index.flatpakrepo\nflatpak install tsumiru app.tsumiru.Tsumiru\n```\n\nExisting Flatpak installs keep receiving updates under `io.github.aaronbamblett.tsumiru`; no data, settings or logins move. AppImage/deb also keep that ID.\n\nFor a portable option, download `…-linux-x86_64.AppImage`, mark it executable with `chmod +x`, and run it.\n\n### Web\n\nDownload `…-web.zip` and serve its contents with any static web server.\n\n[Full documentation](https://tsumiru.app/)",
-          "downloadURL": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/download/v1.5.1/tsumiru-v1.5.1-ios.ipa",
-          "size": 17507496,
+          "version": "1.6.0",
+          "date": "2026-10-26",
+          "localizedDescription": "A manga and webtoon reader for your [Suwayomi](https://suwayomi.org/) server.\n\n### ✨ New Features\n\n- Added a desktop layout for Updates, with a grid of covers per day and chapters grouped by series (@aaronbamblett)\n- Added a desktop layout for History, with a filter and right-click menu (@aaronbamblett)\n- Added a desktop layout for Browse, with source and extension cards and a bar for each source's catalogue (@aaronbamblett)\n- Added a desktop layout for Downloads, with selection and reordering in the server queue and On device side by side (@aaronbamblett)\n- Added a desktop layout for Migrate, with sources and their series side by side and one migration window (@aaronbamblett)\n- Added a settings window on desktop, with search and a page list (@aaronbamblett)\n- Added an **Upcoming** calendar with **Week** and **Month** views and past releases (@aaronbamblett)\n- Added custom covers with **Edit cover**, from your sources, AniList, MyAnimeList, Kitsu, MangaUpdates or an image link, shown on all your devices (@aaronbamblett)\n- Added missing server settings, including **Sign-in**, **OPDS**, **Database**, **WebView** and the server image cache (@aaronbamblett)\n- Added series notes and saved source searches, shared with the Suwayomi web interface (@aaronbamblett)\n\n### ⚙️ Changes\n\n- Changed migration to leave the series' own source out of the destinations (@aaronbamblett)\n- Changed the desktop sidebar to show **Incognito** and **Settings** in place of **More** (@aaronbamblett)\n- Changed the icons throughout the app and animated the main menu (@aaronbamblett)\n- Reorganised settings and **More** into grouped pages, with a new **Sync** page (@aaronbamblett)\n- Changed server downloads to show series in your library, with the rest under **Not in your library** for accounts that manage users (@aaronbamblett)\n- Changed Suggestions in the web version to use only AniList as other sources are blocked by the browser (@aaronbamblett)\n\n### 🚀 Improvements\n\n- Made failed migrations show why and offer **Retry** (@aaronbamblett)\n- Made **Migrate now**, **Copy now**, restores, data deletion and server-wide changes ask first (@aaronbamblett)\n- Added a right-click menu that opens at the pointer on desktop pages, with the same actions on a long-press in History on phones (@aaronbamblett)\n- Added a hand cursor and hover highlight to everything clickable on desktop and in the browser (@aaronbamblett)\n- Made browser tabs show page names and support links opening in a new tab (@aaronbamblett)\n- Made next chapter estimates follow each series' release schedule (@aaronbamblett)\n- Made Suggestions show results without waiting for slow services and match series more accurately (@aaronbamblett)\n- Made adding a single series from a source ask for categories and check for duplicates (@aaronbamblett)\n- Made dark theme highlights easier to read (@aaronbamblett)\n- Added sharing, saving and deleting covers from the full cover view (@aaronbamblett)\n- Made the Linux AppImage update with AppImageUpdate, downloading only the changed parts (@aaronbamblett)\n- Made registration codes show the permissions they grant (@aaronbamblett)\n- Added **Push progress to KOReader** and **Pull progress from KOReader** (@aaronbamblett)\n- Added permissions when creating a user or a registration code (@aaronbamblett)\n- Added **Hide entries already in library** for browsing sources (@aaronbamblett)\n- Added **Duplicate chapters**, **Status** and **Source** library filters and **Open random entry** (@aaronbamblett)\n- Added **App language**, **Fuzzy search**, **Ignore filters when searching** and **Forget manga categories** settings (@aaronbamblett)\n- Added **Update all** for extensions (@aaronbamblett)\n- Added a choice of what backups include (@aaronbamblett)\n- Added **Cancel all for this series** to the server download queue (@aaronbamblett)\n\n### 🧩 Fixes\n\n- Fixed a series being migrated onto itself and removed from the library (@aaronbamblett)\n- Fixed interrupted or overlapping migrations removing a series before its progress was copied (@aaronbamblett)\n- Fixed migration on desktop stretching covers, waiting forever on a source and showing no details for **Search manually** picks (@aaronbamblett)\n- Fixed covers not updating after a library update changed them on the server (@aaronbamblett)\n- Fixed server downloads staying stuck in the queue after a series was migrated or removed (@aaronbamblett)\n- Fixed changes to a series not showing straight away while viewing offline (@aaronbamblett)\n- Fixed **Test connection** in setup checking forever on an address it cannot read (@aaronbamblett)\n- Fixed **Outstanding codes** freezing the app on desktop and in the browser (@aaronbamblett)\n- Fixed account options showing on servers without user accounts (@aaronbamblett)\n- Fixed tracker icons not loading (@aaronbamblett)\n- Fixed tracker sign-in completing sign-ins you did not start (@aaronbamblett)\n- Fixed disabled text buttons looking pressable (@aaronbamblett)\n- Fixed the phone menu bar ignoring dark themes (@aaronbamblett)\n- Fixed the **More** page running into the bottom bar on phones (@aaronbamblett)\n- Fixed History opened from More having no back button on desktop (@aaronbamblett)\n- Fixed setting descriptions being cut off (@aaronbamblett)\n\n*Thanks to our Weblate translators: Kisnov for the full Catalan translation, 無情天 for Chinese, JayDisastrue for French and Andrei Stepanov for Russian.*\n\n## Install\n\nYou'll need a running Suwayomi server. See [Getting started](https://tsumiru.app/docs/guides/getting-started).\n\n### Mobile\n\n**Android:** download the universal APK below and open it to install. Smaller APKs for specific chip types are also attached.\n\n**iOS:** the `…-ios.ipa` below is unsigned and has to be sideloaded. Add `https://tsumiru.app/apps.json` as a source in [SideStore](https://sidestore.io/) or [AltStore](https://altstore.io/) to install it and get later releases as updates.\n\n<details>\n<summary>Which sideloading tool should I use?</summary>\n\n- **[SideStore](https://sidestore.io/)** signs and refreshes the app on the device itself, with no computer needed after setup. Best for most people.\n- **[AltStore](https://altstore.io/)** expires every 7 days and only refreshes while a computer running AltServer is switched on and on the same Wi-Fi as your phone.\n- **[TrollStore](https://ios.cfw.guide/installing-trollstore/)** installs permanently with no expiry, but only works on older iPhones and iOS versions with the required vulnerability.\n\nWith SideStore or AltStore the app is re-signed periodically, which those tools automate. There is no App Store build.\n</details>\n\n### Desktop\n\n**Windows:** download `…-windows-x64.zip`, extract it anywhere, and run `tsumiru.exe`.\n\n**macOS:** download `…-macos-x64.zip`, extract it, and move the app to Applications. If macOS blocks the first launch, approve it under System Settings → Privacy & Security.\n\n**Linux:** the Flatpak is recommended and auto-updates.\n\n```sh\nflatpak remote-add --if-not-exists tsumiru https://flatpak.tsumiru.app/index.flatpakrepo\nflatpak install tsumiru app.tsumiru.Tsumiru\n```\n\nExisting Flatpak installs keep receiving updates under `io.github.aaronbamblett.tsumiru`; no data, settings or logins move. AppImage/deb also keep that ID.\n\nFor a portable option, download `…-linux-x86_64.AppImage`, mark it executable with `chmod +x`, and run it.\n\n### Web\n\nDownload `…-web.zip` and serve its contents with any static web server.\n\n[Full documentation](https://tsumiru.app/)",
+          "downloadURL": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/download/v1.6.0/tsumiru-v1.6.0-ios.ipa",
+          "size": 18262510,
           "minOSVersion": "14.0"
         }
       ]
@@ -1100,6 +1100,28 @@
   ],
   "news": [
     {
+      "appID": "com.ligg.anime_flow",
+      "title": "AnimeFlow 2.6.6 · 26 Oct 2026",
+      "identifier": "AnimeFlow-release-v2.6.6",
+      "caption": "AnimeFlow 2.6.6 is available.",
+      "date": "2026-10-26T08:58:38Z",
+      "tintColor": "#124EB3",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
+      "notify": true,
+      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.6"
+    },
+    {
+      "appID": "com.suwayomi.tachideskSorayomi",
+      "title": "Tsumiru 1.6.0 · 26 Oct 2026",
+      "identifier": "Tsumiru-release-v1.6.0",
+      "caption": "Tsumiru 1.6.0 is available.",
+      "date": "2026-10-26T04:35:41Z",
+      "tintColor": "#7c7bff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.6.0"
+    },
+    {
       "appID": "com.christianselig.Apollo",
       "title": "Apollo for Reddit - GLASS 4.0.0 · 25 Oct 2026",
       "identifier": "Apollo for Reddit - GLASS-release-v1.15.11_4.0.0",
@@ -1109,17 +1131,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
       "notify": true,
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_4.0.0"
-    },
-    {
-      "appID": "com.ligg.anime_flow",
-      "title": "AnimeFlow 2.6.5 · 25 Oct 2026",
-      "identifier": "AnimeFlow-release-v2.6.5",
-      "caption": "AnimeFlow 2.6.5 is available.",
-      "date": "2026-10-25T11:37:13Z",
-      "tintColor": "#124EB3",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
-      "notify": true,
-      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.5"
     },
     {
       "appID": "com.github.cyrilpeng.veneranext",
@@ -1241,17 +1252,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
       "notify": true,
       "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.3+1020"
-    },
-    {
-      "appID": "com.suwayomi.tachideskSorayomi",
-      "title": "Tsumiru 1.5.1 · 21 Oct 2026",
-      "identifier": "Tsumiru-release-v1.5.1",
-      "caption": "Tsumiru 1.5.1 is available.",
-      "date": "2026-10-21T03:55:10Z",
-      "tintColor": "#7c7bff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.5.1"
     },
     {
       "appID": "com.sean.roamcontrol",
