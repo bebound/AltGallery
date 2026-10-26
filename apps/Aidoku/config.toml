@@ -34,6 +34,11 @@ strip_v_prefix = true
 include_prereleases = false
 # Every release ships a single asset named Aidoku.ipa.
 asset_pattern = "Aidoku\\.ipa$"
+# Rebuilds use a dashed tag ("v0.9-4") with the build number in parentheses
+# in the release name ("v0.9 (4)"). AltStore versions must be plain numbers,
+# so take 0.9 / 0.8.2 from the release name instead of the raw tag.
+version_source = "release"
+version_pattern = "^v?(\\d+\\.\\d+(?:\\.\\d+)?)"
 
 [news]
 title_template = "{name} {version} · {date}"
