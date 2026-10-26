@@ -101,6 +101,9 @@ Torrent client for iOS.
 ### <a href="https://github.com/LiveContainer/LiveContainer"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/icon.png" alt="LiveContainer+SideStore icon" width="24" align="top"> LiveContainer+SideStore</a>
 An app launcher that runs iOS apps without actually installing them, with a built-in SideStore for refreshing your apps.
 
+### <a href="https://github.com/lpfoj/lsx4"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LSX4/icon.png" alt="LSX4 icon" width="24" align="top"> LSX4</a>
+An open-source PlayStation 4/5 emulator for iOS; the current iOS build supports PS4 gameplay and requires iOS 26+ with JIT.
+
 ### <a href="https://github.com/willfaust/Madeira"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Madeira/icon.png" alt="Madeira icon" width="24" align="top"> Madeira</a>
 Run unmodified x86-64 Windows PC games on iPhone through Wine, FEX-Emu and Metal — no jailbreak.
 

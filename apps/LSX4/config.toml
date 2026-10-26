@@ -1,0 +1,41 @@
+# altgen config for the LSX4 AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "lpfoj/lsx4"
+
+[source]
+name = "LSX4"
+subtitle = "LSX4 AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for LSX4"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/icon.png"
+website = "https://github.com/lpfoj/lsx4"
+tint_color = "#C09050"
+
+[app]
+name = "LSX4"
+bundle_identifier = "com.llayerlinux.LSX4RuntimeProbe"
+developer_name = "lpfoj"
+subtitle = "Open-source PS4/PS5 emulator"
+description = "An open-source PlayStation 4/5 emulator for Android and iOS. The current iOS build supports PS4 gameplay and requires iOS 26+ with JIT."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/icon.png"
+screenshots = ["https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/home.png", "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/settings.png"]
+tint_color = "#C09050"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_source = "ipa"
+# asset_pattern is a regex (not glob): matches LSX4-JIT-<build>.ipa
+# Release tags and IPA assets carry the same build: ios-jit-128.9484 and LSX4-JIT-128.9484.ipa.
+asset_pattern = "^LSX4-JIT-\\d+\\.\\d+\\.ipa$"
+build_version_pattern = "LSX4-JIT-(\\d+\\.\\d+)\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png"
+
+[output]
+path = "apps.json"
