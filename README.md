@@ -80,6 +80,9 @@ An x86-64 PC emulator for iOS — runs x86-64 Linux executables by translating t
 ### <a href="https://github.com/Leviidev/Husk"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Husk/icon.png" alt="Husk icon" width="24" align="top"> Husk</a>
 Run Android apps on iOS — drop in an APK, tap it, and it opens full-screen. Requires JIT and a debugger attached at runtime.
 
+### <a href="https://github.com/kuscholar/iDeck"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/iDeck/icon.png" alt="iDeck icon" width="24" align="top"> iDeck</a>
+Run Steam Big Picture and compatible Windows PC games on iPhone and iPad through Madeira’s experimental local runtime.
+
 ### <a href="https://github.com/intraducine/iridium"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Iridium/icon.png" alt="Iridium icon" width="24" align="top"> Iridium</a>
 An experimental iPhone and iPad Windows-game runtime, with a native game library and touch, keyboard, mouse, and controller integration.
 

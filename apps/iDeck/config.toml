@@ -1,0 +1,44 @@
+# altgen config for the iDeck AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "kuscholar/iDeck"
+
+[source]
+name = "iDeck"
+subtitle = "iDeck AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for iDeck"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/icon.png"
+website = "https://github.com/kuscholar/iDeck"
+tint_color = "#50D0F0"
+
+[app]
+name = "iDeck"
+bundle_identifier = "com.kuschqin.madeira.steamui"
+developer_name = "kuscholar"
+subtitle = "Steam Big Picture on iPhone and iPad"
+description = "Run Valve’s Steam client in Big Picture and compatible Windows PC games locally on iPhone and iPad through Madeira, Wine, FEX and Metal. Experimental; requires iOS 26+, JIT, and user-provided Steam files."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/configuration.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/steam-home.jpg",
+]
+tint_color = "#50D0F0"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = true
+version_pattern = "v(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+# Matches versioned alpha assets such as iDeck-0.1.3-alpha.2-build56.ipa.
+asset_pattern = "^iDeck-.*\\.ipa$"
+build_version_pattern = "build(\\d+)"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.png"
+
+[output]
+path = "apps.json"
