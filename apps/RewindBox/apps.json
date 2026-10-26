@@ -1,27 +1,27 @@
 {
-  "name": "NeoStation iOS",
-  "subtitle": "NeoStation iOS AltStore source by AltGallery & AltGen",
-  "description": "Auto-updated AltStore source for NeoStation iOS",
-  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/icon.png",
-  "website": "https://github.com/TarbleFR/neostation-ios",
-  "tintColor": "#01E989",
+  "name": "RewindBox",
+  "subtitle": "RewindBox AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for RewindBox",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/icon.png",
+  "website": "https://github.com/TarbleFR/RewindBox",
+  "tintColor": "#50DD8B",
   "apps": [
     {
-      "name": "NeoStation iOS",
+      "name": "RewindBox",
       "bundleIdentifier": "com.neogamelab.neostation",
       "developerName": "TarbleFR",
       "subtitle": "Emulation frontend for iPhone and iPad",
-      "localizedDescription": "An independently maintained iOS/iPadOS fork of NeoStation, with embedded Dolphin, ARMSX2, RPCS3, Dusklight and KartPad runtimes alongside RetroArch and MeloNX integration, JIT workflows and mobile-friendly game and session management.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/icon.png",
+      "localizedDescription": "An independently maintained iOS/iPadOS fork of NeoStation with a gamepad-friendly, console-style game library and embedded Libretro cores, MeloNX, Dolphin, ARMSX2 and RPCS3 runtimes, JIT workflows and support for user-supplied firmware, keys and BIOS.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/icon.png",
       "screenshots": [
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/intro.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/library.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/settings.png"
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/home.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/settings.png"
       ],
-      "tintColor": "#01E989",
+      "tintColor": "#50DD8B",
       "versions": [
         {
-          "version": "0.0.9-fix.1",
+          "version": "0.0.9",
+          "buildVersion": "530",
           "date": "2026-10-25",
           "localizedDescription": "## RewindBox iOS — fix 0.0.9 (Build 530)\n\nThis hotfix addresses the identified MeloNX crash path on iOS: Vulkan returned ErrorFeatureNotPresent during direct host-memory buffer import after a Nintendo Switch game began rendering. The embedded engine now avoids that unsupported import on iOS and uses its existing GPU buffer/readback fallback.\n\n- Rebuilt and source-verified embedded MeloNX NativeAOT engine.\n- Existing RPCS3 Core and other supported embedded emulators retained.\n- Ad-hoc signed for re-signing with SideStore/AltStore.\n- Automated native/iOS-simulator and packaging checks passed.\n\nPlease test gameplay stability on a physical iPhone. The fix addresses the observed Vulkan API failure, but a successful long game session has not yet been independently verified.\n\nVersion note: IPA build number 530; internal app version remains 0.0.8 because this targeted hotfix retains the previously validated application metadata. The release title is fix 0.0.9.\n\nSource: RewindBox development branch merged into main. No personal firmware, Switch keys or game files are bundled.",
           "downloadURL": "https://github.com/TarbleFR/RewindBox/releases/download/0.0.9-fix.1/RewindBox-Build530.ipa",
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.neogamelab.neostation",
-      "title": "NeoStation iOS 0.0.9-fix.1 · 25 Oct 2026",
-      "identifier": "NeoStation iOS-release-0.0.9-fix.1",
-      "caption": "NeoStation iOS 0.0.9-fix.1 is available.",
+      "title": "RewindBox 0.0.9 · 25 Oct 2026",
+      "identifier": "RewindBox-release-0.0.9-fix.1",
+      "caption": "RewindBox 0.0.9 is available.",
       "date": "2026-10-25T03:10:45Z",
-      "tintColor": "#01E989",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NeoStation/images/news.png",
+      "tintColor": "#50DD8B",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/news.png",
       "notify": true,
-      "url": "https://github.com/TarbleFR/neostation-ios/releases/tag/0.0.9-fix.1"
+      "url": "https://github.com/TarbleFR/RewindBox/releases/tag/0.0.9-fix.1"
     }
   ]
 }
