@@ -1,0 +1,21 @@
+# render_news.py config: .venv/bin/python tools/render_news.py --out apps/RewindBox
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "RewindBox"
+tagline = "Emulation frontend for iPhone and iPad"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#50DD8B"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#8072AC"      # bottom-right glow (default: [source] tint_color)
+# Pinned: the app icon is the black-and-white RewindBox mark, so its dominant
+# sample is just the dark tile — the derived background came out as flat gray.
+# The project's own logo art sits on this dark navy (#1F1926) with a
+# purple-to-green gradient glyph, which reads as the same identity.
+background = "#1F1926"      # gradient base
+# bg_mid = "#2A2233"        # gradient mid stop (derived from background)
+# bg_dark = "#14101A"       # gradient end stop (derived from background)
+# text_color = "#FFFFFF"    # app name (auto white/black)
+# tagline_color = "#A9DFC6" # tagline text (derived from background)

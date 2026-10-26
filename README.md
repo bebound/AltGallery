@@ -125,9 +125,6 @@ Free Navidrome client & Subsonic music player with an Apple Music-inspired inter
 ### <a href="https://github.com/ResistanceTo/MiniWatts"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MiniWatts/icon.png" alt="MiniWatts icon" width="24" align="top"> MiniWatts</a>
 An iPhone battery and charging monitor built on Apple's private APIs — charger watts, cell power, heat loss and every temperature sensor.
 
-### <a href="https://github.com/TarbleFR/neostation-ios"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/NeoStation/icon.png" alt="NeoStation iOS icon" width="24" align="top"> NeoStation iOS</a>
-An iOS/iPadOS fork of NeoStation with embedded Dolphin, ARMSX2, RPCS3, Dusklight and KartPad runtimes, plus RetroArch and MeloNX integration.
-
 ### <a href="https://github.com/celia-sh/Novella"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Novella/icon.png" alt="Novella icon" width="24" align="top"> Novella</a>
 轻书架第三方客户端，基于 React Native 构建，面向 iOS / iPadOS，支持小说与漫画阅读与社区。
 
@@ -151,6 +148,9 @@ A PlayStation 3 emulator for iPhone and iPad, built on RPCS3.
 
 ### <a href="https://github.com/liuchuancong/pure_live"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PureLive/icon.png" alt="PureLive icon" width="24" align="top"> PureLive</a>
 基于 Flutter 的开源多平台直播聚合播放器，支持 Bilibili、虎牙、斗鱼、快手、抖音、网易 CC、Twitch 及自定义 M3U/M3U8 直播源。
+
+### <a href="https://github.com/TarbleFR/RewindBox"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/RewindBox/icon.png" alt="RewindBox icon" width="24" align="top"> RewindBox</a>
+An independently maintained iOS/iPadOS fork of NeoStation, pairing a console-style game library with embedded Libretro cores, MeloNX, Dolphin, ARMSX2 and RPCS3.
 
 ### <a href="https://github.com/seanhowarthdev/Roam-Control"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Roam-Control/icon.png" alt="Roam Control icon" width="24" align="top"> Roam Control</a>
 Choose, test and move an iPhone's reported location from one clean Apple Maps interface.

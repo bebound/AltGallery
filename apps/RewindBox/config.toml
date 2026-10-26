@@ -1,0 +1,59 @@
+# altgen config for the RewindBox AltStore source.
+# Run: uvx altgen -c config.toml
+# RewindBox is the renamed, independently maintained fork of NeoStation that
+# this source used to track (formerly TarbleFR/neostation-ios). The project
+# ships no AltStore source of its own, so the fields below come from the
+# README plus the shipped IPA's Info.plist: the bundle keeps the fork's
+# original identifier (CFBundleIdentifier com.neogamelab.neostation) and
+# reports CFBundleDisplayName "RewindBox".
+
+[github]
+repo = "TarbleFR/RewindBox"
+
+[source]
+name = "RewindBox"
+subtitle = "RewindBox AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for RewindBox"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/icon.png"
+website = "https://github.com/TarbleFR/RewindBox"
+tint_color = "#50DD8B"
+
+[app]
+name = "RewindBox"
+bundle_identifier = "com.neogamelab.neostation"
+developer_name = "TarbleFR"
+subtitle = "Emulation frontend for iPhone and iPad"
+description = "An independently maintained iOS/iPadOS fork of NeoStation with a gamepad-friendly, console-style game library and embedded Libretro cores, MeloNX, Dolphin, ARMSX2 and RPCS3 runtimes, JIT workflows and support for user-supplied firmware, keys and BIOS."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/home.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/settings.png",
+]
+tint_color = "#50DD8B"
+# README requires iOS 18 or newer, and the IPA's Info.plist now agrees
+# (MinimumOSVersion 18.0).
+min_os_version = "18.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Release titles carry the version in prose ("Rewindbox 0.0.9", "fix 0.0.9"),
+# and the hotfix tag suffix is not part of the version users should see, so
+# keep only the dotted number: tag 0.0.9-fix.1 -> version 0.0.9. Unanchored so
+# it matches wherever the number sits in the release name, and the patch part
+# is optional so a short "0.9" style version is accepted too. No match falls
+# back to the tag.
+version_pattern = "(\\d+\\.\\d+(?:\\.\\d+)?)"
+asset_pattern = ".*\\.ipa$"
+# Assets are named RewindBox-Build530.ipa; that number is the IPA's real
+# CFBundleVersion and the project's way of telling hotfixes apart — expose it
+# as buildVersion so AltStore can compare builds.
+build_version_pattern = "-Build(\\d+)\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/news.png"
+
+[output]
+path = "apps.json"
