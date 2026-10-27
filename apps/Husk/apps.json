@@ -20,11 +20,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "3.0",
-          "date": "2026-10-17",
-          "localizedDescription": "## Husk 3.0\r\nThe coolest and biggest Husk release yet. Hundreds of new Android games, PS4 support, and more.\r\n\r\n## What's new?\r\n- Console-style home screen\r\n- New library UI\r\n- Proper first run\r\n    - Contains full setup guide + optional walkthrough\r\n### PS4 Games\r\n- Add a game with the + button. Either a PKG, a folder of PKG's, or an extracted game folder. Updates install with their game.\r\n- Tested: Bloodborne, Minecraft: PlayStation 4 Edition, Sonic Mania\r\n- Shaders are kept inbetween launches with Shader Cache\r\n- If a game requires keyboard input, it'll open the iOS keyboard\r\n### Android\r\n- 366 newly working games - view in compatibility list\r\n- Unofficial ports: Sonic Robo Blast 2, Nethack, PokeWilds and more\r\n- GoDot 4\r\n- Store downloads include OBB files\r\n- Typing works in all games\r\n- Optional language fonts (chinese, japanese, etc)\r\n### Also\r\n- Lots of fixes\r\n- TrollStore JIT fully complete\r\n- iOS 15.5 support\r\n## Known Issues\r\n- Bloodborne runs, but very poorly.\r\n- Some Unity 6 games can render slowly\r\n## Final notes\r\nThank you all. Enjoy ❤️ \r\n\r\nDiscord Server: https://discord.gg/xApMHWAzkh",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.0/Husk.ipa",
-          "size": 140126095,
+          "version": "3.1",
+          "date": "2026-10-27",
+          "localizedDescription": "## What's new?\r\n- New UI, all over\r\n    - New Home, Library, Store and game pages\r\n    - Every screen, Settings included, uses the same navy look\r\n- Husk accounts\r\n    - Sign in from the top of Settings\r\n    - Your profile, playtime and library sync with itslevii.dev\r\n- New Import screen: APK, split APKs (.xapk, .apkm, .apks), OBBs and PS4 game folders. On iPad you can drag files onto it.\r\n- Small icon size for the library\r\n- Chinese (Simplified) for all of Husk. The language you pick in setup is used by Husk and your apps.\r\n### Store\r\n- New app page\r\n    - Proper descriptions (bold, lists, links)\r\n    - Short counts, like 1B+ downloads and 37M reviews\r\n    - Tap screenshots to view them full screen, with zoom\r\n    - Trailers, What's New, Highlights, tags and developer links\r\n- Store downloads can be stopped, and show in Downloads\r\n### Android\r\n- Keyboard button for apps and games. Typing works even when there's no text box.\r\n- In-app file picker: when an app asks for a file, the iOS file picker opens\r\n- Fullscreen games are centered and use the whole screen (Plants vs. Zombies and more)\r\n- Cocos Creator games start\r\n- Godot 4.7 games can save\r\n- Flutter apps find their fonts\r\n- .NET apps run much further\r\n- Apps protected with Dex2C work\r\n- Android system pop-ups (Bluetooth, NFC…) don't break apps anymore\r\n- XAPKs with OBB files inside install correctly\r\n- Battery, 24-hour clock, time zone and language follow your phone\r\n### Also\r\n- TrollStore and Dopamine on iOS 15–16 get JIT even when iOS refuses the usual way\r\n- The TrollStore build opens on devices it didn't before\r\n- Built-in StikJIT finds the pairing port by itself\r\n- Crash reports tell you when iOS closed Husk for using too much memory\r\n- Compatibility list and accounts moved to https://itslevii.dev\r\n- Lots of fixes\r\n\r\n## What's Changed\r\n* fix: Bypass W^X restrictions by @azyarashi in https://github.com/Leviidev/Husk/pull/74\r\n* Fix base APK selection using split manifests by @TakatoSey in https://github.com/Leviidev/Husk/pull/106\r\n* Cocos Creator games start: V8 runs without its JIT (--jitless) by @stellar099 in https://github.com/Leviidev/Husk/pull/113\r\n* Godot 4.7: answer the directory/file handlers for the objects the engine holds by @xinerqu in https://github.com/Leviidev/Husk/pull/151\r\n* fix: discover the dynamic RemotePairing port for Built-in StikJIT by @cklsit in https://github.com/Leviidev/Husk/pull/153\r\n* Fix Flutter font discovery under the Java Android root by @muzhi1991 in https://github.com/Leviidev/Husk/pull/179\r\n* Reserve aligned compressed-heap space before JIT prewarming by @muzhi1991 in https://github.com/Leviidev/Husk/pull/180\r\n\r\n## New Contributors\r\n* @TakatoSey made their first contribution in https://github.com/Leviidev/Husk/pull/106\r\n* @stellar099 made their first contribution in https://github.com/Leviidev/Husk/pull/113\r\n* @xinerqu made their first contribution in https://github.com/Leviidev/Husk/pull/151\r\n* @cklsit made their first contribution in https://github.com/Leviidev/Husk/pull/153\r\n* @muzhi1991 made their first contribution in https://github.com/Leviidev/Husk/pull/179\r\n\r\n## Known Issues\r\n- Hollow Knight and Cuphead have no sound\r\n- Some games (Disco Elysium, Muse Dash) don't take touch input\r\n- 32-bit only apps don't run\r\n\r\n## Final notes\r\nThank you all, especially everyone who sent a PR this time. Enjoy ❤️\r\n\r\n## Links:\r\n- Website: https://itslevii.dev\r\n- Discord: https://itslevii.dev/discord\r\n- X Profile: https://x.com/leviidev01\r\n- Discord User: @leviidev\r\n\r\n**Full Changelog**: https://github.com/Leviidev/Husk/compare/3.0...3.1",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.1/Husk.ipa",
+          "size": 140540013,
           "minOSVersion": "16.4"
         }
       ]
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.husk.app",
-      "title": "Husk 3.0 · 17 Oct 2026",
-      "identifier": "Husk-release-3.0",
-      "caption": "Husk 3.0 is available.",
-      "date": "2026-10-17T21:34:58Z",
+      "title": "Husk 3.1 · 27 Oct 2026",
+      "identifier": "Husk-release-3.1",
+      "caption": "Husk 3.1 is available.",
+      "date": "2026-10-27T21:36:06Z",
       "tintColor": "#5949E5",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
       "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/3.0"
+      "url": "https://github.com/Leviidev/Husk/releases/tag/3.1"
     }
   ]
 }

@@ -334,11 +334,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "3.0",
-          "date": "2026-10-17",
-          "localizedDescription": "## Husk 3.0\r\nThe coolest and biggest Husk release yet. Hundreds of new Android games, PS4 support, and more.\r\n\r\n## What's new?\r\n- Console-style home screen\r\n- New library UI\r\n- Proper first run\r\n    - Contains full setup guide + optional walkthrough\r\n### PS4 Games\r\n- Add a game with the + button. Either a PKG, a folder of PKG's, or an extracted game folder. Updates install with their game.\r\n- Tested: Bloodborne, Minecraft: PlayStation 4 Edition, Sonic Mania\r\n- Shaders are kept inbetween launches with Shader Cache\r\n- If a game requires keyboard input, it'll open the iOS keyboard\r\n### Android\r\n- 366 newly working games - view in compatibility list\r\n- Unofficial ports: Sonic Robo Blast 2, Nethack, PokeWilds and more\r\n- GoDot 4\r\n- Store downloads include OBB files\r\n- Typing works in all games\r\n- Optional language fonts (chinese, japanese, etc)\r\n### Also\r\n- Lots of fixes\r\n- TrollStore JIT fully complete\r\n- iOS 15.5 support\r\n## Known Issues\r\n- Bloodborne runs, but very poorly.\r\n- Some Unity 6 games can render slowly\r\n## Final notes\r\nThank you all. Enjoy ❤️ \r\n\r\nDiscord Server: https://discord.gg/xApMHWAzkh",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.0/Husk.ipa",
-          "size": 140126095,
+          "version": "3.1",
+          "date": "2026-10-27",
+          "localizedDescription": "## What's new?\r\n- New UI, all over\r\n    - New Home, Library, Store and game pages\r\n    - Every screen, Settings included, uses the same navy look\r\n- Husk accounts\r\n    - Sign in from the top of Settings\r\n    - Your profile, playtime and library sync with itslevii.dev\r\n- New Import screen: APK, split APKs (.xapk, .apkm, .apks), OBBs and PS4 game folders. On iPad you can drag files onto it.\r\n- Small icon size for the library\r\n- Chinese (Simplified) for all of Husk. The language you pick in setup is used by Husk and your apps.\r\n### Store\r\n- New app page\r\n    - Proper descriptions (bold, lists, links)\r\n    - Short counts, like 1B+ downloads and 37M reviews\r\n    - Tap screenshots to view them full screen, with zoom\r\n    - Trailers, What's New, Highlights, tags and developer links\r\n- Store downloads can be stopped, and show in Downloads\r\n### Android\r\n- Keyboard button for apps and games. Typing works even when there's no text box.\r\n- In-app file picker: when an app asks for a file, the iOS file picker opens\r\n- Fullscreen games are centered and use the whole screen (Plants vs. Zombies and more)\r\n- Cocos Creator games start\r\n- Godot 4.7 games can save\r\n- Flutter apps find their fonts\r\n- .NET apps run much further\r\n- Apps protected with Dex2C work\r\n- Android system pop-ups (Bluetooth, NFC…) don't break apps anymore\r\n- XAPKs with OBB files inside install correctly\r\n- Battery, 24-hour clock, time zone and language follow your phone\r\n### Also\r\n- TrollStore and Dopamine on iOS 15–16 get JIT even when iOS refuses the usual way\r\n- The TrollStore build opens on devices it didn't before\r\n- Built-in StikJIT finds the pairing port by itself\r\n- Crash reports tell you when iOS closed Husk for using too much memory\r\n- Compatibility list and accounts moved to https://itslevii.dev\r\n- Lots of fixes\r\n\r\n## What's Changed\r\n* fix: Bypass W^X restrictions by @azyarashi in https://github.com/Leviidev/Husk/pull/74\r\n* Fix base APK selection using split manifests by @TakatoSey in https://github.com/Leviidev/Husk/pull/106\r\n* Cocos Creator games start: V8 runs without its JIT (--jitless) by @stellar099 in https://github.com/Leviidev/Husk/pull/113\r\n* Godot 4.7: answer the directory/file handlers for the objects the engine holds by @xinerqu in https://github.com/Leviidev/Husk/pull/151\r\n* fix: discover the dynamic RemotePairing port for Built-in StikJIT by @cklsit in https://github.com/Leviidev/Husk/pull/153\r\n* Fix Flutter font discovery under the Java Android root by @muzhi1991 in https://github.com/Leviidev/Husk/pull/179\r\n* Reserve aligned compressed-heap space before JIT prewarming by @muzhi1991 in https://github.com/Leviidev/Husk/pull/180\r\n\r\n## New Contributors\r\n* @TakatoSey made their first contribution in https://github.com/Leviidev/Husk/pull/106\r\n* @stellar099 made their first contribution in https://github.com/Leviidev/Husk/pull/113\r\n* @xinerqu made their first contribution in https://github.com/Leviidev/Husk/pull/151\r\n* @cklsit made their first contribution in https://github.com/Leviidev/Husk/pull/153\r\n* @muzhi1991 made their first contribution in https://github.com/Leviidev/Husk/pull/179\r\n\r\n## Known Issues\r\n- Hollow Knight and Cuphead have no sound\r\n- Some games (Disco Elysium, Muse Dash) don't take touch input\r\n- 32-bit only apps don't run\r\n\r\n## Final notes\r\nThank you all, especially everyone who sent a PR this time. Enjoy ❤️\r\n\r\n## Links:\r\n- Website: https://itslevii.dev\r\n- Discord: https://itslevii.dev/discord\r\n- X Profile: https://x.com/leviidev01\r\n- Discord User: @leviidev\r\n\r\n**Full Changelog**: https://github.com/Leviidev/Husk/compare/3.0...3.1",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.1/Husk.ipa",
+          "size": 140540013,
           "minOSVersion": "16.4"
         }
       ]
@@ -480,11 +480,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.22",
+          "version": "0.3.23",
           "date": "2026-10-27",
-          "localizedDescription": "### Added\n\n- **iOS + macOS**: a setting to stop the now-playing artwork from opening the album when clicked — Settings → 点击封面打开专辑, on by default. Thanks @danielzmeow (#144, closes #143).\n- **iOS + macOS**: word-by-word lyrics now run for every song — when NetEase has no verbatim timing for a track, the line's time is spread across its characters (the way mygo-cloudmusic does it), so the karaoke wipe no longer falls back to plain line highlighting. Punctuation and spaces light up with the character before them instead of taking singing time of their own.\n\n### Fixed\n\n- **macOS**: the collapse chevron on the immersive now-playing page is clickable again — the hidden toolbar's sidebar-toggle slot was swallowing the click, so the page only answered to Escape.\n- **iOS + macOS**: translations and romaji line up with verbatim lyrics that start a few hundred milliseconds off the plain lyric grid (those lines used to show no translation), and a song that ships verbatim lyrics without a plain body shows its lyrics instead of none.\n- **iOS + macOS**: the English settings page no longer shows untranslated labels for the now-playing mode, ambient colour, desktop lyrics and update options. Thanks @danielzmeow (#145).\n\n---\n\n### 新增\n\n- **iOS + macOS**：新增「点击封面打开专辑」开关（设置 → 播放页），默认开启；关闭后播放页点击封面不再跳转到专辑。感谢 @danielzmeow（#144，关闭 #143）。\n- **iOS + macOS**：逐字歌词覆盖所有歌曲——网易云没有提供逐字时间轴的歌曲，参照 mygo-cloudmusic 的做法把每行时长按字分摊，卡拉OK 式逐字点亮不再退回整行高亮；标点和空格不再占用演唱时间，跟随前一个字点亮。\n\n### 修复\n\n- **macOS**：沉浸式播放页左上角的收起按钮恢复可点击——此前被隐藏工具栏中侧边栏开关的占位区域挡住，只能按 Esc 关闭。\n- **iOS + macOS**：逐字歌词与普通歌词时间轴相差几百毫秒时，翻译和罗马音不再丢失；只有逐字歌词、没有普通歌词的歌曲也能正常显示歌词。\n- **iOS + macOS**：英文界面的设置页补齐了播放页模式、环境色、桌面歌词、更新等选项的翻译。感谢 @danielzmeow（#145）。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.22/Kumone-iOS-0.3.22.ipa",
-          "size": 8731834,
+          "localizedDescription": "### Fixed\n\n- **iOS + macOS**: liking a song no longer fails with \"当前环境异常，已取消喜欢\" — the like, removing a song from Personal FM and song details now go through NetEase's desktop-client API as a device that stays the same across launches, the way mygo-cloudmusic does it (#81).\n\n### Improved\n\n- **iOS + macOS**: every desktop-client request — playback URLs, downloads, search, charts — now identifies this install with a device ID made once and kept, instead of a constant every install shared, which NetEase's risk control had started to refuse.\n\n---\n\n### 修复\n\n- **iOS + macOS**：点击喜欢不再提示「当前环境异常，已取消喜欢」——喜欢、私人漫游中移除歌曲和歌曲详情改走网易云桌面客户端接口，并以每次启动都相同的设备 ID 发送请求，参照 mygo-cloudmusic 的做法（#81）。\n\n### 改进\n\n- **iOS + macOS**：所有桌面客户端接口（播放地址、下载、搜索、排行榜）改用安装时生成并持久保存的设备 ID，不再所有用户共用同一个标识——网易云风控已开始拒绝这种请求。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.23/Kumone-iOS-0.3.23.ipa",
+          "size": 8731691,
           "minOSVersion": "16.0"
         }
       ]
@@ -1064,7 +1064,7 @@
         {
           "version": "1.6.1",
           "date": "2026-10-27",
-          "localizedDescription": "A manga and webtoon reader for your [Suwayomi](https://suwayomi.org/) server.\n\n### ⚙️ Changes\n\n- Added **Split tall images** to Reader settings, shown only on devices with a low GPU texture limit (@aaronbamblett)\n\n### 🧩 Fixes\n\n- Fixed very tall webtoon pages looking squashed on devices with a low GPU texture limit (@aaronbamblett)\n- Fixed **More** doing nothing on medium-width desktop windows and tablets, which left **Settings** out of reach (@aaronbamblett)\n- Fixed series opened from a source's full results in Global Search showing a black screen (@aaronbamblett)\n- Fixed Quick Search leaving the reader on screen when opening a series or Global Search while reading (@aaronbamblett)\n\n## Install\n\nYou'll need a running Suwayomi server. See [Getting started](https://tsumiru.app/docs/guides/getting-started).\n\n### Mobile\n\n**Android:** download the universal APK below and open it to install. Smaller APKs for specific chip types are also attached.\n\n**iOS:** the `…-ios.ipa` below is unsigned and has to be sideloaded. Add `https://tsumiru.app/apps.json` as a source in [SideStore](https://sidestore.io/) or [AltStore](https://altstore.io/) to install it and get later releases as updates.\n\n<details>\n<summary>Which sideloading tool should I use?</summary>\n\n- **[SideStore](https://sidestore.io/)** signs and refreshes the app on the device itself, with no computer needed after setup. Best for most people.\n- **[AltStore](https://altstore.io/)** expires every 7 days and only refreshes while a computer running AltServer is switched on and on the same Wi-Fi as your phone.\n- **[TrollStore](https://ios.cfw.guide/installing-trollstore/)** installs permanently with no expiry, but only works on older iPhones and iOS versions with the required vulnerability.\n\nWith SideStore or AltStore the app is re-signed periodically, which those tools automate. There is no App Store build.\n</details>\n\n### Desktop\n\n**Windows:** download `…-windows-x64.zip`, extract it anywhere, and run `tsumiru.exe`.\n\n**macOS:** download `…-macos-x64.zip`, extract it, and move the app to Applications. If macOS blocks the first launch, approve it under System Settings → Privacy & Security.\n\n**Linux:** the Flatpak is recommended and auto-updates.\n\n```sh\nflatpak remote-add --if-not-exists tsumiru https://flatpak.tsumiru.app/index.flatpakrepo\nflatpak install tsumiru app.tsumiru.Tsumiru\n```\n\nExisting Flatpak installs keep receiving updates under `io.github.aaronbamblett.tsumiru`; no data, settings or logins move. AppImage/deb also keep that ID.\n\nFor a portable option, download `…-linux-x86_64.AppImage`, mark it executable with `chmod +x`, and run it.\n\n### Web\n\nDownload `…-web.zip` and serve its contents with any static web server.\n\n[Full documentation](https://tsumiru.app/)",
+          "localizedDescription": "A manga and webtoon reader for your [Suwayomi](https://suwayomi.org/) server.\n\n### ⚙️ Changes\n\n- Added **Split tall images** to Reader settings, shown only on devices with a low GPU texture limit (@aaronbamblett)\n\n### 🧩 Fixes\n\n- Fixed very tall webtoon pages looking squashed on devices with a low GPU texture limit (@aaronbamblett)\n- Fixed **More** doing nothing on medium-width desktop windows and tablets, which left **Settings** out of reach (@aaronbamblett)\n- Fixed series opened from a source's full results in Global Search showing a black screen (@aaronbamblett)\n- Fixed Quick Search leaving the reader on screen when opening a series or Global Search while reading (@aaronbamblett)\n\n## Install\n\nYou'll need a running Suwayomi server. See [Getting started](https://tsumiru.app/docs/guides/getting-started).\n\n### Mobile\n\n**Android:** download the universal APK below and open it to install. Smaller APKs for specific chip types are also attached.\n\n**iOS:** the `…-ios.ipa` below is unsigned and has to be sideloaded. Add `https://tsumiru.app/apps.json` as a source in [SideStore](https://sidestore.io/) or [AltStore](https://altstore.io/) to install it and get later releases as updates.\n\n<details>\n<summary>Which sideloading tool should I use?</summary>\n\n- **[SideStore](https://sidestore.io/)** signs and refreshes the app on the device itself, with no computer needed after setup. Best for most people.\n- **[AltStore](https://altstore.io/)** expires every 7 days and only refreshes while a computer running AltServer is switched on and on the same Wi-Fi as your phone.\n- **[TrollStore](https://ios.cfw.guide/installing-trollstore/)** installs permanently with no expiry, but only works on older iPhones and iOS versions with the required vulnerability.\n\nWith SideStore or AltStore the app is re-signed periodically, which those tools automate. There is no App Store build.\n</details>\n\n### Desktop\n\n**Windows:** download `…-windows-x64.zip`, extract it anywhere, and run `tsumiru.exe`.\n\n**macOS:** download `…-macos-universal.zip`, extract it, and move the app to Applications. If macOS blocks the first launch, approve it under System Settings → Privacy & Security.\n\n**Linux:** the Flatpak is recommended and auto-updates.\n\n```sh\nflatpak remote-add --if-not-exists tsumiru https://flatpak.tsumiru.app/index.flatpakrepo\nflatpak install tsumiru app.tsumiru.Tsumiru\n```\n\nExisting Flatpak installs keep receiving updates under `io.github.aaronbamblett.tsumiru`; no data, settings or logins move. AppImage/deb also keep that ID.\n\nFor a portable option, download `…-linux-x86_64.AppImage`, mark it executable with `chmod +x`, and run it.\n\n### Web\n\nDownload `…-web.zip` and serve its contents with any static web server.\n\n[Full documentation](https://tsumiru.app/)",
           "downloadURL": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/download/v1.6.1/tsumiru-v1.6.1-ios.ipa",
           "size": 18278152,
           "minOSVersion": "14.0"
@@ -1134,12 +1134,12 @@
       "tintColor": "#FF0000",
       "versions": [
         {
-          "version": "21.42.4",
-          "buildVersion": "21.42.4",
-          "date": "2026-10-22",
-          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock and YouSlider. (unstable in newer builds)\r\n> - Downloads working partially. depending on hardware codecs. \r\n> \r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa4/YouProExtra_21.42.4_1.3.1.ipa",
-          "size": 131280986,
+          "version": "21.43.5",
+          "buildVersion": "21.43.5",
+          "date": "2026-10-27",
+          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock and YouSlider. (unstable in newer builds)\r\n> - Downloads working partially. depending on hardware codecs. \r\n> - Liquid Glass Support\r\n> \r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.43.5_1.3.1.ipa",
+          "size": 131707413,
           "minOSVersion": "16.0"
         }
       ]
@@ -1170,6 +1170,39 @@
     }
   ],
   "news": [
+    {
+      "appID": "com.husk.app",
+      "title": "Husk 3.1 · 27 Oct 2026",
+      "identifier": "Husk-release-3.1",
+      "caption": "Husk 3.1 is available.",
+      "date": "2026-10-27T21:36:06Z",
+      "tintColor": "#5949E5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Leviidev/Husk/releases/tag/3.1"
+    },
+    {
+      "appID": "com.google.ios.youtube",
+      "title": "YouProEXTRA 21.43.5 · 27 Oct 2026",
+      "identifier": "YouProEXTRA-release-youproextra-ipa2",
+      "caption": "YouProEXTRA 21.43.5 is available.",
+      "date": "2026-10-27T21:33:28Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
+    },
+    {
+      "appID": "sb.moe.kumone",
+      "title": "Kumone 0.3.23 · 27 Oct 2026",
+      "identifier": "Kumone-release-v0.3.23",
+      "caption": "Kumone 0.3.23 is available.",
+      "date": "2026-10-27T18:43:19Z",
+      "tintColor": "#F0D060",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
+      "notify": true,
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.23"
+    },
     {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
       "title": "LSX4 128.9561 · 27 Oct 2026",
@@ -1213,17 +1246,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/news.png",
       "notify": true,
       "url": "https://github.com/mxhm11cr/LinuxRunner/releases/tag/v1.0.1"
-    },
-    {
-      "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.22 · 27 Oct 2026",
-      "identifier": "Kumone-release-v0.3.22",
-      "caption": "Kumone 0.3.22 is available.",
-      "date": "2026-10-27T07:21:29Z",
-      "tintColor": "#F0D060",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
-      "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.22"
     },
     {
       "appID": "com.kuschqin.madeira.steamui",
@@ -1358,17 +1380,6 @@
       "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.6-2026-10-23"
     },
     {
-      "appID": "com.google.ios.youtube",
-      "title": "YouProEXTRA 21.42.4 · 22 Oct 2026",
-      "identifier": "YouProEXTRA-release-youproextra-ipa4",
-      "caption": "YouProEXTRA 21.42.4 is available.",
-      "date": "2026-10-22T01:08:55Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
-      "notify": true,
-      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa4"
-    },
-    {
       "appID": "ani.baka",
       "title": "AniBaka 5.2.3 · 21 Oct 2026",
       "identifier": "AniBaka-release-5.2.3+1020",
@@ -1422,17 +1433,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.png",
       "notify": true,
       "url": "https://github.com/dddevid/Musly/releases/tag/v2.0.3"
-    },
-    {
-      "appID": "com.husk.app",
-      "title": "Husk 3.0 · 17 Oct 2026",
-      "identifier": "Husk-release-3.0",
-      "caption": "Husk 3.0 is available.",
-      "date": "2026-10-17T21:34:58Z",
-      "tintColor": "#5949E5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/3.0"
     },
     {
       "appID": "com.kdt.livecontainer",
