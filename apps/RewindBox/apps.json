@@ -20,12 +20,11 @@
       "tintColor": "#50DD8B",
       "versions": [
         {
-          "version": "0.0.9",
-          "buildVersion": "530",
-          "date": "2026-10-25",
-          "localizedDescription": "## RewindBox iOS — fix 0.0.9 (Build 530)\n\nThis hotfix addresses the identified MeloNX crash path on iOS: Vulkan returned ErrorFeatureNotPresent during direct host-memory buffer import after a Nintendo Switch game began rendering. The embedded engine now avoids that unsupported import on iOS and uses its existing GPU buffer/readback fallback.\n\n- Rebuilt and source-verified embedded MeloNX NativeAOT engine.\n- Existing RPCS3 Core and other supported embedded emulators retained.\n- Ad-hoc signed for re-signing with SideStore/AltStore.\n- Automated native/iOS-simulator and packaging checks passed.\n\nPlease test gameplay stability on a physical iPhone. The fix addresses the observed Vulkan API failure, but a successful long game session has not yet been independently verified.\n\nVersion note: IPA build number 530; internal app version remains 0.0.8 because this targeted hotfix retains the previously validated application metadata. The release title is fix 0.0.9.\n\nSource: RewindBox development branch merged into main. No personal firmware, Switch keys or game files are bundled.",
-          "downloadURL": "https://github.com/TarbleFR/RewindBox/releases/download/0.0.9-fix.1/RewindBox-Build530.ipa",
-          "size": 186305438,
+          "version": "0.0.10",
+          "date": "2026-10-26",
+          "localizedDescription": "## RewindBox 0.0.10 — Build 559\r\n\r\nEverything since 0.0.9-fix.1 (Build 530).\r\n\r\n### Interface\r\n- Refined Liquid Glass interface: one-line main header, a new \"NeoStation\" style (solid accent pill, matte surfaces, no blur), a working Interface preview with Apply/Revert, and floating side-menu bubbles in Settings and Scraper.\r\n- New options in 12 languages: status bar items, accent colour, controller focus style, LB/RB glyphs and side-menu panel.\r\n- ROM folder changes saved in quick succession no longer fail.\r\n\r\n### Nintendo Switch (embedded MeloNX)\r\n- Backend threading is now on by default, as in the standalone MeloNX app, with a per-game switch.\r\n- Game FPS is shown in the RAM overlay.\r\n- In-game MoltenVK choice: the standalone MeloNX app's own MoltenVK is the default; RewindBox's version remains available and is used automatically if the other fails to load.\r\n- New \"Emulation priority\" option in the in-game menu (default unchanged). The screen no longer auto-locks during a game.\r\n- Closing a game after a GPU teardown error no longer leaves the app stuck on \"closing\": the session is stopped safely and explained.\r\n- Imports report completion without a full library rescan, updates are matched to the installed base game, audio playback starts correctly on the Apple backend, and pipeline compilation errors are handled without breaking later draws.\r\n- A per-second performance line in the app log helps troubleshooting.\r\n\r\n### PlayStation 3 (RPCS3)\r\n- PS3 disc images (.iso) in your library folder now launch through RPCS3: RewindBox reads the disc, offers to install it into RPCS3 (with its .dkey/.key file) and boots it. Renamed or removed images stay in sync, and the original can optionally be deleted after installation.\r\n- The God of War III profile is now actually applied; an old custom configuration previously disabled it silently.\r\n- Engine improvements:\r\n  - SPU code already in the cache loads without rebuilding the LLVM pass pipeline.\r\n  - GPU copies that fully overwrite their destination no longer read the old contents back.\r\n  - Fewer redundant texture hashes, plus a new experimental \"Texture validation per FIFO batch\" setting (automatic for God of War III only).\r\n  - Faster lookup of identical vertex shaders, fewer copies during synchronous shader compilation, fewer redundant pipeline builds, and shader-cache writes moved off the RSX thread.\r\n  - Less CPU spent waiting for the GPU, and faster JIT cache writes.\r\n  - Public ARMSX3 fixes: SPU warm-up order, PKG path containment, debug SELF decryption, in-memory savestate files, cellSaveData SDK 2.6 limit.\r\n  - ISO mounts are preserved when restoring a savestate.\r\n- New experimental \"MoltenVK Asynchronous Submits\" setting (off by default).\r\n- Additional bounded diagnostics (timeline, GPU waits, read-back origins, optimization counters) to measure performance.\r\n\r\nThe first launch of each PS3 game rebuilds its SPU cache once; the PPU cache is kept.\r\n\r\n### Testing status\r\nThese changes passed automated native, sanitizer, ARM64 and packaging checks. FPS, stutter and memory gains on iPhone have not been measured yet. Please report results with your logs.\r\n\r\n### Download\r\n`RewindBox-Build559.ipa` — SHA-256 `f16c2a3529537bfbaa933972ed63f6ce96bb2a9ca176f1e2d1726dcd7896480d`.\r\nAd-hoc signed: re-sign it with SideStore or AltStore before installing. Requires iOS 18.0 or later.\r\n\r\nVersion note: IPA build number 559; the internal app version remains 0.0.8.\r\n\r\nNo firmware, keys, BIOS or game files are bundled.",
+          "downloadURL": "https://github.com/TarbleFR/RewindBox/releases/download/0.0.10/RewindBox-.0.0.10.ipa",
+          "size": 188063063,
           "minOSVersion": "18.0"
         }
       ]
@@ -34,14 +33,14 @@
   "news": [
     {
       "appID": "com.neogamelab.neostation",
-      "title": "RewindBox 0.0.9 · 25 Oct 2026",
-      "identifier": "RewindBox-release-0.0.9-fix.1",
-      "caption": "RewindBox 0.0.9 is available.",
-      "date": "2026-10-25T03:10:45Z",
+      "title": "RewindBox 0.0.10 · 26 Oct 2026",
+      "identifier": "RewindBox-release-0.0.10",
+      "caption": "RewindBox 0.0.10 is available.",
+      "date": "2026-10-26T23:06:26Z",
       "tintColor": "#50DD8B",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/news.png",
       "notify": true,
-      "url": "https://github.com/TarbleFR/RewindBox/releases/tag/0.0.9-fix.1"
+      "url": "https://github.com/TarbleFR/RewindBox/releases/tag/0.0.10"
     }
   ]
 }

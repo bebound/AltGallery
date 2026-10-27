@@ -656,11 +656,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.5.1",
-          "date": "2026-10-13",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 改进\n\n- **输入读数不完整时，不再当作输入功率显示。** 在 iPad Pro 和 iPhone 18 Pro Max 上，输入传感器只测到了一部分功率（比如实际 43.5 W 只显示 21.8 W）。现在当进入电芯的功率比输入读数还大时，表盘改为显示\"进入电池\"的功率，不再计算效率和适配器利用率，并在功率页和适配器页说明原因。\n- **电池温度改用中位数。** 部分机型有四个同名的电池温度传感器，其中一个明显偏高。\"电池\"读数、热力图上的电池标记和分区标题现在都用中位数，四个读数仍然逐个列出。\n- **异常温度不再参与计算。** 以下读数不再计入热力图和最高温度，但仍保留在\"原始数据\"里，并注明原因：低于 −10 °C 的 PMU 传感器、高于 85 °C 而结温对不上的充电芯片温度、恰好为 0.0 °C 的传感器。\n- **支持 iPad。** 支持横竖屏，内容不再横向拉满。iPad 的传感器对应关系还没有验证，数据仅供参考。\n- **文案更准确。** \"来自充电器\"改为\"手机接口处 / 充电线圈处\"；适配器页注明额定功率是协商出的上限，不是功率计读数。\n- **原始数据更便于反馈。** 每个传感器带上服务编号，并列出被排除的读数。\n\n## 修复\n\n- 适配器：供电规格列表里不再出现\"65.5 V × 65.53 A\"这样的无效档位。\n- 实时活动：App 在前台时，读数变化 0.05 就会更新，不再等到变化 0.2 W 或 0.5 °C。\n\n## 注意\n\n- 这些修复是根据用户反馈的数据做的，没有在对应机型的真机上验证过。如果你的机型上读数仍然不对，请在 设置 → 原始数据 里复制导出并反馈。\n- iPhone 18 Pro Max 高功率充电时的完整输入功率仍然读不到，需要该机型在 45 W 状态下的原始数据导出。\n- App 退到后台后，灵动岛上的读数会停住，这是系统限制；想持续看实时读数请使用悬浮表。\n\n---\n\n## Improvements\n\n- **An incomplete input reading is no longer shown as the input.** On an iPad Pro and an iPhone 18 Pro Max the input sensors see only part of the power (21.8 W shown for a real 43.5 W, for one). When more power is reaching the cell than the input reading accounts for, the dial now shows the \"into battery\" figure, efficiency and adapter utilisation are not worked out, and the Power and Adapter pages say why.\n- **Battery temperature is a median.** Some models have four battery temperature sensors under one name, one of them reading clearly high. The Battery readout, the heat map's battery pin and the zone header all use the median now; all four are still listed.\n- **Impossible temperatures are left out.** These no longer reach the heat map or the hottest reading, and stay in Raw data with a reason: a PMU sensor below −10 °C, a charge-IC temperature above 85 °C that its junction sensor does not back up, and a sensor at exactly 0.0 °C.\n- **iPad support.** All orientations, and content no longer stretches edge to edge. The sensor mapping on iPad is unverified, so treat its numbers with care.\n- **More accurate wording.** \"From charger\" is now \"At phone port\" / \"At charging coil\", and the Adapter page says the rating is a negotiated ceiling, not a wall-meter reading.\n- **Raw data is easier to report from.** Every sensor carries its service index, and excluded readings are listed.\n\n## Fixes\n\n- Adapter: the profile list no longer shows an invalid \"65.5 V × 65.53 A\" entry.\n- Live Activity: with the app in front, it updates on a 0.05 change instead of waiting for 0.2 W or 0.5 °C.\n\n## Notes\n\n- These fixes were made from data users reported and were not verified on those devices. If readings still look wrong on your model, copy the dump from Settings → Raw data and report it.\n- On an iPhone 18 Pro Max the full input power at high-power charging still cannot be read; a Raw data dump taken at 45 W on that model is needed.\n- Once the app is in the background the Dynamic Island reading stops. That is a system limit; use the floating meter for a live reading.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.5.0...v1.5.1",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.5.1/MiniWatts-unsigned.ipa",
-          "size": 3305290,
+          "version": "1.6.0",
+          "date": "2026-10-27",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 改进\n\n- **iPhone 18 Pro 高功率充电时会提示读数可能只有一半。** 在 iPhone 18 Pro 系列上用有线充电、协商功率超过 30 W 时，表盘旁会显示\"可能只读到一半\"，功率页和适配器页也会说明原因：这种情况下输入和电芯两侧的传感器都可能只测到一半功率。数值本身不做修正。\n- **新增\"电量核对\"。** 充电时，App 会把电量上升的速度换算成功率，和电芯传感器在同一段时间里测到的功率对比。如果电量涨得明显比传感器测到的快（1.6 倍以上），表盘旁会显示\"读数偏低\"，并给出两边的数值；如果两边一致，会显示核对通过，上面那条\"可能只读到一半\"的提示也会隐藏。电量要上涨至少 3% 才能给出结果，通常需要几分钟。\n- **传感器按 SMC key 识别，重复的读数会合并。** iOS 27 上每个传感器都会出现两份，以前只取第一份，现在取两份的平均值；发热页的列表里每个传感器也只出现一次。发热页和原始数据会在传感器名旁边标出 key（比如电池温度偏高的那个是 `TG0B`）。\n- **电池能量按机型给默认值。** iPhone 18 Pro Max 为 21.75 Wh，iPhone 17 Pro Max 为 19.7 Wh，其他机型仍是 15 Wh。设置 → 电池能量 里会显示本机型的额定值，点\"使用\"即可填入。已经手动设置过的值保持不变。\n- **原始数据新增\"Derived power checks\"一节。** 这一节记录半功率提示是否生效，以及电量核对的结果。\n\n## 修复\n\n- 适配器：iPhone 18 Pro 高功率充电时，读数偏低不再被误判成线材或接口的问题；在无法确认读数完整时，不计算线路电阻和电流利用率。\n\n## 注意\n\n- iPhone 18 Pro 高功率充电时，完整的输入功率仍然读不到：另一路充电电流没有可读的传感器。这个版本只能提示和核对，不能补上缺失的功率；这段时间的充电记录里的能量统计也仍然偏低。\n- \"电量核对\"还没有在 iPhone 18 Pro 上验证过。如果你有这台手机，请在 45 W 充电、电量上涨几个百分点之后，从 设置 → 原始数据 复制导出并反馈。\n- 如果你的机型不在上面的列表里，请在 设置 → 电池能量 里填入正确的数值，否则电量核对可能一直给不出结论。\n- 部分发现来自 ChargeSpeed 作者在 iPhone 18 Pro Max 上的实测。\n\n---\n\n## Improvements\n\n- **The iPhone 18 Pro now warns when a reading may be half.** On an iPhone 18 Pro model charging by cable on a profile above 30 W, the dial shows \"may read half\", and the Power and Adapter pages explain why: in that mode both the input and the cell sensors can see only half the power. The numbers themselves are not corrected.\n- **New battery level check.** While charging, the app turns the battery level's rise into watts and compares it with what the cell sensors measured over the same stretch. If the level rises much faster (1.6× or more), the dial shows \"reading low\" with both figures; if they agree, the check says so and the \"may read half\" warning is hidden. It needs at least a 3% rise, usually a few minutes.\n- **Sensors are identified by SMC key, and duplicate copies are merged.** iOS 27 publishes every sensor twice. The app used to take the first copy; it now averages the two, and each sensor appears once on the Thermal page. The Thermal page and Raw data show the key beside the name (the battery sensor that runs hot is `TG0B`).\n- **Battery energy defaults by model.** 21.75 Wh for the iPhone 18 Pro Max, 19.7 Wh for the iPhone 17 Pro Max, 15 Wh otherwise. Settings → Battery energy shows your model's rating with a \"Use\" button. A value you set yourself is kept.\n- **Raw data gains a \"Derived power checks\" section**, recording whether the half-reading warning applies and the battery level check's result.\n\n## Fixes\n\n- Adapter: on an iPhone 18 Pro at high power, a low reading is no longer blamed on the cable or plugs; path resistance and current utilisation are not worked out while the reading may be incomplete.\n\n## Notes\n\n- On an iPhone 18 Pro at high power the full input still cannot be read: the second charging path has no readable sensor. This version can warn and cross-check, not fill in the missing power, and energy totals recorded during that time are still low.\n- The battery level check has not been verified on an iPhone 18 Pro. If you have one, charge at 45 W, let the level rise a few percent, then copy the dump from Settings → Raw data and report it.\n- If your model is not in the list above, set Settings → Battery energy to its rating, or the level check may never reach a verdict.\n- Some of these findings come from measurements by ChargeSpeed's author on an iPhone 18 Pro Max.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.5.1...v1.6.0",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.6.0/MiniWatts-unsigned.ipa",
+          "size": 3332420,
           "minOSVersion": "17.0"
         }
       ]
@@ -918,12 +918,11 @@
       "tintColor": "#50DD8B",
       "versions": [
         {
-          "version": "0.0.9",
-          "buildVersion": "530",
-          "date": "2026-10-25",
-          "localizedDescription": "## RewindBox iOS — fix 0.0.9 (Build 530)\n\nThis hotfix addresses the identified MeloNX crash path on iOS: Vulkan returned ErrorFeatureNotPresent during direct host-memory buffer import after a Nintendo Switch game began rendering. The embedded engine now avoids that unsupported import on iOS and uses its existing GPU buffer/readback fallback.\n\n- Rebuilt and source-verified embedded MeloNX NativeAOT engine.\n- Existing RPCS3 Core and other supported embedded emulators retained.\n- Ad-hoc signed for re-signing with SideStore/AltStore.\n- Automated native/iOS-simulator and packaging checks passed.\n\nPlease test gameplay stability on a physical iPhone. The fix addresses the observed Vulkan API failure, but a successful long game session has not yet been independently verified.\n\nVersion note: IPA build number 530; internal app version remains 0.0.8 because this targeted hotfix retains the previously validated application metadata. The release title is fix 0.0.9.\n\nSource: RewindBox development branch merged into main. No personal firmware, Switch keys or game files are bundled.",
-          "downloadURL": "https://github.com/TarbleFR/RewindBox/releases/download/0.0.9-fix.1/RewindBox-Build530.ipa",
-          "size": 186305438,
+          "version": "0.0.10",
+          "date": "2026-10-26",
+          "localizedDescription": "## RewindBox 0.0.10 — Build 559\r\n\r\nEverything since 0.0.9-fix.1 (Build 530).\r\n\r\n### Interface\r\n- Refined Liquid Glass interface: one-line main header, a new \"NeoStation\" style (solid accent pill, matte surfaces, no blur), a working Interface preview with Apply/Revert, and floating side-menu bubbles in Settings and Scraper.\r\n- New options in 12 languages: status bar items, accent colour, controller focus style, LB/RB glyphs and side-menu panel.\r\n- ROM folder changes saved in quick succession no longer fail.\r\n\r\n### Nintendo Switch (embedded MeloNX)\r\n- Backend threading is now on by default, as in the standalone MeloNX app, with a per-game switch.\r\n- Game FPS is shown in the RAM overlay.\r\n- In-game MoltenVK choice: the standalone MeloNX app's own MoltenVK is the default; RewindBox's version remains available and is used automatically if the other fails to load.\r\n- New \"Emulation priority\" option in the in-game menu (default unchanged). The screen no longer auto-locks during a game.\r\n- Closing a game after a GPU teardown error no longer leaves the app stuck on \"closing\": the session is stopped safely and explained.\r\n- Imports report completion without a full library rescan, updates are matched to the installed base game, audio playback starts correctly on the Apple backend, and pipeline compilation errors are handled without breaking later draws.\r\n- A per-second performance line in the app log helps troubleshooting.\r\n\r\n### PlayStation 3 (RPCS3)\r\n- PS3 disc images (.iso) in your library folder now launch through RPCS3: RewindBox reads the disc, offers to install it into RPCS3 (with its .dkey/.key file) and boots it. Renamed or removed images stay in sync, and the original can optionally be deleted after installation.\r\n- The God of War III profile is now actually applied; an old custom configuration previously disabled it silently.\r\n- Engine improvements:\r\n  - SPU code already in the cache loads without rebuilding the LLVM pass pipeline.\r\n  - GPU copies that fully overwrite their destination no longer read the old contents back.\r\n  - Fewer redundant texture hashes, plus a new experimental \"Texture validation per FIFO batch\" setting (automatic for God of War III only).\r\n  - Faster lookup of identical vertex shaders, fewer copies during synchronous shader compilation, fewer redundant pipeline builds, and shader-cache writes moved off the RSX thread.\r\n  - Less CPU spent waiting for the GPU, and faster JIT cache writes.\r\n  - Public ARMSX3 fixes: SPU warm-up order, PKG path containment, debug SELF decryption, in-memory savestate files, cellSaveData SDK 2.6 limit.\r\n  - ISO mounts are preserved when restoring a savestate.\r\n- New experimental \"MoltenVK Asynchronous Submits\" setting (off by default).\r\n- Additional bounded diagnostics (timeline, GPU waits, read-back origins, optimization counters) to measure performance.\r\n\r\nThe first launch of each PS3 game rebuilds its SPU cache once; the PPU cache is kept.\r\n\r\n### Testing status\r\nThese changes passed automated native, sanitizer, ARM64 and packaging checks. FPS, stutter and memory gains on iPhone have not been measured yet. Please report results with your logs.\r\n\r\n### Download\r\n`RewindBox-Build559.ipa` — SHA-256 `f16c2a3529537bfbaa933972ed63f6ce96bb2a9ca176f1e2d1726dcd7896480d`.\r\nAd-hoc signed: re-sign it with SideStore or AltStore before installing. Requires iOS 18.0 or later.\r\n\r\nVersion note: IPA build number 559; the internal app version remains 0.0.8.\r\n\r\nNo firmware, keys, BIOS or game files are bundled.",
+          "downloadURL": "https://github.com/TarbleFR/RewindBox/releases/download/0.0.10/RewindBox-.0.0.10.ipa",
+          "size": 188063063,
           "minOSVersion": "18.0"
         }
       ]
@@ -1172,6 +1171,28 @@
   ],
   "news": [
     {
+      "appID": "org.zhaohe.MiniWatts",
+      "title": "MiniWatts 1.6.0 · 27 Oct 2026",
+      "identifier": "MiniWatts-release-v1.6.0",
+      "caption": "MiniWatts 1.6.0 is available.",
+      "date": "2026-10-27T03:11:13Z",
+      "tintColor": "#30E0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.6.0"
+    },
+    {
+      "appID": "com.neogamelab.neostation",
+      "title": "RewindBox 0.0.10 · 26 Oct 2026",
+      "identifier": "RewindBox-release-0.0.10",
+      "caption": "RewindBox 0.0.10 is available.",
+      "date": "2026-10-26T23:06:26Z",
+      "tintColor": "#50DD8B",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/news.png",
+      "notify": true,
+      "url": "https://github.com/TarbleFR/RewindBox/releases/tag/0.0.10"
+    },
+    {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
       "title": "LSX4 128.9558 · 26 Oct 2026",
       "identifier": "LSX4-release-ios-jit-128.9558-r3",
@@ -1258,17 +1279,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
       "notify": true,
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.1"
-    },
-    {
-      "appID": "com.neogamelab.neostation",
-      "title": "RewindBox 0.0.9 · 25 Oct 2026",
-      "identifier": "RewindBox-release-0.0.9-fix.1",
-      "caption": "RewindBox 0.0.9 is available.",
-      "date": "2026-10-25T03:10:45Z",
-      "tintColor": "#50DD8B",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/news.png",
-      "notify": true,
-      "url": "https://github.com/TarbleFR/RewindBox/releases/tag/0.0.9-fix.1"
     },
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
@@ -1467,17 +1477,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png",
       "notify": true,
       "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.1.15"
-    },
-    {
-      "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.5.1 · 13 Oct 2026",
-      "identifier": "MiniWatts-release-v1.5.1",
-      "caption": "MiniWatts 1.5.1 is available.",
-      "date": "2026-10-13T02:45:39Z",
-      "tintColor": "#30E0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.5.1"
     },
     {
       "appID": "com.kodjodevf.mangayomi",
