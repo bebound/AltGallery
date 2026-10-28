@@ -116,6 +116,9 @@ Read manga, novels, and watch anime.
 ### <a href="https://github.com/Manic-EMU/ManicEMU"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ManicEMU/icon.png" alt="ManicEMU icon" width="24" align="top">ManicEMU</a>
 All-in-one retro game emulator for iOS, with a clean interface and broad platform support.
 
+### <a href="https://github.com/jxxghp/MoviePilot-App"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MoviePilot-App/icon.png" alt="MoviePilot icon" width="24" align="top">MoviePilot</a>
+MoviePilot 的 iOS 客户端，使用系统原生导航与快捷面板，业务页面复用 MoviePilot-Frontend。
+
 ### <a href="https://github.com/singleton-altman/MoviePilotLite"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MoviePilotLite/icon.png" alt="MoviePilotLite icon" width="24" align="top">MoviePilotLite</a>
 MoviePilot 移动端，基于 Flutter 实现。
 
