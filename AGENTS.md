@@ -199,3 +199,17 @@ IPA](#extracting-the-app-icon-from-an-ipa), [Generating News
 Images](#generating-news-images), [Merging into
 all-apps.json](#merging-into-all-appsjson)) remain authoritative for the
 shared details.
+
+## Updating an App (Repo Migration / Rename)
+
+When an app's GitHub repo moves to a new owner/repo or the app is renamed,
+the **update-app** skill handles it — invoke it with `/update-app` (it also
+auto-loads when you ask to migrate or rename an existing app). Given the old
+folder name and the new repo URL, it moves the folder with `git mv` (history
+preserved), re-extracts every field from the new repo using the same
+procedure as **add-app**, refreshes the icon/screenshots, updates
+`config.toml` (repo, names, developer, URLs, tint, min OS, `[versions]`
+patterns), rewrites `news.toml` including stale pinned/derived colors,
+re-renders `images/news.png`, regenerates `apps.json`, and updates the README
+entry. The reference sections linked under [Adding a New
+App](#adding-a-new-app) apply here too.
