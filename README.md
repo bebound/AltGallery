@@ -38,148 +38,148 @@ Don't see an app you want? [Create an issue](https://github.com/bebound/AltGalle
 
 ## Available Apps
 
-### <a href="https://github.com/Aidoku/Aidoku"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Aidoku/icon.png" alt="Aidoku icon" width="24" align="top"> Aidoku</a>
+### <a href="https://github.com/Aidoku/Aidoku"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Aidoku/icon.png" alt="Aidoku icon" width="24" align="top">Aidoku</a>
 A free and open source manga reading application for iOS and iPadOS.
 
-### <a href="https://github.com/Mak5er/AirCard-iOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AirCard/icon.png" alt="AirCard-iOS icon" width="24" align="top"> AirCard-iOS</a>
+### <a href="https://github.com/Mak5er/AirCard-iOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AirCard/icon.png" alt="AirCard-iOS icon" width="24" align="top">AirCard-iOS</a>
 Customize Apple Wallet card artwork, passcode dialers and PosterBoard wallpapers on device without a jailbreak.
 
-### <a href="https://github.com/AniBakaBaka/AniBaka"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AniBaka/icon.png" alt="AniBaka icon" width="24" align="top"> AniBaka</a>
+### <a href="https://github.com/AniBakaBaka/AniBaka"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AniBaka/icon.png" alt="AniBaka icon" width="24" align="top">AniBaka</a>
 跨平台番剧聚合与弹幕客户端，多番剧源、多弹幕、高清无广告，支持动漫实时超分辨率。
 
-### <a href="https://github.com/openAnimeFlow/AnimeFlow"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AnimeFlow/icon.png" alt="AnimeFlow icon" width="24" align="top"> AnimeFlow</a>
+### <a href="https://github.com/openAnimeFlow/AnimeFlow"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AnimeFlow/icon.png" alt="AnimeFlow icon" width="24" align="top">AnimeFlow</a>
 跨平台动漫视频播放器，支持多数据源、实时 4K 超分辨率、Bangumi 同步与弹幕。
 
-### <a href="https://github.com/open-ani/animeko"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Animeko/icon.png" alt="Animeko icon" width="24" align="top"> Animeko</a>
+### <a href="https://github.com/open-ani/animeko"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Animeko/icon.png" alt="Animeko icon" width="24" align="top">Animeko</a>
 一站式弹幕追番平台，支持 Bangumi 云同步、多视频数据源聚合、离线缓存与弹幕云过滤。
 
-### <a href="https://github.com/Apollo-Reborn/Apollo-Reborn"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Apollo-Reborn/icon.png" alt="Apollo Reborn icon" width="24" align="top"> Apollo Reborn</a>
+### <a href="https://github.com/Apollo-Reborn/Apollo-Reborn"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Apollo-Reborn/icon.png" alt="Apollo Reborn icon" width="24" align="top">Apollo Reborn</a>
 A community-maintained iOS tweak that keeps Apollo for Reddit working after its June 2023 shutdown.
 
-### <a href="https://github.com/ARMSX2/ARMSX2"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ARMSX2/icon.png" alt="ARMSX2 icon" width="24" align="top"> ARMSX2</a>
+### <a href="https://github.com/ARMSX2/ARMSX2"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ARMSX2/icon.png" alt="ARMSX2 icon" width="24" align="top">ARMSX2</a>
 A native ARM64 PlayStation 2 emulator for iOS and iPadOS, forked from PCSX2.
 
-### <a href="https://github.com/thebcd69/bcd-games"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/BCD/icon.png" alt="BCD icon" width="24" align="top"> BCD</a>
+### <a href="https://github.com/thebcd69/bcd-games"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/BCD/icon.png" alt="BCD icon" width="24" align="top">BCD</a>
 Run Windows games on iPhone and iPad — a fast, controller-friendly launcher with Steam and GOG built in, powered by Wine, FEX and Metal.
 
-### <a href="https://github.com/moliango/doer"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Doer/icon.png" alt="Doer icon" width="24" align="top"> Doer</a>
+### <a href="https://github.com/moliango/doer"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Doer/icon.png" alt="Doer icon" width="24" align="top">Doer</a>
 A native iOS client for Linux.do.
 
-### <a href="https://github.com/OatmealDome/dolphin-ios"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/DolphiniOS/icon.png" alt="DolphiniOS icon" width="24" align="top"> DolphiniOS</a>
+### <a href="https://github.com/OatmealDome/dolphin-ios"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/DolphiniOS/icon.png" alt="DolphiniOS icon" width="24" align="top">DolphiniOS</a>
 Dolphin for iOS, reborn — a GameCube and Wii emulator for iPhone and iPad.
 
-### <a href="https://github.com/MaftyManicEMU/DukeX"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/DukeX/icon.png" alt="DukeX icon" width="24" align="top"> DukeX</a>
+### <a href="https://github.com/MaftyManicEMU/DukeX"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/DukeX/icon.png" alt="DukeX icon" width="24" align="top">DukeX</a>
 Original Xbox emulation for iOS, built from xemu with a native Swift interface.
 
-### <a href="https://github.com/EhPanda-Team/EhPanda"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/EhPanda/icon.png" alt="EhPanda icon" width="24" align="top"> EhPanda</a>
+### <a href="https://github.com/EhPanda-Team/EhPanda"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/EhPanda/icon.png" alt="EhPanda icon" width="24" align="top">EhPanda</a>
 An unofficial E-Hentai App for iOS built with SwiftUI & TCA.
 
-### <a href="https://github.com/Leviidev/Fathom"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Fathom/icon.png" alt="Fathom icon" width="24" align="top"> Fathom</a>
+### <a href="https://github.com/Leviidev/Fathom"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Fathom/icon.png" alt="Fathom icon" width="24" align="top">Fathom</a>
 An x86-64 PC emulator for iOS — runs x86-64 Linux executables by translating them to ARM64 at runtime with FEXCore. Requires JIT and a debugger attached at runtime.
 
-### <a href="https://github.com/Leviidev/Husk"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Husk/icon.png" alt="Husk icon" width="24" align="top"> Husk</a>
+### <a href="https://github.com/Leviidev/Husk"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Husk/icon.png" alt="Husk icon" width="24" align="top">Husk</a>
 Run Android apps on iOS — drop in an APK, tap it, and it opens full-screen. Requires JIT and a debugger attached at runtime.
 
-### <a href="https://github.com/kuscholar/iDeck"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/iDeck/icon.png" alt="iDeck icon" width="24" align="top"> iDeck</a>
+### <a href="https://github.com/kuscholar/iDeck"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/iDeck/icon.png" alt="iDeck icon" width="24" align="top">iDeck</a>
 Run Steam Big Picture and compatible Windows PC games on iPhone and iPad through Madeira’s experimental local runtime.
 
-### <a href="https://github.com/intraducine/iridium"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Iridium/icon.png" alt="Iridium icon" width="24" align="top"> Iridium</a>
+### <a href="https://github.com/intraducine/iridium"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Iridium/icon.png" alt="Iridium icon" width="24" align="top">Iridium</a>
 An experimental iPhone and iPad Windows-game runtime, with a native game library and touch, keyboard, mouse, and controller integration.
 
-### <a href="https://github.com/XITRIX/iTorrent"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/iTorrent/icon.png" alt="iTorrent icon" width="24" align="top"> iTorrent</a>
+### <a href="https://github.com/XITRIX/iTorrent"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/iTorrent/icon.png" alt="iTorrent icon" width="24" align="top">iTorrent</a>
 Torrent client for iOS.
 
-### <a href="https://github.com/Predidit/Kazumi"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kazumi/icon.png" alt="Kazumi icon" width="24" align="top"> Kazumi</a>
+### <a href="https://github.com/Predidit/Kazumi"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kazumi/icon.png" alt="Kazumi icon" width="24" align="top">Kazumi</a>
 基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率。
 
-### <a href="https://github.com/Mac-XK/KMusic"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/KMusic/icon.png" alt="KMusic icon" width="24" align="top"> KMusic</a>
+### <a href="https://github.com/Mac-XK/KMusic"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/KMusic/icon.png" alt="KMusic icon" width="24" align="top">KMusic</a>
 基于 SwiftUI 的多源音乐聚合播放器，支持 iOS/macOS，内置酷我、酷狗、QQ 音乐、网易云等多平台音源与 LRC 歌词同步。
 
-### <a href="https://github.com/missuo/kumone"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kumone/icon.png" alt="Kumone icon" width="24" align="top"> Kumone</a>
+### <a href="https://github.com/missuo/kumone"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kumone/icon.png" alt="Kumone icon" width="24" align="top">Kumone</a>
 原生 NetEase Cloud Music iOS 客户端（雲の音），直连网易云音乐真实 API，支持灰色歌曲解锁与歌词。
 
-### <a href="https://github.com/mxhm11cr/LinuxRunner"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LinuxRunner/icon.png" alt="LinuxRunner icon" width="24" align="top"> LinuxRunner</a>
+### <a href="https://github.com/mxhm11cr/LinuxRunner"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LinuxRunner/icon.png" alt="LinuxRunner icon" width="24" align="top">LinuxRunner</a>
 Run ARM64 Linux applications and desktop environments on iOS without a jailbreak, virtual machine, or JIT.
 
-### <a href="https://github.com/LiveContainer/LiveContainer"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/icon.png" alt="LiveContainer+SideStore icon" width="24" align="top"> LiveContainer+SideStore</a>
+### <a href="https://github.com/LiveContainer/LiveContainer"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/icon.png" alt="LiveContainer+SideStore icon" width="24" align="top">LiveContainer+SideStore</a>
 An app launcher that runs iOS apps without actually installing them, with a built-in SideStore for refreshing your apps.
 
-### <a href="https://github.com/lpfoj/lsx4"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LSX4/icon.png" alt="LSX4 icon" width="24" align="top"> LSX4</a>
+### <a href="https://github.com/lpfoj/lsx4"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LSX4/icon.png" alt="LSX4 icon" width="24" align="top">LSX4</a>
 An open-source PlayStation 4/5 emulator for iOS; the current iOS build supports PS4 gameplay and requires iOS 26+ with JIT.
 
-### <a href="https://github.com/willfaust/Madeira"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Madeira/icon.png" alt="Madeira icon" width="24" align="top"> Madeira</a>
+### <a href="https://github.com/willfaust/Madeira"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Madeira/icon.png" alt="Madeira icon" width="24" align="top">Madeira</a>
 Run unmodified x86-64 Windows PC games on iPhone through Wine, FEX-Emu and Metal — no jailbreak.
 
-### <a href="https://github.com/kodjodevf/mangayomi"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Mangayomi/icon.png" alt="Mangayomi icon" width="24" align="top"> Mangayomi</a>
+### <a href="https://github.com/kodjodevf/mangayomi"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Mangayomi/icon.png" alt="Mangayomi icon" width="24" align="top">Mangayomi</a>
 Read manga, novels, and watch anime.
 
-### <a href="https://github.com/Manic-EMU/ManicEMU"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ManicEMU/icon.png" alt="ManicEMU icon" width="24" align="top"> ManicEMU</a>
+### <a href="https://github.com/Manic-EMU/ManicEMU"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ManicEMU/icon.png" alt="ManicEMU icon" width="24" align="top">ManicEMU</a>
 All-in-one retro game emulator for iOS, with a clean interface and broad platform support.
 
-### <a href="https://github.com/singleton-altman/MoviePilotLite"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MoviePilotLite/icon.png" alt="MoviePilotLite icon" width="24" align="top"> MoviePilotLite</a>
+### <a href="https://github.com/singleton-altman/MoviePilotLite"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MoviePilotLite/icon.png" alt="MoviePilotLite icon" width="24" align="top">MoviePilotLite</a>
 MoviePilot 移动端，基于 Flutter 实现。
 
-### <a href="https://github.com/dddevid/Musly"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Musly/icon.png" alt="Musly icon" width="24" align="top"> Musly</a>
+### <a href="https://github.com/dddevid/Musly"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Musly/icon.png" alt="Musly icon" width="24" align="top">Musly</a>
 Free Navidrome client & Subsonic music player with an Apple Music-inspired interface.
 
-### <a href="https://github.com/ResistanceTo/MiniWatts"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MiniWatts/icon.png" alt="MiniWatts icon" width="24" align="top"> MiniWatts</a>
+### <a href="https://github.com/ResistanceTo/MiniWatts"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MiniWatts/icon.png" alt="MiniWatts icon" width="24" align="top">MiniWatts</a>
 An iPhone battery and charging monitor built on Apple's private APIs — charger watts, cell power, heat loss and every temperature sensor.
 
-### <a href="https://github.com/mornyeapp/Mornye"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Mornye/icon.png" alt="Mornye icon" width="24" align="top"> Mornye</a>
+### <a href="https://github.com/mornyeapp/Mornye"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Mornye/icon.png" alt="Mornye icon" width="24" align="top">Mornye</a>
 A Flutter and Rust music app with a hi-res player, synced lyrics, installable download extensions, and a local library that also streams from SMB, WebDAV and Subsonic servers.
 
-### <a href="https://github.com/celia-sh/Novella"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Novella/icon.png" alt="Novella icon" width="24" align="top"> Novella</a>
+### <a href="https://github.com/celia-sh/Novella"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Novella/icon.png" alt="Novella icon" width="24" align="top">Novella</a>
 轻书架第三方客户端，基于 React Native 构建，面向 iOS / iPadOS，支持小说与漫画阅读与社区。
 
-### <a href="https://github.com/verback2308/Opaline"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Opaline/icon.png" alt="Opaline icon" width="24" align="top"> Opaline</a>
+### <a href="https://github.com/verback2308/Opaline"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Opaline/icon.png" alt="Opaline icon" width="24" align="top">Opaline</a>
 A lightweight, privacy-focused YouTube client for iOS 12+, with SponsorBlock, Return YouTube Dislike and up to 1080p playback.
 
-### <a href="https://github.com/MakrSas/orchard-ios"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Orchard/icon.png" alt="Orchard icon" width="24" align="top"> Orchard</a>
+### <a href="https://github.com/MakrSas/orchard-ios"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Orchard/icon.png" alt="Orchard icon" width="24" align="top">Orchard</a>
 Boots an arm64 macOS Ventura guest on iPhone through Apple's own chain on QEMU's apple-vm machine, with the GPU drawn through Metal. Requires JIT and your own macOS VM.
 
-### <a href="https://github.com/bggRGjQaUbCoE/PiliPlus"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PiliPlus/icon.png" alt="PiliPlus icon" width="24" align="top"> PiliPlus</a>
+### <a href="https://github.com/bggRGjQaUbCoE/PiliPlus"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PiliPlus/icon.png" alt="PiliPlus icon" width="24" align="top">PiliPlus</a>
 使用Flutter开发的BiliBili第三方客户端。
 
-### <a href="https://github.com/Eslzzyl/Pixiv-SwiftUI"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Pixiv-SwiftUI/icon.png" alt="Pixiv-SwiftUI icon" width="24" align="top"> Pixiv-SwiftUI</a>
+### <a href="https://github.com/Eslzzyl/Pixiv-SwiftUI"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Pixiv-SwiftUI/icon.png" alt="Pixiv-SwiftUI icon" width="24" align="top">Pixiv-SwiftUI</a>
 基于 SwiftUI 的 Pixiv 第三方客户端，支持 iOS/iPadOS/macOS。
 
-### <a href="https://github.com/playportdev/playport"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Playport/icon.png" alt="Playport icon" width="24" align="top"> Playport</a>
+### <a href="https://github.com/playportdev/playport"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Playport/icon.png" alt="Playport icon" width="24" align="top">Playport</a>
 Run 64-bit and 32-bit Windows PC games natively on a stock, non-jailbroken iPhone — no PC, no cloud, no stream.
 
-### <a href="https://github.com/xmiguel911x/PSX3IOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PSX3IOS/icon.png" alt="PSX3IOS icon" width="24" align="top"> PSX3IOS</a>
+### <a href="https://github.com/xmiguel911x/PSX3IOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PSX3IOS/icon.png" alt="PSX3IOS icon" width="24" align="top">PSX3IOS</a>
 A PlayStation 3 emulator for iPhone and iPad, built on RPCS3.
 
-### <a href="https://github.com/liuchuancong/pure_live"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PureLive/icon.png" alt="PureLive icon" width="24" align="top"> PureLive</a>
+### <a href="https://github.com/liuchuancong/pure_live"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/PureLive/icon.png" alt="PureLive icon" width="24" align="top">PureLive</a>
 基于 Flutter 的开源多平台直播聚合播放器，支持 Bilibili、虎牙、斗鱼、快手、抖音、网易 CC、Twitch 及自定义 M3U/M3U8 直播源。
 
-### <a href="https://github.com/TarbleFR/RewindBox"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/RewindBox/icon.png" alt="RewindBox icon" width="24" align="top"> RewindBox</a>
+### <a href="https://github.com/TarbleFR/RewindBox"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/RewindBox/icon.png" alt="RewindBox icon" width="24" align="top">RewindBox</a>
 An independently maintained iOS/iPadOS fork of NeoStation, pairing a console-style game library with embedded Libretro cores, MeloNX, Dolphin, ARMSX2 and RPCS3.
 
-### <a href="https://github.com/seanhowarthdev/Roam-Control"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Roam-Control/icon.png" alt="Roam Control icon" width="24" align="top"> Roam Control</a>
+### <a href="https://github.com/seanhowarthdev/Roam-Control"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Roam-Control/icon.png" alt="Roam Control icon" width="24" align="top">Roam Control</a>
 Choose, test and move an iPhone's reported location from one clean Apple Maps interface.
 
-### <a href="https://github.com/donbytyqi/scenebox"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/SceneBox/icon.png" alt="SceneBox icon" width="24" align="top"> SceneBox</a>
+### <a href="https://github.com/donbytyqi/scenebox"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/SceneBox/icon.png" alt="SceneBox icon" width="24" align="top">SceneBox</a>
 Torrent streaming client for iOS, iPadOS, tvOS and Mac (Catalyst), written in SwiftUI.
 
-### <a href="https://github.com/StikDebug/StikDebug"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/StikDebug/icon.png" alt="StikDebug icon" width="24" align="top"> StikDebug</a>
+### <a href="https://github.com/StikDebug/StikDebug"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/StikDebug/icon.png" alt="StikDebug icon" width="24" align="top">StikDebug</a>
 On-device JIT enabler and device toolbox for iOS 17.4+, built on idevice.
 
-### <a href="https://github.com/infinityf4p/TiebaPure-iOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/TiebaPure/icon.png" alt="TiebaPure icon" width="24" align="top"> TiebaPure</a>
+### <a href="https://github.com/infinityf4p/TiebaPure-iOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/TiebaPure/icon.png" alt="TiebaPure icon" width="24" align="top">TiebaPure</a>
 原生 SwiftUI 构建的非官方贴吧 iOS 客户端，支持浏览、搜索、收藏、媒体查看与本地阅读记录。
 
-### <a href="https://github.com/Suwayomi/Suwayomi-Tsumiru"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Suwayomi-Tsumiru/icon.png" alt="Tsumiru icon" width="24" align="top"> Tsumiru</a>
+### <a href="https://github.com/Suwayomi/Suwayomi-Tsumiru"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Suwayomi-Tsumiru/icon.png" alt="Tsumiru icon" width="24" align="top">Tsumiru</a>
 A native manga & manhwa reader for Suwayomi-Server, built for long webtoon binges.
 
-### <a href="https://github.com/utmapp/UTM"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/UTM/icon.png" alt="UTM icon" width="24" align="top"> UTM</a>
+### <a href="https://github.com/utmapp/UTM"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/UTM/icon.png" alt="UTM icon" width="24" align="top">UTM</a>
 A full featured virtual machine host for iOS — run Windows, Android, and more on your iPhone and iPad.
 
-### <a href="https://github.com/CyrilPeng/Venera-Next"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Venera-Next/icon.png" alt="VeneraNext icon" width="24" align="top"> VeneraNext</a>
+### <a href="https://github.com/CyrilPeng/Venera-Next"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Venera-Next/icon.png" alt="VeneraNext icon" width="24" align="top">VeneraNext</a>
 基于 Flutter 的跨平台漫画阅读器，支持本地漫画、WebDAV 漫画源与第三方网络漫画源。
 
-### <a href="https://github.com/mrdrvt99/YouProEXTRA"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/YouProEXTRA/icon.png" alt="YouProEXTRA icon" width="24" align="top"> YouProEXTRA</a>
+### <a href="https://github.com/mrdrvt99/YouProEXTRA"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/YouProEXTRA/icon.png" alt="YouProEXTRA icon" width="24" align="top">YouProEXTRA</a>
 YouTube mod for iOS packed with customizable tweaks — no ads, background playback, downloads, and more.
 
-### <a href="https://github.com/huamurui/zhihu-minus-minus"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ZhihuMinusMinus/icon.png" alt="ZhihuMinusMinus icon" width="24" align="top"> ZhihuMinusMinus</a>
+### <a href="https://github.com/huamurui/zhihu-minus-minus"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ZhihuMinusMinus/icon.png" alt="ZhihuMinusMinus icon" width="24" align="top">ZhihuMinusMinus</a>
 轻量、纯净的第三方知乎客户端，基于 React Native (Expo) 构建，无广告，支持多账号切换、游客模式与深色模式。
 
 ## Project Layout
