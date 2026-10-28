@@ -20,12 +20,12 @@
       "tintColor": "#C09050",
       "versions": [
         {
-          "version": "128.9561",
-          "buildVersion": "128.9561",
+          "version": "128.9564",
+          "buildVersion": "128.9564",
           "date": "2026-10-27",
-          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9561/LSX4-JIT-128.9561.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9561/LSX4-iOS-JIT-128.9561-English.zip)\n\n- Game file management\n- Minor settings updates\n- Optimizations for lower-end devices\n\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9561/INSTALLATION.txt)\n\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
-          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9561/LSX4-JIT-128.9561.ipa",
-          "size": 76664915,
+          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9564/LSX4-JIT-128.9564.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9564/LSX4-iOS-JIT-128.9564-English.zip)\r\n\r\n- Support for Duo devices\r\n- Additional iPad improvements\r\n\r\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9564/INSTALLATION.txt)\r\n\r\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
+          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9564/LSX4-JIT-128.9564.ipa",
+          "size": 76739855,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
-      "title": "LSX4 128.9561 · 27 Oct 2026",
-      "identifier": "LSX4-release-ios-jit-128.9561",
-      "caption": "LSX4 128.9561 is available.",
-      "date": "2026-10-27T15:50:38Z",
+      "title": "LSX4 128.9564 · 27 Oct 2026",
+      "identifier": "LSX4-release-ios-jit-128.9564",
+      "caption": "LSX4 128.9564 is available.",
+      "date": "2026-10-27T22:26:18Z",
       "tintColor": "#C09050",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
       "notify": true,
-      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9561"
+      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9564"
     }
   ]
 }
