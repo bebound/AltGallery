@@ -21,11 +21,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.23",
-          "date": "2026-10-27",
-          "localizedDescription": "### Fixed\n\n- **iOS + macOS**: liking a song no longer fails with \"当前环境异常，已取消喜欢\" — the like, removing a song from Personal FM and song details now go through NetEase's desktop-client API as a device that stays the same across launches, the way mygo-cloudmusic does it (#81).\n\n### Improved\n\n- **iOS + macOS**: every desktop-client request — playback URLs, downloads, search, charts — now identifies this install with a device ID made once and kept, instead of a constant every install shared, which NetEase's risk control had started to refuse.\n\n---\n\n### 修复\n\n- **iOS + macOS**：点击喜欢不再提示「当前环境异常，已取消喜欢」——喜欢、私人漫游中移除歌曲和歌曲详情改走网易云桌面客户端接口，并以每次启动都相同的设备 ID 发送请求，参照 mygo-cloudmusic 的做法（#81）。\n\n### 改进\n\n- **iOS + macOS**：所有桌面客户端接口（播放地址、下载、搜索、排行榜）改用安装时生成并持久保存的设备 ID，不再所有用户共用同一个标识——网易云风控已开始拒绝这种请求。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.23/Kumone-iOS-0.3.23.ipa",
-          "size": 8731691,
+          "version": "0.3.24",
+          "date": "2026-10-28",
+          "localizedDescription": "### Fixed\n\n- **iOS**: the mini player briefly lost its layout after leaving the Now Playing screen — the accessory placement reads nil for a few seconds while the zoom transition returns it to the tab bar, and the last reported placement is now kept through that interval.\n\n### Improved\n\n- **iOS + macOS**: every request is now routed through NetEase's eapi as the desktop client, as mygo-cloudmusic does; phone-number login and following an artist answer -460 (检测到您的网络环境存在风险) through the eapi, so those calls and the SMS code go through the plain web API, and the QR login uses type 3 with the /nuser/account/get account lookup, as the desktop client does.\n\n---\n\n### 修复\n\n- **iOS**：从正在播放页面返回后，迷你播放器会短暂丢失布局——缩放过渡回到标签栏的几秒内 accessory 位置读取为 nil，现在这段时间内保留上一次上报的位置。\n\n### 改进\n\n- **iOS + macOS**：所有请求改走网易云的 eapi 并以桌面客户端身份发送，参照 mygo-cloudmusic 的做法；手机号登录和关注歌手在 eapi 下返回 -460（检测到您的网络环境存在风险），这几个调用和短信验证码改走普通 Web API，扫码登录改用 type 3 并通过 /nuser/account/get 查询账号，与桌面客户端一致。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.24/Kumone-iOS-0.3.24.ipa",
+          "size": 8727909,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.23 · 27 Oct 2026",
-      "identifier": "Kumone-release-v0.3.23",
-      "caption": "Kumone 0.3.23 is available.",
-      "date": "2026-10-27T18:43:19Z",
+      "title": "Kumone 0.3.24 · 28 Oct 2026",
+      "identifier": "Kumone-release-v0.3.24",
+      "caption": "Kumone 0.3.24 is available.",
+      "date": "2026-10-28T12:22:49Z",
       "tintColor": "#F0D060",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.23"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.24"
     }
   ]
 }
