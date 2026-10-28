@@ -666,6 +666,31 @@
       ]
     },
     {
+      "name": "Mornye",
+      "bundleIdentifier": "com.zarz.mornye",
+      "developerName": "zarzet",
+      "subtitle": "FLAC Downloader for iOS",
+      "localizedDescription": "Mornye is a Flutter and Rust music app with a full-screen player, hi-res and bit-perfect output, synced word-by-word lyrics, and installable extensions for metadata and audio downloads. Downloads and your own music folders share one local library, and SMB, WebDAV, HTTP or Subsonic servers can stream straight to the phone.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/nowplaying.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/lyrics.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/devices.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/settings.png"
+      ],
+      "tintColor": "#1E4E4F",
+      "versions": [
+        {
+          "version": "5.2.6",
+          "date": "2026-10-23",
+          "localizedDescription": "### New Features\n\n- **library**: Sort songs and albums by file size\n- **desktop**: Add fullscreen and borderless window modes\n- **library**: List the files a scan could not read\n- **downloads**: Add custom folder path templates\n- **network**: Add Subsonic and OpenSubsonic support\n- **windows**: Prepare native ARM64 builds and packages\n- **player**: Color the current track row from its artwork\n- **desktop**: Open the mini player on Windows and Linux\n\n### Bug Fixes\n\n- **desktop**: List full screen and borderless shortcuts\n- **automix**: Verify beat alignment and hold phase through the mix\n- **home**: Keep explore artwork square\n- **flutter**: Backport semantics geometry crash fix\n- **tags**: Support ID3-prefixed FLAC metadata writes\n- **library**: Keep playlists accessible without local songs\n- **conversion**: Preserve quoted paths in lossy exports\n- **library**: Index songs whose tags fail to parse\n- **playback**: Allow MP3 playback with malformed ID3 tags\n- **automix**: Start the next song on the outgoing beat\n- **desktop**: Keep artist album selection and scroll position\n- **android**: Refresh media controls when track metadata changes\n- **windows**: Use the MSVC coroutine deprecation macro's real name\n- **windows**: Install the libmpv license and build on MSVC 14.5x\n- **library**: Keep liked local tracks visible during cover fades\n- **windows**: Support UNC library paths and network downloads\n- **desktop**: Restore private file access after cache removal\n- **notifications**: Handle Linux launch callbacks and contain queue alerts\n- **repo**: Move the store button under the text on narrow rows\n- **library**: Simplify duplicate review rows and expose load errors\n- **settings**: Keep final controls clear of floating playback bars\n- **home**: Collapse the empty prompt after installing an extension\n- **library**: Emphasize Play in collection header actions\n- **library**: Read tagless audio without losing document names\n- **desktop**: Wrap search and store category filters\n- **desktop**: Add scroll arrows to artist and recent shelves\n- **settings**: Restore 5.2.1 card contrast\n- **network**: Flush and verify SMB uploads before publishing\n- **android**: Resolve SAF audio paths when saving lyrics\n- **desktop**: Handle missing initial download folders\n\n### Refactoring\n\n- **onboarding**: Remove the rebrand introduction tour\n\n### Testing\n\n- **library**: Expect the sort sheet to scroll at its cap\n- **player**: Cover mini player metadata refresh and session restore\n\n### Chores\n\n- Update AltStore source to v5.2.5 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- Bump version to 5.2.6 (165)\n- **license**: Adopt LGPL-3.0-only for Mornye\n\n\n\n\n**Full Changelog**: [v5.2.5...v5.2.6](https://github.com/mornyeapp/Mornye/compare/v5.2.5...v5.2.6)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `Mornye-v5.2.6-arm64.apk` (recommended for modern devices)\n- **arm32**: `Mornye-v5.2.6-arm32.apk` (older devices)\n- `*.apk.idsig`: V4 signatures for `adb install --incremental` only; normal installs do not need them\n\n#### iOS\n- **iOS**: `Mornye-v5.2.6-ios-unsigned.ipa` (sideload required)\n\n`SHA256SUMS.txt` lists the SHA-256 of every file above.\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
+          "downloadURL": "https://github.com/mornyeapp/Mornye/releases/download/v5.2.6/Mornye-v5.2.6-ios-unsigned.ipa",
+          "size": 35645397,
+          "minOSVersion": "16.0"
+        }
+      ]
+    },
+    {
       "name": "MoviePilotLite",
       "bundleIdentifier": "com.altman.moviepilot",
       "developerName": "singleton-altman",
@@ -972,31 +997,6 @@
           "downloadURL": "https://github.com/donbytyqi/scenebox/releases/download/v1.0.4/SceneBox-1.0.4.ipa",
           "size": 30593765,
           "minOSVersion": "18.0"
-        }
-      ]
-    },
-    {
-      "name": "SpotiFLAC",
-      "bundleIdentifier": "com.zarz.spotiflac",
-      "developerName": "zarzet",
-      "subtitle": "FLAC Downloader for iOS",
-      "localizedDescription": "SpotiFLAC is a Flutter music app built around installable extensions: an extension supplies the metadata and the audio downloads for one provider, so sources can be added or repaired without an app update. Downloads land in a local library with lyrics, cover art, quality badges and duplicate detection.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/icon.png",
-      "screenshots": [
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/home.jpg",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/library.jpg",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/store.jpg",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/settings.jpg"
-      ],
-      "tintColor": "#1DB954",
-      "versions": [
-        {
-          "version": "5.2.6",
-          "date": "2026-10-23",
-          "localizedDescription": "### New Features\n\n- **library**: Sort songs and albums by file size\n- **desktop**: Add fullscreen and borderless window modes\n- **library**: List the files a scan could not read\n- **downloads**: Add custom folder path templates\n- **network**: Add Subsonic and OpenSubsonic support\n- **windows**: Prepare native ARM64 builds and packages\n- **player**: Color the current track row from its artwork\n- **desktop**: Open the mini player on Windows and Linux\n\n### Bug Fixes\n\n- **desktop**: List full screen and borderless shortcuts\n- **automix**: Verify beat alignment and hold phase through the mix\n- **home**: Keep explore artwork square\n- **flutter**: Backport semantics geometry crash fix\n- **tags**: Support ID3-prefixed FLAC metadata writes\n- **library**: Keep playlists accessible without local songs\n- **conversion**: Preserve quoted paths in lossy exports\n- **library**: Index songs whose tags fail to parse\n- **playback**: Allow MP3 playback with malformed ID3 tags\n- **automix**: Start the next song on the outgoing beat\n- **desktop**: Keep artist album selection and scroll position\n- **android**: Refresh media controls when track metadata changes\n- **windows**: Use the MSVC coroutine deprecation macro's real name\n- **windows**: Install the libmpv license and build on MSVC 14.5x\n- **library**: Keep liked local tracks visible during cover fades\n- **windows**: Support UNC library paths and network downloads\n- **desktop**: Restore private file access after cache removal\n- **notifications**: Handle Linux launch callbacks and contain queue alerts\n- **repo**: Move the store button under the text on narrow rows\n- **library**: Simplify duplicate review rows and expose load errors\n- **settings**: Keep final controls clear of floating playback bars\n- **home**: Collapse the empty prompt after installing an extension\n- **library**: Emphasize Play in collection header actions\n- **library**: Read tagless audio without losing document names\n- **desktop**: Wrap search and store category filters\n- **desktop**: Add scroll arrows to artist and recent shelves\n- **settings**: Restore 5.2.1 card contrast\n- **network**: Flush and verify SMB uploads before publishing\n- **android**: Resolve SAF audio paths when saving lyrics\n- **desktop**: Handle missing initial download folders\n\n### Refactoring\n\n- **onboarding**: Remove the rebrand introduction tour\n\n### Testing\n\n- **library**: Expect the sort sheet to scroll at its cap\n- **player**: Cover mini player metadata refresh and session restore\n\n### Chores\n\n- Update AltStore source to v5.2.5 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- Bump version to 5.2.6 (165)\n- **license**: Adopt LGPL-3.0-only for Mornye\n\n\n\n\n**Full Changelog**: [v5.2.5...v5.2.6](https://github.com/mornyeapp/Mornye/compare/v5.2.5...v5.2.6)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `Mornye-v5.2.6-arm64.apk` (recommended for modern devices)\n- **arm32**: `Mornye-v5.2.6-arm32.apk` (older devices)\n- `*.apk.idsig`: V4 signatures for `adb install --incremental` only; normal installs do not need them\n\n#### iOS\n- **iOS**: `Mornye-v5.2.6-ios-unsigned.ipa` (sideload required)\n\n`SHA256SUMS.txt` lists the SHA-256 of every file above.\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
-          "downloadURL": "https://github.com/mornyeapp/Mornye/releases/download/v5.2.6/Mornye-v5.2.6-ios-unsigned.ipa",
-          "size": 35645397,
-          "minOSVersion": "16.0"
         }
       ]
     },
@@ -1358,15 +1358,15 @@
       "url": "https://github.com/Predidit/Kazumi/releases/tag/2.4.2"
     },
     {
-      "appID": "com.zarz.spotiflac",
-      "title": "SpotiFLAC 5.2.6 · 23 Oct 2026",
-      "identifier": "SpotiFLAC-release-v5.2.6",
-      "caption": "SpotiFLAC 5.2.6 is available.",
+      "appID": "com.zarz.mornye",
+      "title": "Mornye 5.2.6 · 23 Oct 2026",
+      "identifier": "Mornye-release-v5.2.6",
+      "caption": "Mornye 5.2.6 is available.",
       "date": "2026-10-23T09:08:27Z",
-      "tintColor": "#1DB954",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/news.png",
+      "tintColor": "#1E4E4F",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/news.png",
       "notify": true,
-      "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v5.2.6"
+      "url": "https://github.com/mornyeapp/Mornye/releases/tag/v5.2.6"
     },
     {
       "appID": "com.altman.moviepilot",

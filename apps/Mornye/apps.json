@@ -1,25 +1,25 @@
 {
-  "name": "SpotiFLAC",
-  "subtitle": "SpotiFLAC AltStore source by AltGallery & AltGen",
-  "description": "Auto-updated AltStore source for SpotiFLAC",
-  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/icon.png",
-  "website": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
-  "tintColor": "#1DB954",
+  "name": "Mornye",
+  "subtitle": "Mornye AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Mornye",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.png",
+  "website": "https://github.com/mornyeapp/Mornye",
+  "tintColor": "#1E4E4F",
   "apps": [
     {
-      "name": "SpotiFLAC",
-      "bundleIdentifier": "com.zarz.spotiflac",
+      "name": "Mornye",
+      "bundleIdentifier": "com.zarz.mornye",
       "developerName": "zarzet",
       "subtitle": "FLAC Downloader for iOS",
-      "localizedDescription": "SpotiFLAC is a Flutter music app built around installable extensions: an extension supplies the metadata and the audio downloads for one provider, so sources can be added or repaired without an app update. Downloads land in a local library with lyrics, cover art, quality badges and duplicate detection.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/icon.png",
+      "localizedDescription": "Mornye is a Flutter and Rust music app with a full-screen player, hi-res and bit-perfect output, synced word-by-word lyrics, and installable extensions for metadata and audio downloads. Downloads and your own music folders share one local library, and SMB, WebDAV, HTTP or Subsonic servers can stream straight to the phone.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.png",
       "screenshots": [
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/home.jpg",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/library.jpg",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/store.jpg",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/settings.jpg"
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/nowplaying.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/lyrics.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/devices.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/settings.png"
       ],
-      "tintColor": "#1DB954",
+      "tintColor": "#1E4E4F",
       "versions": [
         {
           "version": "5.2.6",
@@ -34,15 +34,15 @@
   ],
   "news": [
     {
-      "appID": "com.zarz.spotiflac",
-      "title": "SpotiFLAC 5.2.6 · 23 Oct 2026",
-      "identifier": "SpotiFLAC-release-v5.2.6",
-      "caption": "SpotiFLAC 5.2.6 is available.",
+      "appID": "com.zarz.mornye",
+      "title": "Mornye 5.2.6 · 23 Oct 2026",
+      "identifier": "Mornye-release-v5.2.6",
+      "caption": "Mornye 5.2.6 is available.",
       "date": "2026-10-23T09:08:27Z",
-      "tintColor": "#1DB954",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SpotiFLAC/images/news.png",
+      "tintColor": "#1E4E4F",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/news.png",
       "notify": true,
-      "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v5.2.6"
+      "url": "https://github.com/mornyeapp/Mornye/releases/tag/v5.2.6"
     }
   ]
 }
