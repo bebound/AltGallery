@@ -125,6 +125,9 @@ Free Navidrome client & Subsonic music player with an Apple Music-inspired inter
 ### <a href="https://github.com/ResistanceTo/MiniWatts"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MiniWatts/icon.png" alt="MiniWatts icon" width="24" align="top"> MiniWatts</a>
 An iPhone battery and charging monitor built on Apple's private APIs — charger watts, cell power, heat loss and every temperature sensor.
 
+### <a href="https://github.com/mornyeapp/Mornye"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Mornye/icon.png" alt="Mornye icon" width="24" align="top"> Mornye</a>
+A Flutter and Rust music app with a hi-res player, synced lyrics, installable download extensions, and a local library that also streams from SMB, WebDAV and Subsonic servers.
+
 ### <a href="https://github.com/celia-sh/Novella"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Novella/icon.png" alt="Novella icon" width="24" align="top"> Novella</a>
 轻书架第三方客户端，基于 React Native 构建，面向 iOS / iPadOS，支持小说与漫画阅读与社区。
 
@@ -157,9 +160,6 @@ Choose, test and move an iPhone's reported location from one clean Apple Maps in
 
 ### <a href="https://github.com/donbytyqi/scenebox"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/SceneBox/icon.png" alt="SceneBox icon" width="24" align="top"> SceneBox</a>
 Torrent streaming client for iOS, iPadOS, tvOS and Mac (Catalyst), written in SwiftUI.
-
-### <a href="https://github.com/spotiflacapp/SpotiFLAC-Mobile"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/SpotiFLAC/icon.png" alt="SpotiFLAC icon" width="24" align="top"> SpotiFLAC</a>
-Flutter music downloader built around installable extensions that provide the metadata and audio, with a local library, lyrics and quality badges.
 
 ### <a href="https://github.com/StikDebug/StikDebug"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/StikDebug/icon.png" alt="StikDebug icon" width="24" align="top"> StikDebug</a>
 On-device JIT enabler and device toolbox for iOS 17.4+, built on idevice.

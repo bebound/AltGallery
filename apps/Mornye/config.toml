@@ -1,0 +1,44 @@
+# altgen config for the Mornye AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "mornyeapp/Mornye"
+
+[source]
+name = "Mornye"
+subtitle = "Mornye AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Mornye"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.png"
+website = "https://github.com/mornyeapp/Mornye"
+tint_color = "#1E4E4F"
+
+[app]
+name = "Mornye"
+bundle_identifier = "com.zarz.mornye"
+developer_name = "zarzet"
+subtitle = "FLAC Downloader for iOS"
+description = "Mornye is a Flutter and Rust music app with a full-screen player, hi-res and bit-perfect output, synced word-by-word lyrics, and installable extensions for metadata and audio downloads. Downloads and your own music folders share one local library, and SMB, WebDAV, HTTP or Subsonic servers can stream straight to the phone."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/nowplaying.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/lyrics.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/devices.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/settings.png",
+]
+tint_color = "#1E4E4F"
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release also ships arm32/arm64
+# Android apks, so pin the ipa explicitly.
+asset_pattern = "-ios-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/news.png"
+
+[output]
+path = "apps.json"

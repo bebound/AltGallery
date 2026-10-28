@@ -1,0 +1,16 @@
+# render_news.py config: ./.venv/bin/python tools/render_news.py --out apps/Mornye
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "Mornye"
+tagline = "Lossless downloads and hi-res playback"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#1E4E4F"          # NEW UPDATE badge + top-left glow (derived from config.toml; the icon samples to its mint mark #B0E0E0, so the brand tint stays pinned in config.toml)
+# background = "#D6EBEB"    # gradient base (derived from the icon's mint mark #B0E0E0)
+# bg_mid = "#E7F3F3"        # gradient mid stop (derived from background)
+# bg_dark = "#BBDEDE"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+tagline_color = "#1E4E4F"   # tagline text (pinned to the brand tint; the derived #51BDBD reads too pale on the teal gradient)
