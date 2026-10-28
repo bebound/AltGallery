@@ -1,6 +1,6 @@
 ---
 name: update-app
-description: Handle a repo migration or app rename for an app already in AltGallery. The user supplies the existing app folder name and the new repo URL; Claude moves the folder with git mv (preserving history), re-extracts the project metadata from the new repo (AltStore source / README / release ipa — description, subtitle, bundle id, developer, icon, screenshots), updates config.toml (repo, URLs, tint, min_os_version, asset_pattern), rewrites news.toml (name, tagline, stale pinned and derived colors), re-renders images/news.png, regenerates apps.json, and updates the README entry. Use when an app's GitHub repo moves to a new owner/repo, the app is renamed, or both.
+description: Handle a repo migration or app rename for an app already in AltGallery. The user supplies the existing app folder name and the new repo URL; Claude moves the folder with git mv (preserving history), re-extracts the project metadata from the new repo (AltStore source / README / release ipa — description, subtitle, bundle id, developer, icon, screenshots), updates config.toml (repo, URLs, tint, min_os_version, asset_pattern), deletes and rewrites news.toml from the template when the icon changed (none of the old color pins survive the new artwork) or updates it in place when it did not, always re-renders images/news.png, regenerates apps.json, and updates the README entry. Use when an app's GitHub repo moves to a new owner/repo, the app is renamed, or both.
 ---
 
 # Updating an App: Repo Migration or Rename
@@ -148,32 +148,44 @@ which app was meant.
      stale patterns that encode the old repo's scheme;
    - update any comment that names old assets or tag formats.
 
-5. **Rewrite `news.toml`, including stale colors**
+5. **Reset `news.toml` when the icon changed, otherwise update it in place**
 
-   - Header comment: new `--out apps/<NewName>` path.
-   - `name` → new display name; `tagline` → a short version of the new
-     subtitle/description.
-   - **Colors:** pinned `[colors]` overrides were chosen for the old icon and
-     brand. On a migration the icon or brand color may have changed, so
-     re-check every pin:
-     - print the effective palette (next snippet);
-     - keep a pin that still fits the new artwork/brand;
-     - update a pin derived from the old icon (e.g. a tint sampled from the
-       old icon's dominant color), and its inline comment explaining why it
-       was pinned;
-     - delete a pin whose reason no longer exists, so the auto-derivation
-       takes over again.
+   The icon decides the palette: `render_news.py` derives the background from
+   the icon's dominant color and the tints from `config.toml`. Pinned
+   `[colors]` overrides were chosen for the **old** icon, so once the artwork
+   is new they cannot be trusted.
 
-   The commented "current result" values in the `[colors]` block are shown to
-   whoever edits the file next — refresh them to the newly effective values.
-   Do not leave a stale palette behind.
+   - **Icon updated** (step 3 replaced `icon.png` from the new repo or via
+     `tools/ipa_icon.py`): delete `news.toml` and write it fresh, exactly like
+     `/add-app` step 6 — copy `apps/PiliPlus/news.toml` (it documents every
+     optional `[colors]` key as a comment), keep every `[colors]` key commented
+     out so all colors auto-derive from the new icon, and change only `name`,
+     `tagline`, and the header `--out apps/<NewName>` path:
+
+     ```bash
+     rm apps/<NewName>/news.toml
+     ```
+
+     Never copy old pins into the fresh file — a pin sampled from the old icon
+     is exactly the stale value this reset removes. Then re-render
+     `images/news.png` (step 6); the old promo image is invalid too.
+   - **Icon unchanged:** edit the existing file in place — header `--out`
+     path, `name` → new display name, `tagline` → a short version of the new
+     subtitle/description. Re-check a pinned color only when the brand/tint
+     changed: keep it if it still fits, update it (and its inline comment) when
+     it was derived from something stale, delete it when its reason no longer
+     exists.
+
+   Either way, refresh the commented "current result" values in the
+   `[colors]` block so whoever edits the file next sees the palette actually
+   in effect — a fresh copy of the template still carries PiliPlus's values.
 
    ⚠️ `render_news.py` needs Pillow, which lives only in the project venv —
    always use `.venv/bin/python3`, never the bare `python3`. Remember the
    AGENTS.md caveat about sampling a dark/monochrome icon.
 
-   Print the effective palette for the new icon (run this block as-is — it
-   stays at column 0 so the heredoc delimiter works):
+   Print the effective palette for the (new or unchanged) icon — run this
+   block as-is; it stays at column 0 so the heredoc delimiter works:
 
 ```bash
 PYTHONPATH=tools .venv/bin/python3 - <<'PY'
@@ -213,8 +225,10 @@ PY
    ./.venv/bin/python tools/render_news.py --out apps/<NewName>
    ```
 
-   Writes `apps/<NewName>/images/news.png` into the working tree — do not
-   auto-commit it.
+   Always re-render: the icon and the name are baked into the image, so a
+   refreshed icon or a reset `news.toml` (step 5) must produce a new
+   `news.png`. Writes `apps/<NewName>/images/news.png` into the working
+   tree — do not auto-commit it.
 
 7. **Regenerate the source** (never hand-edit `apps.json`):
 
@@ -273,8 +287,8 @@ PY
 - [ ] icon refreshed from the new repo when available; existing icon kept when not
 - [ ] new screenshots downloaded when available; existing kept otherwise; missing screenshots warned about
 - [ ] `config.toml`: repo, source/app names, developer, URLs, tint, min OS and `[versions]` patterns all updated; every `apps/<OldName>/` URL gone
-- [ ] `news.toml`: name, tagline, header path updated; pinned colors re-checked against the new icon/brand; commented "current result" palette refreshed
-- [ ] `images/news.png` re-rendered with the new name
+- [ ] `news.toml`: deleted and rewritten from the template when the icon changed (no old pins carried over); updated in place otherwise; name, tagline, header path and commented "current result" palette current
+- [ ] `images/news.png` re-rendered after the news.toml reset, with the new icon and name
 - [ ] `apps.json` regenerated via `./update.sh <NewName>`, never hand-edited, not committed
 - [ ] `all-apps.json` left modified in the working tree, not committed
 - [ ] README entry updated (href, icon `align="top"`, display name) and re-sorted if needed
