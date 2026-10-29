@@ -1,0 +1,48 @@
+# altgen config for the Rush Hours AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "ekomlenovic/rush_hour_ios_android"
+
+[source]
+name = "Rush Hours"
+subtitle = "Rush Hours AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Rush Hours"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.png"
+website = "https://github.com/ekomlenovic/rush_hour_ios_android"
+tint_color = "#E5A019"
+
+[app]
+name = "Rush Hours"
+bundle_identifier = "com.rushhours.app"
+developer_name = "ekomlenovic"
+subtitle = "Slide the cars, free the red one."
+description = "A free sliding-block traffic puzzle: slide the cars and trucks along their lanes to drive the red car out. 700+ campaign levels, daily and weekly challenges, a level creator and optional self-hosted multiplayer — no ads, no in-app purchases, no tracking."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/gameplay.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/map.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/daily.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/creator.png",
+]
+tint_color = "#E5A019"
+min_os_version = "16.4"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Tags look like v2.0.7-b65 and release names like "Rush Hours v2.0.7 (Build 65)":
+# take the clean app version (2.0.7) from the release name.
+version_pattern = "v(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): each release ships one unsigned ipa
+asset_pattern = "^rush-hours-unsigned\\.ipa$"
+# Asset names carry no build number, so build_version_pattern keeps the
+# default (matches nothing -> buildVersion omitted).
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png"
+
+[output]
+path = "apps.json"
