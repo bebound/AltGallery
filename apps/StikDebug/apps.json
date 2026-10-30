@@ -21,11 +21,11 @@
       "tintColor": "#3B86F7",
       "versions": [
         {
-          "version": "3.1.15",
-          "date": "2026-10-15",
-          "localizedDescription": "**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.14...3.1.15\r\nAttempt to fix ServiceNotFound errors, add debugging",
-          "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.15/StikDebug-3.1.15.ipa",
-          "size": 13543234,
+          "version": "3.2.0",
+          "date": "2026-10-30",
+          "localizedDescription": "## What's Changed\r\n* Adds on-device pairing file creation and management for the local device, as well as external devices (Apple TV included)\r\n* Error cleanup\r\n* Fixes some connection issues\r\n* Prevent stale legacy pairing files overriding fresh imports by @mvanhorn in https://github.com/StikDebug/StikDebug/pull/479\r\n* Revert \"Prevent stale legacy pairing files overriding fresh imports\" by @CelloSerenity in https://github.com/StikDebug/StikDebug/pull/486\r\n* fix: release the route when playback finishes so a new spot can be set by @OpenUmar in https://github.com/StikDebug/StikDebug/pull/490\r\n* more prob\r\n\r\n## New Contributors\r\n* @mvanhorn made their first contribution in https://github.com/StikDebug/StikDebug/pull/479\r\n* @OpenUmar made their first contribution in https://github.com/StikDebug/StikDebug/pull/490\r\n\r\n**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.15...3.2.0",
+          "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.2.0/StikDebug-3.2.0.ipa",
+          "size": 16818331,
           "minOSVersion": "17.4"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.stik.stikdebug",
-      "title": "StikDebug 3.1.15 · 15 Oct 2026",
-      "identifier": "StikDebug-release-3.1.15",
-      "caption": "StikDebug 3.1.15 is available.",
-      "date": "2026-10-15T14:31:50Z",
+      "title": "StikDebug 3.2.0 · 30 Oct 2026",
+      "identifier": "StikDebug-release-3.2.0",
+      "caption": "StikDebug 3.2.0 is available.",
+      "date": "2026-10-30T03:02:00Z",
       "tintColor": "#3B86F7",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png",
       "notify": true,
-      "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.1.15"
+      "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.2.0"
     }
   ]
 }

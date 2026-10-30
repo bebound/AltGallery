@@ -21,11 +21,11 @@
       "tintColor": "#8050F0",
       "versions": [
         {
-          "version": "1.2.6",
-          "date": "2026-10-23",
-          "localizedDescription": "MoviePilot Release\n\n- Version: 1.2.6\n- Build Date: 2026-10-23\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(player): 视频播放时保持屏幕常亮 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/112\n* feat: 音乐库多分区首页；fix: 播放器常亮与缓存管理误报请求失败(200) by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/113\n* fix(cache): 修复缓存管理页误报请求失败(200) by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/114\n* feat: 音乐库多分区首页与全量功能更新 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/111\n* chore(version): update version to 1.2.6+37 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/115\n* Dev by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/116\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.2.5-2026-10-09...release-v1.2.6-2026-10-23",
-          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.2.6-2026-10-23/ios-v1.2.6-2026-10-23.ipa",
-          "size": 37329880,
+          "version": "1.2.7",
+          "date": "2026-10-30",
+          "localizedDescription": "MoviePilot Release\n\n- Version: 1.2.7\n- Build Date: 2026-10-30\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(dashboard): 收敛最新入库海报卡片阴影避免粘连 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/119\n* feat: 仪表板捷径/快捷操作/近期整理等看板组件与弹层控制器生命周期修复 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/120\n* fix(search): 搜索页按账号权限收敛入口与建议列表（#74） by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/121\n* feat: 对齐 MoviePilot v3 契约（MFA 登录/微信机器人/订阅活动日志）并优化 401/403 提示（#122 #123 #124 #126） by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/125\n* fix(image): 修复图片加载缓慢与 Cookie 外泄（#128） by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/129\n* feat(image): CachedImage 加载态改为微光占位并移除逐字节重建（#130） by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/131\n* feat(ui): Dashboard 与 Recommend 补齐首屏骨架 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/134\n* fix(recommend): 首个推荐请求等待 Cookie 就绪再发出 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/137\n* fix(music): 音乐搜索补齐艺人检索并始终代理境外音乐封面 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/138\n* feat(update): 自更新支持选择与自定义加速源 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/140\n* feat(music): 对齐 v3 单曲详情页，搜索与曲目列表可打开单曲 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/132\n* fix(subscribe): 补齐更多页订阅卡封面并修复弹层预热 401 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/142\n* chore(release): dev → master (2026-10-23) by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/144\n* fix(dynamic-form): APPLitePush 测试路径跟随插件标识，避免 404 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/148\n* 播放器:修复杜比 P5 偏绿、进出播放页旋转叠影、弹幕开关不持久化 by @anlan-home in https://github.com/singleton-altman/MoviePilotLite/pull/150\n* 修复媒体库合集(BoxSet)打开方式:不再进入 MP 详情页,成员列表透传宿主钩子 by @anlan-home in https://github.com/singleton-altman/MoviePilotLite/pull/152\n* release: v1.2.7 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/155\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.2.6-2026-10-23...release-v1.2.7-2026-10-30",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.2.7-2026-10-30/ios-v1.2.7-2026-10-30.ipa",
+          "size": 37456569,
           "minOSVersion": "15.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.altman.moviepilot",
-      "title": "MoviePilotLite 1.2.6 · 23 Oct 2026",
-      "identifier": "MoviePilotLite-release-release-v1.2.6-2026-10-23",
-      "caption": "MoviePilotLite 1.2.6 is available.",
-      "date": "2026-10-23T03:39:58Z",
+      "title": "MoviePilotLite 1.2.7 · 30 Oct 2026",
+      "identifier": "MoviePilotLite-release-release-v1.2.7-2026-10-30",
+      "caption": "MoviePilotLite 1.2.7 is available.",
+      "date": "2026-10-30T04:40:22Z",
       "tintColor": "#8050F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
       "notify": true,
-      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.6-2026-10-23"
+      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.2.7-2026-10-30"
     }
   ]
 }
