@@ -161,6 +161,9 @@ An independently maintained iOS/iPadOS fork of NeoStation, pairing a console-sty
 ### <a href="https://github.com/seanhowarthdev/Roam-Control"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Roam-Control/icon.png" alt="Roam Control icon" width="24" align="top">Roam Control</a>
 Choose, test and move an iPhone's reported location from one clean Apple Maps interface.
 
+### <a href="https://github.com/ekomlenovic/rush_hour_ios_android"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/RushHours/icon.png" alt="Rush Hours icon" width="24" align="top">Rush Hours</a>
+A free sliding-block traffic puzzle — slide the cars to free the red one. 700+ levels, daily challenges and a level creator, no ads.
+
 ### <a href="https://github.com/donbytyqi/scenebox"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/SceneBox/icon.png" alt="SceneBox icon" width="24" align="top">SceneBox</a>
 Torrent streaming client for iOS, iPadOS, tvOS and Mac (Catalyst), written in SwiftUI.
 
