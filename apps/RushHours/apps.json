@@ -1,0 +1,48 @@
+{
+  "name": "Rush Hours",
+  "subtitle": "Rush Hours AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Rush Hours",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.png",
+  "website": "https://github.com/ekomlenovic/rush_hour_ios_android",
+  "tintColor": "#E5A019",
+  "apps": [
+    {
+      "name": "Rush Hours",
+      "bundleIdentifier": "com.rushhours.app",
+      "developerName": "ekomlenovic",
+      "subtitle": "Slide the cars, free the red one.",
+      "localizedDescription": "A free sliding-block traffic puzzle: slide the cars and trucks along their lanes to drive the red car out. 700+ campaign levels, daily and weekly challenges, a level creator and optional self-hosted multiplayer — no ads, no in-app purchases, no tracking.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/gameplay.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/map.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/daily.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/creator.png"
+      ],
+      "tintColor": "#E5A019",
+      "versions": [
+        {
+          "version": "2.0.7",
+          "date": "2026-10-28",
+          "localizedDescription": "## Release v2.0.7\n\nMulti-platform build from `4dab1d356e079c3c4f5a76853cfa92320d6a8598`.\n\n### iOS (IPA Non-Signé)\nÀ installer via SideStore / AltStore.\n\n### Android (APK)\nInstallation directe.\n\n### Checksums\n\n| Fichier | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `aab1c16b178c712d1531acb3fb51b9d7` | `379529c258e16cb94fca118569db9599bbbb698ba4f625f628a66260bbbe6098` |",
+          "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.0.7-b65/rush-hours-unsigned.ipa",
+          "size": 18865769,
+          "minOSVersion": "16.4"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.rushhours.app",
+      "title": "Rush Hours 2.0.7 · 28 Oct 2026",
+      "identifier": "Rush Hours-release-v2.0.7-b65",
+      "caption": "Rush Hours 2.0.7 is available.",
+      "date": "2026-10-28T23:01:47Z",
+      "tintColor": "#E5A019",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.0.7-b65"
+    }
+  ]
+}
