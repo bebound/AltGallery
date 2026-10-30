@@ -705,11 +705,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.0.5",
-          "date": "2026-10-29",
-          "localizedDescription": "MoviePilot iOS 1.0.5，修复系统明暗切换后顶部导航栏渐变未更新的问题。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 修复关闭业务弹窗后，系统切换明暗主题时顶部导航栏模糊渐变仍保留旧底色的问题，覆盖前台切换和后台恢复。\n- 原生更多目录同步使用动态主题底色，保留手动选择明暗主题的优先级及业务弹窗的透明材质。\n\n### 安装\n\n下载 `MoviePilot-1.0.5-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n建议同步更新至 MoviePilot-Frontend **3.2.1** 或更新的兼容前端，前端页面修复在实例资源同步后生效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；iPhone 完整系统集成验收仍在进行。\n\n构建源码：[8465e11cd1f13929e130e362377291d62e7539f1](https://github.com/jxxghp/MoviePilot-App/commit/8465e11cd1f13929e130e362377291d62e7539f1)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.0.5/MoviePilot-1.0.5-unsigned.ipa",
-          "size": 4150238,
+          "version": "1.0.6",
+          "date": "2026-10-30",
+          "localizedDescription": "MoviePilot iOS 1.0.6，修复媒体卡片选站搜索时的导航中断。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 修复媒体卡片选择站点并搜索后，业务弹窗归还期间切换入口导致导航连接中断、进入“暂时无法打开 MoviePilot”页面的问题。\n\n### 安装\n\n下载 `MoviePilot-1.0.6-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n建议同步更新至 MoviePilot-Frontend **3.2.2** 或更新的兼容前端，前端页面修复在实例资源同步后生效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；iPhone 完整系统集成验收仍在进行。\n\n构建源码：[47981824f15632ee75a91c7862aa290e8c90f288](https://github.com/jxxghp/MoviePilot-App/commit/47981824f15632ee75a91c7862aa290e8c90f288)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.0.6/MoviePilot-1.0.6-unsigned.ipa",
+          "size": 4150199,
           "minOSVersion": "17.0"
         }
       ]
@@ -1230,17 +1230,39 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.9.5",
-          "date": "2026-10-24",
-          "localizedDescription": "* fix: register zhihu URL scheme on iOS by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/146\r\n* fix: 修复启动与游客阅读，调整内容过滤默认值 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/145\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.4...v0.9.5",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.5/zhihu-minus-minus-v0.9.5-unsigned.ipa",
-          "size": 14460451,
+          "version": "0.9.7",
+          "date": "2026-10-30",
+          "localizedDescription": "修 0.9.6 的问题\r\n- ios 侧滑返回\r\n- 安卓过渡动画补充\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.6...v0.9.7",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.7/zhihu-minus-minus-v0.9.7-unsigned.ipa",
+          "size": 14488327,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.9.7 · 30 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.9.7",
+      "caption": "ZhihuMinusMinus 0.9.7 is available.",
+      "date": "2026-10-30T11:15:40Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.7"
+    },
+    {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 1.0.6 · 30 Oct 2026",
+      "identifier": "MoviePilot-release-v1.0.6",
+      "caption": "MoviePilot 1.0.6 is available.",
+      "date": "2026-10-30T09:18:23Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.0.6"
+    },
     {
       "appID": "com.suwayomi.tachideskSorayomi",
       "title": "Tsumiru 1.6.3 · 30 Oct 2026",
@@ -1284,17 +1306,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
       "notify": true,
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_4.0.1"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.0.5 · 29 Oct 2026",
-      "identifier": "MoviePilot-release-v1.0.5",
-      "caption": "MoviePilot 1.0.5 is available.",
-      "date": "2026-10-29T23:30:46Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.0.5"
     },
     {
       "appID": "com.armsx2.ios",
@@ -1438,17 +1449,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
       "notify": true,
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.1"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.9.5 · 24 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.9.5",
-      "caption": "ZhihuMinusMinus 0.9.5 is available.",
-      "date": "2026-10-24T10:00:16Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.5"
     },
     {
       "appID": "org.animeko.animeko",

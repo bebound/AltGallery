@@ -21,11 +21,11 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.9.5",
-          "date": "2026-10-24",
-          "localizedDescription": "* fix: register zhihu URL scheme on iOS by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/146\r\n* fix: 修复启动与游客阅读，调整内容过滤默认值 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/145\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.4...v0.9.5",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.5/zhihu-minus-minus-v0.9.5-unsigned.ipa",
-          "size": 14460451,
+          "version": "0.9.7",
+          "date": "2026-10-30",
+          "localizedDescription": "修 0.9.6 的问题\r\n- ios 侧滑返回\r\n- 安卓过渡动画补充\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.6...v0.9.7",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.7/zhihu-minus-minus-v0.9.7-unsigned.ipa",
+          "size": 14488327,
           "minOSVersion": "15.1"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.9.5 · 24 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.9.5",
-      "caption": "ZhihuMinusMinus 0.9.5 is available.",
-      "date": "2026-10-24T10:00:16Z",
+      "title": "ZhihuMinusMinus 0.9.7 · 30 Oct 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.9.7",
+      "caption": "ZhihuMinusMinus 0.9.7 is available.",
+      "date": "2026-10-30T11:15:40Z",
       "tintColor": "#0084ff",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
       "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.5"
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.7"
     }
   ]
 }
