@@ -137,6 +137,9 @@ A Flutter and Rust music app with a hi-res player, synced lyrics, installable do
 ### <a href="https://github.com/verback2308/Opaline"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Opaline/icon.png" alt="Opaline icon" width="24" align="top">Opaline</a>
 A lightweight, privacy-focused YouTube client for iOS 12+, with SponsorBlock, Return YouTube Dislike and up to 1080p playback.
 
+### <a href="https://github.com/hugeBlack/OpenParsec"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/OpenParsec/icon.png" alt="OpenParsec icon" width="24" align="top">OpenParsec</a>
+An open-source Parsec client for iOS and iPadOS with mouse, keyboard, and touch-screen support.
+
 ### <a href="https://github.com/MakrSas/orchard-ios"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Orchard/icon.png" alt="Orchard icon" width="24" align="top">Orchard</a>
 Boots an arm64 macOS Ventura guest on iPhone through Apple's own chain on QEMU's apple-vm machine, with the GPU drawn through Metal. Requires JIT and your own macOS VM.
 

@@ -1,0 +1,43 @@
+# altgen config for the OpenParsec AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "hugeBlack/OpenParsec"
+
+[source]
+name = "OpenParsec"
+subtitle = "OpenParsec AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for OpenParsec"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.png"
+website = "https://github.com/hugeBlack/OpenParsec"
+tint_color = "#BB01F0"
+
+[app]
+name = "OpenParsec"
+bundle_identifier = "com.aigch.OpenParsec"
+developer_name = "hugeBlack"
+subtitle = "Open Parsec client for iOS/iPadOS"
+description = "An open-source Parsec client for iOS/iPadOS with mouse, keyboard, and touch-screen support."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/login.png",
+]
+tint_color = "#BB01F0"
+min_os_version = "14.0"
+
+[versions]
+strip_v_prefix = false
+# The project publishes versioned stable releases (from 1.4.0 onward, per its
+# release notes); the rolling "nightly" prerelease tag is intentionally skipped.
+include_prereleases = false
+# asset_pattern is a regex (not glob): the release ships OpenParsec.ipa plus
+# an identical OpenParsec.tipa; anchor on the exact filename to skip the tipa.
+asset_pattern = "^OpenParsec\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/news.png"
+
+[output]
+path = "apps.json"
