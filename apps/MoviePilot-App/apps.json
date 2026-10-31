@@ -21,11 +21,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.0.8",
+          "version": "1.0.9",
           "date": "2026-10-31",
-          "localizedDescription": "MoviePilot iOS 1.0.8，新增匿名安装版本统计。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 新增 iOS App 版本安装统计，按匿名安装标识去重，升级后更新为当前版本，连接多个实例不重复计数。\n- 遵守实例的“分享使用统计”开关；管理员登录并开启开关后，每个版本每天最多成功上报一次，仅发送随机安装标识和 App 版本。\n- 配合新版 MoviePilot-Server 和 MoviePilot-Frontend 3.2.2，在安装版本统计中查看 iOS App 版本分布；不影响原有后端实例与活跃用户计数。\n\n### 安装\n\n下载 `MoviePilot-1.0.8-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n建议同步更新至 MoviePilot-Frontend **3.2.2** 或更新的兼容前端，前端页面修复在实例资源同步后生效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；iPhone 完整系统集成验收仍在进行。\n\n构建源码：[4bc474c544a0adb535dfa5ae010a5735d8e8738f](https://github.com/jxxghp/MoviePilot-App/commit/4bc474c544a0adb535dfa5ae010a5735d8e8738f)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.0.8/MoviePilot-1.0.8-unsigned.ipa",
-          "size": 4181914,
+          "localizedDescription": "MoviePilot iOS 1.0.9，改善启动加载与连接恢复。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 页面加载超过 10 秒时显示等待状态，并提供“立即重试”和“更改地址”，无需一直停在 Logo 界面。\n- 页面准备完成、进入后台或切换服务后撤销旧等待提示，避免迟到的提示遮住已恢复的首页。\n- 配合本次重新打包的 MoviePilot-Frontend 3.2.2，修复媒体来源或模块目录接口偶发失败后无法完成 App 导航启动的问题；目录请求有超时上限和有限重试。\n\n### 安装\n\n下载 `MoviePilot-1.0.9-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n请同步更新本次重新打包的 MoviePilot-Frontend **3.2.2** 或更新的兼容前端。目录自动恢复属于前端页面修复，需要实例同步最新前端资源后生效；只更新 App 不会替换实例的前端页面。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；iPhone 完整系统集成验收仍在进行。\n\n构建源码：[1d0eeffa3c2f1bb62c5e9b37f5debb13d8f7d3b8](https://github.com/jxxghp/MoviePilot-App/commit/1d0eeffa3c2f1bb62c5e9b37f5debb13d8f7d3b8)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.0.9/MoviePilot-1.0.9-unsigned.ipa",
+          "size": 4182940,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.0.8 · 31 Oct 2026",
-      "identifier": "MoviePilot-release-v1.0.8",
-      "caption": "MoviePilot 1.0.8 is available.",
-      "date": "2026-10-31T01:13:20Z",
+      "title": "MoviePilot 1.0.9 · 31 Oct 2026",
+      "identifier": "MoviePilot-release-v1.0.9",
+      "caption": "MoviePilot 1.0.9 is available.",
+      "date": "2026-10-31T05:16:21Z",
       "tintColor": "#8844F6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
       "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.0.8"
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.0.9"
     }
   ]
 }
