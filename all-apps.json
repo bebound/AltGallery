@@ -334,11 +334,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "3.2.1",
-          "date": "2026-10-31",
-          "localizedDescription": "Fixed certificate importing bug for 3.2 JIT-less",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.2.1/Husk.ipa",
-          "size": 140697147,
+          "version": "3.3",
+          "date": "2026-11-01",
+          "localizedDescription": "## Play without JIT\nMore games convert and sign their libraries on the device. One library that cannot convert no longer stops the rest. Certificates from SideStore, AltStore, or a `.p12` import more reliably, and converted libraries are signed again after this update.\n\n## More Android apps\nJava apps pick up missing platform classes from AOSP when `framework.jar` is bundled. Jobs and boot receivers actually start, and Wi-Fi, location, and settings answer as a running phone would.\n\n## Importing files\nThe in-app file picker for Android apps can be used more than once in a session.\n\n## 32-bit ARM apps\nAPKs that only ship `armeabi-v7a` libraries are translated to arm64. This path is still incomplete (Minecraft PE is the current test case).\n\n## Fixes\nCertificate import, leftover store passwords on a `.p12`, the file picker after the first pick, game pages on iOS 15, and StikDebug when Husk is inside a container app.",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.3/Husk.ipa",
+          "size": 142239082,
           "minOSVersion": "16.4"
         }
       ]
@@ -1181,12 +1181,12 @@
       "tintColor": "#2090E0",
       "versions": [
         {
-          "version": "1.18.1",
-          "buildVersion": "236",
-          "date": "2026-10-25",
-          "localizedDescription": "### 正式版说明\n\n- 发布补丁正式版 `1.18.1+236`，完整承接 RC1 的阅读器、本地漫画、启动诊断、后台下载与依赖安全修复；本次转正不额外加入运行时代码或依赖变更。\n- RC1 发布后暂未收到新的问题反馈，这不等同于所有原设备问题已经验收通过。维护者决定保留明确的已知限制发布正式版，并继续邀请相关 issue 的反馈者复测，不自动将未确认的报告标为已解决。\n- 升级前请导出并另存应用数据备份，保留原漫画文件；覆盖安装沿用现有数据，不需要清空应用数据、删除数据库或重建同步配置。若回退旧版，请先另存新版数据，并使用升级前的备份恢复，不保证旧版能读取新版已修改的数据。iOS IPA 仍需自行侧载签名。\n\n### 重点复测与已知限制\n\n- **#111 升级／恢复后启动**：已修复 Windows 旧收藏库的 SQLite 内部表迁移错误，并完善不被异步收尾阻挡的启动诊断页；Android 原设备卡启动图的根因尚未确认。请复测覆盖升级和完整应用数据恢复；若仍失败，提供启动阶段与脱敏后的原始错误，不要以清空数据代替定位。\n- **#119 Android 自定义存储目录**：已修复 SAF 选择器返回的 `android://` 路径被误判为相对路径；真实 Android 目录权限、双向迁移及重启恢复仍需确认。请先备份，不要删除迁移失败时保留的原文件或副本。\n- **#115 归档导入后不显示**：已修复全部失败仍报成功及省略具体错误的问题；原附件在本机按原名／改名均可导入，原设备“不显示”的根因尚未复现。请核对导入数量、具体失败文件、列表筛选／屏蔽设置，以及重启后的列表与页面读取结果，不自动改名或绕过屏蔽规则。\n- **#118 单页翻页闪背景**：已修复切换当前页时重建已加载画面的代码路径；iPad／Android 原设备观感仍待复测，不取消墨水屏的主动刷新。\n- **#110 收藏显示**：已修复搜索模式下新增／删除收藏后结果未刷新的路径，但原报告仍可能涉及阅读状态筛选或关键词屏蔽，尚不能认定所有收藏不显示问题均已解决。\n- **#98／#112 阅读器**：旋转后自动阅读和加载中退出的已复现路径已修复，原 Android 场景仍需复测；主动放大后继续自动滚动、章节标题加载造成图片下移的追加需求未包含在本版。\n- **#107／#100 环境验证**：后台下载保护与图片请求 HTTP/3 回退已加入；厂商息屏限制、断网恢复、通知栏暂停及原反馈网络仍需实测，不保证绕过系统限制或使所有 CDN 恢复。\n- 内置通用 AVIF 解码器（#94）、鸿蒙 HAP（#77）、CBZ 分卷导出（#81）、Windows 全局热键（#117）及 TV 适配（#120）尚未交付；去混淆的移动端发热／耗电改善（#91）仍待真机测量。\n- 分享日志前仍需检查个人路径、私有链接及未知敏感字段；默认日志脱敏不是全面匿名化，也不会撤回此前公开的敏感附件。\n\n### 新增\n\n- 在「设置 → 发现」新增默认关闭的「显示详细阅读进度」开关，历史记录和漫画缩略图可显示当前／总章节数及当前章节的页码／总页数，小封面分行展示并保留完整提示和读屏信息；总数复用正常阅读时获得的数据，不额外联网，旧记录缺失总数时自动回退，分组章节按组内总数计算。\n\n### 修复\n\n- 修复单页画廊在相邻页成为当前页时销毁并重建已加载画面、导致翻页短暂闪背景的问题（#118）：保留图片与控制器，在原位重置缩放、平移和旋转，同时停止旧动画并使迟到手势失效；仍在实际卸载后释放资源，不扩大图片常驻范围。新增三个方向、往返翻页、缓存关闭、动画中折返、选择帧像素及控制器生命周期回归；iPad／Android 实机观感仍待原设备复测。\n- 修复归档批量导入在全部失败或没有可导入文件时仍返回成功、界面省略失败文件的问题：显示具体文件与错误、汇总成功／失败数量，保留部分成功结果，不再误报“已导入 0 本”；补充带 Unicode 破折号、括号与双扩展名的导入、列表查询、页面读取及重启回归（#115）。原报告附件在本机按原名／改名均可导入，尚未确认原设备“不显示”的根因，不自动改名或绕过屏蔽规则。\n- 修复 Android 自定义本地漫画存储路径时，迁移日志将 SAF 目录选择器返回的 `android://` 文档路径误判为相对路径而报 `Invalid local storage relocation` 的问题（#119）；保留空目标、目录重叠、引用归属与事务恢复校验，新增本地／SAF 双向迁移、SAF 间迁移及重启后提交前后恢复回归，不清空原库或删除失败时保留的副本。\n- 启动数据库失败时立即展示可复制脱敏详情的错误页，不再等待其他数据库初始化或漫画源异步初始化的回滚收尾才移除启动图；仍等待真实资源释放并保留数据目录所有权，不超时强关、不自动重试或清空数据。补充未完成源初始化与失败旧库并存的回归；此项完善 #111 的故障诊断，Android 原设备卡死根因仍待测试包验证。\n- 修复含 SQLite 内部统计表的旧收藏库在升级启动或备份导入时初始化失败的问题：统一收藏夹枚举排除 `sqlite_` 内部命名空间，避免对 `sqlite_stat1`、`sqlite_stat4`、`sqlite_sequence` 执行收藏字段迁移或查询；保留收藏内容、顺序、网络关联及追更状态，不清空数据，补充旧库核心启动、导入与重启回归。已确认 #111 的 Windows 启动失败根因，Android 卡死仍待真机验证。\n- 修复画廊自动阅读在横竖屏切换后把布局缩放误判为用户放大、导致翻页停滞的问题：未缩放基准按当前视口重新计算，保留主动缩放暂停和返回初始比例的行为；补充单页／双页、三个翻页方向、双向旋转及动画中旋转的真实阅读器回归测试（#98）。\n- 修复章节或图片配置仍在加载时退出阅读器，HTTP 取消经过 JavaScript 转为字符串后被误判为关闭失败的问题：仅将当前已取消请求实际记录的错误恢复为取消类型，继续等待原始 Promise 和资源释放；源脚本异常、保存失败及清理失败仍保留退出保护，不扩大为按文字匹配忽略错误（#112）。\n- 应用内更新日志改为按版本标签浏览，默认展示最新的非空版本，版本标签与当前版本正文均按需构建；切换版本重置阅读位置，保留完整历史 Markdown 文件，兼容大字号、横竖屏、明暗主题及加载失败重试，避免一次性渲染全部历史日志造成卡顿。\n- 网络及应用日志默认脱敏 Cookie、Set-Cookie、Authorization、常见令牌／密码字段和 URL 中的认证信息；脱敏先于控制台输出、截断、内存缓存及文件持久化，保留调用方额外遮罩，不修改实际请求和响应。分享日志前仍需检查个人路径及未知自定义敏感字段。\n- 启动失败时先记录发生阶段与原始异常，再关闭日志和释放资源；增加独立错误提示页及脱敏详情复制，桌面端独立显示带原生标题栏、可关闭的诊断窗口，避免异常发生在首帧前时只留下隐藏窗口、空白页面和清理阶段日志。不自动重试、清空设置或重建数据库，便于继续排查升级兼容与目录权限问题。\n- 修复收藏夹处于搜索模式时，新增／删除收藏或切换收藏夹后仍显示旧搜索结果的问题，兼容空搜索词以及 500 条阈值前后的同步／异步查询，保留迟到查询与数据归属保护；不改变阅读状态筛选和关键词屏蔽规则。\n- 为 Android 漫画下载接入 `dataSync` 前台服务、进度通知和通知栏暂停，下载期间持有带超时的 CPU 唤醒锁，暂停／完成／退出及时释放，并处理 Android 15+ 的后台时限；临时连接错误改为有上限的退避重试，网络恢复或回到前台可提前续传，保留已下载进度且不恢复用户主动暂停的任务。新增完整错误详情与复制入口，改善大字号布局，补充下载、原生会话和运行时回归测试；系统强制停止后仍以暂停状态恢复，不绕过厂商省电策略（#107）。\n- 修复连续阅读中相邻图片的加载占位尺寸抢占当前页、导致自动模式切换后页码和历史进度跳动的问题：完整可见的已加载页不再被未解码的占位抢占，图片解码后仍按实际可见面积更新当前页；新增左右两个方向的延迟加载与真实大图切页回归测试，不放宽原有页码断言。\n- 修复无章节列表的漫画从历史记录「继续阅读」时触发空值断言的问题：保留历史中缺省的分组，仅在实际存在分组章节时转换章节坐标，兼容旧入口传入的默认分组，保留原有阅读位置，无需删除历史；补充普通页码、1200 页漫画恢复到第 1001 页及平铺／分组章节的回归测试（#106）。\n- 修复连续／瀑布流阅读时，页码与主要可见图片不一致、保存或分享容易选中前后页的问题：当前页按图片实际占据的阅读视口面积判定，同面积优先保留当前／指定页，其次选择靠近视口中心的图片，排除章节分隔提示与隐藏列表，兼容横向／反向阅读、缩放和图片尺寸变化；页码、历史进度与保存／分享沿用同一位置，跨章预加载独立依据可见范围触发（#96 后续反馈）。\n- 直连 HTTPS 图片 GET 在响应前遇到 TLS EOF／连接重置时，清理原请求后最多回退尝试一次 HTTP/3；回退响应头等待不超过 5 秒，并沿用更短的调用方限制，保留原有 DNS、请求头、证书校验和取消清理。代理请求、带请求体的请求、HTTP 状态错误及已开始接收的响应不参与回退，新增协议诊断与本机原生 QUIC 验证工具（#100）。\n- 参照 v1.17.0 的自适应布局，取消漫画源设置下拉框的紧凑高度限制，修复选中文字错位、裁剪；保留设置保存和源替换保护，并增加普通／大字号、横竖屏和明暗主题回归测试。\n\n### 维护\n\n- 发布版本配置与应用版本同步为 `1.18.1+236`，保留 RC1 的运行时代码与依赖；同步中英文 README、Linux 分发说明和正式版验收记录，明确复测窗口与分类关单规则。正式版分发元数据在安装资产发布后按实际文件更新。\n- 优化中英文 README：突出长按收藏与追更的使用流程，精简功能亮点和快速上手，明确快捷收藏与追更的设置入口、自动检查间隔及首页封面跳转行为，并区分 WebDAV 同步、归档和在线漫画库的配置与用途。\n- 将 Rust 锁文件中的 Tokio 从 1.53.2 定向更新至 1.53.3，保留既有证书安全更新、Flutter Rust Bridge 2.11.1 和 libc 0.2.189 的兼容性约束；原生取消／回调收尾回归与完整依赖安全扫描通过（#114）。\n- 修复在分支上手动运行完整构建时将分支名误作发布标签的问题：分支构建按 `release.json` 校验版本、日志、桥接锁定及安装器元数据，标签发布仍严格匹配实际标签，手动构建不会创建 Release；补充分支／标签及无效元数据回归测试。\n- 将 Rust 锁文件中的 rustls-webpki 定向更新至 0.103.16、webpki-roots 更新至 1.0.10，修复证书链验证与受撤信任根证书相关的 RUSTSEC-2026-0382、RUSTSEC-2026-0381；保留现有工具链、桥接与 libc 兼容性约束，不忽略公告或降低安全审查门禁。\n- 增加旧设置、已有历史数据库及异步漫画源初始化的启动兼容回归，验证网络初始化未完成时本地库仍可启动且保留原数据；兼容回归不代表已解决所有升级故障，#111 的 Android 卡死仍需真机诊断，Windows SQLite 内部表引发的失败见本节修复项。\n- 将 Rust 锁文件中的 rustls 从 0.23.45 定向更新至 0.23.46，修复 RUSTSEC-2026-0346 至 RUSTSEC-2026-0349 四条安全公告；保留 Flutter Rust Bridge 2.11.1 和 libc 0.2.189 的兼容性约束，不降低依赖审计门禁。",
-          "downloadURL": "https://github.com/CyrilPeng/Venera-Next/releases/download/v1.18.1/VeneraNext-ios-1.18.1%2B236.ipa",
-          "size": 21194544,
+          "version": "1.18.2",
+          "buildVersion": "243",
+          "date": "2026-11-01",
+          "localizedDescription": "### 升级提示\n\n- 发布正式版 `1.18.2+243`，包含本轮 RC 的阅读器、下载和归档改进，以及两级收藏目录、Android TV、图片处理优化和 Windows 网页代理修复。\n- **升级前请导出并另存应用数据备份，保留原漫画文件。** 首次启动会迁移旧收藏库，即使不使用子目录也会执行；迁移前自动保留独立数据库快照，旧收藏夹作为一级目录保留。不需要清库、卸载或重新导入漫画。\n- 使用 WebDAV 同步的设备请统一升级，不要让新旧版本交替写入同一份收藏／同步数据。回退使用升级前的备份，不保证旧版能读取新版数据；单夹 JSON 仅包含该目录直接收藏，完整层级请使用应用数据备份。\n- Android 手机与 TV 分别提供通用、ARM64、ARM32 和 x86_64 安装包；TV 可与手机版共存，数据独立，官方 TV Alpha 可保留数据覆盖升级。iOS IPA 仍需自行签名侧载，Winget 新版本需等待公共源审核。\n\n### 新增\n\n- **两级本地收藏目录（#123）**：支持父子目录、展开／折叠、路径搜索、目录移动和同级排序；收藏、批量转移、快捷收藏及追更共用可搜索的目录选择器。父目录与子目录分别保存直接收藏，「全部」按漫画身份去重；目录移动不搬动漫画，目录名称保持全局唯一，不支持三级嵌套。\n- 完整应用备份和 WebDAV 快照保留收藏层级、稳定标识、顺序、网络关联及追更设置；恢复先在暂存副本校验，拒绝损坏或未知版本再替换活动数据库。旧格式单夹 JSON 仍可导入为一级目录。\n- **Android TV（#120）**：独立电视入口、固定横屏、遥控器导航和可见焦点。阅读时方向键翻页／滚动，确定打开菜单，返回先关闭菜单再保存退出；菜单内不在背景翻页，失焦或切后台停止连发。目录搜索用上下键移出输入框，左右键编辑光标。\n- TV 默认开启单页低内存模式：预加载 1 页、64 MiB 解码图片缓存、约 207 万像素及 8192 像素最长边限制；不修改原图，关闭后恢复原阅读配置。开关仅保存在当前设备，不参与备份或同步。\n- **Windows 全局快捷键（#117）**：在「设置 → App → 窗口」配置隐藏／恢复主窗口，默认关闭；支持冲突提示、重启恢复与停用，仅本机保存，不暂停下载，也不是隐私保护功能。\n- **手动阅读诊断（#125）**：阅读菜单可开启最长 45 秒的采集，预览后主动复制阶段等待、缓存和帧样本报告。默认关闭、不自动上传，不包含漫画内容、标题、路径、账号或脚本；异步等待不是 CPU 阻塞时间，帧样本不代表整段实测 FPS。\n\n### 修复与改进\n\n- 优化自定义图片处理的 QuickJS 引用管理，跳过不可能包含 JS 引用的数值缓冲，避免图片字节复制为普通列表并逐字节扫描（#125）；保留用户脚本、处理开关、画质、缓存和并发设置。此修改首次随本版交付，rc.6 不包含。\n- 修复阅读器未暴露底层图片缓存键，导致快速滚动／回看时已解码或正在加载的图片仍被延迟显示的问题（#125）。\n- 修复 Windows 手动代理网页登录误调用 Android 专用接口的问题（#128），改用 WebView2 配置系统／直连／手动代理；保留 Cookie，切换前等待旧网页退出，失败时提供重试而不是一直转圈。暂不支持带认证的手动网页代理，可使用无需认证的本地代理或系统代理，不静默切换网络路径。\n- 连续／瀑布流放大后可继续自动滚动，并读完放大后的末页尾部；修复条漫两侧留白无法用滚轮／触控板滚动，瀑布流章节标题提前占位，避免前章预取推移当前图片（#98、#112、#113）。\n- 完善缺页下载（#107）：可选跳过不可用图片，完成可用页面后转为「待补页」且不堵塞后续队列；本地阅读保留原页码和缺页占位，支持仅补缺页，重启保持暂停。缺页成果不能作为完整漫画导出或归档；认证、证书和写盘错误仍停止。\n- WebDAV 归档与下载导入保留逐项结果，可重试安全的失败项或继续未执行项（#126）。成功项不重复执行；上传失败后出现同名文件需核对实际上传字节摘要，不覆盖或删除冲突文件。结果保留到关闭窗口，不是跨重启后台队列。\n- 修复重启后「本地 → 全部」选择丢失，屏蔽词变化后及时刷新收藏／本地列表并提示隐藏数量；全选／反选仅操作可见条目，刷新保留有效选择，过期删除确认不能操作失效选择（#110、#115）。\n\n### 已知问题\n\n- **#125 的首次加载短停仍在调查。** 已收到关闭图片处理后首次滑入短停、立即回看正常的对照，不需要重复这一轮测试；现有证据不能认定仅是网络或少数设备不兼容，也不代表所有阅读卡顿已经修复。\n- #110／#115 的其他收藏／导入不显示场景、#126 的真实云盘失败原因及 #129 的偶发封面悬浮继续跟踪；#128 仍需包含修复的安装包在原设备完成网页登录验证。发布不会自动关闭这些报告。\n- 两级收藏、缺页流程及 TV 的自动化回归不代替所有设备验收。TV 低内存模式可能降低长图和放大细节清晰度，图片缓存上限不是总内存上限；网页登录、验证码和系统文件选择器可能需要输入法或配套设备。鸿蒙仍独立测试，不包含在本版。\n- 欢迎反馈完整版本／构建号、手机或 TV 版、机型系统、阅读模式、内容来源类型及最短复现步骤；需要时使用手动诊断。不要上传私人漫画、账号、完整备份或未经检查的原始日志。\n\n### 维护\n\n- 发布元数据同步为 `1.18.2+243`，精简中英文 README 的 TV 下载说明并统一手机版／TV 表格结构，更新 TV 分发与正式版验收文档。各平台从正式版提交重新构建，不复用旧 RC 安装包；AltStore 源和 Winget 元数据在安装包发布后依据实际资产更新。\n- 固定 QuickJS 提交为 `295f77421eedff356a02e92987181b525970c780`，将 Tokio 从 `1.53.3` 更新至 `1.54.1`（#127），保留 Flutter Rust Bridge `2.11.1`；Apple 目录测试迁至 `macos-15`，修复 Apple 构建机 Rustup 包装器目录初始化，不提高应用最低系统版本或跳过测试。\n- Android 发布校验两种 flavor 的全部 8 个 APK、版本码、原签名、ABI 与构建来源，并附两份 SHA-256 清单；TV 版本码保持高于已交付 Alpha。补充收藏迁移／恢复、TV 遥控器、Windows 网页代理与图片处理回归。",
+          "downloadURL": "https://github.com/CyrilPeng/Venera-Next/releases/download/v1.18.2/VeneraNext-ios-1.18.2%2B243.ipa",
+          "size": 21307925,
           "minOSVersion": "14.0"
         }
       ]
@@ -1242,6 +1242,28 @@
   ],
   "news": [
     {
+      "appID": "com.github.cyrilpeng.veneranext",
+      "title": "VeneraNext 1.18.2 · 01 Nov 2026",
+      "identifier": "VeneraNext-release-v1.18.2",
+      "caption": "VeneraNext 1.18.2 is available.",
+      "date": "2026-11-01T03:37:14Z",
+      "tintColor": "#2090E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
+      "notify": true,
+      "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.2"
+    },
+    {
+      "appID": "com.husk.app",
+      "title": "Husk 3.3 · 01 Nov 2026",
+      "identifier": "Husk-release-3.3",
+      "caption": "Husk 3.3 is available.",
+      "date": "2026-11-01T01:43:51Z",
+      "tintColor": "#5949E5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Leviidev/Husk/releases/tag/3.3"
+    },
+    {
       "appID": "com.thebcd69.bcd",
       "title": "BCD 0.1.625 · 31 Oct 2026",
       "identifier": "BCD-release-v0.1.625",
@@ -1273,17 +1295,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
       "notify": true,
       "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.0.9"
-    },
-    {
-      "appID": "com.husk.app",
-      "title": "Husk 3.2.1 · 31 Oct 2026",
-      "identifier": "Husk-release-3.2.1",
-      "caption": "Husk 3.2.1 is available.",
-      "date": "2026-10-31T02:58:46Z",
-      "tintColor": "#5949E5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/3.2.1"
     },
     {
       "appID": "com.altman.moviepilot",
@@ -1449,17 +1460,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
       "notify": true,
       "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.6"
-    },
-    {
-      "appID": "com.github.cyrilpeng.veneranext",
-      "title": "VeneraNext 1.18.1 · 25 Oct 2026",
-      "identifier": "VeneraNext-release-v1.18.1",
-      "caption": "VeneraNext 1.18.1 is available.",
-      "date": "2026-10-25T03:30:26Z",
-      "tintColor": "#2090E0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
-      "notify": true,
-      "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.1"
     },
     {
       "appID": "org.animeko.animeko",

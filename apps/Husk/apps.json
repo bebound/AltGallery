@@ -20,11 +20,11 @@
       "tintColor": "#5949E5",
       "versions": [
         {
-          "version": "3.2.1",
-          "date": "2026-10-31",
-          "localizedDescription": "Fixed certificate importing bug for 3.2 JIT-less",
-          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.2.1/Husk.ipa",
-          "size": 140697147,
+          "version": "3.3",
+          "date": "2026-11-01",
+          "localizedDescription": "## Play without JIT\nMore games convert and sign their libraries on the device. One library that cannot convert no longer stops the rest. Certificates from SideStore, AltStore, or a `.p12` import more reliably, and converted libraries are signed again after this update.\n\n## More Android apps\nJava apps pick up missing platform classes from AOSP when `framework.jar` is bundled. Jobs and boot receivers actually start, and Wi-Fi, location, and settings answer as a running phone would.\n\n## Importing files\nThe in-app file picker for Android apps can be used more than once in a session.\n\n## 32-bit ARM apps\nAPKs that only ship `armeabi-v7a` libraries are translated to arm64. This path is still incomplete (Minecraft PE is the current test case).\n\n## Fixes\nCertificate import, leftover store passwords on a `.p12`, the file picker after the first pick, game pages on iOS 15, and StikDebug when Husk is inside a container app.",
+          "downloadURL": "https://github.com/Leviidev/Husk/releases/download/3.3/Husk.ipa",
+          "size": 142239082,
           "minOSVersion": "16.4"
         }
       ]
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.husk.app",
-      "title": "Husk 3.2.1 · 31 Oct 2026",
-      "identifier": "Husk-release-3.2.1",
-      "caption": "Husk 3.2.1 is available.",
-      "date": "2026-10-31T02:58:46Z",
+      "title": "Husk 3.3 · 01 Nov 2026",
+      "identifier": "Husk-release-3.3",
+      "caption": "Husk 3.3 is available.",
+      "date": "2026-11-01T01:43:51Z",
       "tintColor": "#5949E5",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
       "notify": true,
-      "url": "https://github.com/Leviidev/Husk/releases/tag/3.2.1"
+      "url": "https://github.com/Leviidev/Husk/releases/tag/3.3"
     }
   ]
 }
