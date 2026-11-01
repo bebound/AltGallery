@@ -608,11 +608,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.9",
-          "date": "2026-10-12",
-          "localizedDescription": "## What's Changed\n* fix(extension): enable mobile code copy by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1039\n* fix(reader): restore double-tap zoom toggle by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1037\n* feat(player): add hold-and-slide speed selector by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1038\n* fix(http): drop the quotes Linux wraps the saved user agent in by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1036\n* fix(security): show what deep links install and keep tokens out of sh… by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1041\n* chore: await dropped writes, add guard lints, localize hardcoded strings by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1042\n* refactor: move the tracker library cache from Hive to Isar by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1043\n* refactor: split large widget files and remove duplicated code by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1044\n* Try to fix chapter sorting by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/1035\n* Add a protected HLS proxy for extension playback by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1040\n* Fix reader by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1051\n* fix(mobile): improve player controls and error handling by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1047\n* fix(restore): improve error handling and reporting during restore ope… by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1052\n* fix(reader): pan a zoomed webtoon page without losing double tap by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1054\n* ci: run the test suite on pull requests and main by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1056\n* Use neutral icons for extension repositories by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1045\n* Add western recommendations and trustworthy watch orders by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1050\n* Refine portrait player controls by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1058\n* fix: recognise \"T1\" seasons and \"Episodio\" episodes by @matsukiender-star in https://github.com/kodjodevf/mangayomi/pull/1060\n* Hide settings, that the user disabled by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/1059\n* fix(tv): make Browse overscan safe and focus reachable by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/1061\n* add useful comments to extension template by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/1057\n\n\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.8...v0.9.9",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.9/Mangayomi-v0.9.9-ios.ipa",
-          "size": 114603425
+          "version": "0.9.95",
+          "date": "2026-11-01",
+          "localizedDescription": "## Why 0.9.95 and not 1.0.0?\r\n\r\nThis release has almost everything planned for 1.0.0: a new design, a rebuilt player and hundreds of fixes. But so much has changed that it needs testing on more devices and libraries than we can cover ourselves.\r\n\r\nSo 0.9.95 is the last step before 1.0.0. The goal now is stability, not new features. If something breaks or looks wrong, please [open an issue](https://github.com/kodjodevf/mangayomi/issues) with your device and app version. 1.0.0 will come once this version has proven solid.\r\n\r\n## Highlights\r\n\r\n* **Shiori, a new design for the whole app:** every screen has been redrawn on one design system, with new navigation, transitions and an ergonomic pass throughout (#1077).\r\n* **A rebuilt video player:** new controls on phone, desktop and TV, plus video filters, audio delay, and volume, brightness and fit kept between episodes.\r\n* **A tracker with no account:** follow your status, progress, score and dates on the device alone (#1121).\r\n* **Work that keeps going on Android:** downloads, library updates, restores and syncs continue in the background, under one notification (#1092).\r\n* **More control over downloads and updates:** download ahead while reading, download new chapters automatically, and choose which series a library update skips (#1091).\r\n\r\n**Before updating:** this is a large release that also touches how your library is stored, so make a backup first (More > Backup and restore).\r\n\r\n## Reader\r\n\r\n* Zoom with Ctrl (⌘ on macOS) and the mouse wheel; the wheel alone moves a zoomed page.\r\n* With \"Navigate to pan\" on, tall pages are read row by row before the page turns.\r\n* Split tall images into slices in webtoon mode.\r\n* Choose which chapters next and previous skip: read, filtered or duplicate.\r\n* Rebind the reader's keyboard shortcuts.\r\n* Separate icons for crop borders on and off.\r\n* Pages and zooms follow your finger more closely, and the webtoon strip glides after a fling.\r\n* Decoded images now have a memory limit, so long chapters no longer keep growing in memory.\r\n* Fixed: lost decoded pages for the next chapter when closing the reader, and chapter list rows with a scanlator failing to lay out.\r\n\r\n## Video player\r\n\r\n* New controls on phone, desktop and TV, with episodes reachable from the top bar and lock and skip under the timeline on mobile.\r\n* **Video filters:** brightness, contrast, saturation, gamma and hue, kept for the next episodes. Gamma is hidden where the video output cannot apply it.\r\n* **Audio delay:** from -5 to +5 seconds.\r\n* Remember volume and brightness between episodes, and keep the fit from one episode to the next.\r\n* New \"Turn subtitles on\" switch, so episodes can start without subtitles.\r\n* \"Use my subtitle style\" now really gives the default style back when turned off.\r\n* VAAPI and VDPAU hardware decoding on Linux.\r\n* Rebind the player's keyboard shortcuts.\r\n* Fixed: a freeze in the player's event handling, crashes when chapter marks change, previous and next buttons on mobile, and controls under the camera cutout in landscape.\r\n\r\n## Library and browsing\r\n\r\n* Swipe sideways to switch between Manga, Anime and Novels, in the library and in Browse.\r\n* Select everything between two entries, in the library and in chapter lists.\r\n* Skip completed series, series with unread chapters or series not started in library updates. The categories' \"Skip updates\" option now takes effect too.\r\n* The Updates badge counts what was found since you last opened Updates, and clears when you visit.\r\n* Hidden media types are respected everywhere: Browse, Updates, History and the tracker library.\r\n* Browse remembers the Sources or Extensions page picked for each media.\r\n* Recommendation cards use the available space and no longer show HTML tags.\r\n* Fixed: opening Updates and History with orphan chapters, and an empty random entry.\r\n\r\n## Downloads\r\n\r\n* Download the next 2, 3, 5 or 10 unread chapters while reading.\r\n* Download new chapters after a library update.\r\n* \"Delete download after reading\" can remove a chapter 1 to 4 back instead, and keeps bookmarked chapters.\r\n* Failed downloads wait before retrying, and follow what a server asks after a 429 or 503.\r\n* Fixed: complete downloads being held back by the series cover, and resumed archives not finishing.\r\n\r\n## Tracking\r\n\r\n* New on-device tracker, with its own shelf in the tracker library.\r\n* Redrawn tracking card.\r\n* Progress now reaches trackers even if you leave the screen first.\r\n\r\n## Extensions\r\n\r\n* Updates are found in every repository, and the app says which one they come from. An update from another repository asks for confirmation before it is installed.\r\n* Extension WebViews are hosted for the extension server, including network and media capture.\r\n* Faster extension installs.\r\n* Repositories with empty source lists are supported.\r\n* Fixed: sources that read a setting in their headers failing to install, and video qualities lost with multiple hosters.\r\n\r\n## Backup, restore and sync\r\n\r\n* Reading time and last-read dates are kept when restoring backups from other apps.\r\n* Anime is kept from backups of unrecognised forks.\r\n* Local archive favorites are included in backups.\r\n* A backup password is only requested when the password is really the problem.\r\n* Refreshing a catalog keeps your reading state, and duplicate chapters are merged safely.\r\n* Fixed: logging in to the sync server on macOS.\r\n\r\n## Security and privacy\r\n\r\n* **Secure screen:** keep the app out of screenshots and the recent apps preview, always or only in incognito mode.\r\n* **Lock after:** ask to authenticate after 1, 2, 5 or 10 minutes away, or only when the app starts.\r\n\r\n## Updates and first launch\r\n\r\n* Onboarding starts by asking for your language.\r\n* Clearer update dialog: installed and new version, date, size, sorted notes and what happens next. You will see it from the next update onwards.\r\n* Pre-releases are now ordered correctly when checking for updates.\r\n* New open source licenses screen in About.\r\n* New Persian translation, and the missing strings translated in every language.\r\n\r\n## Platforms\r\n\r\n* **Android:** fixed a crash where all files access cannot be granted.\r\n* **Android TV:** fixed the Player settings in the anime-only layout, and the repository added on the welcome screen is filed under anime.\r\n* **iOS:** local files stay inside their folder.\r\n* **macOS:** the app icon now fits the system's icon grid.\r\n* **Windows:** sharper 256 px icon, used by the installer too, and more readable crash reports.\r\n* **Linux:** choose which browser opens external links; JPEG is read whichever libjpeg version is installed; fixed webview window crashes.\r\n\r\n## Stability and performance\r\n\r\n* Faster database queries and lower memory use.\r\n* The next chapter preloads on a new page rather than on every frame.\r\n* A page that lost its data now offers a way back instead of crashing.\r\n* The startup error screen says what to do when the database cannot open.\r\n* Handled errors are now recorded, and developer mode shows them with their details.\r\n\r\n## Contributors\r\n\r\nThanks to everyone who contributed to this release: @adobex, @aliafshany, @itsyaba, @Lukas-DS, @matsukiender-star, @MenaHere, @NBA2K1 and @Totara-thib.\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.9...v0.9.95",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.95/Mangayomi-v0.9.95-ios.ipa",
+          "size": 115450399
         }
       ]
     },
@@ -1230,17 +1230,39 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.9.7",
-          "date": "2026-10-30",
-          "localizedDescription": "修 0.9.6 的问题\r\n- ios 侧滑返回\r\n- 安卓过渡动画补充\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.6...v0.9.7",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.7/zhihu-minus-minus-v0.9.7-unsigned.ipa",
-          "size": 14488327,
+          "version": "0.9.8",
+          "date": "2026-11-01",
+          "localizedDescription": "进一步处理闪烁跳动；ios26+ 放了更多的液态玻璃🎉\r\n### changes\r\n* feat(ios): 统一 iOS 26 Liquid Glass 导航与悬浮控件 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/172\r\n* fix(animation): 稳定正文渐显与标题接力，减少页面切换闪烁 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/174\r\n* fix(list): 稳定分页与卡片复用，完善个人主页交互 by @huamurui @NobetaSena in https://github.com/huamurui/zhihu-minus-minus/pull/175\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.7...v0.9.8",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.8/zhihu-minus-minus-v0.9.8-unsigned.ipa",
+          "size": 14501451,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.kodjodevf.mangayomi",
+      "title": "Mangayomi 0.9.95 · 01 Nov 2026",
+      "identifier": "Mangayomi-release-v0.9.95",
+      "caption": "Mangayomi 0.9.95 is available.",
+      "date": "2026-11-01T15:17:25Z",
+      "tintColor": "#EF4444",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.95"
+    },
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.9.8 · 01 Nov 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.9.8",
+      "caption": "ZhihuMinusMinus 0.9.8 is available.",
+      "date": "2026-11-01T13:23:20Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.8"
+    },
     {
       "appID": "com.zarz.mornye",
       "title": "Mornye 5.3.0 · 01 Nov 2026",
@@ -1328,17 +1350,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
       "notify": true,
       "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.0-2026-10-30"
-    },
-    {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.9.7 · 30 Oct 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.9.7",
-      "caption": "ZhihuMinusMinus 0.9.7 is available.",
-      "date": "2026-10-30T11:15:40Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.7"
     },
     {
       "appID": "com.suwayomi.tachideskSorayomi",
@@ -1581,17 +1592,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/news.png",
       "notify": true,
       "url": "https://github.com/Aidoku/Aidoku/releases/tag/v0.9-4"
-    },
-    {
-      "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.9 · 12 Oct 2026",
-      "identifier": "Mangayomi-release-v0.9.9",
-      "caption": "Mangayomi 0.9.9 is available.",
-      "date": "2026-10-12T15:52:14Z",
-      "tintColor": "#EF4444",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.9"
     },
     {
       "appID": "com.naine.doer",
