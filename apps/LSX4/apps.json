@@ -20,12 +20,12 @@
       "tintColor": "#C09050",
       "versions": [
         {
-          "version": "128.9564",
-          "buildVersion": "128.9564",
-          "date": "2026-10-27",
-          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9564/LSX4-JIT-128.9564.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9564/LSX4-iOS-JIT-128.9564-English.zip)\r\n\r\n- Support for Duo devices\r\n- Additional iPad improvements\r\n\r\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9564/INSTALLATION.txt)\r\n\r\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
-          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9564/LSX4-JIT-128.9564.ipa",
-          "size": 76739855,
+          "version": "128.9757",
+          "buildVersion": "128.9757",
+          "date": "2026-11-02",
+          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9757/LSX4-JIT-128.9757.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9757/LSX4-iOS-JIT-128.9757-English.zip)\r\n\r\n- Performance optimizations and fewer frame-rate drops in demanding games.\r\n- Fixes for issues affecting some devices.\r\n- Expanded support for smaller games.\r\n\r\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9757/INSTALLATION.txt)\r\n\r\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
+          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9757/LSX4-JIT-128.9757.ipa",
+          "size": 76878762,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
-      "title": "LSX4 128.9564 · 27 Oct 2026",
-      "identifier": "LSX4-release-ios-jit-128.9564",
-      "caption": "LSX4 128.9564 is available.",
-      "date": "2026-10-27T22:26:18Z",
+      "title": "LSX4 128.9757 · 02 Nov 2026",
+      "identifier": "LSX4-release-ios-jit-128.9757",
+      "caption": "LSX4 128.9757 is available.",
+      "date": "2026-11-02T01:48:28Z",
       "tintColor": "#C09050",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
       "notify": true,
-      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9564"
+      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9757"
     }
   ]
 }
