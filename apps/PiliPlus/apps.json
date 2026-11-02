@@ -22,11 +22,11 @@
       "versions": [
         {
           "version": "2.2.0",
-          "buildVersion": "5580",
-          "date": "2026-11-01",
-          "localizedDescription": "设置选项调整\r\n支持切换`番剧`/`剧集` PV\r\npgc/pugv api 迁移至 ogv\r\n`我的订阅`详情默认倒序显示\r\n相关推荐过滤屏蔽黑名单 #3276\r\n用户主页支持显示粉丝勋章 #3202\r\n键盘方向键支持长按持续回退 #3379\r\n同步空降助手新片段类型`惊吓` #3368\r\n桌面端进度条支持鼠标悬停预览视频画面\r\n增加桌面端视频底栏时长字体大小 #3372\r\n增加滚轮调节音量开关 #3340 by @Hdy08\r\n侧边栏支持隐藏文字 #3343 by @illumiat\r\n支持`,`/`.`键逐档切换倍速 #3294 by @lzblack\r\n重构 Linux 内嵌 WebView #3423 by @moluopro\r\nLinux 构建依赖调整 #3277 by @Tobiichi-Origuchi\r\nLinux 支持多媒体控制 #3355 by @Tobiichi-Origuchi\r\nLinux 支持检测网络类型 #3164 #3374 by @Tobiichi-Origuchi\r\n`我的`页面支持显示`观看记录`、`稍后再看`、`我的订阅`\r\n支持自定义`buvid` #3253 #3349 co-by @My-Responsitories\r\n缓存面板支持选择音质，修复音质选取问题 #3309 co-by @azkbzxf\r\n支持导出/导入所有数据到压缩包 #3248 by @nlsdt #3313 by @My-Responsitories\r\n其他调整 #3349 by @My-Responsitories\r\n构建脚本不再改写用户的全局 Git 配置 #3360 by @AmCh-Q\r\n\r\n适配更多专栏类型\r\n支持显示 UP 专栏文集 #3316\r\n\r\n首页直播置顶分类标签 #3363\r\n增加全屏 SC 是否显示/不透明度/缩放设置\r\n直播与视频的缓冲区大小区分开 #3308 by @azkbzxf\r\n\r\n支持查看折叠评论 #2391\r\n动态/视频评论 Scheme 改为跳转源页面后定位评论\r\n增加过滤复制视频介绍评论选项 #3312 by @My-Responsitories\r\n增加屏蔽`@`类型评论选项 #2808 #3241 co-by @My-Responsitories\r\n\r\n修复 bug\r\n修复 #3323 #3385\r\n修复专栏跳转评论后内容倒序显示 #3289\r\n修复长用户名被截断 #3359 by @ChenPeeer\r\n修复安卓启动时状态栏颜色 #3332 by @EX3124\r\n修复 Wayland 硬解黑屏 #3261 by @FeiLiuEM\r\n修复 pgc/pugv 分享链接 #3291 by @Starfallan\r\n修复安卓 17 投屏 #2897 #3365 by @TG-Twilight\r\n修复迁移托盘依赖 Linux 菜单显示问题 #3263 by @FeiLiuEM\r\n修复保留 Akamai 原始播放链接及签名参数 #3380 by @aierlma\r\n修复 OriginOS(vivo) 音量条无法二次按下自动收起 #3373 by @SekiBankiYa",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.0/PiliPlus_ios_2.2.0%2B5580.ipa",
-          "size": 24921912,
+          "buildVersion": "5590",
+          "date": "2026-11-02",
+          "localizedDescription": "修复 bug\r\n修复无法播放 drm 番剧 #3449\r\n修复匿名账号搜索被风控 #3411\r\n修复安卓(vivo)音量调节 #3442 by @numb747\r\n修复 Linux MPRIS 未设置 DesktopEntry 与 Identity #3438 by @Infinifar",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.0.1/PiliPlus_ios_2.2.0%2B5590.ipa",
+          "size": 24914746,
           "minOSVersion": "14.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.example.piliplus",
-      "title": "PiliPlus 2.2.0 · 01 Nov 2026",
-      "identifier": "PiliPlus-release-2.2.0",
+      "title": "PiliPlus 2.2.0 · 02 Nov 2026",
+      "identifier": "PiliPlus-release-2.2.0.1",
       "caption": "PiliPlus 2.2.0 is available.",
-      "date": "2026-11-01T07:33:43Z",
+      "date": "2026-11-02T12:28:28Z",
       "tintColor": "#73b480",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
       "notify": true,
-      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.2.0"
+      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.2.0.1"
     }
   ]
 }

@@ -21,11 +21,11 @@
       "tintColor": "#F02040",
       "versions": [
         {
-          "version": "2.0.1",
-          "date": "2026-09-18",
-          "localizedDescription": "- Added WonderSwan support\r\n- Added NAOMI, Atomiswave, and System SP arcade support\r\n- Added Flash support\r\n  · Skin button binding\r\n  · Hardware keyboard input\r\n  · Software keyboard input\r\n  · Touch input\r\n- Built-in, self-contained JIT — no external debugger required\r\n- Added Slow Motion\r\n- Improved GameCube and Wii performance\r\n- GameCube now supports multi-disc games\r\n- Improved Wii motion controls\r\n- Simulate the Wii IR pointer by touch\r\n- Add games from other emulators via a link\r\n- Fixed some arcade systems that wouldn’t run\r\n- Fixed Dreamcast games running too fast\r\n- Fixed PSP crashes\r\n- Added NDS lid open/close\r\n- Improved rotation: with orientation lock on in Control Center, the app no longer snaps back to portrait\r\n- In-game shortcut tips can now be turned off\r\n- Landscape library can disable carousel style\r\n- Smoother landscape carousel scrolling\r\n- MultiDisc Helper supports more formats\r\n- Hardware keyboard input for Symbian, Amiga, and C64\r\n- Added RomM support\r\n  · LAN self-hosted servers only\r\n  · Sync only for games imported from RomM\r\n  · Manual sync only, from the service card’s long-press menu\r\n  · Pull ROMs, covers, metadata, manuals, and game saves\r\n- Fixed a launch timeout that could quit the app on older devices\r\n- N64 now supports ROMs larger than 64 MB",
-          "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.1/ManicEMU.v2.0.1.SideloadJIT.ipa",
-          "size": 288525117,
+          "version": "2.0.2",
+          "date": "2026-11-02",
+          "localizedDescription": "- Improved 3DS performance\r\n- Nimbus in Artic Base now supports the latest Pretendo\r\n- Improved Home Menu performance on the Azahar core\r\n- Fixed Wii pointer behavior for affected users\r\n- Added MeloCafe Link support\r\n- iPad now supports windowed apps\r\n- Redesigned the SNES skin\r\n- Added skin fallback: iPad can use iPhone skins\r\n- Support for iPhone Duo\r\n- Fixed AirPlay not working on iOS 27 or later\r\n- Added BitBop, a new sister app to Manic EMU for retro game music\r\n- Other bug fixes and improvements",
+          "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.2/ManicEMU.v2.0.2.SideloadJIT.ipa",
+          "size": 293317769,
           "minOSVersion": "15.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.aoshuang.manicemu",
-      "title": "ManicEMU 2.0.1 · 18 Sep 2026",
-      "identifier": "ManicEMU-release-v2.0.1",
-      "caption": "ManicEMU 2.0.1 is available.",
-      "date": "2026-09-18T09:29:42Z",
+      "title": "ManicEMU 2.0.2 · 02 Nov 2026",
+      "identifier": "ManicEMU-release-v2.0.2",
+      "caption": "ManicEMU 2.0.2 is available.",
+      "date": "2026-11-02T08:03:58Z",
       "tintColor": "#F02040",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.png",
       "notify": true,
-      "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.1"
+      "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.2"
     }
   ]
 }
