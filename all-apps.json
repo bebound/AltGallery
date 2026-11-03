@@ -177,6 +177,30 @@
       ]
     },
     {
+      "name": "Asspp",
+      "bundleIdentifier": "wiki.qaq.Asspp",
+      "developerName": "Lakr233",
+      "subtitle": "The ultimate multi-region App Store manager",
+      "localizedDescription": "Manage multiple Apple IDs across App Store regions: switch stores instantly, browse and download official IPAs from anywhere, and keep a searchable IPA library with older versions — no signing out of your device required.\n\nDownloads go through Apple's servers with your own Apple ID. Because the underlying protocol is the same one ipatool uses, a secondary or burner account is strongly recommended.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/search.jpeg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/app.jpeg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/account.jpeg"
+      ],
+      "tintColor": "#3060D0",
+      "versions": [
+        {
+          "version": "4.2.2",
+          "date": "2026-10-20",
+          "localizedDescription": "## Changes\n\n- Recover downloads when Apple returns an empty HTTP 500 by retrying the version-pinned request through the bag’s update endpoint.\n- Update ApplePackage to 2.0.3 with Swift 6.2 compatibility fixes.\n- Report Keychain save failures before completing login, and preserve stored data when loading fails.\n- Improve empty account layout, editable device identifiers, and account table column widths.\n- Remove personal metadata from bundled installation certificates and omit the CA private key.\n- Explicitly clear development teams for release builds and check packaged artifacts before publication.\n\n## Installation certificate\n\nThe local installation CA was replaced to remove personal metadata. If you use OTA installation, install and trust the new certificate from Settings after updating.\n\nThe release contains an unsigned iOS IPA and a macOS ZIP without a personal development team.",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.2/Asspp.ipa",
+          "size": 16458246,
+          "minOSVersion": "17.0"
+        }
+      ]
+    },
+    {
       "name": "BCD",
       "bundleIdentifier": "com.thebcd69.bcd",
       "developerName": "thebcd69",
@@ -1559,6 +1583,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
       "notify": true,
       "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.9"
+    },
+    {
+      "appID": "wiki.qaq.Asspp",
+      "title": "Asspp 4.2.2 · 20 Oct 2026",
+      "identifier": "Asspp-release-4.2.2",
+      "caption": "Asspp 4.2.2 is available.",
+      "date": "2026-10-20T03:08:48Z",
+      "tintColor": "#3060D0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Lakr233/Asspp/releases/tag/4.2.2"
     },
     {
       "appID": "org.eu.eslzzyl.Pixiv-SwiftUI",
