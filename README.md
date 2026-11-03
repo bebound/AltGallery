@@ -59,6 +59,9 @@ A community-maintained iOS tweak that keeps Apollo for Reddit working after its 
 ### <a href="https://github.com/ARMSX2/ARMSX2"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ARMSX2/icon.png" alt="ARMSX2 icon" width="24" align="top">ARMSX2</a>
 A native ARM64 PlayStation 2 emulator for iOS and iPadOS, forked from PCSX2.
 
+### <a href="https://github.com/Lakr233/Asspp"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Asspp/icon.png" alt="Asspp icon" width="24" align="top">Asspp</a>
+Manage multiple Apple IDs across App Store regions — browse, download and keep official IPAs from any region without signing out.
+
 ### <a href="https://github.com/thebcd69/bcd-games"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/BCD/icon.png" alt="BCD icon" width="24" align="top">BCD</a>
 Run Windows games on iPhone and iPad — a fast, controller-friendly launcher with Steam and GOG built in, powered by Wine, FEX and Metal.
 

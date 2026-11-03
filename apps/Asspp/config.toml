@@ -1,0 +1,45 @@
+# altgen config for the Asspp AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Lakr233/Asspp"
+
+[source]
+name = "Asspp"
+subtitle = "Asspp AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Asspp"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/icon.png"
+website = "https://github.com/Lakr233/Asspp"
+tint_color = "#3060D0"
+
+[app]
+name = "Asspp"
+bundle_identifier = "wiki.qaq.Asspp"
+developer_name = "Lakr233"
+subtitle = "The ultimate multi-region App Store manager"
+description = "Manage multiple Apple IDs across App Store regions: switch stores instantly, browse and download official IPAs from anywhere, and keep a searchable IPA library with older versions — no signing out of your device required.\n\nDownloads go through Apple's servers with your own Apple ID. Because the underlying protocol is the same one ipatool uses, a secondary or burner account is strongly recommended."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/search.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/app.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/account.jpeg",
+]
+tint_color = "#3060D0"
+min_os_version = "17.0"
+
+[versions]
+# Tags are plain semver (4.2.2 …) — no v prefix to strip.
+strip_v_prefix = false
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)$"
+# asset_pattern is a regex (not glob): every release ships exactly one
+# unsigned ios ipa named Asspp.ipa (Asspp.zip is the macOS build).
+asset_pattern = "^Asspp\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/news.png"
+
+[output]
+path = "apps.json"
