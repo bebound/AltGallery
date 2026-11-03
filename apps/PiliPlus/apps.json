@@ -22,11 +22,11 @@
       "versions": [
         {
           "version": "2.2.0",
-          "buildVersion": "5590",
-          "date": "2026-11-02",
-          "localizedDescription": "修复 bug\r\n修复无法播放 drm 番剧 #3449\r\n修复匿名账号搜索被风控 #3411\r\n修复安卓(vivo)音量调节 #3442 by @numb747\r\n修复 Linux MPRIS 未设置 DesktopEntry 与 Identity #3438 by @Infinifar",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.0.1/PiliPlus_ios_2.2.0%2B5590.ipa",
-          "size": 24914746,
+          "buildVersion": "5598",
+          "date": "2026-11-03",
+          "localizedDescription": "更新投屏依赖 https://github.com/bggRGjQaUbCoE/PiliPlus/issues/2680#issuecomment-6597938908\r\n修复部分视频评论显示不全 #3458\r\n修复播放课堂视频 #3454 by @ucxn\r\n修复 macOS 关闭系统标题栏后无法拖动 #3453 by @NalCol\r\n修复点赞弹幕跳转未留提前量，导致跳转到弹幕时无法加载 #3459 by @Rim-World\r\nChromeOS(ARC) 上不再主动请求屏幕方向，由系统决定窗口方向 #3406 co-by @selcarpa",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.0.2/PiliPlus_ios_2.2.0%2B5598.ipa",
+          "size": 24933082,
           "minOSVersion": "14.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.example.piliplus",
-      "title": "PiliPlus 2.2.0 · 02 Nov 2026",
-      "identifier": "PiliPlus-release-2.2.0.1",
+      "title": "PiliPlus 2.2.0 · 03 Nov 2026",
+      "identifier": "PiliPlus-release-2.2.0.2",
       "caption": "PiliPlus 2.2.0 is available.",
-      "date": "2026-11-02T12:28:28Z",
+      "date": "2026-11-03T07:43:02Z",
       "tintColor": "#73b480",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
       "notify": true,
-      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.2.0.1"
+      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.2.0.2"
     }
   ]
 }

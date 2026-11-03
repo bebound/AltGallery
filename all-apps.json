@@ -358,11 +358,11 @@
       "versions": [
         {
           "version": "0.1.3",
-          "buildVersion": "99",
-          "date": "2026-10-29",
-          "localizedDescription": "## One button closer to your Steam library · Build 99\n\n**Download & Install Steam — directly inside iDeck.** After preparing the local\nruntime, download the complete pinned Windows Steam client and CEF/browser files\nfrom Valve's HTTPS CDN. No computer or manual ZIP transfer is needed for acquiring\nSteam files. JIT/signing setup may still require a computer on older OS versions.\n\n### What's new\n\n- Full 19-package Steam/CEF download with real byte progress, SHA-256 and complete\n  6,233-file verification; not just the Dock component bootstrap.\n- Cancel, Retry and verified-package caching. Safe streaming ZIP extraction,\n  storage/session checks and recoverable public-file installation transactions.\n- Repair incomplete or incompatible client files while preserving accounts,\n  installed games and saves. Manual import remains available. Fully reopen iDeck\n  after installation/repair before enabling JIT.\n- iOS/iPadOS26 pipe creation compatibility: fixes a weak-null system API call\n  which crashed the runtime before Steam started.\n- Browser-thread compatibility: handles the signed ARM64 TEB load captured\n  terminating a Steam browser thread after entering Big Picture.\n- Removes only the explicitly marked temporary384MB reserve-test configuration\n  left by an older experiment, with an original-config backup; custom unmarked\n  budgets are preserved.\n\n### Install / upgrade\n\nDownload **iDeck-0.1.3-alpha.4-build99.ipa** and **SHA256SUMS**. Verify its hash,\nthen re-sign with your own Apple development profiles, keeping the JIT helper and\n`get-task-allow`. The public IPA has certificate-free ad-hoc signatures, contains\nno personal provisioning profiles, and requires your signature before sideloading.\nSigning alone does not enable JIT. Upgrade in place with consistent identifiers;\nback up saves and do not uninstall to repair Steam.\n\nIn iDeck: **Prepare runtime → Download & Install Steam → fully reopen iDeck →\nJIT setup/Enable JIT → Launch Steam Big Picture**. Complete Steam credentials and\nSteam Guard yourself. On iOS26, use a device-specific imported remote pairing file\nand manually connect LocalDevVPN. App-internal pairing requires iOS27 or later.\n\n[English instructions](https://github.com/kuscholar/iDeck/blob/v0.1.3-alpha.4/README.md) ·\n[中文说明](https://github.com/kuscholar/iDeck/blob/v0.1.3-alpha.4/README.zh-CN.md) ·\n[Source verification and limitations](https://github.com/kuscholar/iDeck/blob/v0.1.3-alpha.4/docs/AUTOMATIC_STEAM_INSTALL.md)\n\n### Actual evidence and limits\n\n- All19 official archives remain reachable; full re-download matches historical\n  manifest1769731672 and all6233 public file hashes. Native Swift URLSession\n  fresh download/install, cancellation/retry and synthetic rollback tests pass.\n- A previously Steam-free iPad container completed in-app automatic acquisition\n  and full verification. No Steam binaries were manually transferred.\n- Build99 compiled, development-signed, installed and launched on iPhone15ProMax;\n  the tester confirms Steam UI works after the browser-thread repair. This is\n  existing-account evidence, not a fresh-account test or long-session guarantee.\n- **Older iPad Pro iPad8,1 cannot boot the current runtime**: measured virtual\n  map17.4GB is below its existing48GB32-bit guest-window requirement. Download\n  success does not imply every iPad can run Steam. No broad iPad support claimed.\n- Production extractor/transaction/manifest, signed-load/neighbor, pipe, startup,\n  Steam/JIT/Cloud regressions and six release-tool tests pass. Full Xcode and\n  portable104-input relink succeed. IPA payload audit covers1246files.\n- The public certificate-free IPA has not separately undergone other-account\n  sideloader/JIT testing. No exhaustive game/controller or sustained-session claim.\n\n### Important legacy-client limitation\n\nThis alpha uses an unmodified pinned **legacy32-bit Windows client1769731672**.\n[Valve ended32-bit Windows support](https://help.steampowered.com/en/faqs/view/49A1-B944-48B8-FF00).\nContinued authentication, package availability and security maintenance are not\npromised. The inherited frozen-client launch policy remains experimental; the\ninstaller adds no mandatory-update/authentication/DRM bypass. A maintained modern\nAMD64 CEF solution remains separate unfinished work. No Valve endorsement or\nredistribution permission is claimed.\n\nSteam/CEF binaries, games, credentials, pairing keys and personal signing assets\nare **not bundled**. Downloads go directly from Valve; Steam licenses and terms\napply. Source, component licenses and LGPL relink materials accompany the IPA.\nPowered by Madeira, Wine, FEX, DXMT, StikJIT/idevice and their contributors;\nexisting component licenses/notices remain in force. This runs Windows Steam\nlocally through compatibility layers, not Linux SteamOS or PC streaming.",
-          "downloadURL": "https://github.com/kuscholar/iDeck/releases/download/v0.1.3-alpha.4/iDeck-0.1.3-alpha.4-build99.ipa",
-          "size": 166772750,
+          "buildVersion": "143",
+          "date": "2026-11-03",
+          "localizedDescription": "# iDeck v0.1.3-alpha.5 · Build 143\n\n**Experimental checkpoint — known issue: Steam can freeze after the third game exit.**\n\n## What changed\n\n- Smoother Steam home/library browsing reported on the test iPhone after reducing periodic diagnostics and pausing hidden log parsing.\n- Steam menu now uses the existing window instead of starting a second Steam client and potentially blocking the control helper.\n- Improved consistency when reopening the selected Steam64 runtime and its separate saved-login environment.\n- VM maintenance and safety guards stay enabled. Experimental GPU-auto and V8 JIT are not promoted to defaults.\n\n## What was tested\n\nBuild143 was installed on an iPhone15ProMax/A17Pro. The user confirms the Steam menu works and browsing is more fluid. Hot Roads launched and exited three times; **Steam froze after the third return**. This bug remains open. Full build/native37, focused host checks, final-binary markers, package audit and portable relinking passed. Other games, Bluetooth, older devices and prolonged stability are not validated here.\n\n## Install / upgrade\n\nDownload `iDeck-0.1.3-alpha.5-build143.ipa`, sign it with your own Apple development profiles (including the JIT helper), then complete iDeck's setup/JIT prerequisites. This is an ad-hoc IPA, not pre-signed for your device. Preserve the existing app identity and back up important data before upgrading; avoid uninstalling if you want to retain its data.\n\n[English installation guide](https://github.com/kuscholar/iDeck/blob/release/v0.1.3-alpha.5/docs/INSTALL_IPA.md) · [中文 README](https://github.com/kuscholar/iDeck/blob/release/v0.1.3-alpha.5/README.zh-CN.md)\n\n**Steam64 setup caveat:** the phone test used an already configured separate Steam64/source-CEF environment. This IPA does not contain Steam/CEF files, games, a preconfigured device prefix or anyone's login. Fresh Steam64 setup is not validated as one-click working; ordinary setup/manual import still applies. iDeck runs the Windows Steam client through Madeira; it does not boot SteamOS.\n\n## Source and licenses\n\nThe source companion includes the exact application snapshot, pinned component sources, and the matching FEX131 source overlay/options/build recipe. The relink companion contains the exact main-library inputs and a verified relink command. Component licenses/credits and checksums are attached. No FEX upstream contribution is made. No Valve binaries, games, credentials, personal provisioning profiles or pairing files are included.\n\n---\n\n**中文：这是阶段性预发布，第三次退出游戏后 Steam 仍可能卡住。**\n\n本版改善了 Steam 菜单和主页／游戏库浏览，保留内存维护与安全检查。iPhone15ProMax 上已测试三次进入、退出 Hot Roads，但第三次返回后 Steam 卡住，尚未解决长期稳定性。GPU 加速尚未验证为真正硬件后端，未设为默认。\n\n下载 IPA 后需要用自己的 Apple 开发签名重新签署主 App 和 JIT helper，按安装指南完成前置流程。升级请保留原 App 身份并备份重要数据，避免直接卸载。实测的64位 Steam 使用预先配置的独立环境；IPA 不附带 Steam/CEF、游戏、账号或该手机配置，不能把本次实测当作全新设备一键配置成功。",
+          "downloadURL": "https://github.com/kuscholar/iDeck/releases/download/v0.1.3-alpha.5/iDeck-0.1.3-alpha.5-build143.ipa",
+          "size": 166398909,
           "minOSVersion": "26.0"
         }
       ]
@@ -480,11 +480,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.24",
-          "date": "2026-10-28",
-          "localizedDescription": "### Fixed\n\n- **iOS**: the mini player briefly lost its layout after leaving the Now Playing screen — the accessory placement reads nil for a few seconds while the zoom transition returns it to the tab bar, and the last reported placement is now kept through that interval.\n\n### Improved\n\n- **iOS + macOS**: every request is now routed through NetEase's eapi as the desktop client, as mygo-cloudmusic does; phone-number login and following an artist answer -460 (检测到您的网络环境存在风险) through the eapi, so those calls and the SMS code go through the plain web API, and the QR login uses type 3 with the /nuser/account/get account lookup, as the desktop client does.\n\n---\n\n### 修复\n\n- **iOS**：从正在播放页面返回后，迷你播放器会短暂丢失布局——缩放过渡回到标签栏的几秒内 accessory 位置读取为 nil，现在这段时间内保留上一次上报的位置。\n\n### 改进\n\n- **iOS + macOS**：所有请求改走网易云的 eapi 并以桌面客户端身份发送，参照 mygo-cloudmusic 的做法；手机号登录和关注歌手在 eapi 下返回 -460（检测到您的网络环境存在风险），这几个调用和短信验证码改走普通 Web API，扫码登录改用 type 3 并通过 /nuser/account/get 查询账号，与桌面客户端一致。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.24/Kumone-iOS-0.3.24.ipa",
-          "size": 8727909,
+          "version": "0.3.26",
+          "date": "2026-11-03",
+          "localizedDescription": "### Added\n\n- **macOS**: desktop lyrics now sing along — with 逐字歌词（卡拉OK） on, the floating line lights up character by character from the song's word timings, the same wipe as the now-playing page; it freezes while paused and keeps running with the main window hidden (#174).\n\n### Improved\n\n- **macOS**: the About window credits MOE AI LLC.\n\n---\n\n### 新增\n\n- **macOS**：桌面歌词支持逐字卡拉 OK——开启「逐字歌词（卡拉OK）」后，悬浮歌词按歌曲的逐字时间逐个亮起，与播放页同一套扫光；暂停时停住，主窗口隐藏时照常运行（#174）。\n\n### 改进\n\n- **macOS**：关于窗口的版权署名改为 MOE AI LLC。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.26/Kumone-iOS-0.3.26.ipa",
+          "size": 4001101,
           "minOSVersion": "16.0"
         }
       ]
@@ -870,11 +870,11 @@
       "versions": [
         {
           "version": "2.2.0",
-          "buildVersion": "5590",
-          "date": "2026-11-02",
-          "localizedDescription": "修复 bug\r\n修复无法播放 drm 番剧 #3449\r\n修复匿名账号搜索被风控 #3411\r\n修复安卓(vivo)音量调节 #3442 by @numb747\r\n修复 Linux MPRIS 未设置 DesktopEntry 与 Identity #3438 by @Infinifar",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.0.1/PiliPlus_ios_2.2.0%2B5590.ipa",
-          "size": 24914746,
+          "buildVersion": "5598",
+          "date": "2026-11-03",
+          "localizedDescription": "更新投屏依赖 https://github.com/bggRGjQaUbCoE/PiliPlus/issues/2680#issuecomment-6597938908\r\n修复部分视频评论显示不全 #3458\r\n修复播放课堂视频 #3454 by @ucxn\r\n修复 macOS 关闭系统标题栏后无法拖动 #3453 by @NalCol\r\n修复点赞弹幕跳转未留提前量，导致跳转到弹幕时无法加载 #3459 by @Rim-World\r\nChromeOS(ARC) 上不再主动请求屏幕方向，由系统决定窗口方向 #3406 co-by @selcarpa",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.0.2/PiliPlus_ios_2.2.0%2B5598.ipa",
+          "size": 24933082,
           "minOSVersion": "14.0"
         }
       ]
@@ -1205,12 +1205,12 @@
       "tintColor": "#FF0000",
       "versions": [
         {
-          "version": "21.43.5",
-          "buildVersion": "21.43.5",
-          "date": "2026-10-27",
+          "version": "21.44.4",
+          "buildVersion": "21.44.4",
+          "date": "2026-11-03",
           "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock and YouSlider. (unstable in newer builds)\r\n> - Downloads working partially. depending on hardware codecs. \r\n> - Liquid Glass Support\r\n> \r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.43.5_1.3.1.ipa",
-          "size": 131707413,
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa3/YouProExtra_21.44.4_1.3.1.ipa",
+          "size": 132497784,
           "minOSVersion": "16.0"
         }
       ]
@@ -1242,6 +1242,50 @@
   ],
   "news": [
     {
+      "appID": "com.google.ios.youtube",
+      "title": "YouProEXTRA 21.44.4 · 03 Nov 2026",
+      "identifier": "YouProEXTRA-release-youproextra-ipa3",
+      "caption": "YouProEXTRA 21.44.4 is available.",
+      "date": "2026-11-03T12:58:48Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa3"
+    },
+    {
+      "appID": "sb.moe.kumone",
+      "title": "Kumone 0.3.26 · 03 Nov 2026",
+      "identifier": "Kumone-release-v0.3.26",
+      "caption": "Kumone 0.3.26 is available.",
+      "date": "2026-11-03T11:01:25Z",
+      "tintColor": "#F0D060",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
+      "notify": true,
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.26"
+    },
+    {
+      "appID": "com.example.piliplus",
+      "title": "PiliPlus 2.2.0 · 03 Nov 2026",
+      "identifier": "PiliPlus-release-2.2.0.2",
+      "caption": "PiliPlus 2.2.0 is available.",
+      "date": "2026-11-03T07:43:02Z",
+      "tintColor": "#73b480",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
+      "notify": true,
+      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.2.0.2"
+    },
+    {
+      "appID": "com.kuschqin.madeira.steamui",
+      "title": "iDeck 0.1.3 · 03 Nov 2026",
+      "identifier": "iDeck-release-v0.1.3-alpha.5",
+      "caption": "iDeck 0.1.3 is available.",
+      "date": "2026-11-03T04:50:18Z",
+      "tintColor": "#50D0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kuscholar/iDeck/releases/tag/v0.1.3-alpha.5"
+    },
+    {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
       "title": "LSX4 128.9775 · 02 Nov 2026",
       "identifier": "LSX4-release-ios-jit-128.9775",
@@ -1262,17 +1306,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
       "notify": true,
       "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.7"
-    },
-    {
-      "appID": "com.example.piliplus",
-      "title": "PiliPlus 2.2.0 · 02 Nov 2026",
-      "identifier": "PiliPlus-release-2.2.0.1",
-      "caption": "PiliPlus 2.2.0 is available.",
-      "date": "2026-11-02T12:28:28Z",
-      "tintColor": "#73b480",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
-      "notify": true,
-      "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.2.0.1"
     },
     {
       "appID": "dev.playport.app",
@@ -1440,17 +1473,6 @@
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261029"
     },
     {
-      "appID": "com.kuschqin.madeira.steamui",
-      "title": "iDeck 0.1.3 · 29 Oct 2026",
-      "identifier": "iDeck-release-v0.1.3-alpha.4",
-      "caption": "iDeck 0.1.3 is available.",
-      "date": "2026-10-29T04:58:56Z",
-      "tintColor": "#50D0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kuscholar/iDeck/releases/tag/v0.1.3-alpha.4"
-    },
-    {
       "appID": "com.rushhours.app",
       "title": "Rush Hours 2.0.7 · 28 Oct 2026",
       "identifier": "Rush Hours-release-v2.0.7-b65",
@@ -1460,28 +1482,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
       "notify": true,
       "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.0.7-b65"
-    },
-    {
-      "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.24 · 28 Oct 2026",
-      "identifier": "Kumone-release-v0.3.24",
-      "caption": "Kumone 0.3.24 is available.",
-      "date": "2026-10-28T12:22:49Z",
-      "tintColor": "#F0D060",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
-      "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.24"
-    },
-    {
-      "appID": "com.google.ios.youtube",
-      "title": "YouProEXTRA 21.43.5 · 27 Oct 2026",
-      "identifier": "YouProEXTRA-release-youproextra-ipa2",
-      "caption": "YouProEXTRA 21.43.5 is available.",
-      "date": "2026-10-27T21:33:28Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
-      "notify": true,
-      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
     },
     {
       "appID": "dev.linuxrunner.app",
