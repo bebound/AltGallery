@@ -94,11 +94,11 @@
       "tintColor": "#124EB3",
       "versions": [
         {
-          "version": "2.6.6",
-          "date": "2026-10-26",
-          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.6 更新\n\n- 这是热修版本，修复桌面端视频解析时切换视频源出现的闪退问题，具体的更新内容在 设置->关于->更新信息页面查看2.6.5更新信息\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
-          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.6/AnimeFlow-ios-2.6.6.ipa",
-          "size": 29290748,
+          "version": "2.6.7",
+          "date": "2026-11-02",
+          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.6.7 更新\r\n\r\n## 新增\r\n\r\n- 播放页竖屏时播放器右上角添加更多功能按钮 #118\r\n- 页面标题栏和导航栏支持磨砂玻璃风格(可在页面设置中关闭恢复旧版风格)\r\n- 新增设备原生播放器内核(支持Android、ios、Macos)，可在视频设置中切换\r\n- 规则下载支持更多线路选择\r\n- 应用内版本更新支持镜像加速选择(下个版本生效)\r\n\r\n## 优化\r\n\r\n- 优化推荐、排行榜、用户收藏页面大屏时滚动卡顿问题\r\n- 播放器缓冲速度不在使用设备实时网速，改用真是的视频缓冲速度(仅支持mpv内核)\r\n\r\n## 修复\r\n\r\n- 修复封面下载失败问题 #121\r\n- 修复mdk内核每次快退视频进度时都需要重新缓冲问题\r\n- 标准化ios包名(需要手动删除旧应用) #117\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
+          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.7/AnimeFlow-ios-2.6.7.ipa",
+          "size": 29378160,
           "minOSVersion": "13.0"
         }
       ]
@@ -559,12 +559,12 @@
       "tintColor": "#C09050",
       "versions": [
         {
-          "version": "128.9757",
-          "buildVersion": "128.9757",
+          "version": "128.9775",
+          "buildVersion": "128.9775",
           "date": "2026-11-02",
-          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9757/LSX4-JIT-128.9757.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9757/LSX4-iOS-JIT-128.9757-English.zip)\r\n\r\n- Performance optimizations and fewer frame-rate drops in demanding games.\r\n- Fixes for issues affecting some devices.\r\n- Expanded support for smaller games.\r\n\r\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9757/INSTALLATION.txt)\r\n\r\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
-          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9757/LSX4-JIT-128.9757.ipa",
-          "size": 76878762,
+          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9775/LSX4-JIT-128.9775.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9775/LSX4-iOS-JIT-128.9775-English.zip)\n\n- Optimizations for Bloodborne and The Last of Us.\n- Added FSR upscaling.\n- Other minor improvements.\n\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9775/INSTALLATION.txt)\n\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
+          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9775/LSX4-JIT-128.9775.ipa",
+          "size": 76905447,
           "minOSVersion": "26.0"
         }
       ]
@@ -707,9 +707,9 @@
         {
           "version": "1.1.0",
           "date": "2026-11-02",
-          "localizedDescription": "MoviePilot iOS 1.1.0，新增独立原生全局搜索页，统一搜索入口与实时壁纸玻璃背景。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 全局搜索改为独立原生页面，提供媒体、资源和应用搜索；类型统一为“影视、音乐、合集、人物”。不同类型显示各自可用的数据源，资源、音乐资源、字幕分别保留站点选择。\n- 搜索分类独立呈现：功能、订阅、插件匹配统一归入“应用”，不再混入媒体和资源。站点在页面中仅显示已选名称，点击后集中选择，确认选择后仍由页面主按钮执行搜索。资源分类明确为“影视资源、音乐资源、字幕”，省去重复分类说明和“可多选”提示。\n- 搜索改为独立导航入口，首页不包含来源业务页的历史，结果仅返回搜索首页；仪表板右上角的页面操作平铺为一级菜单。\n- 右上角操作菜单移除重复的搜索入口；修复独立搜索覆盖栏目恢复位置的问题，导航栏目可直接离开搜索并恢复来源页面（需同步更新前端）。\n- 最近搜索放在搜索按钮之前，应用内的功能入口与功能匹配合并为同一分组。兼容旧前端的逐站点投影，主页面只显示已选站点摘要，完整列表在独立选择层中展开。\n- 文件统计弹窗在 App 中使用带左右留白的独立头部卡片，四角统一圆角。\n- 仪表盘、推荐、探索的原右下角动作移入右上角“当前页面”，右下角改为搜索入口；其他页面保留原有动作，没有动作时显示搜索，包括原生“更多”页面。\n- 搜索与更多共用实时动态壁纸和原生玻璃材质，排除背景网页的全局提示层，修复明暗切换后离屏分组保留旧材质的问题。\n- 搜索权限、历史关键词和结果跳转继续复用原有业务逻辑，结果页可返回搜索，再回到来源页面。\n\n### 前端兼容\n\n独立搜索需要同时更新至本次重建的 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。版本号保持 3.2.4，请重新下载并部署最新构建产物。旧前端继续使用原搜索浮层；更新后的前端仍兼容旧 App 与普通浏览器。\n\n### 安装\n\n下载 `MoviePilot-1.1.0-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；本次交互已通过合成数据的 iOS 26.1 模拟器验收，覆盖类型切换、壁纸轮播、明暗主题、背景提示隔离与结果返回。未将其视为真实站点搜索或完整真机验收。\n\n构建源码：[dab936f4f697e6487bd9e40b7bc4d1663155ad3d](https://github.com/jxxghp/MoviePilot-App/commit/dab936f4f697e6487bd9e40b7bc4d1663155ad3d)。",
+          "localizedDescription": "MoviePilot iOS 1.1.0，新增独立原生全局搜索页，统一搜索入口与实时壁纸玻璃背景。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 全局搜索改为独立原生页面，提供媒体、资源和应用搜索；类型统一为“影视、音乐、合集、人物”。不同类型显示各自可用的数据源，资源、音乐资源、字幕分别保留站点选择。\n- 搜索分类独立呈现：功能、订阅、插件匹配统一归入“应用”，不再混入媒体和资源。站点在页面中仅显示已选名称，点击后集中选择，确认选择后仍由页面主按钮执行搜索。资源分类明确为“影视资源、音乐资源、字幕”，省去重复分类说明和“可多选”提示。\n- 右上角操作按钮改为 44pt 圆形玻璃按钮，移除系统共享背景造成的额外横向留白。\n- 推荐、探索右上角菜单改用“自定义推荐”“自定义探索标签”等真实功能名称，保留“当前页面”分组标题，兼容旧前端。\n- 搜索改为独立导航入口，首页不包含来源业务页的历史，结果仅返回搜索首页；仪表板右上角的页面操作平铺为一级菜单。\n- 右上角操作菜单移除重复的搜索入口；修复独立搜索覆盖栏目恢复位置的问题，导航栏目可直接离开搜索并恢复来源页面（需同步更新前端）。\n- 最近搜索放在搜索按钮之前，应用内的功能入口与功能匹配合并为同一分组。兼容旧前端的逐站点投影，主页面只显示已选站点摘要，完整列表在独立选择层中展开。\n- 文件统计弹窗在 App 中使用带左右留白的独立头部卡片，四角统一圆角。\n- 仪表盘、推荐、探索的原右下角动作移入右上角“当前页面”，右下角改为搜索入口；其他页面保留原有动作，没有动作时显示搜索，包括原生“更多”页面。\n- 搜索与更多共用实时动态壁纸和原生玻璃材质，排除背景网页的全局提示层，修复明暗切换后离屏分组保留旧材质的问题。\n- 搜索权限、历史关键词和结果跳转继续复用原有业务逻辑，结果页可返回搜索，再回到来源页面。\n\n### 前端兼容\n\n独立搜索需要同时更新至本次重建的 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。版本号保持 3.2.4，请重新下载并部署最新构建产物。旧前端继续使用原搜索浮层；更新后的前端仍兼容旧 App 与普通浏览器。\n\n### 安装\n\n下载 `MoviePilot-1.1.0-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；本次交互已通过合成数据的 iOS 26.1 模拟器验收，覆盖类型切换、壁纸轮播、明暗主题、背景提示隔离与结果返回。未将其视为真实站点搜索或完整真机验收。\n\n构建源码：[882c65fd58b49fa34729f2b073ade726633d88ba](https://github.com/jxxghp/MoviePilot-App/commit/882c65fd58b49fa34729f2b073ade726633d88ba)。",
           "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.1.0/MoviePilot-1.1.0-unsigned.ipa",
-          "size": 4209372,
+          "size": 4210642,
           "minOSVersion": "17.0"
         }
       ]
@@ -1242,6 +1242,28 @@
   ],
   "news": [
     {
+      "appID": "com.llayerlinux.LSX4RuntimeProbe",
+      "title": "LSX4 128.9775 · 02 Nov 2026",
+      "identifier": "LSX4-release-ios-jit-128.9775",
+      "caption": "LSX4 128.9775 is available.",
+      "date": "2026-11-02T21:44:50Z",
+      "tintColor": "#C09050",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
+      "notify": true,
+      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9775"
+    },
+    {
+      "appID": "com.ligg.anime_flow",
+      "title": "AnimeFlow 2.6.7 · 02 Nov 2026",
+      "identifier": "AnimeFlow-release-v2.6.7",
+      "caption": "AnimeFlow 2.6.7 is available.",
+      "date": "2026-11-02T19:29:02Z",
+      "tintColor": "#124EB3",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
+      "notify": true,
+      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.7"
+    },
+    {
       "appID": "com.example.piliplus",
       "title": "PiliPlus 2.2.0 · 02 Nov 2026",
       "identifier": "PiliPlus-release-2.2.0.1",
@@ -1284,17 +1306,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
       "notify": true,
       "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.6.4"
-    },
-    {
-      "appID": "com.llayerlinux.LSX4RuntimeProbe",
-      "title": "LSX4 128.9757 · 02 Nov 2026",
-      "identifier": "LSX4-release-ios-jit-128.9757",
-      "caption": "LSX4 128.9757 is available.",
-      "date": "2026-11-02T01:48:28Z",
-      "tintColor": "#C09050",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
-      "notify": true,
-      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9757"
     },
     {
       "appID": "org.moviepilot.app",
@@ -1504,17 +1515,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/news.png",
       "notify": true,
       "url": "https://github.com/TarbleFR/RewindBox/releases/tag/0.0.10"
-    },
-    {
-      "appID": "com.ligg.anime_flow",
-      "title": "AnimeFlow 2.6.6 · 26 Oct 2026",
-      "identifier": "AnimeFlow-release-v2.6.6",
-      "caption": "AnimeFlow 2.6.6 is available.",
-      "date": "2026-10-26T08:58:38Z",
-      "tintColor": "#124EB3",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
-      "notify": true,
-      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.6"
     },
     {
       "appID": "org.animeko.animeko",

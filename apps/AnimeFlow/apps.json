@@ -21,11 +21,11 @@
       "tintColor": "#124EB3",
       "versions": [
         {
-          "version": "2.6.6",
-          "date": "2026-10-26",
-          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.6 更新\n\n- 这是热修版本，修复桌面端视频解析时切换视频源出现的闪退问题，具体的更新内容在 设置->关于->更新信息页面查看2.6.5更新信息\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
-          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.6/AnimeFlow-ios-2.6.6.ipa",
-          "size": 29290748,
+          "version": "2.6.7",
+          "date": "2026-11-02",
+          "localizedDescription": "### 🔄 更新内容\r\n\r\n## 2.6.7 更新\r\n\r\n## 新增\r\n\r\n- 播放页竖屏时播放器右上角添加更多功能按钮 #118\r\n- 页面标题栏和导航栏支持磨砂玻璃风格(可在页面设置中关闭恢复旧版风格)\r\n- 新增设备原生播放器内核(支持Android、ios、Macos)，可在视频设置中切换\r\n- 规则下载支持更多线路选择\r\n- 应用内版本更新支持镜像加速选择(下个版本生效)\r\n\r\n## 优化\r\n\r\n- 优化推荐、排行榜、用户收藏页面大屏时滚动卡顿问题\r\n- 播放器缓冲速度不在使用设备实时网速，改用真是的视频缓冲速度(仅支持mpv内核)\r\n\r\n## 修复\r\n\r\n- 修复封面下载失败问题 #121\r\n- 修复mdk内核每次快退视频进度时都需要重新缓冲问题\r\n- 标准化ios包名(需要手动删除旧应用) #117\r\n\r\n---\r\n\r\n### 📦 下载\r\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\r\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\r\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
+          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.7/AnimeFlow-ios-2.6.7.ipa",
+          "size": 29378160,
           "minOSVersion": "13.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.ligg.anime_flow",
-      "title": "AnimeFlow 2.6.6 · 26 Oct 2026",
-      "identifier": "AnimeFlow-release-v2.6.6",
-      "caption": "AnimeFlow 2.6.6 is available.",
-      "date": "2026-10-26T08:58:38Z",
+      "title": "AnimeFlow 2.6.7 · 02 Nov 2026",
+      "identifier": "AnimeFlow-release-v2.6.7",
+      "caption": "AnimeFlow 2.6.7 is available.",
+      "date": "2026-11-02T19:29:02Z",
       "tintColor": "#124EB3",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
       "notify": true,
-      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.6"
+      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.7"
     }
   ]
 }
