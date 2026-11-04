@@ -21,11 +21,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.1.0",
-          "date": "2026-11-02",
-          "localizedDescription": "MoviePilot iOS 1.1.0，新增独立原生全局搜索页，统一搜索入口与实时壁纸玻璃背景。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 全局搜索改为独立原生页面，提供媒体、资源和应用搜索；类型统一为“影视、音乐、合集、人物”。不同类型显示各自可用的数据源，资源、音乐资源、字幕分别保留站点选择。\n- 搜索分类独立呈现：功能、订阅、插件匹配统一归入“应用”，不再混入媒体和资源。站点在页面中仅显示已选名称，点击后集中选择，确认选择后仍由页面主按钮执行搜索。资源分类明确为“影视资源、音乐资源、字幕”，省去重复分类说明和“可多选”提示。\n- 右上角操作按钮改为 44pt 圆形玻璃按钮，移除系统共享背景造成的额外横向留白。\n- 推荐、探索右上角菜单改用“自定义推荐”“自定义探索标签”等真实功能名称，保留“当前页面”分组标题，兼容旧前端。\n- 搜索改为独立导航入口，首页不包含来源业务页的历史，结果仅返回搜索首页；仪表板右上角的页面操作平铺为一级菜单。\n- 右上角操作菜单移除重复的搜索入口；修复独立搜索覆盖栏目恢复位置的问题，导航栏目可直接离开搜索并恢复来源页面（需同步更新前端）。\n- 最近搜索放在搜索按钮之前，应用内的功能入口与功能匹配合并为同一分组。兼容旧前端的逐站点投影，主页面只显示已选站点摘要，完整列表在独立选择层中展开。\n- 文件统计弹窗在 App 中使用带左右留白的独立头部卡片，四角统一圆角。\n- 仪表盘、推荐、探索的原右下角动作移入右上角“当前页面”，右下角改为搜索入口；其他页面保留原有动作，没有动作时显示搜索，包括原生“更多”页面。\n- 搜索与更多共用实时动态壁纸和原生玻璃材质，排除背景网页的全局提示层，修复明暗切换后离屏分组保留旧材质的问题。\n- 搜索权限、历史关键词和结果跳转继续复用原有业务逻辑，结果页可返回搜索，再回到来源页面。\n\n### 前端兼容\n\n独立搜索需要同时更新至本次重建的 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。版本号保持 3.2.4，请重新下载并部署最新构建产物。旧前端继续使用原搜索浮层；更新后的前端仍兼容旧 App 与普通浏览器。\n\n### 安装\n\n下载 `MoviePilot-1.1.0-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；本次交互已通过合成数据的 iOS 26.1 模拟器验收，覆盖类型切换、壁纸轮播、明暗主题、背景提示隔离与结果返回。未将其视为真实站点搜索或完整真机验收。\n\n构建源码：[882c65fd58b49fa34729f2b073ade726633d88ba](https://github.com/jxxghp/MoviePilot-App/commit/882c65fd58b49fa34729f2b073ade726633d88ba)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.1.0/MoviePilot-1.1.0-unsigned.ipa",
-          "size": 4210642,
+          "version": "1.1.1",
+          "date": "2026-11-03",
+          "localizedDescription": "MoviePilot iOS 1.1.1，修复原生“更多”和搜索页面中 AI 助手形象透出、显示但无法点击的问题。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 原生“更多”和搜索页面隐藏网页侧的助手悬浮入口与桌面形象，避免从原生菜单卡片间透出不可点击的机器人。\n- 离开这些页面后自动恢复助手；保留形象实例与状态，不改变原有路由和手势。\n- 保留动态壁纸、主题与业务 Sheet 的原有处理。\n\n### 前端兼容\n\n此修复只需升级 App，无需为此更新前端。独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本；旧前端继续使用原搜索浮层。\n\n### 安装\n\n下载 `MoviePilot-1.1.1-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；安装前需自行重签。\n\n构建源码：[aee8fc31ef29ad36a5833529df1f71b95fe8e41f](https://github.com/jxxghp/MoviePilot-App/commit/aee8fc31ef29ad36a5833529df1f71b95fe8e41f)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.1.1/MoviePilot-1.1.1-unsigned.ipa",
+          "size": 4210674,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.1.0 · 02 Nov 2026",
-      "identifier": "MoviePilot-release-v1.1.0",
-      "caption": "MoviePilot 1.1.0 is available.",
-      "date": "2026-11-02T01:18:43Z",
+      "title": "MoviePilot 1.1.1 · 03 Nov 2026",
+      "identifier": "MoviePilot-release-v1.1.1",
+      "caption": "MoviePilot 1.1.1 is available.",
+      "date": "2026-11-03T23:29:01Z",
       "tintColor": "#8844F6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
       "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.1.0"
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.1.1"
     }
   ]
 }

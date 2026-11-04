@@ -608,11 +608,11 @@
       "tintColor": "#7B68EE",
       "versions": [
         {
-          "version": "0.1.3",
-          "date": "2026-10-03",
-          "localizedDescription": "### New\n- **In-app JIT: no StikDebug needed.** Madeira can enable JIT by itself through a bundled helper built on StikJIT. On iOS 27 it pairs with the iPhone it runs on: in Settings › Privacy & Security › Developer Mode, tap **Pair with Madeira** and enter the PIN Madeira shows. No computer needed. On iOS 26, import a pairing file instead. The pairing is kept in the Keychain. StikDebug still works. (#127)\n- **Play turns JIT on for you.** If JIT is off, Play enables it and then starts the game. The button reads **Starting JIT** meanwhile.\n- **Madeira JIT shortcut (iOS 27, optional).** LocalDevVPN's loopback does not work over cellular data. The shortcut connects LocalDevVPN, turns Cellular Data off when there is no Wi-Fi, and puts both back once the game has started, along with any VPN you were using. Add it during setup or in Settings › JIT.\n- **Steam Cloud saves** for installed Steam games, on by default. Saves sync before and after you play, and the cloud copy is backed up before it is replaced. (#130)\n- **A controller as keyboard and mouse**, chosen per game, with a Controller binds page. DirectInput is now a per-game choice too. (#128)\n- **Setup** starts by installing LocalDevVPN when it is missing. It opens once more after this update, so you can pick one of the new JIT options.\n\n### Fixed\n- Games start faster: Wine starts as soon as the wineserver is ready, not after a fixed 2 s. (#125)\n- Cuphead (#107), Nine Sols (#108) and Hades II (#119, #120) now run, and Steam app info with escaped quotes is read correctly (#118).\n- JIT errors now explain the problem and offer a fix: **Pair Again** or **Connect LocalDevVPN**. The error also shows on the Settings tab.\n\n### Known issues\n- With Wi-Fi and Cellular Data both off, LocalDevVPN cannot connect, so JIT cannot be enabled, even with the shortcut. Connect LocalDevVPN while a network is available.\n\n### Install\n- Requires **iOS 26 or later**. In-app pairing and the Madeira JIT shortcut need iOS 27.\n- If your sideloader asks whether to keep app extensions, keep them: Madeira's in-app JIT runs in one.\n- The IPA is ad-hoc signed (no certificate) and carries the app's entitlements, including the increased memory limit. Sideload it with your own Apple ID (SideStore, AltStore, Sideloadly, Plume or similar), which signs it for your device.\n- First-run setup walks you through JIT. Settings shows JIT and Memory+ with green checks and says **Ready to play**.\n\n### Not included\nThe Microsoft Visual C++ runtime DLLs are not redistributed (see `legal/THIRD-PARTY-NOTICES.md`). Building from source: `tools/fetch-vcruntime.md`.\n\nThanks to Dan Perks ([@danperks](https://github.com/danperks)) for in-app JIT and pairing, Jesse ([@JesseLovelace](https://github.com/JesseLovelace)) for Steam Cloud saves, faster launches and the game fixes, and Nick ([@125hz](https://github.com/125hz)) for keyboard-and-mouse controllers.",
-          "downloadURL": "https://github.com/willfaust/Madeira/releases/download/v0.1.3/Madeira-0.1.3.ipa",
-          "size": 145554426,
+          "version": "0.2.0",
+          "date": "2026-11-04",
+          "localizedDescription": "### New\n- **More stores.** Madeira has a new **GOG** section: sign in with GOG's own login page, see your library, download and update games with the DLC you own, verify and repair them, and play with Galaxy achievements and stats (Madeira stands in for GOG Galaxy). A new **EA app** section: sign in, see your library and download games without the EA app. A new **itch.io** store shows your itch.io games and free games, and downloads and installs them, .7z archives included. **Epic Games** now handles game downloads and cloud saves together.\n- **Store tabs.** With more than one store on the library page, a row of tabs at the top (All, Steam, Other, GOG, itch.io, Epic, EA) shows one store at a time. All is the page as before; the tab you pick is remembered.\n- **Steam:**\n  - DLC downloads with the game, with a switch per DLC\n  - beta branches, with beta codes\n  - a Workshop page per game\n  - achievements\n  - choosing the game's language\n  - downloading from a PC on the same network\n  - faster repairs\n  - a switch that turns Steam Cloud off\n- **A redesigned library.** Game details pages, a starting screen, and Settings split into pages. You can also turn on a zoomable grid in Settings › Appearance › New library grid.\n- **Recommended settings** for many games, with Reset to Recommended. Share Setup sends a game's setup to someone else.\n- **Get Help from Claude** on a game's page shares a fixes guide together with your log and config.\n- **Translations:** German, Spanish, Korean, Brazilian Portuguese and Russian.\n- **External drives**, save backups and Home Screen shortcuts.\n- **Games and downloads keep running** when you leave Madeira.\n- **Wine Mono and Wine Gecko** download for you, without Wine's download windows.\n- **Graphics:**\n  - MetalFX upscaling per game\n  - experimental frame generation\n  - a per-game picker for the graphics card the game sees\n  - FPS limits, including 40 FPS on 120 Hz screens\n  - an optional thermal frame cap\n- **The performance overlay** has a Column layout that you can drag anywhere on the screen.\n- **Controllers and touch controls:**\n  - rumble, adaptive triggers and the lightbar on real controllers\n  - an optional DualSense / DirectInput mode\n  - gyro aim and turbo\n  - touch control gesture zones\n  - a size slider per touch control, and the editor's panels close when you tap outside them\n  - a **Button style** for touch controls: Glass (Liquid Glass) or Solid (plain opaque buttons), in the in-game menu and in Settings › Appearance\n- **On iPad:** Command-V pastes into games, and the mouse wheel scrolls.\n- **On iPhone:** a Bluetooth or USB mouse works with AssistiveTouch on; mouse-look no longer stops at the screen edges.\n- **JIT:** Madeira offers StikDebug when the built-in helper is not available.\n\n### Fixed\n- **Native D3D12:** many fixes, including DXIL tessellation, shader caching and faster pipeline builds.\n- **Memory and JIT:** many fixes, so large 64-bit and 32-bit games crash less often.\n- **Per-game AVX / AVX2**, for games that quit with c000001d.\n- **Steam CEG games** can start through Madeira Dock.\n- **Launchers that offered to install a game that was already installed:** Madeira Dock now writes the Registry values from a game's install scripts before the start, as Steam's desktop client does.\n- **Rockstar Games Launcher / Social Club 2.4.0.296** (the update of 3 November) loads its pages again.\n- **The touch controls' Opacity slider** now fades the buttons on iOS 26; it only faded their labels before.\n- **Game pills:** the 32-bit / 64-bit and DirectX pills under each game are gone, because they were often wrong. The size pill stays.\n\n### Known issues\n- Some Steam games with CEG copy protection still stop with \"Madeira Dock stopped\" on first start.\n- The GOG and EA app sections are new. Please send a log if something goes wrong.\n\n### Install\n- Requires **iOS 26 or later**. In-app pairing and the Madeira JIT shortcut need iOS 27.\n- If your sideloader asks whether to keep app extensions, keep them: Madeira's in-app JIT runs in one.\n- The IPA is ad-hoc signed (no certificate) and carries the app's entitlements, including the increased memory limit. Sideload it with your own Apple ID (SideStore, AltStore, Sideloadly, Plume or similar), which signs it for your device.\n\n### Not included\nThe Microsoft Visual C++ runtime DLLs are not redistributed (see `legal/THIRD-PARTY-NOTICES.md`). Building from source: `tools/fetch-vcruntime.md`.\n\nThanks to everyone who sent pull requests, logs and test results since 0.1.3.",
+          "downloadURL": "https://github.com/willfaust/Madeira/releases/download/v0.2.0/Madeira-0.2.0.ipa",
+          "size": 186400561,
           "minOSVersion": "17.0"
         }
       ]
@@ -729,11 +729,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.1.0",
-          "date": "2026-11-02",
-          "localizedDescription": "MoviePilot iOS 1.1.0，新增独立原生全局搜索页，统一搜索入口与实时壁纸玻璃背景。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 全局搜索改为独立原生页面，提供媒体、资源和应用搜索；类型统一为“影视、音乐、合集、人物”。不同类型显示各自可用的数据源，资源、音乐资源、字幕分别保留站点选择。\n- 搜索分类独立呈现：功能、订阅、插件匹配统一归入“应用”，不再混入媒体和资源。站点在页面中仅显示已选名称，点击后集中选择，确认选择后仍由页面主按钮执行搜索。资源分类明确为“影视资源、音乐资源、字幕”，省去重复分类说明和“可多选”提示。\n- 右上角操作按钮改为 44pt 圆形玻璃按钮，移除系统共享背景造成的额外横向留白。\n- 推荐、探索右上角菜单改用“自定义推荐”“自定义探索标签”等真实功能名称，保留“当前页面”分组标题，兼容旧前端。\n- 搜索改为独立导航入口，首页不包含来源业务页的历史，结果仅返回搜索首页；仪表板右上角的页面操作平铺为一级菜单。\n- 右上角操作菜单移除重复的搜索入口；修复独立搜索覆盖栏目恢复位置的问题，导航栏目可直接离开搜索并恢复来源页面（需同步更新前端）。\n- 最近搜索放在搜索按钮之前，应用内的功能入口与功能匹配合并为同一分组。兼容旧前端的逐站点投影，主页面只显示已选站点摘要，完整列表在独立选择层中展开。\n- 文件统计弹窗在 App 中使用带左右留白的独立头部卡片，四角统一圆角。\n- 仪表盘、推荐、探索的原右下角动作移入右上角“当前页面”，右下角改为搜索入口；其他页面保留原有动作，没有动作时显示搜索，包括原生“更多”页面。\n- 搜索与更多共用实时动态壁纸和原生玻璃材质，排除背景网页的全局提示层，修复明暗切换后离屏分组保留旧材质的问题。\n- 搜索权限、历史关键词和结果跳转继续复用原有业务逻辑，结果页可返回搜索，再回到来源页面。\n\n### 前端兼容\n\n独立搜索需要同时更新至本次重建的 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。版本号保持 3.2.4，请重新下载并部署最新构建产物。旧前端继续使用原搜索浮层；更新后的前端仍兼容旧 App 与普通浏览器。\n\n### 安装\n\n下载 `MoviePilot-1.1.0-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；本次交互已通过合成数据的 iOS 26.1 模拟器验收，覆盖类型切换、壁纸轮播、明暗主题、背景提示隔离与结果返回。未将其视为真实站点搜索或完整真机验收。\n\n构建源码：[882c65fd58b49fa34729f2b073ade726633d88ba](https://github.com/jxxghp/MoviePilot-App/commit/882c65fd58b49fa34729f2b073ade726633d88ba)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.1.0/MoviePilot-1.1.0-unsigned.ipa",
-          "size": 4210642,
+          "version": "1.1.1",
+          "date": "2026-11-03",
+          "localizedDescription": "MoviePilot iOS 1.1.1，修复原生“更多”和搜索页面中 AI 助手形象透出、显示但无法点击的问题。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 原生“更多”和搜索页面隐藏网页侧的助手悬浮入口与桌面形象，避免从原生菜单卡片间透出不可点击的机器人。\n- 离开这些页面后自动恢复助手；保留形象实例与状态，不改变原有路由和手势。\n- 保留动态壁纸、主题与业务 Sheet 的原有处理。\n\n### 前端兼容\n\n此修复只需升级 App，无需为此更新前端。独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本；旧前端继续使用原搜索浮层。\n\n### 安装\n\n下载 `MoviePilot-1.1.1-unsigned.ipa`，使用自己的 Apple 账户通过 SideStore、AltStore Classic 或 Sideloadly 重签后覆盖安装。小组件需要同时重签扩展并保留共享组。免费签名通常 7 天有效。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建；安装前需自行重签。\n\n构建源码：[aee8fc31ef29ad36a5833529df1f71b95fe8e41f](https://github.com/jxxghp/MoviePilot-App/commit/aee8fc31ef29ad36a5833529df1f71b95fe8e41f)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.1.1/MoviePilot-1.1.1-unsigned.ipa",
+          "size": 4210674,
           "minOSVersion": "17.0"
         }
       ]
@@ -1266,6 +1266,28 @@
   ],
   "news": [
     {
+      "appID": "com.willfaust.madeora",
+      "title": "Madeira 0.2.0 · 04 Nov 2026",
+      "identifier": "Madeira-release-v0.2.0",
+      "caption": "Madeira 0.2.0 is available.",
+      "date": "2026-11-04T03:29:04Z",
+      "tintColor": "#7B68EE",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Madeira/images/news.png",
+      "notify": true,
+      "url": "https://github.com/willfaust/Madeira/releases/tag/v0.2.0"
+    },
+    {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 1.1.1 · 03 Nov 2026",
+      "identifier": "MoviePilot-release-v1.1.1",
+      "caption": "MoviePilot 1.1.1 is available.",
+      "date": "2026-11-03T23:29:01Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.1.1"
+    },
+    {
       "appID": "com.google.ios.youtube",
       "title": "YouProEXTRA 21.44.4 · 03 Nov 2026",
       "identifier": "YouProEXTRA-release-youproextra-ipa3",
@@ -1363,17 +1385,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
       "notify": true,
       "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.6.4"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.1.0 · 02 Nov 2026",
-      "identifier": "MoviePilot-release-v1.1.0",
-      "caption": "MoviePilot 1.1.0 is available.",
-      "date": "2026-11-02T01:18:43Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.1.0"
     },
     {
       "appID": "com.kodjodevf.mangayomi",
@@ -1715,17 +1726,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/news.png",
       "notify": true,
       "url": "https://github.com/intraducine/iridium/releases/tag/v0.2.0"
-    },
-    {
-      "appID": "com.willfaust.madeora",
-      "title": "Madeira 0.1.3 · 03 Oct 2026",
-      "identifier": "Madeira-release-v0.1.3",
-      "caption": "Madeira 0.1.3 is available.",
-      "date": "2026-10-03T16:49:54Z",
-      "tintColor": "#7B68EE",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Madeira/images/news.png",
-      "notify": true,
-      "url": "https://github.com/willfaust/Madeira/releases/tag/v0.1.3"
     },
     {
       "appID": "com.makr.orchard",
