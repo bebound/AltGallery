@@ -1,0 +1,43 @@
+# altgen config for the Silverphase AltStore source.
+# Run: uvx altgen -c config.toml
+# Silverphase: native film and print process simulator for iPhone and iPad
+
+[github]
+repo = "akinal5765-byte/Silverphase"
+
+[source]
+name = "Silverphase"
+subtitle = "Silverphase AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Silverphase"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/icon.png"
+website = "https://github.com/akinal5765-byte/Silverphase"
+tint_color = "#FF9F0A"
+
+[app]
+name = "Silverphase"
+bundle_identifier = "com.silverphase.editor"
+developer_name = "akinal5765-byte"
+subtitle = "Native film and print simulation for iPhone and iPad"
+description = "Take a photograph through camera input, film, development, print and scan. Choose film and paper, then shape the image with exposure, development contrast, filtration and physical frame size, with grain, halation and film edges formed in the same imaging pipeline."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/canvas.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/panel.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/materials.png",
+]
+tint_color = "#FF9F0A"
+min_os_version = "18.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): match the unsigned iOS ipa, not macOS dmg
+asset_pattern = ".*iOS-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/news.png"
+
+[output]
+path = "apps.json"
