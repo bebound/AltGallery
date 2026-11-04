@@ -21,11 +21,11 @@
       "tintColor": "#F0D060",
       "versions": [
         {
-          "version": "0.3.26",
-          "date": "2026-11-03",
-          "localizedDescription": "### Added\n\n- **macOS**: desktop lyrics now sing along — with 逐字歌词（卡拉OK） on, the floating line lights up character by character from the song's word timings, the same wipe as the now-playing page; it freezes while paused and keeps running with the main window hidden (#174).\n\n### Improved\n\n- **macOS**: the About window credits MOE AI LLC.\n\n---\n\n### 新增\n\n- **macOS**：桌面歌词支持逐字卡拉 OK——开启「逐字歌词（卡拉OK）」后，悬浮歌词按歌曲的逐字时间逐个亮起，与播放页同一套扫光；暂停时停住，主窗口隐藏时照常运行（#174）。\n\n### 改进\n\n- **macOS**：关于窗口的版权署名改为 MOE AI LLC。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.26/Kumone-iOS-0.3.26.ipa",
-          "size": 4001101,
+          "version": "0.3.28",
+          "date": "2026-11-04",
+          "localizedDescription": "### Improved\n\n- **macOS**: the bundle identifier is now `sb.moe.kumone`. After updating, settings and caches start fresh, the first-launch check appears once more, the iCloud sync passphrase has to be entered again and system permissions (such as notifications) need granting again; sign-in and offline downloads carry over.\n- **iOS**: the bundle identifier is now `sb.moe.kumone-ios`. AltStore and other sideloading tools install it as a separate app; once it is set up, the old one can be deleted.\n\n---\n\n### 改进\n\n- **macOS**：bundle ID 改为 `sb.moe.kumone`。更新后设置和缓存会重置，需要再做一次首次启动验证、重新输入 iCloud 同步口令，并重新授予通知等系统权限；登录状态和离线下载保留。\n- **iOS**：bundle ID 改为 `sb.moe.kumone-ios`。AltStore 等侧载工具会把它装成一个新的 App，设置好之后可以删除旧版。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.28/Kumone-iOS-0.3.28.ipa",
+          "size": 4037666,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone",
-      "title": "Kumone 0.3.26 · 03 Nov 2026",
-      "identifier": "Kumone-release-v0.3.26",
-      "caption": "Kumone 0.3.26 is available.",
-      "date": "2026-11-03T11:01:25Z",
+      "title": "Kumone 0.3.28 · 04 Nov 2026",
+      "identifier": "Kumone-release-v0.3.28",
+      "caption": "Kumone 0.3.28 is available.",
+      "date": "2026-11-04T13:13:45Z",
       "tintColor": "#F0D060",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.26"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.28"
     }
   ]
 }
