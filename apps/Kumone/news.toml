@@ -8,10 +8,10 @@ tagline = "雲の音 · 原生 NetEase Cloud Music 客户端"
 # Color notes — each key below controls one element of the image. All are
 # optional: unset keys are auto-derived. Shown values are the current result.
 [colors]
-# tint = "#F0D060"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
-# tint_alt = "#F0D060"      # bottom-right glow (default: [source] tint_color)
-# background = "#0C111D"    # gradient base (derived from the icon's dominant color)
-# bg_mid = "#0C111D"        # gradient mid stop (derived from background)
-# bg_dark = "#0C111D"       # gradient end stop (derived from background)
+# tint = "#EC4949"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#EC4949"      # bottom-right glow (default: [source] tint_color)
+# background = "#EBD8D6"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#F3E8E7"        # gradient mid stop (derived from background)
+# bg_dark = "#DEBEBB"       # gradient end stop (derived from background)
 # text_color = "#111111"    # app name (auto white/black)
-# tagline_color = "#F0D060" # tagline text (derived from background)
+# tagline_color = "#BD5C51" # tagline text (derived from background)
