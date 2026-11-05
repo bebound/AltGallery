@@ -22,11 +22,11 @@
       "tintColor": "#E5A019",
       "versions": [
         {
-          "version": "2.0.7",
-          "date": "2026-10-28",
-          "localizedDescription": "## Release v2.0.7\n\nMulti-platform build from `4dab1d356e079c3c4f5a76853cfa92320d6a8598`.\n\n### iOS (IPA Non-Signé)\nÀ installer via SideStore / AltStore.\n\n### Android (APK)\nInstallation directe.\n\n### Checksums\n\n| Fichier | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `aab1c16b178c712d1531acb3fb51b9d7` | `379529c258e16cb94fca118569db9599bbbb698ba4f625f628a66260bbbe6098` |",
-          "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.0.7-b65/rush-hours-unsigned.ipa",
-          "size": 18865769,
+          "version": "2.1.0",
+          "date": "2026-11-05",
+          "localizedDescription": "## Release v2.1.0\n\nMulti-platform build from `d05b69b37c0481ecab180aad472af58c8eed7866`.\n\n### iOS (IPA Non-Signé)\nÀ installer via SideStore / AltStore.\n\n### Android (APK)\nInstallation directe.\n\n### Checksums\n\n| Fichier | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `f8591583a8e647db4f1b89a6c9e674c6` | `fc96beddcfc24672ae96233d540228bf93a8fe2be8b6da659f88d486480b9af7` |",
+          "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.1.0-b66/rush-hours-unsigned.ipa",
+          "size": 19030133,
           "minOSVersion": "16.4"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.rushhours.app",
-      "title": "Rush Hours 2.0.7 · 28 Oct 2026",
-      "identifier": "Rush Hours-release-v2.0.7-b65",
-      "caption": "Rush Hours 2.0.7 is available.",
-      "date": "2026-10-28T23:01:47Z",
+      "title": "Rush Hours 2.1.0 · 05 Nov 2026",
+      "identifier": "Rush Hours-release-v2.1.0-b66",
+      "caption": "Rush Hours 2.1.0 is available.",
+      "date": "2026-11-05T08:43:41Z",
       "tintColor": "#E5A019",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
       "notify": true,
-      "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.0.7-b65"
+      "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.1.0-b66"
     }
   ]
 }
