@@ -65,6 +65,9 @@ Manage multiple Apple IDs across App Store regions — browse, download and keep
 ### <a href="https://github.com/thebcd69/bcd-games"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/BCD/icon.png" alt="BCD icon" width="24" align="top">BCD</a>
 Run Windows games on iPhone and iPad — a fast, controller-friendly launcher with Steam and GOG built in, powered by Wine, FEX and Metal.
 
+### <a href="https://github.com/AhmedBafkir/DLiPA"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/DLiPA/icon.png" alt="DLiPA icon" width="24" align="top">DLiPA</a>
+Search the App Store, download any app as an IPA, including older versions, and install or share it with your Apple ID — no jailbreak required.
+
 ### <a href="https://github.com/moliango/doer"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Doer/icon.png" alt="Doer icon" width="24" align="top">Doer</a>
 A native iOS client for Linux.do.
 
