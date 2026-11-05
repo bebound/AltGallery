@@ -4,11 +4,11 @@
   "description": "Auto-updated AltStore source for Kumone",
   "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/icon.png",
   "website": "https://github.com/missuo/kumone",
-  "tintColor": "#F0D060",
+  "tintColor": "#EC4949",
   "apps": [
     {
       "name": "Kumone",
-      "bundleIdentifier": "sb.moe.kumone",
+      "bundleIdentifier": "sb.moe.kumone-ios",
       "developerName": "missuo",
       "subtitle": "原生 NetEase Cloud Music iOS 客户端（雲の音）",
       "localizedDescription": "Kumone（雲の音）— native NetEase Cloud Music client for iOS. Talks directly to NetEase's real API with no third-party server: QR-code login, gray-track unblocking, synced lyrics with translation, immersive artwork-tinted now-playing, and playlist management.\n\nSupports English and Simplified Chinese localization.",
@@ -18,7 +18,7 @@
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/search.png",
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/featured.png"
       ],
-      "tintColor": "#F0D060",
+      "tintColor": "#EC4949",
       "versions": [
         {
           "version": "0.3.28",
@@ -33,12 +33,12 @@
   ],
   "news": [
     {
-      "appID": "sb.moe.kumone",
+      "appID": "sb.moe.kumone-ios",
       "title": "Kumone 0.3.28 · 04 Nov 2026",
       "identifier": "Kumone-release-v0.3.28",
       "caption": "Kumone 0.3.28 is available.",
       "date": "2026-11-04T13:13:45Z",
-      "tintColor": "#F0D060",
+      "tintColor": "#EC4949",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
       "url": "https://github.com/missuo/kumone/releases/tag/v0.3.28"
