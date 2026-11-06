@@ -21,11 +21,11 @@
       "tintColor": "#EC4949",
       "versions": [
         {
-          "version": "0.3.28",
-          "date": "2026-11-04",
-          "localizedDescription": "### Improved\n\n- **macOS**: the bundle identifier is now `sb.moe.kumone`. After updating, settings and caches start fresh, the first-launch check appears once more, the iCloud sync passphrase has to be entered again and system permissions (such as notifications) need granting again; sign-in and offline downloads carry over.\n- **iOS**: the bundle identifier is now `sb.moe.kumone-ios`. AltStore and other sideloading tools install it as a separate app; once it is set up, the old one can be deleted.\n\n---\n\n### 改进\n\n- **macOS**：bundle ID 改为 `sb.moe.kumone`。更新后设置和缓存会重置，需要再做一次首次启动验证、重新输入 iCloud 同步口令，并重新授予通知等系统权限；登录状态和离线下载保留。\n- **iOS**：bundle ID 改为 `sb.moe.kumone-ios`。AltStore 等侧载工具会把它装成一个新的 App，设置好之后可以删除旧版。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.28/Kumone-iOS-0.3.28.ipa",
-          "size": 4037666,
+          "version": "0.3.29",
+          "date": "2026-11-06",
+          "localizedDescription": "### Fixed\n\n- **macOS**: the now-playing page opens and closes cleanly — the page title, search field and sidebar toggle no longer hang over it while it moves, it no longer snaps into place at the end, and the thin white line beside the window buttons is gone; its collapse button is larger, sits in the top-right corner and always answers clicks.\n- **iOS**: adding a song to a playlist from the now-playing page shows the confirmation over the page; a song that is already in the playlist says so, and any other failure is shown inside the playlist picker (#182).\n- **iOS**: the search field stays visible when the Search tab opens.\n\n### Improved\n\n- **macOS**: hiding and showing the sidebar is smooth — the sidebar stays put and the page slides over it, the toggle never leaves its place beside the window buttons, the page title moves with the page, and View → Hide/Show Sidebar (⌃⌘S) is back.\n- **macOS**: the back button follows the sidebar toggle and, like it, is drawn without a glass capsule.\n- **macOS**: in the player bar, the like button sits right after the song title.\n\n---\n\n### 修复\n\n- **macOS**：播放页的打开和收起更干净——移动过程中页面标题、搜索框和侧栏按钮不再浮在播放页上，结束时不再突然跳一下，红绿灯旁的白色细线也没有了；收起按钮更大，移到右上角，并且每次点击都能响应。\n- **iOS**：在播放页把歌曲收藏到歌单时，提示直接显示在播放页上；歌单里已有这首歌时会明确提示，其他失败会显示在歌单选择框里（#182）。\n- **iOS**：打开搜索页时搜索框保持可见。\n\n### 改进\n\n- **macOS**：收起和展开侧栏不再卡顿——侧栏固定不动，由右侧页面滑动覆盖；切换按钮始终在红绿灯旁边不动，页面标题跟随页面移动，「显示」菜单中的「隐藏/显示边栏」（⌃⌘S）也恢复了。\n- **macOS**：返回按钮跟在侧栏按钮之后，并和它一样去掉了玻璃胶囊。\n- **macOS**：播放条里的「喜欢」按钮紧跟在歌名后面。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.29/Kumone-iOS-0.3.29.ipa",
+          "size": 3937238,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone-ios",
-      "title": "Kumone 0.3.28 · 04 Nov 2026",
-      "identifier": "Kumone-release-v0.3.28",
-      "caption": "Kumone 0.3.28 is available.",
-      "date": "2026-11-04T13:13:45Z",
+      "title": "Kumone 0.3.29 · 06 Nov 2026",
+      "identifier": "Kumone-release-v0.3.29",
+      "caption": "Kumone 0.3.29 is available.",
+      "date": "2026-11-06T19:18:52Z",
       "tintColor": "#EC4949",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.28"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.29"
     }
   ]
 }
