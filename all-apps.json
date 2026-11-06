@@ -406,11 +406,11 @@
       "versions": [
         {
           "version": "0.1.3",
-          "buildVersion": "143",
-          "date": "2026-11-03",
-          "localizedDescription": "# iDeck v0.1.3-alpha.5 · Build 143\n\n**Experimental checkpoint — known issue: Steam can freeze after the third game exit.**\n\n## What changed\n\n- Smoother Steam home/library browsing reported on the test iPhone after reducing periodic diagnostics and pausing hidden log parsing.\n- Steam menu now uses the existing window instead of starting a second Steam client and potentially blocking the control helper.\n- Improved consistency when reopening the selected Steam64 runtime and its separate saved-login environment.\n- VM maintenance and safety guards stay enabled. Experimental GPU-auto and V8 JIT are not promoted to defaults.\n\n## What was tested\n\nBuild143 was installed on an iPhone15ProMax/A17Pro. The user confirms the Steam menu works and browsing is more fluid. Hot Roads launched and exited three times; **Steam froze after the third return**. This bug remains open. Full build/native37, focused host checks, final-binary markers, package audit and portable relinking passed. Other games, Bluetooth, older devices and prolonged stability are not validated here.\n\n## Install / upgrade\n\nDownload `iDeck-0.1.3-alpha.5-build143.ipa`, sign it with your own Apple development profiles (including the JIT helper), then complete iDeck's setup/JIT prerequisites. This is an ad-hoc IPA, not pre-signed for your device. Preserve the existing app identity and back up important data before upgrading; avoid uninstalling if you want to retain its data.\n\n[English installation guide](https://github.com/kuscholar/iDeck/blob/release/v0.1.3-alpha.5/docs/INSTALL_IPA.md) · [中文 README](https://github.com/kuscholar/iDeck/blob/release/v0.1.3-alpha.5/README.zh-CN.md)\n\n**Steam64 setup caveat:** the phone test used an already configured separate Steam64/source-CEF environment. This IPA does not contain Steam/CEF files, games, a preconfigured device prefix or anyone's login. Fresh Steam64 setup is not validated as one-click working; ordinary setup/manual import still applies. iDeck runs the Windows Steam client through Madeira; it does not boot SteamOS.\n\n## Source and licenses\n\nThe source companion includes the exact application snapshot, pinned component sources, and the matching FEX131 source overlay/options/build recipe. The relink companion contains the exact main-library inputs and a verified relink command. Component licenses/credits and checksums are attached. No FEX upstream contribution is made. No Valve binaries, games, credentials, personal provisioning profiles or pairing files are included.\n\n---\n\n**中文：这是阶段性预发布，第三次退出游戏后 Steam 仍可能卡住。**\n\n本版改善了 Steam 菜单和主页／游戏库浏览，保留内存维护与安全检查。iPhone15ProMax 上已测试三次进入、退出 Hot Roads，但第三次返回后 Steam 卡住，尚未解决长期稳定性。GPU 加速尚未验证为真正硬件后端，未设为默认。\n\n下载 IPA 后需要用自己的 Apple 开发签名重新签署主 App 和 JIT helper，按安装指南完成前置流程。升级请保留原 App 身份并备份重要数据，避免直接卸载。实测的64位 Steam 使用预先配置的独立环境；IPA 不附带 Steam/CEF、游戏、账号或该手机配置，不能把本次实测当作全新设备一键配置成功。",
-          "downloadURL": "https://github.com/kuscholar/iDeck/releases/download/v0.1.3-alpha.5/iDeck-0.1.3-alpha.5-build143.ipa",
-          "size": 166398909,
+          "buildVersion": "145",
+          "date": "2026-11-06",
+          "localizedDescription": "# Steam64 setup, one step at a time\n\n**Experimental prerelease · Build145 · Known issue: Steam can freeze after the third game exit. This update improves setup; it does not fix that stability issue.**\n\n## What’s new\n\n- **Install Steam64 in the launcher:** downloads the matched Steam/browser packages from Valve over HTTPS, verifies sizes/SHA-256 and installs with rollback. Cancel/retry, Verify/Repair and Return to previous environment are available.\n- **Four clear actions:** Install Steam → Connect LocalDevVPN → Pair this device → Enable JIT. Runtime preparation is automatic, signing/address checks remain mandatory, completed steps are checked/skipped and the view follows the next action.\n- **Pair in iDeck:** starts the existing on-device pairing immediately with live instructions/PIN, without hunting through JIT settings. iOS calls the pairing host Madeira. Advanced methods/import/recovery/account/auto-start settings are collapsed.\n- **Data stays yours:** the original environment remains intact; no auth cache, game or save is silently transferred. Use Valve’s own login and Steam Guard yourself.\n\n## Install and test\n\nDownload `iDeck-0.1.3-alpha.6-build145.ipa` and `SHA256SUMS`, verify the hash, then sign/sideload using your own coherent development main/helper profiles. Keep `MadeiraJITHelper.appex` and debugging permission; signing alone does not activate JIT. Back up saves and keep the same app identity when upgrading—uninstalling can erase local data.\n\nOpen iDeck and follow the highlighted setup step; fully close/reopen when prompted after installing Steam64. For on-device pairing use iOS27; iOS26 offers pairing-file import. Activate JIT again for each new app process.\n\nThe IPA includes the local runtime and pinned source-built open support components, **no Valve Steam client/libcef, games, accounts, maintainer profile or pairing file**. The installer acquires the client from Valve. Both source companions, relink, license/audit and inventory/checksum assets accompany this release.\n\n## What was verified\n\nThe user reports Build144 installation can complete. Build145 passed host ordering/skip/restart/signing/VA checks, installer/rollback/privacy regressions, existing JIT integration checks and full Xcode compilation. Its separate Fresh Test version was development-signed, installed/read back and opened on an iPhone15ProMax; original iDeck was preserved. The public ad-hoc IPA was audited (1480files, no findings), and its105-input relink ran with all30TEXT section hashes matching.\n\nThe complete revised145 first-run UI, another-device sideload/JIT, new Steam login and repeated gameplay have **not** received a new acceptance result; the public IPA was not installed again after ad-hoc packaging. iPad, Bluetooth and arbitrary games are not validated by this release. Full independent-machine/offline runtime rebuilding is not claimed.\n\n## Limits that still matter\n\n- **Third game return may freeze Steam.** Report the first failing stage and game-cycle count.\n- Steam64 does **not** enlarge the device’s virtual address space. Unsupported layouts can still fail;32-bit games/helpers may still hit separate limits. Guards remain enabled.\n- The compatibility snapshot is **Steam manifest1769025840 (January22,2026), CEF126**, held to its matched components. It is not the latest Steam/Chromium and has security/compatibility limitations; future snapshots need fresh review.\n- Game support remains limited. No DRM, authentication or anti-cheat bypass is provided. Never post credentials, Steam Guard data, pairing files, profiles or raw personal logs.\n\nSee [the four-step guide](https://github.com/kuscholar/iDeck/blob/v0.1.3-alpha.6/docs/STEAM64_SETUP.md), [Build145 evidence](https://github.com/kuscholar/iDeck/blob/v0.1.3-alpha.6/docs/release/BUILD145_RESULTS.md) and the bilingual README.",
+          "downloadURL": "https://github.com/kuscholar/iDeck/releases/download/v0.1.3-alpha.6/iDeck-0.1.3-alpha.6-build145.ipa",
+          "size": 173835258,
           "minOSVersion": "26.0"
         }
       ]
@@ -753,11 +753,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.2.0",
-          "date": "2026-11-05",
-          "localizedDescription": "MoviePilot iOS 1.2.0，支持 iOS 16+、iPad 与 iPhone Duo 可调整窗口布局。\n\n本次为 **1.2.0 同版本重新打包**，请重新下载 IPA 后重签安装。\n\n### 更新内容\n\n- 主 App 最低系统版本调整为 iOS 16.0，主 App 与 UI 测试工程保持 iPhone/iPad 设备族配置。\n- 统一 iPhone、iPad 和 iPhone Duo 的竖横屏、窄宽窗口、键盘、搜索、菜单、Sheet 和前后台恢复流程，保持实例与账号会话。\n- 验证 iPhone Duo 合拢、半展开和完全展开三种姿态下的真实账号交互；iPad 与 iPhone 也完成相同关键流程回归。\n- 小组件继续要求 iOS 17.0；iOS 26+ 继续使用系统 Liquid Glass。\n- 修复 App 在后台时点击原生通知崩溃：通知代理的系统完成回调改为在主线程执行。\n- 修复 iPad 底栏过窄、过矮及入口文案省略：可见胶囊与右侧动作均为 64pt，图标与完整文案上下排列，底部安全区单独留白。\n- iOS 16–25 的底栏采用相同的原生按钮布局，避免旧系统 49pt Tab Bar 内容区与 64pt 动作错位；Home 键机型同样保留底部边距。\n- iPhone Duo 的主入口和右下角动作注册到系统信号区域的操作栏，隐藏独立底栏；iOS 26+ 普通 iPhone 保留原有导航。\n\n### 验收边界\n\n本次发布使用 Xcode 27.1 的 iOS 26.1、iOS 27.1 模拟器完成 iPad、iPhone 和 iPhone Duo 的真实账号截图验收。当前 Xcode 安装中没有可用的 iOS 16 模拟器 Runtime，因此 iOS 16 由工程最低部署版本、归档产物和 API 兼容性检查证明；需要 iOS 16 Runtime 截图时，请使用包含该 Runtime 的 Xcode 14.3.1 或更高兼容版本补做验收。\n\n通知点击崩溃已在系统通知横幅中复现，并以相同模拟器流程验证修复；合成载荷不代替 Apple APNs 真机投递。\n\n### 安装\n\n下载 `MoviePilot-1.2.0-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[964483e53dae544611e05a729dd423969f62177e](https://github.com/jxxghp/MoviePilot-App/commit/964483e53dae544611e05a729dd423969f62177e)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.0/MoviePilot-1.2.0-unsigned.ipa",
-          "size": 4225421,
+          "version": "1.2.1",
+          "date": "2026-11-06",
+          "localizedDescription": "MoviePilot iOS 1.2.1，修复切换网络后因上次使用的地址不可达而停留在启动 Logo 的问题。\n\n### 更新内容\n\n- 启动时的初始化检查和登录会话恢复最多等待 15 秒；仍未连通会自动返回服务地址列表并提示，方便从内网地址切换到外网地址。\n- 原生登录成功后，如果网页启动时连接中断，也会自动返回地址列表。\n- 连接失败保留已保存的服务和登录状态；切换地址后撤销旧请求，避免迟到响应打开旧服务。\n- 保留临时故障自动恢复、手动重试和后台暂停检测，密码与验证码不会自动重发。\n\n### 安装\n\n下载 `MoviePilot-1.2.1-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[1b017cf274b6f24e7f5c90424adefa0b71520753](https://github.com/jxxghp/MoviePilot-App/commit/1b017cf274b6f24e7f5c90424adefa0b71520753)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.1/MoviePilot-1.2.1-unsigned.ipa",
+          "size": 4227390,
           "minOSVersion": "17.0"
         }
       ]
@@ -777,11 +777,11 @@
       "tintColor": "#8050F0",
       "versions": [
         {
-          "version": "1.3.0",
+          "version": "1.3.1",
           "date": "2026-11-06",
-          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.0\n- Build Date: 2026-11-06\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* feat: 随机图床插件原生适配 (RandomPic v2.3.1) by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/161\n\n## New Contributors\n* @xijin285 made their first contribution in https://github.com/singleton-altman/MoviePilotLite/pull/161\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.0-2026-10-30...release-v1.3.0-2026-11-06",
-          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.0-2026-11-06/ios-v1.3.0-2026-11-06.ipa",
-          "size": 37490129,
+          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.1\n- Build Date: 2026-11-06\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(android): 订阅日历小组件去除重复时间文案并适配更多尺寸 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/163\n* 适配 MoviePilot v3 与多服务器:信封按形状解封、设置原生类型、媒体库按可用服务器加载 by @anlan-home in https://github.com/singleton-altman/MoviePilotLite/pull/154\n* Dev by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/164\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.0-2026-11-06...release-v1.3.1-2026-11-06",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.1-2026-11-06/ios-v1.3.1-2026-11-06.ipa",
+          "size": 37490597,
           "minOSVersion": "15.0"
         }
       ]
@@ -823,16 +823,7 @@
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/detail.png"
       ],
       "tintColor": "#2E2E2E",
-      "versions": [
-        {
-          "version": "2.7.0",
-          "date": "2026-10-31",
-          "localizedDescription": "## Highlights\r\n\r\nWrite community posts in Markdown with a preview. Keep your preferred community sort order between launches. Change your username with a rename card.\r\n\r\n## Fixes\r\n\r\n- Reader title bar now hides with the controls (#213).\r\n- Status bar hides correctly after toast messages (#213).\r\n- Chapter title and page number remain visible with controls hidden (#213).\r\n- Fixed title bar animation on the Duo inner display (#213).\r\n- Fixed layout shifts when opening pages on Duo (#214).\r\n- Post italics, underlines and strikethroughs render correctly (#214).\r\n- Chinese text now displays in italics (#214).\r\n- Post images stay within their table cells (#217).\r\n- Large page titles collapse correctly when scrolling (#216).\r\n\r\n## Other changes\r\n\r\n- Added human verification when requesting registration and password-reset codes (#215).\r\n- Updated shop item usage to follow server availability and results (#215).\r\n- Updated CELIA branding.\r\n\r\n<details>\r\n<summary>Full changelog</summary>\r\n\r\nhttps://github.com/celia-sh/Novella/compare/v2.6.0...v2.7.0\r\n\r\n</details>",
-          "downloadURL": "https://github.com/celia-sh/Novella/releases/download/v2.7.0/Novella-2.7.0-release.ipa",
-          "size": 29786138,
-          "minOSVersion": "16.4"
-        }
-      ]
+      "versions": []
     },
     {
       "name": "Opaline",
@@ -1314,26 +1305,37 @@
   ],
   "news": [
     {
-      "appID": "com.altman.moviepilot",
-      "title": "MoviePilotLite 1.3.0 · 06 Nov 2026",
-      "identifier": "MoviePilotLite-release-release-v1.3.0-2026-11-06",
-      "caption": "MoviePilotLite 1.3.0 is available.",
-      "date": "2026-11-06T05:26:51Z",
-      "tintColor": "#8050F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
-      "notify": true,
-      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.0-2026-11-06"
-    },
-    {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.2.0 · 05 Nov 2026",
-      "identifier": "MoviePilot-release-v1.2.0",
-      "caption": "MoviePilot 1.2.0 is available.",
-      "date": "2026-11-05T17:28:48Z",
+      "title": "MoviePilot 1.2.1 · 06 Nov 2026",
+      "identifier": "MoviePilot-release-v1.2.1",
+      "caption": "MoviePilot 1.2.1 is available.",
+      "date": "2026-11-06T13:43:27Z",
       "tintColor": "#8844F6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
       "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.0"
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.1"
+    },
+    {
+      "appID": "com.altman.moviepilot",
+      "title": "MoviePilotLite 1.3.1 · 06 Nov 2026",
+      "identifier": "MoviePilotLite-release-release-v1.3.1-2026-11-06",
+      "caption": "MoviePilotLite 1.3.1 is available.",
+      "date": "2026-11-06T06:45:48Z",
+      "tintColor": "#8050F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
+      "notify": true,
+      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.1-2026-11-06"
+    },
+    {
+      "appID": "com.kuschqin.madeira.steamui",
+      "title": "iDeck 0.1.3 · 06 Nov 2026",
+      "identifier": "iDeck-release-v0.1.3-alpha.6",
+      "caption": "iDeck 0.1.3 is available.",
+      "date": "2026-11-06T05:45:57Z",
+      "tintColor": "#50D0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kuscholar/iDeck/releases/tag/v0.1.3-alpha.6"
     },
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
@@ -1468,17 +1470,6 @@
       "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.2.0.2"
     },
     {
-      "appID": "com.kuschqin.madeira.steamui",
-      "title": "iDeck 0.1.3 · 03 Nov 2026",
-      "identifier": "iDeck-release-v0.1.3-alpha.5",
-      "caption": "iDeck 0.1.3 is available.",
-      "date": "2026-11-03T04:50:18Z",
-      "tintColor": "#50D0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kuscholar/iDeck/releases/tag/v0.1.3-alpha.5"
-    },
-    {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
       "title": "LSX4 128.9775 · 02 Nov 2026",
       "identifier": "LSX4-release-ios-jit-128.9775",
@@ -1565,17 +1556,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
       "notify": true,
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.2"
-    },
-    {
-      "appID": "sh.celia.novella",
-      "title": "Novella 2.7.0 · 31 Oct 2026",
-      "identifier": "Novella-release-v2.7.0",
-      "caption": "Novella 2.7.0 is available.",
-      "date": "2026-10-31T07:30:59Z",
-      "tintColor": "#2E2E2E",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
-      "notify": true,
-      "url": "https://github.com/celia-sh/Novella/releases/tag/v2.7.0"
     },
     {
       "appID": "com.stik.stikdebug",

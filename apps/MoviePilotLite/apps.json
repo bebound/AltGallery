@@ -21,11 +21,11 @@
       "tintColor": "#8050F0",
       "versions": [
         {
-          "version": "1.3.0",
+          "version": "1.3.1",
           "date": "2026-11-06",
-          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.0\n- Build Date: 2026-11-06\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* feat: 随机图床插件原生适配 (RandomPic v2.3.1) by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/161\n\n## New Contributors\n* @xijin285 made their first contribution in https://github.com/singleton-altman/MoviePilotLite/pull/161\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.0-2026-10-30...release-v1.3.0-2026-11-06",
-          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.0-2026-11-06/ios-v1.3.0-2026-11-06.ipa",
-          "size": 37490129,
+          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.1\n- Build Date: 2026-11-06\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(android): 订阅日历小组件去除重复时间文案并适配更多尺寸 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/163\n* 适配 MoviePilot v3 与多服务器:信封按形状解封、设置原生类型、媒体库按可用服务器加载 by @anlan-home in https://github.com/singleton-altman/MoviePilotLite/pull/154\n* Dev by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/164\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.0-2026-11-06...release-v1.3.1-2026-11-06",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.1-2026-11-06/ios-v1.3.1-2026-11-06.ipa",
+          "size": 37490597,
           "minOSVersion": "15.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.altman.moviepilot",
-      "title": "MoviePilotLite 1.3.0 · 06 Nov 2026",
-      "identifier": "MoviePilotLite-release-release-v1.3.0-2026-11-06",
-      "caption": "MoviePilotLite 1.3.0 is available.",
-      "date": "2026-11-06T05:26:51Z",
+      "title": "MoviePilotLite 1.3.1 · 06 Nov 2026",
+      "identifier": "MoviePilotLite-release-release-v1.3.1-2026-11-06",
+      "caption": "MoviePilotLite 1.3.1 is available.",
+      "date": "2026-11-06T06:45:48Z",
       "tintColor": "#8050F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
       "notify": true,
-      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.0-2026-11-06"
+      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.1-2026-11-06"
     }
   ]
 }
