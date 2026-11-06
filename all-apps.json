@@ -753,11 +753,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.1.3",
+          "version": "1.2.0",
           "date": "2026-11-05",
-          "localizedDescription": "MoviePilot iOS 1.1.3，修复开启原生通知时的错误提示与重试流程。支持 iOS 17+，iOS 26+ 使用系统 Liquid Glass。\n\n### 更新内容\n\n- 开启系统通知前先检查实例的 AppPush 渠道。渠道未启用时明确提示到 MoviePilot「设定 → 通知」中添加并保存，不再误报“请先登录 MoviePilot”。\n- 后台配置恢复后，直接再次点击“开启系统通知”即可重新获取绑定身份，无需退出登录；检查与授权期间避免重复提交。\n- 系统授权返回时再次核对实例与账号，登录状态发生变化时不保存旧账号的通知偏好。\n- 继续默认使用生产 APNs、`com.moviepilot.app` 与 `com.moviepilot.app.widgets`，保留主包推送和共享组、小组件共享组元数据。\n\n### 安装与通知\n\n下载 `MoviePilot-1.1.3-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[bf5a3a7e5f8c4754f12b78c1657d8e598ee9850f](https://github.com/jxxghp/MoviePilot-App/commit/bf5a3a7e5f8c4754f12b78c1657d8e598ee9850f)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.1.3/MoviePilot-1.1.3-unsigned.ipa",
-          "size": 4212182,
+          "localizedDescription": "MoviePilot iOS 1.2.0，支持 iOS 16+、iPad 与 iPhone Duo 可调整窗口布局。\n\n本次为 **1.2.0 同版本重新打包**，请重新下载 IPA 后重签安装。\n\n### 更新内容\n\n- 主 App 最低系统版本调整为 iOS 16.0，主 App 与 UI 测试工程保持 iPhone/iPad 设备族配置。\n- 统一 iPhone、iPad 和 iPhone Duo 的竖横屏、窄宽窗口、键盘、搜索、菜单、Sheet 和前后台恢复流程，保持实例与账号会话。\n- 验证 iPhone Duo 合拢、半展开和完全展开三种姿态下的真实账号交互；iPad 与 iPhone 也完成相同关键流程回归。\n- 小组件继续要求 iOS 17.0；iOS 26+ 继续使用系统 Liquid Glass。\n- 修复 App 在后台时点击原生通知崩溃：通知代理的系统完成回调改为在主线程执行。\n- 修复 iPad 底栏过窄、过矮及入口文案省略：可见胶囊与右侧动作均为 64pt，图标与完整文案上下排列，底部安全区单独留白。\n- iOS 16–25 的底栏采用相同的原生按钮布局，避免旧系统 49pt Tab Bar 内容区与 64pt 动作错位；Home 键机型同样保留底部边距。\n- iPhone Duo 的主入口和右下角动作注册到系统信号区域的操作栏，隐藏独立底栏；iOS 26+ 普通 iPhone 保留原有导航。\n\n### 验收边界\n\n本次发布使用 Xcode 27.1 的 iOS 26.1、iOS 27.1 模拟器完成 iPad、iPhone 和 iPhone Duo 的真实账号截图验收。当前 Xcode 安装中没有可用的 iOS 16 模拟器 Runtime，因此 iOS 16 由工程最低部署版本、归档产物和 API 兼容性检查证明；需要 iOS 16 Runtime 截图时，请使用包含该 Runtime 的 Xcode 14.3.1 或更高兼容版本补做验收。\n\n通知点击崩溃已在系统通知横幅中复现，并以相同模拟器流程验证修复；合成载荷不代替 Apple APNs 真机投递。\n\n### 安装\n\n下载 `MoviePilot-1.2.0-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[964483e53dae544611e05a729dd423969f62177e](https://github.com/jxxghp/MoviePilot-App/commit/964483e53dae544611e05a729dd423969f62177e)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.0/MoviePilot-1.2.0-unsigned.ipa",
+          "size": 4225421,
           "minOSVersion": "17.0"
         }
       ]
@@ -778,10 +778,10 @@
       "versions": [
         {
           "version": "1.3.0",
-          "date": "2026-10-30",
-          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.0\n- Build Date: 2026-10-30\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(dashboard): 首页媒体库卡片去掉重复信息，改单图封面 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/146\n* feat(android): 新增订阅日历桌面小组件 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/157\n* chore(version): update version to 1.3.0 in pubspec.yaml by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/160\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.2.7-2026-10-30...release-v1.3.0-2026-10-30",
-          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.0-2026-10-30/ios-v1.3.0-2026-10-30.ipa",
-          "size": 37444749,
+          "date": "2026-11-06",
+          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.0\n- Build Date: 2026-11-06\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* feat: 随机图床插件原生适配 (RandomPic v2.3.1) by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/161\n\n## New Contributors\n* @xijin285 made their first contribution in https://github.com/singleton-altman/MoviePilotLite/pull/161\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.0-2026-10-30...release-v1.3.0-2026-11-06",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.0-2026-11-06/ios-v1.3.0-2026-11-06.ipa",
+          "size": 37490129,
           "minOSVersion": "15.0"
         }
       ]
@@ -1314,6 +1314,28 @@
   ],
   "news": [
     {
+      "appID": "com.altman.moviepilot",
+      "title": "MoviePilotLite 1.3.0 · 06 Nov 2026",
+      "identifier": "MoviePilotLite-release-release-v1.3.0-2026-11-06",
+      "caption": "MoviePilotLite 1.3.0 is available.",
+      "date": "2026-11-06T05:26:51Z",
+      "tintColor": "#8050F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
+      "notify": true,
+      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.0-2026-11-06"
+    },
+    {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 1.2.0 · 05 Nov 2026",
+      "identifier": "MoviePilot-release-v1.2.0",
+      "caption": "MoviePilot 1.2.0 is available.",
+      "date": "2026-11-05T17:28:48Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.0"
+    },
+    {
       "appID": "com.huamu013.ZhihuMinusMinus",
       "title": "ZhihuMinusMinus 0.9.9 · 05 Nov 2026",
       "identifier": "ZhihuMinusMinus-release-v0.9.9",
@@ -1345,17 +1367,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
       "notify": true,
       "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.1.0-b66"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.1.3 · 05 Nov 2026",
-      "identifier": "MoviePilot-release-v1.1.3",
-      "caption": "MoviePilot 1.1.3 is available.",
-      "date": "2026-11-05T06:25:58Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.1.3"
     },
     {
       "appID": "ani.baka",
@@ -1565,17 +1576,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Novella/images/news.png",
       "notify": true,
       "url": "https://github.com/celia-sh/Novella/releases/tag/v2.7.0"
-    },
-    {
-      "appID": "com.altman.moviepilot",
-      "title": "MoviePilotLite 1.3.0 · 30 Oct 2026",
-      "identifier": "MoviePilotLite-release-release-v1.3.0-2026-10-30",
-      "caption": "MoviePilotLite 1.3.0 is available.",
-      "date": "2026-10-30T14:03:13Z",
-      "tintColor": "#8050F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
-      "notify": true,
-      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.0-2026-10-30"
     },
     {
       "appID": "com.stik.stikdebug",
