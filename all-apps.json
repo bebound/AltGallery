@@ -704,11 +704,11 @@
       "tintColor": "#30E0F0",
       "versions": [
         {
-          "version": "1.6.0",
-          "date": "2026-10-27",
-          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 改进\n\n- **iPhone 18 Pro 高功率充电时会提示读数可能只有一半。** 在 iPhone 18 Pro 系列上用有线充电、协商功率超过 30 W 时，表盘旁会显示\"可能只读到一半\"，功率页和适配器页也会说明原因：这种情况下输入和电芯两侧的传感器都可能只测到一半功率。数值本身不做修正。\n- **新增\"电量核对\"。** 充电时，App 会把电量上升的速度换算成功率，和电芯传感器在同一段时间里测到的功率对比。如果电量涨得明显比传感器测到的快（1.6 倍以上），表盘旁会显示\"读数偏低\"，并给出两边的数值；如果两边一致，会显示核对通过，上面那条\"可能只读到一半\"的提示也会隐藏。电量要上涨至少 3% 才能给出结果，通常需要几分钟。\n- **传感器按 SMC key 识别，重复的读数会合并。** iOS 27 上每个传感器都会出现两份，以前只取第一份，现在取两份的平均值；发热页的列表里每个传感器也只出现一次。发热页和原始数据会在传感器名旁边标出 key（比如电池温度偏高的那个是 `TG0B`）。\n- **电池能量按机型给默认值。** iPhone 18 Pro Max 为 21.75 Wh，iPhone 17 Pro Max 为 19.7 Wh，其他机型仍是 15 Wh。设置 → 电池能量 里会显示本机型的额定值，点\"使用\"即可填入。已经手动设置过的值保持不变。\n- **原始数据新增\"Derived power checks\"一节。** 这一节记录半功率提示是否生效，以及电量核对的结果。\n\n## 修复\n\n- 适配器：iPhone 18 Pro 高功率充电时，读数偏低不再被误判成线材或接口的问题；在无法确认读数完整时，不计算线路电阻和电流利用率。\n\n## 注意\n\n- iPhone 18 Pro 高功率充电时，完整的输入功率仍然读不到：另一路充电电流没有可读的传感器。这个版本只能提示和核对，不能补上缺失的功率；这段时间的充电记录里的能量统计也仍然偏低。\n- \"电量核对\"还没有在 iPhone 18 Pro 上验证过。如果你有这台手机，请在 45 W 充电、电量上涨几个百分点之后，从 设置 → 原始数据 复制导出并反馈。\n- 如果你的机型不在上面的列表里，请在 设置 → 电池能量 里填入正确的数值，否则电量核对可能一直给不出结论。\n- 部分发现来自 ChargeSpeed 作者在 iPhone 18 Pro Max 上的实测。\n\n---\n\n## Improvements\n\n- **The iPhone 18 Pro now warns when a reading may be half.** On an iPhone 18 Pro model charging by cable on a profile above 30 W, the dial shows \"may read half\", and the Power and Adapter pages explain why: in that mode both the input and the cell sensors can see only half the power. The numbers themselves are not corrected.\n- **New battery level check.** While charging, the app turns the battery level's rise into watts and compares it with what the cell sensors measured over the same stretch. If the level rises much faster (1.6× or more), the dial shows \"reading low\" with both figures; if they agree, the check says so and the \"may read half\" warning is hidden. It needs at least a 3% rise, usually a few minutes.\n- **Sensors are identified by SMC key, and duplicate copies are merged.** iOS 27 publishes every sensor twice. The app used to take the first copy; it now averages the two, and each sensor appears once on the Thermal page. The Thermal page and Raw data show the key beside the name (the battery sensor that runs hot is `TG0B`).\n- **Battery energy defaults by model.** 21.75 Wh for the iPhone 18 Pro Max, 19.7 Wh for the iPhone 17 Pro Max, 15 Wh otherwise. Settings → Battery energy shows your model's rating with a \"Use\" button. A value you set yourself is kept.\n- **Raw data gains a \"Derived power checks\" section**, recording whether the half-reading warning applies and the battery level check's result.\n\n## Fixes\n\n- Adapter: on an iPhone 18 Pro at high power, a low reading is no longer blamed on the cable or plugs; path resistance and current utilisation are not worked out while the reading may be incomplete.\n\n## Notes\n\n- On an iPhone 18 Pro at high power the full input still cannot be read: the second charging path has no readable sensor. This version can warn and cross-check, not fill in the missing power, and energy totals recorded during that time are still low.\n- The battery level check has not been verified on an iPhone 18 Pro. If you have one, charge at 45 W, let the level rise a few percent, then copy the dump from Settings → Raw data and report it.\n- If your model is not in the list above, set Settings → Battery energy to its rating, or the level check may never reach a verdict.\n- Some of these findings come from measurements by ChargeSpeed's author on an iPhone 18 Pro Max.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.5.1...v1.6.0",
-          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.6.0/MiniWatts-unsigned.ipa",
-          "size": 3332420,
+          "version": "1.7.0",
+          "date": "2026-11-07",
+          "localizedDescription": "Unsigned build — sign it with your own Apple ID before installing.\nhttps://github.com/ResistanceTo/MiniWatts#install\n\n## 改进\n\n- **温度可以显示为华氏度。** 设置 → 单位 里可选\"自动 / °C / °F\"。\"自动\"跟随系统地区，以及\"设置 › 通用 › 语言与地区\"里的\"温度\"选项，所以地区使用华氏度的用户升级后会直接看到 °F。App 各页、图表、热力图、悬浮读数、实时活动和小组件都按所选单位显示；原始数据仍显示传感器给出的 °C。(#25)\n- **充电预估。** 充电时，功率页会显示充到 80% 和充到 100% 还要多久，以及大约几点。时间根据电量实际上升的速度推算，不依赖电池能量设置；要等电量变化两次才会出现，通常需要几分钟。80% 以后按典型充电曲线估算，只是近似值。(#27)\n- **显示版本号。** 设置 → 关于 里显示当前版本，原始数据导出的第一行也带上了版本号。(#27)\n- **iPad 布局。** iPad 横屏和 13 英寸竖屏时，各页分成两栏；窄屏时仍是一栏。历史记录里单次充电的详情页在 iPad 上不再横向铺满。(#22)\n- **iPad 热力图。** 在 iPad 上，发热页画的是 iPad 的轮廓，各区域按 iPad Pro 11 英寸的内部布局放置：主板在中间，两侧是电芯，充电芯片在 USB-C 接口旁。设备页和设置里的图标也换成了 iPad。(#13, #22)\n\n## 修复\n\n- 发热：CPU 簇（`pACC`、`eACC`）和图像处理器（`ISP`）等传感器以前被归入\"其他传感器\"，现在算作 SoC，SoC 区域的温度也会把它们算进去。iPhone 11 上 `FrontCameraDie`、`BCMLBSkin` 这类名字连写的传感器以前会被分错区（比如前摄像头被当成机身），现在会先拆词再归类。(#13, #14)\n- 适配器页里\"单次采样\"那段说明以前在中文界面下一直显示英文，现在已有中文。\n\n## 注意\n\n- iPad 相关的改动只在模拟器里验证过，我手上没有 iPad。如果在 iPad 上看到问题，请从 设置 → 原始数据 复制导出并反馈。\n- iPad 上\"来自充电器\"的功率偏低（#13）这次还没有修：要确认其余的输入由哪个传感器测量，需要一份**充电时**导出的原始数据。有 iPad 的话，请在充电时从 设置 → 原始数据 复制导出，贴到 #13。\n- 充电预估无法知道是否开启了充电上限或优化电池充电。如果开着，电池会在上限前停下，\"充到 100%\"的时间就不准。\n\n---\n\n## Improvements\n\n- **Temperatures can be shown in Fahrenheit.** Settings → Units offers Automatic, °C or °F. Automatic follows your region and the Temperature option under Settings › General › Language & Region, so if your region uses Fahrenheit you will see °F straight after updating. Every page, the charts, the heat map, the floating meter, the Live Activity and the widget follow the setting; Raw data still shows the sensors' own °C. (#25)\n- **Charge forecast.** While charging, the Power page shows how long until 80% and until 100%, and roughly when. It is worked out from how fast the battery level is actually rising, so it does not depend on the battery energy setting; it appears once the level has moved twice, usually within a few minutes. Past 80% it follows a typical charging curve and is approximate. (#27)\n- **Version number.** Settings → About shows the installed version, and the first line of the Raw data dump includes it. (#27)\n- **iPad layout.** On an iPad in landscape, and a 13-inch in portrait, every page uses two columns; narrower windows keep one. A session's detail page in History no longer stretches edge to edge on an iPad. (#22)\n- **iPad heat map.** On an iPad the Thermal page draws an iPad, with the zones placed as in an iPad Pro 11-inch: logic board down the middle, a battery cell either side, the charge IC by the USB-C port. The Devices page and Settings use iPad icons too. (#13, #22)\n\n## Fixes\n\n- Thermal: the CPU-cluster (`pACC`, `eACC`) and image-processor (`ISP`) sensors used to land under \"Other sensors\"; they now count as the SoC, and the SoC zone's temperature includes them. On an iPhone 11, run-together sensor names such as `FrontCameraDie` and `BCMLBSkin` were filed in the wrong zone (the front camera as chassis); names are now split into words before they are matched. (#13, #14)\n- Adapter: the one-sample note always showed in English in the Chinese interface; it is now translated.\n\n## Notes\n\n- The iPad changes were checked in the simulator only — I do not have an iPad. If something looks wrong on yours, copy the dump from Settings → Raw data and report it.\n- The low \"from charger\" reading on an iPad (#13) is not fixed yet: finding which sensor carries the rest of the input needs a Raw data dump taken **while charging**. If you have an iPad, please copy one from Settings → Raw data while it charges and post it on #13.\n- The charge forecast cannot tell whether a charge limit or Optimized Battery Charging is on. If one is, the battery stops short and the time to 100% will be wrong.\n\n**Full Changelog**: https://github.com/ResistanceTo/MiniWatts/compare/v1.6.0...v1.7.0",
+          "downloadURL": "https://github.com/ResistanceTo/MiniWatts/releases/download/v1.7.0/MiniWatts-unsigned.ipa",
+          "size": 3374224,
           "minOSVersion": "17.0"
         }
       ]
@@ -1149,11 +1149,11 @@
       "tintColor": "#3B86F7",
       "versions": [
         {
-          "version": "3.2.0",
-          "date": "2026-10-30",
-          "localizedDescription": "## What's Changed\r\n* Adds on-device pairing file creation and management for the local device, as well as external devices (Apple TV included)\r\n* Error cleanup\r\n* Fixes some connection issues\r\n* Prevent stale legacy pairing files overriding fresh imports by @mvanhorn in https://github.com/StikDebug/StikDebug/pull/479\r\n* Revert \"Prevent stale legacy pairing files overriding fresh imports\" by @CelloSerenity in https://github.com/StikDebug/StikDebug/pull/486\r\n* fix: release the route when playback finishes so a new spot can be set by @OpenUmar in https://github.com/StikDebug/StikDebug/pull/490\r\n* more prob\r\n\r\n## New Contributors\r\n* @mvanhorn made their first contribution in https://github.com/StikDebug/StikDebug/pull/479\r\n* @OpenUmar made their first contribution in https://github.com/StikDebug/StikDebug/pull/490\r\n\r\n**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.15...3.2.0",
-          "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.2.0/StikDebug-3.2.0.ipa",
-          "size": 16818331,
+          "version": "3.2.1",
+          "date": "2026-11-07",
+          "localizedDescription": "- More error cleanup\r\n- Chinese (Simplified) localization\r\n- Kill processes via name via url scheme\r\n- FYI- StikDebug now requires Xcode 27+\n\n## What's Changed\n* Added Chinese localization by @jlj1102 in https://github.com/StikDebug/StikDebug/pull/494\n\n## New Contributors\n* @jlj1102 made their first contribution in https://github.com/StikDebug/StikDebug/pull/494\n\n**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.2.0...3.2.1",
+          "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.2.1/StikDebug-3.2.1.ipa",
+          "size": 16924629,
           "minOSVersion": "17.4"
         }
       ]
@@ -1304,6 +1304,28 @@
     }
   ],
   "news": [
+    {
+      "appID": "org.zhaohe.MiniWatts",
+      "title": "MiniWatts 1.7.0 · 07 Nov 2026",
+      "identifier": "MiniWatts-release-v1.7.0",
+      "caption": "MiniWatts 1.7.0 is available.",
+      "date": "2026-11-07T08:08:32Z",
+      "tintColor": "#30E0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.7.0"
+    },
+    {
+      "appID": "com.stik.stikdebug",
+      "title": "StikDebug 3.2.1 · 07 Nov 2026",
+      "identifier": "StikDebug-release-3.2.1",
+      "caption": "StikDebug 3.2.1 is available.",
+      "date": "2026-11-07T05:15:03Z",
+      "tintColor": "#3B86F7",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png",
+      "notify": true,
+      "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.2.1"
+    },
     {
       "appID": "sb.moe.kumone-ios",
       "title": "Kumone 0.3.29 · 06 Nov 2026",
@@ -1558,17 +1580,6 @@
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.2"
     },
     {
-      "appID": "com.stik.stikdebug",
-      "title": "StikDebug 3.2.0 · 30 Oct 2026",
-      "identifier": "StikDebug-release-3.2.0",
-      "caption": "StikDebug 3.2.0 is available.",
-      "date": "2026-10-30T03:02:00Z",
-      "tintColor": "#3B86F7",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png",
-      "notify": true,
-      "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.2.0"
-    },
-    {
       "appID": "com.christianselig.Apollo",
       "title": "Apollo for Reddit - GLASS 4.0.1 · 30 Oct 2026",
       "identifier": "Apollo for Reddit - GLASS-release-v1.15.11_4.0.1",
@@ -1589,17 +1600,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/news.png",
       "notify": true,
       "url": "https://github.com/mxhm11cr/LinuxRunner/releases/tag/v1.0.1"
-    },
-    {
-      "appID": "org.zhaohe.MiniWatts",
-      "title": "MiniWatts 1.6.0 · 27 Oct 2026",
-      "identifier": "MiniWatts-release-v1.6.0",
-      "caption": "MiniWatts 1.6.0 is available.",
-      "date": "2026-10-27T03:11:13Z",
-      "tintColor": "#30E0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.6.0"
     },
     {
       "appID": "com.neogamelab.neostation",
