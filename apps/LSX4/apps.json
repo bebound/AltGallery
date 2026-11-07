@@ -20,12 +20,12 @@
       "tintColor": "#C09050",
       "versions": [
         {
-          "version": "128.9775",
-          "buildVersion": "128.9775",
-          "date": "2026-11-02",
-          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9775/LSX4-JIT-128.9775.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9775/LSX4-iOS-JIT-128.9775-English.zip)\n\n- Optimizations for Bloodborne and The Last of Us.\n- Added FSR upscaling.\n- Other minor improvements.\n\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9775/INSTALLATION.txt)\n\niOS 26+ · JIT. Update using the same Apple Account and bundle ID. Keep **Remove App Extensions OFF** in Sideloadly.",
-          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9775/LSX4-JIT-128.9775.ipa",
-          "size": 76905447,
+          "version": "128.9921",
+          "buildVersion": "128.9921",
+          "date": "2026-11-07",
+          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9921/LSX4-JIT-128.9921.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9921/LSX4-iOS-JIT-128.9921-English.zip)\n\n- Added **Cinematic**, an additional way to browse your game library with a horizontal row and full-screen artwork for the selected game.\n- Major performance optimizations and presets for demanding games, including **God of War III Remastered** and **The Last of Us Remastered**.\n- Improved upscaling, including a **720p output option** for The Last of Us Remastered when using its 544p preset.\n\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9921/INSTALLATION.txt)\n\niOS 26+ · JIT. Update using the same signing account and bundle ID. Keep app extensions enabled when signing.",
+          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9921/LSX4-JIT-128.9921.ipa",
+          "size": 77015899,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
-      "title": "LSX4 128.9775 · 02 Nov 2026",
-      "identifier": "LSX4-release-ios-jit-128.9775",
-      "caption": "LSX4 128.9775 is available.",
-      "date": "2026-11-02T21:44:50Z",
+      "title": "LSX4 128.9921 · 07 Nov 2026",
+      "identifier": "LSX4-release-ios-jit-128.9921",
+      "caption": "LSX4 128.9921 is available.",
+      "date": "2026-11-07T19:01:52Z",
       "tintColor": "#C09050",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
       "notify": true,
-      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9775"
+      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9921"
     }
   ]
 }

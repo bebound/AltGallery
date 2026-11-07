@@ -21,11 +21,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "2.6.0-nightly.20261106.1507",
-          "date": "2026-11-06",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- Android: regenerate the PGO profile on the GS span source\n- GS/HW: a target takes the destination-alpha loop only after more than 64 such draws in a frame\n- GS/Vulkan: the Adreno 613's destination-alpha loop leaves only the targets it reads uncompressed\n- GS/Vulkan: on the Adreno 613 destination-alpha draws read the target in the pass\n- GS: with draw buffering off, the draw's environment is copied once\n- GS: sprite pair layouts enter the two-pass kick kernel, autoflush included\n- GS/SW: build only the colour table entry a row's span reads\n- GS/HW: copy road kernels read the texture a block at a time and write the frame a block row at a time\n- GS/TC: a block grid per target in place of the dirty rectangle lists\n- Android: Auto hides the on-screen controls for a connected pad only on a handheld\n- Android: ask again whether a gamepad is attached when the activity is created\n- GS/HW: compute this draw's cover test before the CPU sprite verdict\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261104...afd93842f99be9ea8d5730a9d20f1222f1b40cd8",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261106/ARMSX2-nightly-20261106-afd93842f9-iOS-arm64.ipa",
-          "size": 40577893,
+          "version": "2.6.0-nightly.20261107.1455",
+          "date": "2026-11-07",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- EE arm64: stop with a post-mortem when ERET returns to an unaligned address\n- GS/HW: count colour-wrap counter draws in the stencil buffer\n- IOP arm64: log the post-mortem when the recompiler stops on its own error\n- EE arm64: log the post-mortem when the recompiler stops on its own error\n- arm64: a post-mortem for the errors the recompilers detect themselves\n- tests: JR and JALR jump to rs as it was before the delay slot\n- IOP arm64: report an unaligned pc at slice entry instead of dispatching it\n- EE arm64: report an unaligned pc at entry instead of dispatching it\n- EE arm64: leave generated code from recError\n- arm64: name the unmapped-page error as the x86 recompilers do\n- tests: StubHost keeps the errors the code under test reports\n- Android: importing a PS1 BIOS says it is one\n- BIOS: a PS1 BIOS is named as one, and the BIOS search skips it\n- GS/HW: skip the hazard copy's clear when the draw cannot sample outside the copy\n- Android: a game that cannot start for want of a BIOS says what to do here\n- BIOS: refuse a configured file that is not a PS2 BIOS\n- VMManager: a boot that has no usable BIOS says so in its result\n- GS: the render device error carries the OpenGL context's reason\n- Android: the boot-failure card says what the core reported while booting\n- GS/OpenGL: clear GLAD function pointers the new context does not provide\n- GS/OpenGL: refuse an OpenGL ES 2.0 context\n- Translations: the 2.9.2 strings in all 19 languages\n- Problem reports: the crash note names the App tab, where My reports is\n- Play: the microphone is optional, so devices without one keep the app\n- Android: recommend StevenMXZ's Turnip gen8 builds on Adreno 8xx\n- GS/Vulkan: give malisx2 the index range of each indexed draw\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261106...acfe231f4ac58628fa2a631b8792536741933e89",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261107/ARMSX2-nightly-20261107-acfe231f4a-iOS-arm64.ipa",
+          "size": 40589664,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.armsx2.ios",
-      "title": "ARMSX2 2.6.0-nightly.20261106.1507 · 06 Nov 2026",
-      "identifier": "ARMSX2-release-nightly-20261106",
-      "caption": "ARMSX2 2.6.0-nightly.20261106.1507 is available.",
-      "date": "2026-11-06T15:32:28Z",
+      "title": "ARMSX2 2.6.0-nightly.20261107.1455 · 07 Nov 2026",
+      "identifier": "ARMSX2-release-nightly-20261107",
+      "caption": "ARMSX2 2.6.0-nightly.20261107.1455 is available.",
+      "date": "2026-11-07T15:31:52Z",
       "tintColor": "#3CAEFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261106"
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261107"
     }
   ]
 }
