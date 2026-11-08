@@ -1,0 +1,46 @@
+{
+  "name": "LightNovelShelf",
+  "subtitle": "LightNovelShelf AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for LightNovelShelf",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/icon.png",
+  "website": "https://github.com/LightNovelShelf/Flutter",
+  "tintColor": "#4E4592",
+  "apps": [
+    {
+      "name": "LightNovelShelf",
+      "bundleIdentifier": "app.lightnovel.shelf",
+      "developerName": "LightNovelShelf",
+      "subtitle": "轻书架官方 Flutter 客户端",
+      "localizedDescription": "轻书架官方 Flutter 客户端，面向 iOS、iPadOS 与 Android，支持书架管理、在线阅读、翻页动画、双页阅读与自动更新。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/images/home.jpeg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/images/community.jpeg"
+      ],
+      "tintColor": "#4E4592",
+      "versions": [
+        {
+          "version": "1.13.2",
+          "date": "2026-10-18",
+          "localizedDescription": "- 支持自动更新。\n- 平板端新增侧边导航和左右分栏布局。\n- 阅读器默认开启双页显示。\n- 设置页新增重置所有设置。\n- 我的道具新增使用入口，支持使用改名卡。\n- 搜索页移除页码提示。",
+          "downloadURL": "https://github.com/LightNovelShelf/Flutter/releases/download/v1.13.2/app-ios-unsigned.ipa",
+          "size": 11957867,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "app.lightnovel.shelf",
+      "title": "LightNovelShelf 1.13.2 · 18 Oct 2026",
+      "identifier": "LightNovelShelf-release-v1.13.2",
+      "caption": "LightNovelShelf 1.13.2 is available.",
+      "date": "2026-10-18T10:47:40Z",
+      "tintColor": "#4E4592",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/images/news.png",
+      "notify": true,
+      "url": "https://github.com/LightNovelShelf/Flutter/releases/tag/v1.13.2"
+    }
+  ]
+}
