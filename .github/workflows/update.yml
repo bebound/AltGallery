@@ -35,11 +35,20 @@ jobs:
           # so scheduled/push runs still fail on a broken repo.
           SKIP_FAILURES: ${{ inputs.skip_failures && '1' || '' }}
 
-      # apps.json / all-apps.json are gitignored, so `git add -A` won't pick
-      # them up. Stage them explicitly (force) so the regenerated sources can
-      # be committed here — contributors never commit them.
+      # Mirror of all-apps.json for users who cannot reach GitHub: the raw
+      # files it references (icons, screenshots, news images) and the release
+      # ipa downloads go through gh-proxy.com. Release pages, news links and
+      # the website stay plain GitHub URLs. Regenerated from scratch on every
+      # run, so it always matches the source generated above.
+      - name: Generate all-apps-proxy.json
+        run: python3 tools/make_proxy.py all-apps.json all-apps-proxy.json
+
+      # apps.json / all-apps.json / all-apps-proxy.json are gitignored, so
+      # `git add -A` won't pick them up. Stage them explicitly (force) so the
+      # regenerated sources can be committed here — contributors never commit
+      # them.
       - name: Stage generated sources
-        run: git add -f all-apps.json apps/*/apps.json
+        run: git add -f all-apps.json all-apps-proxy.json apps/*/apps.json
 
       - name: Check for changes
         id: changes
@@ -56,5 +65,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: update all-apps.json"
+          git commit -m "chore: update all-apps.json and all-apps-proxy.json"
           git push origin "HEAD:${GITHUB_REF_NAME}"

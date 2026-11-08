@@ -70,6 +70,16 @@ of sync, and never hand-edit `apps.json`.**
 `workflow_dispatch`. (Both files are tracked despite `.gitignore`, so leave
 any local regenerated changes for the workflow to commit.)
 
+The same workflow then writes `all-apps-proxy.json`, a mirror of
+`all-apps.json` built by `tools/make_proxy.py`: the URLs AltStore actually
+fetches — `raw.githubusercontent.com` files (icons, screenshots, news images)
+and `github.com/<owner>/<repo>/releases/download/...` ipas — are prefixed with
+`https://gh-proxy.com/` so the source also works where GitHub is unreachable.
+GitHub *pages* (`website`, `news[].url`, `/releases/tag/...` links in text)
+are left untouched. It is generated from `all-apps.json` only — never edit it
+by hand; regenerate it locally with `python3 tools/make_proxy.py` when you
+need to check a change.
+
 ## Merging into all-apps.json
 
 After all app sources are regenerated, merge them into the repo-root

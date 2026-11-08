@@ -12,7 +12,7 @@
 </a>
 </p>
 <p align="center">(Click the above image to add the AltGallery source)</p>
-<p align="center">Can't reach <code>raw.githubusercontent.com</code>? Use the <a href="https://altdirect.app/?url=https://cdn.jsdelivr.net/gh/bebound/AltGallery@master/all-apps.json" target="_blank">CDN-accelerated link</a> instead.</p>
+<p align="center">Can't reach <code>github.com</code>? Use the <a href="https://altdirect.app/?url=https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps-proxy.json" target="_blank">gh-proxy link</a> instead — the resources all go through gh-proxy.com.</p>
 
 ## Request an App
 
