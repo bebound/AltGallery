@@ -23,3 +23,4 @@ dist/
 # and committed by .github/workflows/update.yml
 /all-apps.json
 /apps/*/apps.json
+all-apps-proxy.json

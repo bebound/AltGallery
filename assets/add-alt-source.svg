@@ -14,9 +14,6 @@
       <stop offset="0.55" stop-color="#3B82F6"/>
       <stop offset="1" stop-color="#4F46E5"/>
     </linearGradient>
-    <filter id="btnShadow" x="-20%" y="-40%" width="140%" height="180%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#1e1b4b" flood-opacity="0.35"/>
-    </filter>
     <filter id="iconShadow" x="-30%" y="-40%" width="160%" height="180%">
       <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#1e1b4b" flood-opacity="0.35"/>
     </filter>
@@ -24,10 +21,8 @@
   </defs>
 
   <!-- button body -->
-  <g filter="url(#btnShadow)">
-    <rect width="640" height="200" rx="44" fill="url(#btnBg)"/>
-    <rect width="640" height="200" rx="44" fill="url(#btnGloss)"/>
-  </g>
+  <rect width="640" height="200" rx="44" fill="url(#btnBg)"/>
+  <rect width="640" height="200" rx="44" fill="url(#btnGloss)"/>
 
   <!-- app icon -->
   <g filter="url(#iconShadow)">
