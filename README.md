@@ -104,6 +104,9 @@ Torrent client for iOS.
 ### <a href="https://github.com/missuo/kumone"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kumone/icon.png" alt="Kumone icon" width="24" align="top">Kumone</a>
 原生 NetEase Cloud Music iOS 客户端（雲の音），直连网易云音乐真实 API，支持灰色歌曲解锁与歌词。
 
+### <a href="https://github.com/LightNovelShelf/Flutter"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LightNovelShelf/icon.png" alt="LightNovelShelf icon" width="24" align="top">LightNovelShelf</a>
+轻书架官方 Flutter 客户端，支持书架管理、在线阅读与翻页动画。
+
 ### <a href="https://github.com/mxhm11cr/LinuxRunner"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LinuxRunner/icon.png" alt="LinuxRunner icon" width="24" align="top">LinuxRunner</a>
 Run ARM64 Linux applications and desktop environments on iOS without a jailbreak, virtual machine, or JIT.
 
