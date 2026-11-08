@@ -1,0 +1,17 @@
+# render_news.py config: python3 tools/render_news.py --out apps/MeloX
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "MeloX"
+tagline = "网易云音乐第三方客户端"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#E01F2D"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#E01F2D"      # bottom-right glow (default: [source] tint_color)
+# background = "#EBD6D7"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#F3E7E8"        # gradient mid stop (derived from background)
+# bg_dark = "#DEBBBC"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#BD5156" # tagline text (derived from background)

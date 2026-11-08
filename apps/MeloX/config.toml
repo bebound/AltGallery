@@ -1,0 +1,44 @@
+# altgen config for the MeloX AltStore source.
+# Run: uvx altgen -c config.toml
+# MeloX: native SwiftUI NetEase Cloud Music client for iPhone, iPad and Apple Watch
+
+[github]
+repo = "youshen2/MeloX"
+
+[source]
+name = "MeloX"
+subtitle = "MeloX AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for MeloX"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/icon.png"
+website = "https://github.com/youshen2/MeloX"
+tint_color = "#E01F2D"
+
+[app]
+name = "MeloX"
+bundle_identifier = "moye.MeloX"
+developer_name = "youshen2"
+subtitle = "使用 SwiftUI 开发的网易云音乐第三方客户端"
+description = "面向 iPhone、iPad 与 Apple Watch 的原生网易云音乐客户端，使用 SwiftUI 构建，参考 Apple Music 的 Liquid Glass 设计，支持逐字歌词、文字 PV 歌词、全屏天际歌词等特色功能。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/images/home.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/images/library.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/images/player.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/images/lyrics.png",
+]
+tint_color = "#E01F2D"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): match the unsigned iOS ipa, not the macOS dmg releases
+asset_pattern = "MeloX-iOS-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/images/news.png"
+
+[output]
+path = "apps.json"

@@ -126,6 +126,9 @@ Read manga, novels, and watch anime.
 ### <a href="https://github.com/Manic-EMU/ManicEMU"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/ManicEMU/icon.png" alt="ManicEMU icon" width="24" align="top">ManicEMU</a>
 All-in-one retro game emulator for iOS, with a clean interface and broad platform support.
 
+### <a href="https://github.com/youshen2/MeloX"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MeloX/icon.png" alt="MeloX icon" width="24" align="top">MeloX</a>
+原生 SwiftUI 网易云音乐客户端，面向 iPhone、iPad 与 Apple Watch。
+
 ### <a href="https://github.com/jxxghp/MoviePilot-App"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/MoviePilot-App/icon.png" alt="MoviePilot icon" width="24" align="top">MoviePilot</a>
 MoviePilot 的 iOS 客户端，使用系统原生导航与快捷面板，业务页面复用 MoviePilot-Frontend。
 
