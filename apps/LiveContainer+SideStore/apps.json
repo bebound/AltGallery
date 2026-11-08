@@ -21,11 +21,11 @@
       "tintColor": "#0784FC",
       "versions": [
         {
-          "version": "3.8.12",
-          "date": "2026-11-07",
-          "localizedDescription": "**Commit:** [ea79dc9e115643c0c9d40592c744522fc5df1def](https://github.com/LiveContainer/LiveContainer/commit/ea79dc9e115643c0c9d40592c744522fc5df1def)\n**Message:** fix build\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/42394972907/attempts/1).",
+          "version": "3.8.13",
+          "date": "2026-11-08",
+          "localizedDescription": "**Commit:** [9d6ea09b05afa2c8fc537c372795a294db631311](https://github.com/LiveContainer/LiveContainer/commit/9d6ea09b05afa2c8fc537c372795a294db631311)\n**Message:** Support for built-in jit enablers, ram donors, helper process etc\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/42464599105/attempts/2).",
           "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 23733566,
+          "size": 23752778,
           "minOSVersion": "15.0"
         },
         {
@@ -42,10 +42,10 @@
   "news": [
     {
       "appID": "com.kdt.livecontainer",
-      "title": "LiveContainer+SideStore 3.8.12 · 07 Nov 2026",
+      "title": "LiveContainer+SideStore 3.8.13 · 08 Nov 2026",
       "identifier": "LiveContainer+SideStore-release-nightly",
-      "caption": "LiveContainer+SideStore 3.8.12 is available.",
-      "date": "2026-11-07T17:12:11Z",
+      "caption": "LiveContainer+SideStore 3.8.13 is available.",
+      "date": "2026-11-08T09:11:51Z",
       "tintColor": "#0784FC",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
       "notify": true,
