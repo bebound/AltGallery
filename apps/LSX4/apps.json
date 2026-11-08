@@ -20,12 +20,12 @@
       "tintColor": "#C09050",
       "versions": [
         {
-          "version": "128.9921",
-          "buildVersion": "128.9921",
-          "date": "2026-11-07",
-          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9921/LSX4-JIT-128.9921.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9921/LSX4-iOS-JIT-128.9921-English.zip)\n\n- Added **Cinematic**, an additional way to browse your game library with a horizontal row and full-screen artwork for the selected game.\n- Major performance optimizations and presets for demanding games, including **God of War III Remastered** and **The Last of Us Remastered**.\n- Improved upscaling, including a **720p output option** for The Last of Us Remastered when using its 544p preset.\n\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9921/INSTALLATION.txt)\n\niOS 26+ · JIT. Update using the same signing account and bundle ID. Keep app extensions enabled when signing.",
-          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9921/LSX4-JIT-128.9921.ipa",
-          "size": 77015899,
+          "version": "128.9934",
+          "buildVersion": "128.9934",
+          "date": "2026-11-08",
+          "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9934/LSX4-JIT-128.9934.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9934/LSX4-iOS-JIT-128.9934-English.zip)\n\n- Fixed visual issues in select games, including green video frames in **The Last of Us Remastered** and title-screen flicker in **God of War III Remastered**.\n- Updated per-game settings and presets, including a presentation setting for **God of War III Remastered**.\n\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9934/INSTALLATION.txt)\n\niOS 26+ · JIT. Update using the same signing account and bundle ID. Keep app extensions enabled when signing.",
+          "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9934/LSX4-JIT-128.9934.ipa",
+          "size": 77017813,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
-      "title": "LSX4 128.9921 · 07 Nov 2026",
-      "identifier": "LSX4-release-ios-jit-128.9921",
-      "caption": "LSX4 128.9921 is available.",
-      "date": "2026-11-07T19:01:52Z",
+      "title": "LSX4 128.9934 · 08 Nov 2026",
+      "identifier": "LSX4-release-ios-jit-128.9934",
+      "caption": "LSX4 128.9934 is available.",
+      "date": "2026-11-08T00:33:06Z",
       "tintColor": "#C09050",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
       "notify": true,
-      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9921"
+      "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9934"
     }
   ]
 }
