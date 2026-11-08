@@ -12,6 +12,7 @@
 </a>
 </p>
 <p align="center">(Click the above image to add the AltGallery source)</p>
+<p align="center">Can't reach <code>raw.githubusercontent.com</code>? Use the <a href="https://altdirect.app/?url=https://cdn.jsdelivr.net/gh/bebound/AltGallery@master/all-apps.json" target="_blank">CDN-accelerated link</a> instead.</p>
 
 ## Request an App
 
