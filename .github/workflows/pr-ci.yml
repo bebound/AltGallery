@@ -1,0 +1,60 @@
+name: PR checks
+
+# update.yml regenerates and commits the sources on master. This workflow runs
+# on a pull request and checks the one thing that matters before merging:
+# altgen can still build apps.json from the changed app's config.toml, and the
+# sources still merge into all-apps.json.
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build apps.json
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # altgen reads GITHUB_TOKEN; without it the release API is rate-limited.
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: astral-sh/setup-uv@v7
+
+      # Only the apps the PR touches need a real build: a failed upstream repo
+      # in some unrelated app must not turn every pull request red.
+      - name: Build apps.json for the changed apps
+        run: |
+          set -euo pipefail
+          base="origin/${{ github.base_ref }}"
+          changed=$(git diff --name-only --diff-filter=ACMR "$base"...HEAD -- 'apps/*' \
+            | awk -F/ '$1 == "apps" {print $2}' | sort -u)
+          for name in $changed; do
+            [ -f "apps/$name/config.toml" ] || continue
+            echo "::group::apps/$name"
+            (cd "apps/$name" && uvx altgen -c config.toml)
+            jq -e '.apps | length == 1' "apps/$name/apps.json"
+            jq -e '.apps[0].versions | length > 0' "apps/$name/apps.json"
+            echo "::endgroup::"
+          done
+
+      # The same merge that update.sh runs, against a temporary file so the
+      # checkout stays clean.
+      - name: Merge the sources into all-apps.json
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          sources=(apps/*/apps.json)
+          [ ${#sources[@]} -gt 0 ] || { echo "::error::no app sources found"; exit 1; }
+          uvx altgen merge -c assets/merge.toml -o "$RUNNER_TEMP/all-apps.json" "${sources[@]}"
+          jq -e --argjson count ${#sources[@]} '.apps | length == $count' "$RUNNER_TEMP/all-apps.json"
