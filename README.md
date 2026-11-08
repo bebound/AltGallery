@@ -137,9 +137,6 @@ An iPhone battery and charging monitor built on Apple's private APIs — charger
 ### <a href="https://github.com/mornyeapp/Mornye"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Mornye/icon.png" alt="Mornye icon" width="24" align="top">Mornye</a>
 A Flutter and Rust music app with a hi-res player, synced lyrics, installable download extensions, and a local library that also streams from SMB, WebDAV and Subsonic servers.
 
-### <a href="https://github.com/celia-sh/Novella"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Novella/icon.png" alt="Novella icon" width="24" align="top">Novella</a>
-轻书架第三方客户端，基于 React Native 构建，面向 iOS / iPadOS，支持小说与漫画阅读与社区。
-
 ### <a href="https://github.com/verback2308/Opaline"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Opaline/icon.png" alt="Opaline icon" width="24" align="top">Opaline</a>
 A lightweight, privacy-focused YouTube client for iOS 12+, with SponsorBlock, Return YouTube Dislike and up to 1080p playback.
 
