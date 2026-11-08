@@ -22,4 +22,5 @@ dist/
 # Generated AltStore sources — never committed by contributors; regenerated
 # and committed by .github/workflows/update.yml
 /all-apps.json
+/all-apps-proxy.json
 /apps/*/apps.json
