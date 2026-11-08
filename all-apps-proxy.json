@@ -167,11 +167,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "2.6.0-nightly.20261107.2334",
-          "date": "2026-11-07",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- Texture packs: a This Game list in both browsers, shown while a game runs\n- Driver list: show only the sources built for the device's GPU family\n- arm64: a post-mortem in the log for a fault in recompiled code\n- PageFaultHandler: a reporter for the faults it cannot handle\n- Crash handler: let the fault's own signal kill the process\n- Console: expose the log file's descriptor for crash handlers\n- arm64: read guest words for the post-mortems without allocating\n- AutoTune: lower the Android Display Resolution (HW scaler) to the render resolution when GPU-bound\n- AutoTune: add Disabled to the download mode ladder, and step over a rung that did not help\n- Driver list: a release with one zip per device lists each zip by its own name\n- Translations: the batch's strings in all 19 languages\n- Android: VR mode, named DNS host entries, touch stick travel, MdiEx drivers\n- Auto Progressive Scan: hold Triangle+Cross through Criterion intros\n- EE arm64: stop with a post-mortem when ERET returns to an unaligned address\n- GS/HW: count colour-wrap counter draws in the stencil buffer\n- IOP arm64: log the post-mortem when the recompiler stops on its own error\n- EE arm64: log the post-mortem when the recompiler stops on its own error\n- arm64: a post-mortem for the errors the recompilers detect themselves\n- tests: JR and JALR jump to rs as it was before the delay slot\n- IOP arm64: report an unaligned pc at slice entry instead of dispatching it\n- EE arm64: report an unaligned pc at entry instead of dispatching it\n- EE arm64: leave generated code from recError\n- arm64: name the unmapped-page error as the x86 recompilers do\n- tests: StubHost keeps the errors the code under test reports\n- Android: importing a PS1 BIOS says it is one\n- BIOS: a PS1 BIOS is named as one, and the BIOS search skips it\n- GS/HW: skip the hazard copy's clear when the draw cannot sample outside the copy\n- Android: a game that cannot start for want of a BIOS says what to do here\n- BIOS: refuse a configured file that is not a PS2 BIOS\n- VMManager: a boot that has no usable BIOS says so in its result\n- GS: the render device error carries the OpenGL context's reason\n- Android: the boot-failure card says what the core reported while booting\n- GS/OpenGL: clear GLAD function pointers the new context does not provide\n- GS/OpenGL: refuse an OpenGL ES 2.0 context\n- Translations: the 2.9.2 strings in all 19 languages\n- Problem reports: the crash note names the App tab, where My reports is\n- Play: the microphone is optional, so devices without one keep the app\n- Android: recommend StevenMXZ's Turnip gen8 builds on Adreno 8xx\n- GS/Vulkan: give malisx2 the index range of each indexed draw\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261106...9144e4ff1fed43756809d8e68b3efc2505a51078",
-          "downloadURL": "https://gh-proxy.com/https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261107/ARMSX2-nightly-20261107-9144e4ff1f-iOS-arm64.ipa",
-          "size": 40593571,
+          "version": "2.6.0-nightly.20261108.1514",
+          "date": "2026-11-08",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- Texture packs: a This Game list in both browsers, shown while a game runs\n- Driver list: show only the sources built for the device's GPU family\n- arm64: a post-mortem in the log for a fault in recompiled code\n- PageFaultHandler: a reporter for the faults it cannot handle\n- Crash handler: let the fault's own signal kill the process\n- Console: expose the log file's descriptor for crash handlers\n- arm64: read guest words for the post-mortems without allocating\n- AutoTune: lower the Android Display Resolution (HW scaler) to the render resolution when GPU-bound\n- AutoTune: add Disabled to the download mode ladder, and step over a rung that did not help\n- Driver list: a release with one zip per device lists each zip by its own name\n- Translations: the batch's strings in all 19 languages\n- Android: VR mode, named DNS host entries, touch stick travel, MdiEx drivers\n- Auto Progressive Scan: hold Triangle+Cross through Criterion intros\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261107...9144e4ff1fed43756809d8e68b3efc2505a51078",
+          "downloadURL": "https://gh-proxy.com/https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261108/ARMSX2-nightly-20261108-9144e4ff1f-iOS-arm64.ipa",
+          "size": 40592382,
           "minOSVersion": "17.0"
         }
       ]
@@ -803,9 +803,9 @@
         {
           "version": "1.2.1",
           "date": "2026-11-06",
-          "localizedDescription": "MoviePilot iOS 1.2.1，同版本重新打包，修复插件设置保存后导航中断，并保留启动连接恢复修复。\n\n### 更新内容\n\n- 修复插件设置保存成功后进入“App 导航连接已中断”恢复页的问题；保存进度与配置弹窗快速切换时可正确归还页面，保存失败后也能继续编辑和重试。\n- 启动时的初始化检查和登录会话恢复最多等待 15 秒；仍未连通会自动返回服务地址列表并提示，方便从内网地址切换到外网地址。\n- 原生登录成功后，如果网页启动时连接中断，也会自动返回地址列表。\n- 连接失败保留已保存的服务和登录状态；切换地址后撤销旧请求，避免迟到响应打开旧服务。\n- 保留临时故障自动恢复、手动重试和后台暂停检测，密码与验证码不会自动重发。\n\n### 安装\n\n下载 `MoviePilot-1.2.1-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[aa8eeeee193d5d03de6f9a5d2097b578f11f468e](https://github.com/jxxghp/MoviePilot-App/commit/aa8eeeee193d5d03de6f9a5d2097b578f11f468e)。",
+          "localizedDescription": "MoviePilot iOS 1.2.1，同版本重新打包，修复旧版 iOS 弹窗底页文字透出，并保留插件设置保存与启动连接恢复修复。\n\n### 更新内容\n\n- 修复 iOS 16 等旧系统打开插件配置、插件面板时底页文字透出并与弹窗内容叠加的问题；系统弹窗使用随明暗主题变化的不透明底色，iOS 26+ 继续使用系统 Liquid Glass。\n- 修复插件设置保存成功后进入“App 导航连接已中断”恢复页的问题；保存进度与配置弹窗快速切换时可正确归还页面，保存失败后也能继续编辑和重试。\n- 启动时的初始化检查和登录会话恢复最多等待 15 秒；仍未连通会自动返回服务地址列表并提示，方便从内网地址切换到外网地址。\n- 原生登录成功后，如果网页启动时连接中断，也会自动返回地址列表。\n- 连接失败保留已保存的服务和登录状态；切换地址后撤销旧请求，避免迟到响应打开旧服务。\n- 保留临时故障自动恢复、手动重试和后台暂停检测，密码与验证码不会自动重发。\n\n### 安装\n\n下载 `MoviePilot-1.2.1-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[49a0b049f74bd0f480de243e22623f23317af8b0](https://github.com/jxxghp/MoviePilot-App/commit/49a0b049f74bd0f480de243e22623f23317af8b0)。",
           "downloadURL": "https://gh-proxy.com/https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.1/MoviePilot-1.2.1-unsigned.ipa",
-          "size": 4228943,
+          "size": 4229061,
           "minOSVersion": "17.0"
         }
       ]
@@ -1301,12 +1301,12 @@
       "tintColor": "#FF0000",
       "versions": [
         {
-          "version": "21.44.4",
-          "buildVersion": "21.44.4",
-          "date": "2026-11-03",
-          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - **YTUHD** is not included. 4K60HDR is available.\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock and YouSlider. (unstable in newer builds)\r\n> - Downloads working partially. depending on hardware codecs. \r\n> - Liquid Glass Support\r\n> \r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://gh-proxy.com/https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa3/YouProExtra_21.44.4_1.3.1.ipa",
-          "size": 132497784,
+          "version": "21.45.4",
+          "buildVersion": "21.45.4",
+          "date": "2026-11-08",
+          "localizedDescription": "### Latest Release, ENJOY!!\r\n> [!NOTE]\r\n> - if you're signed out you can sign in manually. \r\n> - no iSponsorBlock and YouSlider. (unstable in newer builds)\r\n> - Downloads working partially. depending on hardware codecs. \r\n> - Liquid Glass Support\r\n> \r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.45.4_1.3.1.ipa",
+          "size": 133320959,
           "minOSVersion": "16.0"
         }
       ]
@@ -1337,6 +1337,28 @@
     }
   ],
   "news": [
+    {
+      "appID": "com.google.ios.youtube",
+      "title": "YouProEXTRA 21.45.4 · 08 Nov 2026",
+      "identifier": "YouProEXTRA-release-youproextra-ipa2",
+      "caption": "YouProEXTRA 21.45.4 is available.",
+      "date": "2026-11-08T21:14:40Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 2.6.0-nightly.20261108.1514 · 08 Nov 2026",
+      "identifier": "ARMSX2-release-nightly-20261108",
+      "caption": "ARMSX2 2.6.0-nightly.20261108.1514 is available.",
+      "date": "2026-11-08T15:46:58Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261108"
+    },
     {
       "appID": "com.kdt.livecontainer",
       "title": "LiveContainer+SideStore 3.8.13 · 08 Nov 2026",
@@ -1380,17 +1402,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
       "notify": true,
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.3"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 2.6.0-nightly.20261107.2334 · 07 Nov 2026",
-      "identifier": "ARMSX2-release-nightly-20261107",
-      "caption": "ARMSX2 2.6.0-nightly.20261107.2334 is available.",
-      "date": "2026-11-07T15:31:52Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261107"
     },
     {
       "appID": "org.zhaohe.MiniWatts",
@@ -1545,17 +1556,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Madeira/images/news.png",
       "notify": true,
       "url": "https://github.com/willfaust/Madeira/releases/tag/v0.2.0"
-    },
-    {
-      "appID": "com.google.ios.youtube",
-      "title": "YouProEXTRA 21.44.4 · 03 Nov 2026",
-      "identifier": "YouProEXTRA-release-youproextra-ipa3",
-      "caption": "YouProEXTRA 21.44.4 is available.",
-      "date": "2026-11-03T12:58:48Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
-      "notify": true,
-      "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa3"
     },
     {
       "appID": "com.example.piliplus",
