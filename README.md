@@ -45,6 +45,9 @@ A free and open source manga reading application for iOS and iPadOS.
 ### <a href="https://github.com/Mak5er/AirCard-iOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AirCard/icon.png" alt="AirCard-iOS icon" width="24" align="top">AirCard-iOS</a>
 Customize Apple Wallet card artwork, passcode dialers and PosterBoard wallpapers on device without a jailbreak.
 
+### <a href="https://github.com/altstoreio/AltStore"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AltStore/icon.png" alt="AltStore icon" width="24" align="top">AltStore</a>
+The original alternative app store for non-jailbroken iOS devices — sideload non-notarized IPAs with AltServer on a Mac or PC.
+
 ### <a href="https://github.com/AniBakaBaka/AniBaka"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/AniBaka/icon.png" alt="AniBaka icon" width="24" align="top">AniBaka</a>
 跨平台番剧聚合与弹幕客户端，多番剧源、多弹幕、高清无广告，支持动漫实时超分辨率。
 
