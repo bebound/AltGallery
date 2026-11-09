@@ -1,0 +1,44 @@
+# altgen config for the Feather AltStore source.
+# Run: uvx altgen -c config.toml
+# Feather: free on-device iOS/iPadOS application manager and signer
+
+[github]
+repo = "claration/feather"
+
+[source]
+name = "Feather"
+subtitle = "Feather AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Feather"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/icon.png"
+website = "https://github.com/claration/feather"
+tint_color = "#848ef9"
+
+[app]
+name = "Feather"
+bundle_identifier = "thewonderofyou.Feather"
+developer_name = "Samara"
+subtitle = "On-device signing application"
+description = "Free on-device iOS/iPadOS application manager and installer. Feather uses certificates from the Apple Developer Program to sign and install ipas on stock iOS, with built-in app management."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/home.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/repos.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/sign.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/store.png",
+]
+tint_color = "#848ef9"
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Each release contains a single ipa: Feather.ipa
+asset_pattern = "Feather\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/news.png"
+
+[output]
+path = "apps.json"
