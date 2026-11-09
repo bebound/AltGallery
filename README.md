@@ -186,6 +186,9 @@ A free sliding-block traffic puzzle — slide the cars to free the red one. 700+
 ### <a href="https://github.com/donbytyqi/scenebox"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/SceneBox/icon.png" alt="SceneBox icon" width="24" align="top">SceneBox</a>
 Torrent streaming client for iOS, iPadOS, tvOS and Mac (Catalyst), written in SwiftUI.
 
+### <a href="https://github.com/SideStore/SideStore"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/SideStore/icon.png" alt="SideStore icon" width="24" align="top">SideStore</a>
+Untethered, community-driven alternative app store for non-jailbroken iOS devices — sideload IPAs without AltServer.
+
 ### <a href="https://github.com/akinal5765-byte/Silverphase"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Silverphase/icon.png" alt="Silverphase icon" width="24" align="top">Silverphase</a>
 Native film and print process simulator for iPhone and iPad — choose film and paper, then shape the image from exposure through development to scan.
 

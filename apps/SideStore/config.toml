@@ -1,0 +1,46 @@
+# altgen config for the SideStore AltStore source.
+# Run: uvx altgen -c config.toml
+# SideStore: untethered alternative app store for non-jailbroken iOS devices
+
+[github]
+repo = "SideStore/SideStore"
+
+[source]
+name = "SideStore"
+subtitle = "SideStore AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for SideStore"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/icon.png"
+website = "https://github.com/SideStore/SideStore"
+tint_color = "#A405FA"
+
+[app]
+name = "SideStore"
+bundle_identifier = "com.SideStore.SideStore"
+developer_name = "SideStore Team"
+subtitle = "Untethered alternative app store for iOS"
+description = "SideStore is an untethered, community-driven alternative app store for non-jailbroken iOS devices. It resigns and installs .ipa files with your personal Apple ID and refreshes them in the background, so sideloading no longer requires AltServer."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/apps.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/browse.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png",
+]
+tint_color = "#A405FA"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Read the version from the ipa's Info.plist: the release tags (e.g. 0.7.0-alpha)
+# do not match the version the app actually reports.
+version_source = "ipa"
+# asset_pattern is a regex (not glob): releases that ship an ipa name it SideStore.ipa
+asset_pattern = "SideStore\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png"
+
+[output]
+path = "apps.json"
