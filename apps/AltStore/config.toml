@@ -34,6 +34,9 @@ min_os_version = "17.4"
 [versions]
 strip_v_prefix = true
 include_prereleases = false
+# Read the version from the ipa's Info.plist: the release tag is v2.3 while the
+# ipa inside it reports 2.3.1 (build 63).
+version_source = "ipa"
 # Each release ships a single ipa: AltStore_Classic_Notarized_<version>.ipa
 asset_pattern = "AltStore_Classic_Notarized_.*\\.ipa$"
 
