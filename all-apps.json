@@ -55,6 +55,33 @@
       ]
     },
     {
+      "name": "AltStore",
+      "bundleIdentifier": "com.rileytestut.AltStore",
+      "developerName": "Riley & Shane",
+      "subtitle": "Sideload non-notarized apps with AltServer.",
+      "localizedDescription": "AltStore Classic allows you to sideload non-notarized .ipa files with AltServer on a Mac or PC.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/myapps.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/app-detail.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/browse.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/sources.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/add-source.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/settings.png"
+      ],
+      "tintColor": "#018084",
+      "versions": [
+        {
+          "version": "2.3.1",
+          "date": "2026-09-30",
+          "localizedDescription": "### New\r\n\r\nRemote AltServer\r\n* Supports sideloading apps without a computer\r\n* Install, refresh, and (de-)activate apps from anywhere with a WiFi connection\r\n* Tap “Set up Remote AltServer” in AltStore settings to get started\r\n* Thanks @jkcoxson and the entire SideStore team for making this possible!\r\n\r\nLiquid Glass UI\r\n* Updated design to fit at home on iOS 26\r\n\r\n### Improved\r\n\r\n* Includes `ALT_CLASSIC_VER` header with current build version when fetching sources\r\n* Uses app's tint color as background color when loading app icon\r\n* Improved error messages for better troubleshooting guidance\r\n* Raised minimum iOS version to 17.4\r\n\r\n### Fixed\r\n* Fixed unreadable text in light mode for some news alerts (thanks @partyknightsdev!)\r\n* Fixed showing empty text view for updates with no description\r\n* Fixed extra space above version description for app updates\r\n* Fixed category cells not being accessible with VoiceOver\r\n* Fixed My Apps tab badge count showing incorrect number of app updates\r\n* Fixed memory leak due to strong-reference cycle in news tab",
+          "downloadURL": "https://github.com/altstoreio/AltStore/releases/download/v2.3/AltStore_Classic_Notarized_2_3.ipa",
+          "size": 40616419,
+          "minOSVersion": "17.4"
+        }
+      ]
+    },
+    {
       "name": "AniBaka",
       "bundleIdentifier": "ani.baka",
       "developerName": "AniBakaBaka",
@@ -365,6 +392,31 @@
           "downloadURL": "https://github.com/Leviidev/Fathom/releases/download/v1.0.0/Fathom.ipa",
           "size": 1175175,
           "minOSVersion": "18.0"
+        }
+      ]
+    },
+    {
+      "name": "Feather",
+      "bundleIdentifier": "thewonderofyou.Feather",
+      "developerName": "Samara",
+      "subtitle": "On-device signing application",
+      "localizedDescription": "Free on-device iOS/iPadOS application manager and installer. Feather uses certificates from the Apple Developer Program to sign and install ipas on stock iOS, with built-in app management.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/home.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/repos.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/sign.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/store.png"
+      ],
+      "tintColor": "#848ef9",
+      "versions": [
+        {
+          "version": "2.9.0",
+          "date": "2026-07-05",
+          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added tweak options in default signing options.\r\n* Added ability to search for identifier's in Library @ismailcarlik in https://github.com/claration/Feather/pull/652\r\n* Fixed issue in the file enumeration logic, by using the path property instead of method.\r\n* Fixed credit links.\r\n* Fixed duplicate repository in recommended repositories.\r\n\r\n## New Contributors\r\n* @xiangfeidexiaohuo made their first contribution in https://github.com/claration/Feather/pull/634\r\n* @osageling made their first contribution in https://github.com/claration/Feather/pull/642\r\n\r\n**Full Changelog**: https://github.com/claration/Feather/compare/v2.8.2...v2.9.0",
+          "downloadURL": "https://github.com/claration/feather/releases/download/v2.9.0/Feather.ipa",
+          "size": 14241853,
+          "minOSVersion": "16.0"
         }
       ]
     },
@@ -801,11 +853,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.2.1",
-          "date": "2026-11-06",
-          "localizedDescription": "MoviePilot iOS 1.2.1，同版本重新打包，修复旧版 iOS 弹窗底页文字透出，并保留插件设置保存与启动连接恢复修复。\n\n### 更新内容\n\n- 修复 iOS 16 等旧系统打开插件配置、插件面板时底页文字透出并与弹窗内容叠加的问题；系统弹窗使用随明暗主题变化的不透明底色，iOS 26+ 继续使用系统 Liquid Glass。\n- 修复插件设置保存成功后进入“App 导航连接已中断”恢复页的问题；保存进度与配置弹窗快速切换时可正确归还页面，保存失败后也能继续编辑和重试。\n- 启动时的初始化检查和登录会话恢复最多等待 15 秒；仍未连通会自动返回服务地址列表并提示，方便从内网地址切换到外网地址。\n- 原生登录成功后，如果网页启动时连接中断，也会自动返回地址列表。\n- 连接失败保留已保存的服务和登录状态；切换地址后撤销旧请求，避免迟到响应打开旧服务。\n- 保留临时故障自动恢复、手动重试和后台暂停检测，密码与验证码不会自动重发。\n\n### 安装\n\n下载 `MoviePilot-1.2.1-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[49a0b049f74bd0f480de243e22623f23317af8b0](https://github.com/jxxghp/MoviePilot-App/commit/49a0b049f74bd0f480de243e22623f23317af8b0)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.1/MoviePilot-1.2.1-unsigned.ipa",
-          "size": 4229061,
+          "version": "1.2.2",
+          "date": "2026-11-09",
+          "localizedDescription": "MoviePilot iOS 1.2.2，修复 iOS 16–25 底栏材质与原生搜索分类配色问题。\n\n### 更新内容\n\n- iOS 16–25 的底栏改用超薄系统磨砂材质，保留底页壁纸和明暗主题变化；iOS 26+ 继续使用系统 Liquid Glass。\n- 修复旧系统搜索页分类选中态使用相同强调色绘制背景和前景，导致图标与文字消失的问题。\n- 保留 iOS 16 设备的原生底栏布局、动态搜索按钮和路由确认行为。\n\n### 安装\n\n下载 `MoviePilot-1.2.2-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[dbed5babf771efb90983ada1ebc478a0396f212b](https://github.com/jxxghp/MoviePilot-App/commit/dbed5babf771efb90983ada1ebc478a0396f212b)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.2/MoviePilot-1.2.2-unsigned.ipa",
+          "size": 4229020,
           "minOSVersion": "17.0"
         }
       ]
@@ -1144,6 +1196,30 @@
       ]
     },
     {
+      "name": "SideStore",
+      "bundleIdentifier": "com.SideStore.SideStore",
+      "developerName": "SideStore Team",
+      "subtitle": "Untethered alternative app store for iOS",
+      "localizedDescription": "SideStore is an untethered, community-driven alternative app store for non-jailbroken iOS devices. It resigns and installs .ipa files with your personal Apple ID and refreshes them in the background, so sideloading no longer requires AltServer.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/apps.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/browse.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png"
+      ],
+      "tintColor": "#A405FA",
+      "versions": [
+        {
+          "version": "0.7.0-20260911.328+6032424a",
+          "date": "2026-09-15",
+          "localizedDescription": "## Build Info\r\n\r\nBuilt at (UTC): `Fri Sep 11 21:25:58 2026`\r\nBuilt at (UTC date): `2026-09-11`\r\nCommit SHA: `6032424a0e56c1c319762e786099bdd9186a238b`\r\nVersion: `0.7.0-20260911.328+6032424a`\r\n\r\n#### What's Changed:\r\n- **fixes for 503 during sign-in**: There were some changes from apple server side which broke 0.6.4 and prior versions and prevent them from signing into sidestore. This temporary version addresses the sign-in issue with 503 status code\r\n\r\n#### Full Changelog: [0.6.4...0.7.0-alpha](https://github.com/SideStore/SideStore/compare/0.6.4...0.7.0-alpha)",
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.7.0-alpha/SideStore.ipa",
+          "size": 27770821,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
       "name": "Silverphase",
       "bundleIdentifier": "com.silverphase.editor",
       "developerName": "akinal5765-byte",
@@ -1338,6 +1414,17 @@
   ],
   "news": [
     {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 1.2.2 · 09 Nov 2026",
+      "identifier": "MoviePilot-release-v1.2.2",
+      "caption": "MoviePilot 1.2.2 is available.",
+      "date": "2026-11-09T13:38:44Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.2"
+    },
+    {
       "appID": "com.stik.stikdebug",
       "title": "StikDebug 3.2.2 · 08 Nov 2026",
       "identifier": "StikDebug-release-3.2.2",
@@ -1457,17 +1544,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
       "notify": true,
       "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.10"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.2.1 · 06 Nov 2026",
-      "identifier": "MoviePilot-release-v1.2.1",
-      "caption": "MoviePilot 1.2.1 is available.",
-      "date": "2026-11-06T13:43:27Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.1"
     },
     {
       "appID": "com.altman.moviepilot",
@@ -1822,6 +1898,17 @@
       "url": "https://github.com/intraducine/iridium/releases/tag/v0.2.0"
     },
     {
+      "appID": "com.rileytestut.AltStore",
+      "title": "AltStore 2.3.1 · 30 Sep 2026",
+      "identifier": "AltStore-release-v2.3",
+      "caption": "AltStore 2.3.1 is available.",
+      "date": "2026-09-30T20:16:23Z",
+      "tintColor": "#018084",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/news.png",
+      "notify": true,
+      "url": "https://github.com/altstoreio/AltStore/releases/tag/v2.3"
+    },
+    {
       "appID": "com.makr.orchard",
       "title": "Orchard 0.2 · 25 Sep 2026",
       "identifier": "Orchard-release-v0.2",
@@ -1842,6 +1929,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
       "notify": true,
       "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.4"
+    },
+    {
+      "appID": "com.SideStore.SideStore",
+      "title": "SideStore 0.7.0-20260911.328+6032424a · 15 Sep 2026",
+      "identifier": "SideStore-release-0.7.0-alpha",
+      "caption": "SideStore 0.7.0-20260911.328+6032424a is available.",
+      "date": "2026-09-15T11:12:49Z",
+      "tintColor": "#A405FA",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png",
+      "notify": true,
+      "url": "https://github.com/SideStore/SideStore/releases/tag/0.7.0-alpha"
     },
     {
       "appID": "app.fathom.emulator",
@@ -1919,6 +2017,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
       "notify": true,
       "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/3.8.0"
+    },
+    {
+      "appID": "thewonderofyou.Feather",
+      "title": "Feather 2.9.0 · 05 Jul 2026",
+      "identifier": "Feather-release-v2.9.0",
+      "caption": "Feather 2.9.0 is available.",
+      "date": "2026-07-05T02:11:53Z",
+      "tintColor": "#848ef9",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/news.png",
+      "notify": true,
+      "url": "https://github.com/claration/feather/releases/tag/v2.9.0"
     },
     {
       "appID": "com.mafty.dukex",

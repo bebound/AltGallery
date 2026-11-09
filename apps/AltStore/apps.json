@@ -1,0 +1,50 @@
+{
+  "name": "AltStore",
+  "subtitle": "AltStore AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for AltStore",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/icon.png",
+  "website": "https://github.com/altstoreio/AltStore",
+  "tintColor": "#018084",
+  "apps": [
+    {
+      "name": "AltStore",
+      "bundleIdentifier": "com.rileytestut.AltStore",
+      "developerName": "Riley & Shane",
+      "subtitle": "Sideload non-notarized apps with AltServer.",
+      "localizedDescription": "AltStore Classic allows you to sideload non-notarized .ipa files with AltServer on a Mac or PC.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/myapps.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/app-detail.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/browse.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/sources.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/add-source.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/settings.png"
+      ],
+      "tintColor": "#018084",
+      "versions": [
+        {
+          "version": "2.3.1",
+          "date": "2026-09-30",
+          "localizedDescription": "### New\r\n\r\nRemote AltServer\r\n* Supports sideloading apps without a computer\r\n* Install, refresh, and (de-)activate apps from anywhere with a WiFi connection\r\n* Tap “Set up Remote AltServer” in AltStore settings to get started\r\n* Thanks @jkcoxson and the entire SideStore team for making this possible!\r\n\r\nLiquid Glass UI\r\n* Updated design to fit at home on iOS 26\r\n\r\n### Improved\r\n\r\n* Includes `ALT_CLASSIC_VER` header with current build version when fetching sources\r\n* Uses app's tint color as background color when loading app icon\r\n* Improved error messages for better troubleshooting guidance\r\n* Raised minimum iOS version to 17.4\r\n\r\n### Fixed\r\n* Fixed unreadable text in light mode for some news alerts (thanks @partyknightsdev!)\r\n* Fixed showing empty text view for updates with no description\r\n* Fixed extra space above version description for app updates\r\n* Fixed category cells not being accessible with VoiceOver\r\n* Fixed My Apps tab badge count showing incorrect number of app updates\r\n* Fixed memory leak due to strong-reference cycle in news tab",
+          "downloadURL": "https://github.com/altstoreio/AltStore/releases/download/v2.3/AltStore_Classic_Notarized_2_3.ipa",
+          "size": 40616419,
+          "minOSVersion": "17.4"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.rileytestut.AltStore",
+      "title": "AltStore 2.3.1 · 30 Sep 2026",
+      "identifier": "AltStore-release-v2.3",
+      "caption": "AltStore 2.3.1 is available.",
+      "date": "2026-09-30T20:16:23Z",
+      "tintColor": "#018084",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/news.png",
+      "notify": true,
+      "url": "https://github.com/altstoreio/AltStore/releases/tag/v2.3"
+    }
+  ]
+}

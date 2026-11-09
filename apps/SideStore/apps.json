@@ -1,0 +1,47 @@
+{
+  "name": "SideStore",
+  "subtitle": "SideStore AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for SideStore",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/icon.png",
+  "website": "https://github.com/SideStore/SideStore",
+  "tintColor": "#A405FA",
+  "apps": [
+    {
+      "name": "SideStore",
+      "bundleIdentifier": "com.SideStore.SideStore",
+      "developerName": "SideStore Team",
+      "subtitle": "Untethered alternative app store for iOS",
+      "localizedDescription": "SideStore is an untethered, community-driven alternative app store for non-jailbroken iOS devices. It resigns and installs .ipa files with your personal Apple ID and refreshes them in the background, so sideloading no longer requires AltServer.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/apps.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/browse.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png"
+      ],
+      "tintColor": "#A405FA",
+      "versions": [
+        {
+          "version": "0.7.0-20260911.328+6032424a",
+          "date": "2026-09-15",
+          "localizedDescription": "## Build Info\r\n\r\nBuilt at (UTC): `Fri Sep 11 21:25:58 2026`\r\nBuilt at (UTC date): `2026-09-11`\r\nCommit SHA: `6032424a0e56c1c319762e786099bdd9186a238b`\r\nVersion: `0.7.0-20260911.328+6032424a`\r\n\r\n#### What's Changed:\r\n- **fixes for 503 during sign-in**: There were some changes from apple server side which broke 0.6.4 and prior versions and prevent them from signing into sidestore. This temporary version addresses the sign-in issue with 503 status code\r\n\r\n#### Full Changelog: [0.6.4...0.7.0-alpha](https://github.com/SideStore/SideStore/compare/0.6.4...0.7.0-alpha)",
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.7.0-alpha/SideStore.ipa",
+          "size": 27770821,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.SideStore.SideStore",
+      "title": "SideStore 0.7.0-20260911.328+6032424a · 15 Sep 2026",
+      "identifier": "SideStore-release-0.7.0-alpha",
+      "caption": "SideStore 0.7.0-20260911.328+6032424a is available.",
+      "date": "2026-09-15T11:12:49Z",
+      "tintColor": "#A405FA",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png",
+      "notify": true,
+      "url": "https://github.com/SideStore/SideStore/releases/tag/0.7.0-alpha"
+    }
+  ]
+}
