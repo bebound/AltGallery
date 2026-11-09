@@ -1,6 +1,6 @@
 ---
 name: update-app
-description: Handle a repo migration or app rename for an app already in AltGallery. The user supplies the existing app folder name and the new repo URL; Claude moves the folder with git mv (preserving history), re-extracts the project metadata from the new repo (AltStore source / README / release ipa — description, subtitle, bundle id, developer, icon, screenshots), updates config.toml (repo, URLs, tint, min_os_version, asset_pattern), deletes and rewrites news.toml from the template when the icon changed (none of the old color pins survive the new artwork) or updates it in place when it did not, always re-renders images/news.png, regenerates apps.json, and updates the README entry. Use when an app's GitHub repo moves to a new owner/repo, the app is renamed, or both.
+description: Handle a repo migration or app rename for an app already in AltGallery. The user supplies the existing app folder name and the new repo URL; Claude moves the folder with git mv (preserving history), re-extracts the project metadata from the new repo (AltStore source / README / release ipa — description, subtitle, bundle id, developer, icon, screenshots), re-checks the tag/filename-derived version against the release ipa (version_source = ipa when they differ), updates config.toml (repo, URLs, tint, min_os_version, asset_pattern), deletes and rewrites news.toml from the template when the icon changed (none of the old color pins survive the new artwork) or updates it in place when it did not, always re-renders images/news.png, regenerates apps.json, and updates the README entry. Use when an app's GitHub repo moves to a new owner/repo, the app is renamed, or both.
 ---
 
 # Updating an App: Repo Migration or Rename
@@ -96,6 +96,18 @@ which app was meant.
      the gallery install a different app (or fail). If the new repo offers no
      way to verify it, keep the existing value and say in the report that it
      was not re-verified.
+   - **Re-check the version — always** (the `/add-app` step 2f check, against
+     the **new** repo). Download the latest release ipa (it is not optional
+     here, even when a source supplied the metadata: the source's version is
+     only what its own generator read) and compare the ipa's
+     `CFBundleShortVersionString` (`tools/ipa_bundle_id.py --json`) with the
+     version altgen would derive from the new release **tag** minus a leading
+     `v`, or, when `version_pattern` is set, the release **name** / asset
+     **filename**. They can disagree (AltStore: tag `v2.3`, ipa `2.3.1`,
+     build 63). Mismatch → `version_source = "ipa"` in `[versions]` (step 4);
+     agreement → the default, with no `version_source`. Never fake a match by
+     rewriting the tag, `strip_v_prefix`, or `version_pattern`. Keep the ipa
+     until the icon decision below is settled, then delete it.
    - **Icon:** prefer the new repo's artwork (repo, README, `assets/`, or its
      AltStore source). If the new repo has none, keep the existing
      `icon.png` — it is still the app's artwork — rather than falling back to
@@ -146,6 +158,11 @@ which app was meant.
    - `strip_v_prefix`, `version_pattern`, `build_version_pattern`, and
      `include_prereleases` only when the new tags/assets need them — drop
      stale patterns that encode the old repo's scheme;
+   - `version_source = "ipa"` is **re-decided, never inherited blindly**: keep
+     it only when step 3's check against the new repo still finds a
+     tag/filename-vs-ipa mismatch; add it when the check now differs; drop it
+     (and its comment) when the new repo's releases agree. Rewrite its comment
+     with the new repo's values — an inherited one names the old tag;
    - update any comment that names old assets or tag formats.
 
 5. **Reset `news.toml` when the icon changed, otherwise update it in place**
@@ -284,6 +301,7 @@ PY
 - [ ] folder moved with `git mv` (two-step for case-only renames), history preserved
 - [ ] metadata re-extracted from the **new** repo, not the old redirect
 - [ ] bundle identifier re-verified (or explicitly reported as unverified)
+- [ ] tag/filename-derived version re-checked against the new repo's release ipa; `version_source = "ipa"` added, kept, or dropped to match
 - [ ] icon refreshed from the new repo when available; existing icon kept when not
 - [ ] new screenshots downloaded when available; existing kept otherwise; missing screenshots warned about
 - [ ] `config.toml`: repo, source/app names, developer, URLs, tint, min OS and `[versions]` patterns all updated; every `apps/<OldName>/` URL gone

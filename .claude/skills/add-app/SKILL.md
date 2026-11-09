@@ -1,6 +1,6 @@
 ---
 name: add-app
-description: Add a new app to the AltGallery repo. When the project already ships its own AltStore source (apps.json), extracts the fields it needs from that source to pre-fill config.toml; otherwise reads the bundle identifier and version metadata out of a release .ipa with tools/ipa_bundle_id.py, and extracts the icon from that ipa with tools/ipa_icon.py when the repo has no icon. Creates apps/<AppName>/, writes config.toml and news.toml, downloads icon + screenshots, samples a tint color from the icon, renders images/news.png, generates apps.json with altgen (local verification only), and adds the README "Available Apps" entry. Both apps.json and all-apps.json are generated and committed by the CI workflow — never update or commit them locally. Use whenever the user wants to add a new app / a new IPA source to the gallery.
+description: Add a new app to the AltGallery repo. When the project already ships its own AltStore source (apps.json), extracts the fields it needs from that source to pre-fill config.toml; otherwise reads the bundle identifier and version metadata out of a release .ipa with tools/ipa_bundle_id.py, verifies the version altgen would derive from the release tag or filename against the ipa and switches to version_source = ipa when they differ, and extracts the icon from that ipa with tools/ipa_icon.py when the repo has no icon. Creates apps/<AppName>/, writes config.toml and news.toml, downloads icon + screenshots, samples a tint color from the icon, renders images/news.png, generates apps.json with altgen (local verification only), and adds the README "Available Apps" entry. Both apps.json and all-apps.json are generated and committed by the CI workflow — never update or commit them locally. Use whenever the user wants to add a new app / a new IPA source to the gallery.
 ---
 
 # Adding a New App to AltGallery
@@ -90,14 +90,44 @@ change between apps.
       # 1. latest ipa asset — also the exact filename for asset_pattern
       curl -sL "https://api.github.com/repos/<owner>/<repo>/releases/latest" \
         | jq -r '.assets[] | select(.name|endswith(".ipa")) | .browser_download_url' | head -1
-      # 2. download it (often tens of MB) and read it, then delete it
+      # 2. download it (often tens of MB) and read it — keep the file for
+      #    step 2f (version check) and step 3 (icon fallback)
       curl -sL -o /tmp/<AppName>.ipa "<url-from-1>"
       tools/ipa_bundle_id.py /tmp/<AppName>.ipa --json
       ```
-      Use `bundle_id`, `min_os_version`, and check `version` against
-      `strip_v_prefix`/`asset_pattern`. Stdlib only (bare `python3`); exit 1
-      when unreadable. AGENTS.md → [Reading an IPA's Bundle
+      Use `bundle_id` and `min_os_version`; `asset_pattern` must match the
+      asset name from step 1. Stdlib only (bare `python3`); exit 1 when
+      unreadable. Delete the ipa only after steps 2f and 3 are done.
+      AGENTS.md → [Reading an IPA's Bundle
       ID](../AGENTS.md#reading-an-ipas-bundle-id).
+
+   f. **Confirm the version altgen will generate matches the ipa — always**
+
+      Do this for **every** new app, even when a source supplied the
+      metadata: a source's `versions[0].version` is only what *its* generator
+      read, not what the ipa itself reports. Download the latest release ipa
+      if step 2e did not already (any release with a newer tag works too —
+      the check is about the tag-vs-ipa relationship, not a specific build),
+      then compare:
+
+      ```bash
+      tools/ipa_bundle_id.py /tmp/<AppName>.ipa --json | jq -r '.version'
+      ```
+
+      - **What altgen would put in `apps.json`:** the release **tag** with a
+        leading `v` stripped (`strip_v_prefix = true`, the template
+        default) — or, when `version_pattern` is configured, the version
+        matched in the release **name** (default) or the asset **filename**
+        (`version_source = "filename"`).
+      - **What the ipa reports:** `CFBundleShortVersionString` from
+        `tools/ipa_bundle_id.py`. The two can disagree even on the newest
+        release (AltStore: tag `v2.3`, ipa `2.3.1`, build 63).
+
+      When they **differ**, the tag/filename-derived version is wrong — set
+      `version_source = "ipa"` in `[versions]` (step 4). Never fake a match
+      by rewriting the tag, `strip_v_prefix`, or `version_pattern`. When they
+      **agree**, leave the template's default and add nothing: an unnecessary
+      `version_source = "ipa"` makes every CI run download each ipa.
 
 3. **Download icon and screenshots**
    Fetch from the project's GitHub repo (e.g. `raw.githubusercontent.com`, or
@@ -158,6 +188,15 @@ change between apps.
      `downloadURL` from step 2 gives the exact name. Add `version_pattern` /
      `build_version_pattern` only when the release tags need them (the
      template carries PiliPlus's own — replace or drop them as appropriate).
+     Add `version_source = "ipa"` **only** when step 2f found the ipa's
+     version differs from the tag/filename-derived one (e.g. AltStore's tag
+     `v2.3` vs. ipa `2.3.1`), with a one-line English comment naming both
+     values so nobody "fixes" it back:
+     ```toml
+     # Read the version from the ipa's Info.plist: the release tag is v2.3
+     # while the ipa inside it reports 2.3.1 (build 63).
+     version_source = "ipa"
+     ```
 
 5. **Sample a tint color** (when the project has no official brand color in
    its AltStore source — otherwise reuse the source's `tintColor` directly):
@@ -234,7 +273,9 @@ change between apps.
 ## Checklist
 - [ ] `config.toml` copied from `apps/PiliPlus/config.toml` (read at run time, not from memory) — shared header/section order/wording/URLs left untouched, only app-specific values replaced
 - [ ] fields extracted from the project's own AltStore source (when one exists); `tintColor` normalized to `#RRGGBB`
-- [ ] `bundle_identifier` and `min_os_version` from the source or the ipa (`tools/ipa_bundle_id.py`) — no `com.example.*` placeholder; ipa deleted afterwards
+- [ ] `bundle_identifier` and `min_os_version` from the source or the ipa (`tools/ipa_bundle_id.py`) — no `com.example.*` placeholder
+- [ ] version confirmed against the ipa (step 2f): `version_source = "ipa"` (with a comment) when the tag/filename differs, left out when it matches
+- [ ] ipa deleted afterwards
 - [ ] `apps/<AppName>/{config.toml, news.toml, icon.png, images/*}` all present
 - [ ] `icon.png` from the repo, or from the ipa via `tools/ipa_icon.py` when the repo has none — size checked, small size reported to the user
 - [ ] icon/screenshots hosted locally and referenced via `bebound/AltGallery` raw URLs (never the source's remote URLs)
