@@ -1,0 +1,40 @@
+# altgen config for the GestaltX AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "huamidev/GestaltX"
+
+[source]
+name = "GestaltX"
+subtitle = "GestaltX AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for GestaltX"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/icon.png"
+website = "https://github.com/huamidev/GestaltX"
+tint_color = "#007AFF"
+
+[app]
+name = "GestaltX"
+bundle_identifier = "com.huami.gestultx"
+developer_name = "huamidev"
+subtitle = "MobileGestalt editor for iOS 27 with region-code tweaks and presets"
+description = "A MobileGestalt editor for iOS 27.x with region-code and sales-region tweaks, device presets, backups, and a typed field editor. Powered by worse_query; requires iOS 27 for on-device MobileGestalt access and a common App Group when re-signing."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/home.jpeg",
+]
+tint_color = "#007AFF"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): one versioned ipa per release, e.g. GestaltX_1.0.3.ipa
+asset_pattern = "GestaltX_.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.png"
+
+[output]
+path = "apps.json"

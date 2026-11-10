@@ -90,6 +90,9 @@ An x86-64 PC emulator for iOS — runs x86-64 Linux executables by translating t
 ### <a href="https://github.com/claration/feather"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Feather/icon.png" alt="Feather icon" width="24" align="top">Feather</a>
 Free on-device iOS/iPadOS signer and app manager — sign and install IPAs with your own Apple Developer certificate, no computer needed.
 
+### <a href="https://github.com/huamidev/GestaltX"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/GestaltX/icon.png" alt="GestaltX icon" width="24" align="top">GestaltX</a>
+Edit MobileGestalt on iOS 27 — region-code tweaks, device presets and capability flags, with backups and a typed plist field editor.
+
 ### <a href="https://github.com/Leviidev/Husk"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Husk/icon.png" alt="Husk icon" width="24" align="top">Husk</a>
 Run Android apps on iOS — drop in an APK, tap it, and it opens full-screen. Requires JIT and a debugger attached at runtime.
 
