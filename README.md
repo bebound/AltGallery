@@ -93,6 +93,9 @@ Free on-device iOS/iPadOS signer and app manager — sign and install IPAs with 
 ### <a href="https://github.com/huamidev/GestaltX"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/GestaltX/icon.png" alt="GestaltX icon" width="24" align="top">GestaltX</a>
 Edit MobileGestalt on iOS 27 — region-code tweaks, device presets and capability flags, with backups and a typed plist field editor.
 
+### <a href="https://github.com/pookjw/HermesEnabler"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/HermesEnabler/icon.png" alt="HermesEnabler icon" width="24" align="top">HermesEnabler</a>
+Enable Hermès and Ultra watch faces on any Apple Watch, plus on-watch display, sensor and Siri tweaks. Requires watchOS 27.0–27.3 beta 1. (Apple Developer Account is required)
+
 ### <a href="https://github.com/Leviidev/Husk"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Husk/icon.png" alt="Husk icon" width="24" align="top">Husk</a>
 Run Android apps on iOS — drop in an APK, tap it, and it opens full-screen. Requires JIT and a debugger attached at runtime.
 

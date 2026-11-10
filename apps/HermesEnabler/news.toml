@@ -1,0 +1,19 @@
+# render_news.py config: python3 tools/render_news.py --out apps/HermesEnabler
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "HermesEnabler"
+tagline = "Hermès Watch Faces on any Apple Watch"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# The icon's own blue (#70C0F0) is too pale for the badge on a light
+# background, so the promo uses a deeper shade of the same hue.
+tint = "#2E8FD8"
+# tint_alt = "#2E8FD8"      # bottom-right glow (default: [source] tint_color)
+# background = "#D6E3EB"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#E7EFF3"        # gradient mid stop (derived from background)
+# bg_dark = "#BBD0DE"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#5194BD" # tagline text (derived from background)

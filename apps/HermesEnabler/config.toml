@@ -1,0 +1,45 @@
+# altgen config for the HermesEnabler AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "pookjw/HermesEnabler"
+
+[source]
+name = "HermesEnabler"
+subtitle = "HermesEnabler AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for HermesEnabler"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/icon.png"
+website = "https://github.com/pookjw/HermesEnabler"
+tint_color = "#70C0F0"
+
+[app]
+name = "HermesEnabler"
+# The project ships its own default identifier (com.example.HermesEnabler),
+# so this is the real bundle id read from the release ipa, not a placeholder.
+bundle_identifier = "com.example.HermesEnabler"
+developer_name = "pookjw"
+subtitle = "Enable Hermès Watch Faces on any Apple Watch"
+description = "Enable Hermès and Ultra watch faces on any Apple Watch, along with display, sensor, and Siri tweaks backed by MobileGestalt changes and automatic backups. Requires watchOS 27.0 through 27.3 beta 1."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/watch.jpg",
+]
+tint_color = "#70C0F0"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release ships a single HermesEnabler.ipa
+asset_pattern = "HermesEnabler\\.ipa$"
+# Read the version from the ipa's Info.plist: the release tag is 1.3 while
+# the ipa reports 1.0 (build 1), since the project never bumps MARKETING_VERSION.
+version_source = "ipa"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png"
+
+[output]
+path = "apps.json"
