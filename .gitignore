@@ -24,4 +24,5 @@ dist/
 /all-apps.json
 /all-apps-proxy.json
 /apps/*/apps.json
+/apps/*/apps-proxy.json
 all-apps-proxy.json

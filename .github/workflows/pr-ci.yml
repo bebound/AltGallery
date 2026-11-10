@@ -45,6 +45,7 @@ jobs:
             (cd "apps/$name" && uvx altgen -c config.toml)
             jq -e '.apps | length == 1' "apps/$name/apps.json"
             jq -e '.apps[0].versions | length > 0' "apps/$name/apps.json"
+            python3 tools/make_proxy.py "apps/$name/apps.json" "apps/$name/apps-proxy.json"
             echo "::endgroup::"
           done
 

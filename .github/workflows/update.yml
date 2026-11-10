@@ -35,6 +35,16 @@ jobs:
           # so scheduled/push runs still fail on a broken repo.
           SKIP_FAILURES: ${{ inputs.skip_failures && '1' || '' }}
 
+      # Generate a proxy mirror beside each app source, using the same URL
+      # rewriting rules as the combined all-apps source below.
+      - name: Generate per-app proxy sources
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          for source in apps/*/apps.json; do
+            python3 tools/make_proxy.py "$source" "${source%/apps.json}/apps-proxy.json"
+          done
+
       # Mirror of all-apps.json for users who cannot reach GitHub: the raw
       # files it references (icons, screenshots, news images) and the release
       # ipa downloads go through gh-proxy.com. Release pages, news links and
@@ -43,12 +53,12 @@ jobs:
       - name: Generate all-apps-proxy.json
         run: python3 tools/make_proxy.py all-apps.json all-apps-proxy.json
 
-      # apps.json / all-apps.json / all-apps-proxy.json are gitignored, so
+      # Generated app sources and proxy mirrors are gitignored, so
       # `git add -A` won't pick them up. Stage them explicitly (force) so the
       # regenerated sources can be committed here — contributors never commit
       # them.
       - name: Stage generated sources
-        run: git add -f all-apps.json all-apps-proxy.json apps/*/apps.json
+        run: git add -f all-apps.json all-apps-proxy.json apps/*/apps.json apps/*/apps-proxy.json
 
       - name: Check for changes
         id: changes
@@ -65,5 +75,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: update all-apps.json and all-apps-proxy.json"
+          git commit -m "chore: update app sources and proxy mirrors"
           git push origin "HEAD:${GITHUB_REF_NAME}"

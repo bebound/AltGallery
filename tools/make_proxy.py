@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build all-apps-proxy.json — all-apps.json with its fetch URLs proxied.
+"""Build a proxy mirror of an AltStore source with its fetch URLs proxied.
 
 GitHub is reachable only intermittently from mainland China, so the assets the
 source points at can fail even when the source itself is loaded from a CDN.
@@ -18,13 +18,14 @@ Only strings are touched; every other field is copied verbatim. Running it on
 an already-proxied file is a no-op (proxied URLs no longer start with a GitHub
 host), so it is safe to re-run.
 
-The result is committed next to all-apps.json by .github/workflows/update.yml;
+The result is generated beside the app sources and the combined source by
+.github/workflows/update.yml;
 
 Stdlib only, so the bare system `python3` runs it.
 
 Usage:
   tools/make_proxy.py                          # all-apps.json -> all-apps-proxy.json
-  tools/make_proxy.py in.json out.json
+  tools/make_proxy.py apps/Foo/apps.json apps/Foo/apps-proxy.json
   tools/make_proxy.py --prefix https://gh-proxy.com/
 """
 
