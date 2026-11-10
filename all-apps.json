@@ -580,11 +580,11 @@
       "tintColor": "#EC4949",
       "versions": [
         {
-          "version": "0.3.29",
-          "date": "2026-11-06",
-          "localizedDescription": "### Fixed\n\n- **macOS**: the now-playing page opens and closes cleanly — the page title, search field and sidebar toggle no longer hang over it while it moves, it no longer snaps into place at the end, and the thin white line beside the window buttons is gone; its collapse button is larger, sits in the top-right corner and always answers clicks.\n- **iOS**: adding a song to a playlist from the now-playing page shows the confirmation over the page; a song that is already in the playlist says so, and any other failure is shown inside the playlist picker (#182).\n- **iOS**: the search field stays visible when the Search tab opens.\n\n### Improved\n\n- **macOS**: hiding and showing the sidebar is smooth — the sidebar stays put and the page slides over it, the toggle never leaves its place beside the window buttons, the page title moves with the page, and View → Hide/Show Sidebar (⌃⌘S) is back.\n- **macOS**: the back button follows the sidebar toggle and, like it, is drawn without a glass capsule.\n- **macOS**: in the player bar, the like button sits right after the song title.\n\n---\n\n### 修复\n\n- **macOS**：播放页的打开和收起更干净——移动过程中页面标题、搜索框和侧栏按钮不再浮在播放页上，结束时不再突然跳一下，红绿灯旁的白色细线也没有了；收起按钮更大，移到右上角，并且每次点击都能响应。\n- **iOS**：在播放页把歌曲收藏到歌单时，提示直接显示在播放页上；歌单里已有这首歌时会明确提示，其他失败会显示在歌单选择框里（#182）。\n- **iOS**：打开搜索页时搜索框保持可见。\n\n### 改进\n\n- **macOS**：收起和展开侧栏不再卡顿——侧栏固定不动，由右侧页面滑动覆盖；切换按钮始终在红绿灯旁边不动，页面标题跟随页面移动，「显示」菜单中的「隐藏/显示边栏」（⌃⌘S）也恢复了。\n- **macOS**：返回按钮跟在侧栏按钮之后，并和它一样去掉了玻璃胶囊。\n- **macOS**：播放条里的「喜欢」按钮紧跟在歌名后面。",
-          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.29/Kumone-iOS-0.3.29.ipa",
-          "size": 3937238,
+          "version": "0.3.32",
+          "date": "2026-11-09",
+          "localizedDescription": "### Added\n\n- **iOS**: eight sound-effect presets and a ten-band custom equalizer on the now-playing page and in Settings, with a live response curve. A change applies to the playing track without rebuilding the player (#191).\n\n### Improved\n\n- **iOS**: the app follows the system language, English or Simplified Chinese, as the macOS app does (#191).\n- **Localization**: the English interface is complete on macOS, iOS and CarPlay. Album, playlist, artist and search pages, the iOS updater and CarPlay no longer fall back to Chinese, and VoiceOver reads the now-playing buttons in English. CarPlay play counts use K/M/B in English.\n- **Downloads**: a failed download now says why — the service's own reason (such as a risk-control refusal) or the system error code — instead of only asking you to check the network (#141).\n\n---\n\n### 新增\n\n- **iOS**：播放页和设置里新增八种音效预设和十段自定义均衡器，并带实时频率响应曲线。切换后直接作用于当前播放，不用重建播放器（#191）。\n\n### 改进\n\n- **iOS**：与 macOS 一样跟随系统语言，支持英文和简体中文（#191）。\n- **本地化**：macOS、iOS 与 CarPlay 的英文界面补齐。专辑、歌单、歌手与搜索页面、iOS 更新流程和 CarPlay 不再夹杂中文，播放页按钮的 VoiceOver 朗读也有了英文。CarPlay 的播放次数在英文下使用 K/M/B。\n- **下载**：下载失败时会说明原因（如服务端的风控拒绝）或系统错误码，而不再只提示检查网络（#141）。",
+          "downloadURL": "https://github.com/missuo/kumone/releases/download/v0.3.32/Kumone-iOS-0.3.32.ipa",
+          "size": 4060424,
           "minOSVersion": "16.0"
         }
       ]
@@ -855,9 +855,9 @@
         {
           "version": "1.2.2",
           "date": "2026-11-09",
-          "localizedDescription": "MoviePilot iOS 1.2.2，修复 iOS 16–25 底栏材质与原生搜索分类配色问题。\n\n### 更新内容\n\n- iOS 16–25 的底栏改用超薄系统磨砂材质，保留底页壁纸和明暗主题变化；iOS 26+ 继续使用系统 Liquid Glass。\n- 修复旧系统搜索页分类选中态使用相同强调色绘制背景和前景，导致图标与文字消失的问题。\n- 保留 iOS 16 设备的原生底栏布局、动态搜索按钮和路由确认行为。\n\n### 安装\n\n下载 `MoviePilot-1.2.2-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[dbed5babf771efb90983ada1ebc478a0396f212b](https://github.com/jxxghp/MoviePilot-App/commit/dbed5babf771efb90983ada1ebc478a0396f212b)。",
+          "localizedDescription": "MoviePilot iOS 1.2.2，修复嵌套弹窗动画、iOS 16–25 底栏材质与原生搜索分类配色问题。\n\n### 更新内容\n\n- 修复 App 嵌套打开弹窗时直接切换内容的问题，补齐进入子弹窗、返回父弹窗和高度变化的动画，并适配系统“减弱动态效果”。\n- iOS 16–25 的底栏改用超薄系统磨砂材质，保留底页壁纸和明暗主题变化；iOS 26+ 继续使用系统 Liquid Glass。\n- 修复旧系统搜索页分类选中态使用相同强调色绘制背景和前景，导致图标与文字消失的问题。\n- 保留 iOS 16 设备的原生底栏布局、动态搜索按钮和路由确认行为。\n\n### 安装\n\n下载 `MoviePilot-1.2.2-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[aedc6585518f6e5e3d726eed0eea88674eb4e962](https://github.com/jxxghp/MoviePilot-App/commit/aedc6585518f6e5e3d726eed0eea88674eb4e962)。",
           "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.2/MoviePilot-1.2.2-unsigned.ipa",
-          "size": 4229020,
+          "size": 4231532,
           "minOSVersion": "17.0"
         }
       ]
@@ -1162,11 +1162,11 @@
       "tintColor": "#E5A019",
       "versions": [
         {
-          "version": "2.1.0",
-          "date": "2026-11-05",
-          "localizedDescription": "## Release v2.1.0\n\nMulti-platform build from `d05b69b37c0481ecab180aad472af58c8eed7866`.\n\n### iOS (IPA Non-Signé)\nÀ installer via SideStore / AltStore.\n\n### Android (APK)\nInstallation directe.\n\n### Checksums\n\n| Fichier | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `f8591583a8e647db4f1b89a6c9e674c6` | `fc96beddcfc24672ae96233d540228bf93a8fe2be8b6da659f88d486480b9af7` |",
-          "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.1.0-b66/rush-hours-unsigned.ipa",
-          "size": 19030133,
+          "version": "2.2.0",
+          "date": "2026-11-09",
+          "localizedDescription": "## Release v2.2.0\n\nNew on the map:\n• Level search: find the levels you do not have 3 stars on, by grid size, number of moves, bosses… and go from one to the next\n• Go straight to a level by typing its number\n• Generator: choose how many levels (up to 100), mix difficulties and grid sizes, set a minimum of moves\n• A generated level no longer unlocks the whole campaign\n\nMulti-platform build from `0d267fa85534d68c90eb99a387dd726da1393c4a`.\n\n### iOS (unsigned IPA)\nInstall with SideStore / AltStore.\n\n### Android (APK)\nDirect install.\n\n### Checksums\n\n| File | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `b6605fac3f31c4289566e61cd6719a87` | `030fc97819f03898d2a3a39a9a4bc84c43eb18f3e13da7e578bf73439158f78a` |",
+          "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.2.0-b67/rush-hours-unsigned.ipa",
+          "size": 19054716,
           "minOSVersion": "16.4"
         }
       ]
@@ -1414,6 +1414,28 @@
   ],
   "news": [
     {
+      "appID": "com.rushhours.app",
+      "title": "Rush Hours 2.2.0 · 09 Nov 2026",
+      "identifier": "Rush Hours-release-v2.2.0-b67",
+      "caption": "Rush Hours 2.2.0 is available.",
+      "date": "2026-11-09T23:36:07Z",
+      "tintColor": "#E5A019",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.2.0-b67"
+    },
+    {
+      "appID": "sb.moe.kumone-ios",
+      "title": "Kumone 0.3.32 · 09 Nov 2026",
+      "identifier": "Kumone-release-v0.3.32",
+      "caption": "Kumone 0.3.32 is available.",
+      "date": "2026-11-09T17:49:02Z",
+      "tintColor": "#EC4949",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
+      "notify": true,
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.32"
+    },
+    {
       "appID": "org.moviepilot.app",
       "title": "MoviePilot 1.2.2 · 09 Nov 2026",
       "identifier": "MoviePilot-release-v1.2.2",
@@ -1513,17 +1535,6 @@
       "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.7.0"
     },
     {
-      "appID": "sb.moe.kumone-ios",
-      "title": "Kumone 0.3.29 · 06 Nov 2026",
-      "identifier": "Kumone-release-v0.3.29",
-      "caption": "Kumone 0.3.29 is available.",
-      "date": "2026-11-06T19:18:52Z",
-      "tintColor": "#EC4949",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
-      "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.29"
-    },
-    {
       "appID": "com.thebcd69.bcd",
       "title": "BCD 0.1.634 · 06 Nov 2026",
       "identifier": "BCD-release-v0.1.634",
@@ -1577,17 +1588,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/news.png",
       "notify": true,
       "url": "https://github.com/mornyeapp/Mornye/releases/tag/v5.3.1"
-    },
-    {
-      "appID": "com.rushhours.app",
-      "title": "Rush Hours 2.1.0 · 05 Nov 2026",
-      "identifier": "Rush Hours-release-v2.1.0-b66",
-      "caption": "Rush Hours 2.1.0 is available.",
-      "date": "2026-11-05T08:43:41Z",
-      "tintColor": "#E5A019",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.1.0-b66"
     },
     {
       "appID": "ani.baka",

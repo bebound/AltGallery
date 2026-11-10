@@ -22,11 +22,11 @@
       "tintColor": "#E5A019",
       "versions": [
         {
-          "version": "2.1.0",
-          "date": "2026-11-05",
-          "localizedDescription": "## Release v2.1.0\n\nMulti-platform build from `d05b69b37c0481ecab180aad472af58c8eed7866`.\n\n### iOS (IPA Non-Signé)\nÀ installer via SideStore / AltStore.\n\n### Android (APK)\nInstallation directe.\n\n### Checksums\n\n| Fichier | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `f8591583a8e647db4f1b89a6c9e674c6` | `fc96beddcfc24672ae96233d540228bf93a8fe2be8b6da659f88d486480b9af7` |",
-          "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.1.0-b66/rush-hours-unsigned.ipa",
-          "size": 19030133,
+          "version": "2.2.0",
+          "date": "2026-11-09",
+          "localizedDescription": "## Release v2.2.0\n\nNew on the map:\n• Level search: find the levels you do not have 3 stars on, by grid size, number of moves, bosses… and go from one to the next\n• Go straight to a level by typing its number\n• Generator: choose how many levels (up to 100), mix difficulties and grid sizes, set a minimum of moves\n• A generated level no longer unlocks the whole campaign\n\nMulti-platform build from `0d267fa85534d68c90eb99a387dd726da1393c4a`.\n\n### iOS (unsigned IPA)\nInstall with SideStore / AltStore.\n\n### Android (APK)\nDirect install.\n\n### Checksums\n\n| File | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `b6605fac3f31c4289566e61cd6719a87` | `030fc97819f03898d2a3a39a9a4bc84c43eb18f3e13da7e578bf73439158f78a` |",
+          "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.2.0-b67/rush-hours-unsigned.ipa",
+          "size": 19054716,
           "minOSVersion": "16.4"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.rushhours.app",
-      "title": "Rush Hours 2.1.0 · 05 Nov 2026",
-      "identifier": "Rush Hours-release-v2.1.0-b66",
-      "caption": "Rush Hours 2.1.0 is available.",
-      "date": "2026-11-05T08:43:41Z",
+      "title": "Rush Hours 2.2.0 · 09 Nov 2026",
+      "identifier": "Rush Hours-release-v2.2.0-b67",
+      "caption": "Rush Hours 2.2.0 is available.",
+      "date": "2026-11-09T23:36:07Z",
       "tintColor": "#E5A019",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
       "notify": true,
-      "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.1.0-b66"
+      "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.2.0-b67"
     }
   ]
 }
