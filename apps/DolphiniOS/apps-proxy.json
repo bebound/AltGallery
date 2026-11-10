@@ -1,0 +1,47 @@
+{
+  "name": "DolphiniOS",
+  "subtitle": "DolphiniOS AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for DolphiniOS",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/icon.png",
+  "website": "https://github.com/OatmealDome/dolphin-ios",
+  "tintColor": "#E0B030",
+  "apps": [
+    {
+      "name": "DolphiniOS",
+      "bundleIdentifier": "me.oatmealdome.DolphiniOS-njb-patreon-beta",
+      "developerName": "OatmealDome",
+      "subtitle": "GameCube and Wii emulator for iOS/iPadOS",
+      "localizedDescription": "Dolphin for iOS, reborn. A GameCube and Wii emulator for iPhone and iPad.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/home.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/game.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/settings.png"
+      ],
+      "tintColor": "#E0B030",
+      "versions": [
+        {
+          "version": "5.0.0b6",
+          "date": "2026-06-20",
+          "localizedDescription": "* Fixed JIT support on A13/A14/M1 devices running iOS 27 beta. (@CelloSerenity)\r\n* Fixed wrong app version number introduced in 5.0.0b5. (@CelloSerenity)\r\n\r\nThe next update will be sometime after the next official Dolphin release. It will include a core update.\r\n\r\n**Full Changelog**: https://github.com/OatmealDome/dolphin-ios/compare/v5.0.0b5...v5.0.0b6",
+          "downloadURL": "https://gh-proxy.com/https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
+          "size": 17963367,
+          "minOSVersion": "14.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "me.oatmealdome.DolphiniOS-njb-patreon-beta",
+      "title": "DolphiniOS 5.0.0b6 · 20 Jun 2026",
+      "identifier": "DolphiniOS-release-v5.0.0b6",
+      "caption": "DolphiniOS 5.0.0b6 is available.",
+      "date": "2026-06-20T07:01:54Z",
+      "tintColor": "#E0B030",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/news.png",
+      "notify": true,
+      "url": "https://github.com/OatmealDome/dolphin-ios/releases/tag/v5.0.0b6"
+    }
+  ]
+}

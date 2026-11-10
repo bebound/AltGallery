@@ -1,0 +1,47 @@
+{
+  "name": "Doer",
+  "subtitle": "Doer AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Doer",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/icon.png",
+  "website": "https://github.com/moliango/doer",
+  "tintColor": "#4080E0",
+  "apps": [
+    {
+      "name": "Doer",
+      "bundleIdentifier": "com.naine.doer",
+      "developerName": "moliango",
+      "subtitle": "A native iOS client for Linux.do",
+      "localizedDescription": "A native iOS client for Linux.do — UIKit + Swift, no SwiftUI in the main app.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/home.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/detail.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/me.png"
+      ],
+      "tintColor": "#4080E0",
+      "versions": [
+        {
+          "version": "1.8.6",
+          "date": "2026-10-10",
+          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.5.3...v1.8.6",
+          "downloadURL": "https://gh-proxy.com/https://github.com/moliango/doer/releases/download/v1.8.6/doer-unsigned.ipa",
+          "size": 28095758,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.naine.doer",
+      "title": "Doer 1.8.6 · 10 Oct 2026",
+      "identifier": "Doer-release-v1.8.6",
+      "caption": "Doer 1.8.6 is available.",
+      "date": "2026-10-10T08:03:04Z",
+      "tintColor": "#4080E0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
+      "notify": true,
+      "url": "https://github.com/moliango/doer/releases/tag/v1.8.6"
+    }
+  ]
+}

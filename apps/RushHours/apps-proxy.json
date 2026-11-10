@@ -1,0 +1,48 @@
+{
+  "name": "Rush Hours",
+  "subtitle": "Rush Hours AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Rush Hours",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.png",
+  "website": "https://github.com/ekomlenovic/rush_hour_ios_android",
+  "tintColor": "#E5A019",
+  "apps": [
+    {
+      "name": "Rush Hours",
+      "bundleIdentifier": "com.rushhours.app",
+      "developerName": "ekomlenovic",
+      "subtitle": "Slide the cars, free the red one.",
+      "localizedDescription": "A free sliding-block traffic puzzle: slide the cars and trucks along their lanes to drive the red car out. 700+ campaign levels, daily and weekly challenges, a level creator and optional self-hosted multiplayer — no ads, no in-app purchases, no tracking.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/gameplay.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/map.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/daily.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/creator.png"
+      ],
+      "tintColor": "#E5A019",
+      "versions": [
+        {
+          "version": "2.2.0",
+          "date": "2026-11-09",
+          "localizedDescription": "## Release v2.2.0\n\nNew on the map:\n• Level search: find the levels you do not have 3 stars on, by grid size, number of moves, bosses… and go from one to the next\n• Go straight to a level by typing its number\n• Generator: choose how many levels (up to 100), mix difficulties and grid sizes, set a minimum of moves\n• A generated level no longer unlocks the whole campaign\n\nMulti-platform build from `0d267fa85534d68c90eb99a387dd726da1393c4a`.\n\n### iOS (unsigned IPA)\nInstall with SideStore / AltStore.\n\n### Android (APK)\nDirect install.\n\n### Checksums\n\n| File | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `b6605fac3f31c4289566e61cd6719a87` | `030fc97819f03898d2a3a39a9a4bc84c43eb18f3e13da7e578bf73439158f78a` |",
+          "downloadURL": "https://gh-proxy.com/https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.2.0-b67/rush-hours-unsigned.ipa",
+          "size": 19054716,
+          "minOSVersion": "16.4"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.rushhours.app",
+      "title": "Rush Hours 2.2.0 · 09 Nov 2026",
+      "identifier": "Rush Hours-release-v2.2.0-b67",
+      "caption": "Rush Hours 2.2.0 is available.",
+      "date": "2026-11-09T23:36:07Z",
+      "tintColor": "#E5A019",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.2.0-b67"
+    }
+  ]
+}

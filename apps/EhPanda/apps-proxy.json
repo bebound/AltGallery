@@ -1,0 +1,47 @@
+{
+  "name": "EhPanda",
+  "subtitle": "EhPanda AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for EhPanda",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/icon.png",
+  "website": "https://github.com/EhPanda-Team/EhPanda",
+  "tintColor": "#0f766e",
+  "apps": [
+    {
+      "name": "EhPanda",
+      "bundleIdentifier": "app.ehpanda",
+      "developerName": "EhPanda-Team",
+      "subtitle": "An unofficial E-Hentai App for iOS built with SwiftUI & TCA",
+      "localizedDescription": "EhPanda is an unofficial E-Hentai app for iOS & iPadOS built with SwiftUI & TCA. It supports almost all E-Hentai gallery categories, gallery browsing with filters, gallery details with tags & related galleries, posting / editing / replying to comments, H@H archiving, torrent listing, E-Hentai settings, and SNI-bypass (domain fronting) for restricted networks. Localization is built in and the app icon and accent color are customizable.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/home.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/detail.png",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/comment.png"
+      ],
+      "tintColor": "#0f766e",
+      "versions": [
+        {
+          "version": "2.8.1",
+          "date": "2026-07-20",
+          "localizedDescription": "1. feat: Adapt to the new Liquid Glass design.\r\n3. fix: Gesture issue in the reading page.\r\n4. fix: Crash issue in eh setting page.\r\n5. fix: A minor issue in search page.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/EhPanda-Team/EhPanda/releases/download/v2.8.1/EhPanda.ipa",
+          "size": 7352364,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "app.ehpanda",
+      "title": "EhPanda 2.8.1 · 20 Jul 2026",
+      "identifier": "EhPanda-release-v2.8.1",
+      "caption": "EhPanda 2.8.1 is available.",
+      "date": "2026-07-20T12:12:04Z",
+      "tintColor": "#0f766e",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/news.png",
+      "notify": true,
+      "url": "https://github.com/EhPanda-Team/EhPanda/releases/tag/v2.8.1"
+    }
+  ]
+}

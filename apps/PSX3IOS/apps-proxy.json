@@ -1,0 +1,47 @@
+{
+  "name": "PSX3IOS",
+  "subtitle": "PSX3IOS AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for PSX3IOS",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/icon.png",
+  "website": "https://github.com/xmiguel911x/PSX3IOS",
+  "tintColor": "#5080D0",
+  "apps": [
+    {
+      "name": "PSX3IOS",
+      "bundleIdentifier": "com.miguel.psx3ios",
+      "developerName": "xmiguel911x",
+      "subtitle": "PlayStation 3 emulator for iPhone and iPad",
+      "localizedDescription": "A PlayStation 3 emulator for iPhone and iPad, built on RPCS3. Real games boot and play — the whole emulator core is exposed, with community game patches, trophies, play time, save data and 14 languages. Works with or without JIT.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/home.jpg",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/install.jpg",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/settings.jpg"
+      ],
+      "tintColor": "#5080D0",
+      "versions": [
+        {
+          "version": "0.2.7-beta",
+          "date": "2026-09-01",
+          "localizedDescription": "Various improvements added, jit fixed A15 iOS 17.0 TrollStore Go to settings, JIT mode detected, and leave it on automatic, and bugs fixed",
+          "downloadURL": "https://gh-proxy.com/https://github.com/xmiguel911x/PSX3IOS/releases/download/v0.2.7-beta/PSX3IOS-beta.0.2.7-unsigned.ipa",
+          "size": 67644766,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.miguel.psx3ios",
+      "title": "PSX3IOS 0.2.7-beta · 01 Sep 2026",
+      "identifier": "PSX3IOS-release-v0.2.7-beta",
+      "caption": "PSX3IOS 0.2.7-beta is available.",
+      "date": "2026-09-01T12:12:58Z",
+      "tintColor": "#5080D0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/news.png",
+      "notify": true,
+      "url": "https://github.com/xmiguel911x/PSX3IOS/releases/tag/v0.2.7-beta"
+    }
+  ]
+}
