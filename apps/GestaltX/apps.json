@@ -1,0 +1,45 @@
+{
+  "name": "GestaltX",
+  "subtitle": "GestaltX AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for GestaltX",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/icon.png",
+  "website": "https://github.com/huamidev/GestaltX",
+  "tintColor": "#007AFF",
+  "apps": [
+    {
+      "name": "GestaltX",
+      "bundleIdentifier": "com.huami.gestultx",
+      "developerName": "huamidev",
+      "subtitle": "MobileGestalt editor for iOS 27 with region-code tweaks and presets",
+      "localizedDescription": "A MobileGestalt editor for iOS 27.x with region-code and sales-region tweaks, device presets, backups, and a typed field editor. Powered by worse_query; requires iOS 27 for on-device MobileGestalt access and a common App Group when re-signing.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/home.jpeg"
+      ],
+      "tintColor": "#007AFF",
+      "versions": [
+        {
+          "version": "1.0.3",
+          "date": "2026-11-09",
+          "localizedDescription": "GestaltX 1.0.3\r\n• 新增分享导入：在“文件”或其他 App 中分享 plist 到 GestaltX，核验后弹窗确认导入。\r\n• 加强设备归属校验，拒绝不匹配或无法核验的文件；本机导出的文件可携带设备校验凭证。\r\n• 优化 MG 控制，支持新增、修改、重命名和删除键值。\r\n• 支持恢复已核验的本机 plist，恢复前自动备份，完成后请重启设备。\r\n\r\n重签时请保留分享扩展，并为主应用和扩展配置同一个 App Group。\r\n\r\nGestaltX 1.0.3\r\n• Added share import: share a plist to GestaltX from Files or another app, then confirm the import after verification.\r\n• Strengthened device ownership checks. Mismatched or unverifiable files are rejected; exports can include a device-bound verification proof.\r\n• Improved MG Control with support for adding, editing, renaming, and deleting keys and values.\r\n• Added restoration of verified device plists, with an automatic backup before restoring. Restart your device afterward.\r\n\r\nWhen re-signing, keep the share extension and configure the same App Group for both the app and extension.",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.3/GestaltX_1.0.3.ipa",
+          "size": 2744822,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.huami.gestultx",
+      "title": "GestaltX 1.0.3 · 09 Nov 2026",
+      "identifier": "GestaltX-release-v1.0.3",
+      "caption": "GestaltX 1.0.3 is available.",
+      "date": "2026-11-09T16:23:40Z",
+      "tintColor": "#007AFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.0.3"
+    }
+  ]
+}
