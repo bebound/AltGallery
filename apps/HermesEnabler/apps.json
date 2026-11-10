@@ -1,0 +1,45 @@
+{
+  "name": "HermesEnabler",
+  "subtitle": "HermesEnabler AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for HermesEnabler",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/icon.png",
+  "website": "https://github.com/pookjw/HermesEnabler",
+  "tintColor": "#70C0F0",
+  "apps": [
+    {
+      "name": "HermesEnabler",
+      "bundleIdentifier": "com.example.HermesEnabler",
+      "developerName": "pookjw",
+      "subtitle": "Enable Hermès Watch Faces on any Apple Watch",
+      "localizedDescription": "Enable Hermès and Ultra watch faces on any Apple Watch, along with display, sensor, and Siri tweaks backed by MobileGestalt changes and automatic backups. Requires watchOS 27.0 through 27.3 beta 1.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/watch.jpg"
+      ],
+      "tintColor": "#70C0F0",
+      "versions": [
+        {
+          "version": "1.0",
+          "date": "2026-11-10",
+          "localizedDescription": "Enable Hermès and Ultra watch faces on any Apple Watch, along with display, sensor, and Siri tweaks backed by MobileGestalt changes and automatic backups. Requires watchOS 27.0 through 27.3 beta 1.",
+          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.3/HermesEnabler.ipa",
+          "size": 546677,
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.example.HermesEnabler",
+      "title": "HermesEnabler 1.0 · 10 Nov 2026",
+      "identifier": "HermesEnabler-release-1.3",
+      "caption": "HermesEnabler 1.0 is available.",
+      "date": "2026-11-10T11:19:13Z",
+      "tintColor": "#70C0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
+      "notify": true,
+      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.3"
+    }
+  ]
+}
