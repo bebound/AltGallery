@@ -6,7 +6,7 @@
 
 <p align="center"><a href="README.md">English</a> | <b>简体中文</b></p>
 
-<p>精选 GitHub 上 IPA 项目的 AltStore 源。所有源均由本仓库使用 <a href="https://github.com/bebound/AltGen">AltGen</a> 生成。可用于 <a href="https://github.com/altstoreio/Altstore">AltStore</a>、<a href="https://github.com/SideStore/SideStore">SideStore</a>、<a href="https://github.com/LiveContainer/LiveContainer">LiveContainer</a>、<a href="https://github.com/claration/Feather">Feather</a> 或其他兼容应用。</p>
+<p>精选 AltStore 软件源：汇聚 GitHub 优质 IPA 开源项目。所有源均由 <a href="https://github.com/bebound/AltGen">AltGen</a> 生成。可用于 <a href="https://github.com/altstoreio/Altstore">AltStore</a>、<a href="https://github.com/SideStore/SideStore">SideStore</a>、<a href="https://github.com/LiveContainer/LiveContainer">LiveContainer</a>、<a href="https://github.com/claration/Feather">Feather</a> 或其他兼容应用。</p>
 
 <p align="center">
 <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps.json" target="_blank">
