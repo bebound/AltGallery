@@ -1,0 +1,17 @@
+# render_news.py config: python3 tools/render_news.py --out apps/iPadn
+# Colors are pinned explicitly: iPadn's icon is black-on-black with a white
+# outline, so the auto-derived background and tagline came out as muddy grey
+# with a purple cast. A neutral grey scale matches the monochrome mark.
+
+name = "iPadn"
+tagline = "Search, download and install the apps you own"
+
+# Color notes — each key below controls one element of the image.
+[colors]
+tint = "#111111"          # NEW UPDATE badge + top-left glow
+tint_alt = "#111111"      # bottom-right glow
+background = "#EDEDED"    # gradient base
+bg_mid = "#F7F7F7"        # gradient mid stop
+bg_dark = "#DCDCDC"       # gradient end stop
+text_color = "#111111"    # app name
+tagline_color = "#6E6E73" # tagline text

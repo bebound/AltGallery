@@ -1,0 +1,43 @@
+# altgen config for the iPadn AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "mengangs/ipadn"
+
+[source]
+name = "iPadn"
+subtitle = "iPadn AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for iPadn"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png"
+website = "https://github.com/mengangs/ipadn"
+tint_color = "#111111"
+
+[app]
+name = "iPadn"
+bundle_identifier = "app.local.iPadn"
+developer_name = "mengangs"
+subtitle = "Download older and removed App Store apps"
+description = "Search, download and install the apps you own on iPhone and iPad — older versions, removed apps, regional price comparison and native install. Works with iPhone, iPad, Apple TV and Mac apps, in 11 languages."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/search.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/detail.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/versions.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/prices.png",
+]
+tint_color = "#111111"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): matches the release's iPadn-<version>-unsigned.ipa
+asset_pattern = "iPadn-.*-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png"
+
+[output]
+path = "apps.json"

@@ -102,6 +102,9 @@ Run Android apps on iOS — drop in an APK, tap it, and it opens full-screen. Re
 ### <a href="https://github.com/kuscholar/iDeck"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/iDeck/icon.png" alt="iDeck icon" width="24" align="top">iDeck</a>
 Run Steam Big Picture and compatible Windows PC games on iPhone and iPad through Madeira’s experimental local runtime.
 
+### <a href="https://github.com/mengangs/ipadn"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/iPadn/icon.png" alt="iPadn icon" width="24" align="top">iPadn</a>
+Search, download and install the apps you own on iPhone and iPad — older versions, removed apps, regional prices and native install.
+
 ### <a href="https://github.com/intraducine/iridium"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Iridium/icon.png" alt="Iridium icon" width="24" align="top">Iridium</a>
 An experimental iPhone and iPad Windows-game runtime, with a native game library and touch, keyboard, mouse, and controller integration.
 
