@@ -275,6 +275,8 @@ PY
    - Move the entry if the new display name changes its alphabetical
      position in the list.
    - Refresh the one-line description when the project's description changed.
+   - Apply the same change to `README_CN.md` — identical heading and icon URL,
+     description line in Chinese. Both READMEs share the same app order.
 
 9. **Sweep for stale references**
 
@@ -309,5 +311,5 @@ PY
 - [ ] `images/news.png` re-rendered after the news.toml reset, with the new icon and name
 - [ ] `apps.json` regenerated via `./update.sh <NewName>`, never hand-edited, not committed
 - [ ] `all-apps.json` left modified in the working tree, not committed
-- [ ] README entry updated (href, icon `align="top"`, display name) and re-sorted if needed
+- [ ] README entry updated in both `README.md` and `README_CN.md` (href, icon `align="top"`, display name, Chinese description) and re-sorted if needed
 - [ ] stale-reference grep clean or hits explained

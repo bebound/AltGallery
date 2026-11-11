@@ -254,6 +254,11 @@ change between apps.
    ⚠️ Use `align="top"` on the icon — `align="center"` renders ~7px low on
    GitHub.
 
+   Then add the same entry to `README_CN.md` (the Chinese README linked from
+   the language switcher under the title): identical heading and icon URL,
+   one-line description written in Chinese. Both READMEs share the same app
+   order, so the entry goes at the same position.
+
 10. **Warn if no screenshots were found** — this is the LAST step. If step 3
     could not obtain any screenshots (empty `apps/<AppName>/images/`, no
     `screenshots` field in the source, no `images`/`assets` folder in the repo,
@@ -282,5 +287,6 @@ change between apps.
 - [ ] `apps.json` regenerated after the last config change; never hand-edited; gitignored (not committed)
 - [ ] `all-apps.json` NOT touched — CI workflow regenerates and commits it
 - [ ] `images/news.png` rendered; not auto-committed
-- [ ] README entry added, icon with `align="top"`
+- [ ] README entry added to both `README.md` and `README_CN.md`, icon with `align="top"`
+- [ ] `README_CN.md` description written in Chinese
 - [ ] if no screenshots could be found, the user was explicitly warned (never proceed silently)
