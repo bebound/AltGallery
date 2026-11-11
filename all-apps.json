@@ -433,11 +433,11 @@
       "tintColor": "#007AFF",
       "versions": [
         {
-          "version": "1.0.4",
-          "date": "2026-11-10",
-          "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.4/CHANGELOG_ZH-CN.md)\n\nBuild `11101436`.\n\n### Added\n\n- WAPI preset under **Device → Presets**: disable the WAPI regulatory flag or\n  restore the recorded original value. The cached Boolean is resolved from the\n  device's own MobileGestalt image instead of a hard-coded slot (#30).\n- Per-device originals for the WAPI flag. The value survives edits, app\n  restarts, journal migration, and is restored together with the other cached\n  options (#30).\n- New display presets: high-luminance Always-On Display, AOD flipbook and its\n  entry count, HDR photo display, wallpaper parallax control, and experimental\n  PWM and DisplayPort capability flags.\n- New device presets: Collision SOS, Audio Mix, and Spatial FaceTime audio.\n- New intelligence presets: on-device Siri, Audio Intelligence, Personal\n  Translator, Photos Clean Up, Handwriting Synthesis, and always-listening Hey\n  Siri. These remain capability flags; hardware and region still decide what\n  actually runs.\n- Korean localization, bringing the app to eight supported languages (#24).\n- CI now builds an ad-hoc signed IPA automatically and uploads it as an\n  artifact; tag and release runs also attach it to the matching release.\n\n### Changed\n\n- Additional Options and the WAPI row are shown directly in\n  **Device → Presets**. The hidden ten-tap unlock on the About version string\n  was removed.\n- Restore and open actions are disabled while the current document has staged\n  edits. Save or discard them first instead of silently losing the changes\n  (#37).\n- Version bumped to 1.0.4 (`CURRENT_PROJECT_VERSION` 11101436). README version\n  badges and the build date were updated.\n- All new user-facing strings are localized in the eight supported languages\n  (English, Simplified Chinese, Traditional Chinese for Taiwan and Hong Kong,\n  Vietnamese, Russian, Persian, and Korean) (#30, #38).\n\n### Fixed\n\n- Device access now falls back across every signed App Group instead of\n  trusting the first one. This fixes the `MobileGestalt access was denied`\n  error on builds signed with a certificate that carries multiple App Groups\n  (#47).\n- Field editing preserves exact 64-bit integers, including unsigned values\n  above `Int64.max`. Read-back comparison no longer aliases `UInt64.max` with\n  `-1` (#31).\n- Opening a field and applying it unchanged no longer re-parses its display\n  text, preserving sub-millisecond `Date` precision and nested values in\n  arrays and dictionaries (#34).\n- Malformed `ArtworkTraits` values are no longer replaced or lost when a model\n  name or Dynamic Island layout preset is applied. The UI explains that the\n  field must be fixed in MG Control first (#38).\n- Device backup restores reject a different `CacheUUID`, `CacheVersion`, or\n  `CacheData` length before any write, instead of restoring an incompatible\n  cache layout (#32).\n- Saved backups are verified against their recorded size and SHA-256 digest\n  before reuse. Legacy backups without a digest remain readable (#33).\n- Shared plist imports reject FIFOs, sockets, directories, and symlinks instead\n  of blocking on them, while still accepting regular files (#35).\n- File Provider imports coordinate their reads, so placeholders are\n  materialized and concurrent changes cannot corrupt the read (#39).\n- Cancelling the share extension now resumes a stalled provider continuation\n  and cancels the underlying `Progress`, instead of hanging the extension\n  (#36).\n- Rejecting or confirming one shared plist no longer leaves later queued\n  imports waiting for another foreground event. Invalid entries are skipped\n  and the queue continues in order (#40).\n- Backup restore now validates the saved layout before creating a recovery\n  backup or journal entry, so a rejected restore has no side effects (#32).\n\n### Security\n\n- Backup integrity uses a persisted SHA-256 digest. A same-size replacement\n  with another valid plist is detected (#33).\n- Inbox scans and imports open files with `O_NOFOLLOW` and require a regular\n  file descriptor, preventing named-pipe and symlink tricks (#35).\n\n**Full Changelog**: https://github.com/huamidev/GestaltX/compare/v1.0.3...v1.0.4\n\n[1.0.4]: https://github.com/huamidev/GestaltX/releases/tag/v1.0.4",
-          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.4/GestaltX_1.0.4.ipa",
-          "size": 2865180,
+          "version": "1.0.5",
+          "date": "2026-11-11",
+          "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/144c0c44a762db616089faddfbc0581929ae1a0a/CHANGELOG_ZH-CN.md#105---2026-11-11)\n\nBuild `11111140`.\n\n### Added\n\n- Spanish localization, bringing the app to nine supported locales ([#97](https://github.com/huamidev/GestaltX/pull/97)).\n- iPhone Air model presets ([#92](https://github.com/huamidev/GestaltX/pull/92)) and a Japanese README ([#83](https://github.com/huamidev/GestaltX/pull/83)).\n\n### Changed\n\n- About now lists the supported OS as iOS / iPadOS 27.x. Installation remains\n  available on 26.x, where on-device MobileGestalt access is marked unsupported.\n- Updated Korean translations ([#84](https://github.com/huamidev/GestaltX/pull/84)) and corrected mixed-language text in\n  Traditional Chinese and other locales ([#61](https://github.com/huamidev/GestaltX/pull/61)).\n- Renamed the Chinese Photos Clean Up preset to “照片消除”.\n- Corrected the Internal Build label and added confirmation before enabling\n  this system-wide flag ([#60](https://github.com/huamidev/GestaltX/pull/60)).\n\n### Fixed\n\n- Device access preserves existing App Group cache contents ([#55](https://github.com/huamidev/GestaltX/pull/55)).\n- Reverting Dynamic Island restores its layout together with its capability\n  flag, without discarding unrelated staged artwork changes ([#58](https://github.com/huamidev/GestaltX/pull/58)).\n- Original-value recovery now checks the cache generation and layout, keeps\n  unavailable originals distinct from missing fields, and avoids repeatedly\n  reading old backup history ([#65](https://github.com/huamidev/GestaltX/pull/65), [#66](https://github.com/huamidev/GestaltX/pull/66)).\n- Restoring an unchanged backup skips unnecessary device writes ([#69](https://github.com/huamidev/GestaltX/pull/69)).\n  Failed backup deletions remain retryable ([#70](https://github.com/huamidev/GestaltX/pull/70)), and local backup\n  replacement clears inherited device-ownership status ([#64](https://github.com/huamidev/GestaltX/pull/64)).\n- Exports of verified device backups carry device-bound proof ([#59](https://github.com/huamidev/GestaltX/pull/59)).\n  Temporary export files are removed after sharing or cancellation ([#62](https://github.com/huamidev/GestaltX/pull/62)).\n- Direct file imports are captured before confirmation is deferred ([#63](https://github.com/huamidev/GestaltX/pull/63)),\n  and coordinated reads run off the main thread ([#75](https://github.com/huamidev/GestaltX/pull/75)). Temporary provider\n  failures ([#74](https://github.com/huamidev/GestaltX/pull/74)) or one inaccessible App Group ([#71](https://github.com/huamidev/GestaltX/pull/71)) no longer block\n  other queued imports.\n- Shared import handling checks container boundaries, rejects symlink paths,\n  bounds filename metadata, and cleans abandoned files without interrupting\n  active writers ([#72](https://github.com/huamidev/GestaltX/pull/72), [#73](https://github.com/huamidev/GestaltX/pull/73), [#76](https://github.com/huamidev/GestaltX/pull/76)).\n- Device identity changes are rejected before system writes ([#67](https://github.com/huamidev/GestaltX/pull/67)).\n  Duplicate cache descriptors are validated ([#56](https://github.com/huamidev/GestaltX/pull/56)), and unchanged NaN\n  values compare consistently ([#68](https://github.com/huamidev/GestaltX/pull/68)).\n\n### Download and signing\n\n- Some users report incomplete downloads with Safari on iOS 27. If an IPA is\n  reported as damaged or cannot be extracted, download it again; it may take\n  several attempts. Try another browser if the issue persists. This has not\n  been confirmed as a Safari or iOS defect.\n- Re-sign with a certificate and profile containing at least one usable App\n  Group. Keep the share extension and configure a common App Group for both\n  the app and extension.\n\n**Full Changelog**: https://github.com/huamidev/GestaltX/compare/v1.0.4...v1.0.5",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.5/GestaltX_1.0.5.ipa",
+          "size": 2942882,
           "minOSVersion": "26.0"
         }
       ]
@@ -456,10 +456,10 @@
       "versions": [
         {
           "version": "1.0",
-          "date": "2026-11-10",
-          "localizedDescription": "Enable Hermès and Ultra watch faces on any Apple Watch, along with display, sensor, and Siri tweaks backed by MobileGestalt changes and automatic backups. Requires watchOS 27.0 through 27.3 beta 1.",
-          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.3/HermesEnabler.ipa",
-          "size": 546677,
+          "date": "2026-11-11",
+          "localizedDescription": "Added localized alerts explaining why a setting couldn’t be changed.",
+          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.4.1/HermesEnabler.ipa",
+          "size": 637738,
           "minOSVersion": "17.0"
         }
       ]
@@ -1458,6 +1458,28 @@
   ],
   "news": [
     {
+      "appID": "com.huami.gestultx",
+      "title": "GestaltX 1.0.5 · 11 Nov 2026",
+      "identifier": "GestaltX-release-v1.0.5",
+      "caption": "GestaltX 1.0.5 is available.",
+      "date": "2026-11-11T03:45:16Z",
+      "tintColor": "#007AFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.png",
+      "notify": true,
+      "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.0.5"
+    },
+    {
+      "appID": "com.example.HermesEnabler",
+      "title": "HermesEnabler 1.0 · 11 Nov 2026",
+      "identifier": "HermesEnabler-release-1.4.1",
+      "caption": "HermesEnabler 1.0 is available.",
+      "date": "2026-11-11T01:26:37Z",
+      "tintColor": "#70C0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
+      "notify": true,
+      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.4.1"
+    },
+    {
       "appID": "com.neogamelab.neostation",
       "title": "RewindBox 0.0.11 · 10 Nov 2026",
       "identifier": "RewindBox-release-0.0.11",
@@ -1478,28 +1500,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
       "notify": true,
       "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.2.2-b70"
-    },
-    {
-      "appID": "com.example.HermesEnabler",
-      "title": "HermesEnabler 1.0 · 10 Nov 2026",
-      "identifier": "HermesEnabler-release-1.3",
-      "caption": "HermesEnabler 1.0 is available.",
-      "date": "2026-11-10T11:19:13Z",
-      "tintColor": "#70C0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
-      "notify": true,
-      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.3"
-    },
-    {
-      "appID": "com.huami.gestultx",
-      "title": "GestaltX 1.0.4 · 10 Nov 2026",
-      "identifier": "GestaltX-release-v1.0.4",
-      "caption": "GestaltX 1.0.4 is available.",
-      "date": "2026-11-10T07:27:47Z",
-      "tintColor": "#007AFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.png",
-      "notify": true,
-      "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.0.4"
     },
     {
       "appID": "sb.moe.kumone-ios",
