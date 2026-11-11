@@ -194,11 +194,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "2.6.0-nightly.20261108.1514",
-          "date": "2026-11-08",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- Texture packs: a This Game list in both browsers, shown while a game runs\n- Driver list: show only the sources built for the device's GPU family\n- arm64: a post-mortem in the log for a fault in recompiled code\n- PageFaultHandler: a reporter for the faults it cannot handle\n- Crash handler: let the fault's own signal kill the process\n- Console: expose the log file's descriptor for crash handlers\n- arm64: read guest words for the post-mortems without allocating\n- AutoTune: lower the Android Display Resolution (HW scaler) to the render resolution when GPU-bound\n- AutoTune: add Disabled to the download mode ladder, and step over a rung that did not help\n- Driver list: a release with one zip per device lists each zip by its own name\n- Translations: the batch's strings in all 19 languages\n- Android: VR mode, named DNS host entries, touch stick travel, MdiEx drivers\n- Auto Progressive Scan: hold Triangle+Cross through Criterion intros\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261107...9144e4ff1fed43756809d8e68b3efc2505a51078",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261108/ARMSX2-nightly-20261108-9144e4ff1f-iOS-arm64.ipa",
-          "size": 40592382,
+          "version": "2.6.0-nightly.20261111.0647",
+          "date": "2026-11-11",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- Android: regenerate the PGO profile on the source with the GS runs build\n- tests: the block hasher's unaligned update stays inside the test memory\n- GS: comments that named removed gsrunner switches, and an include they needed\n- GS/Vulkan: the run machine's development log goes\n- GS/TC: the lean path's mode switch and check halves go\n- gsrunner: the burst memo's switches and statistics line go\n- gsrunner: the readback lane's statistics, trace and switches go\n- gsrunner: the kick's two check modes go\n- GS/Vulkan: the run machine sleeps where runs do not form\n- GS: the vertex buffer grows in 64-bit sizes and fails loudly past a ceiling\n- GS: a reset of the draw buffers frees the buffers it replaces\n- GS/SW: a draw whose frame and Z buffers share pages is not split between workers\n- GS/SW: a texture is not refilled while a queued draw still reads it\n- GS/Vulkan: a run that holds a large draw keeps one state for all its draws\n- GS/Vulkan: a draw that cannot open a run is primed before it is classified\n- GS/Vulkan: the stencil counter resolve pipeline takes blend constants and line width dynamic\n- GS/Vulkan: the run pipeline declares its dynamic state through AddCachedDynamicState\n- GS/Vulkan: the stencil counter resolve pipeline takes blend constants and line width dynamic\n- GS/Vulkan: a run opens at the second of two consecutive draws that share its fixed state\n- GS/Vulkan: a draw with a vertex-selector bit runs never take is refused first, with the pixel-shader check\n- gsrunner: -kick-convert-check runs the kick's old conversion pass beside the new one\n- GS: the kick kernel converts a job in stretches, with nothing tested per vertex\n- GS/Vulkan: the stencil counter resolve pipeline keeps blend constants and line width dynamic\n- GS/Vulkan: the run machine's rings are made by the first draw that would join a run\n- GS/Vulkan: a draw that continues a run still counts toward the readback in-pass kick\n- gsrunner: -kick-decide-check runs the kick's wide decision beside the four-wide one\n- GS: the kick kernel decides on raw 16-bit coordinates, both axes in one lane\n- tests: block identities over held depth words are those of the words\n- GS: choose the block identity by timing the candidates once, on the first use\n- GS/HW: keep the palette's hash while the renderer's palette has not been rewritten\n- GS/CLUT: the palette's alpha range with one LD4 per 16 entries on ARM64\n- tests: pin the alpha range of an expanded palette\n- GS/HW: take a level's block identities in one call, and combine them with AES\n- GS/HW: a CPU clear of whole pages gives their blocks the identity of what it wrote\n- GS/HW: key every texture lookup that names nothing by the identities of its blocks\n- GS: GSBlockId, a cheaper identity for a block of local memory inside one run\n- tests: pin the texture hashes that name dumped and replacement textures\n- gsrunner: the run machine keeps -runs on|off and -runs-log; the probing switches go\n- GS/Vulkan: a draw outside the run program's pixel-shader set is refused first, for two masks\n- GS/Vulkan: declining the targets whose runs do not pay (off, unfinished)\n- GS/Vulkan: draws that alternate two sets of constants reuse the earlier upload\n- gsrunner: -runs-nofill-classic, the classic path's no-fill arm (development)\n- GS/Vulkan: the dear split weighs fill against a host draw, per GPU class\n- tests: a hand-worked case of the kick kernel's four-wide decision\n- gsrunner: the readback lane's measurement scaffolding\n- MTGS: a GS-to-EE read spins only while spinning has been answering it\n- MTGS: a GS-to-EE read spins for its answer, and the GS thread for the next read\n- GS/Vulkan: the in-pass kick spends at most a quarter of the readback wait it saves\n- GS/Vulkan: after the gate refuses an in-pass kick, offer it again 32 draws later\n- GS/Vulkan: in a readback frame the kick also ends a pass of many draws\n- GS/HW: the depth target holds the moved words until local memory is read or written there\n- GS/Vulkan: the run log carries each run's bounding-box area by dear class (development)\n- GS/HW: a Z24 move of colour pages into a depth target stays on the GPU\n- GS: a whole-page Z24 move of colour pages lands as a fixed block permutation\n- GS/HW: a burst's second read comes from its first round trip\n- GS/HW: the target reads of one request share one GPU round trip\n- GS/Vulkan: a run flushed from inside an apply keeps the classic path's chosen pipeline\n- GS: a new draw's first vertices are replayed only where a flush check is asked\n- GS: the kernel's conversion pass stands behind its own interface\n- gsrunner: -runs-no-continue, to price the run machine's shortcut (development)\n- GS/Vulkan: the run log records which fixed state ended a run (development)\n- GS/Vulkan: additive draws join runs\n- GS/Vulkan: recorded keys with raster ordering or a stencil counter are loadable\n- GS: the kernel's driver takes the per-draw environment snapshot itself\n- tests: every recorded pipeline key a draw can make is loadable\n- GS: the kick kernel decides a chunk first and converts only the vertices that stay\n- GS/HW: the CPU memory clear's 24-bit and masked fills keep the old bits with one bit select\n- GS: the burst memo uses GSClut's read serial\n- GS/Vulkan: draws without a depth buffer and expanded sprites join runs\n- GS/Vulkan: the run's header and table set takes a descriptor pool of its own\n- GS/Vulkan: a game's recorded pipeline keys survive every build that keeps the key layout\n- GS cache: a key layout identity, hashed from the pipeline selector definitions alone\n- Android: a new install removes only the GPU caches older builds wrote\n- Android: save the shader caches on every trip to the background, not once per 120 s\n- GS cache: write a change a few seconds after it settles, not only every 30 s\n- GS/Vulkan: on Android, name the linked GLSL compiler by its own versions\n- GS/Vulkan: the driver's pipeline blob is stamped by the driver, not the app's build\n- GS/Vulkan: every game's SPIR-V goes into the device's pack as well\n- GS/Vulkan: warm the GLSL compiler on the compile queue when the device opens\n- GS/Vulkan: the recorded-key precompile runs on GSCompileQueue\n- GS: GSCompileQueue, a worker pool for shader and pipeline builds\n- GS cache: a pack makes its directory again when its file is not there\n- tests: a pack is written after its empty directory was removed\n- GS/TC: a target keeps the end block of its valid area\n- GS/HW: the burst memo rests through runs of block copies\n- GS/HW: three values of Draw() are worked out only where they are read\n- GS/HW: the burst memo leaves alone what the copy road cannot take at level 0\n- GS/TC: the post-draw invalidation returns when no source is under the write\n- GS/TC: the target lookup answers from the front of its list\n- GS/HW: the burst memo prefetches what the next packet compare reads\n- GS/HW: the burst memo invalidates the texture cache once per burst\n- GS/HW: the burst memo tests its block-copy gate first\n- gsrunner: the burst memo's vertex counts and slab footprint\n- GS/HW: the burst memo records into recycled slabs\n- GS: the burst memo has no setting\n- gsrunner: -runs-split-mask, and the run log's per-state change counts\n- GS/Vulkan: a draw that opens a run after a ring or texture-array end needs its program built too\n- GS/Vulkan: the run machine's log counts its refusals by detail\n- GS/Vulkan: a draw that continues a run skips the classic path's device work\n- gsrunner: the run machine's development switches\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261108...22b1a7661fa5b29b54fd310911f16841d672bc6d",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261111/ARMSX2-nightly-20261111-22b1a7661f-iOS-arm64.ipa",
+          "size": 40652510,
           "minOSVersion": "17.0"
         }
       ]
@@ -508,6 +508,31 @@
           "downloadURL": "https://github.com/kuscholar/iDeck/releases/download/v0.1.3-alpha.6/iDeck-0.1.3-alpha.6-build145.ipa",
           "size": 173835258,
           "minOSVersion": "26.0"
+        }
+      ]
+    },
+    {
+      "name": "iPadn",
+      "bundleIdentifier": "app.local.iPadn",
+      "developerName": "mengangs",
+      "subtitle": "Download older and removed App Store apps",
+      "localizedDescription": "Search, download and install the apps you own on iPhone and iPad — older versions, removed apps, regional price comparison and native install. Works with iPhone, iPad, Apple TV and Mac apps, in 11 languages.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/search.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/detail.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/versions.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/prices.png"
+      ],
+      "tintColor": "#111111",
+      "versions": [
+        {
+          "version": "1.9.2",
+          "date": "2026-11-11",
+          "localizedDescription": "## iPadn 1.9.2\n\n本版本新增「支持 iPadn」页面，改进诊断信息，并修复两个问题。适用于 iOS / iPadOS 17 及更新版本；安装包未签名，请用自己的工具签名后安装。\n\n**支持 iPadn**\n\n- 新增「账号 › 设置 › 支持 iPadn」：iPadn 会一直免费开源、没有广告；如果它帮到了你，可以通过爱发电（支付宝、微信）或 USDT（BEP20）请作者喝杯咖啡，也可以在 GitHub 点个 Star 或帮忙改进翻译。\n\n**下载**\n\n- 修复部分签名方式下下载完成后提示「未能打开文件 CFNetworkDownload_….tmp，因为你没有查看它的权限」（#36）：遇到这种情况会自动改用应用内下载重新下载一次，之后的下载直接在应用内进行，下载时请保持 iPadn 在前台。首次启动时的后台下载检测也会检查文件能否读取。\n\n**诊断**\n\n- 「账号 › 设置 › 维护」新增「复制诊断信息」：在 LiveContainer 等无法弹出分享面板的环境中，可以直接复制后粘贴反馈。\n- 诊断信息会记录最近失败的请求：时间、服务器、接口名称和状态码，不包含账号、链接参数或登录凭据，方便定位下载失败。\n- Apple 返回 401 时，提示登录可能已失效并建议重新登录账号，不再只显示「网络请求失败」。\n\n**应用图标**\n\n- 修复更新 iPadn 后，主屏幕上仍是之前选择的浅色或跟随系统图标，「设置」里却显示为深色。从本版本起 iPadn 会记住你选择的图标；更新前就遇到这种情况时，在「设置 › 应用图标 › 图标主题」中重新选择一次即可。\n\n**English**\n\nAdds a Support iPadn page under Account › Settings: iPadn stays free, open source and ad-free, and you can buy the author a coffee through Afdian or USDT (BEP20) if you like. Fixes downloads that failed with \"you don't have permission to view CFNetworkDownload_….tmp\" under some signing tools (#36): iPadn now downloads such packages again inside the app, and later downloads stay there. Diagnostics now record recent failed requests (time, host, endpoint and status only) and can be copied when the share sheet won't open, as in LiveContainer; a 401 from Apple now suggests signing in again. Also fixes Settings showing the dark icon after an update while the Home Screen kept the light or automatic icon; if this happened before updating, choose the icon theme once more in Settings.\n\n更早版本的更新内容见 [Releases](https://github.com/mengangs/ipadn/releases)。\n\n验证：设备 Release 编译与 IPA 检查通过；136 项测试通过，0 项失败，0 项跳过。",
+          "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v1.9.2/iPadn-1.9.2-unsigned.ipa",
+          "size": 47376820,
+          "minOSVersion": "17.0"
         }
       ]
     },
@@ -1458,6 +1483,28 @@
   ],
   "news": [
     {
+      "appID": "app.local.iPadn",
+      "title": "iPadn 1.9.2 · 11 Nov 2026",
+      "identifier": "iPadn-release-v1.9.2",
+      "caption": "iPadn 1.9.2 is available.",
+      "date": "2026-11-11T11:19:37Z",
+      "tintColor": "#111111",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mengangs/ipadn/releases/tag/v1.9.2"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 2.6.0-nightly.20261111.0647 · 11 Nov 2026",
+      "identifier": "ARMSX2-release-nightly-20261111",
+      "caption": "ARMSX2 2.6.0-nightly.20261111.0647 is available.",
+      "date": "2026-11-11T07:21:22Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261111"
+    },
+    {
       "appID": "com.huami.gestultx",
       "title": "GestaltX 1.0.5 · 11 Nov 2026",
       "identifier": "GestaltX-release-v1.0.5",
@@ -1544,17 +1591,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
       "notify": true,
       "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 2.6.0-nightly.20261108.1514 · 08 Nov 2026",
-      "identifier": "ARMSX2-release-nightly-20261108",
-      "caption": "ARMSX2 2.6.0-nightly.20261108.1514 is available.",
-      "date": "2026-11-08T15:46:58Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261108"
     },
     {
       "appID": "com.kdt.livecontainer",

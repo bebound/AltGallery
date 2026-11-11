@@ -1,0 +1,48 @@
+{
+  "name": "iPadn",
+  "subtitle": "iPadn AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for iPadn",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png",
+  "website": "https://github.com/mengangs/ipadn",
+  "tintColor": "#111111",
+  "apps": [
+    {
+      "name": "iPadn",
+      "bundleIdentifier": "app.local.iPadn",
+      "developerName": "mengangs",
+      "subtitle": "Download older and removed App Store apps",
+      "localizedDescription": "Search, download and install the apps you own on iPhone and iPad — older versions, removed apps, regional price comparison and native install. Works with iPhone, iPad, Apple TV and Mac apps, in 11 languages.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/search.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/detail.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/versions.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/prices.png"
+      ],
+      "tintColor": "#111111",
+      "versions": [
+        {
+          "version": "1.9.2",
+          "date": "2026-11-11",
+          "localizedDescription": "## iPadn 1.9.2\n\n本版本新增「支持 iPadn」页面，改进诊断信息，并修复两个问题。适用于 iOS / iPadOS 17 及更新版本；安装包未签名，请用自己的工具签名后安装。\n\n**支持 iPadn**\n\n- 新增「账号 › 设置 › 支持 iPadn」：iPadn 会一直免费开源、没有广告；如果它帮到了你，可以通过爱发电（支付宝、微信）或 USDT（BEP20）请作者喝杯咖啡，也可以在 GitHub 点个 Star 或帮忙改进翻译。\n\n**下载**\n\n- 修复部分签名方式下下载完成后提示「未能打开文件 CFNetworkDownload_….tmp，因为你没有查看它的权限」（#36）：遇到这种情况会自动改用应用内下载重新下载一次，之后的下载直接在应用内进行，下载时请保持 iPadn 在前台。首次启动时的后台下载检测也会检查文件能否读取。\n\n**诊断**\n\n- 「账号 › 设置 › 维护」新增「复制诊断信息」：在 LiveContainer 等无法弹出分享面板的环境中，可以直接复制后粘贴反馈。\n- 诊断信息会记录最近失败的请求：时间、服务器、接口名称和状态码，不包含账号、链接参数或登录凭据，方便定位下载失败。\n- Apple 返回 401 时，提示登录可能已失效并建议重新登录账号，不再只显示「网络请求失败」。\n\n**应用图标**\n\n- 修复更新 iPadn 后，主屏幕上仍是之前选择的浅色或跟随系统图标，「设置」里却显示为深色。从本版本起 iPadn 会记住你选择的图标；更新前就遇到这种情况时，在「设置 › 应用图标 › 图标主题」中重新选择一次即可。\n\n**English**\n\nAdds a Support iPadn page under Account › Settings: iPadn stays free, open source and ad-free, and you can buy the author a coffee through Afdian or USDT (BEP20) if you like. Fixes downloads that failed with \"you don't have permission to view CFNetworkDownload_….tmp\" under some signing tools (#36): iPadn now downloads such packages again inside the app, and later downloads stay there. Diagnostics now record recent failed requests (time, host, endpoint and status only) and can be copied when the share sheet won't open, as in LiveContainer; a 401 from Apple now suggests signing in again. Also fixes Settings showing the dark icon after an update while the Home Screen kept the light or automatic icon; if this happened before updating, choose the icon theme once more in Settings.\n\n更早版本的更新内容见 [Releases](https://github.com/mengangs/ipadn/releases)。\n\n验证：设备 Release 编译与 IPA 检查通过；136 项测试通过，0 项失败，0 项跳过。",
+          "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v1.9.2/iPadn-1.9.2-unsigned.ipa",
+          "size": 47376820,
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "app.local.iPadn",
+      "title": "iPadn 1.9.2 · 11 Nov 2026",
+      "identifier": "iPadn-release-v1.9.2",
+      "caption": "iPadn 1.9.2 is available.",
+      "date": "2026-11-11T11:19:37Z",
+      "tintColor": "#111111",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mengangs/ipadn/releases/tag/v1.9.2"
+    }
+  ]
+}
