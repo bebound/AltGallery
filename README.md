@@ -11,7 +11,7 @@
 <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/add-alt-source.png" alt="Add AltSource" width="200">
 </a>
 </p>
-<p align="center">(Click the above image to add the AltGallery source)</p>
+<p align="center">(Click the above image to add the all-in-one AltGallery source. Individual app sources live in the <code>apps</code> folder.)</p>
 <p align="center">Can't reach <code>github.com</code>? Use the <a href="https://altdirect.app/?url=https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps-proxy.json" target="_blank">gh-proxy link</a> instead — the resources all go through gh-proxy.com.</p>
 
 ## Request an App
