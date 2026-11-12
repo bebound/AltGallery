@@ -1,0 +1,40 @@
+# altgen config for the WQ Files AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "kolbicz/WQFiles"
+
+[source]
+name = "WQ Files"
+subtitle = "WQ Files AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for WQ Files"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/icon.png"
+website = "https://github.com/kolbicz/WQFiles"
+tint_color = "#1E8FC7"
+
+[app]
+name = "WQ Files"
+bundle_identifier = "cz.kolbi.wqfiles"
+developer_name = "kolbicz"
+subtitle = "File manager for iOS 26 and 27 (worse_query)"
+description = "File browser, app data manager and cache cleaner for iOS 26 and 27, built on the worse_query sandbox technique. Browse other apps' containers, edit plists, hex and SQLite databases, and back up, restore or clear app data without a jailbreak or kernel exploit."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/home.jpeg",
+]
+tint_color = "#1E8FC7"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): every release ships a single WQFiles.ipa.
+asset_pattern = "WQFiles\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png"
+
+[output]
+path = "apps.json"
