@@ -114,7 +114,10 @@ iOS 上的初代 Xbox 模拟器，基于 xemu 构建并配有原生 Swift 界面
 iOS 种子客户端。
 
 ### <a href="https://github.com/Predidit/Kazumi"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kazumi/icon.png" alt="Kazumi icon" width="24" align="top">Kazumi</a>
-基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率。
+基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率，使用 Flutter 实现。
+
+### <a href="https://github.com/LinkPass888/Kazumi-Swift"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Kazumi-Swift/icon.png" alt="Kazumi-Swift icon" width="24" align="top">Kazumi-Swift</a>
+基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率，使用 SwiftUI 实现。
 
 ### <a href="https://github.com/Mac-XK/KMusic"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/KMusic/icon.png" alt="KMusic icon" width="24" align="top">KMusic</a>
 基于 SwiftUI 的多源音乐聚合播放器，支持 iOS/macOS，内置酷我、酷狗、QQ 音乐、网易云等多平台音源与 LRC 歌词同步。
