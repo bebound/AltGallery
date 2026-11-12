@@ -21,11 +21,11 @@
       "tintColor": "#EC4949",
       "versions": [
         {
-          "version": "0.3.32",
-          "date": "2026-11-09",
-          "localizedDescription": "### Added\n\n- **iOS**: eight sound-effect presets and a ten-band custom equalizer on the now-playing page and in Settings, with a live response curve. A change applies to the playing track without rebuilding the player (#191).\n\n### Improved\n\n- **iOS**: the app follows the system language, English or Simplified Chinese, as the macOS app does (#191).\n- **Localization**: the English interface is complete on macOS, iOS and CarPlay. Album, playlist, artist and search pages, the iOS updater and CarPlay no longer fall back to Chinese, and VoiceOver reads the now-playing buttons in English. CarPlay play counts use K/M/B in English.\n- **Downloads**: a failed download now says why — the service's own reason (such as a risk-control refusal) or the system error code — instead of only asking you to check the network (#141).\n\n---\n\n### 新增\n\n- **iOS**：播放页和设置里新增八种音效预设和十段自定义均衡器，并带实时频率响应曲线。切换后直接作用于当前播放，不用重建播放器（#191）。\n\n### 改进\n\n- **iOS**：与 macOS 一样跟随系统语言，支持英文和简体中文（#191）。\n- **本地化**：macOS、iOS 与 CarPlay 的英文界面补齐。专辑、歌单、歌手与搜索页面、iOS 更新流程和 CarPlay 不再夹杂中文，播放页按钮的 VoiceOver 朗读也有了英文。CarPlay 的播放次数在英文下使用 K/M/B。\n- **下载**：下载失败时会说明原因（如服务端的风控拒绝）或系统错误码，而不再只提示检查网络（#141）。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/missuo/kumone/releases/download/v0.3.32/Kumone-iOS-0.3.32.ipa",
-          "size": 4060424,
+          "version": "0.3.34",
+          "date": "2026-11-12",
+          "localizedDescription": "### Added\n\n- **Comments**: read a song's comments from its context menu, or on iOS from the now-playing page's More menu — top comments first, then the latest, loading more as you scroll, with the reply each one answers and its likes. Signed in, you can like a comment or take the like back (#113).\n- **Search**: on iOS every playlist can be searched (the magnifying glass, or pull down), not only Liked Songs; tapping a result plays the whole playlist from that song (#185).\n- **Cloud Disk**: search by song, artist, album or uploaded file name, on macOS and iOS. The cloud disk now loads every song instead of the first 1,000, so search and Play All cover them all (#186).\n\n### Improved\n\n- **iOS**: Daily Recs drops the large cover banner at the top, so the songs start right below the date, title and Play All.\n\n---\n\n### 新增\n\n- **评论**：从歌曲的右键 / 长按菜单，或 iOS 播放页的「更多」菜单查看歌曲评论——先显示热门评论，再显示最新评论，滚动时自动加载更多，并显示所回复的评论和点赞数。登录后可以给评论点赞或取消点赞（#113）。\n- **搜索**：iOS 上所有歌单都可以在歌单内搜索（右上角放大镜，或在列表顶部下拉），不再只限「我喜欢的音乐」；点搜索结果会从这首开始播放整个歌单（#185）。\n- **音乐云盘**：macOS 和 iOS 都可以按歌名、歌手、专辑或上传的文件名搜索。云盘现在会加载全部歌曲，不再只加载前 1000 首，搜索和「播放全部」都覆盖所有歌曲（#186）。\n\n### 改进\n\n- **iOS**：每日推荐去掉了顶部的大封面横幅，日期、标题和「播放全部」下面直接就是歌曲列表。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/missuo/kumone/releases/download/v0.3.34/Kumone-iOS-0.3.34.ipa",
+          "size": 4270017,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone-ios",
-      "title": "Kumone 0.3.32 · 09 Nov 2026",
-      "identifier": "Kumone-release-v0.3.32",
-      "caption": "Kumone 0.3.32 is available.",
-      "date": "2026-11-09T17:49:02Z",
+      "title": "Kumone 0.3.34 · 12 Nov 2026",
+      "identifier": "Kumone-release-v0.3.34",
+      "caption": "Kumone 0.3.34 is available.",
+      "date": "2026-11-12T20:52:06Z",
       "tintColor": "#EC4949",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.32"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.34"
     }
   ]
 }

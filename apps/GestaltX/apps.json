@@ -19,11 +19,11 @@
       "tintColor": "#007AFF",
       "versions": [
         {
-          "version": "1.0.5",
-          "date": "2026-11-11",
-          "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/144c0c44a762db616089faddfbc0581929ae1a0a/CHANGELOG_ZH-CN.md#105---2026-11-11)\n\nBuild `11111140`.\n\n### Added\n\n- Spanish localization, bringing the app to nine supported locales ([#97](https://github.com/huamidev/GestaltX/pull/97)).\n- iPhone Air model presets ([#92](https://github.com/huamidev/GestaltX/pull/92)) and a Japanese README ([#83](https://github.com/huamidev/GestaltX/pull/83)).\n\n### Changed\n\n- About now lists the supported OS as iOS / iPadOS 27.x. Installation remains\n  available on 26.x, where on-device MobileGestalt access is marked unsupported.\n- Updated Korean translations ([#84](https://github.com/huamidev/GestaltX/pull/84)) and corrected mixed-language text in\n  Traditional Chinese and other locales ([#61](https://github.com/huamidev/GestaltX/pull/61)).\n- Renamed the Chinese Photos Clean Up preset to “照片消除”.\n- Corrected the Internal Build label and added confirmation before enabling\n  this system-wide flag ([#60](https://github.com/huamidev/GestaltX/pull/60)).\n\n### Fixed\n\n- Device access preserves existing App Group cache contents ([#55](https://github.com/huamidev/GestaltX/pull/55)).\n- Reverting Dynamic Island restores its layout together with its capability\n  flag, without discarding unrelated staged artwork changes ([#58](https://github.com/huamidev/GestaltX/pull/58)).\n- Original-value recovery now checks the cache generation and layout, keeps\n  unavailable originals distinct from missing fields, and avoids repeatedly\n  reading old backup history ([#65](https://github.com/huamidev/GestaltX/pull/65), [#66](https://github.com/huamidev/GestaltX/pull/66)).\n- Restoring an unchanged backup skips unnecessary device writes ([#69](https://github.com/huamidev/GestaltX/pull/69)).\n  Failed backup deletions remain retryable ([#70](https://github.com/huamidev/GestaltX/pull/70)), and local backup\n  replacement clears inherited device-ownership status ([#64](https://github.com/huamidev/GestaltX/pull/64)).\n- Exports of verified device backups carry device-bound proof ([#59](https://github.com/huamidev/GestaltX/pull/59)).\n  Temporary export files are removed after sharing or cancellation ([#62](https://github.com/huamidev/GestaltX/pull/62)).\n- Direct file imports are captured before confirmation is deferred ([#63](https://github.com/huamidev/GestaltX/pull/63)),\n  and coordinated reads run off the main thread ([#75](https://github.com/huamidev/GestaltX/pull/75)). Temporary provider\n  failures ([#74](https://github.com/huamidev/GestaltX/pull/74)) or one inaccessible App Group ([#71](https://github.com/huamidev/GestaltX/pull/71)) no longer block\n  other queued imports.\n- Shared import handling checks container boundaries, rejects symlink paths,\n  bounds filename metadata, and cleans abandoned files without interrupting\n  active writers ([#72](https://github.com/huamidev/GestaltX/pull/72), [#73](https://github.com/huamidev/GestaltX/pull/73), [#76](https://github.com/huamidev/GestaltX/pull/76)).\n- Device identity changes are rejected before system writes ([#67](https://github.com/huamidev/GestaltX/pull/67)).\n  Duplicate cache descriptors are validated ([#56](https://github.com/huamidev/GestaltX/pull/56)), and unchanged NaN\n  values compare consistently ([#68](https://github.com/huamidev/GestaltX/pull/68)).\n\n### Download and signing\n\n- Some users report incomplete downloads with Safari on iOS 27. If an IPA is\n  reported as damaged or cannot be extracted, download it again; it may take\n  several attempts. Try another browser if the issue persists. This has not\n  been confirmed as a Safari or iOS defect.\n- Re-sign with a certificate and profile containing at least one usable App\n  Group. Keep the share extension and configure a common App Group for both\n  the app and extension.\n\n**Full Changelog**: https://github.com/huamidev/GestaltX/compare/v1.0.4...v1.0.5",
-          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.5/GestaltX_1.0.5.ipa",
-          "size": 2942882,
+          "version": "1.0.7",
+          "date": "2026-11-12",
+          "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.7/CHANGELOG_ZH-CN.md)\r\n\r\nBuild `11130112`.\r\n\r\n### Fixed\r\n\r\n- Fix container discovery on iOS 27.3 so wallpaper and App Launch Images can locate their containers again.",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.7/GestaltX_1.0.7.ipa",
+          "size": 3563948,
           "minOSVersion": "26.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "com.huami.gestultx",
-      "title": "GestaltX 1.0.5 · 11 Nov 2026",
-      "identifier": "GestaltX-release-v1.0.5",
-      "caption": "GestaltX 1.0.5 is available.",
-      "date": "2026-11-11T03:45:16Z",
+      "title": "GestaltX 1.0.7 · 12 Nov 2026",
+      "identifier": "GestaltX-release-v1.0.7",
+      "caption": "GestaltX 1.0.7 is available.",
+      "date": "2026-11-12T17:14:29Z",
       "tintColor": "#007AFF",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.png",
       "notify": true,
-      "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.0.5"
+      "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.0.7"
     }
   ]
 }
