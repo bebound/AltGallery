@@ -456,10 +456,10 @@
       "versions": [
         {
           "version": "1.0",
-          "date": "2026-11-11",
-          "localizedDescription": "Added localized alerts explaining why a setting couldn’t be changed.",
-          "downloadURL": "https://gh-proxy.com/https://github.com/pookjw/HermesEnabler/releases/download/1.4.1/HermesEnabler.ipa",
-          "size": 637738,
+          "date": "2026-11-12",
+          "localizedDescription": "- Improved Ultra Face layout selection and added a warning when the original layout cannot be restored.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/pookjw/HermesEnabler/releases/download/1.5.1/HermesEnabler.ipa",
+          "size": 944867,
           "minOSVersion": "17.0"
         }
       ]
@@ -587,7 +587,7 @@
       "name": "Kazumi",
       "bundleIdentifier": "com.example.kazumi",
       "developerName": "Predidit",
-      "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
+      "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率，使用 Flutter 实现。",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则，支持规则导入与规则分享，支持基于 Anime4K 的实时超分辨率。\n\n其他特性：番剧目录与搜索、分集播放、番剧弹幕、追番列表、历史记录、倍速播放、多视频源支持、配色方案等。",
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/icon.png",
       "screenshots": [
@@ -607,6 +607,30 @@
           "downloadURL": "https://gh-proxy.com/https://github.com/Predidit/Kazumi/releases/download/2.4.3/Kazumi_ios_2.4.3_no_sign.ipa",
           "size": 30439714,
           "minOSVersion": "13.0"
+        }
+      ]
+    },
+    {
+      "name": "Kazumi-Swift",
+      "bundleIdentifier": "com.linkpass.kazumi",
+      "developerName": "LinkPass888",
+      "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率，使用 SwiftUI 实现。",
+      "localizedDescription": "基于自定义规则的番剧采集与在线观看客户端，带弹幕。原生 SwiftUI 实现，界面使用 iOS 26 的液态玻璃材质，随系统外观与辅助功能设置变化。\n\n内置 mpv 播放内核与 Anime4K 实时超分辨率，支持弹弹play 弹幕、Bangumi 追番绑定、时间表、下载与 WebDAV 备份。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/01-recommend.jpeg",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/02-detail.jpeg",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/03-player.jpeg"
+      ],
+      "tintColor": "#45A992",
+      "versions": [
+        {
+          "version": "3.0.5",
+          "date": "2026-11-12",
+          "localizedDescription": "### 升级前请先转移数据\n\n**Bundle ID 从 `com.example.kazumi` 改为 `com.linkpass.kazumi`**，不再与上游 Kazumi 共用标识，可加入同一个 AltStore 源（[#26](https://github.com/LinkPass888/Kazumi-Swift/issues/26)）。系统会把新版视为独立 App，**旧数据不会自动迁移；确认迁移完成前请勿删除旧版**。\n\n1. **设置**：在旧版「设置 → 同步设置 → 设置备份」选择「导出到文件」，可以直接存到新版 Kazumi 的文稿目录，也可以存 iCloud 云盘或任意文件夹；装好新版后在同一页选择「从文件恢复」。也可以走「导出到剪贴板／从剪贴板恢复」。若勾选「不含账号与密码」，需在新版重新填写账号凭据。\n2. **离线下载的番剧**：在「文件」App 里把旧版 Kazumi 文件夹里的「下载」整个移到新版 Kazumi 文件夹里就行（两个版本可共存，文件夹里空的那个是新版）。之后在新版重新点这几集的下载，会认出已有文件并补回下载记录，不重新下载视频。\n3. **规则与规则仓库**：从正式版 3.0.4 导出的设置备份不含规则和仓库；规则需在旧版「规则管理」中另外导出，再在新版导入，自定义仓库需重新添加。3.0.5 起的新备份才会把它们一起保存。\n4. **追番与观看历史**：设置备份不含这两类数据。需要保留时，先在旧版完成 Bangumi／WebDAV 同步，再在新版导入设置后同步相应数据。\n\n**设置备份也不包含下载记录。** 确认所需数据已转移后再卸载旧版。\n\n### 新增\n\n- 新增 macOS 26 及以上版本（Mac Catalyst），仅支持 Apple Silicon，不支持 Intel Mac。提供拖拽安装的 dmg，与 iOS 版共用界面及 mpv 播放内核\n- 设置备份带上已安装的规则与添加的规则仓库：规则存整份定义，恢复时同名覆盖、没有的新增；规则仓库按地址去重合并\n\n### 修复\n\n- 已下载剧集从「观看历史」（含「我的」页卡片）进入时先播本地文件，断网也能接着看；进度写回原来的记录，在线选集在后台补回，不再挡住起播（[#27](https://github.com/LinkPass888/Kazumi-Swift/issues/27)）\n- 从推荐页「热门番组」「本季新番」等更多列表进入详情再返回时，不再重置到列表顶部（[#29](https://github.com/LinkPass888/Kazumi-Swift/issues/29)）\n- AniSkip 跳片头、片尾使用精确跳转，不再停在目标之前的关键帧\n- 修复退出播放器或换集后，迟到的画中画取帧任务访问已销毁内核导致的崩溃\n\n### 优化\n\n- 详情页在宽屏（可用宽度 ≥ 860）改三栏：封面、条目信息、简介三等分；「开始观看」固定在右下角，竖栏不再重复一遍番名\n- 详情页顶栏交回系统：返回键与玻璃背景由系统提供，不再自绘工具栏；辅助功能字号下仍走原来的单栏布局\n- 推荐页在矮窗口（可用高度 < 760）改叠压卡：封面铺满，番名与按钮压在底部渐隐上；卡内文字左对齐并收起简介，标题按背景切换深浅\n- 播放页在 iPad、Duo 内屏这类常规宽度就地铺开全屏，不再强制转屏；画面按窗口宽度与画面比例定高，控制层逐边避让安全区\n- 「我的」页最近观看卡片：番名支持两行，补上播放／重看角标与来源、时间\n- 最近搜索胶囊按文字宽度排布，空间不足时整颗换行，不再挤在等宽格子里\n- 设置页的横向边距交回系统，Duo 合上时不再压到右边栏\n- 观看历史右上角「清空」与返回按钮同色，不再跟主题色走\n- 应用内的仓库链接换到新仓库名 Kazumi-Swift，不再多走一次旧名跳转",
+          "downloadURL": "https://gh-proxy.com/https://github.com/LinkPass888/Kazumi-Swift/releases/download/3.0.5/Kazumi_ios_3.0.5_no_sign.ipa",
+          "size": 24130346,
+          "minOSVersion": "26.0"
         }
       ]
     },
@@ -1483,6 +1507,28 @@
   ],
   "news": [
     {
+      "appID": "com.linkpass.kazumi",
+      "title": "Kazumi-Swift 3.0.5 · 12 Nov 2026",
+      "identifier": "Kazumi-Swift-release-3.0.5",
+      "caption": "Kazumi-Swift 3.0.5 is available.",
+      "date": "2026-11-12T05:41:30Z",
+      "tintColor": "#45A992",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
+      "notify": true,
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.5"
+    },
+    {
+      "appID": "com.example.HermesEnabler",
+      "title": "HermesEnabler 1.0 · 12 Nov 2026",
+      "identifier": "HermesEnabler-release-1.5.1",
+      "caption": "HermesEnabler 1.0 is available.",
+      "date": "2026-11-12T04:11:27Z",
+      "tintColor": "#70C0F0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
+      "notify": true,
+      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.5.1"
+    },
+    {
       "appID": "com.thebcd69.bcd",
       "title": "BCD 0.1.653 · 11 Nov 2026",
       "identifier": "BCD-release-v0.1.653",
@@ -1525,17 +1571,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.png",
       "notify": true,
       "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.0.5"
-    },
-    {
-      "appID": "com.example.HermesEnabler",
-      "title": "HermesEnabler 1.0 · 11 Nov 2026",
-      "identifier": "HermesEnabler-release-1.4.1",
-      "caption": "HermesEnabler 1.0 is available.",
-      "date": "2026-11-11T01:26:37Z",
-      "tintColor": "#70C0F0",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
-      "notify": true,
-      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.4.1"
     },
     {
       "appID": "com.neogamelab.neostation",
