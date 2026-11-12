@@ -1,0 +1,44 @@
+# altgen config for the Erosion-CN AltStore source.
+# Run: uvx altgen -c config.toml
+# Erosion-CN: MobileGestalt and system-config toolbox for iOS / iPadOS, Chinese-localized
+
+[github]
+repo = "Kianuni/Erosion-CN"
+
+[source]
+name = "Erosion-CN"
+subtitle = "Erosion-CN AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Erosion-CN"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/icon.png"
+website = "https://github.com/Kianuni/Erosion-CN"
+tint_color = "#D07030"
+
+[app]
+name = "Erosion-CN"
+bundle_identifier = "com.jbdotparty.Erosion"
+developer_name = "Kianuni"
+subtitle = "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱"
+description = "A Simplified-Chinese localization of the Erosion MobileGestalt toolbox, with hardened write and backup paths for system configuration on iOS / iPadOS 27.x, plus partial support for iOS / iPadOS 26.x. Needs at least one App Group entitlement when re-signing."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/home.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/tweaks.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/files.jpeg",
+]
+tint_color = "#D07030"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release ships one ipa,
+# Erosion_v<version>_<language>.ipa (zh-Hans on older releases, Bilingual since v0.9.0).
+asset_pattern = "Erosion_.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png"
+
+[output]
+path = "apps.json"
