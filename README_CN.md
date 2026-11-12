@@ -221,6 +221,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <a href="https://github.com/CyrilPeng/Venera-Next"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Venera-Next/icon.png" alt="VeneraNext icon" width="24" align="top">VeneraNext</a>
 基于 Flutter 的跨平台漫画阅读器，支持本地漫画、WebDAV 漫画源与第三方网络漫画源。
 
+### <a href="https://github.com/MchinaMd57764/WQToolkit"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/WQToolkit/icon.png" alt="WQToolkit icon" width="24" align="top">WQToolkit</a>
+基于 App Group 容器查询原语的 iOS 工具箱——无需越狱即可浏览、清理与检查自己的应用数据容器，内置文件浏览器、缓存扫描与设备信息。
+
 ### <a href="https://github.com/mrdrvt99/YouProEXTRA"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/YouProEXTRA/icon.png" alt="YouProEXTRA icon" width="24" align="top">YouProEXTRA</a>
 为 iOS 打造的 YouTube 修改版，内置丰富可调项——无广告、后台播放、下载等。
 
