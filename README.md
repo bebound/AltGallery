@@ -206,6 +206,9 @@ Untethered, community-driven alternative app store for non-jailbroken iOS device
 ### <a href="https://github.com/akinal5765-byte/Silverphase"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Silverphase/icon.png" alt="Silverphase icon" width="24" align="top">Silverphase</a>
 Native film and print process simulator for iPhone and iPad — choose film and paper, then shape the image from exposure through development to scan.
 
+### <a href="https://github.com/ishtiaq156/stats"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Stats/icon.png" alt="Stats icon" width="24" align="top">Stats</a>
+View your Mac's system activity on iPhone over a local encrypted connection.
+
 ### <a href="https://github.com/StikDebug/StikDebug"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/StikDebug/icon.png" alt="StikDebug icon" width="24" align="top">StikDebug</a>
 On-device JIT enabler and device toolbox for iOS 17.4+, built on idevice.
 

@@ -206,6 +206,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <a href="https://github.com/akinal5765-byte/Silverphase"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Silverphase/icon.png" alt="Silverphase icon" width="24" align="top">Silverphase</a>
 面向 iPhone 与 iPad 的原生胶片与印相工艺模拟器——选择胶片与相纸，再从曝光、显影到扫描塑造影像。
 
+### <a href="https://github.com/ishtiaq156/stats"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Stats/icon.png" alt="Stats icon" width="24" align="top">Stats</a>
+在 iPhone 上通过本地加密连接查看 Mac 的系统运行状态。
+
 ### <a href="https://github.com/StikDebug/StikDebug"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/StikDebug/icon.png" alt="StikDebug icon" width="24" align="top">StikDebug</a>
 面向 iOS 17.4+ 的在设备端 JIT 启用工具与设备工具箱，基于 idevice 构建。
 
