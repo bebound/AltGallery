@@ -194,11 +194,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "2.6.0-nightly.20261111.0647",
-          "date": "2026-11-11",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- Android: regenerate the PGO profile on the source with the GS runs build\n- tests: the block hasher's unaligned update stays inside the test memory\n- GS: comments that named removed gsrunner switches, and an include they needed\n- GS/Vulkan: the run machine's development log goes\n- GS/TC: the lean path's mode switch and check halves go\n- gsrunner: the burst memo's switches and statistics line go\n- gsrunner: the readback lane's statistics, trace and switches go\n- gsrunner: the kick's two check modes go\n- GS/Vulkan: the run machine sleeps where runs do not form\n- GS: the vertex buffer grows in 64-bit sizes and fails loudly past a ceiling\n- GS: a reset of the draw buffers frees the buffers it replaces\n- GS/SW: a draw whose frame and Z buffers share pages is not split between workers\n- GS/SW: a texture is not refilled while a queued draw still reads it\n- GS/Vulkan: a run that holds a large draw keeps one state for all its draws\n- GS/Vulkan: a draw that cannot open a run is primed before it is classified\n- GS/Vulkan: the stencil counter resolve pipeline takes blend constants and line width dynamic\n- GS/Vulkan: the run pipeline declares its dynamic state through AddCachedDynamicState\n- GS/Vulkan: the stencil counter resolve pipeline takes blend constants and line width dynamic\n- GS/Vulkan: a run opens at the second of two consecutive draws that share its fixed state\n- GS/Vulkan: a draw with a vertex-selector bit runs never take is refused first, with the pixel-shader check\n- gsrunner: -kick-convert-check runs the kick's old conversion pass beside the new one\n- GS: the kick kernel converts a job in stretches, with nothing tested per vertex\n- GS/Vulkan: the stencil counter resolve pipeline keeps blend constants and line width dynamic\n- GS/Vulkan: the run machine's rings are made by the first draw that would join a run\n- GS/Vulkan: a draw that continues a run still counts toward the readback in-pass kick\n- gsrunner: -kick-decide-check runs the kick's wide decision beside the four-wide one\n- GS: the kick kernel decides on raw 16-bit coordinates, both axes in one lane\n- tests: block identities over held depth words are those of the words\n- GS: choose the block identity by timing the candidates once, on the first use\n- GS/HW: keep the palette's hash while the renderer's palette has not been rewritten\n- GS/CLUT: the palette's alpha range with one LD4 per 16 entries on ARM64\n- tests: pin the alpha range of an expanded palette\n- GS/HW: take a level's block identities in one call, and combine them with AES\n- GS/HW: a CPU clear of whole pages gives their blocks the identity of what it wrote\n- GS/HW: key every texture lookup that names nothing by the identities of its blocks\n- GS: GSBlockId, a cheaper identity for a block of local memory inside one run\n- tests: pin the texture hashes that name dumped and replacement textures\n- gsrunner: the run machine keeps -runs on|off and -runs-log; the probing switches go\n- GS/Vulkan: a draw outside the run program's pixel-shader set is refused first, for two masks\n- GS/Vulkan: declining the targets whose runs do not pay (off, unfinished)\n- GS/Vulkan: draws that alternate two sets of constants reuse the earlier upload\n- gsrunner: -runs-nofill-classic, the classic path's no-fill arm (development)\n- GS/Vulkan: the dear split weighs fill against a host draw, per GPU class\n- tests: a hand-worked case of the kick kernel's four-wide decision\n- gsrunner: the readback lane's measurement scaffolding\n- MTGS: a GS-to-EE read spins only while spinning has been answering it\n- MTGS: a GS-to-EE read spins for its answer, and the GS thread for the next read\n- GS/Vulkan: the in-pass kick spends at most a quarter of the readback wait it saves\n- GS/Vulkan: after the gate refuses an in-pass kick, offer it again 32 draws later\n- GS/Vulkan: in a readback frame the kick also ends a pass of many draws\n- GS/HW: the depth target holds the moved words until local memory is read or written there\n- GS/Vulkan: the run log carries each run's bounding-box area by dear class (development)\n- GS/HW: a Z24 move of colour pages into a depth target stays on the GPU\n- GS: a whole-page Z24 move of colour pages lands as a fixed block permutation\n- GS/HW: a burst's second read comes from its first round trip\n- GS/HW: the target reads of one request share one GPU round trip\n- GS/Vulkan: a run flushed from inside an apply keeps the classic path's chosen pipeline\n- GS: a new draw's first vertices are replayed only where a flush check is asked\n- GS: the kernel's conversion pass stands behind its own interface\n- gsrunner: -runs-no-continue, to price the run machine's shortcut (development)\n- GS/Vulkan: the run log records which fixed state ended a run (development)\n- GS/Vulkan: additive draws join runs\n- GS/Vulkan: recorded keys with raster ordering or a stencil counter are loadable\n- GS: the kernel's driver takes the per-draw environment snapshot itself\n- tests: every recorded pipeline key a draw can make is loadable\n- GS: the kick kernel decides a chunk first and converts only the vertices that stay\n- GS/HW: the CPU memory clear's 24-bit and masked fills keep the old bits with one bit select\n- GS: the burst memo uses GSClut's read serial\n- GS/Vulkan: draws without a depth buffer and expanded sprites join runs\n- GS/Vulkan: the run's header and table set takes a descriptor pool of its own\n- GS/Vulkan: a game's recorded pipeline keys survive every build that keeps the key layout\n- GS cache: a key layout identity, hashed from the pipeline selector definitions alone\n- Android: a new install removes only the GPU caches older builds wrote\n- Android: save the shader caches on every trip to the background, not once per 120 s\n- GS cache: write a change a few seconds after it settles, not only every 30 s\n- GS/Vulkan: on Android, name the linked GLSL compiler by its own versions\n- GS/Vulkan: the driver's pipeline blob is stamped by the driver, not the app's build\n- GS/Vulkan: every game's SPIR-V goes into the device's pack as well\n- GS/Vulkan: warm the GLSL compiler on the compile queue when the device opens\n- GS/Vulkan: the recorded-key precompile runs on GSCompileQueue\n- GS: GSCompileQueue, a worker pool for shader and pipeline builds\n- GS cache: a pack makes its directory again when its file is not there\n- tests: a pack is written after its empty directory was removed\n- GS/TC: a target keeps the end block of its valid area\n- GS/HW: the burst memo rests through runs of block copies\n- GS/HW: three values of Draw() are worked out only where they are read\n- GS/HW: the burst memo leaves alone what the copy road cannot take at level 0\n- GS/TC: the post-draw invalidation returns when no source is under the write\n- GS/TC: the target lookup answers from the front of its list\n- GS/HW: the burst memo prefetches what the next packet compare reads\n- GS/HW: the burst memo invalidates the texture cache once per burst\n- GS/HW: the burst memo tests its block-copy gate first\n- gsrunner: the burst memo's vertex counts and slab footprint\n- GS/HW: the burst memo records into recycled slabs\n- GS: the burst memo has no setting\n- gsrunner: -runs-split-mask, and the run log's per-state change counts\n- GS/Vulkan: a draw that opens a run after a ring or texture-array end needs its program built too\n- GS/Vulkan: the run machine's log counts its refusals by detail\n- GS/Vulkan: a draw that continues a run skips the classic path's device work\n- gsrunner: the run machine's development switches\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261108...22b1a7661fa5b29b54fd310911f16841d672bc6d",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261111/ARMSX2-nightly-20261111-22b1a7661f-iOS-arm64.ipa",
-          "size": 40652510,
+          "version": "2.6.0-nightly.20261112.1132",
+          "date": "2026-11-12",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- IOP thread: hold the lag bound tight for 196,608 cycles after every SIF transfer the EE starts\n- GS/Vulkan: a run's texture set is a fixed array of 32, without a variable descriptor count\n- Android: Auto picks Vulkan on the Bifrost arch 7 parts\n- DriverPacks: offer malisx2 on every Mali of its four arches\n- Android: Auto picks Vulkan on every Mali Valhall v10 part\n- Offer malisx2 on every Mali of arch 7, 9, 10 and 11\n- GPU Drivers pages: name both pack families, pass the session to the setup offer\n- DriverPacks: a malisx2 feed for Mali GPUs on Arm's kbase driver\n- Android: Auto picks Vulkan on the Mali-G610 and G710\n- Android: Vulkan is the default renderer instead of Auto\n- Offer malisx2 on the Mali-G610 and G710 (Valhall v10)\n- GS/Vulkan: VkResultToString names VK_ERROR_FRAGMENTED_POOL and VK_ERROR_OUT_OF_POOL_MEMORY\n- Android: tell a user on Qualcomm's own GPU driver to get a Turnip driver\n- GS/Vulkan: the run machine stops when an empty descriptor pool refuses a set\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261111...c25493a20285dc126a950d2d61826987a566a306",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261112/ARMSX2-nightly-20261112-c25493a202-iOS-arm64.ipa",
+          "size": 40658081,
           "minOSVersion": "17.0"
         }
       ]
@@ -387,11 +387,11 @@
       "tintColor": "#D07030",
       "versions": [
         {
-          "version": "0.9.0",
+          "version": "0.9.1",
           "date": "2026-11-12",
-          "localizedDescription": "## Erosion-CN v0.9.0 更新日志 · Bilingual Release Notes (Build 22)\n\n### 🌐 单包完整中英双语支持 / Full Bilingual Support (`zh-Hans` + `en`)（#7）\n\n1. **全量双语本地化（1,305 条词条 100% 覆盖） / Full App Localization (1,305 Strings)**:\n   - 单一 IPA 同时内置完整 **简体中文 (`zh-Hans`)** 与 **英文 (`en`)** 语言包，全量覆盖主界面、所有 `MobileGestalt` 与跨容器实验模块、弹窗告警、槽位检视器（`MGInspector`）、内置 Plist/文本编辑器与底层运行日志。\n   - Single unified IPA bundling complete **Simplified Chinese (`zh-Hans`)** and **English (`en`)** localizations across every view, alert, `MGInspector` probe, Plist/Text editor, cross-container tool, and runtime log.\n2. **智能系统语言识别 + 设置页实时热切换 / Smart Auto-Detection + Live Switcher**:\n   - 中文系统默认启动为简体中文；所有非中文系统语言自动以 **英文界面** 启动。\n   - **设置 → 界面语言 (`Settings → App Language`)** 新增 **跟随系统 (`Follow System`) / `简体中文` / `English`** 三档实时切换器，无需重启应用即可即时切换全局语言。\n   - Automatically launches in **English** on any non-Chinese system locale (and Simplified Chinese on `zh*`), plus an instant live **App Language** switcher in **Settings** (`Follow System` / `简体中文` / `English`) — no app restart required.\n3. **新增英文文档 / Added English Documentation**:\n   - 新增 [README_EN.md](https://github.com/Kianuni/Erosion-CN/blob/main/README_EN.md)，同步整理兼容矩阵、签名要求与核心功能说明。\n\n---\n\n### 📦 安装包校验信息 / Package Checksum\n\n- **文件名 / File**: `Erosion_v0.9.0_Bilingual.ipa`\n- **版本号 / Version**: `v0.9.0` (`Build 22`)\n- **SHA-256**: `2b24418e5d923a7a57492a927c939f1d65f73bf1b4a5e08ddb1c6b3b3b896ece`",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.9.0/Erosion_v0.9.0_Bilingual.ipa",
-          "size": 7525162,
+          "localizedDescription": "## Erosion-CN v0.9.1 更新日志 · Bilingual Release Notes (Build 23)\n\n### 🇨🇳 简体中文\n\n#### 🛠️ 关键 Bug 修复：原生 AI 机型 `Personal Translator (#266)` 基线锁定与双向自愈（修复 #16 / #22）\n1. **修复旧版（`v0.8.3 – v0.8.5`）误关槽位 `#266` 导致相册云端工具与相机 Siri「0 秒瞬间报错」的问题**：\n   - 在所有原生支持 Apple 智能的 iPhone（`iPhone 15 Pro` 至 `iPhone 18 Pro Max` 全系列）原厂 `CacheData` 中，`Personal Translator`（`M1n2sAqf33NAOgZRGxQYBA`，槽位 `#266`）原厂默认为 `true (0x01)`，而 `Audio Intelligence`（`rb2tKZxlj0Gm2tBmUQSLqQ`，槽位 `#178`）原厂默认为 `false (0x00)`。\n   - 此前跨 iOS 版本 OTA 升级（旧 `OriginalGestalt.plist` 的 `CacheUUID` 变化）或非 18 Pro 机型执行一键配齐时，可能将 `#266` 误写为 `false (0x00)` 并污染本地 `UserDefaults` 基线快照，触发 `GenerativeModels / ModelCatalog` 本地预检 0ms 熔断报错（端侧快速消除正常，但**照片高质量消除、扩图延伸、重构及相机 `SIRI` 模式**瞬间报错）。\n   - `v0.9.1` 已锁定全系原生 AI iPhone 的硬件原厂基线（`#266 = true`、`#178 = false`，免疫跨版本备份不匹配与污染缓存），并在恢复出厂 / 重建缓存 / 重生备份时自动清理本地槽位基线记录。\n2. **新增双向异常检测与「一键配齐 / 修复」自愈提示**：\n   - 顶部「Apple 智能激活四要素体检」卡片、实时 `MGCopyAnswer` 核验与防呆护栏现可**双向检测**槽位偏移（无论 `#178` 被强开为 `true` 还是原生 AI 机型的 `#266` 被误关为 `false`）；\n   - 受旧版影响的用户升级 `v0.9.1` 后，打开 `MobileGestalt` 点击顶部 **「一键配齐 / 修复」→「应用」→ 手动关机冷重启** 即可完整恢复原厂基线。\n3. **单包中英双语同步更新**：新增诊断提示词条已 100% 同步内置简体中文 (`zh-Hans`) 与英文 (`en`) 双语翻译。\n\n---\n\n### 🌐 English\n\n#### 🛠️ Critical Bug Fix: `Personal Translator (#266)` Factory Baseline Lock & Two-Way Auto-Heal (Fixes #16 / #22)\n1. **Fixed instant 0ms failure in Photos Cloud Tools (High-Quality Clean Up / Extend / Reframe) & Camera `SIRI` caused by slot `#266` downgrade**:\n   - On all native Apple Intelligence iPhones (`iPhone 15 Pro` through `iPhone 18 Pro Max`), factory `CacheData` sets `Personal Translator` (`M1n2sAqf33NAOgZRGxQYBA`, slot `#266`) to `true (0x01)` and `Audio Intelligence` (`rb2tKZxlj0Gm2tBmUQSLqQ`, slot `#178`) to `false (0x00)`.\n   - Earlier versions (`v0.8.3 – v0.8.5`) could accidentally flip slot `#266` to `false (0x00)` on non-18-Pro models or after an OTA iOS update (`CacheUUID` change) and cache that polluted baseline in `UserDefaults`, causing `GenerativeModels / ModelCatalog` to abort locally in 0ms while Fast Clean Up still worked.\n   - `v0.9.1` enforces the verified hardware factory baseline (`#266 = true`, `#178 = false`) across all native AI iPhones and purges stale `UserDefaults` slot baselines on Factory Restore / Clean Cache Rebuild / Backup Regeneration.\n2. **Two-Way Slot Drift Detection & One-Click Auto-Heal**:\n   - Both the 4-Factor Readiness Checkup Card and live `MGCopyAnswer` verification now detect drift in **both directions** (`#178` forced ON or `#266` accidentally turned OFF on native AI hardware) and expose **One-Click Setup / Repair** immediately.\n   - To heal an affected device: install `v0.9.1` → open **Tweaks → MobileGestalt** → tap **One-Click Setup / Repair** → **Apply** → **power off and cold-reboot**.\n\n---\n\n### 📦 Checksum · 安装包校验信息\n\n- **File**: `Erosion_v0.9.1_Bilingual.ipa`\n- **Version**: `v0.9.1` (Build 23)\n- **SHA-256**: `32a538f9ffbb2e9c604c4a39f58b4491eb3731886ea439dff6b0bdefcb514c98`",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.9.1/Erosion_v0.9.1_Bilingual.ipa",
+          "size": 6277874,
           "minOSVersion": "26.0"
         }
       ]
@@ -481,9 +481,9 @@
         {
           "version": "1.0",
           "date": "2026-11-12",
-          "localizedDescription": "- Improved Ultra Face layout selection and added a warning when the original layout cannot be restored.",
-          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.5.1/HermesEnabler.ipa",
-          "size": 944867,
+          "localizedDescription": "- Added support for watchOS 27.0 beta 3 (24R5315i).\r\n- Improved how original settings are restored when turning features off.",
+          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.5.2/HermesEnabler.ipa",
+          "size": 948274,
           "minOSVersion": "17.0"
         }
       ]
@@ -1599,15 +1599,37 @@
   ],
   "news": [
     {
+      "appID": "com.example.HermesEnabler",
+      "title": "HermesEnabler 1.0 · 12 Nov 2026",
+      "identifier": "HermesEnabler-release-1.5.2",
+      "caption": "HermesEnabler 1.0 is available.",
+      "date": "2026-11-12T14:49:08Z",
+      "tintColor": "#70C0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
+      "notify": true,
+      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.5.2"
+    },
+    {
       "appID": "com.jbdotparty.Erosion",
-      "title": "Erosion-CN 0.9.0 · 12 Nov 2026",
-      "identifier": "Erosion-CN-release-v0.9.0",
-      "caption": "Erosion-CN 0.9.0 is available.",
-      "date": "2026-11-12T10:54:42Z",
+      "title": "Erosion-CN 0.9.1 · 12 Nov 2026",
+      "identifier": "Erosion-CN-release-v0.9.1",
+      "caption": "Erosion-CN 0.9.1 is available.",
+      "date": "2026-11-12T13:06:38Z",
       "tintColor": "#D07030",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
       "notify": true,
-      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.0"
+      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.1"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 2.6.0-nightly.20261112.1132 · 12 Nov 2026",
+      "identifier": "ARMSX2-release-nightly-20261112",
+      "caption": "ARMSX2 2.6.0-nightly.20261112.1132 is available.",
+      "date": "2026-11-12T11:58:10Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261112"
     },
     {
       "appID": "app.local.iPadn",
@@ -1641,17 +1663,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
       "notify": true,
       "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.5"
-    },
-    {
-      "appID": "com.example.HermesEnabler",
-      "title": "HermesEnabler 1.0 · 12 Nov 2026",
-      "identifier": "HermesEnabler-release-1.5.1",
-      "caption": "HermesEnabler 1.0 is available.",
-      "date": "2026-11-12T04:11:27Z",
-      "tintColor": "#70C0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
-      "notify": true,
-      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.5.1"
     },
     {
       "appID": "com.ishtiaqsyed.StatsForIOS",
@@ -1696,17 +1707,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/news.png",
       "notify": true,
       "url": "https://github.com/thebcd69/bcd-games/releases/tag/v0.1.653"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 2.6.0-nightly.20261111.0647 · 11 Nov 2026",
-      "identifier": "ARMSX2-release-nightly-20261111",
-      "caption": "ARMSX2 2.6.0-nightly.20261111.0647 is available.",
-      "date": "2026-11-11T07:21:22Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261111"
     },
     {
       "appID": "com.huami.gestultx",

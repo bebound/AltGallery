@@ -21,11 +21,11 @@
       "tintColor": "#D07030",
       "versions": [
         {
-          "version": "0.9.0",
+          "version": "0.9.1",
           "date": "2026-11-12",
-          "localizedDescription": "## Erosion-CN v0.9.0 更新日志 · Bilingual Release Notes (Build 22)\n\n### 🌐 单包完整中英双语支持 / Full Bilingual Support (`zh-Hans` + `en`)（#7）\n\n1. **全量双语本地化（1,305 条词条 100% 覆盖） / Full App Localization (1,305 Strings)**:\n   - 单一 IPA 同时内置完整 **简体中文 (`zh-Hans`)** 与 **英文 (`en`)** 语言包，全量覆盖主界面、所有 `MobileGestalt` 与跨容器实验模块、弹窗告警、槽位检视器（`MGInspector`）、内置 Plist/文本编辑器与底层运行日志。\n   - Single unified IPA bundling complete **Simplified Chinese (`zh-Hans`)** and **English (`en`)** localizations across every view, alert, `MGInspector` probe, Plist/Text editor, cross-container tool, and runtime log.\n2. **智能系统语言识别 + 设置页实时热切换 / Smart Auto-Detection + Live Switcher**:\n   - 中文系统默认启动为简体中文；所有非中文系统语言自动以 **英文界面** 启动。\n   - **设置 → 界面语言 (`Settings → App Language`)** 新增 **跟随系统 (`Follow System`) / `简体中文` / `English`** 三档实时切换器，无需重启应用即可即时切换全局语言。\n   - Automatically launches in **English** on any non-Chinese system locale (and Simplified Chinese on `zh*`), plus an instant live **App Language** switcher in **Settings** (`Follow System` / `简体中文` / `English`) — no app restart required.\n3. **新增英文文档 / Added English Documentation**:\n   - 新增 [README_EN.md](https://github.com/Kianuni/Erosion-CN/blob/main/README_EN.md)，同步整理兼容矩阵、签名要求与核心功能说明。\n\n---\n\n### 📦 安装包校验信息 / Package Checksum\n\n- **文件名 / File**: `Erosion_v0.9.0_Bilingual.ipa`\n- **版本号 / Version**: `v0.9.0` (`Build 22`)\n- **SHA-256**: `2b24418e5d923a7a57492a927c939f1d65f73bf1b4a5e08ddb1c6b3b3b896ece`",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.9.0/Erosion_v0.9.0_Bilingual.ipa",
-          "size": 7525162,
+          "localizedDescription": "## Erosion-CN v0.9.1 更新日志 · Bilingual Release Notes (Build 23)\n\n### 🇨🇳 简体中文\n\n#### 🛠️ 关键 Bug 修复：原生 AI 机型 `Personal Translator (#266)` 基线锁定与双向自愈（修复 #16 / #22）\n1. **修复旧版（`v0.8.3 – v0.8.5`）误关槽位 `#266` 导致相册云端工具与相机 Siri「0 秒瞬间报错」的问题**：\n   - 在所有原生支持 Apple 智能的 iPhone（`iPhone 15 Pro` 至 `iPhone 18 Pro Max` 全系列）原厂 `CacheData` 中，`Personal Translator`（`M1n2sAqf33NAOgZRGxQYBA`，槽位 `#266`）原厂默认为 `true (0x01)`，而 `Audio Intelligence`（`rb2tKZxlj0Gm2tBmUQSLqQ`，槽位 `#178`）原厂默认为 `false (0x00)`。\n   - 此前跨 iOS 版本 OTA 升级（旧 `OriginalGestalt.plist` 的 `CacheUUID` 变化）或非 18 Pro 机型执行一键配齐时，可能将 `#266` 误写为 `false (0x00)` 并污染本地 `UserDefaults` 基线快照，触发 `GenerativeModels / ModelCatalog` 本地预检 0ms 熔断报错（端侧快速消除正常，但**照片高质量消除、扩图延伸、重构及相机 `SIRI` 模式**瞬间报错）。\n   - `v0.9.1` 已锁定全系原生 AI iPhone 的硬件原厂基线（`#266 = true`、`#178 = false`，免疫跨版本备份不匹配与污染缓存），并在恢复出厂 / 重建缓存 / 重生备份时自动清理本地槽位基线记录。\n2. **新增双向异常检测与「一键配齐 / 修复」自愈提示**：\n   - 顶部「Apple 智能激活四要素体检」卡片、实时 `MGCopyAnswer` 核验与防呆护栏现可**双向检测**槽位偏移（无论 `#178` 被强开为 `true` 还是原生 AI 机型的 `#266` 被误关为 `false`）；\n   - 受旧版影响的用户升级 `v0.9.1` 后，打开 `MobileGestalt` 点击顶部 **「一键配齐 / 修复」→「应用」→ 手动关机冷重启** 即可完整恢复原厂基线。\n3. **单包中英双语同步更新**：新增诊断提示词条已 100% 同步内置简体中文 (`zh-Hans`) 与英文 (`en`) 双语翻译。\n\n---\n\n### 🌐 English\n\n#### 🛠️ Critical Bug Fix: `Personal Translator (#266)` Factory Baseline Lock & Two-Way Auto-Heal (Fixes #16 / #22)\n1. **Fixed instant 0ms failure in Photos Cloud Tools (High-Quality Clean Up / Extend / Reframe) & Camera `SIRI` caused by slot `#266` downgrade**:\n   - On all native Apple Intelligence iPhones (`iPhone 15 Pro` through `iPhone 18 Pro Max`), factory `CacheData` sets `Personal Translator` (`M1n2sAqf33NAOgZRGxQYBA`, slot `#266`) to `true (0x01)` and `Audio Intelligence` (`rb2tKZxlj0Gm2tBmUQSLqQ`, slot `#178`) to `false (0x00)`.\n   - Earlier versions (`v0.8.3 – v0.8.5`) could accidentally flip slot `#266` to `false (0x00)` on non-18-Pro models or after an OTA iOS update (`CacheUUID` change) and cache that polluted baseline in `UserDefaults`, causing `GenerativeModels / ModelCatalog` to abort locally in 0ms while Fast Clean Up still worked.\n   - `v0.9.1` enforces the verified hardware factory baseline (`#266 = true`, `#178 = false`) across all native AI iPhones and purges stale `UserDefaults` slot baselines on Factory Restore / Clean Cache Rebuild / Backup Regeneration.\n2. **Two-Way Slot Drift Detection & One-Click Auto-Heal**:\n   - Both the 4-Factor Readiness Checkup Card and live `MGCopyAnswer` verification now detect drift in **both directions** (`#178` forced ON or `#266` accidentally turned OFF on native AI hardware) and expose **One-Click Setup / Repair** immediately.\n   - To heal an affected device: install `v0.9.1` → open **Tweaks → MobileGestalt** → tap **One-Click Setup / Repair** → **Apply** → **power off and cold-reboot**.\n\n---\n\n### 📦 Checksum · 安装包校验信息\n\n- **File**: `Erosion_v0.9.1_Bilingual.ipa`\n- **Version**: `v0.9.1` (Build 23)\n- **SHA-256**: `32a538f9ffbb2e9c604c4a39f58b4491eb3731886ea439dff6b0bdefcb514c98`",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.9.1/Erosion_v0.9.1_Bilingual.ipa",
+          "size": 6277874,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.jbdotparty.Erosion",
-      "title": "Erosion-CN 0.9.0 · 12 Nov 2026",
-      "identifier": "Erosion-CN-release-v0.9.0",
-      "caption": "Erosion-CN 0.9.0 is available.",
-      "date": "2026-11-12T10:54:42Z",
+      "title": "Erosion-CN 0.9.1 · 12 Nov 2026",
+      "identifier": "Erosion-CN-release-v0.9.1",
+      "caption": "Erosion-CN 0.9.1 is available.",
+      "date": "2026-11-12T13:06:38Z",
       "tintColor": "#D07030",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
       "notify": true,
-      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.0"
+      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.1"
     }
   ]
 }
