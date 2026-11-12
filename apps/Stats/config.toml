@@ -1,0 +1,49 @@
+# altgen config for the Stats AltStore source.
+# Run: uvx altgen -c config.toml
+# The mobile app shares the repo with the Mac companion: newer releases (e.g.
+# v0.3.9) ship only Mac assets, so match the Stats-<version>-iOS.ipa asset
+# instead of assuming every release has an IPA. Every release is currently a
+# prerelease, hence include_prereleases.
+
+[github]
+repo = "ishtiaq156/stats"
+
+[source]
+name = "Stats"
+subtitle = "Stats AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Stats"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/icon.png"
+website = "https://github.com/ishtiaq156/stats"
+tint_color = "#2090F0"
+
+[app]
+name = "Stats"
+bundle_identifier = "com.ishtiaqsyed.StatsForIOS"
+developer_name = "ishtiaq156"
+subtitle = "Your Mac's activity, at a glance"
+description = "View your Mac's system activity on iPhone over a local encrypted connection. A native, local-first system monitor with a lightweight Mac companion and a mobile dashboard."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/link.jpeg",
+]
+tint_color = "#2090F0"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = true
+# asset_pattern is a regex (not glob): only the iOS app, never the Mac
+# companion dmg/zip or other assets.
+asset_pattern = "Stats-.*-iOS\\.ipa$"
+# Take the app version from the asset filename: the release tag is v0.3.6 while
+# the asset attached to it is Stats-v0.3.3-iOS.ipa (app version 0.3.3).
+version_pattern = "v(\\d+\\.\\d+\\.\\d+)-iOS\\.ipa$"
+version_source = "filename"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png"
+
+[output]
+path = "apps.json"
