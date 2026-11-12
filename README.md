@@ -86,6 +86,9 @@ Original Xbox emulation for iOS, built from xemu with a native Swift interface.
 ### <a href="https://github.com/EhPanda-Team/EhPanda"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/EhPanda/icon.png" alt="EhPanda icon" width="24" align="top">EhPanda</a>
 An unofficial E-Hentai App for iOS built with SwiftUI & TCA.
 
+### <a href="https://github.com/Kianuni/Erosion-CN"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Erosion-CN/icon.png" alt="Erosion-CN icon" width="24" align="top">Erosion-CN</a>
+Simplified-Chinese Erosion fork — a MobileGestalt and system-config toolbox for iOS 27 with hardened writes, pre-apply diffs and factory-state restore. Needs an App Group when re-signing.
+
 ### <a href="https://github.com/Leviidev/Fathom"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Fathom/icon.png" alt="Fathom icon" width="24" align="top">Fathom</a>
 An x86-64 PC emulator for iOS — runs x86-64 Linux executables by translating them to ARM64 at runtime with FEXCore. Requires JIT and a debugger attached at runtime.
 

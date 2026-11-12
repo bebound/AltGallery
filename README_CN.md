@@ -86,6 +86,9 @@ iOS 上的初代 Xbox 模拟器，基于 xemu 构建并配有原生 Swift 界面
 ### <a href="https://github.com/EhPanda-Team/EhPanda"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/EhPanda/icon.png" alt="EhPanda icon" width="24" align="top">EhPanda</a>
 使用 SwiftUI 与 TCA 构建的非官方 E-Hentai iOS 应用。
 
+### <a href="https://github.com/Kianuni/Erosion-CN"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Erosion-CN/icon.png" alt="Erosion-CN icon" width="24" align="top">Erosion-CN</a>
+基于 Erosion 的简体中文本地化分支——iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱，内置写入安全加固、应用前差异预览与原厂状态恢复。自签安装需保留 App Group 权限。
+
 ### <a href="https://github.com/Leviidev/Fathom"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Fathom/icon.png" alt="Fathom icon" width="24" align="top">Fathom</a>
 面向 iOS 的 x86-64 PC 模拟器——通过 FEXCore 在运行时将 x86-64 Linux 可执行文件转译为 ARM64 运行。需要 JIT，并在运行时附加调试器。
 
