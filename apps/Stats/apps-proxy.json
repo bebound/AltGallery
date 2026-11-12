@@ -1,0 +1,45 @@
+{
+  "name": "Stats",
+  "subtitle": "Stats AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Stats",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/icon.png",
+  "website": "https://github.com/ishtiaq156/stats",
+  "tintColor": "#2090F0",
+  "apps": [
+    {
+      "name": "Stats",
+      "bundleIdentifier": "com.ishtiaqsyed.StatsForIOS",
+      "developerName": "ishtiaq156",
+      "subtitle": "Your Mac's activity, at a glance",
+      "localizedDescription": "View your Mac's system activity on iPhone over a local encrypted connection. A native, local-first system monitor with a lightweight Mac companion and a mobile dashboard.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/link.jpeg"
+      ],
+      "tintColor": "#2090F0",
+      "versions": [
+        {
+          "version": "0.3.3",
+          "date": "2026-11-12",
+          "localizedDescription": "Stats Companion 0.3.6 moves paired-phone management to its own Settings page and lets you rename existing phones without pairing again. The accompanying Stats iPhone 0.3.3 update adds editable phone names during pairing and configurable passcode haptics.\n\n## What's Changed\n\n### Features\n\n- Open **Paired phones** from a compact Settings row to see a scrollable list of connected and previously paired phones.\n- Rename phones in Companion without revoking their saved credentials; the name is remembered after a restart.\n- Choose the name sent by the iPhone during pairing, including when iOS supplies a generic device name.\n- Enable or disable tactile passcode feedback from iPhone Settings. Keypad taps, deletion, paste, and pairing results respect the preference.\n\n### Improvements and Fixes\n\n- Keep Companion's main Settings page compact when many phones are paired.\n- Keep individual Revoke actions available on the dedicated phone management page.\n- Preserve phone credentials across renames and remove saved aliases when access is revoked.\n\n## Download\n\n- **Mac companion · 0.3.6:** `StatsCompanion-v0.3.6-macOS-universal.dmg` (Apple Silicon and Intel; Apple Development signed).\n- **iPhone app · 0.3.3:** `Stats-v0.3.3-iOS.ipa` (unsigned; sign before installing with SideStore or another compatible method).\n- See the [README](https://github.com/ishtiaq156/stats#quick-start) for installation and pairing instructions.\n\n**Full Changelog:** [Compare v0.3.5...v0.3.6](https://github.com/ishtiaq156/stats/compare/v0.3.5...v0.3.6)",
+          "downloadURL": "https://gh-proxy.com/https://github.com/ishtiaq156/stats/releases/download/v0.3.6/Stats-v0.3.3-iOS.ipa",
+          "size": 2610574,
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.ishtiaqsyed.StatsForIOS",
+      "title": "Stats 0.3.3 · 12 Nov 2026",
+      "identifier": "Stats-release-v0.3.6",
+      "caption": "Stats 0.3.3 is available.",
+      "date": "2026-11-12T02:12:58Z",
+      "tintColor": "#2090F0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.6"
+    }
+  ]
+}
