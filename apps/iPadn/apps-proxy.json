@@ -22,11 +22,11 @@
       "tintColor": "#111111",
       "versions": [
         {
-          "version": "1.9.2",
-          "date": "2026-11-11",
-          "localizedDescription": "## iPadn 1.9.2\n\n本版本新增「支持 iPadn」页面，改进诊断信息，并修复两个问题。适用于 iOS / iPadOS 17 及更新版本；安装包未签名，请用自己的工具签名后安装。\n\n**支持 iPadn**\n\n- 新增「账号 › 设置 › 支持 iPadn」：iPadn 会一直免费开源、没有广告；如果它帮到了你，可以通过爱发电（支付宝、微信）或 USDT（BEP20）请作者喝杯咖啡，也可以在 GitHub 点个 Star 或帮忙改进翻译。\n\n**下载**\n\n- 修复部分签名方式下下载完成后提示「未能打开文件 CFNetworkDownload_….tmp，因为你没有查看它的权限」（#36）：遇到这种情况会自动改用应用内下载重新下载一次，之后的下载直接在应用内进行，下载时请保持 iPadn 在前台。首次启动时的后台下载检测也会检查文件能否读取。\n\n**诊断**\n\n- 「账号 › 设置 › 维护」新增「复制诊断信息」：在 LiveContainer 等无法弹出分享面板的环境中，可以直接复制后粘贴反馈。\n- 诊断信息会记录最近失败的请求：时间、服务器、接口名称和状态码，不包含账号、链接参数或登录凭据，方便定位下载失败。\n- Apple 返回 401 时，提示登录可能已失效并建议重新登录账号，不再只显示「网络请求失败」。\n\n**应用图标**\n\n- 修复更新 iPadn 后，主屏幕上仍是之前选择的浅色或跟随系统图标，「设置」里却显示为深色。从本版本起 iPadn 会记住你选择的图标；更新前就遇到这种情况时，在「设置 › 应用图标 › 图标主题」中重新选择一次即可。\n\n**English**\n\nAdds a Support iPadn page under Account › Settings: iPadn stays free, open source and ad-free, and you can buy the author a coffee through Afdian or USDT (BEP20) if you like. Fixes downloads that failed with \"you don't have permission to view CFNetworkDownload_….tmp\" under some signing tools (#36): iPadn now downloads such packages again inside the app, and later downloads stay there. Diagnostics now record recent failed requests (time, host, endpoint and status only) and can be copied when the share sheet won't open, as in LiveContainer; a 401 from Apple now suggests signing in again. Also fixes Settings showing the dark icon after an update while the Home Screen kept the light or automatic icon; if this happened before updating, choose the icon theme once more in Settings.\n\n更早版本的更新内容见 [Releases](https://github.com/mengangs/ipadn/releases)。\n\n验证：设备 Release 编译与 IPA 检查通过；136 项测试通过，0 项失败，0 项跳过。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/mengangs/ipadn/releases/download/v1.9.2/iPadn-1.9.2-unsigned.ipa",
-          "size": 47376820,
+          "version": "2.0.0",
+          "date": "2026-11-12",
+          "localizedDescription": "## iPadn 2.0.0\n\niPadn 2.0 是一次大更新：新增发现页、用户评论、翻译、应用锁、本机应用、Wi‑Fi 传输、灵动岛下载进度、小组件和快捷指令，原生安装可以阻止 App Store 更新，并开始支持 iOS / iPadOS 16。安装包未签名，请用自己的工具签名后安装。\n\n**两个安装包**\n\n- `iPadn-2.0.0-unsigned.ipa`：标准版，包含实时活动（灵动岛、锁屏）和小组件，签名时需要 2 个 App ID。\n- `iPadn-2.0.0-lite-unsigned.ipa`：精简版，不含扩展，只需 1 个 App ID，适合 App ID 数量有限的签名方式。其他功能相同。\n- SideStore、AltStore、Feather 等签名工具可以添加源 `https://raw.githubusercontent.com/mengangs/ipadn/main/altstore-source.json`，在工具里直接安装和更新。\n\n**发现与应用详情**\n\n- 搜索页新增「发现」：免费榜、付费榜、畅销榜，可切换地区并按分类筛选。\n- 详情页新增「评论」，可查看各地区最近的用户评论并按星级筛选。\n- 简介和更新说明不是你的语言时，可以用系统翻译替换为译文（iOS 17.4 及更新版本）。\n- 版本历史默认显示最近 5 个版本。\n\n**下载与安装**\n\n- 锁屏和灵动岛显示下载进度（可在设置中关闭）。\n- 新增「仅使用 Wi‑Fi 下载」和「下载完成后自动安装」。\n- 下载页可以「全部更新」，编辑模式改为紧凑列表并支持全选。\n- 任务详情新增「安装包信息」：权限、扩展、语言、URL Scheme、后台模式等。\n- 原生安装新增「阻止 App Store 更新」：App Store 会把应用视为最新版本，不再提示或自动更新；关闭后再安装一次即可恢复（#46）。\n- 新增「账号 › 本机应用」：列出手机上已装的应用，对比 App Store 版本并一键全部更新（需要原生安装的配对）。\n- 新增「账号 › Wi‑Fi 传输」：在同一 Wi‑Fi 的电脑浏览器中下载已完成的安装包，只在页面打开时运行，地址带随机密钥。\n- 在 LiveContainer 中运行时，会提示打开 LiveContainer 的「修复文件导入」，之后才能导入导出文件和一键安装（#44）。\n\n**关注与价格**\n\n- 关注的付费应用可以设置目标价，降到目标价才提醒。\n\n**安全与快捷操作**\n\n- 新增应用锁：面容 ID、触控 ID 或密码，可设置离开多久后需要验证，多任务界面中也会隐藏内容。\n- 新增主屏幕和锁屏小组件：快速打开搜索、下载、已购和更新检查。\n- 新增快捷指令：下载应用、检查更新、下载全部更新、获取下载进度、暂停或继续全部下载、关注应用。\n\n**专业模式**\n\n- 可以对比同一应用的两个已下载版本：版本、权限、扩展、框架等变化。\n\n**设置**\n\n- 设置首页改为分类入口；新增「备份与维护」导出、导入设置和关注列表（不含账号和安装包）。\n- 关闭「新版本提醒」后，下载页也不再显示更新提示。\n\n**系统支持与稳定性**\n\n- 支持 iOS / iPadOS 16 及更新版本（感谢 @tageniu）。\n- 修复部分安装包（如网易云音乐）的图标导致 iPadn 启动后崩溃。\n- 切换标签页更流畅：不再每次重建所有页面（#41）。\n\n**English**\n\niPadn 2.0 adds Discover (top charts by region and category), customer reviews, system translation of descriptions and release notes, App Lock, Apps on This Device, Wi‑Fi transfer to a computer, download progress on the Lock Screen and in the Dynamic Island, widgets and Shortcuts actions. Downloads can wait for Wi‑Fi and install automatically when finished; native installation can block App Store updates for an app. Package info shows what a package declares, and Pro mode compares two downloaded versions. Followed paid apps can have a target price, settings are grouped into pages with backup export and import, and iOS / iPadOS 16 is now supported. Releases include a lite package without the app extension that needs a single App ID. Also fixes a launch crash caused by some packages' icons and makes tab switching smoother.\n\n更早版本的更新内容见 [Releases](https://github.com/mengangs/ipadn/releases)。\n\n两个安装包：`iPadn-2.0.0-unsigned.ipa` 是标准版（含实时活动和桌面小组件，需要 2 个 App ID）；`iPadn-2.0.0-lite-unsigned.ipa` 是精简版（不含扩展，只需 1 个 App ID），适合 App ID 数量受限的签名方式。\n\n验证：设备 Release 编译与 IPA 检查通过；145 项测试通过，0 项失败，0 项跳过。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/mengangs/ipadn/releases/download/v2.0.0/iPadn-2.0.0-lite-unsigned.ipa",
+          "size": 48080581,
           "minOSVersion": "17.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "app.local.iPadn",
-      "title": "iPadn 1.9.2 · 11 Nov 2026",
-      "identifier": "iPadn-release-v1.9.2",
-      "caption": "iPadn 1.9.2 is available.",
-      "date": "2026-11-11T11:19:37Z",
+      "title": "iPadn 2.0.0 · 12 Nov 2026",
+      "identifier": "iPadn-release-v2.0.0",
+      "caption": "iPadn 2.0.0 is available.",
+      "date": "2026-11-12T10:41:39Z",
       "tintColor": "#111111",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png",
       "notify": true,
-      "url": "https://github.com/mengangs/ipadn/releases/tag/v1.9.2"
+      "url": "https://github.com/mengangs/ipadn/releases/tag/v2.0.0"
     }
   ]
 }
