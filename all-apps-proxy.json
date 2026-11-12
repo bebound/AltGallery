@@ -373,6 +373,30 @@
       ]
     },
     {
+      "name": "Erosion-CN",
+      "bundleIdentifier": "com.jbdotparty.Erosion",
+      "developerName": "Kianuni",
+      "subtitle": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱",
+      "localizedDescription": "A Simplified-Chinese localization of the Erosion MobileGestalt toolbox, with hardened write and backup paths for system configuration on iOS / iPadOS 27.x, plus partial support for iOS / iPadOS 26.x. Needs at least one App Group entitlement when re-signing.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/home.jpeg",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/tweaks.jpeg",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/files.jpeg"
+      ],
+      "tintColor": "#D07030",
+      "versions": [
+        {
+          "version": "0.9.0",
+          "date": "2026-11-12",
+          "localizedDescription": "## Erosion-CN v0.9.0 更新日志 · Bilingual Release Notes (Build 22)\n\n### 🌐 单包完整中英双语支持 / Full Bilingual Support (`zh-Hans` + `en`)（#7）\n\n1. **全量双语本地化（1,305 条词条 100% 覆盖） / Full App Localization (1,305 Strings)**:\n   - 单一 IPA 同时内置完整 **简体中文 (`zh-Hans`)** 与 **英文 (`en`)** 语言包，全量覆盖主界面、所有 `MobileGestalt` 与跨容器实验模块、弹窗告警、槽位检视器（`MGInspector`）、内置 Plist/文本编辑器与底层运行日志。\n   - Single unified IPA bundling complete **Simplified Chinese (`zh-Hans`)** and **English (`en`)** localizations across every view, alert, `MGInspector` probe, Plist/Text editor, cross-container tool, and runtime log.\n2. **智能系统语言识别 + 设置页实时热切换 / Smart Auto-Detection + Live Switcher**:\n   - 中文系统默认启动为简体中文；所有非中文系统语言自动以 **英文界面** 启动。\n   - **设置 → 界面语言 (`Settings → App Language`)** 新增 **跟随系统 (`Follow System`) / `简体中文` / `English`** 三档实时切换器，无需重启应用即可即时切换全局语言。\n   - Automatically launches in **English** on any non-Chinese system locale (and Simplified Chinese on `zh*`), plus an instant live **App Language** switcher in **Settings** (`Follow System` / `简体中文` / `English`) — no app restart required.\n3. **新增英文文档 / Added English Documentation**:\n   - 新增 [README_EN.md](https://github.com/Kianuni/Erosion-CN/blob/main/README_EN.md)，同步整理兼容矩阵、签名要求与核心功能说明。\n\n---\n\n### 📦 安装包校验信息 / Package Checksum\n\n- **文件名 / File**: `Erosion_v0.9.0_Bilingual.ipa`\n- **版本号 / Version**: `v0.9.0` (`Build 22`)\n- **SHA-256**: `2b24418e5d923a7a57492a927c939f1d65f73bf1b4a5e08ddb1c6b3b3b896ece`",
+          "downloadURL": "https://gh-proxy.com/https://github.com/Kianuni/Erosion-CN/releases/download/v0.9.0/Erosion_v0.9.0_Bilingual.ipa",
+          "size": 7525162,
+          "minOSVersion": "26.0"
+        }
+      ]
+    },
+    {
       "name": "Fathom",
       "bundleIdentifier": "app.fathom.emulator",
       "developerName": "Leviidev",
@@ -1552,6 +1576,17 @@
     }
   ],
   "news": [
+    {
+      "appID": "com.jbdotparty.Erosion",
+      "title": "Erosion-CN 0.9.0 · 12 Nov 2026",
+      "identifier": "Erosion-CN-release-v0.9.0",
+      "caption": "Erosion-CN 0.9.0 is available.",
+      "date": "2026-11-12T10:54:42Z",
+      "tintColor": "#D07030",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.0"
+    },
     {
       "appID": "app.local.iPadn",
       "title": "iPadn 2.0.0 · 12 Nov 2026",
