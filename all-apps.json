@@ -194,11 +194,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "2.6.0-nightly.20261112.1132",
-          "date": "2026-11-12",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- IOP thread: hold the lag bound tight for 196,608 cycles after every SIF transfer the EE starts\n- GS/Vulkan: a run's texture set is a fixed array of 32, without a variable descriptor count\n- Android: Auto picks Vulkan on the Bifrost arch 7 parts\n- DriverPacks: offer malisx2 on every Mali of its four arches\n- Android: Auto picks Vulkan on every Mali Valhall v10 part\n- Offer malisx2 on every Mali of arch 7, 9, 10 and 11\n- GPU Drivers pages: name both pack families, pass the session to the setup offer\n- DriverPacks: a malisx2 feed for Mali GPUs on Arm's kbase driver\n- Android: Auto picks Vulkan on the Mali-G610 and G710\n- Android: Vulkan is the default renderer instead of Auto\n- Offer malisx2 on the Mali-G610 and G710 (Valhall v10)\n- GS/Vulkan: VkResultToString names VK_ERROR_FRAGMENTED_POOL and VK_ERROR_OUT_OF_POOL_MEMORY\n- Android: tell a user on Qualcomm's own GPU driver to get a Turnip driver\n- GS/Vulkan: the run machine stops when an empty descriptor pool refuses a set\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261111...c25493a20285dc126a950d2d61826987a566a306",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261112/ARMSX2-nightly-20261112-c25493a202-iOS-arm64.ipa",
-          "size": 40658081,
+          "version": "2.6.0-nightly.20261113.0426",
+          "date": "2026-11-13",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- microVU0: compute the VU1 register window's address at run time\n- Tests: a persisted VU0 program that uses the window onto VU1's registers\n- Android: link the core with emulated TLS when the minimum API is below 29\n- iOS: give the layout editor and the manifest skin their own views\n- iOS: split the patch and skin library stores by their own sections\n- iOS: split navigation and gameplay views into one file per view\n- iOS: split the controls and skin files along their types\n- iOS: split the dynamic backgrounds into one file per background\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261112...37ed35b88fe9a0164369c8042f2c9aa707e33667",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261113/ARMSX2-nightly-20261113-37ed35b88f-iOS-arm64.ipa",
+          "size": 40715589,
           "minOSVersion": "17.0"
         }
       ]
@@ -480,10 +480,10 @@
       "versions": [
         {
           "version": "1.0",
-          "date": "2026-11-12",
-          "localizedDescription": "- Added support for watchOS 27.0 beta 3 (24R5315i).\r\n- Improved how original settings are restored when turning features off.",
-          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.5.2/HermesEnabler.ipa",
-          "size": 948274,
+          "date": "2026-11-13",
+          "localizedDescription": "Added Vietnamese (vi) localization.",
+          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.5.4/HermesEnabler.ipa",
+          "size": 959386,
           "minOSVersion": "17.0"
         }
       ]
@@ -994,11 +994,11 @@
       "tintColor": "#8050F0",
       "versions": [
         {
-          "version": "1.3.1",
-          "date": "2026-11-06",
-          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.1\n- Build Date: 2026-11-06\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(android): 订阅日历小组件去除重复时间文案并适配更多尺寸 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/163\n* 适配 MoviePilot v3 与多服务器:信封按形状解封、设置原生类型、媒体库按可用服务器加载 by @anlan-home in https://github.com/singleton-altman/MoviePilotLite/pull/154\n* Dev by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/164\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.0-2026-11-06...release-v1.3.1-2026-11-06",
-          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.1-2026-11-06/ios-v1.3.1-2026-11-06.ipa",
-          "size": 37490597,
+          "version": "1.3.3",
+          "date": "2026-11-13",
+          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.3\n- Build Date: 2026-11-13\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(push): iOS 设置 JPush Alias 报 6002 超时且提示原始异常串 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/166\n* feat: 适配 Vue 插件（PVE 守护神 / 爱快路由 / 豆瓣档案 / 夸克网盘 / 随机图床） by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/167\n* feat(media_detail): 豆瓣评论与详情页 UI 优化 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/169\n* feat(media_detail): 完善豆瓣评论列表 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/175\n* release: v1.3.2 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/176\n* style(download): 重设计下载资源弹窗 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/180\n* feat(widget): 订阅日历小组件支持多尺寸并修复 ColorOS 尺寸错乱 by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/181\n* release: v1.3.3 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/183\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.1-2026-11-06...release-v1.3.3-2026-11-13",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.3-2026-11-13/ios-v1.3.3-2026-11-13.ipa",
+          "size": 37758540,
           "minOSVersion": "15.0"
         }
       ]
@@ -1373,11 +1373,11 @@
       "tintColor": "#2090F0",
       "versions": [
         {
-          "version": "0.3.3",
-          "date": "2026-11-12",
-          "localizedDescription": "Stats Companion 0.3.6 moves paired-phone management to its own Settings page and lets you rename existing phones without pairing again. The accompanying Stats iPhone 0.3.3 update adds editable phone names during pairing and configurable passcode haptics.\n\n## What's Changed\n\n### Features\n\n- Open **Paired phones** from a compact Settings row to see a scrollable list of connected and previously paired phones.\n- Rename phones in Companion without revoking their saved credentials; the name is remembered after a restart.\n- Choose the name sent by the iPhone during pairing, including when iOS supplies a generic device name.\n- Enable or disable tactile passcode feedback from iPhone Settings. Keypad taps, deletion, paste, and pairing results respect the preference.\n\n### Improvements and Fixes\n\n- Keep Companion's main Settings page compact when many phones are paired.\n- Keep individual Revoke actions available on the dedicated phone management page.\n- Preserve phone credentials across renames and remove saved aliases when access is revoked.\n\n## Download\n\n- **Mac companion · 0.3.6:** `StatsCompanion-v0.3.6-macOS-universal.dmg` (Apple Silicon and Intel; Apple Development signed).\n- **iPhone app · 0.3.3:** `Stats-v0.3.3-iOS.ipa` (unsigned; sign before installing with SideStore or another compatible method).\n- See the [README](https://github.com/ishtiaq156/stats#quick-start) for installation and pairing instructions.\n\n**Full Changelog:** [Compare v0.3.5...v0.3.6](https://github.com/ishtiaq156/stats/compare/v0.3.5...v0.3.6)",
-          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.6/Stats-v0.3.3-iOS.ipa",
-          "size": 2610574,
+          "version": "0.3.6",
+          "date": "2026-11-13",
+          "localizedDescription": "Stats for iPhone 0.3.6 adds an app identity footer to the dashboard Settings screen.\n\n## What's Changed\n\n- Show the Stats app icon, app name, version and build below the Settings controls.\n- Read the displayed name and version from the installed app, so they stay current with future updates.\n\n## Download\n\n- **iPhone app · 0.3.6:** `Stats-v0.3.6-iOS.ipa` (iOS 17+, arm64; unsigned, requires signing through AltStore, SideStore, or another sideloading tool).\n- **Mac companion · 0.3.9:** unchanged; get its signed DMG or ZIP from [v0.3.9](https://github.com/ishtiaq156/stats/releases/tag/v0.3.9).\n- See the [README](https://github.com/ishtiaq156/stats#quick-start) for installation and pairing instructions.\n\n**Full Changelog:** [Compare v0.3.11...v0.3.12](https://github.com/ishtiaq156/stats/compare/v0.3.11...v0.3.12)",
+          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.12/Stats-v0.3.6-iOS.ipa",
+          "size": 2668322,
           "minOSVersion": "17.0"
         }
       ]
@@ -1599,6 +1599,50 @@
   ],
   "news": [
     {
+      "appID": "com.ishtiaqsyed.StatsForIOS",
+      "title": "Stats 0.3.6 · 13 Nov 2026",
+      "identifier": "Stats-release-v0.3.12",
+      "caption": "Stats 0.3.6 is available.",
+      "date": "2026-11-13T05:37:32Z",
+      "tintColor": "#2090F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.12"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 2.6.0-nightly.20261113.0426 · 13 Nov 2026",
+      "identifier": "ARMSX2-release-nightly-20261113",
+      "caption": "ARMSX2 2.6.0-nightly.20261113.0426 is available.",
+      "date": "2026-11-13T04:53:50Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261113"
+    },
+    {
+      "appID": "com.altman.moviepilot",
+      "title": "MoviePilotLite 1.3.3 · 13 Nov 2026",
+      "identifier": "MoviePilotLite-release-release-v1.3.3-2026-11-13",
+      "caption": "MoviePilotLite 1.3.3 is available.",
+      "date": "2026-11-13T04:41:44Z",
+      "tintColor": "#8050F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
+      "notify": true,
+      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.3-2026-11-13"
+    },
+    {
+      "appID": "com.example.HermesEnabler",
+      "title": "HermesEnabler 1.0 · 13 Nov 2026",
+      "identifier": "HermesEnabler-release-1.5.4",
+      "caption": "HermesEnabler 1.0 is available.",
+      "date": "2026-11-13T04:21:43Z",
+      "tintColor": "#70C0F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
+      "notify": true,
+      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.5.4"
+    },
+    {
       "appID": "sb.moe.kumone-ios",
       "title": "Kumone 0.3.34 · 12 Nov 2026",
       "identifier": "Kumone-release-v0.3.34",
@@ -1632,17 +1676,6 @@
       "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.0.7"
     },
     {
-      "appID": "com.example.HermesEnabler",
-      "title": "HermesEnabler 1.0 · 12 Nov 2026",
-      "identifier": "HermesEnabler-release-1.5.2",
-      "caption": "HermesEnabler 1.0 is available.",
-      "date": "2026-11-12T14:49:08Z",
-      "tintColor": "#70C0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
-      "notify": true,
-      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.5.2"
-    },
-    {
       "appID": "com.jbdotparty.Erosion",
       "title": "Erosion-CN 0.9.1 · 12 Nov 2026",
       "identifier": "Erosion-CN-release-v0.9.1",
@@ -1652,17 +1685,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
       "notify": true,
       "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.1"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 2.6.0-nightly.20261112.1132 · 12 Nov 2026",
-      "identifier": "ARMSX2-release-nightly-20261112",
-      "caption": "ARMSX2 2.6.0-nightly.20261112.1132 is available.",
-      "date": "2026-11-12T11:58:10Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261112"
     },
     {
       "appID": "app.local.iPadn",
@@ -1696,17 +1718,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
       "notify": true,
       "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.5"
-    },
-    {
-      "appID": "com.ishtiaqsyed.StatsForIOS",
-      "title": "Stats 0.3.3 · 12 Nov 2026",
-      "identifier": "Stats-release-v0.3.6",
-      "caption": "Stats 0.3.3 is available.",
-      "date": "2026-11-12T02:12:58Z",
-      "tintColor": "#2090F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.6"
     },
     {
       "appID": "com.zhangfuhao.wqtoolkit",
@@ -1850,17 +1861,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
       "notify": true,
       "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.10"
-    },
-    {
-      "appID": "com.altman.moviepilot",
-      "title": "MoviePilotLite 1.3.1 · 06 Nov 2026",
-      "identifier": "MoviePilotLite-release-release-v1.3.1-2026-11-06",
-      "caption": "MoviePilotLite 1.3.1 is available.",
-      "date": "2026-11-06T06:45:48Z",
-      "tintColor": "#8050F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
-      "notify": true,
-      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.1-2026-11-06"
     },
     {
       "appID": "com.kuschqin.madeira.steamui",
