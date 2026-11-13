@@ -1,12 +1,12 @@
 name: Build and deploy GitHub Pages
 
-# The page is a static build of all-apps.json (see tools/build_site.py), so it
-# is rebuilt on every push to master. Pushes made by the update workflow use
-# GITHUB_TOKEN, and those never trigger `push` workflows, so the update
-# workflow's completion is a second trigger.
+# The page is a static build of all-apps.json (see tools/build_site.py).
+# It deploys only after the update workflow finishes, so a push to master
+# produces one Pages deployment record instead of two: the push triggers the
+# update workflow, and its completion triggers this one. Pushes made by the
+# update workflow itself use GITHUB_TOKEN and never trigger `push` workflows,
+# which is why the trigger has to go through `workflow_run` rather than `push`.
 on:
-  push:
-    branches: [master]
   workflow_run:
     workflows: ["Update apps.json and all-apps.json"]
     types: [completed]
@@ -33,7 +33,7 @@ jobs:
           python3 tools/build_site.py
           rm -f _site/preview.html
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -45,4 +45,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

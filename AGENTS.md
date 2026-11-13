@@ -121,10 +121,11 @@ built from the generated sources:
   every per-app source exists, stages the split site plus both JSON files and
   a generated `config.json` in `_site/`, and adds content hashes to the
   CSS/JS references. Stdlib only.
-- `.github/workflows/pages.yml` — builds and deploys on every push to master,
-  when the update workflow finishes (bot commits do not trigger `push`
-  workflows), and on manual dispatch. The repository's Pages source must be
-  set to "GitHub Actions".
+- `.github/workflows/pages.yml` — builds and deploys only when the update
+  workflow finishes (an update run triggered by the push, including the
+  bot's own commits, which never trigger `push` workflows), plus manual
+  dispatch, so one push creates a single Pages deployment record. The
+  repository's Pages source must be set to "GitHub Actions".
 
 The build also writes `_site/preview.html`, with CSS, JS and the catalog
 inlined, so it can be opened directly from disk:

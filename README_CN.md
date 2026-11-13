@@ -8,15 +8,15 @@
 
 <p>精选 AltStore 软件源：汇聚 GitHub 优质 IPA 开源项目。所有源均由 <a href="https://github.com/bebound/AltGen">AltGen</a> 生成。可用于 <a href="https://github.com/altstoreio/Altstore">AltStore</a>、<a href="https://github.com/SideStore/SideStore">SideStore</a>、<a href="https://github.com/LiveContainer/LiveContainer">LiveContainer</a>、<a href="https://github.com/claration/Feather">Feather</a> 或其他兼容应用。</p>
 
+<p >在浏览器中浏览AltGallery：<a href="https://bebound.github.io/AltGallery/">bebound.github.io/AltGallery</a></p>
+
 <p align="center">
 <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps.json" target="_blank">
 <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/add-alt-source.png" alt="Add AltSource" width="200">
 </a>
 </p>
 <p align="center">（点击上方图片添加包含全部应用的 AltGallery 源。单个应用的源位于 <code>apps</code> 文件夹。）</p>
-<p align="center">无法访问 <code>github.com</code>？请改用 <a href="https://altdirect.app/?url=https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps-proxy.json" target="_blank">gh-proxy 链接</a>——所有资源均经由 gh-proxy.com 访问。</p>
-
-<p align="center">在浏览器中浏览AltGallery：<a href="https://bebound.github.io/AltGallery/">bebound.github.io/AltGallery</a></p>
+<p align="center">无法访问 <code>github.com</code>？请改用 <a href="https://altdirect.app/?url=https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps-proxy.json" target="_blank">gh-proxy 镜像</a>——所有资源均经由 gh-proxy.com 访问。</p>
 
 ## 请求添加应用
 
