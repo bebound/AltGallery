@@ -654,7 +654,7 @@
         icon,
         screenshots: Array.isArray(app.screenshots) ? app.screenshots.slice() : [],
         version: latest.version || "",
-        date: (latest.date || "").slice(0, 10),
+        date: latest.date || "",
         minOS: latest.minOSVersion || "",
         size: latest.size || 0,
         notes: latest.localizedDescription || "",
