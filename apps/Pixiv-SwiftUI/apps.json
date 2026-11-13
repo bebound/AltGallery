@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "0.16.3",
-          "date": "2026-10-19",
+          "date": "2026-10-19T14:07:18Z",
           "localizedDescription": "pixiv-tags-data commit: 541521c99539d08d1aec7a5e01dbf15068eadca0\r\n\r\n**Full Changelog**: https://github.com/Eslzzyl/Pixiv-SwiftUI/compare/v0.16.2...v0.16.3\r\n\r\n这是一个专为 iPad 优化的版本，iOS 和 macOS 用户可以直接跳过此版本。\r\n\r\n## 问题修复\r\n\r\n- 修复 iPad 竖屏插画详情页宽度未随布局更新的问题。\r\n- 修复 iPad 网格列数设置未生效的问题。\r\n- 优化 iPad 新手引导页面的底部安全区域适配。\r\n- 修复 iPad 新手引导底部背景宽度显示异常的问题。",
           "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.16.3/Pixiv-SwiftUI.ipa",
           "size": 10379203,

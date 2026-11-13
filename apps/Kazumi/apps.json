@@ -25,7 +25,7 @@
       "versions": [
         {
           "version": "2.4.4",
-          "date": "2026-11-12",
+          "date": "2026-11-12T10:27:44Z",
           "localizedDescription": "- 适配 flutter 3.50",
           "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.4.4/Kazumi_ios_2.4.4_no_sign.ipa",
           "size": 30341213,

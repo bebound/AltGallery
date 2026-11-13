@@ -20,7 +20,7 @@
       "versions": [
         {
           "version": "1.0.7",
-          "date": "2026-11-12",
+          "date": "2026-11-12T17:14:29Z",
           "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.7/CHANGELOG_ZH-CN.md)\r\n\r\nBuild `11130112`.\r\n\r\n### Fixed\r\n\r\n- Fix container discovery on iOS 27.3 so wallpaper and App Launch Images can locate their containers again.",
           "downloadURL": "https://gh-proxy.com/https://github.com/huamidev/GestaltX/releases/download/v1.0.7/GestaltX_1.0.7.ipa",
           "size": 3563948,

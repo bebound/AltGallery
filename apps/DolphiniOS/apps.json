@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "5.0.0b6",
-          "date": "2026-06-20",
+          "date": "2026-06-20T07:01:54Z",
           "localizedDescription": "* Fixed JIT support on A13/A14/M1 devices running iOS 27 beta. (@CelloSerenity)\r\n* Fixed wrong app version number introduced in 5.0.0b5. (@CelloSerenity)\r\n\r\nThe next update will be sometime after the next official Dolphin release. It will include a core update.\r\n\r\n**Full Changelog**: https://github.com/OatmealDome/dolphin-ios/compare/v5.0.0b5...v5.0.0b6",
           "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
           "size": 17963367,

@@ -1,0 +1,47 @@
+{
+  "name": "WQGuard",
+  "subtitle": "WQGuard AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for WQGuard",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/icon.png",
+  "website": "https://github.com/Kianuni/WQGuard",
+  "tintColor": "#00C7A5",
+  "apps": [
+    {
+      "name": "WQGuard",
+      "bundleIdentifier": "com.wqguard.app",
+      "developerName": "Kianuni",
+      "subtitle": "iOS 沙盒越权检测与侧载 IPA 审查工具",
+      "localizedDescription": "面向 iOS 26.2+ / iOS 27.x 的零依赖、100% 物理只读沙盒逃逸检测引擎、Mach-O 静态二进制审计与多端固件 CVE 防护系统",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/dashboard.jpeg",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/firmware.jpeg",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/ipa.jpeg"
+      ],
+      "tintColor": "#00C7A5",
+      "versions": [
+        {
+          "version": "1.2.1",
+          "date": "2026-11-12T16:49:46Z",
+          "localizedDescription": "## 🛡️ WQGuard v1.2.1 — 安全加固正式版 / Security Hardening Release\n\n纯 Swift 5.9+ 原生开发、零第三方依赖、100% 本地离线运行的 iOS 静态二进制沙盒逃逸审计工具与多端网络降级护盾。\nA native, zero-dependency, 100% offline iOS static binary sandbox-escape auditor and multi-client HTTP Brotli downgrade shield written in pure Swift 5.9+.\n\n---\n\n### 🔥 核心更新与安全修复 / Highlights & Security Fixes (v1.2.1)\n\n1. **CSBlob 双槽（XML + Apple CoreEntitlements DER）完整解码与防遮蔽合并**\n   - 完整实现 Apple `CoreEntitlements` v1 (`0xfade7172`) `[APPLICATION 16]` (`0x70`)、`[CONTEXT 16]` (`0xb0`) 及 ITU-T X.690 多字节高 Tag ASN.1 DER 解析，并与 XML 槽位 (`0xfade7171`) 跨切片递归合并数组与布尔权限，彻底阻断“在 XML 槽写入空数组或 `<false/>` 遮蔽 DER 槽真实越权项”的静态审计绕过。\n2. **Mach-O 全 ARM 切片并集审计 + ObjC 选择器提取 + 全量 `.appex` 扩展深扫**\n   - 对 Universal/FAT 二进制取全部可执行 ARM 切片（`arm64` + `arm64e` 等）的并集进行符号、字符串与 `__objc_methname` 选择器提取，防止 `arm64` 良性壳遮蔽 `arm64e` 恶意载荷。\n   - 覆盖主程序、`Frameworks/`、`.app/Dylibs/`、`.app/DynamicLibraries/` 以及 `PlugIns/*.appex` 与 iOS 16+ `Extensions/*.appex` 全部扩展的独立 CSBlob 权限与二进制静态审计；原生支持 `.ipa` 与 `.tipa` 包。\n   - 无 App Group 权限但调用 `fsgetpath` / `container_object_get_path` 等沙盒侦察原语的样本前置直接标定高危（`CM-05` / `bad_query`）。\n3. **沙盒按需隔离解包与 64 KB 流式配额加固**\n   - 组件级路径穿越拦截（支持合法双点文件名如 `icon..png`，阻断 `../` 越界）、64 KB 分块流式 `inflate` 单条目与全包累计解压配额熔断（兼容 ZIP64 `0x0001` 扩展头并拦截 0 字节伪造头部膨胀炸弹），以及临时隔离区 `S_IFLNK` 逃逸符号链接强制剥离。\n4. **第三方侧载工具严格零信任策略（Strict Zero-Trust Policy）**\n   - 移除对所有第三方侧载器与开发辅助工具（`Feather`、`SideStore`、`AltStore`、`ESign / 全能签`、`GBox`、`Scarlet`、`TrollStore`、`LocalDevVPN`、`StikDebug` 等）的任何内置默认白名单豁免（一律列入前置留意或按命中载荷定级）；内置白名单仅对 `WQGuard` 本身执行精确 Bundle ID、全量 App Group 与全量威胁指标子集强校验。\n   - 支持中英混排与驼峰边界的品牌仿冒词元匹配（同时消除对 `NetGuard`、`PostgREST`、`GitGraph`、`ZeroTrust` 等合法应用的误报），并强制 `LockdownInstProxyClient` STARTTLS 叶子证书钉扎校验 Fail-Closed。\n5. **五大代理客户端 Brotli 降级护盾（`CVE-2026-111497`）与固件补丁基线校准**\n   - 修复 Surge `.sgmodule` 远程 `script-path` 挂载规范，统一加固 Surge / Shadowrocket / Loon / Stash / Quantumult X 响应头拦截脚本（大小写无关遍历与重复头合并检测，返回顶层 `403` 零响应体解压阻断）。\n   - 固件雷达新增识别 Apple 官方在 `iOS 27.0`、`iOS 26.7.1` 与 `iOS 18.7.11` 发布的 `CVE-2026-86950` 安全回移植补丁基线。\n   - *防御边界提示*：代理层护盾管辖标准 HTTP/1.1 & HTTP/2 头部协商；若面临高危定向威胁，建议在客户端禁用 QUIC/HTTP3 并叠加开启 iOS 系统「锁定模式（Lockdown Mode）」以禁用 WebKit `.woff2` 网页字体渲染。\n\n---\n\n### 📦 发行附件说明 / Release Assets\n\n| 文件 / Asset | 用途 / Description |\n|---|---|\n| `WQGuard_v1.2.1.ipa` | iOS 独立侧载安装包（兼容 iOS 16.0+，已构建真机 `arm64` Release 包） |\n| `WQGuard-Brotli-Shield.sgmodule` | **Surge iOS / Mac** 护盾模块 |\n| `WQGuard-Brotli-Shield.module` | **Shadowrocket (小火箭)** 护盾模块 |\n| `WQGuard-Brotli-Shield.conf` | **Quantumult X (圈 X)** 重写资源 |\n| `WQGuard-Brotli-Shield.plugin` | **Loon** 护盾插件 |\n| `WQGuard-Brotli-Shield.stoverride` | **Stash** 覆写规则 |\n\n### ✅ 验证记录 / Verification\n\n- `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`: **681 / 681 tests passing (0 failures)** across 32 XCTest suites (`26` test files), including empirical `/usr/bin/codesign --generate-entitlement-der`, `/usr/bin/lipo` `arm64`+`arm64e`, and `JavaScriptCore` runtime verification.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/Kianuni/WQGuard/releases/download/v1.2.1/WQGuard_v1.2.1.ipa",
+          "size": 2007635,
+          "minOSVersion": "16.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.wqguard.app",
+      "title": "WQGuard 1.2.1 · 12 Nov 2026",
+      "identifier": "WQGuard-release-v1.2.1",
+      "caption": "WQGuard 1.2.1 is available.",
+      "date": "2026-11-12T16:49:46Z",
+      "tintColor": "#00C7A5",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.2.1"
+    }
+  ]
+}

@@ -22,7 +22,7 @@
         {
           "version": "128.9934",
           "buildVersion": "128.9934",
-          "date": "2026-11-08",
+          "date": "2026-11-08T00:33:06Z",
           "localizedDescription": "[Download IPA](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9934/LSX4-JIT-128.9934.ipa) · [IPA + English instructions](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9934/LSX4-iOS-JIT-128.9934-English.zip)\n\n- Fixed visual issues in select games, including green video frames in **The Last of Us Remastered** and title-screen flicker in **God of War III Remastered**.\n- Updated per-game settings and presets, including a presentation setting for **God of War III Remastered**.\n\n[Installation guide](https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9934/INSTALLATION.txt)\n\niOS 26+ · JIT. Update using the same signing account and bundle ID. Keep app extensions enabled when signing.",
           "downloadURL": "https://github.com/lpfoj/lsx4/releases/download/ios-jit-128.9934/LSX4-JIT-128.9934.ipa",
           "size": 77017813,

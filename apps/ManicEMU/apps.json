@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "2.0.2",
-          "date": "2026-11-02",
+          "date": "2026-11-02T08:03:58Z",
           "localizedDescription": "- Improved 3DS performance\r\n- Nimbus in Artic Base now supports the latest Pretendo\r\n- Improved Home Menu performance on the Azahar core\r\n- Fixed Wii pointer behavior for affected users\r\n- Added MeloCafe Link support\r\n- iPad now supports windowed apps\r\n- Redesigned the SNES skin\r\n- Added skin fallback: iPad can use iPhone skins\r\n- Support for iPhone Duo\r\n- Fixed AirPlay not working on iOS 27 or later\r\n- Added BitBop, a new sister app to Manic EMU for retro game music\r\n- Other bug fixes and improvements",
           "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.2/ManicEMU.v2.0.2.SideloadJIT.ipa",
           "size": 293317769,

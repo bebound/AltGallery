@@ -21,7 +21,7 @@
       "versions": [
         {
           "version": "1.0.0",
-          "date": "2026-09-14",
+          "date": "2026-09-14T23:13:23Z",
           "localizedDescription": "An x86-64 PC emulator for iOS, running guest code on FEXCore.\n\n2048 and tic tac toe both run. Add them from the Library tab and play with the on-screen arrow keys.\n\n**Downloads**\n- `Fathom.ipa` - the app, unsigned, for sideloading. Needs StikDebug attached for JIT.\n- `tictactoe` - arrows move, Enter places, against a minimax bot that cannot be beaten.\n- `play2048` - arrows slide the board.\n\nCopy the two game binaries into Fathom's Programs folder, or import them from the Library tab.",
           "downloadURL": "https://github.com/Leviidev/Fathom/releases/download/v1.0.0/Fathom.ipa",
           "size": 1175175,

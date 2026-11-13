@@ -23,7 +23,7 @@
         {
           "version": "5.2.4",
           "buildVersion": "1101",
-          "date": "2026-11-05",
+          "date": "2026-11-05T04:35:12Z",
           "localizedDescription": "### 新增\r\n\r\n- Windows 新增 AnimeJaNai 实时超分：播放器底栏一键开关，可与 Anime4K、DLSS 叠加；支持 TensorRT / DirectML 后端自动选择，提供质量、均衡、性能三档与原版、Sharp1 两种模型，附细节锐化、亮度、对比度、饱和度、伽马调节及原画/超分同帧对比。\r\n- AnimeJaNai 可选 RIFE 补帧：支持 2×、3×、4× 倍率，提供完整（原分辨率处理）与快速（最高 540p 处理）两种方案。\r\n- 新增“画质设置”面板，整合 AnimeJaNai 与 DLSS 全部选项；播放器内长按增强按钮或进入“实验室”页面均可打开，运行状态、安装进度与诊断信息集中展示。\r\n- Windows 播放器底栏常显 Anime4K / AnimeJaNai / DLSS 开关，点按切换、长按进入画质设置，无需先在实验室开启。\r\n- 评论区改版：正文按 Markdown / BBCode 渲染，评论中的时间点自动识别为跳转链接，点击可seek到对应进度或指定集数；表情贴图正常显示，加载时改用骨架占位。\r\n\r\n### 优化\r\n\r\n- 更新优化内置源规则\r\n- DLSS 与 AnimeJaNai 运行库改由组织维护的 media-kit fork 统一打包，应用内不再捆绑原生桥接代码，减小安装体积。\r\n- 充分优化日志系统\r\n- 优化了一些小细节\r\n\r\n### 使用说明\r\n\r\n- AnimeJaNai 仅支持 Windows；首次启用需联网下载运行库与模型（补帧组件约 441 MiB），下载过程可取消，TensorRT 后端首次使用需编译引擎。\r\n- 后端设为“自动”时，支持的 NVIDIA 显卡优先使用 TensorRT，其余显卡使用 DirectML。\r\n- AnimeJaNai 模型按 CC BY-NC-SA 4.0 分发，仅限非商业用途。\r\n\r\n**Full Changelog**: https://github.com/AniBakaBaka/AniBaka/compare/5.2.3+1020...5.2.4+1101",
           "downloadURL": "https://github.com/AniBakaBaka/AniBaka/releases/download/5.2.4%2B1101/baka-5.2.4%2B1101-ios-unsigned.ipa",
           "size": 23708307,

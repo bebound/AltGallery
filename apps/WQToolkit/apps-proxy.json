@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "1.0",
-          "date": "2026-11-11",
+          "date": "2026-11-11T22:59:56Z",
           "localizedDescription": "iOS 27 only. Unsigned build - it contains no signing material, no profile and no team ID.\n\n**Assets**\n- `WQToolkit-unsigned.ipa` - 4.6 MB. Re-sign it with your own developer identity and an App Group entitlement before installing.\n- `WQToolkit_source.tar.gz` - source snapshot (Xcode project included).\n\nNo jailbreak, no Mac at runtime. The app only reaches its own containers and its own App Groups; cross-app access is out of scope.\n\nTested on iPhone 15 Pro Max, iOS 27.3.",
           "downloadURL": "https://gh-proxy.com/https://github.com/MchinaMd57764/WQToolkit/releases/download/v1.0/WQToolkit-unsigned.ipa",
           "size": 4819436,

@@ -23,7 +23,7 @@
       "versions": [
         {
           "version": "2.2.2",
-          "date": "2026-11-10",
+          "date": "2026-11-10T17:40:40Z",
           "localizedDescription": "## Release v2.2.2\n\nWhat's new:\n• The 3 daily missions now give 200 XP\n• XP bonuses: every day in a row with your missions done or the daily challenge won boosts all the XP you earn, up to ×3\n• An \"XP bonus\" card in your profile, and your bonus at the end of your XP bar\n• Your level has its own emblem, also next to your nickname in multiplayer\n• The streak flame and the freeze snowflake open their own screen\n\nMulti-platform build from `044d3b3e2c5914f27d1754352b5586c6a456ebe4`.\n\n### iOS (unsigned IPA)\nInstall with SideStore / AltStore.\n\n### Android (APK)\nDirect install.\n\n### Checksums\n\n| File | MD5 | SHA-256 |\n|---|---|---|\n| `rush-hours-unsigned.ipa` | `720352e7379f5355addd2844488f5832` | `a5c80e3a17fc2b97a9de7e0666417edc219f79529dbf1ba200b99203bd5e18c5` |",
           "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.2.2-b70/rush-hours-unsigned.ipa",
           "size": 19091977,

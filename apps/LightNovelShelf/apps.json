@@ -21,7 +21,7 @@
       "versions": [
         {
           "version": "1.13.2",
-          "date": "2026-10-18",
+          "date": "2026-10-18T10:47:40Z",
           "localizedDescription": "- 支持自动更新。\n- 平板端新增侧边导航和左右分栏布局。\n- 阅读器默认开启双页显示。\n- 设置页新增重置所有设置。\n- 我的道具新增使用入口，支持使用改名卡。\n- 搜索页移除页码提示。",
           "downloadURL": "https://github.com/LightNovelShelf/Flutter/releases/download/v1.13.2/app-ios-unsigned.ipa",
           "size": 11957867,

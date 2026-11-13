@@ -20,7 +20,7 @@
       "versions": [
         {
           "version": "0.3.6",
-          "date": "2026-11-13",
+          "date": "2026-11-13T05:37:32Z",
           "localizedDescription": "Stats for iPhone 0.3.6 adds an app identity footer to the dashboard Settings screen.\n\n## What's Changed\n\n- Show the Stats app icon, app name, version and build below the Settings controls.\n- Read the displayed name and version from the installed app, so they stay current with future updates.\n\n## Download\n\n- **iPhone app · 0.3.6:** `Stats-v0.3.6-iOS.ipa` (iOS 17+, arm64; unsigned, requires signing through AltStore, SideStore, or another sideloading tool).\n- **Mac companion · 0.3.9:** unchanged; get its signed DMG or ZIP from [v0.3.9](https://github.com/ishtiaq156/stats/releases/tag/v0.3.9).\n- See the [README](https://github.com/ishtiaq156/stats#quick-start) for installation and pairing instructions.\n\n**Full Changelog:** [Compare v0.3.11...v0.3.12](https://github.com/ishtiaq156/stats/compare/v0.3.11...v0.3.12)",
           "downloadURL": "https://gh-proxy.com/https://github.com/ishtiaq156/stats/releases/download/v0.3.12/Stats-v0.3.6-iOS.ipa",
           "size": 2668322,

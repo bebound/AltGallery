@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "0.9",
-          "date": "2026-10-16",
+          "date": "2026-10-16T22:25:27Z",
           "localizedDescription": "A small build update for 0.9 with a number of bug fixes.\r\n\r\n- Fixed some pages not loading in webtoon reader\r\n- Improved webtoon reader memory usage (hopefully fixes crash after reading multiple chapters)\r\n- Fixed crash when searching anywhere in the macOS app\r\n- Various other bug fixes",
           "downloadURL": "https://gh-proxy.com/https://github.com/Aidoku/Aidoku/releases/download/v0.9-4/Aidoku.ipa",
           "size": 14753154,

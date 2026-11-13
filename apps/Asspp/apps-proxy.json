@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "4.2.2",
-          "date": "2026-10-20",
+          "date": "2026-10-20T03:08:48Z",
           "localizedDescription": "## Changes\n\n- Recover downloads when Apple returns an empty HTTP 500 by retrying the version-pinned request through the bag’s update endpoint.\n- Update ApplePackage to 2.0.3 with Swift 6.2 compatibility fixes.\n- Report Keychain save failures before completing login, and preserve stored data when loading fails.\n- Improve empty account layout, editable device identifiers, and account table column widths.\n- Remove personal metadata from bundled installation certificates and omit the CA private key.\n- Explicitly clear development teams for release builds and check packaged artifacts before publication.\n\n## Installation certificate\n\nThe local installation CA was replaced to remove personal metadata. If you use OTA installation, install and trust the new certificate from Settings after updating.\n\nThe release contains an unsigned iOS IPA and a macOS ZIP without a personal development team.",
           "downloadURL": "https://gh-proxy.com/https://github.com/Lakr233/Asspp/releases/download/4.2.2/Asspp.ipa",
           "size": 16458246,

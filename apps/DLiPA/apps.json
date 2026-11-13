@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "1.4",
-          "date": "2026-08-03",
+          "date": "2026-08-03T08:46:29Z",
           "localizedDescription": "## What's Changed \r\n\r\n- Fixed authentication issues\r\n- Multi-language support (AI translations):\r\n  - Chinese, Simplified\r\n  - French\r\n  - German\r\n  - Hindi\r\n  - Indonesian\r\n  - Italian\r\n  - Japanese\r\n  - Korean\r\n  - Russian\r\n  - Spanish\r\n  - Turkish\r\n  - Vietnamese\r\n\r\n## Support the app ♡\r\nIf you find this project useful, I would be very grateful for your support in its continuation and development.\r\n\r\n[![Support DLiPA](https://img.shields.io/badge/PayPal-Support_DLiPA-blue?logo=paypal)](https://www.paypal.com/ncp/payment/RLKKWBYSKSPVU)",
           "downloadURL": "https://github.com/AhmedBafkir/DLiPA/releases/download/v1.4/DLiPA_v1.4.ipa",
           "size": 534245,

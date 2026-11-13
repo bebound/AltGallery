@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "2.0.3",
-          "date": "2026-10-18",
+          "date": "2026-10-18T18:19:33Z",
           "localizedDescription": "## 🎉 Musly v2.0.3\n\n### 📦 Downloads\n\n**Android:**\n- `app-release.apk` (universal APK for all devices)\n\n**iOS:**\n- `musly-ios.ipa` (sideload with AltStore, Sideloadly, or similar — not signed, iOS 15.0+)\n\n**Windows:**\n- `musly-setup.exe` (setup installer, run to install Musly)\n- `musly-windows.zip` (portable version, extract and run)\n\n**macOS:**\n- `musly-macos.dmg` (drag Musly.app to Applications — not notarized)\n\n**Linux:**\n- `*.deb` (Debian, Ubuntu, Linux Mint)\n- `*.rpm` (Fedora, RHEL, openSUSE)\n- `*.pkg.tar.zst` (Arch Linux, Manjaro)\n- `*.AppImage` (Universal AppImage for any distro)\n- `*.flatpak` (Flatpak standalone bundle)\n- `*.snap` (Snap package)\n- `*.tar.gz` (portable standalone tarball)\n\n**Tizen Smart TV:**\n- `*.tpk` (Native version for Tizen 4.0+ / 2018 or newer TVs)\n\n### 📝 Changelog\nSee [CHANGELOG.md](https://github.com/dddevid/Musly/blob/master/CHANGELOG.md)\n\n### 🌍 Translations\nContribute translations at [Crowdin](https://crowdin.com/project/musly)",
           "downloadURL": "https://github.com/dddevid/Musly/releases/download/v2.0.3/musly-ios.ipa",
           "size": 14317899,

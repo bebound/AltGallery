@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "3.1.19",
-          "date": "2026-10-10",
+          "date": "2026-10-10T04:32:55Z",
           "localizedDescription": "# 纯粹直播 v3.1.19\n|版本|下载地址|\n|---|---|\n|TV版|[pure_live_TV](https://github.com/liuchuancong/pure_live_TV/releases/latest)|\n|Windows/macOS/Android/iOS版|[pure_live](https://github.com/liuchuancong/pure_live/releases/latest)|\n### 🖥️ Windows 版\n- **Portable ZIP**：解压即用，无需安装\n- **EXE 安装包**：适合所有用户\n- **MSIX 包**：现代应用格式，支持干净卸载\n- 适配：Windows 10/11 x64\n### 🍎 macOS 版\n- macOS 桌面版\n- Universal：Apple Silicon + Intel\n- ZIP / DMG\n### 📱 Android 版\n- Android 8.0+（API 26，FFmpegKit 录制依赖要求）\n- ARM64-v8a\n- ARMv7\n- x86_64\n- 统一 SHA256 校验文件：[**ANDROID_SHA256SUM.txt**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/ANDROID_SHA256SUM.txt)\n### 🐧 Linux 版\n- Linux x64\n- **DEB 安装包**：适合 Debian/Ubuntu 及其衍生发行版\n- **Portable ZIP / tar.gz**：解压即用，无需安装\n### 🍎 iOS 版\n- unsigned iOS device application\n- TrollStore / ad-hoc IPA\n- ARM64\n### 🔧 Build Metadata\n[**BUILD_METADATA.json**](https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/BUILD_METADATA.json)\n### 📝 本次更新\nversion: 3.1.19\n版本更新：\n- 修复部分bug",
           "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/PureLive-3.1.19-4108-ios-arm64-trollstore.ipa",
           "size": 66858114,

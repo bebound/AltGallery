@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "0.9.10",
-          "date": "2026-11-06",
+          "date": "2026-11-06T14:01:41Z",
           "localizedDescription": "### What's Changed\r\n* 统一首页导航与内容操作栏外观 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/187\r\n* 调整 Android 页面进入和返回转场 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/186\r\n* 优化文章与想法详情首屏和操作栏 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/188\r\n\r\n<img height=\"500\" alt=\"telegram-cloud-photo-size-5-6296309837490493137-w\" src=\"https://github.com/user-attachments/assets/bbed6e50-bf62-4205-a4ef-65cc71fd9174\" />\r\n\r\n<img height=\"500\" alt=\"telegram-cloud-photo-size-5-6298716015608665964-w\" src=\"https://github.com/user-attachments/assets/99226fd4-0af5-47a7-b3aa-5aae9ac0b929\" />\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.9...v0.9.10",
           "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.10/zhihu-minus-minus-v0.9.10-unsigned.ipa",
           "size": 14833319,

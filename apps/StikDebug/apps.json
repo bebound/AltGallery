@@ -22,7 +22,7 @@
       "versions": [
         {
           "version": "3.2.2",
-          "date": "2026-11-08",
+          "date": "2026-11-08T22:05:57Z",
           "localizedDescription": "- Fix Utsuro, Henge, and \"MeloCafe\"\n\n**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.2.1...3.2.2",
           "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.2.2/StikDebug-3.2.2.ipa",
           "size": 16924687,

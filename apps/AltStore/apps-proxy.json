@@ -25,7 +25,7 @@
       "versions": [
         {
           "version": "2.3.1",
-          "date": "2026-09-30",
+          "date": "2026-09-30T20:16:23Z",
           "localizedDescription": "### New\r\n\r\nRemote AltServer\r\n* Supports sideloading apps without a computer\r\n* Install, refresh, and (de-)activate apps from anywhere with a WiFi connection\r\n* Tap “Set up Remote AltServer” in AltStore settings to get started\r\n* Thanks @jkcoxson and the entire SideStore team for making this possible!\r\n\r\nLiquid Glass UI\r\n* Updated design to fit at home on iOS 26\r\n\r\n### Improved\r\n\r\n* Includes `ALT_CLASSIC_VER` header with current build version when fetching sources\r\n* Uses app's tint color as background color when loading app icon\r\n* Improved error messages for better troubleshooting guidance\r\n* Raised minimum iOS version to 17.4\r\n\r\n### Fixed\r\n* Fixed unreadable text in light mode for some news alerts (thanks @partyknightsdev!)\r\n* Fixed showing empty text view for updates with no description\r\n* Fixed extra space above version description for app updates\r\n* Fixed category cells not being accessible with VoiceOver\r\n* Fixed My Apps tab badge count showing incorrect number of app updates\r\n* Fixed memory leak due to strong-reference cycle in news tab",
           "downloadURL": "https://gh-proxy.com/https://github.com/altstoreio/AltStore/releases/download/v2.3/AltStore_Classic_Notarized_2_3.ipa",
           "size": 40616419,
