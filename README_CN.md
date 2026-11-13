@@ -235,6 +235,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <a href="https://github.com/kolbicz/WQFiles"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/WQFiles/icon.png" alt="WQ Files icon" width="24" align="top">WQ Files</a>
 面向 iOS 26 与 27 的文件浏览器、App 数据管理与缓存清理工具——无需越狱即可浏览其他 App 的容器、编辑 plist、十六进制与 SQLite 数据库，并备份、恢复或清除 App 数据。
 
+### <a href="https://github.com/Kianuni/WQGuard"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/WQGuard/icon.png" alt="WQGuard icon" width="24" align="top">WQGuard</a>
+面向 iOS 26.2+ / iOS 27.x 的只读沙盒越权检测、侧载 IPA 审查与固件 CVE 防护工具——扫描已安装应用与本地 IPA 的容器逃逸特征，并内置五大代理客户端防 Brotli 溢出护盾。
+
 ### <a href="https://github.com/MchinaMd57764/WQToolkit"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/WQToolkit/icon.png" alt="WQToolkit icon" width="24" align="top">WQToolkit</a>
 基于 App Group 容器查询原语的 iOS 工具箱——无需越狱即可浏览、清理与检查自己的应用数据容器，内置文件浏览器、缓存扫描与设备信息。
 

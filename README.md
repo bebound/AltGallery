@@ -235,6 +235,9 @@ A full featured virtual machine host for iOS — run Windows, Android, and more 
 ### <a href="https://github.com/kolbicz/WQFiles"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/WQFiles/icon.png" alt="WQ Files icon" width="24" align="top">WQ Files</a>
 File browser, app data manager and cache cleaner for iOS 26 and 27 — browse other apps' containers, edit plists, hex and SQLite databases, and back up, restore or clear app data without a jailbreak.
 
+### <a href="https://github.com/Kianuni/WQGuard"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/WQGuard/icon.png" alt="WQGuard icon" width="24" align="top">WQGuard</a>
+面向 iOS 26.2+ / iOS 27.x 的零依赖、100% 物理只读沙盒逃逸检测引擎、Mach-O 静态二进制审计与多端固件 CVE 防护系统。
+
 ### <a href="https://github.com/MchinaMd57764/WQToolkit"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/WQToolkit/icon.png" alt="WQToolkit icon" width="24" align="top">WQToolkit</a>
 File browser and maintenance panel for your own app containers — browse, clean and inspect your data and App Groups without a jailbreak.
 
