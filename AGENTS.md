@@ -108,7 +108,7 @@ immediately, run the `Update all-apps.json` workflow manually
 
 ## GitHub Pages Site
 
-The public catalog at https://bebound.github.io/AltGallery/ is a static page
+The public catalog at https://altgallery.fromkk.com/ is a static page
 built from the generated sources:
 
 - `site/index.html`, `site/style.css`, `site/app.js` — the page. It fetches
