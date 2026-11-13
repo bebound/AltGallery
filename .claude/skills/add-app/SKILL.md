@@ -136,6 +136,14 @@ change between apps.
    `detail.png`, `comment.png`). When a source was found in step 2, its
    `iconURL` / `screenshots` tell you exactly which files to grab.
 
+   ⚠️ **Screenshots the user provides are used exactly as given**
+   (attached files, a folder, an unpacked zip): copy them into
+   `apps/<AppName>/images/` keeping their original filenames and formats
+   (`.png`, `.jpg`/`.jpeg`, …), and point `[app] screenshots` at those exact
+   names. Never rename them to `home.png`/`detail.png` and never convert the
+   format. When the user supplies the set, it wins — skip the repo hunt, and
+   the missing-screenshots warning (step 10) does not apply.
+
    ⚠️ **If no screenshots can be found** (no `screenshots` field in the source,
    no `images`/`assets` folder in the repo, README links broken, etc.), still
    download the icon and finish the rest of the flow — just remember that the
@@ -256,8 +264,14 @@ change between apps.
 
    Then add the same entry to `README_CN.md` (the Chinese README linked from
    the language switcher under the title): identical heading and icon URL,
-   one-line description written in Chinese. Both READMEs share the same app
-   order, so the entry goes at the same position.
+   and the same one-line description. Both READMEs share the same app order,
+   so the entry goes at the same position.
+
+   ⚠️ Write the description in the language of the project's **own** README,
+   not the AltGallery README it lands in (AGENTS.md → [README
+   Entries](../AGENTS.md#readme-entries)): a Chinese-only project gets a
+   Chinese description in both files, an English one gets English in both.
+   `config.toml` `subtitle` / `description` follow the same rule.
 
 10. **Warn if no screenshots were found** — this is the LAST step. If step 3
     could not obtain any screenshots (empty `apps/<AppName>/images/`, no
@@ -284,9 +298,10 @@ change between apps.
 - [ ] `apps/<AppName>/{config.toml, news.toml, icon.png, images/*}` all present
 - [ ] `icon.png` from the repo, or from the ipa via `tools/ipa_icon.py` when the repo has none — size checked, small size reported to the user
 - [ ] icon/screenshots hosted locally and referenced via `bebound/AltGallery` raw URLs (never the source's remote URLs)
+- [ ] user-supplied screenshots left untouched — original filenames and formats, referenced as-is in `[app] screenshots`
 - [ ] `apps.json` regenerated after the last config change; never hand-edited; gitignored (not committed)
 - [ ] `all-apps.json` NOT touched — CI workflow regenerates and commits it
 - [ ] `images/news.png` rendered; not auto-committed
 - [ ] README entry added to both `README.md` and `README_CN.md`, icon with `align="top"`
-- [ ] `README_CN.md` description written in Chinese
+- [ ] description written in the language of the project's own README, identical in `README.md` and `README_CN.md`
 - [ ] if no screenshots could be found, the user was explicitly warned (never proceed silently)

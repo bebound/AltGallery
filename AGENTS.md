@@ -39,7 +39,7 @@ apps/<AppName>/
 ├── news.toml        # news image config (name, tagline, optional colors)
 ├── icon.png         # app icon
 ├── images/          # screenshots + news.png promo image
-│   ├── home.png     # screenshots (referenced from [app] screenshots)
+│   ├── home.png     # screenshot, listed in [app] screenshots (extension kept as-is)
 │   └── news.png     # generated promo image (referenced from [news] image_url)
 └── apps.json        # generated AltStore source (gitignored), do not hand-edit
 ```
@@ -227,6 +227,41 @@ PNGs/JPEGs are copied as-is.
 in `Assets.car`, unreadable here (LZFSE `bvx2`, no PNG data inside). The tool
 warns below 512px: treat that as a last resort, and prefer the project's own
 artwork wherever it exists.
+
+## Screenshots
+
+Screenshots live in `apps/<AppName>/images/` and are listed by URL in
+`[app] screenshots` in `config.toml`.
+
+When the user supplies screenshots by hand (attached images, a folder, an
+unpacked zip), **use them exactly as given**: copy them into
+`apps/<AppName>/images/` with their original filenames and formats (`.png`,
+`.jpg`/`.jpeg`, …), and point each `screenshots` entry at the real file. Never
+rename them to `home.png`/`detail.png` and never re-encode or convert the
+format — AltStore loads whatever URL it is given, and the repo already ships
+plenty of `.jpg`/`.jpeg` shots. The user's set is the set; don't keep hunting
+the repo for alternatives.
+
+`news.png` is the one file in that folder that is generated — leave it to
+`tools/render_news.py` (see [Generating News
+Images](#generating-news-images)).
+
+## README Entries
+
+Every app appears in both `README.md` and `README_CN.md` under **Available
+Apps**, in the same order. The heading (icon + name) is identical in both
+files; only the one-line description may differ.
+
+**The description follows the language of the app's own README, not the
+language of the AltGallery README it is written into.** An app whose upstream
+README is primarily Chinese gets a Chinese one-line description in *both*
+`README.md` and `README_CN.md`; an English upstream README gets an English
+one in both. Never invent an English blurb for a Chinese-only project (or the
+reverse). `config.toml` fields (`subtitle`, `description`) follow the same
+rule — do not force them into English.
+
+⚠️ Use `align="top"` on the icon — `align="center"` renders ~7px low on
+GitHub.
 
 ## Adding a New App
 
