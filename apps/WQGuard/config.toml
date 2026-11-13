@@ -1,0 +1,43 @@
+# altgen config for the WQGuard AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Kianuni/WQGuard"
+
+[source]
+name = "WQGuard"
+subtitle = "WQGuard AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for WQGuard"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/icon.png"
+website = "https://github.com/Kianuni/WQGuard"
+tint_color = "#00C7A5"
+
+[app]
+name = "WQGuard"
+bundle_identifier = "com.wqguard.app"
+developer_name = "Kianuni"
+subtitle = "iOS 沙盒越权检测与侧载 IPA 审查工具"
+description = "面向 iOS 26.2+ / iOS 27.x 的零依赖、100% 物理只读沙盒逃逸检测引擎、Mach-O 静态二进制审计与多端固件 CVE 防护系统"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/dashboard.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/firmware.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/ipa.jpeg",
+]
+tint_color = "#00C7A5"
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): releases also ship the proxy shield
+# rules, so match only the ipa asset.
+asset_pattern = "WQGuard_v.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png"
+
+[output]
+path = "apps.json"
