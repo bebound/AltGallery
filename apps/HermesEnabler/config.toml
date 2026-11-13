@@ -19,7 +19,7 @@ name = "HermesEnabler"
 bundle_identifier = "com.example.HermesEnabler"
 developer_name = "pookjw"
 subtitle = "Enable Hermès Watch Faces on any Apple Watch"
-description = "Enable Hermès and Ultra watch faces on any Apple Watch, along with display, sensor, and Siri tweaks backed by MobileGestalt changes and automatic backups. Requires watchOS 27.0 through 27.3 beta 1."
+description = "Enable Hermès and Ultra watch faces on any Apple Watch, along with display, sensor, and Siri tweaks backed by MobileGestalt changes and automatic backups. Requires watchOS 27.0 through 27.3 beta 1 and a paid Apple Developer account."
 icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/icon.png"
 screenshots = [
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/watch.jpg",

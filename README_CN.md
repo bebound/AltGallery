@@ -101,7 +101,7 @@ iOS 上的初代 Xbox 模拟器，基于 xemu 构建并配有原生 Swift 界面
 在 iOS 27 上编辑 MobileGestalt——区域代码调整、设备预设与能力开关，支持备份和带类型的 plist 字段编辑器。
 
 ### <a href="https://github.com/pookjw/HermesEnabler"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/HermesEnabler/icon.png" alt="HermesEnabler icon" width="24" align="top">HermesEnabler</a>
-在任何 Apple Watch 上启用 Hermès 与 Ultra 表盘，并提供手表端显示、传感器与 Siri 调整。需要 watchOS 27.0–27.3 beta 1。
+在任何 Apple Watch 上启用 Hermès 与 Ultra 表盘，并提供手表端显示、传感器与 Siri 调整。需要 watchOS 27.0–27.3 beta 1 和付费的开发者账号。
 
 ### <a href="https://github.com/Leviidev/Husk"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Husk/icon.png" alt="Husk icon" width="24" align="top">Husk</a>
 在 iOS 上运行 Android 应用——放入 APK，轻点即可全屏打开。需要 JIT，并在运行时附加调试器。
