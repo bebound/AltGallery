@@ -67,6 +67,8 @@ jobs:
 
       # Deploy only the staged output, not the repository root: the catalog is
       # meant to be served as a static bundle, and _site/ is gitignored anyway.
+      # Images are served from _site/media/, so Cloudflare can cache and
+      # optimize them (Polish) as first-party files.
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4
         with:

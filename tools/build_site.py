@@ -3,18 +3,28 @@
 
 The page source is three files — site/index.html, site/style.css and
 site/app.js — and the deployed page fetches all-apps.json (same origin) at
-runtime, loading icons, screenshots and news images from the URLs in that
-file. The build validates the generated sources against their gh-proxy mirror
-and stages everything the site needs:
+runtime. Every image it renders (logos, icons, screenshots, news images) is
+copied into _site/media/ beside the page, so the site serves its own artwork
+instead of pointing at raw.githubusercontent.com — a CDN in front of the site
+(Cloudflare Polish, for one) can then cache and convert it. Only images move:
+links the page merely points at (release pages, ipa downloads, AltStore
+sources) stay on GitHub. The copies keep the path the file has in the
+repository, so the page swaps the raw prefix for media/ (the prefixes are in
+config.json) and needs no per-file index.
+
+The build validates the generated sources against their gh-proxy mirror and
+stages everything the site needs:
 
   _site/index.html           page shell; style.css/app.js carry content hashes
   _site/style.css            page styles
   _site/app.js               page script
+  _site/media/<repo path>    every displayed image, path unchanged
   _site/all-apps.json        catalog the page fetches (copy of the source)
   _site/all-apps-proxy.json  gh-proxy mirror (kept for download/compare)
   _site/config.json          repo, raw base and proxy prefix derived here
   _site/preview.html         local preview: CSS, JS and the catalog inlined,
-                             so it opens from file:// without a web server
+                             so it opens from file://; it draws media/ from
+                             the same directory
 
 all-apps-proxy.json must match all-apps.json exactly, except that
 tools/make_proxy.py rewrites the URLs AltStore fetches. The proxy prefix is
@@ -23,9 +33,13 @@ Mirror switch and its per-app proxy subscriptions always agree with the
 mirror file. Per-app sources are checked for existence (a missing one means
 the subscription button would 404).
 
+Display images come out of the working tree: a raw URL of this repository maps
+straight back to a repository path and is copied from there. Images hosted
+anywhere else are left on their original URL.
+
 Local preview (pick either):
 
-  python3 tools/build_site.py && open _site/preview.html   # single file, no server
+  python3 tools/build_site.py && open _site/preview.html   # no server needed
   python3 tools/build_site.py && python3 -m http.server -d _site
 
 Stdlib only.
@@ -57,6 +71,7 @@ RAW_BASE = re.compile(
     r"^(https://raw\.githubusercontent\.com/[^/]+/[^/]+/(?:refs/heads/[^/]+|master)/)"
 )
 DEFAULT_PROXY_PREFIX = "https://gh-proxy.com/"
+MEDIA_DIR = "media"
 
 
 def warn(message: str) -> None:
@@ -136,6 +151,62 @@ def derive_raw_base(source: dict) -> str:
     if not match:
         raise SystemExit("error: cannot derive the raw GitHub base from [source] iconURL")
     return match.group(1)
+
+
+def ref_bases(raw_base: str) -> list[str]:
+    """The raw-URL prefixes of this repository's default branch, both forms."""
+    owner, repo, tail = raw_base[len(RAW_HOST):].split("/", 2)
+    ref = tail.strip("/")
+    short = ref[len("refs/heads/"):] if ref.startswith("refs/heads/") else ref
+    return [
+        f"{RAW_HOST}{owner}/{repo}/refs/heads/{short}/",
+        f"{RAW_HOST}{owner}/{repo}/{short}/",
+    ]
+
+
+def repo_relative(url: str, raw_base: str) -> str | None:
+    """The path a raw URL has inside this repository, if it is one of ours."""
+    for base in ref_bases(raw_base):
+        if url.startswith(base):
+            return unquote(url[len(base):].split("?", 1)[0])
+    return None
+
+
+def display_images(source: dict) -> list[str]:
+    """Every image URL the page renders: logos, icons, screenshots, news."""
+    urls = [source.get("iconURL") or ""]
+    for app in source.get("apps", []):
+        urls.append(app.get("iconURL") or "")
+        urls.extend(app.get("screenshots") or [])
+    for item in source.get("news") or []:
+        urls.append(item.get("imageURL") or "")
+    return sorted({url for url in urls if url})
+
+
+def stage_media(source: dict, raw_base: str, out_dir: Path) -> None:
+    """Copy every displayed image into <out_dir>/media/, keeping repo paths.
+
+    The page maps a raw URL of this repository to the same path under media/,
+    so the layout here is the mapping: no per-file index is needed, and a file
+    that moves in the repository moves here too.
+    """
+    media_root = out_dir / MEDIA_DIR
+    copied = written = 0
+    for url in display_images(source):
+        relative = repo_relative(url, raw_base)
+        if relative is None:
+            continue
+        local = REPO_ROOT / relative
+        if not local.is_file():
+            warn(f"{relative}: not in the working tree; the page will miss it under media/")
+            continue
+        data = local.read_bytes()
+        path = media_root / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(data)
+        copied += 1
+        written += len(data)
+    print(f"Staged {copied} display images ({written / 1024 / 1024:.1f} MB) in {MEDIA_DIR}/")
 
 
 def github_repo_from_raw(raw_base: str) -> str:
@@ -218,6 +289,7 @@ def main() -> int:
             raise SystemExit(f"error: missing {site_dir / name}")
 
     out_dir.mkdir(parents=True, exist_ok=True)
+    stage_media(source, raw_base, out_dir)
 
     style = (site_dir / "style.css").read_bytes()
     script = (site_dir / "app.js").read_bytes()
@@ -234,6 +306,8 @@ def main() -> int:
     config = {
         "repo": repo,
         "rawBase": raw_base,
+        "rawBases": ref_bases(raw_base),
+        "mediaBase": MEDIA_DIR + "/",
         "proxyPrefix": proxy_prefix,
         "allSource": raw_base + "all-apps.json",
         "allSourceProxy": raw_base + "all-apps-proxy.json",

@@ -112,15 +112,20 @@ The public catalog at https://bebound.github.io/AltGallery/ is a static page
 built from the generated sources:
 
 - `site/index.html`, `site/style.css`, `site/app.js` — the page. It fetches
-  `all-apps.json` (served beside it) at runtime and loads icons, screenshots
-  and news images from the URLs in that file. The Direct/Mirror switch
-  rewrites GitHub URLs through gh-proxy.com and subscribes to the prepared
+  `all-apps.json` (served beside it) at runtime and renders every image —
+  logos, icons, screenshots, news images — from a copy under `media/`, so the
+  site hosts its own artwork and only links (release pages, ipa downloads,
+  AltStore sources) point at GitHub. The Direct/Mirror switch rewrites those
+  links through gh-proxy.com and subscribes to the prepared
   `apps/<App>/apps-proxy.json` sources.
 - `tools/build_site.py` — validates `all-apps-proxy.json` against
   `all-apps.json` (the proxy prefix is derived from the mirror), checks that
-  every per-app source exists, stages the split site plus both JSON files and
-  a generated `config.json` in `_site/`, and adds content hashes to the
-  CSS/JS references. Stdlib only.
+  every per-app source exists, copies every displayed image from the working
+  tree to `_site/media/` with its repository path unchanged, writes a
+  generated `config.json` (the raw URL prefixes and `mediaBase`, which the
+  page uses to map a raw URL to its local copy), and stages the split site
+  plus both JSON files. Content hashes are added to the CSS/JS references
+  only. Stdlib only.
 - `.github/workflows/pages.yml` — builds and deploys only when the update
   workflow finishes (an update run triggered by the push, including the
   bot's own commits, which never trigger `push` workflows), plus manual
@@ -135,18 +140,22 @@ built from the generated sources:
   deployed from here.
 
 The build also writes `_site/preview.html`, with CSS, JS and the catalog
-inlined, so it can be opened directly from disk:
+inlined; it draws images from `_site/media/`, so it opens straight from disk
+as long as it stays beside that directory:
 
 ```bash
 python3 tools/build_site.py
-open _site/preview.html          # single-file local preview
+open _site/preview.html          # local preview, no server
 python3 -m http.server -d _site  # or serve the real split page
 ```
 
 `_site/` is gitignored and never committed. It is host-agnostic — the page
-fetches `all-apps.json` and `config.json` from its own directory and every
-other URL in them points at GitHub — so the identical build serves both the
-GitHub Pages and the Cloudflare Pages deployment.
+fetches `all-apps.json` and `config.json` from its own directory and draws
+every image from `media/` beside it — so the identical build serves both the
+GitHub Pages and the Cloudflare Pages deployment. Serving its own images is
+what lets a CDN in front of the site (Cloudflare Polish, for one) cache and
+convert them; `media/` mirrors the repository layout, so a changed image is
+the same URL with revalidation.
 
 ## Generating News Images
 

@@ -1,6 +1,7 @@
 name: Build and deploy GitHub Pages
 
-# The page is a static build of all-apps.json (see tools/build_site.py).
+# The page is a static build of all-apps.json (see tools/build_site.py); the
+# images it displays are copied beside it into _site/media/.
 # It deploys only after the update workflow finishes, so a push to master
 # produces one Pages deployment record instead of two: the push triggers the
 # update workflow, and its completion triggers this one. Pushes made by the

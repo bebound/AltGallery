@@ -26,8 +26,8 @@
       "hero.clients": "Works with AltStore, SideStore, LiveContainer and other compatible clients.",
       "hero.addAll": "Add all sources",
       "hero.repo": "View on GitHub",
-      "hero.modeDirect": "Links and images use github.com directly.",
-      "hero.modeMirror": "Links and images go through gh-proxy.com.",
+      "hero.modeDirect": "Links and downloads use github.com directly.",
+      "hero.modeMirror": "Links and downloads go through gh-proxy.com.",
       "stats.apps": "{n} apps",
       "stats.updated": "Updated {d}",
       "updates.title": "Recent updates",
@@ -60,12 +60,12 @@
       "mode.label": "连接方式",
       "mode.direct": "直连",
       "mode.mirror": "镜像",
-      "hero.sub": "精选 GitHub 上的 IPA 开源项目 AltStore 软件源。",
+      "hero.sub": "精选 AltStore 软件源：汇聚 GitHub 优质 IPA 开源项目",
       "hero.clients": "兼容 AltStore、SideStore、LiveContainer 等客户端。",
       "hero.addAll": "添加全部源",
       "hero.repo": "在 GitHub 查看",
-      "hero.modeDirect": "链接和图片直连 GitHub。",
-      "hero.modeMirror": "链接和图片经由 gh-proxy.com 镜像。",
+      "hero.modeDirect": "链接和下载直连 GitHub。",
+      "hero.modeMirror": "链接和下载经由 gh-proxy.com 镜像。",
       "stats.apps": "{n} 个 App",
       "stats.updated": "更新于 {d}",
       "updates.title": "最近更新",
@@ -166,6 +166,32 @@
     return url;
   }
 
+  // The build copies every displayed image into media/ with its repository
+  // path unchanged, so a raw URL of this repository maps to the local copy by
+  // swapping the prefix. config.json lists both spellings of the raw prefix
+  // ("refs/heads/<branch>/" and "<branch>/"); derive them when absent.
+  function rawBasesFrom(rawBase) {
+    const match = String(rawBase || "").match(
+      /^(https:\/\/raw\.githubusercontent\.com\/[^/]+\/[^/]+\/)(?:(?:refs\/heads\/)?([^/]+)\/)$/
+    );
+    if (!match) return rawBase ? [rawBase] : [];
+    return [match[1] + "refs/heads/" + match[2] + "/", match[1] + match[2] + "/"];
+  }
+
+  function mediaURL(url) {
+    if (!url || !data) return url;
+    for (const base of data.rawBases) {
+      if (url.startsWith(base)) return data.mediaBase + url.slice(base.length);
+    }
+    return url;
+  }
+
+  // Display images come from the site itself; links keep their GitHub URL
+  // (or its mirror).
+  function assetURL(url) {
+    return proxyURL(mediaURL(url));
+  }
+
   function addSourceLink(url) {
     return "https://altdirect.app/?url=" + encodeURIComponent(url);
   }
@@ -243,7 +269,7 @@
       link.rel = "icon";
       document.head.append(link);
     }
-    link.href = proxyURL(data.icon);
+    link.href = assetURL(data.icon);
   }
 
   function applyLabels() {
@@ -284,8 +310,8 @@
 
     $("#brand").href = data.repo || "#";
     $("#repo-btn").href = data.repo || "#";
-    $("#brand-mark").src = proxyURL(data.icon);
-    $("#hero-icon").src = proxyURL(data.icon);
+    $("#brand-mark").src = assetURL(data.icon);
+    $("#hero-icon").src = assetURL(data.icon);
     $("#add-all").href = addSourceLink(state.mirror ? proxyPrefix() + data.allSourceProxy : data.allSource);
     $("#add-all").removeAttribute("aria-disabled");
     $("#add-all-icon").replaceChildren(svgIcon(PLUS_ICON, 14));
@@ -311,7 +337,7 @@
     });
     const media = h("div", { class: "update-media" });
     if (item.image) {
-      const image = h("img", { src: proxyURL(item.image), alt: "", loading: "lazy", decoding: "async" });
+      const image = h("img", { src: assetURL(item.image), alt: "", loading: "lazy", decoding: "async" });
       image.addEventListener("error", () => media.classList.add("noimg"));
       media.append(image);
     } else {
@@ -481,7 +507,7 @@
     const strip = h("div", { class: "shots" });
     list.forEach((url, index) => {
       const image = h("img", {
-        src: proxyURL(url),
+        src: assetURL(url),
         alt: t("card.screenshotAlt", { n: index + 1 }),
         loading: "lazy",
         decoding: "async"
@@ -524,7 +550,7 @@
     const tile = h("div", { class: "icon-tile", style: tint ? "--tint:" + tint : null });
     tile.append(h("span", { class: "icon-letter", "aria-hidden": "true", text: (app.name || "?").slice(0, 1).toUpperCase() }));
     if (app.icon) {
-      const icon = h("img", { src: proxyURL(app.icon), alt: "", width: 52, height: 52, loading: "lazy", decoding: "async" });
+      const icon = h("img", { src: assetURL(app.icon), alt: "", width: 52, height: 52, loading: "lazy", decoding: "async" });
       icon.addEventListener("error", () => icon.remove());
       tile.append(icon);
     }
@@ -644,6 +670,10 @@
   // prepared per-app proxy sources so the Mirror switch can subscribe to them.
   function prepare(source, config) {
     const rawBase = config.rawBase || deriveRawBase(source.iconURL);
+    const rawBases = Array.isArray(config.rawBases) && config.rawBases.length
+      ? config.rawBases.slice()
+      : rawBasesFrom(rawBase);
+    const mediaBase = config.mediaBase || "media/";
     const proxyPrefix = config.proxyPrefix || DEFAULT_PROXY_PREFIX;
     const repoParts = rawBase ? rawBase.split("/") : [];
     const repo =
@@ -710,6 +740,8 @@
     return {
       name: source.name || "AltGallery",
       icon: source.iconURL || "",
+      rawBases,
+      mediaBase,
       proxyPrefix,
       repo,
       allSource,
