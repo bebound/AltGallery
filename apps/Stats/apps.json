@@ -19,11 +19,11 @@
       "tintColor": "#2090F0",
       "versions": [
         {
-          "version": "0.3.6",
-          "date": "2026-11-13T05:37:32Z",
-          "localizedDescription": "Stats for iPhone 0.3.6 adds an app identity footer to the dashboard Settings screen.\n\n## What's Changed\n\n- Show the Stats app icon, app name, version and build below the Settings controls.\n- Read the displayed name and version from the installed app, so they stay current with future updates.\n\n## Download\n\n- **iPhone app · 0.3.6:** `Stats-v0.3.6-iOS.ipa` (iOS 17+, arm64; unsigned, requires signing through AltStore, SideStore, or another sideloading tool).\n- **Mac companion · 0.3.9:** unchanged; get its signed DMG or ZIP from [v0.3.9](https://github.com/ishtiaq156/stats/releases/tag/v0.3.9).\n- See the [README](https://github.com/ishtiaq156/stats#quick-start) for installation and pairing instructions.\n\n**Full Changelog:** [Compare v0.3.11...v0.3.12](https://github.com/ishtiaq156/stats/compare/v0.3.11...v0.3.12)",
-          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.12/Stats-v0.3.6-iOS.ipa",
-          "size": 2668322,
+          "version": "0.3.8",
+          "date": "2026-11-13T15:11:49Z",
+          "localizedDescription": "Disk stats now hide removable volumes by default, matching Exelban Stats' default behavior. The iPhone Disk screen has a settings button to show them when wanted.\n\n## What's Changed\n\n### Improvements and Fixes\n\n- Classify mounted volumes using macOS Disk Arbitration, including disk images and removable drives.\n- Add a persistent “Show removable disks” option in the iPhone Disk Settings sheet.\n- Keep existing pairings and older disk snapshots compatible.\n\n## Download\n\n- **Mac companion · 0.3.10:** `StatsCompanion-v0.3.10-macOS-universal.dmg` for Finder installation, or the signed universal ZIP for in-menu updates.\n- **iPhone app · 0.3.8:** `Stats-v0.3.8-iOS.ipa` (iOS 17+, arm64; unsigned for SideStore and AltStore).\n- Install both updates to use the removable-volume setting. See the [README](https://github.com/ishtiaq156/stats#quick-start) for installation and pairing.\n\n**Full Changelog:** https://github.com/ishtiaq156/stats/compare/v0.3.13...v0.3.14",
+          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.14/Stats-v0.3.8-iOS.ipa",
+          "size": 2666429,
           "minOSVersion": "17.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "com.ishtiaqsyed.StatsForIOS",
-      "title": "Stats 0.3.6 · 13 Nov 2026",
-      "identifier": "Stats-release-v0.3.12",
-      "caption": "Stats 0.3.6 is available.",
-      "date": "2026-11-13T05:37:32Z",
+      "title": "Stats 0.3.8 · 13 Nov 2026",
+      "identifier": "Stats-release-v0.3.14",
+      "caption": "Stats 0.3.8 is available.",
+      "date": "2026-11-13T15:11:49Z",
       "tintColor": "#2090F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
       "notify": true,
-      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.12"
+      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.14"
     }
   ]
 }

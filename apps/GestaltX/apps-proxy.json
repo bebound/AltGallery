@@ -19,11 +19,11 @@
       "tintColor": "#007AFF",
       "versions": [
         {
-          "version": "1.0.7",
-          "date": "2026-11-12T17:14:29Z",
-          "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.7/CHANGELOG_ZH-CN.md)\r\n\r\nBuild `11130112`.\r\n\r\n### Fixed\r\n\r\n- Fix container discovery on iOS 27.3 so wallpaper and App Launch Images can locate their containers again.",
-          "downloadURL": "https://gh-proxy.com/https://github.com/huamidev/GestaltX/releases/download/v1.0.7/GestaltX_1.0.7.ipa",
-          "size": 3563948,
+          "version": "1.1.1",
+          "date": "2026-11-13T16:46:05Z",
+          "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/main/CHANGELOG_ZH-CN.md)\n\nBuild `11140102`.\n\n### Added\n\n- App Audio Library: replace notification sounds with custom audio. Apps not shown in the list can use the capture guide to obtain their notification-sound paths.\n- Pairing & Device Connection: used to obtain required paths.\n\n### Changed\n\n- Case-insensitive cache UUID comparison (#131)\n- Reject trailing text in date fields (#132)\n- Share-inbox fallback (#133)\n- Validate backup metadata filenames (#134)\n- Reduce cache descriptor string-scan allocations (#135)\n- Reuse one preview snapshot for field search (#136)\n- Preserve field edits over layout presets (#137)\n- Preserve existing plist keys when editing fields (#138)\n- Reduce allocations in exact plist comparisons (#139)\n- Traverse document differences once (#140)\n- Fix Face ID failing after enabling Apple Intelligence (#128)\n- Add missing localization for #128 (#146)\n- Pairing paths are migrated when a reinstall moves the app data container.\n\n### Fixed\n\n- Fix pairing failure in side-loaded release builds.\n- Add the missing Face ID recovery localization strings.\n- Fix audio file selection in side-loaded builds.\n- Refresh captured sounds immediately and cache the app audio list.\n- Show LocalDevVPN guidance and stop capture when the tunnel does not connect.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/huamidev/GestaltX/releases/download/v1.1.1/GestaltX_1.1.1.ipa",
+          "size": 6774794,
           "minOSVersion": "26.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "com.huami.gestultx",
-      "title": "GestaltX 1.0.7 · 12 Nov 2026",
-      "identifier": "GestaltX-release-v1.0.7",
-      "caption": "GestaltX 1.0.7 is available.",
-      "date": "2026-11-12T17:14:29Z",
+      "title": "GestaltX 1.1.1 · 13 Nov 2026",
+      "identifier": "GestaltX-release-v1.1.1",
+      "caption": "GestaltX 1.1.1 is available.",
+      "date": "2026-11-13T16:46:05Z",
       "tintColor": "#007AFF",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.png",
       "notify": true,
-      "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.0.7"
+      "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.1.1"
     }
   ]
 }
