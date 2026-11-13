@@ -1,0 +1,49 @@
+# altgen config for the Swipt AltStore source.
+# Run: uvx altgen -c config.toml
+# Swipt ships iOS builds only as the rolling "nightly" GitHub prerelease, so
+# include_prereleases must stay enabled.
+
+[github]
+repo = "swipt-automation/swipt"
+
+[source]
+name = "Swipt"
+subtitle = "Swipt AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Swipt"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/icon.png"
+website = "https://github.com/swipt-automation/swipt"
+tint_color = "#78909C"
+
+[app]
+name = "Swipt"
+bundle_identifier = "io.nekohasekai.swipt"
+developer_name = "nekohasekai"
+subtitle = "The universal iOS automation platform"
+description = "Swipt automates this iPhone or iPad with JavaScript swiplets. It bundles a TypeScript SDK built on CoreDevice and the accessibility services, plus an MCP-compatible API for driving and debugging swiplets from your computer."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/swiplets.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/developer.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/pair.jpeg",
+]
+tint_color = "#455A64"
+min_os_version = "16.4"
+
+[versions]
+strip_v_prefix = true
+# No stable releases yet: every ipa lives in the rolling "nightly" prerelease.
+include_prereleases = true
+# asset_pattern is a regex (not glob): every release ships a single Swipt.ipa
+# next to Swipt-iOS.dSYMs.zip.
+asset_pattern = "Swipt\\.ipa$"
+# Read the version from the ipa's Info.plist: the release tag is "nightly"
+# while the ipa inside it reports 0.1.0 (build 76).
+version_source = "ipa"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/news.png"
+
+[output]
+path = "apps.json"
