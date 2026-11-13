@@ -16,6 +16,8 @@
 <p align="center">(Click the above image to add the all-in-one AltGallery source. Individual app sources live in the <code>apps</code> folder.)</p>
 <p align="center">Can't reach <code>github.com</code>? Use the <a href="https://altdirect.app/?url=https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps-proxy.json" target="_blank">gh-proxy link</a> instead — the resources all go through gh-proxy.com.</p>
 
+<p align="center">Browse the AltGallery in your browser: <a href="https://bebound.github.io/AltGallery/">bebound.github.io/AltGallery</a></p>
+
 ## Request an App
 
 Don't see an app you want? [Create an issue](https://github.com/bebound/AltGallery/issues/new) and I'll add it to the gallery. Please include the app's name and a link to its GitHub repo (or an IPA / release URL) so I can verify and add it.

@@ -106,6 +106,37 @@ in `git status` — leave them for the workflow to commit.) To refresh them
 immediately, run the `Update all-apps.json` workflow manually
 (`workflow_dispatch`).**
 
+## GitHub Pages Site
+
+The public catalog at https://bebound.github.io/AltGallery/ is a static page
+built from the generated sources:
+
+- `site/index.html`, `site/style.css`, `site/app.js` — the page. It fetches
+  `all-apps.json` (served beside it) at runtime and loads icons, screenshots
+  and news images from the URLs in that file. The Direct/Mirror switch
+  rewrites GitHub URLs through gh-proxy.com and subscribes to the prepared
+  `apps/<App>/apps-proxy.json` sources.
+- `tools/build_site.py` — validates `all-apps-proxy.json` against
+  `all-apps.json` (the proxy prefix is derived from the mirror), checks that
+  every per-app source exists, stages the split site plus both JSON files and
+  a generated `config.json` in `_site/`, and adds content hashes to the
+  CSS/JS references. Stdlib only.
+- `.github/workflows/pages.yml` — builds and deploys on every push to master,
+  when the update workflow finishes (bot commits do not trigger `push`
+  workflows), and on manual dispatch. The repository's Pages source must be
+  set to "GitHub Actions".
+
+The build also writes `_site/preview.html`, with CSS, JS and the catalog
+inlined, so it can be opened directly from disk:
+
+```bash
+python3 tools/build_site.py
+open _site/preview.html          # single-file local preview
+python3 -m http.server -d _site  # or serve the real split page
+```
+
+`_site/` is gitignored and never committed.
+
 ## Generating News Images
 
 Each app has a shared `news.png` ("NEW UPDATE" — icon, name, tagline)

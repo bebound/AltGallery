@@ -16,6 +16,8 @@
 <p align="center">（点击上方图片添加包含全部应用的 AltGallery 源。单个应用的源位于 <code>apps</code> 文件夹。）</p>
 <p align="center">无法访问 <code>github.com</code>？请改用 <a href="https://altdirect.app/?url=https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps-proxy.json" target="_blank">gh-proxy 链接</a>——所有资源均经由 gh-proxy.com 访问。</p>
 
+<p align="center">在浏览器中浏览AltGallery：<a href="https://bebound.github.io/AltGallery/">bebound.github.io/AltGallery</a></p>
+
 ## 请求添加应用
 
 没找到想要的应用？[提交 issue](https://github.com/bebound/AltGallery/issues/new)，我会把它加入图库。请附上应用名称及其 GitHub 仓库链接（或 IPA / Release URL），以便我验证并添加。

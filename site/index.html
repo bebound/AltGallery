@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AltGallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <div class="topbar">
+      <a class="brand" id="brand" href="https://github.com/bebound/AltGallery" target="_blank" rel="noopener">
+        <img class="brand-mark" id="brand-mark" alt="" width="26" height="26" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+        <span>AltGallery</span>
+      </a>
+      <div class="controls">
+        <div class="segment" id="lang-seg" role="group" data-i18n-aria="lang.label">
+          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+        <div class="segment" id="mode-seg" role="group" data-i18n-aria="mode.label">
+          <button type="button" data-mode="direct" data-i18n="mode.direct">Direct</button>
+          <button type="button" data-mode="mirror" data-i18n="mode.mirror">Mirror</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-main">
+      <img class="hero-icon" id="hero-icon" alt="AltGallery" width="88" height="88" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+      <div class="hero-copy">
+        <h1>AltGallery</h1>
+        <p class="hero-sub" data-i18n="hero.sub"></p>
+        <p class="hero-meta" id="hero-meta"></p>
+        <p class="hero-clients" data-i18n="hero.clients"></p>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" id="add-all" target="_blank" rel="noopener" aria-disabled="true">
+        <span id="add-all-icon" aria-hidden="true"></span>
+        <span data-i18n="hero.addAll"></span>
+      </a>
+      <a class="btn btn-ghost" id="repo-btn" target="_blank" rel="noopener" data-i18n="hero.repo"></a>
+      <span class="mode-note" id="mode-note"></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="updates" hidden>
+      <div class="section-head">
+        <h2 data-i18n="updates.title"></h2>
+      </div>
+      <div class="track" id="updates-track"></div>
+    </section>
+
+    <section class="section" id="apps">
+      <div class="toolbar">
+        <div class="search">
+          <svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+            <circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+            <path d="M13.2 13.2 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+          <input id="search" type="search" autocomplete="off" spellcheck="false" disabled data-i18n-placeholder="search.placeholder" data-i18n-aria="search.label">
+        </div>
+        <label class="sort">
+          <span data-i18n="apps.sortLabel"></span>
+          <select id="sort" disabled>
+            <option value="updated" data-i18n="sort.updated"></option>
+            <option value="name" data-i18n="sort.name"></option>
+          </select>
+        </label>
+        <span class="count" id="apps-count"></span>
+      </div>
+      <div class="grid" id="grid" aria-busy="true"></div>
+      <p class="status" id="status" hidden role="status"></p>
+      <p class="empty" id="empty" hidden data-i18n="apps.empty"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p data-i18n="footer.note"></p>
+    <p class="footer-links">
+      <a id="footer-source" target="_blank" rel="noopener">all-apps.json</a>
+      <span aria-hidden="true">·</span>
+      <a id="footer-proxy" target="_blank" rel="noopener">all-apps-proxy.json</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/bebound/AltGallery/issues/new" target="_blank" rel="noopener" data-i18n="footer.request"></a>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/bebound/AltGen" target="_blank" rel="noopener">AltGen</a>
+    </p>
+  </footer>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>
