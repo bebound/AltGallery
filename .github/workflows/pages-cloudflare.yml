@@ -1,0 +1,79 @@
+---
+name: Build and deploy Cloudflare Pages
+
+# The same static build as the GitHub Pages workflow (tools/build_site.py),
+# deployed to a Cloudflare Pages project with Direct Upload instead of the
+# `pages` environment. It fires on `workflow_run` for the same reason pages.yml
+# does: the update workflow commits the regenerated all-apps.json files with
+# GITHUB_TOKEN, and pushes made with GITHUB_TOKEN never trigger `push`
+# workflows. Going through the update run also means one deployment per push
+# (the push starts the update, its completion starts this deployment) and that
+# the checked-out default branch already contains the fresh sources.
+#
+# Setup (once, outside this repo):
+#   1. Create a Direct Upload project: `npx wrangler pages project create
+#      altgallery --production-branch=master` (or create it in the dashboard
+#      without connecting a Git repository). A project connected to Git cannot
+#      be deployed this way; use the Git integration instead.
+#   2. Add the repository secrets CLOUDFLARE_API_TOKEN (API token with the
+#      Cloudflare Pages: Edit permission) and CLOUDFLARE_ACCOUNT_ID.
+
+on:
+  workflow_run:
+    workflows: ["Update apps.json and all-apps.json"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: pages-cloudflare
+  cancel-in-progress: false
+
+env:
+  CLOUDFLARE_PROJECT_NAME: altgallery
+  CLOUDFLARE_PRODUCTION_BRANCH: master
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check Cloudflare credentials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          missing=0
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::missing repository secret CLOUDFLARE_API_TOKEN"
+            missing=1
+          fi
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::missing repository secret CLOUDFLARE_ACCOUNT_ID"
+            missing=1
+          fi
+          exit $missing
+
+      - name: Build the page
+        run: |
+          python3 tools/build_site.py
+          # preview.html inlines the catalog for local file:// previews only.
+          rm -f _site/preview.html
+
+      # Deploy only the staged output, not the repository root: the catalog is
+      # meant to be served as a static bundle, and _site/ is gitignored anyway.
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: >-
+            pages deploy _site
+            --project-name=${{ env.CLOUDFLARE_PROJECT_NAME }}
+            --branch=${{ env.CLOUDFLARE_PRODUCTION_BRANCH }}

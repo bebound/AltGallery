@@ -126,6 +126,13 @@ built from the generated sources:
   bot's own commits, which never trigger `push` workflows), plus manual
   dispatch, so one push creates a single Pages deployment record. The
   repository's Pages source must be set to "GitHub Actions".
+- `.github/workflows/pages-cloudflare.yml` — the same build, deployed to a
+  Cloudflare Pages project (name and production branch in its `env`) with
+  `cloudflare/wrangler-action@v4`, on the same triggers. It needs the
+  `CLOUDFLARE_API_TOKEN` (Cloudflare Pages: Edit) and `CLOUDFLARE_ACCOUNT_ID`
+  repository secrets, and the Pages project must be a Direct Upload one — a
+  Git-connected project is built by Cloudflare itself instead, and cannot be
+  deployed from here.
 
 The build also writes `_site/preview.html`, with CSS, JS and the catalog
 inlined, so it can be opened directly from disk:
@@ -136,7 +143,10 @@ open _site/preview.html          # single-file local preview
 python3 -m http.server -d _site  # or serve the real split page
 ```
 
-`_site/` is gitignored and never committed.
+`_site/` is gitignored and never committed. It is host-agnostic — the page
+fetches `all-apps.json` and `config.json` from its own directory and every
+other URL in them points at GitHub — so the identical build serves both the
+GitHub Pages and the Cloudflare Pages deployment.
 
 ## Generating News Images
 
