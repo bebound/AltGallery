@@ -373,7 +373,9 @@
     text-overflow: ellipsis;
   }
   .ver {
+    position: relative;
     flex: 0 0 auto;
+    max-width: 96px;
     padding: 3px 8px;
     border-radius: 999px;
     background: var(--surface-2);
@@ -381,6 +383,40 @@
     font-size: 11.5px;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
+  }
+  .ver-text {
+    display: block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Long build versions (nightly timestamps, commit hashes) would squeeze the
+     app name in a collapsed card; an expanded card spans the grid, so it has
+     room for the full string. */
+  .card.open .ver { max-width: none; }
+  /* Full version on hover, only for badges the width cap actually clips
+     (app.js sets data-tip after measuring the text). */
+  .ver[data-tip]::after {
+    content: attr(data-tip);
+    position: absolute;
+    top: calc(100% + 7px);
+    right: 0;
+    z-index: 30;
+    padding: 6px 9px;
+    border-radius: 9px;
+    background: var(--fg);
+    color: var(--surface);
+    box-shadow: var(--shadow);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.12s ease, visibility 0.12s;
+  }
+  .ver[data-tip]:hover::after {
+    opacity: 1;
+    visibility: visible;
   }
   .app-sub {
     margin: 0;

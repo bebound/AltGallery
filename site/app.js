@@ -559,6 +559,13 @@
       })()
     );
 
+    const versionText = t("card.version", { v: app.version });
+    const versionBadge = h(
+      "span",
+      { class: "ver", "data-full": versionText },
+      h("span", { class: "ver-text", text: versionText })
+    );
+
     const metaNodes = [];
     if (app.minOS) metaNodes.push(h("span", { text: t("card.minOS", { v: app.minOS }) }));
     const size = fmtSize(app.size);
@@ -582,7 +589,7 @@
           h("h3", { class: "app-name", text: app.name }),
           h("p", { class: "app-dev", text: app.developer || " " })
         ),
-        h("span", { class: "ver", text: t("card.version", { v: app.version }) })
+        versionBadge
       ),
       h("p", { class: "app-sub", text: app.subtitle }),
       metaNodes.length ? h("div", { class: "meta" }, ...metaNodes) : null,
@@ -611,6 +618,18 @@
       const card = grid.querySelector('[data-id="' + (window.CSS && CSS.escape ? CSS.escape(bundleID) : bundleID) + '"]');
       const button = card ? card.querySelector(".btn-details") : null;
       if (button) button.focus({ preventScroll: true });
+    }
+    updateVersionTips();
+  }
+
+  // A collapsed card caps the version badge; when the cap actually clips the
+  // text, flag the badge so CSS can reveal the full version on hover.
+  function updateVersionTips() {
+    for (const badge of grid.querySelectorAll(".ver")) {
+      const text = badge.querySelector(".ver-text");
+      if (!text) continue;
+      if (text.scrollWidth > text.clientWidth + 1) badge.dataset.tip = badge.dataset.full;
+      else delete badge.dataset.tip;
     }
   }
 
@@ -804,4 +823,6 @@
 
   initState();
   boot();
+  // System font metrics can settle after the first paint; re-measure then.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateVersionTips);
 })();
