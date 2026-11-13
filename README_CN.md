@@ -217,6 +217,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <a href="https://github.com/StikDebug/StikDebug"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/StikDebug/icon.png" alt="StikDebug icon" width="24" align="top">StikDebug</a>
 面向 iOS 17.4+ 的在设备端 JIT 启用工具与设备工具箱，基于 idevice 构建。
 
+### <a href="https://github.com/swipt-automation/swipt"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/Swipt/icon.png" alt="Swipt icon" width="24" align="top">Swipt</a>
+用 JavaScript Swiplet 自动化操控 iPhone 或 iPad，内置 TypeScript SDK 与兼容 MCP 的 API。
+
 ### <a href="https://github.com/infinityf4p/TiebaPure-iOS"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/TiebaPure/icon.png" alt="TiebaPure icon" width="24" align="top">TiebaPure</a>
 原生 SwiftUI 构建的非官方贴吧 iOS 客户端，支持浏览、搜索、收藏、媒体查看与本地阅读记录。
 
