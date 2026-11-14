@@ -113,7 +113,7 @@ built from the generated sources:
 
 - `site/index.html`, `site/style.css`, `site/app.js` — the page. It fetches
   `all-apps.json` (served beside it) at runtime and renders every image —
-  logos, icons, screenshots, news images — from a copy under `media/`, so the
+  logos, icons, screenshots — from a copy under `media/`, so the
   site hosts its own artwork and only links (release pages, ipa downloads,
   AltStore sources) point at GitHub. The Direct/Mirror switch rewrites those
   links through gh-proxy.com and subscribes to the prepared

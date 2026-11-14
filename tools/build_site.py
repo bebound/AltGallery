@@ -3,8 +3,8 @@
 
 The page source is three files — site/index.html, site/style.css and
 site/app.js — and the deployed page fetches all-apps.json (same origin) at
-runtime. Every image it renders (logos, icons, screenshots, news images) is
-copied into _site/media/ beside the page, so the site serves its own artwork
+runtime. Every image it renders (logos, icons, screenshots) is copied
+into _site/media/ beside the page, so the site serves its own artwork
 instead of pointing at raw.githubusercontent.com — a CDN in front of the site
 (Cloudflare Polish, for one) can then cache and convert it. Only images move:
 links the page merely points at (release pages, ipa downloads, AltStore
@@ -173,13 +173,16 @@ def repo_relative(url: str, raw_base: str) -> str | None:
 
 
 def display_images(source: dict) -> list[str]:
-    """Every image URL the page renders: logos, icons, screenshots, news."""
+    """Every image URL the page renders: logos, icons and screenshots.
+
+    News artwork is not displayed — the recent-updates rail draws its promo
+    tile in markup instead of loading the generated news.png — so those files
+    stay out of media/ even though the catalog still links them.
+    """
     urls = [source.get("iconURL") or ""]
     for app in source.get("apps", []):
         urls.append(app.get("iconURL") or "")
         urls.extend(app.get("screenshots") or [])
-    for item in source.get("news") or []:
-        urls.append(item.get("imageURL") or "")
     return sorted({url for url in urls if url})
 
 

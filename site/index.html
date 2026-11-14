@@ -3,94 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Curated AltStore sources for IPA projects on GitHub.">
 <title>AltGallery</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="page">
-  <header class="hero">
-    <div class="topbar">
-      <a class="brand" id="brand" href="https://github.com/bebound/AltGallery" target="_blank" rel="noopener">
-        <img class="brand-mark" id="brand-mark" alt="" width="26" height="26" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-        <span>AltGallery</span>
-      </a>
-      <div class="controls">
-        <div class="segment" id="lang-seg" role="group" data-i18n-aria="lang.label">
-          <button type="button" data-lang="en">English</button>
-          <button type="button" data-lang="zh">中文</button>
-        </div>
-        <div class="segment" id="mode-seg" role="group" data-i18n-aria="mode.label">
-          <button type="button" data-mode="direct" data-i18n="mode.direct">Direct</button>
-          <button type="button" data-mode="mirror" data-i18n="mode.mirror">Mirror</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-main">
-      <img class="hero-icon" id="hero-icon" alt="AltGallery" width="88" height="88" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-      <div class="hero-copy">
-        <h1>AltGallery</h1>
-        <p class="hero-sub" data-i18n="hero.sub"></p>
-        <p class="hero-meta" id="hero-meta"></p>
-        <p class="hero-clients" data-i18n="hero.clients"></p>
-      </div>
-    </div>
-
-    <div class="hero-actions">
-      <a class="btn btn-primary" id="add-all" target="_blank" rel="noopener" aria-disabled="true">
-        <span id="add-all-icon" aria-hidden="true"></span>
-        <span data-i18n="hero.addAll"></span>
-      </a>
-      <a class="btn btn-ghost" id="repo-btn" target="_blank" rel="noopener" data-i18n="hero.repo"></a>
-      <span class="mode-note" id="mode-note"></span>
-    </div>
-  </header>
-
-  <main>
-    <section class="section" id="updates" hidden>
-      <div class="section-head">
-        <h2 data-i18n="updates.title"></h2>
-      </div>
-      <div class="track" id="updates-track"></div>
-    </section>
-
-    <section class="section" id="apps">
-      <div class="toolbar">
-        <div class="search">
-          <svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
-            <circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
-            <path d="M13.2 13.2 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-          </svg>
-          <input id="search" type="search" autocomplete="off" spellcheck="false" disabled data-i18n-placeholder="search.placeholder" data-i18n-aria="search.label">
-        </div>
-        <label class="sort">
-          <span data-i18n="apps.sortLabel"></span>
-          <select id="sort" disabled>
-            <option value="updated" data-i18n="sort.updated"></option>
-            <option value="name" data-i18n="sort.name"></option>
-          </select>
-        </label>
-        <span class="count" id="apps-count"></span>
-      </div>
-      <div class="grid" id="grid" aria-busy="true"></div>
-      <p class="status" id="status" hidden role="status"></p>
-      <p class="empty" id="empty" hidden data-i18n="apps.empty"></p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p data-i18n="footer.note"></p>
-    <p class="footer-links">
-      <a id="footer-source" target="_blank" rel="noopener">all-apps.json</a>
-      <span aria-hidden="true">·</span>
-      <a id="footer-proxy" target="_blank" rel="noopener">all-apps-proxy.json</a>
-      <span aria-hidden="true">·</span>
-      <a href="https://github.com/bebound/AltGallery/issues/new" target="_blank" rel="noopener" data-i18n="footer.request"></a>
-      <span aria-hidden="true">·</span>
-      <a href="https://github.com/bebound/AltGen" target="_blank" rel="noopener">AltGen</a>
-    </p>
-  </footer>
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
 </div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" id="brand" href="https://github.com/bebound/AltGallery" target="_blank" rel="noopener">
+      <img class="brand-mark" id="brand-mark" alt="" width="24" height="24" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+      <span>AltGallery</span>
+    </a>
+    <nav class="nav-links" data-i18n-aria="nav.label">
+      <a href="#overview" data-i18n="nav.overview" class="active"></a>
+      <a href="#library" data-i18n="nav.library"></a>
+    </nav>
+    <div class="controls">
+      <div class="segment" id="lang-seg" role="group" data-i18n-aria="lang.label">
+        <button type="button" data-lang="en">English</button>
+        <button type="button" data-lang="zh">中文</button>
+      </div>
+      <div class="segment" id="mode-seg" role="group" data-i18n-aria="mode.label">
+        <button type="button" data-mode="direct" data-i18n="mode.direct"></button>
+        <button type="button" data-mode="mirror" data-i18n="mode.mirror"></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page hero-page" id="overview">
+    <div class="hero">
+      <img class="hero-icon" id="hero-icon" alt="AltGallery" width="96" height="96" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+      <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+      <h1>AltGallery</h1>
+      <p class="hero-sub" data-i18n="hero.sub"></p>
+      <p class="hero-meta" id="hero-meta"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" id="add-all" target="_blank" rel="noopener" aria-disabled="true">
+          <span id="add-all-icon" aria-hidden="true"></span>
+          <span data-i18n="hero.addAll"></span>
+        </a>
+        <a class="btn btn-ghost" id="repo-btn" target="_blank" rel="noopener" data-i18n="hero.repo"></a>
+      </div>
+      <p class="hero-clients" data-i18n="hero.clients"></p>
+      <p class="mode-note" id="mode-note"></p>
+    </div>
+
+    <section class="recent" id="updates" hidden>
+      <div class="recent-head">
+        <h2 data-i18n="updates.title"></h2>
+        <div class="rail-tools">
+          <button type="button" class="rail-btn" id="rail-prev" data-i18n-aria="rail.prev" disabled>
+            <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M9.6 3.6 5.2 8l4.4 4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="rail-btn" id="rail-next" data-i18n-aria="rail.next" disabled>
+            <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M6.4 3.6 10.8 8l-4.4 4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="track" id="updates-track" tabindex="0" role="region" data-i18n-aria="updates.title"></div>
+    </section>
+
+    <a class="scroll-cue" href="#library">
+      <span data-i18n="hero.scroll"></span>
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <section class="page library-page" id="library">
+    <div class="library-head" data-reveal>
+      <p class="eyebrow" data-i18n="apps.collection"></p>
+      <h2 class="display" data-i18n="apps.title"></h2>
+      <p class="library-count" id="apps-count"></p>
+    </div>
+
+    <div class="toolbar" data-reveal>
+      <div class="search">
+        <svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+          <circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+          <path d="M13.2 13.2 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+        </svg>
+        <input id="search" type="search" autocomplete="off" spellcheck="false" disabled data-i18n-placeholder="search.placeholder" data-i18n-aria="search.label">
+      </div>
+      <div class="segment sort-seg" id="sort-seg" role="group" data-i18n-aria="apps.sortLabel">
+        <button type="button" data-sort="updated" data-i18n="sort.updated" aria-pressed="true"></button>
+        <button type="button" data-sort="name" data-i18n="sort.name" aria-pressed="false"></button>
+      </div>
+    </div>
+
+    <div class="grid" id="grid" aria-busy="true"></div>
+    <p class="status" id="status" hidden role="status"></p>
+    <p class="empty" id="empty" hidden data-i18n="apps.empty"></p>
+
+    <footer class="footer">
+      <p data-i18n="footer.note"></p>
+      <p class="footer-links">
+        <a id="footer-source" target="_blank" rel="noopener">all-apps.json</a>
+        <span aria-hidden="true">·</span>
+        <a id="footer-proxy" target="_blank" rel="noopener">all-apps-proxy.json</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/bebound/AltGallery/issues/new" target="_blank" rel="noopener" data-i18n="footer.request"></a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/bebound/AltGen" target="_blank" rel="noopener">AltGen</a>
+      </p>
+    </footer>
+  </section>
+</main>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop"></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <button type="button" class="modal-close" id="modal-close" data-i18n-aria="modal.close">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="modal-scroll" id="modal-body"></div>
+  </div>
+</div>
+
 <script src="app.js" defer></script>
 </body>
 </html>
