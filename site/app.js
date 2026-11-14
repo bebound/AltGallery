@@ -211,10 +211,11 @@
     return url;
   }
 
-  // The build copies every displayed image into media/ with its repository
-  // path unchanged, so a raw URL of this repository maps to the local copy by
-  // swapping the prefix. config.json lists both spellings of the raw prefix
-  // ("refs/heads/<branch>/" and "<branch>/"); derive them when absent.
+  // The build copies every displayed image into media/ under its repository
+  // path, and records in config.json's mediaFiles the path it actually staged
+  // (a WebP re-encode changes the extension). config.json lists both spellings
+  // of the raw prefix ("refs/heads/<branch>/" and "<branch>/"); derive them
+  // when absent.
   function rawBasesFrom(rawBase) {
     const match = String(rawBase || "").match(
       /^(https:\/\/raw\.githubusercontent\.com\/[^/]+\/[^/]+\/)(?:(?:refs\/heads\/)?([^/]+)\/)$/
@@ -226,7 +227,15 @@
   function mediaURL(url) {
     if (!url || !data) return url;
     for (const base of data.rawBases) {
-      if (url.startsWith(base)) return data.mediaBase + url.slice(base.length);
+      if (!url.startsWith(base)) continue;
+      let path = url.slice(base.length).split("?")[0];
+      try {
+        path = decodeURIComponent(path);
+      } catch (error) {
+        // A path that is not valid percent-encoding is used as written.
+      }
+      const staged = data.mediaFiles[path] || path;
+      return data.mediaBase + staged;
     }
     return url;
   }
@@ -1114,6 +1123,10 @@
       ? config.rawBases.slice()
       : rawBasesFrom(rawBase);
     const mediaBase = config.mediaBase || "media/";
+    // Repository path -> staged file. Without it every image keeps its path.
+    const mediaFiles = config.mediaFiles && typeof config.mediaFiles === "object"
+      ? config.mediaFiles
+      : {};
     const proxyPrefixValue = config.proxyPrefix || DEFAULT_PROXY_PREFIX;
     const repoParts = rawBase ? rawBase.split("/") : [];
     const repo =
@@ -1183,6 +1196,7 @@
       tint: source.tintColor || "",
       rawBases,
       mediaBase,
+      mediaFiles,
       proxyPrefix: proxyPrefixValue,
       repo,
       allSource,

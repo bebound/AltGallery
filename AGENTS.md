@@ -120,12 +120,23 @@ built from the generated sources:
   `apps/<App>/apps-proxy.json` sources.
 - `tools/build_site.py` — validates `all-apps-proxy.json` against
   `all-apps.json` (the proxy prefix is derived from the mirror), checks that
-  every per-app source exists, copies every displayed image from the working
-  tree to `_site/media/` with its repository path unchanged, writes a
-  generated `config.json` (the raw URL prefixes and `mediaBase`, which the
-  page uses to map a raw URL to its local copy), and stages the split site
-  plus both JSON files. Content hashes are added to the CSS/JS references
-  only. Stdlib only.
+  every per-app source exists, stages every displayed image from the working
+  tree into `_site/media/`, writes a generated `config.json` (the raw URL
+  prefixes, `mediaBase` and `mediaFiles`, which the page uses to map a raw URL
+  to its local copy), and stages the split site plus both JSON files. Content
+  hashes are added to the CSS/JS references only.
+
+  Staged images are optimized for the size they render at, which is where most
+  of the page's weight went: app icons are resized to 128×128 (the largest CSS
+  box is 84px, so 128 still covers a 2× display) and the site logo to 256×256,
+  screenshots are capped at 800px tall, and everything is re-encoded to WebP
+  and kept only when that is smaller than the original bytes — the constants
+  at the top of the script set each budget. An embedded ICC profile (most
+  screenshots are Display P3) is carried into the WebP, so colours do not
+  shift. Because the extension usually changes, `config.json`'s `mediaFiles`
+  maps each repository path to the file actually staged; a file that stays in
+  its original format keeps its path. Needs Pillow (`pip install pillow`;
+  the venv from `requirements.txt` has it), not stdlib only.
 - `.github/workflows/pages.yml` — builds and deploys only when the update
   workflow finishes (an update run triggered by the push, including the
   bot's own commits, which never trigger `push` workflows), plus manual
@@ -154,8 +165,9 @@ fetches `all-apps.json` and `config.json` from its own directory and draws
 every image from `media/` beside it — so the identical build serves both the
 GitHub Pages and the Cloudflare Pages deployment. Serving its own images is
 what lets a CDN in front of the site (Cloudflare Polish, for one) cache and
-convert them; `media/` mirrors the repository layout, so a changed image is
-the same URL with revalidation.
+convert them; `media/` mirrors the repository layout (with a `.webp`
+extension where an image was re-encoded), so a changed image is the same URL
+with revalidation.
 
 ## Generating News Images
 

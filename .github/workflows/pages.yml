@@ -29,6 +29,11 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # build_site.py re-encodes every displayed image (Pillow); the runner's
+      # system python does not ship it.
+      - name: Install image dependencies
+        run: pip install --disable-pip-version-check pillow
+
       - name: Build the page
         run: |
           python3 tools/build_site.py

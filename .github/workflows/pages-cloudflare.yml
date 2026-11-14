@@ -59,6 +59,9 @@ jobs:
           fi
           exit $missing
 
+      - name: Install image dependencies
+        run: pip install --disable-pip-version-check pillow
+
       - name: Build the page
         run: |
           python3 tools/build_site.py

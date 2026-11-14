@@ -37,24 +37,41 @@ Display images come out of the working tree: a raw URL of this repository maps
 straight back to a repository path and is copied from there. Images hosted
 anywhere else are left on their original URL.
 
+The build also shrinks what it copies, since the catalog ships multi-megabyte
+PNG artwork that the page never draws at full size:
+
+  * app icons are resized to 128x128 (the largest CSS box is 84px, so this
+    still covers a 2x display) and the site's own logo to 256x256;
+  * screenshots are capped at SCREENSHOT_MAX_HEIGHT, well above the tallest
+    box they render in;
+  * every image is re-encoded to WebP and kept only if that is smaller than
+    the original bytes, otherwise the original format is served as before.
+
+Because the extension can change, the copies no longer keep the repository
+path verbatim in every case: config.json's "mediaFiles" maps a repository
+path to the file to serve, and the page resolves a display URL through it.
+
 Local preview (pick either):
 
   python3 tools/build_site.py && open _site/preview.html   # no server needed
   python3 tools/build_site.py && python3 -m http.server -d _site
 
-Stdlib only.
+Needs Pillow (it is in requirements.txt, so a uv venv has it).
 """
 
 from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import re
 import shutil
 import sys
 from pathlib import Path
 from urllib.parse import unquote
+
+from PIL import Image
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SOURCE = Path("all-apps.json")
@@ -72,6 +89,15 @@ RAW_BASE = re.compile(
 )
 DEFAULT_PROXY_PREFIX = "https://gh-proxy.com/"
 MEDIA_DIR = "media"
+
+# Rendering budgets. The page draws an app icon at most at 84 CSS px (hero and
+# detail header), so 128 px still covers a 2x display; the site logo is drawn
+# at up to 96 px. Screenshots render at most 340 px tall in the strip.
+ICON_PX = 128
+LOGO_PX = 256
+SCREENSHOT_MAX_HEIGHT = 800
+WEBP_QUALITY = 82
+ICON_WEBP_QUALITY = 92
 
 
 def warn(message: str) -> None:
@@ -186,15 +212,99 @@ def display_images(source: dict) -> list[str]:
     return sorted({url for url in urls if url})
 
 
-def stage_media(source: dict, raw_base: str, out_dir: Path) -> None:
-    """Copy every displayed image into <out_dir>/media/, keeping repo paths.
+def open_image(path: Path) -> tuple[Image.Image, bytes | None]:
+    """Open an image in a mode WebP can encode, keeping transparency.
 
-    The page maps a raw URL of this repository to the same path under media/,
-    so the layout here is the mapping: no per-file index is needed, and a file
-    that moves in the repository moves here too.
+    The ICC profile comes back separately: most of these screenshots were
+    captured on a Display P3 device, and a WebP without the profile renders
+    with shifted colours.
+    """
+    image = Image.open(path)
+    image.load()
+    profile = image.info.get("icc_profile") or None
+    if image.mode in ("RGBA", "LA", "PA") or "transparency" in image.info:
+        return image.convert("RGBA"), profile
+    return image.convert("RGB"), profile
+
+
+def fit_box(image: Image.Image, box: int) -> Image.Image:
+    """Downscale into a box x box square, never enlarging."""
+    if image.width <= box and image.height <= box:
+        return image
+    resized = image.copy()
+    resized.thumbnail((box, box), Image.Resampling.LANCZOS)
+    return resized
+
+
+def limit_height(image: Image.Image, max_height: int) -> Image.Image:
+    """Downscale to max_height tall, never enlarging."""
+    if image.height <= max_height:
+        return image
+    width = max(1, round(image.width * max_height / image.height))
+    return image.resize((width, max_height), Image.Resampling.LANCZOS)
+
+
+def webp_bytes(image: Image.Image, quality: int | None, profile: bytes | None) -> bytes:
+    buffer = io.BytesIO()
+    options = {"method": 6}
+    if profile:
+        options["icc_profile"] = profile
+    if quality is None:
+        image.save(buffer, "WEBP", lossless=True, **options)
+    else:
+        image.save(buffer, "WEBP", quality=quality, **options)
+    return buffer.getvalue()
+
+
+def optimized_bytes(kind: str, local: Path) -> bytes:
+    """The smallest WebP encoding worth serving for this image.
+
+    Icons and the logo are small and flat, so lossless usually beats lossy;
+    screenshots are photographic and only worth a lossy encode.
+    """
+    image, profile = open_image(local)
+    if kind == "logo":
+        image = fit_box(image, LOGO_PX)
+    elif kind == "icon":
+        image = fit_box(image, ICON_PX)
+    else:
+        image = limit_height(image, SCREENSHOT_MAX_HEIGHT)
+    candidates = (
+        [webp_bytes(image, None, profile), webp_bytes(image, ICON_WEBP_QUALITY, profile)]
+        if kind in ("icon", "logo")
+        else [webp_bytes(image, WEBP_QUALITY, profile)]
+    )
+    return min(candidates, key=len)
+
+
+def image_kind(url: str, icon_urls: set[str], logo_url: str) -> str:
+    if url == logo_url:
+        return "logo"
+    if url in icon_urls:
+        return "icon"
+    return "screenshot"
+
+
+def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
+    """Stage every displayed image into <out_dir>/media/.
+
+    Icons and screenshots are downscaled and re-encoded to WebP when that
+    makes them smaller; anything else is copied verbatim. Returns the served
+    path for each repository path, which config.json hands to the page — the
+    two differ when an image became a .webp.
     """
     media_root = out_dir / MEDIA_DIR
-    copied = written = 0
+    icon_urls = {app.get("iconURL") for app in source.get("apps", [])}
+    logo_url = source.get("iconURL") or ""
+    served: dict[str, str] = {}
+    taken: set[str] = set()
+    before = after = copied = 0
+
+    # Start clean: a re-encoded image changes extension, and a stale copy of
+    # the old one would otherwise be deployed alongside it.
+    if media_root.exists():
+        shutil.rmtree(media_root)
+
     for url in display_images(source):
         relative = repo_relative(url, raw_base)
         if relative is None:
@@ -203,13 +313,33 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> None:
         if not local.is_file():
             warn(f"{relative}: not in the working tree; the page will miss it under media/")
             continue
+
         data = local.read_bytes()
-        path = media_root / relative
+        target = relative
+        try:
+            webp = optimized_bytes(image_kind(url, icon_urls, logo_url), local)
+        except Exception as exc:  # unreadable or unsupported artwork
+            warn(f"{relative}: cannot re-encode ({exc}); serving it unchanged")
+        else:
+            webp_path = str(Path(relative).with_suffix(".webp"))
+            # Two sources (home.png and home.jpg, say) can want the same name;
+            # the first one keeps it and the rest stay in their own format.
+            if webp is not None and len(webp) < len(data) and webp_path not in taken:
+                data, target = webp, webp_path
+        path = media_root / target
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
+        served[relative] = target
+        taken.add(target)
         copied += 1
-        written += len(data)
-    print(f"Staged {copied} display images ({written / 1024 / 1024:.1f} MB) in {MEDIA_DIR}/")
+        before += local.stat().st_size
+        after += len(data)
+
+    print(
+        f"Staged {copied} display images in {MEDIA_DIR}/: "
+        f"{before / 1024 / 1024:.1f} MB -> {after / 1024 / 1024:.1f} MB"
+    )
+    return served
 
 
 def github_repo_from_raw(raw_base: str) -> str:
@@ -292,7 +422,7 @@ def main() -> int:
             raise SystemExit(f"error: missing {site_dir / name}")
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    stage_media(source, raw_base, out_dir)
+    media_files = stage_media(source, raw_base, out_dir)
 
     style = (site_dir / "style.css").read_bytes()
     script = (site_dir / "app.js").read_bytes()
@@ -311,6 +441,9 @@ def main() -> int:
         "rawBase": raw_base,
         "rawBases": ref_bases(raw_base),
         "mediaBase": MEDIA_DIR + "/",
+        # Repository path -> file actually staged, e.g.
+        # "apps/X/images/home.png": "apps/X/images/home.webp".
+        "mediaFiles": media_files,
         "proxyPrefix": proxy_prefix,
         "allSource": raw_base + "all-apps.json",
         "allSourceProxy": raw_base + "all-apps-proxy.json",
