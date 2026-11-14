@@ -19,6 +19,10 @@ stages everything the site needs:
   _site/index.html           page shell; style.css/app.js carry content hashes
   _site/style.css            page styles
   _site/app.js               page script
+  _site/icon.png             the site icon, drawn from the source logo; the
+                             tab, Safari favorites, the iOS home screen and
+                             the manifest all use this one file
+  _site/manifest.json        app name, colors and that icon
   _site/media/<repo path>    every displayed image, path unchanged
   _site/all-apps.json        catalog the page fetches (copy of the source)
   _site/all-apps-proxy.json  gh-proxy mirror (kept for download/compare)
@@ -48,6 +52,18 @@ PNG artwork that the page never draws at full size:
     box they render in;
   * every image is re-encoded to WebP and kept only if that is smaller than
     the original bytes, otherwise the original format is served as before.
+
+The site's own icons are rendered from the source logo (the same artwork the
+page shows in its header). They are static files linked from the HTML and the
+manifest rather than an img the page sets from JavaScript, because a browser
+captures a favorite's or a home-screen shortcut's icon when it is added, before
+the catalog has loaded.
+
+Every icon is that one drawing at four sizes: the browser tab, Safari's
+favorites tile, the iOS home screen, and the icons Chrome/Android and Edge
+install from. Nothing is flattened onto a background square, so the artwork
+keeps its own shape wherever it is shown and the rounded corners stay
+transparent.
 
 Because the extension can change, the copies no longer keep the repository
 path verbatim in every case: config.json's "mediaFiles" maps a repository
@@ -100,6 +116,12 @@ LOGO_PX = 256
 SCREENSHOT_MAX_HEIGHT = 800
 WEBP_QUALITY = 82
 ICON_WEBP_QUALITY = 92
+
+# The site's own icon, one PNG that the tab, Safari's favorites tile, the iOS
+# home screen and the Web App Manifest all point at. 256 px covers every use:
+# a tab favicon is drawn at 16–32 px, iOS downsamples whatever it is given, and
+# Chrome installs from any icon of 144 px or more.
+SITE_ICON_PX = 256
 
 
 def warn(message: str) -> None:
@@ -294,6 +316,62 @@ def image_kind(url: str, icon_urls: set[str], logo_url: str) -> str:
     return "screenshot"
 
 
+def write_site_icon(logo_path: Path, out_dir: Path) -> None:
+    """Write _site/icon.png, the site's one icon.
+
+    The tab favicon, Safari's favorites tile, the iOS home screen and the
+    manifest Chrome/Android and Edge install from all point at this one file:
+    each of them scales it to whatever size it wants, so extra copies would
+    only be the same drawing at other sizes. The logo's rounded, transparent
+    corners are kept rather than composited onto an opaque square, so every
+    surface shows the artwork as it was made.
+    """
+    logo = Image.open(logo_path)
+    logo.load()
+    logo.convert("RGBA").resize(
+        (SITE_ICON_PX, SITE_ICON_PX), Image.Resampling.LANCZOS
+    ).save(out_dir / "icon.png", optimize=True)
+
+
+def write_manifest(source: dict, out_dir: Path) -> None:
+    """Write _site/manifest.json.
+
+    This is what Chrome/Android and Edge read when the page is installed to
+    the home screen or app launcher; iOS reads the touch icon from the HTML
+    instead, and only takes the name and launch background from here.
+
+    The file is named .json rather than the conventional .webmanifest on
+    purpose: browsers accept either, but GitHub Pages only maps the extensions
+    in its own fixed table, and an unrecognised one is served as
+    application/octet-stream, which Chrome then refuses to parse as a manifest
+    — silently, taking the Android install icon with it. .json is served as
+    application/json on both hosts this site deploys to.
+
+    Android masks every icon to the launcher's shape, and only an icon marked
+    "maskable" is asked to fill that shape: this one keeps the logo's
+    transparent corners, so it is declared as "any" and Android is left to draw
+    it on whatever background it picks.
+    """
+    tint = source.get("tintColor") or "#3B82F6"
+    icons = [
+        {"src": "icon.png", "sizes": f"{SITE_ICON_PX}x{SITE_ICON_PX}",
+         "type": "image/png", "purpose": "any"},
+    ]
+    manifest = {
+        "name": source.get("name") or "AltGallery",
+        "short_name": source.get("name") or "AltGallery",
+        "start_url": ".",
+        "scope": ".",
+        "display": "standalone",
+        "background_color": tint,
+        "theme_color": tint,
+        "icons": icons,
+    }
+    (out_dir / "manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+
+
 def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
     """Stage every displayed image into <out_dir>/media/.
 
@@ -474,6 +552,13 @@ def main() -> int:
 
     out_dir.mkdir(parents=True, exist_ok=True)
     media_files = stage_media(source, raw_base, out_dir)
+
+    logo_relative = repo_relative(source.get("iconURL") or "", raw_base)
+    if logo_relative and (REPO_ROOT / logo_relative).is_file():
+        write_site_icon(REPO_ROOT / logo_relative, out_dir)
+    else:
+        warn("cannot find the site logo in the working tree; the page will have no icon")
+    write_manifest(source, out_dir)
     i18n = load_i18n(site_dir, source)
 
     style = (site_dir / "style.css").read_bytes()
@@ -529,13 +614,16 @@ def main() -> int:
         "index.html",
         "style.css",
         "app.js",
+        "icon.png",
+        "manifest.json",
         "all-apps.json",
         "all-apps-proxy.json",
         "config.json",
         "preview.html",
     ):
         path = out_dir / name
-        print(f"  {display(path)}  {path.stat().st_size / 1024:.0f} KB")
+        if path.is_file():
+            print(f"  {display(path)}  {path.stat().st_size / 1024:.0f} KB")
     for lang, table in i18n.items():
         print(f"  i18n/{lang}.json: {len(table)} translated apps")
     return 0

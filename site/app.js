@@ -368,16 +368,6 @@
   let railInView = true;
   let railKeyboard = false;
 
-  function ensureFavicon() {
-    let link = document.querySelector('link[rel="icon"]');
-    if (!link) {
-      link = document.createElement("link");
-      link.rel = "icon";
-      document.head.append(link);
-    }
-    link.href = assetURL(data.icon);
-  }
-
   function applyLabels() {
     document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
     document.title = "AltGallery";
@@ -431,9 +421,8 @@
 
     $("#search").disabled = false;
     grid.setAttribute("aria-busy", "false");
-
-    ensureFavicon();
   }
+
 
   function iconTile(app, className) {
     const tile = h("span", { class: "icon-tile " + className, style: tintStyle(app.tint) });
