@@ -1,0 +1,202 @@
+{
+  "_comment": "Chinese subtitle/description overlay for the site, keyed by bundleIdentifier. Subtitle text matches README_CN.md; description is the translation of config.toml [app] description. Apps whose catalog text is already Chinese need no entry — the page falls back to it. Maintained by hand; tools/build_site.py folds it into config.json.",
+  "app.aidoku.Aidoku": {
+    "subtitle": "免费开源的 iOS 与 iPadOS 漫画阅读应用。",
+    "description": "免费开源的 iOS 与 iPadOS 漫画阅读应用。"
+  },
+  "com.mak5er.aircard": {
+    "subtitle": "无需越狱，在设备上自定义 Apple 钱包卡面、密码键盘与 PosterBoard 壁纸。",
+    "description": "在设备上直接自定义 Apple 钱包卡面、锁屏密码键盘与 PosterBoard 壁纸，无需越狱。需要 iOS 27 或更高版本、以回环模式运行的 LocalDevVPN，以及开发者模式配对。"
+  },
+  "com.rileytestut.AltStore": {
+    "subtitle": "面向未越狱 iOS 设备的原创第三方应用商店——通过 Mac 或 PC 上的 AltServer 侧载未公证的 IPA。",
+    "description": "AltStore Classic 可借助 Mac 或 PC 上的 AltServer 侧载未经公证的 .ipa 文件。"
+  },
+  "com.christianselig.Apollo": {
+    "subtitle": "由社区维护的 iOS 插件，让 Apollo for Reddit 在 2023 年 6 月关停后继续可用。",
+    "description": "Apollo-Reborn 是由社区维护的 Apollo 侧载版本，由 Apollo-Reborn 插件驱动。\n\n它恢复了自定义 API 支持、媒体修复、上传、内联媒体、翻译、已保存分类、主屏幕与锁屏小组件、iOS 26+ 的液态玻璃支持，以及该项目持续进行的其他修复与增强。\n\n这些源面向 AltStore Classic、SideStore 与 Feather。Apollo-Reborn 不兼容 AltStore PAL。\n\n请按你的侧载方式选择对应的源版本：\n\n• Standard：完整应用包，含 Apollo 可用的扩展与 Apollo-Reborn 小组件\n• No Extensions：去除应用扩展（含小组件），以减少免费 Apple ID 的 App ID 占用\n• GLASS：加入 iOS 26 液态玻璃补丁与随附的液态玻璃图标集\n• No Extensions + GLASS：同时包含以上两项\n\n含扩展的版本（Standard 与 GLASS）会注册约 7 个 App ID，每个内置应用扩展占用一个。免费 Apple ID 每 7 天可注册 10 个 App ID，因此单次干净安装尚可容纳，但若以多个 Bundle ID 安装、在同一周内重装，或侧载其他含扩展的应用，很容易超限。若安装因 App ID 报错失败，请改用 No Extensions 版本（1 个 App ID），或等待较早的 App ID 过期。付费 Apple Developer 账号的额度要高得多。\n\n本项目与 Apollo 及 Christian Selig 无关联。"
+  },
+  "com.armsx2.ios": {
+    "subtitle": "面向 iOS 与 iPadOS 的原生 ARM64 PlayStation 2 模拟器，基于 PCSX2 分支。",
+    "description": "基于 PCSX2 的免费开源 PlayStation 2（PS2）模拟器，带原生 ARM64 JIT 重编译器。可在手机、PC 或游戏掌机上玩 PS2 游戏。"
+  },
+  "wiki.qaq.Asspp": {
+    "subtitle": "跨 App Store 区域管理多个 Apple ID——浏览、下载并保留任意区域的官方 IPA，无需退出登录。",
+    "description": "跨 App Store 区域管理多个 Apple ID：即时切换商店、随处浏览并下载官方 IPA，并保有一个可搜索、含历史版本的 IPA 资料库——全程无需在设备上退出登录。\n\n下载通过 Apple 的服务器并使用你自己的 Apple ID 完成。由于所用协议与 ipatool 相同，强烈建议使用小号或一次性账号。"
+  },
+  "com.thebcd69.bcd": {
+    "subtitle": "在 iPhone 与 iPad 上运行 Windows 游戏——由 Wine、FEX 与 Metal 驱动、内置 Steam 和 GOG 的快速手柄友好启动器。",
+    "description": "快速、适配手柄的启动器，在 iOS 与 iPadOS 上运行 Windows 游戏，内置 Steam 与 GOG，由 Wine、FEX 及经 DXMT 的 Metal 驱动。"
+  },
+  "com.ahmedbafkir.dlipa": {
+    "subtitle": "搜索 App Store，将任意应用（包括旧版本）下载为 IPA，并用你的 Apple ID 安装或分享——无需越狱。",
+    "description": "一款受 ipatool 启发的 iOS 应用。用 Apple ID 登录后可搜索 App Store，把任意应用（含历史版本）下载为 IPA，并在无需越狱的情况下安装或分享。"
+  },
+  "com.naine.doer": {
+    "subtitle": "Linux.do 的原生 iOS 客户端。",
+    "description": "Linux.do 的原生 iOS 客户端——UIKit + Swift，主应用不含 SwiftUI。"
+  },
+  "me.oatmealdome.DolphiniOS-njb-patreon-beta": {
+    "subtitle": "重生的 Dolphin for iOS——面向 iPhone 与 iPad 的 GameCube 与 Wii 模拟器。",
+    "description": "重生的 Dolphin for iOS，适用于 iPhone 与 iPad 的 GameCube 与 Wii 模拟器。"
+  },
+  "com.mafty.dukex": {
+    "subtitle": "iOS 上的初代 Xbox 模拟器，基于 xemu 构建并配有原生 Swift 界面。",
+    "description": "DukeX 是面向 iOS 的实验性 xemu 前端。它把 xemu 核心嵌入原生 Swift 外壳，并通过 MoltenVK 与原生 Metal 呈现 Vulkan 渲染器。"
+  },
+  "app.ehpanda": {
+    "subtitle": "使用 SwiftUI 与 TCA 构建的非官方 E-Hentai iOS 应用。",
+    "description": "EhPanda 是用 SwiftUI 与 TCA 构建的非官方 E-Hentai iOS 与 iPadOS 客户端。支持几乎全部 E-Hentai 画廊分类、带筛选的画廊浏览、含标签与相关画廊的详情页、评论的发布/编辑/回复、H@H 归档、种子列表、E-Hentai 设置，以及在受限网络下绕过 SNI（域名前置）。内置多语言，应用图标与强调色均可自定义。"
+  },
+  "com.jbdotparty.Erosion": {
+    "description": "Erosion MobileGestalt 工具箱的简体中文本地化版本，针对 iOS / iPadOS 27.x 的系统配置强化了写入与备份流程，并部分支持 iOS / iPadOS 26.x。重签名时至少需要一个 App Group 权限。"
+  },
+  "app.fathom.emulator": {
+    "subtitle": "面向 iOS 的 x86-64 PC 模拟器——通过 FEXCore 在运行时将 x86-64 Linux 可执行文件转译为 ARM64 运行。需要 JIT，并在运行时附加调试器。",
+    "description": "一款面向 iOS 的 x86-64 PC 模拟器。Fathom 通过在运行中把 x86-64 程序翻译为 ARM64，让 iPhone 或 iPad 运行 x86-64 Linux 程序；翻译由 FEX-Emu 背后的动态重编译器 FEXCore 完成，并配有原生 SwiftUI 前端。\n\n导入一个静态链接的 x86-64 Linux 可执行文件，打开它，按下运行即可。Fathom 会把它映射进客户机地址空间，将指令交给 FEXCore 的 JIT，应答其 Linux 系统调用，并显示输出。\n\nJIT 需要 StikDebug 附加到进程来处理可执行内存的陷阱；缺失时 Fathom 会在启动时自动询问。\n\n请注意：目前只能运行静态链接、位置无关的可执行文件（-static-pie）。暂不支持动态链接的二进制与 32 位 x86，且尚未实现线程，因此客户机为单线程运行。"
+  },
+  "thewonderofyou.Feather": {
+    "subtitle": "免费的在设备端 iOS/iPadOS 签名与应用管理工具——用自己的 Apple 开发者证书签名并安装 IPA，无需电脑。",
+    "description": "免费的在设备上管理与安装 iOS/iPadOS 应用的工具。Feather 使用 Apple Developer Program 的证书为 ipa 签名并在原版 iOS 上安装，内置应用管理功能。"
+  },
+  "com.huami.gestultx": {
+    "subtitle": "在 iOS 27 上编辑 MobileGestalt——区域代码调整、设备预设与能力开关，支持备份和带类型的 plist 字段编辑器。",
+    "description": "面向 iOS 27.x 的 MobileGestalt 编辑器，支持区域代码与销售区域修改、设备预设、备份，以及带类型校验的字段编辑器。基于 worse_query；设备端访问 MobileGestalt 需要 iOS 27，重签名时需要共同的 App Group。"
+  },
+  "com.example.HermesEnabler": {
+    "subtitle": "在任何 Apple Watch 上启用 Hermès 与 Ultra 表盘，并提供手表端显示、传感器与 Siri 调整。需要 watchOS 27.0–27.3 beta 1 和付费的开发者账号。",
+    "description": "在任意 Apple Watch 上启用 Hermès 与 Ultra 表盘，并附有基于 MobileGestalt 修改与自动备份的显示、传感器与 Siri 调整。需要 watchOS 27.0 至 27.3 beta 1，以及付费 Apple Developer 账号。"
+  },
+  "com.husk.app": {
+    "subtitle": "在 iOS 上运行 Android 应用——放入 APK，轻点即可全屏打开。需要 JIT，并在运行时附加调试器。",
+    "description": "在 iOS 上运行 Android 应用：导入 APK，点一下，Android 应用便在具备硬件加速显示与音频的 QEMU 客户机中全屏打开。需要 JIT 并在运行时附加调试器，因此要求侧载环境能提供 get-task-allow，而非普通的重新签名。"
+  },
+  "com.kuschqin.madeira.steamui": {
+    "subtitle": "通过 Madeira 的实验性本地运行时，在 iPhone 与 iPad 上运行 Steam 大屏幕模式和兼容的 Windows PC 游戏。",
+    "description": "通过 Madeira、Wine、FEX 与 Metal，在 iPhone 与 iPad 上本地运行 Valve Steam 客户端的大屏幕模式与兼容的 Windows PC 游戏。实验性；需要 iOS 26+、JIT，以及自备的 Steam 文件。"
+  },
+  "app.local.iPadn": {
+    "subtitle": "在 iPhone 与 iPad 上搜索、下载并安装你已拥有的应用——旧版本、已下架应用、区域价格与原生安装。",
+    "description": "搜索、下载并安装你已拥有的 iPhone 与 iPad 应用——包括历史版本、已下架应用、区域价格比较与原生安装。支持 iPhone、iPad、Apple TV 与 Mac 应用，提供 11 种语言。"
+  },
+  "software.iridium": {
+    "subtitle": "实验性的 iPhone 与 iPad Windows 游戏运行时，配有原生游戏库以及触控、键盘、鼠标与手柄集成。",
+    "description": "实验性的 iPhone 与 iPad Windows 游戏运行时，带原生游戏库，以及触控、键盘、鼠标与手柄集成。需要 iOS 18+、JIT 与自备的游戏文件；兼容性因游戏与设备而异。"
+  },
+  "com.xitrix.iTorrent2": {
+    "subtitle": "iOS 种子客户端。",
+    "description": "iTorrent 是一款普通的 iOS 种子客户端，支持「文件」App，功能远不止于此。\n\n这个 App 能做什么：\n\n• 后台下载\n• 实况活动与灵动岛进度条\n• 下载到外置存储\n• 顺序下载（可用 VLC 边下边看影片）\n• 从分享菜单（Safari 及其他应用）添加种子文件\n• 直接在 Safari 中添加磁力链接\n• 把文件存入「文件」App\n• 直接从 App 内分享文件\n• 通过 URL 下载种子\n• 通过磁力链接下载种子\n• 种子下载完成时发送通知\n• Web/WebDAV 服务器\n• 选择文件的下载优先级\n• 切换深色主题界面\n• 颜色个性化\n• RSS 订阅"
+  },
+  "dev.linuxrunner.app": {
+    "subtitle": "无需越狱、虚拟机或 JIT，在 iOS 上运行 ARM64 Linux 应用与桌面环境。",
+    "description": "在 iOS 上运行 ARM64 Linux 应用与桌面环境，无需越狱、虚拟机或 JIT。"
+  },
+  "com.kdt.livecontainer": {
+    "subtitle": "一款无需真正安装即可运行 iOS 应用的应用启动器，内置用于刷新应用的 SideStore。",
+    "description": "无需真正安装即可运行 iOS 应用的应用启动器。此版 LiveContainer 内置 SideStore，用于续签你的应用。"
+  },
+  "com.llayerlinux.LSX4RuntimeProbe": {
+    "subtitle": "面向 iOS 的开源 PlayStation 4/5 模拟器；当前 iOS 版本支持 PS4 游戏，需要 iOS 26+ 与 JIT。",
+    "description": "面向 Android 与 iOS 的开源 PlayStation 4/5 模拟器。当前 iOS 版本支持 PS4 游戏，要求 iOS 26+ 并启用 JIT。"
+  },
+  "com.willfaust.madeora": {
+    "subtitle": "通过 Wine、FEX-Emu 与 Metal 在 iPhone 上运行未经修改的 x86-64 Windows PC 游戏——无需越狱。",
+    "description": "Madeira 在单个受沙盒限制的 iOS 应用内运行未经修改的 x86-64 Windows PC 游戏：FEX-Emu 在运行中把游戏的 x86 代码翻译为 ARM64，为 ARM64EC 构建的 Wine 11.4 提供 Windows 本身，DXMT 与 Madeira 自有的 Direct3D 12 运行时则通过 Metal 绘制 Direct3D 9、10、11 与 12。游戏配有资料库、Steam 登录与安装、手柄与触控操作，以及键盘、鼠标与触控板输入。需要 iOS 26 或更高版本的 iPhone，并通过 StikDebug 启用 JIT。"
+  },
+  "com.kodjodevf.mangayomi": {
+    "subtitle": "阅读漫画、小说，观看番剧。",
+    "description": "Mangayomi 是一个开源 Flutter 应用，可在多平台上阅读漫画、小说并观看动漫。"
+  },
+  "com.aoshuang.manicemu": {
+    "subtitle": "面向 iOS 的一体化复古游戏模拟器，界面简洁，平台支持广泛。",
+    "description": "iOS 上的一体化复古游戏模拟器，把主机、街机、电脑与手机 Java 系统汇集于一个清爽的应用中，支持存档、金手指、自定义皮肤、RetroAchievements 等。"
+  },
+  "org.zhaohe.MiniWatts": {
+    "subtitle": "基于 Apple 私有 API 的 iPhone 电池与充电监控——充电器瓦数、电芯功率、热损耗以及每一个温度传感器。",
+    "description": "基于 Apple 私有 API 的 iPhone 电池与充电监控工具：充电器的真实瓦数、有多少真正进入电池、其余多少化为热量，以及手机上的每一个温度传感器。没有网络相关代码——它读取的一切都留在你的手机上。"
+  },
+  "com.zarz.mornye": {
+    "subtitle": "一款 Flutter 与 Rust 打造的音乐应用，具备高解析播放器、滚动歌词、可安装的下载扩展，本地曲库还能从 SMB、WebDAV 与 Subsonic 服务器串流。",
+    "description": "Mornye 是一个用 Flutter 与 Rust 编写的音乐应用，具备全屏播放器、高解析度与位完美输出、逐字同步歌词，以及可安装的元数据与音频下载扩展。下载内容与你自己的音乐文件夹共用一个本地资料库，SMB、WebDAV、HTTP 或 Subsonic 服务器也可直接串流到手机。"
+  },
+  "com.dddevid.musly": {
+    "subtitle": "免费的 Navidrome 客户端与 Subsonic 音乐播放器，采用 Apple Music 风格界面。",
+    "description": "Musly 是一款免费的 Navidrome 客户端与 Subsonic 音乐播放器，界面灵感来自 Apple Music。可在 iOS、Android、桌面等平台串流你自建的 Navidrome、Subsonic 或 Airsonic 资料库。"
+  },
+  "com.verback.YTLite": {
+    "subtitle": "面向 iOS 12+ 的轻量、注重隐私的 YouTube 客户端，支持 SponsorBlock、Return YouTube Dislike 与最高 1080p 播放。",
+    "description": "轻量的 YouTube 客户端，支持 SponsorBlock、Return YouTube Dislike，以及最高 1080p 播放。无广告、无追踪、无依赖。"
+  },
+  "com.aigch.OpenParsec": {
+    "subtitle": "面向 iOS 与 iPadOS 的开源 Parsec 客户端，支持鼠标、键盘与触屏。",
+    "description": "面向 iOS/iPadOS 的开源 Parsec 客户端，支持鼠标、键盘与触摸屏操作。"
+  },
+  "com.makr.orchard": {
+    "subtitle": "通过 Apple 自身的链路，在 QEMU 的 apple-vm 机器上于 iPhone 启动 arm64 macOS Ventura 客户机，GPU 经由 Metal 绘制。需要 JIT 和你自己的 macOS 虚拟机。",
+    "description": "通过 Apple 自有的链路（AVPBooter、iBoot 与 XNU），在 QEMU 的 apple-vm 机器上于 iPhone 内启动真实的 arm64 macOS Ventura 客户机，GPU 由 reims-vgpu 经 Metal 绘制。需要 JIT、可为应用加上更高内存上限的签名工具，以及自行制作的 macOS 虚拟机。它很慢——轻负载场景最好也只有 30–40 fps。"
+  },
+  "dev.playport.app": {
+    "subtitle": "在未越狱的原版 iPhone 上原生运行 64 位与 32 位 Windows PC 游戏——无需电脑、云端或串流。",
+    "description": "Playport 在原版、未越狱的 iPhone 上运行 64 位与 32 位 Windows 游戏：从资料库把游戏装到手机上，接上手柄按下开始即可。游戏运行在手机自身的 CPU 与 GPU 上——无需 PC、无需云端、无需串流。需要 iOS 26 或更高版本，并通过 LocalDevVPN 或 StikDebug 启用 JIT。"
+  },
+  "com.miguel.psx3ios": {
+    "subtitle": "面向 iPhone 与 iPad 的 PlayStation 3 模拟器，基于 RPCS3 构建。",
+    "description": "面向 iPhone 与 iPad 的 PlayStation 3 模拟器，基于 RPCS3。真实游戏可以启动并游玩——整个模拟器核心都对外开放，支持社区游戏补丁、成就、游戏时长、存档与 14 种语言。有无 JIT 皆可运行。"
+  },
+  "com.neogamelab.neostation": {
+    "subtitle": "独立维护的 NeoStation iOS/iPadOS 分支，融合主机风格游戏库与内嵌 Libretro 核心、MeloNX、Dolphin、ARMSX2 与 RPCS3。",
+    "description": "独立维护的 NeoStation iOS/iPadOS 分支，提供适配手柄的主机式游戏库，并内置 Libretro 核心、MeloNX、Dolphin、ARMSX2 与 RPCS3 运行时、JIT 流程，以及用户自备固件、密钥与 BIOS 的支持。"
+  },
+  "com.sean.roamcontrol": {
+    "subtitle": "在统一的 Apple 地图界面中选择、测试并移动 iPhone 上报的位置。",
+    "description": "在同一张地图上设定固定的上报位置、预览并模拟 Apple Maps 步行路线、保存收藏与历史记录。需要 iOS 27 或更高版本，以及针对 Wi-Fi 与移动数据的引导式 LocalDevVPN 兼容会话。"
+  },
+  "com.rushhours.app": {
+    "subtitle": "免费的滑块交通益智游戏——移动车辆为红色小车让路。700+ 关卡、每日挑战与关卡编辑器，无广告。",
+    "description": "一款免费的滑动方块交通解谜游戏：沿车道滑动小汽车与卡车，把红色小车开出去。700+ 关卡、每日与每周挑战、关卡编辑器，以及可选的自建多人模式——无广告、无内购、无追踪。"
+  },
+  "app.scenebox.SceneBox": {
+    "subtitle": "面向 iOS、iPadOS、tvOS 与 Mac（Catalyst）的种子串流客户端，使用 SwiftUI 编写。",
+    "description": "面向 iOS、iPadOS、tvOS 与 Mac（Catalyst）的种子串流客户端，使用 SwiftUI 编写。串流源来自兼容 Stremio 的插件，经随附的 libtorrent 引擎送入 VLC 播放。"
+  },
+  "com.SideStore.SideStore": {
+    "subtitle": "面向未越狱 iOS 设备、由社区驱动且无需电脑的第三方应用商店——无需 AltServer 即可侧载 IPA。",
+    "description": "SideStore 是一款面向未越狱 iOS 设备、由社区驱动的免数据线替代应用商店。它用你的个人 Apple ID 重新签名并安装 .ipa 文件，并在后台自动续签，让侧载不再需要 AltServer。"
+  },
+  "com.silverphase.editor": {
+    "subtitle": "面向 iPhone 与 iPad 的原生胶片与印相工艺模拟器——选择胶片与相纸，再从曝光、显影到扫描塑造影像。",
+    "description": "一张照片要经历相机输入、胶片、冲洗、放大与扫描。选择胶片与相纸，再用曝光、冲洗反差、滤镜与画幅尺寸塑形，颗粒、光晕与片边都在同一条成像管线中生成。"
+  },
+  "com.ishtiaqsyed.StatsForIOS": {
+    "subtitle": "在 iPhone 上通过本地加密连接查看 Mac 的系统运行状态。",
+    "description": "通过本地加密连接在 iPhone 上查看 Mac 的系统活动。一款原生、本地优先的系统监视器，配有轻量的 Mac 端与移动端仪表盘。"
+  },
+  "com.stik.stikdebug": {
+    "subtitle": "面向 iOS 17.4+ 的在设备端 JIT 启用工具与设备工具箱，基于 idevice 构建。",
+    "description": "面向 iOS 17.4+ 的设备端调试器与开发者工具箱，由 idevice 驱动。注意：需要 LocalDevVPN，且无法在 LiveContainer 内部为该 LiveContainer 本身启用 JIT。"
+  },
+  "io.nekohasekai.swipt": {
+    "subtitle": "用 JavaScript Swiplet 自动化操控 iPhone 或 iPad，内置 TypeScript SDK 与兼容 MCP 的 API。",
+    "description": "Swipt 用 JavaScript 脚本片段（swiplets）自动化这台 iPhone 或 iPad。它内置基于 CoreDevice 与辅助功能服务的 TypeScript SDK，并提供兼容 MCP 的 API，便于在电脑上驱动与调试 swiplets。"
+  },
+  "com.suwayomi.tachideskSorayomi": {
+    "subtitle": "面向 Suwayomi-Server 的原生漫画与条漫阅读器，为长时间刷条漫而生。",
+    "description": "Tsumiru 是一个从 Suwayomi-Server 实例阅读漫画与韩漫的原生客户端，专为长时间条漫阅读打造。支持离线下载与设备端目录、重构的连续滚动条漫阅读器、无痕模式，以及 13 套内置主题。"
+  },
+  "com.utmapp.UTM": {
+    "subtitle": "功能完整的 iOS 虚拟机宿主——在 iPhone 与 iPad 上运行 Windows、Android 等。",
+    "description": "UTM 是一款功能完整的 iOS 虚拟机宿主。简而言之，它能让你在 iPhone 与 iPad 上运行 Windows、Android 等系统。\n\n此版本需要使用 AltJIT。若想在不启用 JIT 的情况下以较慢速度模拟，请安装 UTM SE。\n\n更多信息见 https://getutm.app/\n\n特性：\n\n• 模拟任意处理器\nqemu 支持 30 多种处理器，包括 x86_64、ARM64 与 RISC-V\n• 运行任意操作系统\n在 iOS 的 App 内原生、安全地运行 Windows、Linux 等\n• 快速模拟\n支持 SPICE 半虚拟化与 TCG 的 JIT 编译\n• 高兼容性\n支持 iOS 14+，可在 iPhone 与 iPad 上运行，无需越狱\n• 免费开源\nUTM 及其依赖全部免费开源\n• 易于使用\n在原生界面中配置并自定义你的虚拟机"
+  },
+  "cz.kolbi.wqfiles": {
+    "subtitle": "面向 iOS 26 与 27 的文件浏览器、App 数据管理与缓存清理工具——无需越狱即可浏览其他 App 的容器、编辑 plist、十六进制与 SQLite 数据库，并备份、恢复或清除 App 数据。",
+    "description": "面向 iOS 26 与 27 的文件浏览器、应用数据管理器和缓存清理工具，基于 worse_query 沙盒技术实现。无需越狱或内核漏洞，即可浏览其他应用的容器、编辑 plist、十六进制与 SQLite 数据库，并备份、恢复或清除应用数据。"
+  },
+  "com.zhangfuhao.wqtoolkit": {
+    "subtitle": "基于 App Group 容器查询原语的 iOS 工具箱——无需越狱即可浏览、清理与检查自己的应用数据容器，内置文件浏览器、缓存扫描与设备信息。",
+    "description": "基于 App Group 容器查询能力的 iOS 工具箱：无需越狱即可浏览、清理与检查你自己的应用数据容器。包含文件浏览器、缓存扫描、设备信息、MobileGestalt 缓存面板与数据透视，界面支持中英双语与 iPhone/iPad 布局。"
+  },
+  "com.google.ios.youtube": {
+    "subtitle": "为 iOS 打造的 YouTube 修改版，内置丰富可调项——无广告、后台播放、下载等。",
+    "description": "面向 iOS 的 YouTube YouPro 修改版。包含去广告、后台播放、下载、iSponsorBlock、画中画，以及大量可自定义的调整项。"
+  }
+}

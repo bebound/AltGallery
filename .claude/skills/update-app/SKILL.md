@@ -278,7 +278,12 @@ PY
      position in the list.
    - Refresh the one-line description when the project's description changed.
    - Apply the same change to `README_CN.md` — identical heading and icon URL,
-     description line in Chinese. Both READMEs share the same app order.
+     description line in Chinese (`README.md` keeps the app's own language,
+     `README_CN.md` is always Chinese). Both READMEs share the same app order.
+   - Update the app's entry in `site/i18n/zh.json`: it is keyed by **bundle
+     identifier**, so a changed identifier needs the key renamed, and a
+     changed `subtitle` / `description` needs the entry retranslated. An app
+     whose catalog text is already Chinese has no entry there.
 
 9. **Sweep for stale references**
 
@@ -314,4 +319,5 @@ PY
 - [ ] `apps.json` regenerated via `./update.sh <NewName>`, never hand-edited, not committed
 - [ ] `all-apps.json` left modified in the working tree, not committed
 - [ ] README entry updated in both `README.md` and `README_CN.md` (href, icon `align="top"`, display name, Chinese description) and re-sorted if needed
+- [ ] `site/i18n/zh.json` entry renamed when the bundle identifier changed, retranslated when the subtitle/description changed
 - [ ] stale-reference grep clean or hits explained

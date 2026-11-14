@@ -266,14 +266,33 @@ change between apps.
 
    Then add the same entry to `README_CN.md` (the Chinese README linked from
    the language switcher under the title): identical heading and icon URL,
-   and the same one-line description. Both READMEs share the same app order,
+   and a **Chinese** description line. Both READMEs share the same app order,
    so the entry goes at the same position.
 
-   ⚠️ Write the description in the language of the project's **own** README,
-   not the AltGallery README it lands in (AGENTS.md → [README
-   Entries](../AGENTS.md#readme-entries)): a Chinese-only project gets a
-   Chinese description in both files, an English one gets English in both.
-   `config.toml` `subtitle` / `description` follow the same rule.
+   ⚠️ The rule is asymmetric (AGENTS.md → [README
+   Entries](../AGENTS.md#readme-entries)): `README.md` keeps each app in its
+   **own** language — a Chinese-only project keeps its Chinese description
+   there, an English app gets English — while `README_CN.md` is **always
+   Chinese**, so an English app's line is a translation. Never invent an
+   English blurb for a Chinese-only project. `config.toml` `subtitle` /
+   `description` follow `README.md` (the app's own language).
+
+   If the catalog text ends up English (an English app, or a Chinese app whose
+   `config.toml` fields are English), add the site's Chinese overlay entry to
+   `site/i18n/zh.json`, keyed by bundle identifier:
+
+   ```json
+   "app.example.Example": {
+     "subtitle": "一句话中文简介",
+     "description": "中文简介，对应 config.toml 的 description"
+   }
+   ```
+
+   `subtitle` is the `README_CN.md` line, `description` translates
+   `config.toml`. An app whose catalog text is already Chinese needs no entry
+   — the page falls back to it. `python3 tools/build_site.py` folds the file
+   into `config.json` and warns about entries whose bundle identifier is not
+   in the catalog.
 
 10. **Warn if no screenshots were found** — this is the LAST step. If step 3
     could not obtain any screenshots (empty `apps/<AppName>/images/`, no
@@ -305,5 +324,6 @@ change between apps.
 - [ ] `all-apps.json` NOT touched — CI workflow regenerates and commits it
 - [ ] `images/news.png` rendered; not auto-committed
 - [ ] README entry added to both `README.md` and `README_CN.md`, icon with `align="top"`
-- [ ] description written in the language of the project's own README, identical in `README.md` and `README_CN.md`
+- [ ] `README.md` keeps the project's own language, `README_CN.md` carries a Chinese description (translated when the app is English)
+- [ ] `site/i18n/zh.json` entry added when the catalog text is English (skipped when it is already Chinese)
 - [ ] if no screenshots could be found, the user was explicitly warned (never proceed silently)

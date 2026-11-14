@@ -2,8 +2,9 @@
 """Stage the AltGallery GitHub Pages site in _site/.
 
 The page source is three files — site/index.html, site/style.css and
-site/app.js — and the deployed page fetches all-apps.json (same origin) at
-runtime. Every image it renders (logos, icons, screenshots) is copied
+site/app.js — plus the site/i18n/ overlays that carry the page's non-English
+app text. The deployed page fetches all-apps.json (same origin) at runtime.
+Every image it renders (logos, icons, screenshots) is copied
 into _site/media/ beside the page, so the site serves its own artwork
 instead of pointing at raw.githubusercontent.com — a CDN in front of the site
 (Cloudflare Polish, for one) can then cache and convert it. Only images move:
@@ -21,7 +22,8 @@ stages everything the site needs:
   _site/media/<repo path>    every displayed image, path unchanged
   _site/all-apps.json        catalog the page fetches (copy of the source)
   _site/all-apps-proxy.json  gh-proxy mirror (kept for download/compare)
-  _site/config.json          repo, raw base and proxy prefix derived here
+  _site/config.json          repo, raw base and proxy prefix derived here,
+                             plus the site/i18n/ text overlays
   _site/preview.html         local preview: CSS, JS and the catalog inlined,
                              so it opens from file://; it draws media/ from
                              the same directory
@@ -104,14 +106,21 @@ def warn(message: str) -> None:
     print(f"warning: {message}", file=sys.stderr)
 
 
-def load_json(path: Path) -> dict:
+def read_json(path: Path) -> dict:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except OSError as exc:
         raise SystemExit(f"error: cannot read {path}: {exc}")
     except json.JSONDecodeError as exc:
         raise SystemExit(f"error: {path} is not valid JSON: {exc}")
-    if not isinstance(data, dict) or not isinstance(data.get("apps"), list):
+    if not isinstance(data, dict):
+        raise SystemExit(f"error: {path} must contain a JSON object")
+    return data
+
+
+def load_json(path: Path) -> dict:
+    data = read_json(path)
+    if not isinstance(data.get("apps"), list):
         raise SystemExit(f"error: {path} does not look like an AltStore source")
     return data
 
@@ -362,6 +371,48 @@ def check_app_sources(source: dict) -> None:
                 warn(f"{folder}: {path.relative_to(REPO_ROOT)} is missing; subscription links may 404")
 
 
+def load_i18n(site_dir: Path, source: dict) -> dict[str, dict[str, dict[str, str]]]:
+    """Read site/i18n/<lang>.json — hand-maintained text overlays for the page.
+
+    An AltStore source carries exactly one language per app (localizedDescription
+    is a plain string, with no per-locale variants), so the Chinese subtitles and
+    descriptions cannot live in all-apps.json without taking the Chinese text
+    away from English readers. They live here instead, keyed by bundle
+    identifier, and the build folds them into config.json, which the page's
+    language switch reads. An app with no entry keeps its catalog text, which is
+    already Chinese for the Chinese-only projects.
+
+    A key beginning with "_" is a comment, not an app.
+    """
+    i18n_dir = site_dir / "i18n"
+    if not i18n_dir.is_dir():
+        return {}
+    known = {app.get("bundleIdentifier") for app in source.get("apps", [])}
+    overlay: dict[str, dict[str, dict[str, str]]] = {}
+    for path in sorted(i18n_dir.glob("*.json")):
+        table: dict[str, dict[str, str]] = {}
+        for bundle_id, entry in read_json(path).items():
+            if bundle_id.startswith("_"):
+                continue
+            where = f"{path.relative_to(REPO_ROOT)}: {bundle_id}"
+            if bundle_id not in known:
+                warn(f"{where} is not in the catalog; remove the entry or fix the bundle identifier")
+                continue
+            if not isinstance(entry, dict):
+                warn(f"{where} must map to an object with subtitle/description")
+                continue
+            fields = {}
+            for key, value in entry.items():
+                if key not in ("subtitle", "description"):
+                    warn(f"{where} has an unknown field {key!r}")
+                elif isinstance(value, str) and value.strip():
+                    fields[key] = value
+            if fields:
+                table[bundle_id] = fields
+        overlay[path.stem] = table
+    return overlay
+
+
 def content_hash(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()[:10]
 
@@ -423,6 +474,7 @@ def main() -> int:
 
     out_dir.mkdir(parents=True, exist_ok=True)
     media_files = stage_media(source, raw_base, out_dir)
+    i18n = load_i18n(site_dir, source)
 
     style = (site_dir / "style.css").read_bytes()
     script = (site_dir / "app.js").read_bytes()
@@ -447,6 +499,9 @@ def main() -> int:
         "proxyPrefix": proxy_prefix,
         "allSource": raw_base + "all-apps.json",
         "allSourceProxy": raw_base + "all-apps-proxy.json",
+        # Language -> {bundle identifier -> {subtitle, description}}: the
+        # site/i18n/ overlays the page applies on top of the catalog text.
+        "i18n": i18n,
     }
 
     (out_dir / "index.html").write_text(html, encoding="utf-8")
@@ -481,6 +536,8 @@ def main() -> int:
     ):
         path = out_dir / name
         print(f"  {display(path)}  {path.stat().st_size / 1024:.0f} KB")
+    for lang, table in i18n.items():
+        print(f"  i18n/{lang}.json: {len(table)} translated apps")
     return 0
 
 

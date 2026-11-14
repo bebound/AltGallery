@@ -118,13 +118,27 @@ built from the generated sources:
   AltStore sources) point at GitHub. The Direct/Mirror switch rewrites those
   links through gh-proxy.com and subscribes to the prepared
   `apps/<App>/apps-proxy.json` sources.
+- `site/i18n/zh.json` — the Chinese `subtitle` / `description` the page shows
+  while the language switch is on 中文, keyed by bundle identifier. It exists
+  because an AltStore source carries exactly one language per app
+  (`localizedDescription` is a plain string, with no per-locale variants), so
+  the Chinese text cannot live in `apps.json` without taking the original away
+  from English readers. `tools/build_site.py` folds every
+  `site/i18n/<lang>.json` into the generated `config.json`, so the page still
+  makes one data request. The `subtitle` matches the app's `README_CN.md`
+  entry; `description` translates `config.toml` `[app] description`. **An app
+  with no entry keeps its catalog text** — which is already Chinese for the
+  Chinese-only projects — so the file only covers apps whose catalog text is
+  English, and a missing entry is never a bug. Keep it in sync when moving an
+  app (the key is its bundle identifier); search matches every language, so a
+  Chinese query finds an English app.
 - `tools/build_site.py` — validates `all-apps-proxy.json` against
   `all-apps.json` (the proxy prefix is derived from the mirror), checks that
   every per-app source exists, stages every displayed image from the working
   tree into `_site/media/`, writes a generated `config.json` (the raw URL
   prefixes, `mediaBase` and `mediaFiles`, which the page uses to map a raw URL
-  to its local copy), and stages the split site plus both JSON files. Content
-  hashes are added to the CSS/JS references only.
+  to its local copy, plus the `i18n` overlays), and stages the split site plus
+  both JSON files. Content hashes are added to the CSS/JS references only.
 
   Staged images are optimized for the size they render at, which is where most
   of the page's weight went: app icons are resized to 128×128 (the largest CSS
@@ -281,15 +295,27 @@ Images](#generating-news-images)).
 
 Every app appears in both `README.md` and `README_CN.md` under **Available
 Apps**, in the same order. The heading (icon + name) is identical in both
-files; only the one-line description may differ.
+files; only the one-line description differs.
 
-**The description follows the language of the app's own README, not the
-language of the AltGallery README it is written into.** An app whose upstream
-README is primarily Chinese gets a Chinese one-line description in *both*
-`README.md` and `README_CN.md`; an English upstream README gets an English
-one in both. Never invent an English blurb for a Chinese-only project (or the
-reverse). `config.toml` fields (`subtitle`, `description`) follow the same
-rule — do not force them into English.
+**The rule is asymmetric — translate into Chinese, never into English.**
+`README.md` keeps each app in its **own** language; `README_CN.md` is
+**always Chinese**.
+
+- An app whose upstream README is primarily Chinese keeps its Chinese
+  one-line description in `README.md`. Do not invent an English blurb for a
+  Chinese-only project: its audience reads Chinese, and its UI, docs and
+  release notes stay Chinese whatever the blurb says.
+- An English app gets an English blurb in `README.md` and its **Chinese
+  translation** in `README_CN.md` — `README_CN.md` never carries an English
+  description.
+
+`config.toml` (`subtitle`, `description`) follows the same rule as
+`README.md`: the app's own language, not the language of the page it is
+written into. Those fields feed `apps.json`, and an AltStore source carries
+**one** language per app — `localizedDescription` is a plain string, with no
+per-locale variants — so there is no bilingual source to publish. The Chinese
+text a Chinese reader sees on the site lives in `site/i18n/zh.json` instead
+(see [GitHub Pages Site](#github-pages-site)).
 
 ⚠️ Use `align="top"` on the icon — `align="center"` renders ~7px low on
 GitHub.

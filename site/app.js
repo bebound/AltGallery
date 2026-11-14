@@ -298,12 +298,34 @@
     return new Intl.Collator(state.lang === "zh" ? "zh-CN" : "en", { sensitivity: "base", numeric: true });
   }
 
+  // AltStore sources carry one language per app, so the page's Chinese text
+  // lives in site/i18n/zh.json, keyed by bundle identifier. An app with no
+  // entry keeps its catalog text — the Chinese-only projects already ship
+  // theirs in Chinese, and the English projects keep the English original
+  // until a translation is added.
+  function localizedField(app, field) {
+    const table = app.i18n && app.i18n[state.lang];
+    const value = table && table[field];
+    return (value && String(value).trim()) || app[field] || "";
+  }
+
+  function appSubtitle(app) {
+    return localizedField(app, "subtitle");
+  }
+
+  function appDescription(app) {
+    return localizedField(app, "description") || appSubtitle(app);
+  }
+
   function matches(app) {
     const terms = state.query.trim().toLowerCase().split(/\s+/).filter(Boolean);
     if (!terms.length) return true;
-    const haystack = [app.name, app.developer, app.subtitle, app.description, app.bundleID]
-      .join("\n")
-      .toLowerCase();
+    const texts = [app.name, app.developer, app.subtitle, app.description, app.bundleID];
+    // Every language is searchable, so a Chinese query finds an English app.
+    for (const table of Object.values(app.i18n || {})) {
+      texts.push(table.subtitle, table.description);
+    }
+    const haystack = texts.filter(Boolean).join("\n").toLowerCase();
     return terms.every((term) => haystack.includes(term));
   }
 
@@ -432,7 +454,7 @@
     const tint = tintStyle(app.tint) || tintStyle(data.tint);
     const tintAlt = safeTint(data.tint) ? "--tint-alt:" + safeTint(data.tint) : "";
     const style = [tint, tintAlt, state.recentDrawn ? "" : "--i:" + index].filter(Boolean).join(";");
-    const tagline = (app.subtitle || "").trim();
+    const tagline = appSubtitle(app).trim();
     const meta = [app.version ? t("card.version", { v: app.version }) : "", fmtDate(app.date)].filter(Boolean).join(" · ");
 
     const promo = h(
@@ -922,6 +944,7 @@
     const size = fmtSize(app.size);
     if (size) meta.push(h("span", { text: size }));
     if (app.date) meta.push(h("span", { text: fmtDate(app.date) }));
+    const subtitle = appSubtitle(app);
 
     const open = h(
       "button",
@@ -944,7 +967,7 @@
         ),
         h("span", { class: "ver", text: t("card.version", { v: app.version }) })
       ),
-      app.subtitle ? h("span", { class: "card-sub", text: app.subtitle }) : null
+      subtitle ? h("span", { class: "card-sub", text: subtitle }) : null
     );
 
     return h(
@@ -1001,6 +1024,8 @@
     if (size) pills.push(h("span", { text: size }));
     if (app.date) pills.push(h("span", { text: t("card.updated", { d: fmtDate(app.date) }) }));
 
+    const subtitle = appSubtitle(app);
+    const description = appDescription(app);
     const head = h(
       "div",
       { class: "m-head", style: tintStyle(app.tint) },
@@ -1010,7 +1035,7 @@
         { class: "m-titles" },
         h("p", { class: "m-dev", text: app.developer || "AltStore" }),
         h("h2", { class: "m-title", id: "modal-title", text: app.name }),
-        app.subtitle ? h("p", { class: "m-sub", text: app.subtitle }) : null,
+        subtitle ? h("p", { class: "m-sub", text: subtitle }) : null,
         pills.length ? h("div", { class: "m-pills" }, ...pills) : null
       )
     );
@@ -1019,9 +1044,9 @@
     const shots = screenshotsBlock(app);
     if (shots) sections.push(shots);
     sections.push(
-      h("section", { class: "m-section" }, h("h3", { text: t("card.about") }), markdown(app.description || app.subtitle || ""))
+      h("section", { class: "m-section" }, h("h3", { text: t("card.about") }), markdown(description))
     );
-    if (app.notes && app.notes !== app.description && app.notes !== app.subtitle) {
+    if (app.notes && app.notes !== description && app.notes !== app.description && app.notes !== app.subtitle) {
       sections.push(
         h(
           "section",
@@ -1135,6 +1160,10 @@
     const allSource = config.allSource || (rawBase ? rawBase + "all-apps.json" : "");
     const allSourceProxy =
       config.allSourceProxy || (rawBase ? rawBase + "all-apps-proxy.json" : "");
+    // Language -> { bundle identifier -> { subtitle, description } }. The
+    // catalog itself carries one language per app, so the page's other
+    // languages come from site/i18n/, folded into config.json by the build.
+    const overlay = config.i18n && typeof config.i18n === "object" ? config.i18n : {};
 
     const apps = [];
     for (const app of source.apps || []) {
@@ -1146,8 +1175,14 @@
       const folder = folderMatch ? decodeURIComponent(folderMatch[1]) : "";
       const download = latest.downloadURL || "";
       const repoMatch = download.match(/^https:\/\/github\.com\/([^/]+\/[^/]+)\//);
+      const bundleID = app.bundleIdentifier || app.name || "";
+      const i18n = {};
+      for (const [lang, table] of Object.entries(overlay)) {
+        const entry = table && table[bundleID];
+        if (entry && typeof entry === "object") i18n[lang] = entry;
+      }
       apps.push({
-        bundleID: app.bundleIdentifier || app.name || "",
+        bundleID,
         name: app.name || "",
         developer: app.developerName || "",
         subtitle: app.subtitle || "",
@@ -1163,7 +1198,8 @@
         download,
         repo: repoMatch ? "https://github.com/" + repoMatch[1] : "",
         source: folder ? rawBase + "apps/" + folder + "/apps.json" : "",
-        sourceProxy: folder ? rawBase + "apps/" + folder + "/apps-proxy.json" : ""
+        sourceProxy: folder ? rawBase + "apps/" + folder + "/apps-proxy.json" : "",
+        i18n
       });
     }
 
