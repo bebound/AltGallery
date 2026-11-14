@@ -10,8 +10,8 @@
       "name": "iPadn",
       "bundleIdentifier": "app.local.iPadn",
       "developerName": "mengangs",
-      "subtitle": "Download older and removed App Store apps",
-      "localizedDescription": "Search, download and install the apps you own on iPhone and iPad — older versions, removed apps, regional price comparison and native install. Works with iPhone, iPad, Apple TV and Mac apps, in 11 languages.",
+      "subtitle": "下载 App Store 的历史版本与已下架应用",
+      "localizedDescription": "在 iPhone 与 iPad 上搜索、下载并安装你已拥有的应用——包括历史版本与已下架应用，支持区域价格比较与原生安装。支持 iPhone、iPad、Apple TV 与 Mac 应用，提供 11 种语言。",
       "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png",
       "screenshots": [
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/search.png",

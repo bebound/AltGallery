@@ -220,8 +220,17 @@ change between apps.
 6. **Write `news.toml`** — copy `apps/PiliPlus/news.toml` the same way (it
    documents every optional `[colors]` key as a comment), then change only
    `name` and `tagline`. All keys are optional; leave the commented defaults
-   in place. Then render the shared promo image (AGENTS.md → [Generating News
-   Images]):
+   in place.
+
+   ⚠️ The `tagline` is the **abbreviated form of `subtitle`** drawn under the
+   app name on the image — do not reuse the subtitle verbatim, and do not
+   repeat words the name already carries ("PlayStation 3 emulator",
+   "iOS/iPadOS"). It must render at full size (72px) in at most two lines
+   (AGENTS.md → [The tagline](../AGENTS.md#the-tagline)); measure it with the
+   snippet there before rendering.
+
+   Then render the shared promo image (AGENTS.md → [Generating News
+   Images](../AGENTS.md#generating-news-images)):
    ```bash
    ./.venv/bin/python tools/render_news.py --out apps/<AppName>
    ```
@@ -269,7 +278,15 @@ change between apps.
    and a **Chinese** description line. Both READMEs share the same app order,
    so the entry goes at the same position.
 
-   ⚠️ The rule is asymmetric (AGENTS.md → [README
+   ⚠️ `config.toml` `[app] subtitle` is the anchor for all three texts
+   (AGENTS.md → [Three texts, one
+   anchor](../AGENTS.md#three-texts-one-anchor)): the README line **starts
+   with the subtitle** and may add one concrete detail after ` — `, drawn from
+   the project's own README (a requirement, a platform, a headline feature) —
+   never a rewording of the same sentence. `description` stays the upstream
+   paragraph.
+
+   ⚠️ The language rule is asymmetric (AGENTS.md → [README
    Entries](../AGENTS.md#readme-entries)): `README.md` keeps each app in its
    **own** language — a Chinese-only project keeps its Chinese description
    there, an English app gets English — while `README_CN.md` is **always
@@ -283,16 +300,15 @@ change between apps.
 
    ```json
    "app.example.Example": {
-     "subtitle": "一句话中文简介",
-     "description": "中文简介，对应 config.toml 的 description"
+     "subtitle": "副标题的翻译（短句，不含 README 的补充）",
+     "description": "config.toml 的 description 的翻译"
    }
    ```
 
-   `subtitle` is the `README_CN.md` line, `description` translates
-   `config.toml`. An app whose catalog text is already Chinese needs no entry
-   — the page falls back to it. `python3 tools/build_site.py` folds the file
-   into `config.json` and warns about entries whose bundle identifier is not
-   in the catalog.
+   An app whose catalog text is already Chinese needs no entry — the page
+   falls back to it. `python3 tools/build_site.py` folds the file into
+   `config.json` and warns about entries whose bundle identifier is not in the
+   catalog.
 
 10. **Warn if no screenshots were found** — this is the LAST step. If step 3
     could not obtain any screenshots (empty `apps/<AppName>/images/`, no
@@ -324,6 +340,7 @@ change between apps.
 - [ ] `all-apps.json` NOT touched — CI workflow regenerates and commits it
 - [ ] `images/news.png` rendered; not auto-committed
 - [ ] README entry added to both `README.md` and `README_CN.md`, icon with `align="top"`
+- [ ] README line starts with `config.toml` `subtitle`, plus at most one detail clause
 - [ ] `README.md` keeps the project's own language, `README_CN.md` carries a Chinese description (translated when the app is English)
 - [ ] `site/i18n/zh.json` entry added when the catalog text is English (skipped when it is already Chinese)
 - [ ] if no screenshots could be found, the user was explicitly warned (never proceed silently)

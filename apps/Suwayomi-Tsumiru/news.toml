@@ -4,7 +4,7 @@
 # is pinned here instead of auto-derived.
 
 name = "Tsumiru"
-tagline = "Native manga & manhwa reader for Suwayomi-Server"
+tagline = "Manga reader\nfor Suwayomi-Server"
 
 # Color notes — each key below controls one element of the image. All are
 # optional: unset keys are auto-derived. Shown values are the current result.

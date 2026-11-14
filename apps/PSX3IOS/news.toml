@@ -3,7 +3,7 @@
 # a light shade of the icon's dominant color.
 
 name = "PSX3IOS"
-tagline = "A PlayStation 3 emulator for iPhone and iPad, built on RPCS3"
+tagline = "PlayStation 3 emulator"
 
 # Color notes — each key below controls one element of the image. All are
 # optional: unset keys are auto-derived. Shown values are the current result.

@@ -3,7 +3,7 @@
 # a light shade of the icon's dominant color.
 
 name = "MiniWatts"
-tagline = "Charger watts, cell power and thermal sensors"
+tagline = "Battery, charging\n& thermal monitor"
 
 # Color notes — each key below controls one element of the image. All are
 # optional: unset keys are auto-derived. Shown values are the current result.

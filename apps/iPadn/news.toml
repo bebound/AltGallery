@@ -4,7 +4,7 @@
 # with a purple cast. A neutral grey scale matches the monochrome mark.
 
 name = "iPadn"
-tagline = "Search, download and install the apps you own"
+tagline = "搜索、下载并安装你已拥有的 App"
 
 # Color notes — each key below controls one element of the image.
 [colors]

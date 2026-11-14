@@ -3,7 +3,7 @@
 # a light shade of the icon's dominant color.
 
 name = "Silverphase"
-tagline = "Film & print simulator"
+tagline = "胶片与印相模拟器"
 
 # Color notes — each key below controls one element of the image. All are
 # optional: unset keys are auto-derived.

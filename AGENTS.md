@@ -125,13 +125,13 @@ built from the generated sources:
   the Chinese text cannot live in `apps.json` without taking the original away
   from English readers. `tools/build_site.py` folds every
   `site/i18n/<lang>.json` into the generated `config.json`, so the page still
-  makes one data request. The `subtitle` matches the app's `README_CN.md`
-  entry; `description` translates `config.toml` `[app] description`. **An app
-  with no entry keeps its catalog text** — which is already Chinese for the
-  Chinese-only projects — so the file only covers apps whose catalog text is
-  English, and a missing entry is never a bug. Keep it in sync when moving an
-  app (the key is its bundle identifier); search matches every language, so a
-  Chinese query finds an English app.
+  makes one data request. Both fields translate the matching `config.toml`
+  `[app]` field — the `subtitle` here is the short one-liner, **not** the
+  longer `README_CN.md` line. **An app with no entry keeps its catalog text**
+  — which is already Chinese for the Chinese-only projects — so the file only
+  covers apps whose catalog text is English, and a missing entry is never a
+  bug. Keep it in sync when moving an app (the key is its bundle identifier);
+  search matches every language, so a Chinese query finds an English app.
 - `tools/build_site.py` — validates `all-apps-proxy.json` against
   `all-apps.json` (the proxy prefix is derived from the mirror), checks that
   every per-app source exists, stages every displayed image from the working
@@ -202,6 +202,40 @@ requirements.txt`; Pillow is the only image dependency — no external
 rasterizer). The rendered `apps/<AppName>/images/news.png` stays in the working
 tree — the URL in `config.toml` `[news] image_url` already points at it. Do
 not auto-commit it.
+
+### The tagline
+
+`tagline` is the **abbreviated form of `subtitle` drawn on the image**, not a
+copy of it: the app name is the image's headline, so the tagline carries the
+part of the subtitle the name does not already say.
+
+- It still has to answer "what is this app". A name that does not spell out
+  the category ("PSX3IOS", "MeloX") needs the category right under it
+  ("PlayStation 3 emulator"); a name that spells it out ("Aidoku") can drop
+  it. Only words the name already carries are redundant ("iOS/iPadOS" under an
+  `…iOS` name) — being informative beats being terse.
+- Language: the app's own language, same as `subtitle`.
+- Length: full size (72px) on **at most two lines**. When it does not fit,
+  drop words — `fit_tagline()` would otherwise shrink the text silently, and
+  that one image would just look smaller than every other app's.
+- Differing from `subtitle` is fine and expected; *contradicting* it is the
+  bug.
+- An explicit `\n` in the value chooses the break point, which is how a
+  two-line tagline avoids a bad wrap ("Open-source\nmanga reader", not
+  "Open-source manga / reader").
+- Re-read it whenever `subtitle` / `description` changes, so the two never
+  drift apart.
+
+Measure it — nothing is rendered and no file is written; a `font` below 72 or
+more than two lines means the tagline is too long:
+
+```bash
+PYTHONPATH=tools .venv/bin/python3 -c "
+import tomllib, render_news as R
+n = tomllib.load(open('apps/<AppName>/news.toml','rb'))
+f = R.fit_name_font(n['name']); nb = R.ICON_Y + R.cap_top_em('bold')*f + 0.25*f
+print(R.fit_tagline(n.get('tagline',''), R.BADGE_BOTTOM - nb - R.GAP_DESC))"
+```
 
 ## Icon Color Sampling (PIL)
 
@@ -316,6 +350,32 @@ written into. Those fields feed `apps.json`, and an AltStore source carries
 per-locale variants — so there is no bilingual source to publish. The Chinese
 text a Chinese reader sees on the site lives in `site/i18n/zh.json` instead
 (see [GitHub Pages Site](#github-pages-site)).
+
+### Three texts, one anchor
+
+Every app carries three descriptions. They are not duplicates, and they are
+not free-form either — `config.toml` `[app] subtitle` is the **anchor**:
+
+| text | shown where | rule |
+|---|---|---|
+| `subtitle` | site card, "recently updated" rail, sheet header, the app list inside SideStore | one short sentence, no trailing period |
+| README line | `README.md` / `README_CN.md` only | **starts with the subtitle**, then may add one concrete detail after ` — ` |
+| `description` | sheet → "About" | the upstream paragraph; longer, may list requirements |
+
+So a README line is `subtitle` plus at most one clause of real information
+(a requirement, a platform, a headline feature) taken from the project's own
+README — never a rewording of the same sentence. `site/i18n/zh.json` mirrors
+`subtitle` and `description`, each a translation of its field, so the English
+and Chinese cards read as the same sentence.
+
+When the subtitle itself is wrong or stale, fix it in `config.toml` and
+regenerate — the README line, the Chinese overlay and the site all follow it.
+
+`news.toml`'s `tagline` is a fourth string, and deliberately not the subtitle:
+it is drawn inside `images/news.png` and must fit two full-size lines there, so
+abbreviations ("Sideload apps with AltServer" for "Sideload non-notarized apps
+with AltServer") are the point, not drift. See [The
+tagline](#the-tagline).
 
 ⚠️ Use `align="top"` on the icon — `align="center"` renders ~7px low on
 GitHub.

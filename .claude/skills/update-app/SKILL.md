@@ -187,11 +187,13 @@ which app was meant.
      is exactly the stale value this reset removes. Then re-render
      `images/news.png` (step 6); the old promo image is invalid too.
    - **Icon unchanged:** edit the existing file in place — header `--out`
-     path, `name` → new display name, `tagline` → a short version of the new
-     subtitle/description. Re-check a pinned color only when the brand/tint
-     changed: keep it if it still fits, update it (and its inline comment) when
-     it was derived from something stale, delete it when its reason no longer
-     exists.
+     path, `name` → new display name, `tagline` → an abbreviation of the new
+     `subtitle` that fits two full-size lines on the image and does not repeat
+     the name (AGENTS.md → [The
+     tagline](../AGENTS.md#the-tagline)). Re-check a pinned color only when the
+     brand/tint changed: keep it if it still fits, update it (and its inline
+     comment) when it was derived from something stale, delete it when its
+     reason no longer exists.
 
    Either way, refresh the commented "current result" values in the
    `[colors]` block so whoever edits the file next sees the palette actually
@@ -277,6 +279,10 @@ PY
    - Move the entry if the new display name changes its alphabetical
      position in the list.
    - Refresh the one-line description when the project's description changed.
+   - Re-anchor it on `config.toml` `[app] subtitle` after any subtitle change:
+     the line starts with the subtitle, then at most one detail clause
+     (AGENTS.md → [Three texts, one
+     anchor](../AGENTS.md#three-texts-one-anchor)).
    - Apply the same change to `README_CN.md` — identical heading and icon URL,
      description line in Chinese (`README.md` keeps the app's own language,
      `README_CN.md` is always Chinese). Both READMEs share the same app order.
