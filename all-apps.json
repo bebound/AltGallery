@@ -377,7 +377,7 @@
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "Kianuni",
       "subtitle": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱",
-      "localizedDescription": "A Simplified-Chinese localization of the Erosion MobileGestalt toolbox, with hardened write and backup paths for system configuration on iOS / iPadOS 27.x, plus partial support for iOS / iPadOS 26.x. Needs at least one App Group entitlement when re-signing.",
+      "localizedDescription": "Erosion MobileGestalt 工具箱的简体中文本地化版本，针对 iOS / iPadOS 27.x 的系统配置强化了写入与备份流程，并部分支持 iOS / iPadOS 26.x。重签名时至少需要一个 App Group 权限。",
       "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/icon.png",
       "screenshots": [
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/home.jpeg",
@@ -539,8 +539,8 @@
       "name": "iPadn",
       "bundleIdentifier": "app.local.iPadn",
       "developerName": "mengangs",
-      "subtitle": "Download older and removed App Store apps",
-      "localizedDescription": "Search, download and install the apps you own on iPhone and iPad — older versions, removed apps, regional price comparison and native install. Works with iPhone, iPad, Apple TV and Mac apps, in 11 languages.",
+      "subtitle": "下载 App Store 的历史版本与已下架应用",
+      "localizedDescription": "在 iPhone 与 iPad 上搜索、下载并安装你已拥有的应用——包括历史版本与已下架应用，支持区域价格比较与原生安装。支持 iPhone、iPad、Apple TV 与 Mac 应用，提供 11 种语言。",
       "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png",
       "screenshots": [
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/search.png",
@@ -934,7 +934,7 @@
       "name": "Mornye",
       "bundleIdentifier": "com.zarz.mornye",
       "developerName": "zarzet",
-      "subtitle": "FLAC Downloader for iOS",
+      "subtitle": "Hi-res music player with downloads",
       "localizedDescription": "Mornye is a Flutter and Rust music app with a full-screen player, hi-res and bit-perfect output, synced word-by-word lyrics, and installable extensions for metadata and audio downloads. Downloads and your own music folders share one local library, and SMB, WebDAV, HTTP or Subsonic servers can stream straight to the phone.",
       "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.png",
       "screenshots": [
@@ -1340,8 +1340,8 @@
       "name": "Silverphase",
       "bundleIdentifier": "com.silverphase.editor",
       "developerName": "akinal5765-byte",
-      "subtitle": "Native film and print simulation for iPhone and iPad",
-      "localizedDescription": "Take a photograph through camera input, film, development, print and scan. Choose film and paper, then shape the image with exposure, development contrast, filtration and physical frame size, with grain, halation and film edges formed in the same imaging pipeline.",
+      "subtitle": "面向 iPhone 与 iPad 的原生胶片与印相模拟器",
+      "localizedDescription": "一张照片要经历相机输入、胶片、显影、放印与扫描。选好胶片与相纸，再用曝光、显影反差、滤镜与画幅尺寸塑造影像，颗粒、光晕与片边都在同一条成像管线中生成。",
       "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/icon.png",
       "screenshots": [
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/canvas.png",

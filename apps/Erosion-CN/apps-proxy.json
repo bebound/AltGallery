@@ -11,7 +11,7 @@
       "bundleIdentifier": "com.jbdotparty.Erosion",
       "developerName": "Kianuni",
       "subtitle": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱",
-      "localizedDescription": "A Simplified-Chinese localization of the Erosion MobileGestalt toolbox, with hardened write and backup paths for system configuration on iOS / iPadOS 27.x, plus partial support for iOS / iPadOS 26.x. Needs at least one App Group entitlement when re-signing.",
+      "localizedDescription": "Erosion MobileGestalt 工具箱的简体中文本地化版本，针对 iOS / iPadOS 27.x 的系统配置强化了写入与备份流程，并部分支持 iOS / iPadOS 26.x。重签名时至少需要一个 App Group 权限。",
       "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/icon.png",
       "screenshots": [
         "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/home.jpeg",
