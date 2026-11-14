@@ -1373,11 +1373,11 @@
       "tintColor": "#2090F0",
       "versions": [
         {
-          "version": "0.3.11",
-          "date": "2026-11-14T05:39:14Z",
-          "localizedDescription": "Stats iPhone 0.3.11 adds Disk screen customization.\n\n## What's Changed\n\n- Choose read and write colors and reverse their positions in the activity charts from Disk Settings.\n- Show or hide each detected drive card from Disk Settings without changing the dashboard's selected disk.\n- Tap a drive card's header to expand or collapse its details. Each drive remembers that choice.\n- Tap the capacity legend to switch the amount, percentage, and bar between free and used space.\n\n## Download\n\n- **iPhone app · 0.3.11 (build 14):** `Stats-v0.3.11-iOS.ipa` (iOS 17+, arm64; unsigned for SideStore and AltStore).\n- **SHA-256:** `c0edda819b1aa81ce3f35336b4f0cee58998e48325712bbd4032786f5c1a66db`\n- Mac Companion 0.3.12 from the previous release remains compatible.\n\n**Full Changelog:** https://github.com/ishtiaq156/stats/compare/v0.3.17...v0.3.18",
-          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.18/Stats-v0.3.11-iOS.ipa",
-          "size": 2749674,
+          "version": "0.3.12",
+          "date": "2026-11-14T09:58:36Z",
+          "localizedDescription": "Stats iPhone 0.3.12 and Stats Companion 0.3.13 add phone-initiated pairing revocation.\n\n## What's Changed\n\n- Open Paired Macs from iPhone connection settings or dashboard settings to see saved Macs, their names, and nearby status.\n- Revoke a pairing from the iPhone. The Mac removes its credential and confirms the request before the iPhone removes its local pairing. No interaction on the Mac is needed while the updated Companion is running and reachable.\n- Pairings for Macs that are not nearby remain listed; revocation becomes available when the Mac is reachable.\n\n## Download\n\n- **iPhone app · 0.3.12 (build 15):** `Stats-v0.3.12-iOS.ipa` (iOS 17+, arm64; unsigned for SideStore and AltStore).\n- **iPhone SHA-256:** `27858011ddd9b984e5bf3e15639520787573ed04170c9855438a41ecdb44d4c3`\n- **Mac Companion · 0.3.13 (build 16):** `StatsCompanion-v0.3.13-macOS-universal.zip` (in-app updater) and `StatsCompanion-v0.3.13-macOS-universal.dmg` (manual install).\n- **Mac ZIP SHA-256:** `11ede7a3a21d01908c53aa6c27c2d16f47c736de741cfa71f00363e0eef06b18`\n- **Mac DMG SHA-256:** `60853b98909fe7c71751cf8195786168725c30c818393f157f0b35ac5707ceae`\n\n**Full Changelog:** https://github.com/ishtiaq156/stats/compare/v0.3.18...v0.3.19",
+          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.19/Stats-v0.3.12-iOS.ipa",
+          "size": 2783102,
           "minOSVersion": "17.0"
         }
       ]
@@ -1647,6 +1647,17 @@
   ],
   "news": [
     {
+      "appID": "com.ishtiaqsyed.StatsForIOS",
+      "title": "Stats 0.3.12 · 14 Nov 2026",
+      "identifier": "Stats-release-v0.3.19",
+      "caption": "Stats 0.3.12 is available.",
+      "date": "2026-11-14T09:58:36Z",
+      "tintColor": "#2090F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.19"
+    },
+    {
       "appID": "com.example.piliplus",
       "title": "PiliPlus 2.2.1 · 14 Nov 2026",
       "identifier": "PiliPlus-release-2.2.1",
@@ -1678,17 +1689,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png",
       "notify": true,
       "url": "https://github.com/mengangs/ipadn/releases/tag/v2.1.1"
-    },
-    {
-      "appID": "com.ishtiaqsyed.StatsForIOS",
-      "title": "Stats 0.3.11 · 14 Nov 2026",
-      "identifier": "Stats-release-v0.3.18",
-      "caption": "Stats 0.3.11 is available.",
-      "date": "2026-11-14T05:39:14Z",
-      "tintColor": "#2090F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.18"
     },
     {
       "appID": "io.nekohasekai.swipt",
