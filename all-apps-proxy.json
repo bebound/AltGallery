@@ -194,11 +194,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "2.6.0-nightly.20261113.0426",
-          "date": "2026-11-13T04:53:50Z",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- microVU0: compute the VU1 register window's address at run time\n- Tests: a persisted VU0 program that uses the window onto VU1's registers\n- Android: link the core with emulated TLS when the minimum API is below 29\n- iOS: give the layout editor and the manifest skin their own views\n- iOS: split the patch and skin library stores by their own sections\n- iOS: split navigation and gameplay views into one file per view\n- iOS: split the controls and skin files along their types\n- iOS: split the dynamic backgrounds into one file per background\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261112...37ed35b88fe9a0164369c8042f2c9aa707e33667",
-          "downloadURL": "https://gh-proxy.com/https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261113/ARMSX2-nightly-20261113-37ed35b88f-iOS-arm64.ipa",
-          "size": 40715589,
+          "version": "2.6.0-nightly.20261114.1505",
+          "date": "2026-11-14T15:41:20Z",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- macOS: a refused notarization is not a build failure\n- arm64: the crash post-mortem's microVU readers are Linux only\n- GameDB: Stuntman and Driv3r run the EE at Exact clamping\n- arm64: a SIGILL gets the crash post-mortem too\n- arm64: the crash post-mortem names where the lr points\n- arm64: the crash post-mortem's VU microcode comes from the program's copy\n- arm64: the crash post-mortem names the library a pc outside the JIT is in\n- arm64: the crash post-mortem shows the VU microcode at the fault block\n- arm64: the crash post-mortem names the microVU block that holds the pc\n- LSFG: rebuild the swap chain before the acquire, and make it FIFO\n- microVU: don't finish VU1 through a dispatcher that does not exist\n- Tests: a second boot after a VM that stopped with VU1 busy\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261113...6d9511e29e3e00d5ab78899f5292b967ab850ddb",
+          "downloadURL": "https://gh-proxy.com/https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261114/ARMSX2-nightly-20261114-6d9511e29e-iOS-arm64.ipa",
+          "size": 40717380,
           "minOSVersion": "17.0"
         }
       ]
@@ -649,11 +649,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.0.5",
-          "date": "2026-11-12T05:41:30Z",
-          "localizedDescription": "### 升级前请先转移数据\n\n**Bundle ID 从 `com.example.kazumi` 改为 `com.linkpass.kazumi`**，不再与上游 Kazumi 共用标识，可加入同一个 AltStore 源（[#26](https://github.com/LinkPass888/Kazumi-Swift/issues/26)）。系统会把新版视为独立 App，**旧数据不会自动迁移；确认迁移完成前请勿删除旧版**。\n\n1. **设置**：在旧版「设置 → 同步设置 → 设置备份」选择「导出到文件」，可以直接存到新版 Kazumi 的文稿目录，也可以存 iCloud 云盘或任意文件夹；装好新版后在同一页选择「从文件恢复」。也可以走「导出到剪贴板／从剪贴板恢复」。若勾选「不含账号与密码」，需在新版重新填写账号凭据。\n2. **离线下载的番剧**：在「文件」App 里把旧版 Kazumi 文件夹里的「下载」整个移到新版 Kazumi 文件夹里就行（两个版本可共存，文件夹里空的那个是新版）。之后在新版重新点这几集的下载，会认出已有文件并补回下载记录，不重新下载视频。\n3. **规则与规则仓库**：从正式版 3.0.4 导出的设置备份不含规则和仓库；规则需在旧版「规则管理」中另外导出，再在新版导入，自定义仓库需重新添加。3.0.5 起的新备份才会把它们一起保存。\n4. **追番与观看历史**：设置备份不含这两类数据。需要保留时，先在旧版完成 Bangumi／WebDAV 同步，再在新版导入设置后同步相应数据。\n\n**设置备份也不包含下载记录。** 确认所需数据已转移后再卸载旧版。\n\n### 新增\n\n- 新增 macOS 26 及以上版本（Mac Catalyst），仅支持 Apple Silicon，不支持 Intel Mac。提供拖拽安装的 dmg，与 iOS 版共用界面及 mpv 播放内核\n- 设置备份带上已安装的规则与添加的规则仓库：规则存整份定义，恢复时同名覆盖、没有的新增；规则仓库按地址去重合并\n\n### 修复\n\n- 已下载剧集从「观看历史」（含「我的」页卡片）进入时先播本地文件，断网也能接着看；进度写回原来的记录，在线选集在后台补回，不再挡住起播（[#27](https://github.com/LinkPass888/Kazumi-Swift/issues/27)）\n- 从推荐页「热门番组」「本季新番」等更多列表进入详情再返回时，不再重置到列表顶部（[#29](https://github.com/LinkPass888/Kazumi-Swift/issues/29)）\n- AniSkip 跳片头、片尾使用精确跳转，不再停在目标之前的关键帧\n- 修复退出播放器或换集后，迟到的画中画取帧任务访问已销毁内核导致的崩溃\n\n### 优化\n\n- 详情页在宽屏（可用宽度 ≥ 860）改三栏：封面、条目信息、简介三等分；「开始观看」固定在右下角，竖栏不再重复一遍番名\n- 详情页顶栏交回系统：返回键与玻璃背景由系统提供，不再自绘工具栏；辅助功能字号下仍走原来的单栏布局\n- 推荐页在矮窗口（可用高度 < 760）改叠压卡：封面铺满，番名与按钮压在底部渐隐上；卡内文字左对齐并收起简介，标题按背景切换深浅\n- 播放页在 iPad、Duo 内屏这类常规宽度就地铺开全屏，不再强制转屏；画面按窗口宽度与画面比例定高，控制层逐边避让安全区\n- 「我的」页最近观看卡片：番名支持两行，补上播放／重看角标与来源、时间\n- 最近搜索胶囊按文字宽度排布，空间不足时整颗换行，不再挤在等宽格子里\n- 设置页的横向边距交回系统，Duo 合上时不再压到右边栏\n- 观看历史右上角「清空」与返回按钮同色，不再跟主题色走\n- 应用内的仓库链接换到新仓库名 Kazumi-Swift，不再多走一次旧名跳转",
-          "downloadURL": "https://gh-proxy.com/https://github.com/LinkPass888/Kazumi-Swift/releases/download/3.0.5/Kazumi_ios_3.0.5_no_sign.ipa",
-          "size": 24130346,
+          "version": "3.0.6",
+          "date": "2026-11-14T14:04:38Z",
+          "localizedDescription": "### 新增\n\n- 播放器「更多」里新增「弹幕检索」：手动搜番、选分集并换弹幕源，番剧的 OVA 插在正片里导致集数对不上时不再只能忍着（[#30](https://github.com/LinkPass888/Kazumi-Swift/issues/30)）。检索页打开时暂停播放，换完或返回后自动续播\n\n### 优化\n\n- 应用更新提示从弹窗改成半屏卡片：标题一行列出新版本号与当前版本，更新日志可滚动，底部「前往下载」「跳过此版本」「稍后」分开放置；「跳过此版本」后同一版本不再打扰",
+          "downloadURL": "https://gh-proxy.com/https://github.com/LinkPass888/Kazumi-Swift/releases/download/3.0.6/Kazumi_ios_3.0.6_no_sign.ipa",
+          "size": 24144584,
           "minOSVersion": "26.0"
         }
       ]
@@ -848,11 +848,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.95",
-          "date": "2026-11-01T15:17:25Z",
-          "localizedDescription": "## Why 0.9.95 and not 1.0.0?\r\n\r\nThis release has almost everything planned for 1.0.0: a new design, a rebuilt player and hundreds of fixes. But so much has changed that it needs testing on more devices and libraries than we can cover ourselves.\r\n\r\nSo 0.9.95 is the last step before 1.0.0. The goal now is stability, not new features. If something breaks or looks wrong, please [open an issue](https://github.com/kodjodevf/mangayomi/issues) with your device and app version. 1.0.0 will come once this version has proven solid.\r\n\r\n## Highlights\r\n\r\n* **Shiori, a new design for the whole app:** every screen has been redrawn on one design system, with new navigation, transitions and an ergonomic pass throughout (#1077).\r\n* **A rebuilt video player:** new controls on phone, desktop and TV, plus video filters, audio delay, and volume, brightness and fit kept between episodes.\r\n* **A tracker with no account:** follow your status, progress, score and dates on the device alone (#1121).\r\n* **Work that keeps going on Android:** downloads, library updates, restores and syncs continue in the background, under one notification (#1092).\r\n* **More control over downloads and updates:** download ahead while reading, download new chapters automatically, and choose which series a library update skips (#1091).\r\n\r\n**Before updating:** this is a large release that also touches how your library is stored, so make a backup first (More > Backup and restore).\r\n\r\n## Reader\r\n\r\n* Zoom with Ctrl (⌘ on macOS) and the mouse wheel; the wheel alone moves a zoomed page.\r\n* With \"Navigate to pan\" on, tall pages are read row by row before the page turns.\r\n* Split tall images into slices in webtoon mode.\r\n* Choose which chapters next and previous skip: read, filtered or duplicate.\r\n* Rebind the reader's keyboard shortcuts.\r\n* Separate icons for crop borders on and off.\r\n* Pages and zooms follow your finger more closely, and the webtoon strip glides after a fling.\r\n* Decoded images now have a memory limit, so long chapters no longer keep growing in memory.\r\n* Fixed: lost decoded pages for the next chapter when closing the reader, and chapter list rows with a scanlator failing to lay out.\r\n\r\n## Video player\r\n\r\n* New controls on phone, desktop and TV, with episodes reachable from the top bar and lock and skip under the timeline on mobile.\r\n* **Video filters:** brightness, contrast, saturation, gamma and hue, kept for the next episodes. Gamma is hidden where the video output cannot apply it.\r\n* **Audio delay:** from -5 to +5 seconds.\r\n* Remember volume and brightness between episodes, and keep the fit from one episode to the next.\r\n* New \"Turn subtitles on\" switch, so episodes can start without subtitles.\r\n* \"Use my subtitle style\" now really gives the default style back when turned off.\r\n* VAAPI and VDPAU hardware decoding on Linux.\r\n* Rebind the player's keyboard shortcuts.\r\n* Fixed: a freeze in the player's event handling, crashes when chapter marks change, previous and next buttons on mobile, and controls under the camera cutout in landscape.\r\n\r\n## Library and browsing\r\n\r\n* Swipe sideways to switch between Manga, Anime and Novels, in the library and in Browse.\r\n* Select everything between two entries, in the library and in chapter lists.\r\n* Skip completed series, series with unread chapters or series not started in library updates. The categories' \"Skip updates\" option now takes effect too.\r\n* The Updates badge counts what was found since you last opened Updates, and clears when you visit.\r\n* Hidden media types are respected everywhere: Browse, Updates, History and the tracker library.\r\n* Browse remembers the Sources or Extensions page picked for each media.\r\n* Recommendation cards use the available space and no longer show HTML tags.\r\n* Fixed: opening Updates and History with orphan chapters, and an empty random entry.\r\n\r\n## Downloads\r\n\r\n* Download the next 2, 3, 5 or 10 unread chapters while reading.\r\n* Download new chapters after a library update.\r\n* \"Delete download after reading\" can remove a chapter 1 to 4 back instead, and keeps bookmarked chapters.\r\n* Failed downloads wait before retrying, and follow what a server asks after a 429 or 503.\r\n* Fixed: complete downloads being held back by the series cover, and resumed archives not finishing.\r\n\r\n## Tracking\r\n\r\n* New on-device tracker, with its own shelf in the tracker library.\r\n* Redrawn tracking card.\r\n* Progress now reaches trackers even if you leave the screen first.\r\n\r\n## Extensions\r\n\r\n* Updates are found in every repository, and the app says which one they come from. An update from another repository asks for confirmation before it is installed.\r\n* Extension WebViews are hosted for the extension server, including network and media capture.\r\n* Faster extension installs.\r\n* Repositories with empty source lists are supported.\r\n* Fixed: sources that read a setting in their headers failing to install, and video qualities lost with multiple hosters.\r\n\r\n## Backup, restore and sync\r\n\r\n* Reading time and last-read dates are kept when restoring backups from other apps.\r\n* Anime is kept from backups of unrecognised forks.\r\n* Local archive favorites are included in backups.\r\n* A backup password is only requested when the password is really the problem.\r\n* Refreshing a catalog keeps your reading state, and duplicate chapters are merged safely.\r\n* Fixed: logging in to the sync server on macOS.\r\n\r\n## Security and privacy\r\n\r\n* **Secure screen:** keep the app out of screenshots and the recent apps preview, always or only in incognito mode.\r\n* **Lock after:** ask to authenticate after 1, 2, 5 or 10 minutes away, or only when the app starts.\r\n\r\n## Updates and first launch\r\n\r\n* Onboarding starts by asking for your language.\r\n* Clearer update dialog: installed and new version, date, size, sorted notes and what happens next. You will see it from the next update onwards.\r\n* Pre-releases are now ordered correctly when checking for updates.\r\n* New open source licenses screen in About.\r\n* New Persian translation, and the missing strings translated in every language.\r\n\r\n## Platforms\r\n\r\n* **Android:** fixed a crash where all files access cannot be granted.\r\n* **Android TV:** fixed the Player settings in the anime-only layout, and the repository added on the welcome screen is filed under anime.\r\n* **iOS:** local files stay inside their folder.\r\n* **macOS:** the app icon now fits the system's icon grid.\r\n* **Windows:** sharper 256 px icon, used by the installer too, and more readable crash reports.\r\n* **Linux:** choose which browser opens external links; JPEG is read whichever libjpeg version is installed; fixed webview window crashes.\r\n\r\n## Stability and performance\r\n\r\n* Faster database queries and lower memory use.\r\n* The next chapter preloads on a new page rather than on every frame.\r\n* A page that lost its data now offers a way back instead of crashing.\r\n* The startup error screen says what to do when the database cannot open.\r\n* Handled errors are now recorded, and developer mode shows them with their details.\r\n\r\n## Contributors\r\n\r\nThanks to everyone who contributed to this release: @adobex, @aliafshany, @itsyaba, @Lukas-DS, @matsukiender-star, @MenaHere, @NBA2K1 and @Totara-thib.\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.9...v0.9.95",
-          "downloadURL": "https://gh-proxy.com/https://github.com/kodjodevf/mangayomi/releases/download/v0.9.95/Mangayomi-v0.9.95-ios.ipa",
-          "size": 115450399
+          "version": "0.9.96",
+          "date": "2026-11-14T17:16:59Z",
+          "localizedDescription": "## What's Changed\n* fix(appearance): bring back the app-wide Google Fonts picker by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1127\n* fix: make the genre chip's searches work, in the source and the library by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1129\n* fix(library) select between option by @Lukas-DS in https://github.com/kodjodevf/mangayomi/pull/1131\n* fix(js): send PUT, DELETE and PATCH from the extension client by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1132\n* fix(migrate): search a few sources at a time and open the dialog at once by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1141\n* fix(sync): persist since and lastSync in one awaited write by @sergwei in https://github.com/kodjodevf/mangayomi/pull/1146\n* fix(filters): skip malformed filter options instead of dropping the list by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1150\n* feat(library): reopen on the last category, and keep the last row clear of the floating bar by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1122\n* chore: move to Flutter 3.50 and material_ui by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1154\n* fix(mass-migration): give long titles and the migrate choice room on phones by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1153\n* fix(library): hide continue-reading button when caught up by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1155\n* feat(detail): long press the In library heart to edit categories by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1160\n* fix(chapters): show a swiped chapter as read at once by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1159\n* fix(downloads): queue order, pause/resume, and move to top/bottom by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1156\n* fix(reader): delete a read download once the reader closes by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1157\n* Sync between devices, and a standalone sync server by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1158\n* feat(library): option to hide the active filter chips by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1162\n\n## New Contributors\n* @sergwei made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1146\n\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.95...v0.9.96",
+          "downloadURL": "https://gh-proxy.com/https://github.com/kodjodevf/mangayomi/releases/download/v0.9.96/Mangayomi-v0.9.96-ios.ipa",
+          "size": 117340839
         }
       ]
     },
@@ -1539,11 +1539,11 @@
       "tintColor": "#1E8FC7",
       "versions": [
         {
-          "version": "0.9.6",
-          "date": "2026-11-13T12:49:20Z",
-          "localizedDescription": "> **Requires:** iOS 27, or iOS 26.0 – 26.7.2. Tested on iOS 27.0.1, 27.2.1, 26.7.1 and the 27.3 beta (confirmed by a user).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.6\n\n## New\n\n- **Search Inside Folders…** (••• menu): finds names in all subfolders, with progress and **Stop**.\n- **Largest Files** (••• menu): the 100 biggest files below a folder, to see where storage goes.\n- **Get Info** (long-press): path, kind, size (folders counted), dates, owner, permissions, inode and a file's SHA-256. Tap a row to copy it.\n- **Duplicate** and **Copy to Folder…** (long-press): copy files and folders, also into other apps' data, like Move.\n- **Favorites:** add a folder from its ••• menu; they're listed under Tools.\n- **Reopen Last Folder** ([#41](https://github.com/kolbicz/WQFiles/issues/41)): WQ Files starts in the folder you were in. It's a switch on the start screen.\n- **Check for Updates** ([#41](https://github.com/kolbicz/WQFiles/issues/41)): a note on the start screen when a new version is out.\n  - **What's sent:** WQ Files reads the public release list on GitHub at most twice a day and sends nothing about your device. This is its only network access.\n  - **Turning it off:** use the switch on the start screen.\n- **Open ZIP files by tapping them** ([#41](https://github.com/kolbicz/WQFiles/issues/41)): **Extract and Open** unpacks it next to itself and opens the folder. **Open as File** shows the file as before.\n- **Thai** ([#52](https://github.com/kolbicz/WQFiles/issues/52)).\n\n## Changed\n\n- **SQLite save** writes through SQLite itself, which takes care of the database's journal and WAL files, so a save is safer if WQ Files is closed midway.\n- **App restore** copies and checks the backup in a private folder first, and installs exactly what was checked.\n- **Replace All** when importing only replaces the file versions shown in the question; a file that changed meanwhile is imported under a new name.\n- **Turkish and Thai:** clearer wording.\n\n## Fixed\n\n- **App names and some app folders missing** on some devices (e.g. iOS 26.1): when the app database uses a layout WQ Files doesn't know, it now works out where names and folders are from the database itself, and remembers it for that iOS version. App identities, which decide where backups go, still only come from the app's own folder tag or a known layout. WQ Files also uses the newest database file when iOS keeps an old one, and the Log lists them.\n- **App backups could come out empty** when WQ Files didn't have access to the app's folder yet; it worked on the second or third try. Backup now fails with \"try again\" instead, and an empty backup is never restored (restoring one would empty the app's data).\n\n## Credit\n\nSandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Translations: iosrxwy (Simplified Chinese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian). Thanks to everyone who sent Logs and ideas. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `d15feaf0fb82dd754b78de3a0e9d210db0cc1ebd83748dd1980e922d2183c2c6`",
-          "downloadURL": "https://gh-proxy.com/https://github.com/kolbicz/WQFiles/releases/download/v0.9.6/WQFiles.ipa",
-          "size": 780279,
+          "version": "0.9.8",
+          "date": "2026-11-14T18:14:23Z",
+          "localizedDescription": "> **Requires:** iOS 27, or iOS 26.0 – 26.7.2. Tested on iOS 27.0.1, 27.2.1, 26.7.1 and the 27.3 beta (confirmed by a user).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.8\n\n## New\n\n- **Reset Access Cache in Settings:** under **Settings → Troubleshooting**, in both designs. Until now it only appeared on the startup check screen when sandbox access failed, so it couldn't be reached after **Continue Anyway** or when access broke later. It puts WQ Files' own cache folder in the App Group back; nothing is deleted.\n\n## Changed\n\n- **Clearer Log when access is blocked:** when the access cache can't be repaired automatically, the Log now says why and what it found (swap marker, preserved Caches folder, what Caches is now) and points to **Reset Access Cache**. The same failure is logged once instead of for every folder.\n- **Translations** for the new texts in all languages.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Translations: iosrxwy (Simplified Chinese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), buraakkcayir (Turkish review). Thanks to everyone who sent Logs and ideas. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `7459ded30f5aa740a49060e1497ddf7eafa7b0152290b8104d336338de9a050c`",
+          "downloadURL": "https://gh-proxy.com/https://github.com/kolbicz/WQFiles/releases/download/v0.9.8/WQFiles.ipa",
+          "size": 817121,
           "minOSVersion": "26.0"
         }
       ]
@@ -1647,6 +1647,50 @@
   ],
   "news": [
     {
+      "appID": "cz.kolbi.wqfiles",
+      "title": "WQ Files 0.9.8 · 14 Nov 2026",
+      "identifier": "WQ Files-release-v0.9.8",
+      "caption": "WQ Files 0.9.8 is available.",
+      "date": "2026-11-14T18:14:23Z",
+      "tintColor": "#1E8FC7",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.8"
+    },
+    {
+      "appID": "com.kodjodevf.mangayomi",
+      "title": "Mangayomi 0.9.96 · 14 Nov 2026",
+      "identifier": "Mangayomi-release-v0.9.96",
+      "caption": "Mangayomi 0.9.96 is available.",
+      "date": "2026-11-14T17:16:59Z",
+      "tintColor": "#EF4444",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.96"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 2.6.0-nightly.20261114.1505 · 14 Nov 2026",
+      "identifier": "ARMSX2-release-nightly-20261114",
+      "caption": "ARMSX2 2.6.0-nightly.20261114.1505 is available.",
+      "date": "2026-11-14T15:41:20Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261114"
+    },
+    {
+      "appID": "com.linkpass.kazumi",
+      "title": "Kazumi-Swift 3.0.6 · 14 Nov 2026",
+      "identifier": "Kazumi-Swift-release-3.0.6",
+      "caption": "Kazumi-Swift 3.0.6 is available.",
+      "date": "2026-11-14T14:04:38Z",
+      "tintColor": "#45A992",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
+      "notify": true,
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.6"
+    },
+    {
       "appID": "com.ishtiaqsyed.StatsForIOS",
       "title": "Stats 0.3.15 · 14 Nov 2026",
       "identifier": "Stats-release-v0.3.22",
@@ -1746,17 +1790,6 @@
       "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.1.1"
     },
     {
-      "appID": "cz.kolbi.wqfiles",
-      "title": "WQ Files 0.9.6 · 13 Nov 2026",
-      "identifier": "WQ Files-release-v0.9.6",
-      "caption": "WQ Files 0.9.6 is available.",
-      "date": "2026-11-13T12:49:20Z",
-      "tintColor": "#1E8FC7",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.6"
-    },
-    {
       "appID": "com.aigch.OpenParsec",
       "title": "OpenParsec 2.0.0 · 13 Nov 2026",
       "identifier": "OpenParsec-release-2.0.0",
@@ -1766,17 +1799,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/news.png",
       "notify": true,
       "url": "https://github.com/hugeBlack/OpenParsec/releases/tag/2.0.0"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 2.6.0-nightly.20261113.0426 · 13 Nov 2026",
-      "identifier": "ARMSX2-release-nightly-20261113",
-      "caption": "ARMSX2 2.6.0-nightly.20261113.0426 is available.",
-      "date": "2026-11-13T04:53:50Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261113"
     },
     {
       "appID": "com.altman.moviepilot",
@@ -1832,17 +1854,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
       "notify": true,
       "url": "https://github.com/Predidit/Kazumi/releases/tag/2.4.4"
-    },
-    {
-      "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.0.5 · 12 Nov 2026",
-      "identifier": "Kazumi-Swift-release-3.0.5",
-      "caption": "Kazumi-Swift 3.0.5 is available.",
-      "date": "2026-11-12T05:41:30Z",
-      "tintColor": "#45A992",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
-      "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.5"
     },
     {
       "appID": "com.zhangfuhao.wqtoolkit",
@@ -2063,17 +2074,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.png",
       "notify": true,
       "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.2"
-    },
-    {
-      "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.95 · 01 Nov 2026",
-      "identifier": "Mangayomi-release-v0.9.95",
-      "caption": "Mangayomi 0.9.95 is available.",
-      "date": "2026-11-01T15:17:25Z",
-      "tintColor": "#EF4444",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.95"
     },
     {
       "appID": "moye.MeloX",
