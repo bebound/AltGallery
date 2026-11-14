@@ -19,11 +19,11 @@
       "tintColor": "#2090F0",
       "versions": [
         {
-          "version": "0.3.8",
-          "date": "2026-11-13T15:11:49Z",
-          "localizedDescription": "Disk stats now hide removable volumes by default, matching Exelban Stats' default behavior. The iPhone Disk screen has a settings button to show them when wanted.\n\n## What's Changed\n\n### Improvements and Fixes\n\n- Classify mounted volumes using macOS Disk Arbitration, including disk images and removable drives.\n- Add a persistent “Show removable disks” option in the iPhone Disk Settings sheet.\n- Keep existing pairings and older disk snapshots compatible.\n\n## Download\n\n- **Mac companion · 0.3.10:** `StatsCompanion-v0.3.10-macOS-universal.dmg` for Finder installation, or the signed universal ZIP for in-menu updates.\n- **iPhone app · 0.3.8:** `Stats-v0.3.8-iOS.ipa` (iOS 17+, arm64; unsigned for SideStore and AltStore).\n- Install both updates to use the removable-volume setting. See the [README](https://github.com/ishtiaq156/stats#quick-start) for installation and pairing.\n\n**Full Changelog:** https://github.com/ishtiaq156/stats/compare/v0.3.13...v0.3.14",
-          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.14/Stats-v0.3.8-iOS.ipa",
-          "size": 2666429,
+          "version": "0.3.10",
+          "date": "2026-11-14T04:05:59Z",
+          "localizedDescription": "Stats iPhone 0.3.10 puts optional Disk read/write speeds and custom Disk text inside the Storage card. The card expands when either option is enabled in System activity settings.\n\nAll iPhone settings switches now provide haptic feedback when changed, following the Haptics preference. The Haptics switch itself confirms both on and off changes.\n\n## Download\n\n- **iPhone app · 0.3.10 (build 13):** `Stats-v0.3.10-iOS.ipa` (iOS 17+, arm64; unsigned for SideStore and AltStore).\n- **SHA-256:** `e18110a2c693482715fbf58e7d1c8f14c828b39c9a5900b879dd9f77b6465222`\n- Mac Companion 0.3.12 from the previous release remains compatible.\n\n**Full Changelog:** https://github.com/ishtiaq156/stats/compare/v0.3.16...v0.3.17",
+          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.17/Stats-v0.3.10-iOS.ipa",
+          "size": 2728611,
           "minOSVersion": "17.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "com.ishtiaqsyed.StatsForIOS",
-      "title": "Stats 0.3.8 · 13 Nov 2026",
-      "identifier": "Stats-release-v0.3.14",
-      "caption": "Stats 0.3.8 is available.",
-      "date": "2026-11-13T15:11:49Z",
+      "title": "Stats 0.3.10 · 14 Nov 2026",
+      "identifier": "Stats-release-v0.3.17",
+      "caption": "Stats 0.3.10 is available.",
+      "date": "2026-11-14T04:05:59Z",
       "tintColor": "#2090F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
       "notify": true,
-      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.14"
+      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.17"
     }
   ]
 }
