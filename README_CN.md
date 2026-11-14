@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/icon.png" alt="AltGallery" width="120">
+  <img src="assets/icon.png" alt="AltGallery" width="120">
 </p>
 
 <h1 align="center">AltGallery</h1>
@@ -12,7 +12,7 @@
 
 <p align="center">
 <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps.json" target="_blank">
-<img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/add-alt-source.png" alt="Add AltSource" width="200">
+<img src="assets/add-alt-source.png" alt="Add AltSource" width="200">
 </a>
 </p>
 <p align="center">（点击上方图片添加包含全部应用的 AltGallery 源。单个应用的源位于 <code>apps</code> 文件夹。）</p>
@@ -27,15 +27,15 @@
 <table align="center" style="border: none; margin-left: auto; margin-right: auto;">
   <tr>
     <td align="center" style="border: none; padding: 6px;">
-      <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/sidestore.jpg" alt="AltGallery in SideStore" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <img src="assets/sidestore.jpg" alt="AltGallery in SideStore" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
       <br><b>SideStore</b>
     </td>
     <td align="center" style="border: none; padding: 6px;">
-      <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/sidestore_news.jpg" alt="AltGallery news in SideStore" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <img src="assets/sidestore_news.jpg" alt="AltGallery news in SideStore" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
       <br><b>SideStore News</b>
     </td>
     <td align="center" style="border: none; padding: 6px;">
-      <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/livecontainer.jpg" alt="AltGallery in LiveContainer" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <img src="assets/livecontainer.jpg" alt="AltGallery in LiveContainer" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
       <br><b>LiveContainer</b>
     </td>
   </tr>
@@ -268,29 +268,6 @@ AltGallery/
 │       └── apps.json     # 生成的 AltStore 源
 └── ...
 ```
-
-## 更新应用与资讯图片
-
-在仓库根目录运行这两个脚本：
-
-```bash
-./update.sh       # 根据 config.toml 重新生成每个应用的 apps.json，并合并到 all-apps.json
-./update_news.sh  # 根据每个应用的 news.toml 重新渲染其 images/news.png
-```
-
-两个脚本可在任意目录运行——路径会按仓库目录解析。
-
-`apps/<AppName>/apps.json` 与 `all-apps.json` 已被 git 忽略，贡献者不会提交它们。`Update all-apps.json` GitHub Actions 工作流会在每次推送到 `master`、每 6 小时一次或手动 “Run workflow” 时重新生成并提交它们。重新渲染的 `images/news.png` 会保留在工作区，供你审查并提交。
-
-`update.sh` 会在每个含有 `config.toml` 的 `apps/<AppName>/` 中运行 `uvx altgen -c config.toml`，然后通过 `uvx altgen merge -c assets/merge.toml` 将生成的源合并到仓库根目录的 `all-apps.json`。
-
-`update_news.sh` 使用 `tools/render_news.py`，根据每个应用的 `news.toml` 渲染其 `images/news.png`。它需要 Python 虚拟环境（安装一次）：
-
-```bash
-uv venv && uv pip install -r requirements.txt
-```
-
-图片完全由 Pillow 绘制——无需外部光栅化工具。
 
 ## Star 历史
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/icon.png" alt="AltGallery" width="120">
+  <img src="assets/icon.png" alt="AltGallery" width="120">
 </p>
 
 <h1 align="center">AltGallery</h1>
@@ -12,7 +12,7 @@
 
 <p align="center">
 <a href="https://altdirect.app/?url=https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/all-apps.json" target="_blank">
-<img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/add-alt-source.png" alt="Add AltSource" width="200">
+<img src="assets/add-alt-source.png" alt="Add AltSource" width="200">
 </a>
 </p>
 <p align="center">(Click the above image to add the all-in-one AltGallery source. Individual app sources live in the <code>apps</code> folder.)</p>
@@ -27,15 +27,15 @@ Don't see an app you want? [Create an issue](https://github.com/bebound/AltGalle
 <table align="center" style="border: none; margin-left: auto; margin-right: auto;">
   <tr>
     <td align="center" style="border: none; padding: 6px;">
-      <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/sidestore.jpg" alt="AltGallery in SideStore" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <img src="assets/sidestore.jpg" alt="AltGallery in SideStore" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
       <br><b>SideStore</b>
     </td>
     <td align="center" style="border: none; padding: 6px;">
-      <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/sidestore_news.jpg" alt="AltGallery news in SideStore" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <img src="assets/sidestore_news.jpg" alt="AltGallery news in SideStore" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
       <br><b>SideStore News</b>
     </td>
     <td align="center" style="border: none; padding: 6px;">
-      <img src="https://raw.githubusercontent.com/bebound/AltGallery/master/assets/livecontainer.jpg" alt="AltGallery in LiveContainer" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <img src="assets/livecontainer.jpg" alt="AltGallery in LiveContainer" width="200" style="border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
       <br><b>LiveContainer</b>
     </td>
   </tr>
@@ -268,37 +268,6 @@ AltGallery/
 │       └── apps.json     # generated AltStore source
 └── ...
 ```
-
-## Updating Apps and News Images
-
-Run both scripts from the repo root:
-
-```bash
-./update.sh       # regenerate every app's apps.json from config.toml and merge into all-apps.json
-./update_news.sh  # re-render every app's images/news.png from its news.toml
-```
-
-Both scripts can be run from anywhere — paths resolve against the repo
-directory.
-
-`apps/<AppName>/apps.json` and `all-apps.json` are gitignored and are not
-committed by contributors. The `Update all-apps.json` GitHub Actions workflow
-regenerates and commits them on every push to `master`, every 6 hours, or on
-manual "Run workflow". Re-rendered `images/news.png` files stay in the working
-tree for you to review and commit.
-
-`update.sh` runs `uvx altgen -c config.toml` in every `apps/<AppName>/` that has
-a `config.toml`, then merges the resulting sources into the repo-root
-`all-apps.json` via `uvx altgen merge -c assets/merge.toml`.
-
-`update_news.sh` renders each app's `images/news.png` from its `news.toml` using
-`tools/render_news.py`. It needs the Python venv (set up once):
-
-```bash
-uv venv && uv pip install -r requirements.txt
-```
-
-The image is drawn entirely with Pillow — no external rasterizer needed.
 
 ## Star History
 
