@@ -256,11 +256,13 @@ change between apps.
 9. **Update README** — add the app to **Available Apps**, icon inline before
    the name:
    ```html
-   ### <a href="https://github.com/owner/name"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/<AppName>/icon.png" alt="<AppName> icon" width="24" align="top"> <AppName></a>
+   ### <img src="apps/<AppName>/icon.png" alt="<AppName> icon" width="24" align="top"> <a href="https://github.com/owner/name"><AppName></a>
    Short one-line description.
    ```
    ⚠️ Use `align="top"` on the icon — `align="center"` renders ~7px low on
-   GitHub.
+   GitHub. The icon sits **outside** the link, uses a **repo-relative** path
+   (`apps/<AppName>/icon.png`, never a `raw.githubusercontent.com` URL), and a
+   space separates it from the linked name.
 
    Then add the same entry to `README_CN.md` (the Chinese README linked from
    the language switcher under the title): identical heading and icon URL,

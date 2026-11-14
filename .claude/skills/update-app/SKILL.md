@@ -265,11 +265,13 @@ PY
    Replace the app's `###` heading and description line in **Available Apps**:
 
    ```html
-   ### <a href="https://github.com/<new-owner>/<repo>"><img src="https://raw.githubusercontent.com/bebound/AltGallery/master/apps/<NewName>/icon.png" alt="<display name> icon" width="24" align="top"> <display name></a>
+   ### <img src="apps/<NewName>/icon.png" alt="<display name> icon" width="24" align="top"> <a href="https://github.com/<new-owner>/<repo>"><display name></a>
    One-line description.
    ```
 
    - Keep `align="top"` on the icon (`align="center"` renders ~7px low).
+   - Icon outside the link, repo-relative `src` (no `raw.githubusercontent.com`),
+     one space before the linked name.
    - The heading text is the **display name**, which may differ from the
      folder name — do not blindly copy the folder.
    - Move the entry if the new display name changes its alphabetical
