@@ -6,16 +6,10 @@
   const DEFAULT_PROXY_PREFIX = "https://gh-proxy.com/";
   const STORE_KEY = { lang: "altgallery.lang", mode: "altgallery.mode" };
   const SVG_NS = "http://www.w3.org/2000/svg";
-  const RECENT_LIMIT = 12; // apps in the "recently updated" ring
+  const RECENT_LIMIT = 12; // apps in the "recently updated" rail
   const RECENT_SPEED = 34; // px per second the rail drifts while idle
-  const RECENT_HOLD_MS = 2600; // pause after a swipe/wheel before drifting again
-  const RAIL_GAP = 16; // matches the .track flex gap
-  const RAIL_LEAD = 2; // cards kept before the newest app, for backward scrolling
-  const RAIL_TOUCH_LEAD = 6; // lead topped up while a finger takes the rail over
-  const RAIL_CARD_CAP = 40; // the widest the card window may grow
-  const RAIL_STEP_SPEED = 1500; // px per second for an arrow-button step
-  // The rail drifts toward the left: the cards travel right to left.
-  const RECENT_RAIL_DIRECTION = 1;
+  const RECENT_HOLD_MS = 2600; // pause after a swipe/tap before drifting again
+  const RAIL_STEP_DURATION = 18; // Embla's duration unit (~0.4s) for an arrow step
 
   // Filled by boot() from all-apps.json; null while the page is loading.
   let data = null;
@@ -350,26 +344,14 @@
   const updatesTrack = $("#updates-track");
   const railFade = $("#rail-fade");
   let closeTimer = 0;
-  let railFrame = 0;
   let scrollFrame = 0;
-  // The recent rail is a ring over every app; only a window of cards lives in
-  // the DOM (see layoutRail).
+  // The recent rail: one card per newest app in a track that Embla keeps in a
+  // loop, with the auto-scroll plugin drifting it.
   let railApps = [];
-  let railReady = false;
-  let railUnitPx = 0;
-  let railAutoRaf = 0;
-  let railAutoLast = 0;
+  let railEmbla = null;
+  let railAuto = null;
   let railHoldUntil = 0;
-  let railWakeTimer = 0;
   let railResizeTimer = 0;
-  let railSettleTimer = 0;
-  let railStep = 0; // px left to travel for an arrow-button step
-  let railTarget = 0; // fractional scroll position the drift is heading for
-  let railWrittenLeft = 0;
-  let railLastLeft = 0;
-  let railRecycling = false;
-  let railTouching = false;
-  let railFinger = false;
   let railHover = false;
   let railFocus = false;
   let railInView = true;
@@ -481,7 +463,11 @@
         style,
         "data-id": app.bundleID,
         "aria-haspopup": "dialog",
-        "aria-label": t("card.open", { name: app.name })
+        "aria-label": t("card.open", { name: app.name }),
+        // The entry animation fills `both`, so its final `transform: none`
+        // would keep overriding the translate Embla puts on a card it moves to
+        // the other side of the loop. Drop the class once it has played.
+        onAnimationEnd: (event) => event.currentTarget.classList.remove("enter")
       },
       promo,
       h("span", { class: "recent-caption" }, h("span", { class: "recent-meta", text: meta }), chevron)
@@ -491,7 +477,7 @@
   function renderRecent() {
     if (!data) return;
     const compare = collator();
-    // The ring holds the newest apps; the rail walks it forever.
+    // The rail holds the newest apps; Embla walks them in a loop.
     railApps = data.apps
       .slice()
       .sort((a, b) => (b.date || "").localeCompare(a.date || "") || compare.compare(a.name, b.name))
@@ -499,8 +485,6 @@
     $("#updates").hidden = railApps.length === 0;
     layoutRail();
     state.recentDrawn = true;
-    updateRailButtons();
-    wakeRail();
   }
 
   // A long app name has to stay on one line: shrink it until it fits the
@@ -524,339 +508,220 @@
     }
   }
 
-  // The rail walks a ring over the newest apps, with only a window of
-  // cards in the DOM. A card that leaves one edge is re-labelled with the app
-  // that comes next (or previous) on the ring and moved to the other edge,
-  // while the scroll position shifts by exactly the space it took. Nothing is
-  // duplicated, and the strip has no start or end, so it never jumps.
-  function railRing(index) {
-    const count = railApps.length;
-    return ((index % count) + count) % count;
-  }
-
-  function railCard(index, position) {
-    const ring = railRing(index);
-    const card = recentCard(railApps[ring], position);
-    card.dataset.ring = String(ring);
-    return card;
-  }
-
-  function railUnit() {
-    const card = updatesTrack.firstElementChild;
-    return card ? card.getBoundingClientRect().width + RAIL_GAP : 0;
-  }
-
+  // The rail is a loop over the newest apps: every card lives in the DOM once
+  // and Embla translates the strip, so nothing is recycled while it walks. The
+  // auto-scroll plugin keeps it drifting, which is what the old hand-written
+  // scrollLeft engine existed to do.
   function layoutRail() {
-    stopRailAuto();
-    railReady = false;
-    railStep = 0;
-    railTouching = false;
-    railFinger = false;
-    window.clearTimeout(railSettleTimer);
-    railSettleTimer = 0;
+    destroyRail();
     updatesTrack.replaceChildren();
-    railFade.classList.remove("loop");
-    updatesTrack.scrollLeft = 0;
-    railTarget = 0;
-    railWrittenLeft = 0;
-    railLastLeft = 0;
-    if (railApps.length < 2 || !updatesTrack.clientWidth) return;
-
-    // Fill until the strip reaches the viewport plus RAIL_LEAD cards of runway
-    // on each side, so it can be dragged either way from the first frame. The
-    // window starts at app -RAIL_LEAD, which puts the newest app at the left
-    // edge once the scroll position moves past the lead.
-    const cards = [];
-    let index = -RAIL_LEAD;
-    while (cards.length < 24) {
-      const card = railCard(index, cards.length);
-      cards.push(card);
-      updatesTrack.append(card);
-      index += 1;
-      if (cards.length >= RAIL_LEAD + 3 && updatesTrack.scrollWidth >= updatesTrack.clientWidth + railUnit() * (RAIL_LEAD + 2)) break;
+    railApps.forEach((app, index) => updatesTrack.append(recentCard(app, index)));
+    fitPromoNames([...updatesTrack.children]);
+    if (railApps.length < 2) {
+      updateRailButtons();
+      return;
     }
-    fitPromoNames(cards);
-    if (updatesTrack.scrollWidth <= updatesTrack.clientWidth + 4) return;
-
-    railReady = true;
-    railUnitPx = railUnit();
-    railFade.classList.add("loop");
-    updatesTrack.scrollLeft = railUnitPx * RAIL_LEAD;
-    railTarget = updatesTrack.scrollLeft;
-    railWrittenLeft = updatesTrack.scrollLeft;
-    railLastLeft = updatesTrack.scrollLeft;
-  }
-
-  // Front card out on the left: re-label it as the app after the last card and
-  // move it to the right end, then give the scroll position its width back.
-  function recycleForward() {
-    // Cheap test before touching layout: the front card cannot be out of sight
-    // while less than its own width has been scrolled past.
-    if (updatesTrack.scrollLeft + 4 < railUnitPx) return false;
-    const card = updatesTrack.firstElementChild;
-    const last = updatesTrack.lastElementChild;
-    if (!card || !last || card === last) return false;
-    const track = updatesTrack.getBoundingClientRect();
-    const rect = card.getBoundingClientRect();
-    if (rect.right + RAIL_GAP > track.left) return false;
-    const shift = rect.width + RAIL_GAP;
-    if (card.contains(document.activeElement)) document.activeElement.blur();
-    card.remove();
-    const added = railCard(Number(last.dataset.ring) + 1, 0);
-    updatesTrack.append(added);
-    fitPromoNames([added]);
-    updatesTrack.scrollLeft = Math.max(updatesTrack.scrollLeft - shift, 0);
-    railTarget = updatesTrack.scrollLeft;
-    railWrittenLeft = updatesTrack.scrollLeft;
-    railLastLeft = updatesTrack.scrollLeft;
-    return true;
-  }
-
-  // The mirror image: the last card is already past the right edge, so moving
-  // it in front as the app before the first card changes nothing on screen.
-  function recycleBackward() {
-    const card = updatesTrack.lastElementChild;
-    const first = updatesTrack.firstElementChild;
-    if (!card || !first || card === first) return false;
-    const track = updatesTrack.getBoundingClientRect();
-    const rect = card.getBoundingClientRect();
-    if (rect.left - RAIL_GAP < track.right) return false;
-    const shift = rect.width + RAIL_GAP;
-    if (card.contains(document.activeElement)) document.activeElement.blur();
-    card.remove();
-    const added = railCard(Number(first.dataset.ring) - 1, 0);
-    updatesTrack.prepend(added);
-    fitPromoNames([added]);
-    updatesTrack.scrollLeft += shift;
-    railTarget = updatesTrack.scrollLeft;
-    railWrittenLeft = updatesTrack.scrollLeft;
-    railLastLeft = updatesTrack.scrollLeft;
-    return true;
-  }
-
-  // direction > 0 recycles at the left edge, < 0 keeps a card of runway on the
-  // left so a backwards drag never runs out.
-  function recycleRail(direction) {
-    // Keyboard focus parks the rail, recycling included: otherwise each Tab
-    // that scrolls the strip into view would append a new card and the track
-    // would never let focus out.
-    if (!railReady || railRecycling || railFocus) return;
-    railRecycling = true;
-    try {
-      if (direction > 0) {
-        for (let count = 0; count < 4 && recycleForward(); count += 1) {}
-      } else if (direction < 0) {
-        for (let count = 0; count < 4 && updatesTrack.scrollLeft < railUnitPx; count += 1) {
-          if (!recycleBackward()) break;
-        }
-      }
-    } finally {
-      railRecycling = false;
+    // No loop to walk and nothing to drift when the vendored plugin is missing:
+    // fall back to the plain scroller the rail started as.
+    if (typeof window.EmblaCarousel !== "function" || typeof window.EmblaCarouselAutoScroll !== "function") {
+      railFade.classList.add("native");
+      updateRailButtons();
+      return;
     }
-  }
-
-  // A card may only be added at the far end while a finger drives the strip: an
-  // appended card is out of sight, so nothing under the finger moves — unlike
-  // the scrollLeft correction a card moved from one edge to the other needs,
-  // which WebKit drops while it is still animating a swipe.
-  function growRail() {
-    if (!railReady || updatesTrack.childElementCount >= RAIL_CARD_CAP) return false;
-    if (updatesTrack.scrollLeft < updatesTrack.scrollWidth - updatesTrack.clientWidth * 2) return false;
-    const last = updatesTrack.lastElementChild;
-    if (!last) return false;
-    const added = railCard(Number(last.dataset.ring) + 1, 0);
-    updatesTrack.append(added);
-    fitPromoNames([added]);
-    return true;
-  }
-
-  // Prepend cards until the given lead is back. Safe whenever the strip is at
-  // rest: the position moves by exactly the space the moved card took.
-  function topUpRail(lead) {
-    if (!railReady || railRecycling) return;
-    const unit = railUnitPx || railUnit();
-    railRecycling = true;
-    try {
-      for (let count = 0; count < 24 && updatesTrack.scrollLeft < unit * lead; count += 1) {
-        if (!recycleBackward()) break;
-      }
-    } finally {
-      railRecycling = false;
-    }
-  }
-
-  // Put the window back in shape once the reader lets go: the rail wants
-  // RAIL_LEAD cards behind the scroll position and runway ahead of it, however
-  // far a swipe carried it. At rest the correction is invisible, and the band
-  // is one card wide, so a step always lands inside it.
-  function balanceRail() {
-    // Keyboard focus parks the rail, rebalancing included (see recycleRail).
-    if (!railReady || railRecycling || railFocus) return;
-    const unit = railUnitPx || railUnit();
-    const lead = unit * RAIL_LEAD;
-    railRecycling = true;
-    try {
-      for (let count = 0; count < 32; count += 1) {
-        const left = updatesTrack.scrollLeft;
-        if (left > lead + unit / 2) {
-          if (!recycleForward()) break;
-        } else if (left < lead - unit / 2) {
-          if (!recycleBackward()) break;
-        } else {
-          break;
-        }
-      }
-    } finally {
-      railRecycling = false;
-    }
-  }
-
-  // iOS keeps a fling running after the last scroll event it reports, and a
-  // card moved out from under it is what relabelled the strip mid-swipe: leave
-  // the cards alone until the scroll has been quiet for a while.
-  function settleRail() {
-    window.clearTimeout(railSettleTimer);
-    railSettleTimer = 0;
-    railTouching = false;
-    balanceRail();
-    updateRailButtons();
-    wakeRail();
-  }
-
-  // Re-armed by every scroll event, ours included: a gesture is over when the
-  // strip stops reporting movement, not when the finger lifts.
-  function armRailSettle() {
-    window.clearTimeout(railSettleTimer);
-    railSettleTimer = window.setTimeout(settleRail, 300);
-  }
-
-  function railAutoAllowed() {
-    return (
-      railReady &&
-      railInView &&
-      !railHover &&
-      !railFocus &&
-      !state.modalId &&
-      !document.hidden &&
-      !reduceMotion() &&
-      performance.now() >= railHoldUntil
+    railAuto = window.EmblaCarouselAutoScroll({
+      // Embla steps its engine in fixed 1/60s ticks, so this is pixels per
+      // 1/60s however fast the display refreshes.
+      speed: RECENT_SPEED / 60,
+      startDelay: 0,
+      playOnInit: false,
+      // Parking is railParked()'s call: it also knows about the sheet, the tab
+      // and the reduced-motion preference, which the plugin's own switches
+      // cannot see.
+      stopOnInteraction: true,
+      stopOnMouseEnter: false,
+      stopOnFocusIn: false
+    });
+    // Embla walks the root's first element child, which is the strip: the
+    // wrapper is the root so the clip and the mask share the element the
+    // container is translated inside of.
+    railEmbla = window.EmblaCarousel(
+      railFade,
+      { loop: true, align: "start", dragFree: true, duration: RAIL_STEP_DURATION },
+      [railAuto]
     );
+    // A swipe, an arrow step or a wheel gesture parks the drift, and a fresh
+    // hold starts once the strip comes to rest — the same feel the scrollLeft
+    // engine gave it.
+    railEmbla.on("settle", () => {
+      releaseWheelRail();
+      holdRail(RECENT_HOLD_MS);
+    });
+    updateRailButtons();
+    syncRailAuto();
   }
 
-  function stopRailAuto() {
-    if (railAutoRaf) cancelAnimationFrame(railAutoRaf);
-    railAutoRaf = 0;
-    railAutoLast = 0;
-    clearTimeout(railWakeTimer);
-    railWakeTimer = 0;
+  function destroyRail() {
+    if (railAuto) railAuto.stop();
+    if (railEmbla) railEmbla.destroy();
+    railAuto = null;
+    railEmbla = null;
+    railWheel.base = null;
+    railWheel.pending = 0;
+    railWheel.settled = true;
+    railFade.classList.remove("native");
   }
 
-  function ensureRailTick() {
-    if (railAutoRaf) return;
-    railAutoLast = 0;
-    railAutoRaf = requestAnimationFrame(tickRail);
+  // Everything that parks the drift: a hidden section, a pointer over it, the
+  // keyboard inside it, the app sheet, a background tab, reduced motion.
+  function railParked() {
+    return (
+      !railEmbla ||
+      !railAuto ||
+      !railInView ||
+      railHover ||
+      railFocus ||
+      state.modalId ||
+      document.hidden ||
+      reduceMotion()
+    );
   }
 
   function railHoldRemaining() {
     return Math.max(0, railHoldUntil - performance.now());
   }
 
-  // Always re-arm rather than skip when a timer is pending: a hold set while
-  // one was waiting must push the wake-up back, not be lost.
-  function wakeRail() {
-    if (railAutoRaf) return;
-    clearTimeout(railWakeTimer);
-    const wait = railHoldRemaining();
-    railWakeTimer = setTimeout(() => {
-      railWakeTimer = 0;
-      startRailAuto();
-    }, wait > 0 ? wait + 40 : 0);
-  }
-
-  function startRailAuto() {
-    if (railAutoRaf) return;
-    if (!railAutoAllowed()) {
-      // Only a hold runs out on its own; pointer, focus, visibility and the
-      // sheet each wake the rail when they change.
-      if (railHoldRemaining() > 0 && !railHover && !railFocus && railInView && !state.modalId && !document.hidden) wakeRail();
+  // The plugin restarts the drift on its own once it is playing, so handing it
+  // the remaining hold is all "wake" means now; calling this while parked is
+  // what cancels a start that was still waiting.
+  // The plugin only starts a drift that is not already running, so a hold has
+  // to stop it first: play() then re-arms it for when the hold runs out.
+  function syncRailAuto() {
+    if (!railAuto) return;
+    if (railParked()) {
+      railAuto.stop();
       return;
     }
-    railAutoLast = 0;
-    railAutoRaf = requestAnimationFrame(tickRail);
+    if (railHoldRemaining() > 0) railAuto.stop();
+    railAuto.play(railHoldRemaining());
   }
 
-  function tickRail(now) {
-    railAutoRaf = 0;
-    const stepping = railStep !== 0;
-    if (!stepping && !railAutoAllowed()) {
-      startRailAuto();
-      return;
-    }
-    const elapsed = railAutoLast ? Math.min(now - railAutoLast, 80) : 0;
-    railAutoLast = now;
-    if (elapsed > 0) {
-      let delta;
-      if (stepping) {
-        // Arrow-button steps run through this same loop, so the window keeps
-        // recycling on every frame and a step can never run out of cards.
-        const move = Math.min(Math.abs(railStep), (RAIL_STEP_SPEED * elapsed) / 1000) * Math.sign(railStep);
-        delta = move;
-        railStep = Math.abs(railStep - move) < 0.5 ? 0 : railStep - move;
-        if (!railStep) holdRail(600);
-      } else {
-        delta = (RECENT_RAIL_DIRECTION * RECENT_SPEED * elapsed) / 1000;
-      }
-      // The drift carries its own fractional position: read scrollLeft back and
-      // iOS hands out a rounded value, so a half-pixel step added to it would
-      // never leave the pixel it started in and the rail would stand still.
-      const next = railTarget + delta;
-      railTarget = next;
-      railWrittenLeft = next;
-      railLastLeft = next;
-      updatesTrack.scrollLeft = next;
-      recycleRail(delta > 0 ? 1 : -1);
-    }
-    if (railStep !== 0 || railAutoAllowed()) railAutoRaf = requestAnimationFrame(tickRail);
-    else wakeRail();
-  }
-
-  // User input parks the marquee for a moment so it does not fight a swipe,
-  // and cancels a step it interrupts.
+  // A swipe, a tap or an arrow step parks the drift for a moment so it does not
+  // fight the reader.
   function holdRail(ms) {
-    railStep = 0;
     railHoldUntil = Math.max(railHoldUntil, performance.now() + ms);
-    wakeRail();
+    syncRailAuto();
   }
 
+  // A looping rail never reaches an end, so both buttons stay live; only the
+  // fallback scroller can run out of cards on one side.
   function updateRailButtons() {
-    // A ring is never at an end, and it is clipped on both sides.
-    const looping = railReady;
+    const prev = $("#rail-prev");
+    const next = $("#rail-next");
+    if (railEmbla) {
+      const looping = railEmbla.scrollSnapList().length > 1;
+      prev.disabled = !looping;
+      next.disabled = !looping;
+      railFade.classList.remove("at-start", "at-end");
+      railFade.classList.add("loop");
+      return;
+    }
     const max = updatesTrack.scrollWidth - updatesTrack.clientWidth;
-    const atStart = !looping && updatesTrack.scrollLeft <= 4;
-    const atEnd = !looping && (max <= 4 || updatesTrack.scrollLeft >= max - 4);
-    $("#rail-prev").disabled = atStart;
-    $("#rail-next").disabled = atEnd;
-    // Fade the edge that is clipped, so a half-visible card reads as "scroll
-    // for more" instead of a layout mistake; drop the fade at either end.
-    railFade.classList.toggle("at-start", atStart);
-    railFade.classList.toggle("at-end", atEnd);
-    railFade.classList.toggle("loop", looping);
+    prev.disabled = updatesTrack.scrollLeft <= 4;
+    next.disabled = max <= 4 || updatesTrack.scrollLeft >= max - 4;
+    railFade.classList.remove("loop");
+    railFade.classList.toggle("at-start", prev.disabled);
+    railFade.classList.toggle("at-end", next.disabled);
   }
 
   function scrollRail(direction) {
-    const unit = railUnitPx || updatesTrack.clientWidth * 0.8;
-    const step = Math.max(unit, 160) * direction;
-    if (reduceMotion()) {
-      const next = updatesTrack.scrollLeft + step;
-      railTarget = next;
-      railWrittenLeft = next;
-      railLastLeft = next;
-      updatesTrack.scrollLeft = next;
-      recycleRail(direction);
+    holdRail(RECENT_HOLD_MS);
+    if (railEmbla) {
+      // A drift in progress has replaced Embla's own scroll body with the
+      // plugin's, which cannot carry a scrollTo: stop it so the step has a
+      // body to run on. The hold brings the drift back.
+      if (railAuto) railAuto.stop();
+      if (direction > 0) railEmbla.scrollNext();
+      else railEmbla.scrollPrev();
       return;
     }
-    railStep += step;
-    ensureRailTick();
+    const step = Math.max(updatesTrack.clientWidth * 0.8, 160) * direction;
+    updatesTrack.scrollBy({ left: step, behavior: reduceMotion() ? "auto" : "smooth" });
+  }
+
+  // Embla has no wheel input of its own, and its public API only moves between
+  // snap points. The bridge swaps the engine's scroll body for one that spends
+  // the wheel's pixels — the same move embla-carousel-auto-scroll makes — so a
+  // trackpad or a tilt wheel drags the strip the way it used to.
+  const railWheel = { pending: 0, step: 0, settled: true, base: null };
+
+  function wheelBody(engine) {
+    const { location, previousLocation, target, index, indexPrevious, scrollTarget, limit } = engine;
+    const body = {
+      direction: () => Math.sign(railWheel.step),
+      duration: () => -1,
+      velocity: () => railWheel.step,
+      settled: () => railWheel.settled,
+      seek: () => {
+        previousLocation.set(location.get());
+        railWheel.step = railWheel.pending;
+        railWheel.pending = 0;
+        location.add(railWheel.step);
+        target.set(location.get());
+        // Embla's render wraps the loop on its own, but it asks the body which
+        // way it just travelled and a spent body answers zero — and its first
+        // animation frame seeks twice, so that is the frame every wheel tick
+        // lands in. Wrap here instead, with the direction still known.
+        const step = Math.sign(railWheel.step);
+        for (let pass = 0; pass < 4 && step !== 0; pass += 1) {
+          const at = location.get();
+          if (step > 0 ? at <= limit.max + 0.1 : at >= limit.min + 0.1) break;
+          engine.scrollLooper.loop(step);
+          engine.slideLooper.loop();
+        }
+        const snap = scrollTarget.byDistance(0, false).index;
+        if (index.get() !== snap) {
+          indexPrevious.set(index.get());
+          index.set(snap);
+          railEmbla.emit("select");
+        }
+        railWheel.settled = railWheel.pending === 0;
+        return body;
+      },
+      useBaseFriction: () => body,
+      useBaseDuration: () => body,
+      useFriction: () => body,
+      useDuration: () => body
+    };
+    return body;
+  }
+
+  // Hand the engine back once the wheel body has reported itself settled, so
+  // Embla's own loop wrap and inertia take over again.
+  function releaseWheelRail() {
+    if (!railEmbla || !railWheel.base) return;
+    const engine = railEmbla.internalEngine();
+    if (engine.scrollBody !== railWheel.base) engine.scrollBody = railWheel.base;
+    railWheel.base = null;
+    railWheel.pending = 0;
+    railWheel.settled = true;
+  }
+
+  function wheelRail(deltaX) {
+    if (!railEmbla || !railAuto) return;
+    holdRail(RECENT_HOLD_MS);
+    if (railWheel.settled) {
+      // A new gesture: take the strip over from the drift, which only comes
+      // back when the hold runs out.
+      railAuto.stop();
+      const engine = railEmbla.internalEngine();
+      railWheel.base = engine.scrollBody;
+      engine.scrollBody = wheelBody(engine);
+      engine.animation.start();
+    }
+    railWheel.settled = false;
+    // Wheel and scroll positions run opposite ways: a positive deltaX scrolls
+    // forward, which is a negative location.
+    railWheel.pending -= deltaX;
   }
 
   function appendInline(parent, text) {
@@ -1174,6 +1039,8 @@
     window.clearTimeout(closeTimer);
     state.modalId = id;
     state.lastFocus = opener || document.activeElement;
+    // The sheet covers the rail: park the drift while it is open.
+    syncRailAuto();
     renderModalBody();
     modal.hidden = false;
     modalBody.scrollTop = 0;
@@ -1200,10 +1067,10 @@
       if (opener && opener.isConnected && typeof opener.focus === "function") {
         opener.focus({ preventScroll: true });
       }
-      wakeRail();
+      // Back where it was: the rail picks up again once the sheet is gone.
+      syncRailAuto();
     };
-    if (reduceMotion()) finish();
-    else closeTimer = window.setTimeout(finish, 360);
+    if (reduceMotion()) finish();    else closeTimer = window.setTimeout(finish, 360);
   }
 
   function trapFocus(event) {
@@ -1508,103 +1375,93 @@
     if (card) openModal(card.dataset.id, card);
   });
 
-  updatesTrack.addEventListener(
-    "scroll",
-    () => {
-      const left = updatesTrack.scrollLeft;
-      armRailSettle();
-      // A position we did not write ourselves is a swipe, wheel or keyboard
-      // scroll: park the marquee briefly and let the user drive.
-      if (Math.abs(left - railWrittenLeft) > 2) {
-        holdRail(RECENT_HOLD_MS);
-        railTarget = left;
-        const direction = left > railLastLeft + 0.5 ? 1 : left < railLastLeft - 0.5 ? -1 : 0;
-        // Under a finger iOS drops the scrollLeft correction a recycled card
-        // depends on, so the card under it gets relabelled mid-swipe: feed the
-        // far end instead and rebuild the window once the scroll settles.
-        if (railFinger || railTouching) growRail();
-        else if (direction) recycleRail(direction);
-      }
-      railLastLeft = left;
-      if (railFrame) return;
-      railFrame = requestAnimationFrame(() => {
-        railFrame = 0;
-        updateRailButtons();
-      });
-    },
-    { passive: true }
-  );
   // Only a real pointer can hover, and WebKit drops the pointerleave that ends
   // a scroll gesture, so the release is caught wherever it happens: a hover
   // flag left behind would park the rail for good.
   const clearRailHover = () => {
     if (!railHover) return;
     railHover = false;
-    wakeRail();
+    syncRailAuto();
   };
-  updatesTrack.addEventListener("pointerenter", (event) => {
-    if (event.pointerType !== "touch") railHover = true;
+  railFade.addEventListener("pointerenter", (event) => {
+    if (event.pointerType === "touch") return;
+    railHover = true;
+    syncRailAuto();
   });
-  updatesTrack.addEventListener("pointerleave", clearRailHover);
-  updatesTrack.addEventListener("pointercancel", clearRailHover);
+  railFade.addEventListener("pointerleave", clearRailHover);
+  railFade.addEventListener("pointercancel", clearRailHover);
   window.addEventListener("pointerup", (event) => {
     if (event.pointerType !== "touch") return;
-    railFinger = false;
     clearRailHover();
   }, true);
   window.addEventListener("pointercancel", (event) => {
     if (event.pointerType !== "touch") return;
-    railFinger = false;
     clearRailHover();
   }, true);
-  updatesTrack.addEventListener("pointerdown", (event) => {
-    holdRail(RECENT_HOLD_MS);
-    if (event.pointerType !== "touch") return;
-    railFinger = true;
-    railTouching = true;
-    // A finger is about to take the strip over: top up the lead now, while
-    // nothing is moving, so a backwards swipe has cards to run into.
-    topUpRail(RAIL_TOUCH_LEAD);
-  });
-  updatesTrack.addEventListener("wheel", () => holdRail(RECENT_HOLD_MS), { passive: true });
+  railFade.addEventListener("pointerdown", () => holdRail(RECENT_HOLD_MS));
+  // A sideways wheel or trackpad swipe drags the strip; anything with more
+  // vertical than horizontal travel is the page's to scroll, so only the
+  // former is taken over. The fallback scroller needs no bridge — it scrolls
+  // natively.
+  railFade.addEventListener(
+    "wheel",
+    (event) => {
+      if (!railEmbla) return;
+      const vertical = Math.abs(event.deltaY);
+      if (!event.deltaX || Math.abs(event.deltaX) <= vertical) return;
+      let delta = event.deltaX;
+      if (event.deltaMode === 1) delta *= 16; // lines
+      else if (event.deltaMode === 2) delta *= railFade.clientWidth; // pages
+      event.preventDefault();
+      wheelRail(delta);
+    },
+    { passive: false }
+  );
   // Tab focus parks the rail; a card focused by a pointer click, or by the
   // sheet returning focus to its opener, must not freeze it.
   document.addEventListener("keydown", (event) => {
     if (event.key === "Tab") railKeyboard = true;
   }, true);
   document.addEventListener("pointerdown", () => { railKeyboard = false; }, true);
-  updatesTrack.addEventListener("focusin", () => { railFocus = railKeyboard; });
+  updatesTrack.addEventListener("focusin", () => {
+    if (!railKeyboard) return;
+    railFocus = true;
+    syncRailAuto();
+  });
   updatesTrack.addEventListener("focusout", (event) => {
     if (event.relatedTarget && updatesTrack.contains(event.relatedTarget)) return;
     railFocus = false;
-    wakeRail();
+    syncRailAuto();
   });
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) wakeRail();
-  });
+  document.addEventListener("visibilitychange", () => syncRailAuto());
   $("#rail-prev").addEventListener("click", () => scrollRail(-1));
   $("#rail-next").addEventListener("click", () => scrollRail(1));
 
-  // The window of cards depends on the viewport width, so rebuild after a
-  // resize.
+  // The fallback scroller is the only strip whose arrows follow a position.
+  updatesTrack.addEventListener(
+    "scroll",
+    () => {
+      if (!railEmbla) updateRailButtons();
+    },
+    { passive: true }
+  );
+
+  // Card width follows the viewport, so the fitted promo names and Embla's own
+  // measurements both need a pass after a resize.
   window.addEventListener("resize", () => {
-    updateRailButtons();
     window.clearTimeout(railResizeTimer);
     railResizeTimer = window.setTimeout(() => {
-      layoutRail();
+      fitPromoNames([...updatesTrack.children]);
+      if (railEmbla) railEmbla.reInit();
       updateRailButtons();
-      wakeRail();
+      syncRailAuto();
     }, 180);
   });
 
-  // Re-layout when the reduced-motion preference flips while the page is open.
+  // Re-park when the reduced-motion preference flips while the page is open.
   const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   if (motionQuery.addEventListener) {
-    motionQuery.addEventListener("change", () => {
-      layoutRail();
-      updateRailButtons();
-      wakeRail();
-    });
+    motionQuery.addEventListener("change", () => syncRailAuto());
   }
 
   // Only drift while the section is on screen.
@@ -1612,7 +1469,7 @@
     new IntersectionObserver(
       (entries) => {
         railInView = entries[0].isIntersecting;
-        if (railInView) wakeRail();
+        syncRailAuto();
       },
       { threshold: 0.15 }
     ).observe($("#updates"));

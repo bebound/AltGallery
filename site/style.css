@@ -394,28 +394,30 @@
   }
   .rail-btn:hover:not(:disabled) { color: var(--fg); background: var(--surface); transform: scale(1.05); }
   .rail-btn:disabled { opacity: 0.35; cursor: default; }
-  /* The edge fade lives on the wrapper, never on the scroller: WebKit repaints
-     a masked scroll container on every frame of a momentum swipe, which is
-     what made the cards flicker on iOS. */
+  /* The strip is translated by Embla, never scrolled, so the clip and the edge
+     fade both live on this wrapper: WebKit repaints a masked element on every
+     frame it moves, and the mask has to stay off the moving part. */
   .rail-fade {
     --rail-fade: 48px;
+    overflow: hidden;
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--rail-fade)), transparent 100%);
     mask-image: linear-gradient(to right, #000 calc(100% - var(--rail-fade)), transparent 100%);
   }
   .track {
     display: flex;
     gap: 16px;
+    padding: 4px 2px 8px;
+  }
+  /* Falls back to the plain scroller when the vendored Embla build is missing. */
+  .rail-fade.native { overflow: visible; }
+  .rail-fade.native .track {
     overflow-x: auto;
     /* A sideways drag stays in the rail instead of chaining to the page, the
        iOS back-swipe or the bounce. */
     overscroll-behavior-x: contain;
-    padding: 4px 2px 8px;
     scrollbar-width: none;
-    /* No -webkit-overflow-scrolling: touch — iOS 13+ scrolls this way anyway,
-       and switching the legacy layer back on makes the scroll offset it
-       reports disagree with the one the rail writes. */
   }
-  .track::-webkit-scrollbar { display: none; }
+  .rail-fade.native .track::-webkit-scrollbar { display: none; }
   .rail-fade.at-start {
     -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - var(--rail-fade)), transparent 100%);
     mask-image: linear-gradient(to right, #000 0, #000 calc(100% - var(--rail-fade)), transparent 100%);

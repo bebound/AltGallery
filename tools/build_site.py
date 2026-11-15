@@ -19,6 +19,8 @@ stages everything the site needs:
   _site/index.html           page shell; style.css/app.js carry content hashes
   _site/style.css            page styles
   _site/app.js               page script
+  _site/vendor/              vendored Embla builds the rail loads, plus the
+                             MIT notice; hashed like app.js
   _site/icon.png             the site icon, drawn from the source logo; the
                              tab, Safari favorites, the iOS home screen and
                              the manifest all use this one file
@@ -107,6 +109,18 @@ RAW_BASE = re.compile(
 )
 DEFAULT_PROXY_PREFIX = "https://gh-proxy.com/"
 MEDIA_DIR = "media"
+
+# Third-party scripts the page loads from site/vendor/ and the build copies
+# beside it, in load order. Vendored rather than pulled from a CDN: the site
+# serves its own assets so it keeps working where a CDN is blocked, and so
+# preview.html still runs from file://.
+VENDOR_DIR = "vendor"
+VENDOR_SCRIPTS = (
+    "embla-carousel.umd.js",  # EmblaCarousel
+    "embla-carousel-auto-scroll.umd.js",  # EmblaCarouselAutoScroll
+)
+# Staged next to them: MIT requires the notice to travel with the code.
+VENDOR_FILES = VENDOR_SCRIPTS + ("embla.LICENSE.txt",)
 
 # Rendering budgets. The page draws an app icon at most at 84 CSS px (hero and
 # detail header), so 128 px still covers a 2x display; the site logo is drawn
@@ -505,18 +519,28 @@ def json_blob(data: dict) -> str:
     )
 
 
-def build_preview(index_html: str, style: bytes, script: bytes, source: dict,
-                  config: dict, style_tag: str, script_tag: str) -> str:
+def inline_script(data: bytes) -> str:
+    return "<script>\n" + data.decode("utf-8").rstrip() + "\n</script>"
+
+
+def build_preview(index_html: str, style: bytes, script: bytes, vendor: dict[str, bytes],
+                  vendor_tags: dict[str, str], source: dict, config: dict,
+                  style_tag: str, script_tag: str) -> str:
     """Inline CSS, JS and the catalog so the preview opens from file://."""
     if style_tag not in index_html or script_tag not in index_html:
         raise SystemExit("error: cannot find the style/script tags to inline")
+    # The vendored scripts are inlined where they load, ahead of app.js.
+    for tag, name in vendor_tags.items():
+        if tag not in index_html:
+            raise SystemExit(f"error: cannot find the script tag for {VENDOR_DIR}/{name}")
+        index_html = index_html.replace(tag, inline_script(vendor[name]))
     css = "<style>\n" + style.decode("utf-8").rstrip() + "\n</style>"
     data_script = (
         "<script>window.__ALTGALLERY_DATA__ = "
         + json_blob({"source": source, "config": config})
         + ";</script>"
     )
-    js = "<script>\n" + script.decode("utf-8").rstrip() + "\n</script>"
+    js = inline_script(script)
     return index_html.replace(style_tag, css).replace(script_tag, data_script + "\n" + js)
 
 
@@ -549,6 +573,12 @@ def main() -> int:
     for name in ("index.html", "style.css", "app.js"):
         if not (site_dir / name).is_file():
             raise SystemExit(f"error: missing {site_dir / name}")
+    vendor = {}
+    for name in VENDOR_FILES:
+        path = site_dir / VENDOR_DIR / name
+        if not path.is_file():
+            raise SystemExit(f"error: missing {path}")
+        vendor[name] = path.read_bytes()
 
     out_dir.mkdir(parents=True, exist_ok=True)
     media_files = stage_media(source, raw_base, out_dir)
@@ -573,6 +603,17 @@ def main() -> int:
     html = html.replace('href="style.css"', f'href="style.css?v={content_hash(style)}"')
     html = html.replace('src="app.js"', f'src="app.js?v={content_hash(script)}"')
 
+    # Same content hash for the vendored scripts; the preview inlines them by
+    # the tag they end up with.
+    vendor_tags = {}
+    for name in VENDOR_SCRIPTS:
+        reference = f'src="{VENDOR_DIR}/{name}"'
+        if reference not in html:
+            raise SystemExit(f"error: site/index.html must reference {VENDOR_DIR}/{name}")
+        src = f'src="{VENDOR_DIR}/{name}?v={content_hash(vendor[name])}"'
+        html = html.replace(reference, src)
+        vendor_tags[f"<script {src} defer></script>"] = name
+
     config = {
         "repo": repo,
         "rawBase": raw_base,
@@ -592,12 +633,18 @@ def main() -> int:
     (out_dir / "index.html").write_text(html, encoding="utf-8")
     (out_dir / "style.css").write_bytes(style)
     (out_dir / "app.js").write_bytes(script)
+    vendor_out = out_dir / VENDOR_DIR
+    vendor_out.mkdir(parents=True, exist_ok=True)
+    for name, data in vendor.items():
+        (vendor_out / name).write_bytes(data)
     shutil.copyfile(source_path, out_dir / "all-apps.json")
     shutil.copyfile(proxy_path, out_dir / "all-apps-proxy.json")
     (out_dir / "config.json").write_text(
         json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    preview = build_preview(html, style, script, source, config, style_tag, script_tag)
+    preview = build_preview(
+        html, style, script, vendor, vendor_tags, source, config, style_tag, script_tag
+    )
     (out_dir / "preview.html").write_text(preview, encoding="utf-8")
 
     def display(path: Path) -> str:
@@ -620,6 +667,7 @@ def main() -> int:
         "all-apps-proxy.json",
         "config.json",
         "preview.html",
+        *(f"{VENDOR_DIR}/{name}" for name in VENDOR_FILES),
     ):
         path = out_dir / name
         if path.is_file():

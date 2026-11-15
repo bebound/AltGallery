@@ -118,6 +118,17 @@ built from the generated sources:
   AltStore sources) point at GitHub. The Direct/Mirror switch rewrites those
   links through gh-proxy.com and subscribes to the prepared
   `apps/<App>/apps-proxy.json` sources.
+- `site/vendor/` — the Embla carousel the "recently updated" rail runs on
+  (`embla-carousel` + `embla-carousel-auto-scroll`, MIT, notice beside them).
+  Vendored as UMD builds instead of loaded from a CDN: the site keeps serving
+  its own assets, and `preview.html` still runs from `file://`. The rail is one
+  card per newest app with Embla looping the strip and the auto-scroll plugin
+  drifting it at `RECENT_SPEED` (px per second); a small state machine in
+  `site/app.js` (`railParked`, `syncRailAuto`) parks the drift on hover, on
+  keyboard focus, while the app sheet is open, off screen, in a background tab
+  and under `prefers-reduced-motion`. Replacing the rail means replacing those
+  three files' worth of wiring, so bump the version there rather than editing
+  the vendored bundles.
 - `site/i18n/zh.json` — the Chinese `subtitle` / `description` the page shows
   while the language switch is on 中文, keyed by bundle identifier. It exists
   because an AltStore source carries exactly one language per app
@@ -139,6 +150,8 @@ built from the generated sources:
   prefixes, `mediaBase` and `mediaFiles`, which the page uses to map a raw URL
   to its local copy, plus the `i18n` overlays), and stages the split site plus
   both JSON files. Content hashes are added to the CSS/JS references only.
+  `site/vendor/` is staged beside the page with the same content hashes, and
+  the vendored scripts are inlined into `preview.html` ahead of `app.js`.
 
   Staged images are optimized for the size they render at, which is where most
   of the page's weight went: app icons are resized to 128×128 (the largest CSS
