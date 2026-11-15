@@ -21,9 +21,11 @@ stages everything the site needs:
   _site/app.js               page script
   _site/vendor/              vendored Embla builds the rail loads, plus the
                              MIT notice; hashed like app.js
-  _site/icon.png             the site icon, drawn from the source logo; the
-                             tab, Safari favorites, the iOS home screen and
-                             the manifest all use this one file
+  _site/icon.png             the site icon, drawn from the source logo; Safari
+                             favorites, the iOS home screen and the manifest
+                             all use this one file
+  _site/favicon.ico          the same artwork as a real .ico, for the clients
+                             that ask for /favicon.ico without reading the page
   _site/manifest.json        app name, colors and that icon
   _site/media/<repo path>    every displayed image, path unchanged
   _site/all-apps.json        catalog the page fetches (copy of the source)
@@ -67,9 +69,10 @@ the catalog has loaded.
 
 Every icon is that one drawing at four sizes: the browser tab, Safari's
 favorites tile, the iOS home screen, and the icons Chrome/Android and Edge
-install from. Nothing is flattened onto a background square, so the artwork
-keeps its own shape wherever it is shown and the rounded corners stay
-transparent.
+install from. The .ico is the same drawing again, for the clients that fetch
+/favicon.ico by name without reading the HTML. Nothing is flattened onto a
+background square, so the artwork keeps its own shape wherever it is shown and
+the rounded corners stay transparent.
 
 Because the extension can change, the copies no longer keep the repository
 path verbatim in every case: config.json's "mediaFiles" maps a repository
@@ -143,11 +146,19 @@ SCREENSHOT_MAX_HEIGHT = 800
 WEBP_QUALITY = 82
 ICON_WEBP_QUALITY = 92
 
-# The site's own icon, one PNG that the tab, Safari's favorites tile, the iOS
-# home screen and the Web App Manifest all point at. 256 px covers every use:
-# a tab favicon is drawn at 16–32 px, iOS downsamples whatever it is given, and
+# The site's own icon, one PNG that Safari's favorites tile, the iOS home
+# screen and the Web App Manifest all point at. 256 px covers every use: a tab
+# favicon is drawn at 16–32 px, iOS downsamples whatever it is given, and
 # Chrome installs from any icon of 144 px or more.
 SITE_ICON_PX = 256
+
+# The same artwork as a real .ico served at /favicon.ico. A browser reads the
+# page's <link rel="icon"> and is happy with icon.png, but the clients that
+# never parse the HTML — feed readers, bookmark managers, link previews, the
+# occasional crawler — ask for /favicon.ico by name, and a 404 there is what
+# leaves the site unbranded in those lists. The sizes are the ones a tab or a
+# shortcut actually draws.
+SITE_FAVICON_SIZES = ((16, 16), (32, 32), (48, 48))
 
 
 def warn(message: str) -> None:
@@ -343,14 +354,16 @@ def image_kind(url: str, icon_urls: set[str], logo_url: str) -> str:
 
 
 def write_site_icon(logo_path: Path, out_dir: Path) -> None:
-    """Write _site/icon.png, the site's one icon.
+    """Write _site/icon.png and _site/favicon.ico, the site's icons.
 
-    The tab favicon, Safari's favorites tile, the iOS home screen and the
-    manifest Chrome/Android and Edge install from all point at this one file:
-    each of them scales it to whatever size it wants, so extra copies would
-    only be the same drawing at other sizes. The logo's rounded, transparent
-    corners are kept rather than composited onto an opaque square, so every
-    surface shows the artwork as it was made.
+    Safari's favorites tile, the iOS home screen and the manifest
+    Chrome/Android and Edge install from all point at the PNG: each of them
+    scales it to whatever size it wants, so extra copies would only be the
+    same drawing at other sizes. The favicon.ico is for the clients that ask
+    for that file by name without ever reading the page — it ships the small
+    tab-sized frames, so they draw one instead of downscaling a 256.
+    The logo's rounded, transparent corners are kept rather than composited
+    onto an opaque square, so every surface shows the artwork as it was made.
     """
     logo = Image.open(logo_path)
     logo.load()
@@ -359,6 +372,14 @@ def write_site_icon(logo_path: Path, out_dir: Path) -> None:
         logo.convert("RGBA"), (SITE_ICON_PX, SITE_ICON_PX), Image.Resampling.LANCZOS
     )
     square.save(out_dir / "icon.png", optimize=True)
+    # PNG-compressed frames: the same three sizes as uncompressed BMP frames
+    # would take several times the bytes for no gain at these sizes.
+    square.save(
+        out_dir / "favicon.ico",
+        format="ICO",
+        sizes=SITE_FAVICON_SIZES,
+        bitmap_format="png",
+    )
 
 
 def write_manifest(source: dict, out_dir: Path) -> None:
@@ -691,6 +712,7 @@ def main() -> int:
         "style.css",
         "app.js",
         "icon.png",
+        "favicon.ico",
         "manifest.json",
         "all-apps.json",
         "all-apps-proxy.json",

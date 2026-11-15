@@ -171,6 +171,15 @@ built from the generated sources:
   script the deployed page loads; the build strips it from `preview.html`, so
   opening a local preview is not counted as a visit.
 
+  The site's own icon is drawn from the catalog logo into two files:
+  `_site/icon.png` (256×256, pointed at by `apple-touch-icon`, the larger of
+  the two `<link rel="icon">` tags, and `manifest.json`) and
+  `_site/favicon.ico` (16/32/48 px frames of the same drawing, the other icon
+  tag, and the file served at `/favicon.ico` for the clients that request it
+  without ever reading the page — feed readers, bookmark managers, link
+  previews, crawlers). Both keep the logo's transparent rounded corners rather
+  than an opaque background square.
+
   Staged images are optimized for the size they render at, which is where most
   of the page's weight went: app icons are resized to 128×128 (the largest CSS
   box is 84px, so 128 still covers a 2× display) and the site logo to 256×256,
