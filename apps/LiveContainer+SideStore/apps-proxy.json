@@ -22,10 +22,10 @@
       "versions": [
         {
           "version": "3.8.14",
-          "date": "2026-11-15T13:17:44Z",
-          "localizedDescription": "**Commit:** [fe10ca445da6ea9896d5443f1a43f81d93a46db8](https://github.com/LiveContainer/LiveContainer/commit/fe10ca445da6ea9896d5443f1a43f81d93a46db8)\n**Message:** don't load source until source view is opened, implement #1726, bump version\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/43718002611/attempts/1).",
+          "date": "2026-11-15T14:10:09Z",
+          "localizedDescription": "**Commit:** [b7cfda60c39933a94d616f2a358ac2e48fd4e5cd](https://github.com/LiveContainer/LiveContainer/commit/b7cfda60c39933a94d616f2a358ac2e48fd4e5cd)\n**Message:** don't load source until source view is opened, implement #1726, bump version\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/43722603537/attempts/1).",
           "downloadURL": "https://gh-proxy.com/https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 23763930,
+          "size": 23754976,
           "minOSVersion": "15.0"
         },
         {
@@ -45,7 +45,7 @@
       "title": "LiveContainer+SideStore 3.8.14 · 15 Nov 2026",
       "identifier": "LiveContainer+SideStore-release-nightly",
       "caption": "LiveContainer+SideStore 3.8.14 is available.",
-      "date": "2026-11-15T13:17:44Z",
+      "date": "2026-11-15T14:10:09Z",
       "tintColor": "#0784FC",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
       "notify": true,
