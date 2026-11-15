@@ -161,7 +161,10 @@ built from the generated sources:
   to its local copy, plus the `i18n` overlays), and stages the split site plus
   both JSON files. Content hashes are added to the CSS/JS references only.
   `site/vendor/` is staged beside the page with the same content hashes, and
-  the vendored scripts are inlined into `preview.html` ahead of `app.js`.
+  the vendored scripts are inlined into `preview.html` ahead of `app.js`. The
+  page-view analytics script (umami, on `uma.fromkk.com`) is the one external
+  script the deployed page loads; the build strips it from `preview.html`, so
+  opening a local preview is not counted as a visit.
 
   Staged images are optimized for the size they render at, which is where most
   of the page's weight went: app icons are resized to 128×128 (the largest CSS
