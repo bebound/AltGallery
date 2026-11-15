@@ -65,6 +65,12 @@
     scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
   }
+  /* The app sheet's scroll lock, and the whole of it: the page is never taken
+     out of flow, so opening or closing a sheet leaves the document geometry — and
+     with it every rasterized tile of the catalog — untouched. `overflow: hidden`
+     holds wheel and keyboard scrolling; iOS, which keeps scrolling the document
+     under a finger anyway, is held by the touchmove guard on the sheet (see
+     app.js). */
   html.is-locked {
     overflow: hidden;
     scroll-behavior: auto;
@@ -409,6 +415,10 @@
     --fade-left: 0px;
     --fade-right: var(--rail-fade);
     overflow: hidden;
+    /* A sideways drag belongs to the strip and a vertical one to the page: this
+       is what tells iOS, before the first move, not to claim the gesture for the
+       page and leave Embla's preventDefault too late to do anything. */
+    touch-action: pan-y;
     mask-image: linear-gradient(
       to right,
       transparent 0,
@@ -420,10 +430,25 @@
   .track {
     display: flex;
     gap: 16px;
-    padding: 4px 2px 8px;
+    padding: 4px 0 8px;
+    /* Nothing that would make this element an offsetParent — no transform, no
+       `will-change: transform`, no containment. Embla measures the slides with
+       offsetLeft/offsetTop and compares them to the container's own, so turning
+       the strip into a containing block puts the two in different coordinate
+       spaces: every snap shifts by the strip's offset, and the loop wraps 48px
+       short of the seam (cards overlapping at the ends). */
   }
-  /* Falls back to the plain scroller when the vendored Embla build is missing. */
-  .rail-fade.native { overflow: visible; }
+  /* `gap` only exists between items, so with `loop: true` the wrap — which Embla
+     measures as the content extent — closes the last/first seam with no gap at
+     all. This is the documented workaround: the last slide carries the trailing
+     gap as a margin. The strip's own horizontal padding has to be zero with it,
+     because Embla adds that inset to the loop length too (a 2px padding showed
+     up as an 18px seam). */
+  .recent-card:last-child { margin-right: 16px; }
+  /* Falls back to the plain scroller when the vendored Embla build is missing.
+     That strip pans itself, so the touch-action hint above only belongs to the
+     Embla one. */
+  .rail-fade.native { overflow: visible; touch-action: auto; }
   .rail-fade.native .track {
     overflow-x: auto;
     /* A sideways drag stays in the rail instead of chaining to the page, the
@@ -453,7 +478,13 @@
     flex-direction: column;
     gap: 10px;
   }
-  .recent-card.enter { animation: rise 0.8s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 55ms + 120ms); }
+  /* The entry animation goes on the card's children, never on the card: a card
+     is an Embla slide, and Embla writes those transforms itself when the loop
+     wraps one round, so an animation holding a transform of its own would win
+     over it (see the "How Embla Carousel Works" notes). `backwards` rather than
+     `both` for the same reason: the last keyframe must not linger, or it would
+     also beat the hover transform on .recent-media. */
+  .recent-card.enter > * { animation: rise 0.8s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 55ms + 120ms); }
   .recent-media {
     position: relative;
     display: block;
@@ -523,8 +554,17 @@
   .recent-caption { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-inline: 2px; }
   .recent-meta { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
   .recent-chev { color: var(--muted); flex: 0 0 auto; }
-  .recent-card:hover .recent-chev { color: var(--fg); }
-  .recent-card:hover .recent-media { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  /* Hover belongs to a real pointer. On iOS a tap leaves :hover stuck on the card
+     it landed on, and its transition would then keep a lifted, shadowed card
+     under the finger for the whole drag. A touch only gets the press feedback. */
+  @media (hover: hover) and (pointer: fine) {
+    .recent-card:hover .recent-chev { color: var(--fg); }
+    .recent-card:hover .recent-media { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  }
+  @media (hover: none) {
+    /* No press transition either: the drag should follow the finger at once. */
+    .recent-media { transition: none; }
+  }
   .recent-card:active .recent-media { transform: translateY(-1px) scale(0.99); }
   .recent-card:focus-visible { outline: none; }
   .recent-card:focus-visible .recent-media { box-shadow: 0 0 0 3px var(--accent), var(--shadow-lg); }
@@ -839,7 +879,15 @@
   .modal-panel {
     position: relative;
     width: min(880px, 100%);
+    /* `svh` is the viewport with the browser UI fully expanded, i.e. a constant,
+       while the overlay this panel is centred in is the actual viewport and grows
+       when iOS collapses its toolbars as the page scrolls. Capped in `svh` the
+       sheet therefore sits in a taller box — same height, more air around it —
+       and reads as "smaller" once the page is scrolled. `dvh` follows the room
+       that is really there, and still never overflows it; the `svh` line stays
+       first as the fallback for browsers without dynamic units. */
     max-height: min(88svh, 940px);
+    max-height: min(88dvh, 940px);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -982,7 +1030,10 @@
     .modal { align-items: flex-end; padding: 0; }
     .modal-panel {
       width: 100%;
+      /* Same reason as the base rule: the sheet slides up from the bottom edge
+         of the real viewport, not of the smallest possible one. */
       max-height: 92svh;
+      max-height: 92dvh;
       border-radius: 24px 24px 0 0;
       transform: translateY(64px);
     }
@@ -1025,7 +1076,8 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.001ms !important;
     }
-    .hero > *, .recent-card.enter, .card.enter { opacity: 1; transform: none; filter: none; }
+    .hero > *, .recent-card.enter > *, .card.enter { opacity: 1; transform: none; filter: none; }
     [data-reveal] { opacity: 1; transform: none; }
-    .recent-card:hover .recent-media { transform: none; }
+    .recent-card:hover .recent-media,
+    .recent-card:active .recent-media { transform: none; }
   }

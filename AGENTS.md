@@ -126,15 +126,20 @@ built from the generated sources:
   Vendored as UMD builds instead of loaded from a CDN: the site keeps serving
   its own assets, and `preview.html` still runs from `file://`. The rail is one
   card per newest app with Embla looping the strip and the auto-scroll plugin
-  drifting it at `RECENT_SPEED` (px per second); a small state machine in
-  `site/app.js` (`railParked`, `syncRailAuto`) parks the drift on hover, on
-  keyboard focus, while the app sheet is open, off screen, in a background tab
-  and under `prefers-reduced-motion`. Replacing the rail means replacing those
-  three files' worth of wiring, so bump the version there rather than editing
-  the vendored bundles. A language switch rebuilds the strip to re-label it and
-  restores the reader's place afterwards; the Direct/Mirror switch only
-  rewrites the subscription hrefs in place, so the rail and the grid are never
-  torn down for it.
+  drifting it at `RECENT_SPEED` (px per second). The plugin owns the pause and
+  resume: `stopOnInteraction` is off so it stops on `pointerDown` and comes back
+  `RECENT_RESTART_MS` after the strip settles (`startDelay`), and `stopOnFocusIn`
+  is the plugin's own keyboard handling. Only the states it cannot see are
+  `site/app.js`'s business (`railParked` / `syncRailAuto`): a pointer hovering the
+  rail, a finger on the strip, the app sheet, off screen, a background tab and
+  `prefers-reduced-motion`. Do not call `reInit()` on a window resize — it is a
+  hard reset that snaps the strip to the nearest card, and Embla re-measures
+  itself; a resize only refits the promo names. Replacing the rail means
+  replacing those three files' worth of wiring, so bump the version there rather
+  than editing the vendored bundles. A language switch rebuilds the strip to
+  re-label it and restores the reader's place afterwards; the Direct/Mirror
+  switch only rewrites the subscription hrefs in place, so the rail and the grid
+  are never torn down for it.
 - The app sheet owns a history entry: opening one pushes `#app=<bundle id>`, so
   the back button and the iOS edge swipe close the sheet instead of leaving the
   page, and that hash also works as a deep link. While it is open the page

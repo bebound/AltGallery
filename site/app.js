@@ -8,8 +8,11 @@
   const SVG_NS = "http://www.w3.org/2000/svg";
   const RECENT_LIMIT = 12; // apps in the "recently updated" rail
   const RECENT_SPEED = 34; // px per second the rail drifts while idle
-  const RECENT_HOLD_MS = 2600; // pause after a swipe/tap before drifting again
-  const RAIL_STEP_DURATION = 18; // Embla's duration unit (~0.4s) for an arrow step
+  // Auto-scroll's startDelay: how long the drift waits, once the strip has come
+  // to rest, before it comes back — after a swipe or a step, and after the rail
+  // is un-parked.
+  const RECENT_RESTART_MS = 800;
+  const RAIL_STEP_DURATION = 25; // Embla's duration unit; the docs recommend 20-60
 
   // Filled by boot() from all-apps.json; null while the page is loading.
   let data = null;
@@ -26,7 +29,6 @@
     modalId: null,
     lastFocus: null,
     sheetPushed: false,
-    lockedY: 0,
     locked: false,
     recentDrawn: false,
     gridDrawn: false
@@ -369,12 +371,10 @@
   let railApps = [];
   let railEmbla = null;
   let railAuto = null;
-  let railHoldUntil = 0;
   let railResizeTimer = 0;
-  let railHover = false;
-  let railFocus = false;
+  let railHover = false; // a desktop pointer is over the rail
+  let railDown = false; // a finger or mouse button is on the strip
   let railInView = true;
-  let railKeyboard = false;
 
   function applyLabels() {
     document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
@@ -482,11 +482,7 @@
         style,
         "data-id": app.bundleID,
         "aria-haspopup": "dialog",
-        "aria-label": t("card.open", { name: app.name }),
-        // The entry animation fills `both`, so its final `transform: none`
-        // would keep overriding the translate Embla puts on a card it moves to
-        // the other side of the loop. Drop the class once it has played.
-        onAnimationEnd: (event) => event.currentTarget.classList.remove("enter")
+        "aria-label": t("card.open", { name: app.name })
       },
       promo,
       h("span", { class: "recent-caption" }, h("span", { class: "recent-meta", text: meta }), chevron)
@@ -563,14 +559,22 @@
       // Embla steps its engine in fixed 1/60s ticks, so this is pixels per
       // 1/60s however fast the display refreshes.
       speed: RECENT_SPEED / 60,
-      startDelay: 0,
+      // The plugin owns the pause/resume cycle from here on: it stops the drift
+      // on pointerDown and, with stopOnInteraction off, brings it back
+      // RECENT_RESTART_MS after the strip settles. A drift therefore can never
+      // be swapped in under a finger, which is what made the strip jump when the
+      // hand-written hold fired mid-gesture.
+      startDelay: RECENT_RESTART_MS,
       playOnInit: false,
-      // Parking is railParked()'s call: it also knows about the sheet, the tab
-      // and the reduced-motion preference, which the plugin's own switches
-      // cannot see.
-      stopOnInteraction: true,
+      stopOnInteraction: false,
+      // Its own mouseenter switch cannot tell a mouse from an iOS tap, whose
+      // compatibility mouseenter never gets a matching mouseleave; the hover
+      // park stays ours (railHover) for that reason.
       stopOnMouseEnter: false,
-      stopOnFocusIn: false
+      // This one is safe to leave to the plugin: Embla only emits slideFocusStart
+      // for a Tab visit, and focusout on the strip resumes — exactly what the
+      // hand-written keyboard guard used to mimic.
+      stopOnFocusIn: true
     });
     // Embla walks the root's first element child, which is the strip: the
     // wrapper is the root so the clip and the mask share the element the
@@ -582,12 +586,33 @@
     );
     // A jump, not a scroll: the strip was rebuilt, not moved by the reader.
     if (returnTo > 0) railEmbla.scrollTo(returnTo, true);
-    // A swipe, an arrow step or a wheel gesture parks the drift, and a fresh
-    // hold starts once the strip comes to rest — the same feel the scrollLeft
-    // engine gave it.
+    // A hand on the strip parks the drift for as long as it is there, and the
+    // resume is arranged once it is lifted. The plugin stops itself on
+    // pointerDown; the flag is what keeps a park flip from re-arming it mid-drag.
+    railEmbla.on("pointerDown", () => {
+      railDown = true;
+      cancelRailRestPoll();
+      syncRailAuto();
+    });
+    railEmbla.on("pointerUp", () => {
+      railDown = false;
+      resumeRailWhenAtRest();
+    });
+    // A swipe, an arrow step or a wheel gesture parks the drift, and the restart
+    // is due once the strip comes to rest — the plugin's own startDelay.
     railEmbla.on("settle", () => {
       releaseWheelRail();
-      holdRail(RECENT_HOLD_MS);
+      syncRailAuto();
+    });
+    // The plugin also plays on its own after a settle or a focusout, and neither
+    // path can see the park rules above. Its play event fires before it marks
+    // itself playing, so the stop cannot land inside the handler: it waits a
+    // tick, by which time stop() has a playing plugin to stop.
+    railEmbla.on("autoScroll:play", () => {
+      if (!railParked()) return;
+      window.setTimeout(() => {
+        if (railAuto && railParked()) railAuto.stop();
+      }, 0);
     });
     updateRailButtons();
     syncRailAuto();
@@ -598,51 +623,77 @@
     if (railEmbla) railEmbla.destroy();
     railAuto = null;
     railEmbla = null;
+    railDown = false;
+    cancelRailRestPoll();
     railWheel.base = null;
     railWheel.pending = 0;
     railWheel.settled = true;
     railFade.classList.remove("native");
   }
 
-  // Everything that parks the drift: a hidden section, a pointer over it, the
-  // keyboard inside it, the app sheet, a background tab, reduced motion.
+  // Everything that parks the drift. Hover, focus and the finger on the strip are
+  // the plugin's or its own events; these are the states it cannot see.
   function railParked() {
     return (
       !railEmbla ||
       !railAuto ||
       !railInView ||
       railHover ||
-      railFocus ||
+      railDown ||
+      !railWheel.settled ||
       state.modalId ||
       document.hidden ||
       reduceMotion()
     );
   }
 
-  function railHoldRemaining() {
-    return Math.max(0, railHoldUntil - performance.now());
-  }
-
-  // The plugin restarts the drift on its own once it is playing, so handing it
-  // the remaining hold is all "wake" means now; calling this while parked is
-  // what cancels a start that was still waiting.
-  // The plugin only starts a drift that is not already running, so a hold has
-  // to stop it first: play() then re-arms it for when the hold runs out.
+  // Playing is the plugin's whole state machine: stop() while parked, play()
+  // otherwise. play() keeps the startDelay from the options, so an un-park and
+  // an interaction end up waiting the same beat.
   function syncRailAuto() {
     if (!railAuto) return;
     if (railParked()) {
       railAuto.stop();
       return;
     }
-    if (railHoldRemaining() > 0) railAuto.stop();
-    railAuto.play(railHoldRemaining());
+    if (railAuto.isPlaying()) return;
+    railAuto.play();
   }
 
-  // A swipe, a tap or an arrow step parks the drift for a moment so it does not
-  // fight the reader.
-  function holdRail(ms) {
-    railHoldUntil = Math.max(railHoldUntil, performance.now() + ms);
-    syncRailAuto();
+  // The plugin brings the drift back by itself once the strip settles, but a tap
+  // that never moves the strip settles nothing — and the stop it does on every
+  // pointerDown can cancel a start that was still waiting. So the hand-back is
+  // watched here as well: the drift returns once the progress has held still for
+  // two frames. scrollProgress() is public API, and handing the strip to the
+  // drift mid-momentum is what used to throw it around under the finger.
+  let railRestPoll = 0;
+
+  function cancelRailRestPoll() {
+    window.cancelAnimationFrame(railRestPoll);
+    railRestPoll = 0;
+  }
+
+  function resumeRailWhenAtRest() {
+    cancelRailRestPoll();
+    if (!railEmbla || !railAuto) return;
+    let last = railEmbla.scrollProgress();
+    let steady = 0;
+    let frames = 0;
+    const tick = () => {
+      railRestPoll = 0;
+      if (!railEmbla || !railAuto || railAuto.isPlaying()) return;
+      const at = railEmbla.scrollProgress();
+      steady = Math.abs(at - last) <= 1e-5 ? steady + 1 : 0;
+      last = at;
+      frames += 1;
+      // The frame cap only guards against a strip that never comes to rest.
+      if (steady >= 2 || frames > 240) {
+        syncRailAuto();
+        return;
+      }
+      railRestPoll = window.requestAnimationFrame(tick);
+    };
+    railRestPoll = window.requestAnimationFrame(tick);
   }
 
   // A looping rail never reaches an end, so both buttons stay live; only the
@@ -667,13 +718,12 @@
   }
 
   function scrollRail(direction) {
-    holdRail(RECENT_HOLD_MS);
     if (railEmbla) {
       // A drift in progress has replaced Embla's own scroll body with the
       // plugin's, which cannot carry a scrollTo: stop it so the step has a
-      // body to run on. The hold brings the drift back. A wheel gesture that
-      // has not settled owns the body the same way, and its seek() would eat
-      // the step, so it is handed back first.
+      // body to run on. settle() then brings the drift back after the step. A
+      // wheel gesture that has not settled owns the body the same way, and its
+      // seek() would eat the step, so it is handed back first.
       releaseWheelRail();
       if (railAuto) railAuto.stop();
       if (direction > 0) railEmbla.scrollNext();
@@ -744,10 +794,9 @@
 
   function wheelRail(deltaX) {
     if (!railEmbla || !railAuto) return;
-    holdRail(RECENT_HOLD_MS);
     if (railWheel.settled) {
       // A new gesture: take the strip over from the drift, which only comes
-      // back when the hold runs out.
+      // back once the wheel has settled (see settle in layoutRail).
       railAuto.stop();
       const engine = railEmbla.internalEngine();
       railWheel.base = engine.scrollBody;
@@ -1091,28 +1140,22 @@
     }
   }
 
-  // The page behind the sheet must not scroll; pin the body at its current
-  // offset so closing restores the exact position.
+  // The page behind the sheet must not scroll — but it must not move either.
+  // Pinning the body with `position: fixed` is the old iOS trick, and it is what
+  // made the catalog flash: the scroll offset is destroyed on open and restored
+  // on close, so the frame that un-pins asks the compositor for a brand new tile
+  // set of the whole viewport, and the sheet's backdrop-filter has to be
+  // re-sampled from that. `overflow: hidden` alone holds wheel and keyboard
+  // scrolling everywhere, and iOS, which scrolls the document under a finger
+  // regardless, is held by the touchmove guard on the sheet itself.
   function lockPage() {
     state.locked = true;
-    state.lockedY = window.scrollY || window.pageYOffset || 0;
     document.documentElement.classList.add("is-locked");
-    document.body.style.position = "fixed";
-    document.body.style.top = -state.lockedY + "px";
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
   }
 
   function unlockPage() {
     state.locked = false;
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
-    window.scrollTo(0, state.lockedY);
-    requestAnimationFrame(() => document.documentElement.classList.remove("is-locked"));
+    document.documentElement.classList.remove("is-locked");
   }
 
   function openModal(id, opener, fromHistory) {
@@ -1168,7 +1211,10 @@
       // Back where it was: the rail picks up again once the sheet is gone.
       syncRailAuto();
     };
-    if (reduceMotion()) finish();    else closeTimer = window.setTimeout(finish, 360);
+    // The longest of the sheet's own transitions (panel 0.5s) has to be over
+    // before the node leaves the tree: removing a live `backdrop-filter` layer
+    // mid-fade forces the page behind it to be re-sampled from scratch.
+    if (reduceMotion()) finish();    else closeTimer = window.setTimeout(finish, 520);
   }
 
   function trapFocus(event) {
@@ -1521,15 +1567,20 @@
   });
   railFade.addEventListener("pointerleave", clearRailHover);
   railFade.addEventListener("pointercancel", clearRailHover);
-  window.addEventListener("pointerup", (event) => {
-    if (event.pointerType !== "touch") return;
+  // A touch that ends outside the rail is the same release, and Embla's own
+  // pointerUp can be missed on a cancelled gesture: whichever comes last wins.
+  const releaseRailTouch = () => {
     clearRailHover();
+    if (!railDown) return;
+    railDown = false;
+    resumeRailWhenAtRest();
+  };
+  window.addEventListener("pointerup", (event) => {
+    if (event.pointerType === "touch") releaseRailTouch();
   }, true);
   window.addEventListener("pointercancel", (event) => {
-    if (event.pointerType !== "touch") return;
-    clearRailHover();
+    if (event.pointerType === "touch") releaseRailTouch();
   }, true);
-  railFade.addEventListener("pointerdown", () => holdRail(RECENT_HOLD_MS));
   // A sideways wheel or trackpad swipe drags the strip; anything with more
   // vertical than horizontal travel is the page's to scroll, so only the
   // former is taken over. The fallback scroller needs no bridge — it scrolls
@@ -1548,22 +1599,8 @@
     },
     { passive: false }
   );
-  // Tab focus parks the rail; a card focused by a pointer click, or by the
-  // sheet returning focus to its opener, must not freeze it.
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Tab") railKeyboard = true;
-  }, true);
-  document.addEventListener("pointerdown", () => { railKeyboard = false; }, true);
-  updatesTrack.addEventListener("focusin", () => {
-    if (!railKeyboard) return;
-    railFocus = true;
-    syncRailAuto();
-  });
-  updatesTrack.addEventListener("focusout", (event) => {
-    if (event.relatedTarget && updatesTrack.contains(event.relatedTarget)) return;
-    railFocus = false;
-    syncRailAuto();
-  });
+  // Tab focus and its release are the auto-scroll plugin's own job (stopOnFocusIn
+  // above); it already ignores a card focused by a pointer click.
   document.addEventListener("visibilitychange", () => syncRailAuto());
   $("#rail-prev").addEventListener("click", () => scrollRail(-1));
   $("#rail-next").addEventListener("click", () => scrollRail(1));
@@ -1577,13 +1614,15 @@
     { passive: true }
   );
 
-  // Card width follows the viewport, so the fitted promo names and Embla's own
-  // measurements both need a pass after a resize.
+  // Card width follows the viewport, so the fitted promo names need a pass after
+  // a resize. Embla re-measures on its own (its ResizeObserver watches the strip
+  // and the cards), and calling reInit() here would be a hard reset: on iOS the
+  // toolbar collapsing during a page scroll fires resize, and a reInit snaps the
+  // drifting strip back to the nearest card.
   window.addEventListener("resize", () => {
     window.clearTimeout(railResizeTimer);
     railResizeTimer = window.setTimeout(() => {
       fitPromoNames([...updatesTrack.children]);
-      if (railEmbla) railEmbla.reInit();
       updateRailButtons();
       syncRailAuto();
     }, 180);
@@ -1611,6 +1650,20 @@
     if (!event.target.classList.contains("modal-backdrop")) return;
     closeModal();
   });
+  // iOS scrolls the document under a finger even with `overflow: hidden` on the
+  // root, which is why the body used to be pinned — and un-pinning it is what
+  // re-rastered the catalog on close. The gesture is refused here instead, in the
+  // one place it can only be the page's: everything in the sheet that is not the
+  // scrolling body. That body's `overscroll-behavior: contain` already stops it
+  // from chaining out at its ends.
+  modal.addEventListener(
+    "touchmove",
+    (event) => {
+      if (event.target.closest(".modal-scroll")) return;
+      if (event.cancelable) event.preventDefault();
+    },
+    { passive: false }
+  );
   document.addEventListener("keydown", (event) => {
     if (!state.modalId) return;
     if (event.key === "Escape") {
