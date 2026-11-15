@@ -1052,6 +1052,28 @@
       ]
     },
     {
+      "name": "Open Screen Sharing",
+      "bundleIdentifier": "io.nekohasekai.screensharing",
+      "developerName": "nekohasekai",
+      "subtitle": "Remote desktop client optimized for Mac screen sharing",
+      "localizedDescription": "Open Screen Sharing is a free and open-source remote desktop client optimized for Mac screen sharing and public networks, while also offering first-class support for standard VNC and RDP.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/session.png"
+      ],
+      "tintColor": "#1060F0",
+      "versions": [
+        {
+          "version": "1.0.6",
+          "date": "2026-11-07T07:10:23Z",
+          "localizedDescription": "* Add native touch support for Mac\r\n* Add Quick Input\r\n* Keep the Mac awake\r\n* Allow signing in with another connection's credentials\r\n* Fixes and improvements",
+          "downloadURL": "https://gh-proxy.com/https://github.com/nekohasekai/open-screen-sharing/releases/download/v1.0.6/OpenScreenSharing.ipa",
+          "size": 13714353,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
       "name": "OpenParsec",
       "bundleIdentifier": "com.aigch.OpenParsec",
       "developerName": "hugeBlack",
@@ -1975,6 +1997,17 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
       "notify": true,
       "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.7.0"
+    },
+    {
+      "appID": "io.nekohasekai.screensharing",
+      "title": "Open Screen Sharing 1.0.6 · 07 Nov 2026",
+      "identifier": "Open Screen Sharing-release-v1.0.6",
+      "caption": "Open Screen Sharing 1.0.6 is available.",
+      "date": "2026-11-07T07:10:23Z",
+      "tintColor": "#1060F0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/news.png",
+      "notify": true,
+      "url": "https://github.com/nekohasekai/open-screen-sharing/releases/tag/v1.0.6"
     },
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
