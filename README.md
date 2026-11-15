@@ -172,6 +172,9 @@ Hi-res music player with downloads — a Flutter and Rust player with bit-perfec
 ### <img src="apps/Opaline/icon.png" alt="Opaline icon" width="24" align="top"> <a href="https://github.com/verback2308/Opaline">Opaline</a>
 YouTube client for iOS 12+ — lightweight and privacy-focused, with SponsorBlock, Return YouTube Dislike and up to 1080p playback.
 
+### <img src="apps/OpenScreenSharing/icon.png" alt="Open Screen Sharing icon" width="24" align="top"> <a href="https://github.com/nekohasekai/open-screen-sharing">Open Screen Sharing</a>
+Remote desktop client optimized for Mac screen sharing — also speaks standard VNC and RDP.
+
 ### <img src="apps/OpenParsec/icon.png" alt="OpenParsec icon" width="24" align="top"> <a href="https://github.com/hugeBlack/OpenParsec">OpenParsec</a>
 Open Parsec client for iOS/iPadOS — open source, with mouse, keyboard and touch-screen support.
 

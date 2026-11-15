@@ -172,6 +172,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <img src="apps/Opaline/icon.png" alt="Opaline icon" width="24" align="top"> <a href="https://github.com/verback2308/Opaline">Opaline</a>
 面向 iOS 12+ 的 YouTube 客户端——轻量、注重隐私，支持 SponsorBlock、Return YouTube Dislike 与最高 1080p 播放。
 
+### <img src="apps/OpenScreenSharing/icon.png" alt="Open Screen Sharing icon" width="24" align="top"> <a href="https://github.com/nekohasekai/open-screen-sharing">Open Screen Sharing</a>
+针对 Mac 屏幕共享优化的远程桌面客户端——同时支持标准 VNC 与 RDP。
+
 ### <img src="apps/OpenParsec/icon.png" alt="OpenParsec icon" width="24" align="top"> <a href="https://github.com/hugeBlack/OpenParsec">OpenParsec</a>
 面向 iOS/iPadOS 的开源 Parsec 客户端——支持鼠标、键盘与触屏。
 

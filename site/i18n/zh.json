@@ -124,6 +124,10 @@
     "subtitle": "面向 iOS/iPadOS 的开源 Parsec 客户端",
     "description": "面向 iOS/iPadOS 的开源 Parsec 客户端，支持鼠标、键盘与触摸屏操作。"
   },
+  "io.nekohasekai.screensharing": {
+    "subtitle": "针对 Mac 屏幕共享优化的远程桌面客户端",
+    "description": "Open Screen Sharing 是一款免费开源的远程桌面客户端，针对 Mac 屏幕共享与公共网络进行了优化，同时完整支持标准 VNC 与 RDP。"
+  },
   "com.makr.orchard": {
     "subtitle": "在 iPhone 应用里运行 Apple Silicon macOS Ventura",
     "description": "通过 Apple 自有的链路（AVPBooter、iBoot 与 XNU），在 QEMU 的 apple-vm 机器上于 iPhone 内启动真实的 arm64 macOS Ventura 客户机，GPU 由 reims-vgpu 经 Metal 绘制。需要 JIT、可为应用加上更高内存上限的签名工具，以及自行制作的 macOS 虚拟机。它很慢——轻负载场景最好也只有 30–40 fps。"
