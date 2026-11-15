@@ -394,32 +394,42 @@
   }
   .rail-btn:hover:not(:disabled) { color: var(--fg); background: var(--surface); transform: scale(1.05); }
   .rail-btn:disabled { opacity: 0.35; cursor: default; }
-  .track {
-    display: flex;
+  /* The edge fade lives on the wrapper, never on the scroller: WebKit repaints
+     a masked scroll container on every frame of a momentum swipe, which is
+     what made the cards flicker on iOS. */
+  .rail-fade {
     --rail-fade: 48px;
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--rail-fade)), transparent 100%);
     mask-image: linear-gradient(to right, #000 calc(100% - var(--rail-fade)), transparent 100%);
+  }
+  .track {
+    display: flex;
     gap: 16px;
     overflow-x: auto;
+    /* A sideways drag stays in the rail instead of chaining to the page, the
+       iOS back-swipe or the bounce. */
+    overscroll-behavior-x: contain;
     padding: 4px 2px 8px;
     scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    /* No -webkit-overflow-scrolling: touch — iOS 13+ scrolls this way anyway,
+       and switching the legacy layer back on makes the scroll offset it
+       reports disagree with the one the rail writes. */
   }
   .track::-webkit-scrollbar { display: none; }
-  .track.at-start {
+  .rail-fade.at-start {
     -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - var(--rail-fade)), transparent 100%);
     mask-image: linear-gradient(to right, #000 0, #000 calc(100% - var(--rail-fade)), transparent 100%);
   }
-  .track.at-end {
+  .rail-fade.at-end {
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--rail-fade), #000 100%);
     mask-image: linear-gradient(to right, transparent 0, #000 var(--rail-fade), #000 100%);
   }
-  .track.at-start.at-end {
+  .rail-fade.at-start.at-end {
     -webkit-mask-image: none;
     mask-image: none;
   }
   /* A looping rail never reaches an end, so both edges stay faded. */
-  .track.loop {
+  .rail-fade.loop {
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--rail-fade), #000 calc(100% - var(--rail-fade)), transparent 100%);
     mask-image: linear-gradient(to right, transparent 0, #000 var(--rail-fade), #000 calc(100% - var(--rail-fade)), transparent 100%);
   }

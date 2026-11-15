@@ -11,6 +11,8 @@
   const RECENT_HOLD_MS = 2600; // pause after a swipe/wheel before drifting again
   const RAIL_GAP = 16; // matches the .track flex gap
   const RAIL_LEAD = 2; // cards kept before the newest app, for backward scrolling
+  const RAIL_TOUCH_LEAD = 6; // lead topped up while a finger takes the rail over
+  const RAIL_CARD_CAP = 40; // the widest the card window may grow
   const RAIL_STEP_SPEED = 1500; // px per second for an arrow-button step
   // The rail drifts toward the left: the cards travel right to left.
   const RECENT_RAIL_DIRECTION = 1;
@@ -346,6 +348,7 @@
   const modalPanel = modal.querySelector(".modal-panel");
   const modalBody = $("#modal-body");
   const updatesTrack = $("#updates-track");
+  const railFade = $("#rail-fade");
   let closeTimer = 0;
   let railFrame = 0;
   let scrollFrame = 0;
@@ -359,10 +362,14 @@
   let railHoldUntil = 0;
   let railWakeTimer = 0;
   let railResizeTimer = 0;
+  let railSettleTimer = 0;
   let railStep = 0; // px left to travel for an arrow-button step
+  let railTarget = 0; // fractional scroll position the drift is heading for
   let railWrittenLeft = 0;
   let railLastLeft = 0;
   let railRecycling = false;
+  let railTouching = false;
+  let railFinger = false;
   let railHover = false;
   let railFocus = false;
   let railInView = true;
@@ -543,9 +550,14 @@
     stopRailAuto();
     railReady = false;
     railStep = 0;
+    railTouching = false;
+    railFinger = false;
+    window.clearTimeout(railSettleTimer);
+    railSettleTimer = 0;
     updatesTrack.replaceChildren();
-    updatesTrack.classList.remove("loop");
+    railFade.classList.remove("loop");
     updatesTrack.scrollLeft = 0;
+    railTarget = 0;
     railWrittenLeft = 0;
     railLastLeft = 0;
     if (railApps.length < 2 || !updatesTrack.clientWidth) return;
@@ -568,8 +580,9 @@
 
     railReady = true;
     railUnitPx = railUnit();
-    updatesTrack.classList.add("loop");
+    railFade.classList.add("loop");
     updatesTrack.scrollLeft = railUnitPx * RAIL_LEAD;
+    railTarget = updatesTrack.scrollLeft;
     railWrittenLeft = updatesTrack.scrollLeft;
     railLastLeft = updatesTrack.scrollLeft;
   }
@@ -593,6 +606,7 @@
     updatesTrack.append(added);
     fitPromoNames([added]);
     updatesTrack.scrollLeft = Math.max(updatesTrack.scrollLeft - shift, 0);
+    railTarget = updatesTrack.scrollLeft;
     railWrittenLeft = updatesTrack.scrollLeft;
     railLastLeft = updatesTrack.scrollLeft;
     return true;
@@ -614,6 +628,7 @@
     updatesTrack.prepend(added);
     fitPromoNames([added]);
     updatesTrack.scrollLeft += shift;
+    railTarget = updatesTrack.scrollLeft;
     railWrittenLeft = updatesTrack.scrollLeft;
     railLastLeft = updatesTrack.scrollLeft;
     return true;
@@ -638,6 +653,81 @@
     } finally {
       railRecycling = false;
     }
+  }
+
+  // A card may only be added at the far end while a finger drives the strip: an
+  // appended card is out of sight, so nothing under the finger moves — unlike
+  // the scrollLeft correction a card moved from one edge to the other needs,
+  // which WebKit drops while it is still animating a swipe.
+  function growRail() {
+    if (!railReady || updatesTrack.childElementCount >= RAIL_CARD_CAP) return false;
+    if (updatesTrack.scrollLeft < updatesTrack.scrollWidth - updatesTrack.clientWidth * 2) return false;
+    const last = updatesTrack.lastElementChild;
+    if (!last) return false;
+    const added = railCard(Number(last.dataset.ring) + 1, 0);
+    updatesTrack.append(added);
+    fitPromoNames([added]);
+    return true;
+  }
+
+  // Prepend cards until the given lead is back. Safe whenever the strip is at
+  // rest: the position moves by exactly the space the moved card took.
+  function topUpRail(lead) {
+    if (!railReady || railRecycling) return;
+    const unit = railUnitPx || railUnit();
+    railRecycling = true;
+    try {
+      for (let count = 0; count < 24 && updatesTrack.scrollLeft < unit * lead; count += 1) {
+        if (!recycleBackward()) break;
+      }
+    } finally {
+      railRecycling = false;
+    }
+  }
+
+  // Put the window back in shape once the reader lets go: the rail wants
+  // RAIL_LEAD cards behind the scroll position and runway ahead of it, however
+  // far a swipe carried it. At rest the correction is invisible, and the band
+  // is one card wide, so a step always lands inside it.
+  function balanceRail() {
+    // Keyboard focus parks the rail, rebalancing included (see recycleRail).
+    if (!railReady || railRecycling || railFocus) return;
+    const unit = railUnitPx || railUnit();
+    const lead = unit * RAIL_LEAD;
+    railRecycling = true;
+    try {
+      for (let count = 0; count < 32; count += 1) {
+        const left = updatesTrack.scrollLeft;
+        if (left > lead + unit / 2) {
+          if (!recycleForward()) break;
+        } else if (left < lead - unit / 2) {
+          if (!recycleBackward()) break;
+        } else {
+          break;
+        }
+      }
+    } finally {
+      railRecycling = false;
+    }
+  }
+
+  // iOS keeps a fling running after the last scroll event it reports, and a
+  // card moved out from under it is what relabelled the strip mid-swipe: leave
+  // the cards alone until the scroll has been quiet for a while.
+  function settleRail() {
+    window.clearTimeout(railSettleTimer);
+    railSettleTimer = 0;
+    railTouching = false;
+    balanceRail();
+    updateRailButtons();
+    wakeRail();
+  }
+
+  // Re-armed by every scroll event, ours included: a gesture is over when the
+  // strip stops reporting movement, not when the finger lifts.
+  function armRailSettle() {
+    window.clearTimeout(railSettleTimer);
+    railSettleTimer = window.setTimeout(settleRail, 300);
   }
 
   function railAutoAllowed() {
@@ -716,7 +806,11 @@
       } else {
         delta = (RECENT_RAIL_DIRECTION * RECENT_SPEED * elapsed) / 1000;
       }
-      const next = updatesTrack.scrollLeft + delta;
+      // The drift carries its own fractional position: read scrollLeft back and
+      // iOS hands out a rounded value, so a half-pixel step added to it would
+      // never leave the pixel it started in and the rail would stand still.
+      const next = railTarget + delta;
+      railTarget = next;
       railWrittenLeft = next;
       railLastLeft = next;
       updatesTrack.scrollLeft = next;
@@ -744,9 +838,9 @@
     $("#rail-next").disabled = atEnd;
     // Fade the edge that is clipped, so a half-visible card reads as "scroll
     // for more" instead of a layout mistake; drop the fade at either end.
-    updatesTrack.classList.toggle("at-start", atStart);
-    updatesTrack.classList.toggle("at-end", atEnd);
-    updatesTrack.classList.toggle("loop", looping);
+    railFade.classList.toggle("at-start", atStart);
+    railFade.classList.toggle("at-end", atEnd);
+    railFade.classList.toggle("loop", looping);
   }
 
   function scrollRail(direction) {
@@ -754,6 +848,7 @@
     const step = Math.max(unit, 160) * direction;
     if (reduceMotion()) {
       const next = updatesTrack.scrollLeft + step;
+      railTarget = next;
       railWrittenLeft = next;
       railLastLeft = next;
       updatesTrack.scrollLeft = next;
@@ -1417,12 +1512,20 @@
     "scroll",
     () => {
       const left = updatesTrack.scrollLeft;
+      armRailSettle();
       // A position we did not write ourselves is a swipe, wheel or keyboard
       // scroll: park the marquee briefly and let the user drive.
-      if (Math.abs(left - railWrittenLeft) > 2) holdRail(RECENT_HOLD_MS);
-      const direction = left > railLastLeft + 0.5 ? 1 : left < railLastLeft - 0.5 ? -1 : 0;
+      if (Math.abs(left - railWrittenLeft) > 2) {
+        holdRail(RECENT_HOLD_MS);
+        railTarget = left;
+        const direction = left > railLastLeft + 0.5 ? 1 : left < railLastLeft - 0.5 ? -1 : 0;
+        // Under a finger iOS drops the scrollLeft correction a recycled card
+        // depends on, so the card under it gets relabelled mid-swipe: feed the
+        // far end instead and rebuild the window once the scroll settles.
+        if (railFinger || railTouching) growRail();
+        else if (direction) recycleRail(direction);
+      }
       railLastLeft = left;
-      if (direction) recycleRail(direction);
       if (railFrame) return;
       railFrame = requestAnimationFrame(() => {
         railFrame = 0;
@@ -1431,12 +1534,38 @@
     },
     { passive: true }
   );
-  updatesTrack.addEventListener("pointerenter", () => { railHover = true; });
-  updatesTrack.addEventListener("pointerleave", () => {
+  // Only a real pointer can hover, and WebKit drops the pointerleave that ends
+  // a scroll gesture, so the release is caught wherever it happens: a hover
+  // flag left behind would park the rail for good.
+  const clearRailHover = () => {
+    if (!railHover) return;
     railHover = false;
     wakeRail();
+  };
+  updatesTrack.addEventListener("pointerenter", (event) => {
+    if (event.pointerType !== "touch") railHover = true;
   });
-  updatesTrack.addEventListener("pointerdown", () => holdRail(RECENT_HOLD_MS));
+  updatesTrack.addEventListener("pointerleave", clearRailHover);
+  updatesTrack.addEventListener("pointercancel", clearRailHover);
+  window.addEventListener("pointerup", (event) => {
+    if (event.pointerType !== "touch") return;
+    railFinger = false;
+    clearRailHover();
+  }, true);
+  window.addEventListener("pointercancel", (event) => {
+    if (event.pointerType !== "touch") return;
+    railFinger = false;
+    clearRailHover();
+  }, true);
+  updatesTrack.addEventListener("pointerdown", (event) => {
+    holdRail(RECENT_HOLD_MS);
+    if (event.pointerType !== "touch") return;
+    railFinger = true;
+    railTouching = true;
+    // A finger is about to take the strip over: top up the lead now, while
+    // nothing is moving, so a backwards swipe has cards to run into.
+    topUpRail(RAIL_TOUCH_LEAD);
+  });
   updatesTrack.addEventListener("wheel", () => holdRail(RECENT_HOLD_MS), { passive: true });
   // Tab focus parks the rail; a card focused by a pointer click, or by the
   // sheet returning focus to its opener, must not freeze it.
