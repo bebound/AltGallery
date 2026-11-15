@@ -21,11 +21,11 @@
       "tintColor": "#0784FC",
       "versions": [
         {
-          "version": "3.8.13",
-          "date": "2026-11-08T09:11:51Z",
-          "localizedDescription": "**Commit:** [9d6ea09b05afa2c8fc537c372795a294db631311](https://github.com/LiveContainer/LiveContainer/commit/9d6ea09b05afa2c8fc537c372795a294db631311)\n**Message:** Support for built-in jit enablers, ram donors, helper process etc\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/42464599105/attempts/2).",
+          "version": "3.8.14",
+          "date": "2026-11-15T13:17:44Z",
+          "localizedDescription": "**Commit:** [fe10ca445da6ea9896d5443f1a43f81d93a46db8](https://github.com/LiveContainer/LiveContainer/commit/fe10ca445da6ea9896d5443f1a43f81d93a46db8)\n**Message:** don't load source until source view is opened, implement #1726, bump version\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/43718002611/attempts/1).",
           "downloadURL": "https://gh-proxy.com/https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 23752778,
+          "size": 23763930,
           "minOSVersion": "15.0"
         },
         {
@@ -42,10 +42,10 @@
   "news": [
     {
       "appID": "com.kdt.livecontainer",
-      "title": "LiveContainer+SideStore 3.8.13 · 08 Nov 2026",
+      "title": "LiveContainer+SideStore 3.8.14 · 15 Nov 2026",
       "identifier": "LiveContainer+SideStore-release-nightly",
-      "caption": "LiveContainer+SideStore 3.8.13 is available.",
-      "date": "2026-11-08T09:11:51Z",
+      "caption": "LiveContainer+SideStore 3.8.14 is available.",
+      "date": "2026-11-15T13:17:44Z",
       "tintColor": "#0784FC",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
       "notify": true,
