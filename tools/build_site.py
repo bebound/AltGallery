@@ -91,7 +91,7 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SOURCE = Path("all-apps.json")
@@ -342,9 +342,11 @@ def write_site_icon(logo_path: Path, out_dir: Path) -> None:
     """
     logo = Image.open(logo_path)
     logo.load()
-    logo.convert("RGBA").resize(
-        (SITE_ICON_PX, SITE_ICON_PX), Image.Resampling.LANCZOS
-    ).save(out_dir / "icon.png", optimize=True)
+    # A crop to the square, not a stretch: the logo is not guaranteed to be one.
+    square = ImageOps.fit(
+        logo.convert("RGBA"), (SITE_ICON_PX, SITE_ICON_PX), Image.Resampling.LANCZOS
+    )
+    square.save(out_dir / "icon.png", optimize=True)
 
 
 def write_manifest(source: dict, out_dir: Path) -> None:
@@ -415,7 +417,8 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
             warn(f"{relative}: not in the working tree; the page will miss it under media/")
             continue
 
-        data = local.read_bytes()
+        original = local.read_bytes()
+        data = original
         target = relative
         try:
             webp = optimized_bytes(image_kind(url, icon_urls, logo_url), local)
@@ -425,7 +428,7 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
             webp_path = str(Path(relative).with_suffix(".webp"))
             # Two sources (home.png and home.jpg, say) can want the same name;
             # the first one keeps it and the rest stay in their own format.
-            if webp is not None and len(webp) < len(data) and webp_path not in taken:
+            if len(webp) < len(original) and webp_path not in taken:
                 data, target = webp, webp_path
         path = media_root / target
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -433,7 +436,7 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
         served[relative] = target
         taken.add(target)
         copied += 1
-        before += local.stat().st_size
+        before += len(original)
         after += len(data)
 
     print(
@@ -511,16 +514,23 @@ def content_hash(data: bytes) -> str:
 
 def json_blob(data: dict) -> str:
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
-    # Keep the payload from closing the <script> element it lives in.
+    # Keep the payload from closing the <script> element it lives in, and spell
+    # the two JavaScript line terminators as escapes: JSON allows them raw, but
+    # they are invisible in this source and inside a string literal.
     return (
         blob.replace("<", "\\u003c")
-        .replace(" ", "\\u2028")
-        .replace(" ", "\\u2029")
+        .replace("\u2028", "\\u2028")
+        .replace("\u2029", "\\u2029")
     )
 
 
 def inline_script(data: bytes) -> str:
-    return "<script>\n" + data.decode("utf-8").rstrip() + "\n</script>"
+    text = data.decode("utf-8").rstrip()
+    # Inlining is a textual splice, so a script that closes its own element
+    # would end the <script> it is spliced into.
+    if "</script" in text.lower():
+        raise SystemExit("error: cannot inline a script containing </script>")
+    return "<script>\n" + text + "\n</script>"
 
 
 def build_preview(index_html: str, style: bytes, script: bytes, vendor: dict[str, bytes],

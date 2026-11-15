@@ -128,7 +128,14 @@ built from the generated sources:
   keyboard focus, while the app sheet is open, off screen, in a background tab
   and under `prefers-reduced-motion`. Replacing the rail means replacing those
   three files' worth of wiring, so bump the version there rather than editing
-  the vendored bundles.
+  the vendored bundles. A language switch rebuilds the strip to re-label it and
+  restores the reader's place afterwards; the Direct/Mirror switch only
+  rewrites the subscription hrefs in place, so the rail and the grid are never
+  torn down for it.
+- The app sheet owns a history entry: opening one pushes `#app=<bundle id>`, so
+  the back button and the iOS edge swipe close the sheet instead of leaving the
+  page, and that hash also works as a deep link. While it is open the page
+  behind it is `inert` (`aria-modal` alone is not honoured everywhere).
 - `site/i18n/zh.json` — the Chinese `subtitle` / `description` the page shows
   while the language switch is on 中文, keyed by bundle identifier. It exists
   because an AltStore source carries exactly one language per app

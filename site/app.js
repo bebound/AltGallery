@@ -25,6 +25,7 @@
     sort: "updated",
     modalId: null,
     lastFocus: null,
+    sheetPushed: false,
     lockedY: 0,
     locked: false,
     recentDrawn: false,
@@ -273,14 +274,32 @@
     return Number.isNaN(parsed.getTime()) ? null : parsed;
   }
 
+  // One date formatter and one collator per language, built on first use.
+  // Constructing a DateTimeFormat costs about half a millisecond, and a render
+  // asks for one per card: rebuilt per keystroke in the search field, that is
+  // tens of milliseconds of nothing but locale setup.
+  const intl = { lang: "", date: null, collator: null };
+
+  function intlFor() {
+    if (intl.lang !== state.lang) {
+      intl.lang = state.lang;
+      intl.date = new Intl.DateTimeFormat(state.lang === "zh" ? "zh-CN" : "en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+      });
+      intl.collator = new Intl.Collator(state.lang === "zh" ? "zh-CN" : "en", {
+        sensitivity: "base",
+        numeric: true
+      });
+    }
+    return intl;
+  }
+
   function fmtDate(value) {
     const date = dateValue(value);
     if (!date) return "";
-    return new Intl.DateTimeFormat(state.lang === "zh" ? "zh-CN" : "en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric"
-    }).format(date);
+    return intlFor().date.format(date);
   }
 
   function fmtSize(bytes) {
@@ -291,7 +310,7 @@
   }
 
   function collator() {
-    return new Intl.Collator(state.lang === "zh" ? "zh-CN" : "en", { sensitivity: "base", numeric: true });
+    return intlFor().collator;
   }
 
   // AltStore sources carry one language per app, so the page's Chinese text
@@ -490,13 +509,20 @@
   // A long app name has to stay on one line: shrink it until it fits the
   // promo column instead of wrapping (HermesEnabler, LiveContainer+SideStore).
   function fitPromoNames(cards) {
+    const names = [];
     for (const card of cards) {
       if (!card.isConnected) continue;
       const name = card.querySelector(".promo-name");
       if (!name) continue;
       name.style.removeProperty("font-size");
-      let size = parseFloat(window.getComputedStyle(name).fontSize);
-      if (!size) continue;
+      names.push(name);
+    }
+    // Reset every name before reading any of them: a write interleaved with a
+    // read would force a layout per card.
+    const sizes = names.map((name) => parseFloat(window.getComputedStyle(name).fontSize) || 0);
+    names.forEach((name, index) => {
+      let size = sizes[index];
+      if (!size) return;
       // scrollWidth/clientWidth are whole pixels, so one scale can leave a
       // pixel or two over; a second pass settles it.
       for (let pass = 0; pass < 3; pass += 1) {
@@ -505,7 +531,7 @@
         if (!room || name.scrollWidth <= room) break;
         size = Math.max(size * (room / name.scrollWidth) * 0.99, 9);
       }
-    }
+    });
   }
 
   // The rail is a loop over the newest apps: every card lives in the DOM once
@@ -513,6 +539,11 @@
   // auto-scroll plugin keeps it drifting, which is what the old hand-written
   // scrollLeft engine existed to do.
   function layoutRail() {
+    // The rail is rebuilt to re-label it on a language switch; the reader's
+    // place in the strip is worth keeping across that.
+    const returnTo = railEmbla
+      ? Math.round(railEmbla.scrollProgress() * Math.max(railEmbla.scrollSnapList().length - 1, 0))
+      : 0;
     destroyRail();
     updatesTrack.replaceChildren();
     railApps.forEach((app, index) => updatesTrack.append(recentCard(app, index)));
@@ -549,6 +580,8 @@
       { loop: true, align: "start", dragFree: true, duration: RAIL_STEP_DURATION },
       [railAuto]
     );
+    // A jump, not a scroll: the strip was rebuilt, not moved by the reader.
+    if (returnTo > 0) railEmbla.scrollTo(returnTo, true);
     // A swipe, an arrow step or a wheel gesture parks the drift, and a fresh
     // hold starts once the strip comes to rest — the same feel the scrollLeft
     // engine gave it.
@@ -638,7 +671,10 @@
     if (railEmbla) {
       // A drift in progress has replaced Embla's own scroll body with the
       // plugin's, which cannot carry a scrollTo: stop it so the step has a
-      // body to run on. The hold brings the drift back.
+      // body to run on. The hold brings the drift back. A wheel gesture that
+      // has not settled owns the body the same way, and its seek() would eat
+      // the step, so it is handed back first.
+      releaseWheelRail();
       if (railAuto) railAuto.stop();
       if (direction > 0) railEmbla.scrollNext();
       else railEmbla.scrollPrev();
@@ -882,6 +918,7 @@
         href: addSourceLink(subscribeURL(app)),
         target: "_blank",
         rel: "noopener",
+        "data-subscribe": app.bundleID,
         "aria-label": t("card.add") + " — " + app.name
       },
       svgIcon(PLUS_ICON, 12),
@@ -940,12 +977,28 @@
     state.gridDrawn = true;
   }
 
+  // The subscription URLs carry the connection mode. Switching it rewrites the
+  // ones already on screen instead of rebuilding the grid, which would throw
+  // away the reader's place in it (and restart the rail's drift).
+  function refreshSubscriptions() {
+    for (const link of document.querySelectorAll("[data-subscribe]")) {
+      const app = appById.get(link.dataset.subscribe);
+      if (app) link.href = addSourceLink(subscribeURL(app));
+    }
+  }
+
   function modalActions(app) {
     const actions = h("div", { class: "m-actions" });
     actions.append(
       h(
         "a",
-        { class: "btn btn-primary", href: addSourceLink(subscribeURL(app)), target: "_blank", rel: "noopener" },
+        {
+          class: "btn btn-primary",
+          href: addSourceLink(subscribeURL(app)),
+          target: "_blank",
+          rel: "noopener",
+          "data-subscribe": app.bundleID
+        },
         svgIcon(PLUS_ICON, 14),
         h("span", { text: t("card.add") })
       )
@@ -1009,6 +1062,35 @@
     modalBody.replaceChildren(head, modalActions(app), ...sections);
   }
 
+  // The sheet owns a history entry, so the back button — and the edge swipe on
+  // iOS, which is the reflex way to dismiss a sheet there — closes it instead of
+  // leaving the page. The hash doubles as a deep link: #app=<bundle id>.
+  const SHEET_HASH = "#app=";
+
+  function sheetIdFromHash() {
+    const hash = window.location.hash;
+    if (!hash.startsWith(SHEET_HASH)) return "";
+    try {
+      return decodeURIComponent(hash.slice(SHEET_HASH.length));
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function clearSheetHash() {
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+  }
+
+  // aria-modal is not honoured by every screen reader, so what the sheet covers
+  // is taken out of the tab order and the accessibility tree by hand.
+  function setBackgroundInert(inert) {
+    for (const element of [document.querySelector(".nav"), document.querySelector("main")]) {
+      if (!element) continue;
+      if (inert) element.setAttribute("inert", "");
+      else element.removeAttribute("inert");
+    }
+  }
+
   // The page behind the sheet must not scroll; pin the body at its current
   // offset so closing restores the exact position.
   function lockPage() {
@@ -1033,17 +1115,23 @@
     requestAnimationFrame(() => document.documentElement.classList.remove("is-locked"));
   }
 
-  function openModal(id, opener) {
+  function openModal(id, opener, fromHistory) {
     const app = appById.get(id);
     if (!app) return;
     window.clearTimeout(closeTimer);
     state.modalId = id;
     state.lastFocus = opener || document.activeElement;
+    // One entry per opening; closing pops it again (see closeModal).
+    if (!fromHistory) {
+      window.history.pushState({ sheet: id }, "", SHEET_HASH + encodeURIComponent(id));
+      state.sheetPushed = true;
+    }
     // The sheet covers the rail: park the drift while it is open.
     syncRailAuto();
     renderModalBody();
     modal.hidden = false;
     modalBody.scrollTop = 0;
+    setBackgroundInert(true);
     if (!state.locked) lockPage();
     // Force a layout pass so the sheet transitions in from its closed state.
     void modalPanel.offsetHeight;
@@ -1053,14 +1141,24 @@
     });
   }
 
-  function closeModal() {
+  function closeModal(fromHistory) {
     if (!state.modalId) return;
     state.modalId = null;
     modal.classList.remove("open");
+    // Closing by hand pops the entry the sheet pushed; the popstate handler
+    // then finds nothing left to close. A sheet opened from an #app= link has
+    // no entry of its own, so its hash is cleared instead.
+    const pushed = state.sheetPushed;
+    state.sheetPushed = false;
+    if (!fromHistory) {
+      if (pushed) window.history.back();
+      else if (sheetIdFromHash()) clearSheetHash();
+    }
     const finish = () => {
       closeTimer = 0;
       modal.hidden = true;
       modalBody.replaceChildren();
+      setBackgroundInert(false);
       unlockPage();
       const opener = state.lastFocus;
       state.lastFocus = null;
@@ -1267,6 +1365,16 @@
     if (state.modalId) renderModalBody();
   }
 
+  // A connection switch changes hrefs and nothing else: the rail's promo tiles
+  // carry no proxy URLs, so it is left alone, and the grid keeps its cards.
+  function renderMode() {
+    applyLabels();
+    if (!data) return;
+    applyData();
+    refreshSubscriptions();
+    if (state.modalId) renderModalBody();
+  }
+
   function initState() {
     const storedLang = storeRead(STORE_KEY.lang);
     if (storedLang === "zh" || storedLang === "en") {
@@ -1316,6 +1424,25 @@
     items.forEach((item) => observer.observe(item));
   }
 
+  // The browser resolves a #hash before the catalog exists, so a section it
+  // jumped to has been reshaped by the cards that land after it. The sheet
+  // links are left alone: openModal() owns those.
+  function realignToHash() {
+    const hash = window.location.hash;
+    if (!hash || hash.startsWith(SHEET_HASH)) return;
+    let target = null;
+    try {
+      target = document.querySelector(hash);
+    } catch (error) {
+      return; // not a selector: there is nothing to align to
+    }
+    if (!target) return;
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + (window.scrollY || 0),
+      behavior: "instant"
+    });
+  }
+
   async function boot() {
     applyLabels();
     renderSkeleton();
@@ -1329,6 +1456,10 @@
       data = prepare(source, config);
       appById = new Map(data.apps.map((app) => [app.bundleID, app]));
       render();
+      realignToHash();
+      // A deep link (#app=<bundle id>) opens straight onto that app.
+      const deepLink = sheetIdFromHash();
+      if (deepLink && appById.has(deepLink)) openModal(deepLink, null, true);
     } catch (error) {
       console.error(error);
       showError();
@@ -1347,7 +1478,7 @@
     button.addEventListener("click", () => {
       state.mirror = button.dataset.mode === "mirror";
       storeWrite(STORE_KEY.mode, state.mirror ? "mirror" : "direct");
-      render();
+      renderMode();
     });
   });
 
@@ -1475,7 +1606,7 @@
     ).observe($("#updates"));
   }
 
-  $("#modal-close").addEventListener("click", closeModal);
+  $("#modal-close").addEventListener("click", () => closeModal());
   modal.addEventListener("click", (event) => {
     if (!event.target.classList.contains("modal-backdrop")) return;
     closeModal();
@@ -1488,6 +1619,17 @@
     } else if (event.key === "Tab") {
       trapFocus(event);
     }
+  });
+  // A history step either leaves the sheet or lands on one: the hash says which
+  // app the entry belongs to. Closing by hand pops back here with no sheet id,
+  // and finds nothing left to do.
+  window.addEventListener("popstate", () => {
+    const id = sheetIdFromHash();
+    if (state.modalId) {
+      if (id !== state.modalId) closeModal(true);
+      return;
+    }
+    if (id && appById.has(id)) openModal(id, null, true);
   });
 
   window.addEventListener(

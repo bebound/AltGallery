@@ -210,6 +210,9 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 1.4;
+    /* Never below the 44px a fingertip wants by much: this is the whole control
+       surface on a phone, where the compact pill would otherwise be ~26px. */
+    min-height: 28px;
     padding: 5px 11px;
     border-radius: 999px;
     cursor: pointer;
@@ -381,8 +384,8 @@
   .rail-tools { display: flex; gap: 6px; }
   .rail-btn {
     appearance: none;
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     display: grid;
     place-items: center;
     border: 1px solid var(--line);
@@ -396,12 +399,23 @@
   .rail-btn:disabled { opacity: 0.35; cursor: default; }
   /* The strip is translated by Embla, never scrolled, so the clip and the edge
      fade both live on this wrapper: WebKit repaints a masked element on every
-     frame it moves, and the mask has to stay off the moving part. */
+     frame it moves, and the mask has to stay off the moving part. The two
+     custom properties say which edges are faded; a zero-width stop is a hard
+     edge, so no fade and no mask at all are the same thing. The prefixed copy
+     is unnecessary: color-mix() below already requires a browser that has
+     unprefixed mask-image. */
   .rail-fade {
     --rail-fade: 48px;
+    --fade-left: 0px;
+    --fade-right: var(--rail-fade);
     overflow: hidden;
-    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--rail-fade)), transparent 100%);
-    mask-image: linear-gradient(to right, #000 calc(100% - var(--rail-fade)), transparent 100%);
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 var(--fade-left),
+      #000 calc(100% - var(--fade-right)),
+      transparent 100%
+    );
   }
   .track {
     display: flex;
@@ -418,23 +432,13 @@
     scrollbar-width: none;
   }
   .rail-fade.native .track::-webkit-scrollbar { display: none; }
-  .rail-fade.at-start {
-    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - var(--rail-fade)), transparent 100%);
-    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - var(--rail-fade)), transparent 100%);
-  }
-  .rail-fade.at-end {
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--rail-fade), #000 100%);
-    mask-image: linear-gradient(to right, transparent 0, #000 var(--rail-fade), #000 100%);
-  }
-  .rail-fade.at-start.at-end {
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-  /* A looping rail never reaches an end, so both edges stay faded. */
-  .rail-fade.loop {
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--rail-fade), #000 calc(100% - var(--rail-fade)), transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0, #000 var(--rail-fade), #000 calc(100% - var(--rail-fade)), transparent 100%);
-  }
+  /* Only the fallback scroller has ends to fade: at the start the left edge is
+     solid and the right one fades (the default); at the end it is the other way
+     round, and with both ends reached nothing fades at all. The looping rail
+     never reaches an end, so both edges stay faded. */
+  .rail-fade.at-end { --fade-left: var(--rail-fade); --fade-right: 0px; }
+  .rail-fade.at-start.at-end { --fade-left: 0px; --fade-right: 0px; }
+  .rail-fade.loop { --fade-left: var(--rail-fade); }
   .recent-card {
     appearance: none;
     flex: 0 0 clamp(232px, 25vw, 320px);
@@ -495,7 +499,8 @@
     text-transform: uppercase;
   }
   .promo-copy { display: flex; flex-direction: column; gap: 2.4cqw; min-width: 0; }
-  /* One line, never wrapped: fitPromoNames() shrinks the font for long names. */
+  /* One line, never wrapped: fitPromoNames() shrinks the font for long names.
+     The ellipsis is the floor it stops at (9px) still not being enough. */
   .promo-name {
     font-size: clamp(18px, 10cqw, 32px);
     font-weight: 700;
@@ -504,6 +509,7 @@
     color: #15161a;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
   .promo-tagline {
     font-size: clamp(11px, 4.3cqw, 14px);
@@ -621,17 +627,15 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: var(--surface);
+    /* The tint wash is a background layer, not an ::before overlay: an
+       absolutely positioned pseudo-element paints above the card's own text,
+       which softens the title for nothing. */
+    background:
+      radial-gradient(120% 90% at 0% 0%, color-mix(in srgb, var(--tint) 13%, transparent), transparent 62%),
+      var(--surface);
     border: 1px solid var(--line);
     border-radius: 24px;
     transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.25s ease;
-  }
-  .card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(120% 90% at 0% 0%, color-mix(in srgb, var(--tint) 13%, transparent), transparent 62%);
   }
   .card:hover {
     transform: translateY(-3px);
@@ -774,6 +778,15 @@
   }
   .status { margin: 40px 0; text-align: center; color: var(--muted); font-size: 14.5px; }
   .status a { color: var(--accent-ink); }
+  /* Only rendered with JavaScript off, where the catalog never gets built. */
+  .noscript {
+    margin: 0;
+    padding: calc(var(--nav-total) + 24px) 20px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .noscript a { color: var(--accent-ink); }
   .footer {
     display: flex;
     flex-direction: column;
@@ -790,8 +803,7 @@
   .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
 
   /* Skeleton */
-  .card.skeleton { pointer-events: none; animation: sk-pulse 1.8s ease-in-out infinite; }
-  .card.skeleton::before { display: none; }
+  .card.skeleton { pointer-events: none; background: var(--surface); animation: sk-pulse 1.8s ease-in-out infinite; }
   .sk-icon { flex: 0 0 54px; width: 54px; height: 54px; border-radius: 23%; background: var(--surface-2); }
   .sk-lines { flex: 1; display: flex; flex-direction: column; gap: 8px; padding-top: 6px; }
   .sk-line { height: 11px; border-radius: 6px; background: var(--surface-2); }
@@ -855,11 +867,11 @@
   }
   .modal-close {
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: 12px;
+    right: 12px;
     z-index: 3;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     display: grid;
     place-items: center;
     border: 0;
@@ -925,7 +937,7 @@
     background: var(--surface-2);
   }
   .md { max-width: 68ch; color: var(--soft); font-size: 14.5px; line-height: 1.6; overflow-wrap: anywhere; }
-  .md p { margin: 0 0 9px; white-space: normal; }
+  .md p { margin: 0 0 9px; }
   .md p:last-child { margin-bottom: 0; }
   .md-title { margin: 14px 0 6px; color: var(--fg); font-size: 14.5px; font-weight: 650; }
   .md-title:first-child { margin-top: 0; }
@@ -961,7 +973,7 @@
     .nav-inner { grid-template-columns: auto 1fr; }
     .nav-links { display: none; }
     .controls { gap: 6px; }
-    .segment button { padding: 5px 9px; font-size: 11.5px; }
+    .segment button { padding: 5px 9px; font-size: 11.5px; min-height: 32px; }
     .toolbar { gap: 8px; }
     .sort-seg { margin-left: auto; }
     .m-head { gap: 14px; }
@@ -1016,5 +1028,4 @@
     .hero > *, .recent-card.enter, .card.enter { opacity: 1; transform: none; filter: none; }
     [data-reveal] { opacity: 1; transform: none; }
     .recent-card:hover .recent-media { transform: none; }
-    .recent-card:hover .recent-media img { transform: none; }
   }

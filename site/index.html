@@ -26,8 +26,8 @@
       <span>AltGallery</span>
     </a>
     <nav class="nav-links" data-i18n-aria="nav.label">
-      <a href="#overview" data-i18n="nav.overview" class="active"></a>
-      <a href="#library" data-i18n="nav.library"></a>
+      <a href="#overview" data-i18n="nav.overview" class="active">Overview</a>
+      <a href="#library" data-i18n="nav.library">Library</a>
     </nav>
     <div class="controls">
       <div class="segment" id="lang-seg" role="group" data-i18n-aria="lang.label">
@@ -43,6 +43,10 @@
 </header>
 
 <main>
+  <noscript>
+    <p class="noscript">The catalog is drawn by JavaScript. The AltStore source itself is <a href="all-apps.json">all-apps.json</a>.</p>
+  </noscript>
+
   <section class="page hero-page" id="overview">
     <div class="hero">
       <img class="hero-icon" id="hero-icon" alt="AltGallery" width="96" height="96" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
@@ -88,7 +92,7 @@
     <div class="library-head" data-reveal>
       <p class="eyebrow" data-i18n="apps.collection"></p>
       <h2 class="display" data-i18n="apps.title"></h2>
-      <p class="library-count" id="apps-count"></p>
+      <p class="library-count" id="apps-count" aria-live="polite"></p>
     </div>
 
     <div class="toolbar" data-reveal>
