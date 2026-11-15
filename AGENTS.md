@@ -77,8 +77,11 @@ and `github.com/<owner>/<repo>/releases/download/...` ipas — are prefixed with
 `https://gh-proxy.com/` so the source also works where GitHub is unreachable.
 GitHub *pages* (`website`, `news[].url`, `/releases/tag/...` links in text)
 are left untouched. It is generated from `all-apps.json` only — never edit it
-by hand; regenerate it locally with `python3 tools/make_proxy.py` when you
-need to check a change.
+by hand, and do not regenerate it locally when adding or updating an app: the
+update workflow writes both `all-apps-proxy.json` and every per-app
+`apps/<AppName>/apps-proxy.json` after each push. Run
+`python3 tools/make_proxy.py` only when you specifically want to inspect what
+the mirror will contain.
 
 ## Merging into all-apps.json
 
@@ -202,6 +205,13 @@ what lets a CDN in front of the site (Cloudflare Polish, for one) cache and
 convert them; `media/` mirrors the repository layout (with a `.webp`
 extension where an image was re-encoded), so a changed image is the same URL
 with revalidation.
+
+`tools/build_site.py` is a **preview tool, not a verification step**: adding or
+updating an app never requires running it (or `tools/make_proxy.py`) locally.
+Both Pages workflows rebuild from the committed sources after the update
+workflow finishes, so any mistake in `site/i18n/zh.json` — a key that matches
+no bundle identifier, say — surfaces there, not in a local run. Build locally
+only when you actually want to look at the page.
 
 ## Generating News Images
 

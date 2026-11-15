@@ -34,3 +34,6 @@ Notes:
   review and commit.
 - AGENTS.md rule: never leave a `config.toml` and its `apps.json` out of
   sync; `all-apps.json` is regenerated whenever any source changes.
+- Proxies are not produced here: `all-apps-proxy.json` and each
+  `apps/<AppName>/apps-proxy.json` come from `tools/make_proxy.py`, which the
+  update workflow runs after committing. Don't run it to verify a change.

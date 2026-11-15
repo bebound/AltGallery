@@ -325,5 +325,5 @@ PY
 - [ ] `apps.json` regenerated via `./update.sh <NewName>`, never hand-edited, not committed
 - [ ] `all-apps.json` left modified in the working tree, not committed
 - [ ] README entry updated in both `README.md` and `README_CN.md` (href, icon `align="top"`, display name, Chinese description) and re-sorted if needed
-- [ ] `site/i18n/zh.json` entry renamed when the bundle identifier changed, retranslated when the subtitle/description changed
+- [ ] `site/i18n/zh.json` entry renamed when the bundle identifier changed, retranslated when the subtitle/description changed — no local `build_site.py` / `make_proxy.py` run, CI builds both
 - [ ] stale-reference grep clean or hits explained

@@ -306,9 +306,11 @@ change between apps.
    ```
 
    An app whose catalog text is already Chinese needs no entry — the page
-   falls back to it. `python3 tools/build_site.py` folds the file into
-   `config.json` and warns about entries whose bundle identifier is not in the
-   catalog.
+   falls back to it. Nothing else is needed for the site: `tools/build_site.py`
+   folds the file into `config.json` during the Pages build, so **do not run it
+   (or `tools/make_proxy.py`) locally to verify** — CI builds both after the
+   change merges, and a key that matches no bundle identifier is reported
+   there.
 
 10. **Warn if no screenshots were found** — this is the LAST step. If step 3
     could not obtain any screenshots (empty `apps/<AppName>/images/`, no
@@ -342,5 +344,5 @@ change between apps.
 - [ ] README entry added to both `README.md` and `README_CN.md`, icon with `align="top"`
 - [ ] README line starts with `config.toml` `subtitle`, plus at most one detail clause
 - [ ] `README.md` keeps the project's own language, `README_CN.md` carries a Chinese description (translated when the app is English)
-- [ ] `site/i18n/zh.json` entry added when the catalog text is English (skipped when it is already Chinese)
+- [ ] `site/i18n/zh.json` entry added when the catalog text is English (skipped when it is already Chinese) — no local `build_site.py` / `make_proxy.py` run, CI builds both
 - [ ] if no screenshots could be found, the user was explicitly warned (never proceed silently)
