@@ -154,10 +154,12 @@ change between apps.
    ```bash
    uv run tools/ipa_icon.py /tmp/<AppName>.ipa --out apps/<AppName>/icon.png
    ```
-   It prints the size on stderr: most ipas ship only 120x120/152x152 (the
-   1024px artwork is locked in `Assets.car`), which looks soft at promo size —
-   say so in the final summary. Don't run it over a repo icon (`--force` is
-   required, on purpose). AGENTS.md → [Extracting the App Icon from an
+   It reads the bundle's loose icons **and** the app's `Assets.car`, so it
+   normally lands on the 1024x1024 artwork even though the bundle itself only
+   ships 120x120/152x152 files. It prints the size on stderr — if that is below
+   512px, say so in the final summary, since it looks soft at promo size. Don't
+   run it over a repo icon (`--force` is required, on purpose). AGENTS.md →
+   [Extracting the App Icon from an
    IPA](../AGENTS.md#extracting-the-app-icon-from-an-ipa).
 
 4. **Write `config.toml`** — `apps/PiliPlus/config.toml` is the repo's

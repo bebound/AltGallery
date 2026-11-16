@@ -360,19 +360,30 @@ uv run tools/ipa_icon.py App.ipa --out apps/<AppName>/icon.png
 Takes the largest icon the bundle lists (`CFBundleIcons`/`CFBundleIconFiles`,
 matched against `<Entry>@2x.png` / `@3x` / `~ipad` files, plus any
 `*icon*.png`); nested `PlugIns/`/`Watch/` bundles are ignored, so a Watch
-app's bigger icon never wins. Writes the raw square artwork — `render_news.py`
+app's bigger icon never wins. It also reads the app's **`Assets.car`**, the
+compiled asset catalog — that is where the 1024x1024 ("marketing") artwork
+usually lives, as LZFSE-compressed raw pixels rather than an image, while the
+bundle only carries 120/152 loose files. The catalog is a BOMStore whose block
+table names each rendition (`Icon-App-1024x1024@1x.png`); the tool walks it,
+decompresses the LZFSE streams and re-encodes them as a standard PNG. It
+prefers square renditions named like an icon, because a catalog also holds
+launch images and other artwork. Writes the raw square artwork — `render_news.py`
 rounds it at draw time — and refuses to overwrite an icon without `--force`.
-Python's stdlib only (`zipfile`, `plistlib`, `zlib`) — its inline metadata
-declares no dependencies, so `uv run` has nothing to install.
+Its one dependency is the [`lzfse`](https://pypi.org/project/lzfse/) package,
+named in the inline metadata, so `uv run` installs it (as it does for every
+tool in this repo); everything else is stdlib (`zipfile`, `plistlib`, `zlib`).
 
 Apple's **CgBI** PNGs (BGRA, premultiplied, raw-deflate) break Pillow, so the
 tool decodes them to a standard PNG that `render_news.py` can read; plain
 PNGs/JPEGs are copied as-is.
 
-⚠️ **Most ipas ship only 120x120/152x152** loose icons — the 1024px artwork sits
-in `Assets.car`, unreadable here (LZFSE `bvx2`, no PNG data inside). The tool
-warns below 512px: treat that as a last resort, and prefer the project's own
-artwork wherever it exists.
+LZFSE is decoded by that package, which wraps Apple's reference implementation
+and builds on any platform — no `libcompression`, no macOS-only path. When the
+largest icon really is small (a catalog with no larger rendition, or an ipa that
+ships no catalog), the tool warns below 512px: say so when reporting a result
+and prefer the project's own artwork wherever it exists. `assetutil --info
+Assets.car` is the quick way to see what a catalog holds (it lists renditions
+but cannot extract them).
 
 ## Screenshots
 
