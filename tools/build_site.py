@@ -38,11 +38,10 @@ stages everything the site needs:
                              plus the site/i18n/ text overlays
   _site/preview.html         local preview: CSS, JS and the catalog inlined,
                              so it opens from file://; it draws media/ from
-                             the same directory and leaves out the page-view
-                             analytics, so previewing is not a counted visit
+                             the same directory
 
-The page also loads a page-view analytics script from its own host
-(ANALYTICS_TAG); it is the one external script the deployed page needs.
+The page also loads a page-view analytics script from its own host, inline in
+site/index.html; it is the one external script the deployed page needs.
 
 all-apps-proxy.json must match all-apps.json exactly, except that
 tools/make_proxy.py rewrites the URLs AltStore fetches. The proxy prefix is
@@ -131,14 +130,6 @@ VENDOR_SCRIPTS = (
 )
 # Staged next to them: MIT requires the notice to travel with the code.
 VENDOR_FILES = VENDOR_SCRIPTS + ("embla.LICENSE.txt",)
-
-# Page-view analytics, loaded from its own host (not vendored: it reports back
-# to that host by design). Kept as a literal so the preview build can drop it —
-# a local preview must not count as a visit to the real site.
-ANALYTICS_TAG = (
-    '<script defer src="https://uma.fromkk.com/stat.js"'
-    ' data-website-id="1b60658d-53d2-45af-b679-8a87a3e3fa7a"></script>'
-)
 
 # Rendering budgets. The page draws an app icon at most at 84 CSS px (hero and
 # detail header), so 128 px still covers a 2x display; the site logo is drawn
@@ -581,13 +572,6 @@ def build_preview(index_html: str, style: bytes, script: bytes, vendor: dict[str
             raise SystemExit(f"error: cannot find the script tag for {VENDOR_DIR}/{name}")
         index_html = index_html.replace(tag, inline_script(vendor[name]))
     css = "<style>\n" + style.decode("utf-8").rstrip() + "\n</style>"
-    # The preview opens from file://, where the analytics script cannot report
-    # anyway — and dropping it keeps a local preview out of the site's stats.
-    # Failing here rather than skipping means a reworded tag in index.html
-    # cannot quietly start reporting previews.
-    if ANALYTICS_TAG not in index_html:
-        raise SystemExit("error: cannot find the analytics script tag to strip from the preview")
-    index_html = index_html.replace(ANALYTICS_TAG + "\n", "")
     data_script = (
         "<script>window.__ALTGALLERY_DATA__ = "
         + json_blob({"source": source, "config": config})

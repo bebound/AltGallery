@@ -968,6 +968,8 @@
         target: "_blank",
         rel: "noopener",
         "data-subscribe": app.bundleID,
+        "data-umami-event": "Add single source",
+        "data-umami-event-app": app.name,
         "aria-label": t("card.add") + " — " + app.name
       },
       svgIcon(PLUS_ICON, 12),
@@ -1046,7 +1048,9 @@
           href: addSourceLink(subscribeURL(app)),
           target: "_blank",
           rel: "noopener",
-          "data-subscribe": app.bundleID
+          "data-subscribe": app.bundleID,
+          "data-umami-event": "Add single source",
+          "data-umami-event-app": app.name
         },
         svgIcon(PLUS_ICON, 14),
         h("span", { text: t("card.add") })

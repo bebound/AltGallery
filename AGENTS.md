@@ -184,10 +184,7 @@ built from the generated sources:
   to its local copy, plus the `i18n` overlays), and stages the split site plus
   both JSON files. Content hashes are added to the CSS/JS references only.
   `site/vendor/` is staged beside the page with the same content hashes, and
-  the vendored scripts are inlined into `preview.html` ahead of `app.js`. The
-  page-view analytics script (umami, on `uma.fromkk.com`) is the one external
-  script the deployed page loads; the build strips it from `preview.html`, so
-  opening a local preview is not counted as a visit.
+  the vendored scripts are inlined into `preview.html` ahead of `app.js`.
 
   The site's own icon is drawn from the catalog logo into two files:
   `_site/icon.png` (256×256, pointed at by `apple-touch-icon`, the larger of
