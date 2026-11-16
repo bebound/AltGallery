@@ -20,10 +20,10 @@
       "versions": [
         {
           "version": "1.0",
-          "date": "2026-11-13T04:21:43Z",
-          "localizedDescription": "Added Vietnamese (vi) localization.",
-          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.5.4/HermesEnabler.ipa",
-          "size": 959386,
+          "date": "2026-11-16T09:22:09Z",
+          "localizedDescription": "- Added support for DeviceSupportsWatchSpeakerPlayback.\r\n- Users have reported that the app does not work on watchOS 26. It is not officially supported, but the implementation has been retained.",
+          "downloadURL": "https://github.com/pookjw/HermesEnabler/releases/download/1.6.2/HermesEnabler.ipa",
+          "size": 963892,
           "minOSVersion": "17.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "com.example.HermesEnabler",
-      "title": "HermesEnabler 1.0 · 13 Nov 2026",
-      "identifier": "HermesEnabler-release-1.5.4",
+      "title": "HermesEnabler 1.0 · 16 Nov 2026",
+      "identifier": "HermesEnabler-release-1.6.2",
       "caption": "HermesEnabler 1.0 is available.",
-      "date": "2026-11-13T04:21:43Z",
+      "date": "2026-11-16T09:22:09Z",
       "tintColor": "#70C0F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
       "notify": true,
-      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.5.4"
+      "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.6.2"
     }
   ]
 }
