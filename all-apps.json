@@ -107,6 +107,30 @@
       ]
     },
     {
+      "name": "AniCh",
+      "bundleIdentifier": "app.anich",
+      "developerName": "Sle2p",
+      "subtitle": "支持超分辨率的在线动漫弹幕播放器",
+      "localizedDescription": "支持超分辨率、多平台、多番剧源与多弹幕的在线动漫播放应用，高清无广告。提供番剧索引与搜索、倍速播放、观看记录、追番管理、弹幕过滤与举报、分集评论和离线缓存。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/home.jpg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/detail.jpg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/play.jpg"
+      ],
+      "tintColor": "#F0E0D0",
+      "versions": [
+        {
+          "version": "1.5.27",
+          "date": "2026-10-05T03:15:29Z",
+          "localizedDescription": "- 修复内存泄漏的问题",
+          "downloadURL": "https://github.com/Sle2p/AniCh/releases/download/1.5.27/anich-ios-no_sign-1.5.27.ipa",
+          "size": 41226765,
+          "minOSVersion": "12.0"
+        }
+      ]
+    },
+    {
       "name": "AnimeFlow",
       "bundleIdentifier": "com.ligg.animeflow",
       "developerName": "openAnimeFlow",
@@ -291,11 +315,11 @@
       "tintColor": "#4080E0",
       "versions": [
         {
-          "version": "1.8.7.1",
-          "date": "2026-11-16T02:41:22Z",
-          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.7...v1.8.7.1",
-          "downloadURL": "https://github.com/moliango/doer/releases/download/v1.8.7.1/doer-unsigned.ipa",
-          "size": 28438599,
+          "version": "1.8.8",
+          "date": "2026-11-16T07:28:33Z",
+          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.7.1...v1.8.8",
+          "downloadURL": "https://github.com/moliango/doer/releases/download/v1.8.8/doer-unsigned.ipa",
+          "size": 28479268,
           "minOSVersion": "15.0"
         }
       ]
@@ -1670,14 +1694,14 @@
   "news": [
     {
       "appID": "com.naine.doer",
-      "title": "Doer 1.8.7.1 · 16 Nov 2026",
-      "identifier": "Doer-release-v1.8.7.1",
-      "caption": "Doer 1.8.7.1 is available.",
-      "date": "2026-11-16T02:41:22Z",
+      "title": "Doer 1.8.8 · 16 Nov 2026",
+      "identifier": "Doer-release-v1.8.8",
+      "caption": "Doer 1.8.8 is available.",
+      "date": "2026-11-16T07:28:33Z",
       "tintColor": "#4080E0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
       "notify": true,
-      "url": "https://github.com/moliango/doer/releases/tag/v1.8.7.1"
+      "url": "https://github.com/moliango/doer/releases/tag/v1.8.8"
     },
     {
       "appID": "com.linkpass.kazumi",
@@ -2250,6 +2274,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
       "notify": true,
       "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.19"
+    },
+    {
+      "appID": "app.anich",
+      "title": "AniCh 1.5.27 · 05 Oct 2026",
+      "identifier": "AniCh-release-1.5.27",
+      "caption": "AniCh 1.5.27 is available.",
+      "date": "2026-10-05T03:15:29Z",
+      "tintColor": "#F0E0D0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Sle2p/AniCh/releases/tag/1.5.27"
     },
     {
       "appID": "com.mak5er.aircard",
