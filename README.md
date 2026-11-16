@@ -258,7 +258,7 @@ AltGallery/
 │   ├── icon.svg / icon.png
 │   ├── add-alt-source.svg / add-alt-source.png
 │   └── *.jpg             # README screenshots (SideStore, SideStore News, LiveContainer)
-├── tools/                # helper scripts
+├── tools/                # helper scripts (uv scripts; run with `uv run tools/<name>.py`)
 │   ├── render_news.py    # shared news-image renderer
 │   ├── ipa_icon.py       # extract the app icon from a release .ipa
 │   └── ipa_bundle_id.py  # read bundle id / version from a release .ipa

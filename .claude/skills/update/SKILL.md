@@ -17,9 +17,9 @@ Refresh every generated artifact in the repo:
    ```bash
    ./update_news.sh
    ```
-   Needs the uv venv set up once (`uv venv && uv pip install -r
-   requirements.txt`); the image is drawn entirely with Pillow — no external
-   rasterizer needed.
+   It runs each render through `uv run tools/render_news.py`; the script's
+   inline PEP 723 metadata supplies Pillow, so there is no venv to set up and
+   no external rasterizer involved.
 
 Notes:
 - To verify a single app after a `config.toml` change, use the single-app form

@@ -59,12 +59,11 @@ jobs:
           fi
           exit $missing
 
-      - name: Install image dependencies
-        run: pip install --disable-pip-version-check pillow
+      - uses: astral-sh/setup-uv@v7
 
       - name: Build the page
         run: |
-          python3 tools/build_site.py
+          uv run tools/build_site.py
           # preview.html inlines the catalog for local file:// previews only.
           rm -f _site/preview.html
 

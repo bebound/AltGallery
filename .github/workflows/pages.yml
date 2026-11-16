@@ -29,14 +29,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      # build_site.py re-encodes every displayed image (Pillow); the runner's
-      # system python does not ship it.
-      - name: Install image dependencies
-        run: pip install --disable-pip-version-check pillow
+      # build_site.py is a uv script: its inline PEP 723 metadata names Pillow,
+      # so uv installs it into a cached environment on the first run.
+      - uses: astral-sh/setup-uv@v7
 
       - name: Build the page
         run: |
-          python3 tools/build_site.py
+          uv run tools/build_site.py
           rm -f _site/preview.html
 
       - uses: actions/upload-pages-artifact@v5

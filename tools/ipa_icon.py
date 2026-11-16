@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = []
+# ///
 """Extract the app icon from an .ipa (iOS app archive).
 
 Use this when the app has no icon in the repo and nothing usable in the
@@ -27,11 +31,11 @@ stream"); this script decodes them in pure Python and writes a standard PNG, so
 the result is directly usable by Pillow (render_news.py) — no `sips` needed.
 Standard PNGs and JPEGs are copied byte-for-byte.
 
-Usage:
-  tools/ipa_icon.py App.ipa                          # -> ./icon.png
-  tools/ipa_icon.py App.ipa --out apps/Foo/icon.png   # where the gallery keeps it
-  tools/ipa_icon.py App.ipa --list                    # just list the candidates
-  tools/ipa_icon.py App.ipa --out icon.png --force    # overwrite an existing file
+Usage (uv reads the inline PEP 723 metadata):
+  uv run tools/ipa_icon.py App.ipa                          # -> ./icon.png
+  uv run tools/ipa_icon.py App.ipa --out apps/Foo/icon.png   # where the gallery keeps it
+  uv run tools/ipa_icon.py App.ipa --list                    # just list the candidates
+  uv run tools/ipa_icon.py App.ipa --out icon.png --force    # overwrite an existing file
 
 Stdout is the written path alone, so it stays scriptable; everything else goes
 to stderr. Exit code: 0 on success, 1 when the ipa has no usable icon, the

@@ -24,7 +24,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      # update.sh uses `uvx altgen`
+      # update.sh uses `uvx altgen`, and the tools/*.py scripts are uv scripts
+      # (their inline PEP 723 metadata covers their dependencies).
       - uses: astral-sh/setup-uv@v7
 
       - name: Run update.sh
@@ -42,7 +43,7 @@ jobs:
           set -euo pipefail
           shopt -s nullglob
           for source in apps/*/apps.json; do
-            python3 tools/make_proxy.py "$source" "${source%/apps.json}/apps-proxy.json"
+            uv run tools/make_proxy.py "$source" "${source%/apps.json}/apps-proxy.json"
           done
 
       # Mirror of all-apps.json for users who cannot reach GitHub: the raw
@@ -51,7 +52,7 @@ jobs:
       # the website stay plain GitHub URLs. Regenerated from scratch on every
       # run, so it always matches the source generated above.
       - name: Generate all-apps-proxy.json
-        run: python3 tools/make_proxy.py all-apps.json all-apps-proxy.json
+        run: uv run tools/make_proxy.py all-apps.json all-apps-proxy.json
 
       # Generated app sources and proxy mirrors are gitignored, so
       # `git add -A` won't pick them up. Stage them explicitly (force) so the

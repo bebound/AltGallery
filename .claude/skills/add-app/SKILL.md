@@ -93,12 +93,12 @@ change between apps.
       # 2. download it (often tens of MB) and read it — keep the file for
       #    step 2f (version check) and step 3 (icon fallback)
       curl -sL -o /tmp/<AppName>.ipa "<url-from-1>"
-      tools/ipa_bundle_id.py /tmp/<AppName>.ipa --json
+      uv run tools/ipa_bundle_id.py /tmp/<AppName>.ipa --json
       ```
       Use `bundle_id` and `min_os_version`; `asset_pattern` must match the
-      asset name from step 1. Stdlib only (bare `python3`); exit 1 when
-      unreadable. Delete the ipa only after steps 2f and 3 are done.
-      AGENTS.md → [Reading an IPA's Bundle
+      asset name from step 1. A uv script with no dependencies (nothing to
+      install); exit 1 when unreadable. Delete the ipa only after steps 2f and
+      3 are done. AGENTS.md → [Reading an IPA's Bundle
       ID](../AGENTS.md#reading-an-ipas-bundle-id).
 
    f. **Confirm the version altgen will generate matches the ipa — always**
@@ -111,7 +111,7 @@ change between apps.
       then compare:
 
       ```bash
-      tools/ipa_bundle_id.py /tmp/<AppName>.ipa --json | jq -r '.version'
+      uv run tools/ipa_bundle_id.py /tmp/<AppName>.ipa --json | jq -r '.version'
       ```
 
       - **What altgen would put in `apps.json`:** the release **tag** with a
@@ -152,7 +152,7 @@ change between apps.
    ⚠️ **If no icon exists in the repo either**, take it from the release ipa
    (step 2e) — never leave `icon.png` missing, never grab a random web image:
    ```bash
-   tools/ipa_icon.py /tmp/<AppName>.ipa --out apps/<AppName>/icon.png
+   uv run tools/ipa_icon.py /tmp/<AppName>.ipa --out apps/<AppName>/icon.png
    ```
    It prints the size on stderr: most ipas ship only 120x120/152x152 (the
    1024px artwork is locked in `Assets.car`), which looks soft at promo size —
@@ -212,7 +212,7 @@ change between apps.
    `extract_icon_color()` instead of re-implementing the PIL sampling (see
    AGENTS.md → [Icon Color Sampling](#icon-color-sampling-pil)):
    ```bash
-   PYTHONPATH=tools .venv/bin/python3 -c "from render_news import extract_icon_color; from pathlib import Path; print(extract_icon_color(Path('apps/<AppName>/icon.png')))"
+   PYTHONPATH=tools uv run --python 3.11 --with pillow python3 -c "from render_news import extract_icon_color; from pathlib import Path; print(extract_icon_color(Path('apps/<AppName>/icon.png')))"
    ```
    ⚠️ **Eyeball the result — human confirmation required.** Multi-color or
    pale icons may not have an obvious single brand color.
@@ -232,13 +232,13 @@ change between apps.
    Then render the shared promo image (AGENTS.md → [Generating News
    Images](../AGENTS.md#generating-news-images)):
    ```bash
-   ./.venv/bin/python tools/render_news.py --out apps/<AppName>
+   uv run tools/render_news.py --out apps/<AppName>
    ```
    Renders `apps/<AppName>/images/news.png` (1600x1200, 4:3) into the working
    tree (do not auto-commit). The image is drawn entirely with Pillow — no
-   external rasterizer needed. ⚠️ **Use the venv interpreter** (same as
-   `update_news.sh`): bare `python3` has no Pillow, so `render_news.py` fails
-   with an import error.
+   external rasterizer — and the script's inline PEP 723 metadata names
+   Pillow, so `uv run` supplies it; bare `python3 tools/render_news.py` skips
+   that metadata and fails with an import error.
 
 7. **Generate `apps.json`** — **never hand-edit it**:
    ```bash

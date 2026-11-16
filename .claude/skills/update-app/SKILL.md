@@ -90,7 +90,7 @@ which app was meant.
      iconURL, tintColor, screenshots, minOSVersion, downloadURL).
    - No source: derive description/subtitle from the new README, and get
      `bundle_identifier` / `min_os_version` from a release ipa with
-     `tools/ipa_bundle_id.py`. Never invent an identifier.
+     `uv run tools/ipa_bundle_id.py`. Never invent an identifier.
    - **Re-verify the bundle identifier.** A rename or ownership change can
      ship a different identifier; silently carrying the old one over makes
      the gallery install a different app (or fail). If the new repo offers no
@@ -100,10 +100,10 @@ which app was meant.
      the **new** repo). Download the latest release ipa (it is not optional
      here, even when a source supplied the metadata: the source's version is
      only what its own generator read) and compare the ipa's
-     `CFBundleShortVersionString` (`tools/ipa_bundle_id.py --json`) with the
-     version altgen would derive from the new release **tag** minus a leading
-     `v`, or, when `version_pattern` is set, the release **name** / asset
-     **filename**. They can disagree (AltStore: tag `v2.3`, ipa `2.3.1`,
+     `CFBundleShortVersionString` (`uv run tools/ipa_bundle_id.py --json`)
+     with the version altgen would derive from the new release **tag** minus a
+     leading `v`, or, when `version_pattern` is set, the release **name** /
+     asset **filename**. They can disagree (AltStore: tag `v2.3`, ipa `2.3.1`,
      build 63). Mismatch → `version_source = "ipa"` in `[versions]` (step 4);
      agreement → the default, with no `version_source`. Never fake a match by
      rewriting the tag, `strip_v_prefix`, or `version_pattern`. Keep the ipa
@@ -111,8 +111,8 @@ which app was meant.
    - **Icon:** prefer the new repo's artwork (repo, README, `assets/`, or its
      AltStore source). If the new repo has none, keep the existing
      `icon.png` — it is still the app's artwork — rather than falling back to
-     the small loose ipa icon; only use `tools/ipa_icon.py` when the existing
-     icon is missing or obviously stale.
+     the small loose ipa icon; only use `uv run tools/ipa_icon.py` when the
+     existing icon is missing or obviously stale.
    - **Screenshots:** download the new repo's screenshots when it has them;
      otherwise keep the existing local screenshots (still valid, already
      hosted here). If there are none at all, warn at the end exactly as
@@ -173,11 +173,12 @@ which app was meant.
    is new they cannot be trusted.
 
    - **Icon updated** (step 3 replaced `icon.png` from the new repo or via
-     `tools/ipa_icon.py`): delete `news.toml` and write it fresh, exactly like
-     `/add-app` step 6 — copy `apps/PiliPlus/news.toml` (it documents every
-     optional `[colors]` key as a comment), keep every `[colors]` key commented
-     out so all colors auto-derive from the new icon, and change only `name`,
-     `tagline`, and the header `--out apps/<NewName>` path:
+     `uv run tools/ipa_icon.py`): delete `news.toml` and write it fresh,
+     exactly like `/add-app` step 6 — copy `apps/PiliPlus/news.toml` (it
+     documents every optional `[colors]` key as a comment), keep every
+     `[colors]` key commented out so all colors auto-derive from the new icon,
+     and change only `name`, `tagline`, and the header `--out apps/<NewName>`
+     path:
 
      ```bash
      rm apps/<NewName>/news.toml
@@ -199,15 +200,16 @@ which app was meant.
    `[colors]` block so whoever edits the file next sees the palette actually
    in effect — a fresh copy of the template still carries PiliPlus's values.
 
-   ⚠️ `render_news.py` needs Pillow, which lives only in the project venv —
-   always use `.venv/bin/python3`, never the bare `python3`. Remember the
-   AGENTS.md caveat about sampling a dark/monochrome icon.
+   ⚠️ `render_news.py` is a uv script, so importing it as a module means
+   recreating its inline metadata: `--python 3.11 --with pillow` plus
+   `PYTHONPATH=tools`, never the bare `python3`. Remember the AGENTS.md caveat
+   about sampling a dark/monochrome icon.
 
    Print the effective palette for the (new or unchanged) icon — run this
    block as-is; it stays at column 0 so the heredoc delimiter works:
 
 ```bash
-PYTHONPATH=tools .venv/bin/python3 - <<'PY'
+PYTHONPATH=tools uv run --python 3.11 --with pillow python3 - <<'PY'
 from pathlib import Path
 from render_news import (load_configs, extract_icon_color,
                          derive_light_background, derive_background,
@@ -241,7 +243,7 @@ PY
    Images](../AGENTS.md#generating-news-images)):
 
    ```bash
-   ./.venv/bin/python tools/render_news.py --out apps/<NewName>
+   uv run tools/render_news.py --out apps/<NewName>
    ```
 
    Always re-render: the icon and the name are baked into the image, so a

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # AltGallery — regenerate every app's news.png promo image from its news.toml.
 # Run: ./update_news.sh  (from anywhere; paths resolve against this script's directory)
+# Each render goes through `uv run tools/render_news.py`, so uv supplies Pillow
+# from the script's inline PEP 723 metadata — no venv to set up first.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -12,7 +14,7 @@ for app_dir in apps/*/; do
   if [[ -f "$app_dir/news.toml" ]]; then
     name="${app_dir%/}"
     echo "==> Updating $name news.png"
-    .venv/bin/python tools/render_news.py --out "$name"
+    uv run tools/render_news.py --out "$name"
     updated+=("$name")
   fi
 done

@@ -258,7 +258,7 @@ AltGallery/
 │   ├── icon.svg / icon.png
 │   ├── add-alt-source.svg / add-alt-source.png
 │   └── *.jpg             # README 截图（SideStore、SideStore News、LiveContainer）
-├── tools/                # 辅助脚本
+├── tools/                # 辅助脚本（uv script，用 `uv run tools/<name>.py` 运行）
 │   ├── render_news.py    # 共享资讯图片渲染器
 │   ├── ipa_icon.py       # 从 Release .ipa 中提取应用图标
 │   └── ipa_bundle_id.py  # 从 Release .ipa 中读取 bundle id / 版本

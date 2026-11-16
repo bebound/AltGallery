@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pillow>=12.3.0"]
+# ///
 """Render an AltStore "NEW UPDATE" promo image with Pillow — no SVG, no
 rsvg-convert / qlmanage.
 
@@ -29,9 +33,9 @@ Helvetica for Latin, Hiragino Sans GB (W6/W3) for CJK, with letter-spacing
 applied between glyphs. Fonts are loaded from macOS system paths; a clear
 error is raised if none of them can be loaded.
 
-Usage:
-  render_news.py --out apps/PiliPlus           # everything from apps/PiliPlus/news.toml
-  render_news.py --out apps/Apollo-Reborn \
+Usage (uv reads the inline PEP 723 metadata and installs Pillow):
+  uv run tools/render_news.py --out apps/PiliPlus   # everything from news.toml
+  uv run tools/render_news.py --out apps/Apollo-Reborn \
     --tagline "New tagline"                  # CLI overrides news.toml
 
 news.toml:
@@ -50,15 +54,11 @@ import argparse
 import colorsys
 import re
 import sys
+import tomllib
 from collections import Counter
 from pathlib import Path
 
 from PIL import Image, ImageChops, ImageDraw, ImageFont
-
-try:
-    import tomllib
-except ModuleNotFoundError:  # pragma: no cover - Python < 3.11
-    import tomli as tomllib
 
 WIDTH, HEIGHT = 1600, 1200
 

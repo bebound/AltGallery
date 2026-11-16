@@ -1,4 +1,4 @@
-# render_news.py config: python3 tools/render_news.py --out apps/iPadn
+# render_news.py config: uv run tools/render_news.py --out apps/iPadn
 # Colors are pinned explicitly: iPadn's icon is black-on-black with a white
 # outline, so the auto-derived background and tagline came out as muddy grey
 # with a purple cast. A neutral grey scale matches the monochrome mark.

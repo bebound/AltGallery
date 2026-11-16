@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = []
+# ///
 """Build a proxy mirror of an AltStore source with its fetch URLs proxied.
 
 GitHub is reachable only intermittently from mainland China, so the assets the
@@ -21,12 +25,13 @@ host), so it is safe to re-run.
 The result is generated beside the app sources and the combined source by
 .github/workflows/update.yml;
 
-Stdlib only, so the bare system `python3` runs it.
+Stdlib only — the inline metadata declares no dependencies, so uv runs it
+against a bare interpreter without touching a project venv.
 
-Usage:
-  tools/make_proxy.py                          # all-apps.json -> all-apps-proxy.json
-  tools/make_proxy.py apps/Foo/apps.json apps/Foo/apps-proxy.json
-  tools/make_proxy.py --prefix https://gh-proxy.com/
+Usage (from the repo root; uv reads the inline PEP 723 metadata):
+  uv run tools/make_proxy.py                          # all-apps.json -> all-apps-proxy.json
+  uv run tools/make_proxy.py apps/Foo/apps.json apps/Foo/apps-proxy.json
+  uv run tools/make_proxy.py --prefix https://gh-proxy.com/
 """
 
 from __future__ import annotations

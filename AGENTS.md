@@ -6,6 +6,24 @@ Generate AltStore sources (`apps.json`) for IPA projects on GitHub.
 
 - Generator: Python **AltGen**, invoked via `uvx altgen`
 
+## Tools are uv scripts
+
+Every script in `tools/` is a [uv script](https://docs.astral.sh/uv/guides/scripts/):
+an executable with an inline PEP 723 metadata block that names its own Python
+version and dependencies, so `uv run` resolves and caches them — no venv to
+create or activate first.
+
+```bash
+uv run tools/render_news.py --out apps/PiliPlus   # Pillow from the inline metadata
+uv run tools/make_proxy.py                        # stdlib only, nothing installed
+```
+
+Run them from the repo root (they resolve paths against the working
+directory), and always through `uv run` — never `python3 tools/…`, which skips
+the metadata and fails on any script that needs a dependency. `requirements.txt`
+stays only as a record of the same versions for anyone who prefers a
+conventional `.venv`; it is not needed to run the tools.
+
 ## Commits
 
 Never ask the user whether to commit — the user commits everything
@@ -80,7 +98,7 @@ are left untouched. It is generated from `all-apps.json` only — never edit it
 by hand, and do not regenerate it locally when adding or updating an app: the
 update workflow writes both `all-apps-proxy.json` and every per-app
 `apps/<AppName>/apps-proxy.json` after each push. Run
-`python3 tools/make_proxy.py` only when you specifically want to inspect what
+`uv run tools/make_proxy.py` only when you specifically want to inspect what
 the mirror will contain.
 
 ## Merging into all-apps.json
@@ -189,8 +207,8 @@ built from the generated sources:
   screenshots are Display P3) is carried into the WebP, so colours do not
   shift. Because the extension usually changes, `config.json`'s `mediaFiles`
   maps each repository path to the file actually staged; a file that stays in
-  its original format keeps its path. Needs Pillow (`pip install pillow`;
-  the venv from `requirements.txt` has it), not stdlib only.
+  its original format keeps its path. Needs Pillow, which the script's inline
+  PEP 723 metadata names, so `uv run` installs it — not stdlib only.
 - `.github/workflows/pages.yml` — builds and deploys only when the update
   workflow finishes (an update run triggered by the push, including the
   bot's own commits, which never trigger `push` workflows), plus manual
@@ -209,7 +227,7 @@ inlined; it draws images from `_site/media/`, so it opens straight from disk
 as long as it stays beside that directory:
 
 ```bash
-python3 tools/build_site.py
+uv run tools/build_site.py
 open _site/preview.html          # local preview, no server
 python3 -m http.server -d _site  # or serve the real split page
 ```
@@ -241,12 +259,11 @@ app's image (from each app's `news.toml`: `name`, `tagline`, optional
 ./update_news.sh
 ```
 
-or a single app with `.venv/bin/python3 tools/render_news.py --out
-apps/<AppName>`.
+or a single app with `uv run tools/render_news.py --out apps/<AppName>`.
 Unset colors are auto-derived from `config.toml` tints and the icon's dominant
-color (needs the uv venv set up once: `uv venv && uv pip install -r
-requirements.txt`; Pillow is the only image dependency — no external
-rasterizer). The rendered `apps/<AppName>/images/news.png` stays in the working
+color (Pillow comes from the script's inline metadata, so there is nothing to
+install first — no external rasterizer either). The rendered
+`apps/<AppName>/images/news.png` stays in the working
 tree — the URL in `config.toml` `[news] image_url` already points at it. Do
 not auto-commit it.
 
@@ -277,7 +294,7 @@ Measure it — nothing is rendered and no file is written; a `font` below 72 or
 more than two lines means the tagline is too long:
 
 ```bash
-PYTHONPATH=tools .venv/bin/python3 -c "
+PYTHONPATH=tools uv run --python 3.11 --with pillow python3 -c "
 import tomllib, render_news as R
 n = tomllib.load(open('apps/<AppName>/news.toml','rb'))
 f = R.fit_name_font(n['name']); nb = R.ICON_Y + R.cap_top_em('bold')*f + 0.25*f
@@ -292,16 +309,17 @@ news background derived by `render_news.py` — is already implemented in
 with Pillow and buckets the pixels). Just call it:
 
 ```bash
-PYTHONPATH=tools .venv/bin/python3 -c \
+PYTHONPATH=tools uv run --python 3.11 --with pillow python3 -c \
   "from render_news import extract_icon_color; from pathlib import Path; \
    print(extract_icon_color(Path('apps/<AppName>/icon.png')))"
 ```
 
-**Pillow/PIL is installed only in the project venv (`.venv/`), not in the
-system Python** — any command that imports PIL (`render_news.py`,
-`extract_icon_color`) must run with the venv's interpreter:
-`.venv/bin/python3` (or `source .venv/bin/activate` first). The bare system
-`python3` will raise `ModuleNotFoundError: No module named 'PIL'`.
+**Importing a tool as a module means recreating what its inline metadata would
+do**: `--python 3.11` matches its `requires-python` (the script uses
+`tomllib`), `--with pillow` supplies its dependency, and `PYTHONPATH=tools`
+puts it on the import path — the system `python3` alone raises
+`ModuleNotFoundError: No module named 'PIL'`. Running the script itself is the
+same thing without the ceremony: `uv run tools/render_news.py …`.
 
 When a new app lacks an official tint, use the result as `[app] tint_color`
 (brand color) — but eyeball the icon first: a multi-color or pale icon may
@@ -317,12 +335,13 @@ source provides it:
 ```bash
 curl -sL "https://api.github.com/repos/<owner>/<repo>/releases/latest" \
   | jq -r '.assets[] | select(.name|endswith(".ipa")) | .browser_download_url' | head -1
-tools/ipa_bundle_id.py App.ipa            # com.example.App
-tools/ipa_bundle_id.py App.ipa --json     # + name, version, build, min_os_version
+uv run tools/ipa_bundle_id.py App.ipa            # com.example.App
+uv run tools/ipa_bundle_id.py App.ipa --json     # + name, version, build, min_os_version
 ```
 
-Stdlib only (`plistlib`), so the bare `python3` runs it. stdout is the
-identifier alone, notes go to stderr, exit 1 when unreadable. Several
+Stdlib only — the inline metadata declares no dependencies, so nothing is
+installed. stdout is the identifier alone, notes go to stderr, exit 1 when
+unreadable. Several
 `Payload/*.app` bundles → the `CFBundlePackageType = APPL` one wins (Flutter
 ships as `Runner.app`, which never matches the ipa's filename); nested
 `PlugIns/`/`Watch/` bundles are ignored. Its `min_os_version` is what the
@@ -334,8 +353,8 @@ Only when the project has **no** icon to download (nothing in the repo, README,
 `assets/`, or its AltStore source):
 
 ```bash
-tools/ipa_icon.py App.ipa --list                     # candidates: size + file name
-tools/ipa_icon.py App.ipa --out apps/<AppName>/icon.png
+uv run tools/ipa_icon.py App.ipa --list                     # candidates: size + file name
+uv run tools/ipa_icon.py App.ipa --out apps/<AppName>/icon.png
 ```
 
 Takes the largest icon the bundle lists (`CFBundleIcons`/`CFBundleIconFiles`,
@@ -343,7 +362,8 @@ matched against `<Entry>@2x.png` / `@3x` / `~ipad` files, plus any
 `*icon*.png`); nested `PlugIns/`/`Watch/` bundles are ignored, so a Watch
 app's bigger icon never wins. Writes the raw square artwork — `render_news.py`
 rounds it at draw time — and refuses to overwrite an icon without `--force`.
-Stdlib only, bare `python3` works.
+Python's stdlib only (`zipfile`, `plistlib`, `zlib`) — its inline metadata
+declares no dependencies, so `uv run` has nothing to install.
 
 Apple's **CgBI** PNGs (BGRA, premultiplied, raw-deflate) break Pillow, so the
 tool decodes them to a standard PNG that `render_news.py` can read; plain

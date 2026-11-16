@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = []
+# ///
 """Read the bundle identifier out of an .ipa (iOS app archive).
 
 An .ipa is a zip whose main app bundle sits at `Payload/<Name>.app`; the bundle
@@ -6,14 +10,14 @@ identifier is the `CFBundleIdentifier` key of that bundle's `Info.plist`
 (usually a *binary* plist — plistlib reads those as well as XML ones). This
 script reads it straight out of the archive.
 
-Stdlib only (`zipfile`, `plistlib`): no external tool, no venv, no Pillow —
-so the bare system `python3` runs it, unlike tools/render_news.py.
+Stdlib only (`zipfile`, `plistlib`) — the inline metadata declares no
+dependencies, so uv runs it against a bare interpreter with nothing to install.
 
-Usage:
-  tools/ipa_bundle_id.py App.ipa             # prints: com.example.App
-  tools/ipa_bundle_id.py App.ipa --json      # bundle id + name/version/min OS/...
-  tools/ipa_bundle_id.py a.ipa b.ipa         # one "<path>\t<bundle id>" line each
-  tools/ipa_bundle_id.py App.ipa --json | jq -r .bundle_id
+Usage (uv reads the inline PEP 723 metadata):
+  uv run tools/ipa_bundle_id.py App.ipa             # prints: com.example.App
+  uv run tools/ipa_bundle_id.py App.ipa --json      # bundle id + name/version/min OS/...
+  uv run tools/ipa_bundle_id.py a.ipa b.ipa         # one "<path>\t<bundle id>" line each
+  uv run tools/ipa_bundle_id.py App.ipa --json | jq -r .bundle_id
 
 Between several `Payload/*.app` bundles (an ipa can carry more than one) the
 `CFBundlePackageType = APPL` main bundle wins, then the one whose name matches

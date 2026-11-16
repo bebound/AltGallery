@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pillow>=12.3.0"]
+# ///
 """Stage the AltGallery GitHub Pages site in _site/.
 
 The page source is three files — site/index.html, site/style.css and
@@ -78,12 +82,11 @@ Because the extension can change, the copies no longer keep the repository
 path verbatim in every case: config.json's "mediaFiles" maps a repository
 path to the file to serve, and the page resolves a display URL through it.
 
-Local preview (pick either):
+Local preview (pick either, from the repo root; uv reads the inline PEP 723
+metadata and installs Pillow):
 
-  python3 tools/build_site.py && open _site/preview.html   # no server needed
-  python3 tools/build_site.py && python3 -m http.server -d _site
-
-Needs Pillow (it is in requirements.txt, so a uv venv has it).
+  uv run tools/build_site.py && open _site/preview.html   # no server needed
+  uv run tools/build_site.py && python3 -m http.server -d _site
 """
 
 from __future__ import annotations
@@ -196,7 +199,7 @@ def walk_pairs(direct: object, proxied: object, path: str = "$"):
         if set(direct) != set(proxied):
             raise SystemExit(
                 f"error: all-apps-proxy.json does not match all-apps.json at {path}; "
-                "regenerate it with tools/make_proxy.py"
+                "regenerate it with `uv run tools/make_proxy.py`"
             )
         for key in direct:
             yield from walk_pairs(direct[key], proxied[key], f"{path}.{key}")
@@ -204,14 +207,14 @@ def walk_pairs(direct: object, proxied: object, path: str = "$"):
         if len(direct) != len(proxied):
             raise SystemExit(
                 f"error: all-apps-proxy.json does not match all-apps.json at {path}; "
-                "regenerate it with tools/make_proxy.py"
+                "regenerate it with `uv run tools/make_proxy.py`"
             )
         for index, (a, b) in enumerate(zip(direct, proxied)):
             yield from walk_pairs(a, b, f"{path}[{index}]")
     elif direct != proxied:
         raise SystemExit(
             f"error: all-apps-proxy.json does not match all-apps.json at {path}; "
-            "regenerate it with tools/make_proxy.py"
+            "regenerate it with `uv run tools/make_proxy.py`"
         )
 
 
