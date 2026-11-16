@@ -1,0 +1,19 @@
+# render_news.py config: uv run tools/render_news.py --out apps/AniCh
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "AniCh"
+tagline = "在线动漫弹幕播放器"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# The sampled tint (#F0E0D0) is the icon's own light background, which leaves
+# the badge unreadable on this pale image — pinned to the icon's dark shade.
+tint = "#395175"            # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#F0E0D0"      # bottom-right glow (default: [source] tint_color)
+# background = "#EBE0D6"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#F3EDE7"        # gradient mid stop (derived from background)
+# bg_dark = "#DECBBB"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+tagline_color = "#395175"   # tagline text (default: derived from background, too pale here)

@@ -55,6 +55,9 @@ Sideload non-notarized apps with AltServer — the original alternative app stor
 ### <img src="apps/AniBaka/icon.png" alt="AniBaka icon" width="24" align="top"> <a href="https://github.com/AniBakaBaka/AniBaka">AniBaka</a>
 跨平台番剧聚合、媒体播放与弹幕客户端——多番剧源、多弹幕、高清无广告，支持动漫实时超分辨率。
 
+### <img src="apps/AniCh/icon.png" alt="AniCh icon" width="24" align="top"> <a href="https://github.com/Sle2p/AniCh">AniCh</a>
+支持超分辨率的在线动漫弹幕播放器——多平台、多番剧源，提供倍速播放、追番管理、弹幕过滤与离线缓存。
+
 ### <img src="apps/AnimeFlow/icon.png" alt="AnimeFlow icon" width="24" align="top"> <a href="https://github.com/openAnimeFlow/AnimeFlow">AnimeFlow</a>
 跨平台动漫视频播放器，支持多数据源、实时 4K 超分辨率与弹幕，并可与 Bangumi 同步追番。
 
