@@ -15,7 +15,7 @@ tint_color = "#124EB3"
 
 [app]
 name = "AnimeFlow"
-bundle_identifier = "com.ligg.anime_flow"
+bundle_identifier = "com.ligg.animeflow"
 developer_name = "openAnimeFlow"
 subtitle = "跨平台动漫视频播放器，支持多数据源、实时 4K 超分辨率与弹幕"
 description = "AnimeFlow 是一个跨平台动漫视频播放应用，支持 Android、iOS、Windows、macOS 与 Linux。内置多数据源与自定义 XPath 爬虫配置，支持基于 Anime4K 的实时视频 4K 超分辨率，对接 Bangumi 同步收藏与追番数据，并支持多平台弹幕源与丰富的弹幕设置。"
@@ -26,7 +26,7 @@ screenshots = [
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/comment.png",
 ]
 tint_color = "#124EB3"
-min_os_version = "13.0"
+min_os_version = "15.0"
 
 [versions]
 strip_v_prefix = true
