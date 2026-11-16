@@ -291,11 +291,11 @@
       "tintColor": "#4080E0",
       "versions": [
         {
-          "version": "1.8.7",
-          "date": "2026-11-15T13:11:40Z",
-          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.6...v1.8.7",
-          "downloadURL": "https://github.com/moliango/doer/releases/download/v1.8.7/doer-unsigned.ipa",
-          "size": 28409295,
+          "version": "1.8.7.1",
+          "date": "2026-11-16T02:41:22Z",
+          "localizedDescription": "**Full Changelog**: https://github.com/moliango/doer/compare/v1.8.7...v1.8.7.1",
+          "downloadURL": "https://github.com/moliango/doer/releases/download/v1.8.7.1/doer-unsigned.ipa",
+          "size": 28438599,
           "minOSVersion": "15.0"
         }
       ]
@@ -649,11 +649,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.0.6",
-          "date": "2026-11-14T14:04:38Z",
-          "localizedDescription": "### 新增\n\n- 播放器「更多」里新增「弹幕检索」：手动搜番、选分集并换弹幕源，番剧的 OVA 插在正片里导致集数对不上时不再只能忍着（[#30](https://github.com/LinkPass888/Kazumi-Swift/issues/30)）。检索页打开时暂停播放，换完或返回后自动续播\n\n### 优化\n\n- 应用更新提示从弹窗改成半屏卡片：标题一行列出新版本号与当前版本，更新日志可滚动，底部「前往下载」「跳过此版本」「稍后」分开放置；「跳过此版本」后同一版本不再打扰",
-          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/3.0.6/Kazumi_ios_3.0.6_no_sign.ipa",
-          "size": 24144584,
+          "version": "3.0.7",
+          "date": "2026-11-16T02:26:09Z",
+          "localizedDescription": "### 新增\n\n- 播放器截图写入番剧名、集数和播放进度时刻三个图片关键词；「播放设置 → 片头片尾」下方新增「截图写入番剧关键词」开关，默认开启\n- 「设置 → 外观与界面」新增「搜索结果显示 NSFW」开关，默认关闭。关闭时搜索不使用 Bangumi Token，并过滤受限条目；开启且配置有效 Token 后，搜索可同时返回普通与受限条目，受限详情和选集按需鉴权。Bangumi 账号需注册满 60 天；Token 失效时自动退回普通搜索\n- 两个新增开关均纳入设置备份，恢复后立即生效\n\n### 修复\n\n- 修复部分规则在上游可以检索、在本应用却无结果的问题，对齐上游的节点 XPath 解析方式，同时修正选集解析（[#32](https://github.com/LinkPass888/Kazumi-Swift/issues/32)）\n- 搜索页点击「取消」不再退出页面，只撤销本轮输入并收起键盘，保留原有搜索结果\n\n### 优化\n\n- 时间表与搜索统一过滤无中文名的条目，同时保留原名本身为中文的国创条目",
+          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/3.0.7/Kazumi_ios_3.0.7_no_sign.ipa",
+          "size": 24159040,
           "minOSVersion": "26.0"
         }
       ]
@@ -970,11 +970,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.2.2",
-          "date": "2026-11-09T13:38:44Z",
-          "localizedDescription": "MoviePilot iOS 1.2.2，修复嵌套弹窗动画、iOS 16–25 底栏材质与原生搜索分类配色问题。\n\n### 更新内容\n\n- 修复 App 嵌套打开弹窗时直接切换内容的问题，补齐进入子弹窗、返回父弹窗和高度变化的动画，并适配系统“减弱动态效果”。\n- iOS 16–25 的底栏改用超薄系统磨砂材质，保留底页壁纸和明暗主题变化；iOS 26+ 继续使用系统 Liquid Glass。\n- 修复旧系统搜索页分类选中态使用相同强调色绘制背景和前景，导致图标与文字消失的问题。\n- 保留 iOS 16 设备的原生底栏布局、动态搜索按钮和路由确认行为。\n\n### 安装\n\n下载 `MoviePilot-1.2.2-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[aedc6585518f6e5e3d726eed0eea88674eb4e962](https://github.com/jxxghp/MoviePilot-App/commit/aedc6585518f6e5e3d726eed0eea88674eb4e962)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.2/MoviePilot-1.2.2-unsigned.ipa",
-          "size": 4231532,
+          "version": "1.2.3",
+          "date": "2026-11-15T23:02:54Z",
+          "localizedDescription": "MoviePilot iOS 1.2.3，新增简体中文、繁体中文和英语切换，并与当前实例的 MoviePilot 网页共享语言设置。\n\n### 更新内容\n\n- 在连接页和“连接与显示”中切换简体中文、繁体中文或英语，选择会保存在设备并同步到当前 MoviePilot 实例。\n- 网页端切换语言后，App 的原生菜单、连接表单、通知、搜索、小组件设置和播放器文案随之更新。\n- 每个实例保留各自的语言，语言切换会重新载入当前网页。\n\n### 安装\n\n下载 `MoviePilot-1.2.3-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[f72877f5722e499e17de38f5db064b11cff54a18](https://github.com/jxxghp/MoviePilot-App/commit/f72877f5722e499e17de38f5db064b11cff54a18)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.3/MoviePilot-1.2.3-unsigned.ipa",
+          "size": 23674695,
           "minOSVersion": "17.0"
         }
       ]
@@ -1089,7 +1089,7 @@
           "version": "2.0.0",
           "date": "2026-11-13T07:02:53Z",
           "localizedDescription": "## Welcome to OpenParsec v2.0.0!\r\n\r\nThis is the release promised back in 1.4.0, with everything that's been on the nightly since october.\r\n\r\nWe now have a Metal renderer, streams that hold and reconnect by themselves, new connecting screens,reworked settings, and other control-related improvements.\r\n\r\n---\r\n\r\nBefore you update:\r\n- auto reconnect is now switched on by default, see settings > developer for additional settings\r\n- everyone is now on the new Metal renderer. OpenGL is remains optional as a fallback\\\r\n- this is the last release for ios 14. it runs with some rough edges but remains functional. Future releases will be pinned, and we plan to require ios 15 starting from the next release. A seperate branch for iOS 14 will be created for backporting fixes as maintainer time allows\r\n\r\nstreaming\r\n- metal renderer, now the default (#118)\r\n- 120hz on ProMotion iphones (#118)\r\n- the stream stays connected in the background for as long as ios allows, and reconnects when you're back (#138)\r\n- the last frame stays up when the stream drops (#138)\r\n- auto reconnect waits for the network to come back, and reconnects right away on a wifi/cellular switch (#138)\r\n- resolution, bitrate and constant frame rate survive a reconnect (#119)\r\n\r\ninput\r\n- smoother trackpad scrolling, thanks @alantangok (#97)\r\n- reverse scrolling works for trackpad and mouse, thanks @MoustacheOff (#116)\r\n- menu edge swipe setting, thanks @alantangok (#100)\r\n- left edge swipe brings back a hidden menu button (#120)\r\n- show menu button off no longer hides the keyboard button (#120)\r\n- mouse side buttons (#120)\r\n- drag handle in direct mode when the keyboard covers the picture, three finger tap hides the keyboard (#120)\r\n- the next controller takes over when the active one disconnects (#120)\r\n\r\napp\r\n- settings rework, and settings open from the stream menu (#119, #129)\r\n- bitrate, constant frame rate and pinch to zoom are settings that carry over between streams (#119)\r\n- touch mode in the stream menu (#129)\r\n- connecting and reconnect screens match and show a live connection log (#130)\r\n- says right away when there's no network, retries once if the host doesn't answer (#117)\r\n- last host card stays after a disconnect, reconnect from the app icon (#117)\r\n- host list refresh no longer blocks the screen, long press a host to copy its name (#113)\r\n- new readme, contributing guide and issue templates (#139)\r\n\r\nThanks to everyone for making bug reports on nightly builds, and thank you for your support!\r\n\r\n---\r\n\r\n# Generated by GitHub\r\n\r\n## What's Changed\r\n* host list UX by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/113\r\n* Preserve fractional GCMouse scroll deltas by @alantangok in https://github.com/hugeBlack/OpenParsec/pull/97\r\n* Add opt-in iPad menu edge swipe by @alantangok in https://github.com/hugeBlack/OpenParsec/pull/100\r\n* last host reconnect optimization  by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/117\r\n* METAL RENDERER!!! by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/118\r\n* settings rework by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/119\r\n* input and keyboard fixes by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/120\r\n* token on altstore release fetch by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/127\r\n* Stream guards by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/128\r\n* Stream menu by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/129\r\n* Connect screens by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/130\r\n* fix: honor Reverse Scroll Direction for trackpad/mouse scrolling by @MoustacheOff in https://github.com/hugeBlack/OpenParsec/pull/116\r\n* Stream resume by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/138\r\n* prep 2.0 release by @SandiyosDev in https://github.com/hugeBlack/OpenParsec/pull/139\r\n\r\n## New Contributors\r\n* @alantangok made their first contribution in https://github.com/hugeBlack/OpenParsec/pull/97\r\n* @MoustacheOff made their first contribution in https://github.com/hugeBlack/OpenParsec/pull/116\r\n\r\n**Full Changelog**: https://github.com/hugeBlack/OpenParsec/compare/1.4.0...2.0.0",
-          "downloadURL": "https://github.com/hugeBlack/OpenParsec/releases/download/2.0.0/OpenParsec.ipa",
+          "downloadURL": "https://github.com/NearFrame/OpenParsec/releases/download/2.0.0/OpenParsec.ipa",
           "size": 4445097,
           "minOSVersion": "14.0"
         }
@@ -1669,6 +1669,39 @@
   ],
   "news": [
     {
+      "appID": "com.naine.doer",
+      "title": "Doer 1.8.7.1 · 16 Nov 2026",
+      "identifier": "Doer-release-v1.8.7.1",
+      "caption": "Doer 1.8.7.1 is available.",
+      "date": "2026-11-16T02:41:22Z",
+      "tintColor": "#4080E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
+      "notify": true,
+      "url": "https://github.com/moliango/doer/releases/tag/v1.8.7.1"
+    },
+    {
+      "appID": "com.linkpass.kazumi",
+      "title": "Kazumi-Swift 3.0.7 · 16 Nov 2026",
+      "identifier": "Kazumi-Swift-release-3.0.7",
+      "caption": "Kazumi-Swift 3.0.7 is available.",
+      "date": "2026-11-16T02:26:09Z",
+      "tintColor": "#45A992",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
+      "notify": true,
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.7"
+    },
+    {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 1.2.3 · 15 Nov 2026",
+      "identifier": "MoviePilot-release-v1.2.3",
+      "caption": "MoviePilot 1.2.3 is available.",
+      "date": "2026-11-15T23:02:54Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.3"
+    },
+    {
       "appID": "cz.kolbi.wqfiles",
       "title": "WQ Files 0.9.11 · 15 Nov 2026",
       "identifier": "WQ Files-release-v0.9.11",
@@ -1724,17 +1757,6 @@
       "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/nightly"
     },
     {
-      "appID": "com.naine.doer",
-      "title": "Doer 1.8.7 · 15 Nov 2026",
-      "identifier": "Doer-release-v1.8.7",
-      "caption": "Doer 1.8.7 is available.",
-      "date": "2026-11-15T13:11:40Z",
-      "tintColor": "#4080E0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
-      "notify": true,
-      "url": "https://github.com/moliango/doer/releases/tag/v1.8.7"
-    },
-    {
       "appID": "com.kodjodevf.mangayomi",
       "title": "Mangayomi 0.9.96 · 14 Nov 2026",
       "identifier": "Mangayomi-release-v0.9.96",
@@ -1755,17 +1777,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261114"
-    },
-    {
-      "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.0.6 · 14 Nov 2026",
-      "identifier": "Kazumi-Swift-release-3.0.6",
-      "caption": "Kazumi-Swift 3.0.6 is available.",
-      "date": "2026-11-14T14:04:38Z",
-      "tintColor": "#45A992",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
-      "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.6"
     },
     {
       "appID": "com.ishtiaqsyed.StatsForIOS",
@@ -1942,17 +1953,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
       "notify": true,
       "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.2.2-b70"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.2.2 · 09 Nov 2026",
-      "identifier": "MoviePilot-release-v1.2.2",
-      "caption": "MoviePilot 1.2.2 is available.",
-      "date": "2026-11-09T13:38:44Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.2"
     },
     {
       "appID": "com.stik.stikdebug",

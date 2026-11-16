@@ -21,11 +21,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.0.6",
-          "date": "2026-11-14T14:04:38Z",
-          "localizedDescription": "### 新增\n\n- 播放器「更多」里新增「弹幕检索」：手动搜番、选分集并换弹幕源，番剧的 OVA 插在正片里导致集数对不上时不再只能忍着（[#30](https://github.com/LinkPass888/Kazumi-Swift/issues/30)）。检索页打开时暂停播放，换完或返回后自动续播\n\n### 优化\n\n- 应用更新提示从弹窗改成半屏卡片：标题一行列出新版本号与当前版本，更新日志可滚动，底部「前往下载」「跳过此版本」「稍后」分开放置；「跳过此版本」后同一版本不再打扰",
-          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/3.0.6/Kazumi_ios_3.0.6_no_sign.ipa",
-          "size": 24144584,
+          "version": "3.0.7",
+          "date": "2026-11-16T02:26:09Z",
+          "localizedDescription": "### 新增\n\n- 播放器截图写入番剧名、集数和播放进度时刻三个图片关键词；「播放设置 → 片头片尾」下方新增「截图写入番剧关键词」开关，默认开启\n- 「设置 → 外观与界面」新增「搜索结果显示 NSFW」开关，默认关闭。关闭时搜索不使用 Bangumi Token，并过滤受限条目；开启且配置有效 Token 后，搜索可同时返回普通与受限条目，受限详情和选集按需鉴权。Bangumi 账号需注册满 60 天；Token 失效时自动退回普通搜索\n- 两个新增开关均纳入设置备份，恢复后立即生效\n\n### 修复\n\n- 修复部分规则在上游可以检索、在本应用却无结果的问题，对齐上游的节点 XPath 解析方式，同时修正选集解析（[#32](https://github.com/LinkPass888/Kazumi-Swift/issues/32)）\n- 搜索页点击「取消」不再退出页面，只撤销本轮输入并收起键盘，保留原有搜索结果\n\n### 优化\n\n- 时间表与搜索统一过滤无中文名的条目，同时保留原名本身为中文的国创条目",
+          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/3.0.7/Kazumi_ios_3.0.7_no_sign.ipa",
+          "size": 24159040,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.0.6 · 14 Nov 2026",
-      "identifier": "Kazumi-Swift-release-3.0.6",
-      "caption": "Kazumi-Swift 3.0.6 is available.",
-      "date": "2026-11-14T14:04:38Z",
+      "title": "Kazumi-Swift 3.0.7 · 16 Nov 2026",
+      "identifier": "Kazumi-Swift-release-3.0.7",
+      "caption": "Kazumi-Swift 3.0.7 is available.",
+      "date": "2026-11-16T02:26:09Z",
       "tintColor": "#45A992",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
       "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.6"
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.7"
     }
   ]
 }
