@@ -19,11 +19,11 @@
       "tintColor": "#1E8FC7",
       "versions": [
         {
-          "version": "0.9.11",
-          "date": "2026-11-15T22:14:34Z",
-          "localizedDescription": "> **Requires:** iOS 27, or iOS 26.0 – 26.7.2. Tested on iOS 27.0.1, 27.2.1, 26.7.1 and the 27.3 beta (confirmed by a user); see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.11\n\n## New\n\n- **Vietnamese** ([#62](https://github.com/kolbicz/WQFiles/pull/62)): WQ Files is now available in Vietnamese (Tiếng Việt). Pick it in **Settings → Language**.\n- **Scans keep running and survive restarts** ([#61](https://github.com/kolbicz/WQFiles/pull/61)): Apps and Clean keep scanning when you switch tabs, and the last result is kept when WQ Files closes. An interrupted scan continues where it stopped. Use **Pause Scan** / **Resume Scan** to pause or resume one. A result older than 10 minutes refreshes when you open the screen.\n- **Scan status in the tab bar:** a tab shows a spinner while its scan runs and a clock ◷ while it waits for another scan. On iPhone this is a gray badge.\n\n## Changed\n\n- **Full file scans ask before resuming:** an interrupted full scan only continues after you confirm it, and **Stop** discards its saved progress.\n- **Fewer disk writes:** scan progress is saved every 20 seconds, without holding up the scan. Saved progress is deleted when a scan finishes, or after a week if it isn't resumed.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Translations: iosrxwy (Simplified Chinese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to everyone who sent Logs and screenshots. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `b0ca5602762263b9db088f9df8536245fe178645aeb24587b8a2f818c9e996b8`",
-          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.11/WQFiles.ipa",
-          "size": 1969224,
+          "version": "0.9.13",
+          "date": "2026-11-16T12:15:18Z",
+          "localizedDescription": "> **Requires:** iOS 27, or iOS 26.0 – 26.7.2. Tested on iOS 27.0.1, 27.2.1, 27.3 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.13\n\n## Fixes\n\n- **Apps and Cache Cleaner are fast again:** since 0.9.11, measuring app data and caches ran at a low background priority (slower cores, throttled disk access). It also opened every folder's full path again for each subfolder. Scans now run at normal priority and measure many folders per step, so they're more than twice as fast. Pause, Resume and resuming after a restart work as before.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Translations: iosrxwy (Simplified Chinese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to everyone who reported the slow scans. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `8f72d4f70209743c8b2a05a62ffe4c279ead37a27b94cc8e9cb85cfdd1be0446`",
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.13/WQFiles.ipa",
+          "size": 2053060,
           "minOSVersion": "26.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "cz.kolbi.wqfiles",
-      "title": "WQ Files 0.9.11 · 15 Nov 2026",
-      "identifier": "WQ Files-release-v0.9.11",
-      "caption": "WQ Files 0.9.11 is available.",
-      "date": "2026-11-15T22:14:34Z",
+      "title": "WQ Files 0.9.13 · 16 Nov 2026",
+      "identifier": "WQ Files-release-v0.9.13",
+      "caption": "WQ Files 0.9.13 is available.",
+      "date": "2026-11-16T12:15:18Z",
       "tintColor": "#1E8FC7",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
       "notify": true,
-      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.11"
+      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.13"
     }
   ]
 }
