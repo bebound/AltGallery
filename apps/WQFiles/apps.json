@@ -19,11 +19,11 @@
       "tintColor": "#1E8FC7",
       "versions": [
         {
-          "version": "0.9.13",
-          "date": "2026-11-16T12:15:18Z",
-          "localizedDescription": "> **Requires:** iOS 27, or iOS 26.0 – 26.7.2. Tested on iOS 27.0.1, 27.2.1, 27.3 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.13\n\n## Fixes\n\n- **Apps and Cache Cleaner are fast again:** since 0.9.11, measuring app data and caches ran at a low background priority (slower cores, throttled disk access). It also opened every folder's full path again for each subfolder. Scans now run at normal priority and measure many folders per step, so they're more than twice as fast. Pause, Resume and resuming after a restart work as before.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Translations: iosrxwy (Simplified Chinese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to everyone who reported the slow scans. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `8f72d4f70209743c8b2a05a62ffe4c279ead37a27b94cc8e9cb85cfdd1be0446`",
-          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.13/WQFiles.ipa",
-          "size": 2053060,
+          "version": "0.9.16",
+          "date": "2026-11-16T22:54:40Z",
+          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.16\n\n## New\n\n- **Invert Selection** in the Cache Cleaner's Select menu. Select All and Invert are greyed out when no row can be cleaned, and Select None clears the selection everywhere, including rows the search hides.\n\n## Fixes\n\n- **LiveContainer** ([#65](https://github.com/kolbicz/WQFiles/issues/65)): inside LiveContainer every app folder was refused, and Reset Access Cache didn't help. LiveContainer gives WQ Files a stand-in App Group folder, while iOS hands out access for the real one. WQ Files now uses the real folder.\n- **Cache Cleaner: Clean stayed grey after a scan** ([#67](https://github.com/kolbicz/WQFiles/issues/67)): since 0.9.11 a finished scan selected nothing. A scan that finishes while the Cache Cleaner is open now selects every row that can be cleaned again, as up to 0.9.10. Results shown again later, e.g. after a restart, still start with nothing selected.\n- **Wi-Fi Sharing uploads:** nothing is saved anymore after you stop sharing, even if an upload was still running. An upload whose name already exists is saved as \"name 2\" again instead of failing.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Translations: iosrxwy (Simplified Chinese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `66b0edea54a69c1d0021061b8f79efffe2cffb89574584ccc995727bd7dfa420`",
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.16/WQFiles.ipa",
+          "size": 2078252,
           "minOSVersion": "26.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "cz.kolbi.wqfiles",
-      "title": "WQ Files 0.9.13 · 16 Nov 2026",
-      "identifier": "WQ Files-release-v0.9.13",
-      "caption": "WQ Files 0.9.13 is available.",
-      "date": "2026-11-16T12:15:18Z",
+      "title": "WQ Files 0.9.16 · 16 Nov 2026",
+      "identifier": "WQ Files-release-v0.9.16",
+      "caption": "WQ Files 0.9.16 is available.",
+      "date": "2026-11-16T22:54:40Z",
       "tintColor": "#1E8FC7",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
       "notify": true,
-      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.13"
+      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.16"
     }
   ]
 }
