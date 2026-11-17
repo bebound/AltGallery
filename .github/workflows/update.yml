@@ -2,11 +2,11 @@ name: Update apps.json and all-apps.json
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: "0 */6 * * *"
   workflow_dispatch:
     inputs:
       skip_failures:
-        description: 'Skip apps whose repo fails (404/renamed) instead of failing the whole run'
+        description: "Skip apps whose repo fails (404/renamed) instead of failing the whole run"
         type: boolean
         default: false
   push:
@@ -15,6 +15,11 @@ on:
 
 permissions:
   contents: write
+
+# One run at a time
+concurrency:
+  group: update-sources
+  cancel-in-progress: false
 
 jobs:
   update:
