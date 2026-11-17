@@ -238,6 +238,9 @@ Virtual machines for iOS — run Windows, Android and more on your iPhone or iPa
 ### <img src="apps/Venera-Next/icon.png" alt="VeneraNext icon" width="24" align="top"> <a href="https://github.com/CyrilPeng/Venera-Next">VeneraNext</a>
 跨平台漫画阅读器——基于 Flutter，支持本地漫画、WebDAV 漫画源与第三方网络漫画源。
 
+### <img src="apps/VRCM/icon.png" alt="VRCM icon" width="24" align="top"> <a href="https://github.com/vrcm-team/VRCM">VRCM</a>
+Bring your VRChat social life to your phone — friend network, shared history, two-way VRChat+ Gallery and meetup name cards.
+
 ### <img src="apps/WQFiles/icon.png" alt="WQ Files icon" width="24" align="top"> <a href="https://github.com/kolbicz/WQFiles">WQ Files</a>
 File manager for iOS 26 and 27 (worse_query) — browse other apps' containers, edit plists, hex and SQLite, and back up or clear app data, no jailbreak.
 

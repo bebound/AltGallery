@@ -180,6 +180,10 @@
     "subtitle": "iOS 上的虚拟机",
     "description": "UTM 是一款功能完整的 iOS 虚拟机宿主。简而言之，它能让你在 iPhone 与 iPad 上运行 Windows、Android 等系统。\n\n此版本需要使用 AltJIT。若想在不启用 JIT 的情况下以较慢速度模拟，请安装 UTM SE。\n\n更多信息见 https://getutm.app/\n\n特性：\n\n• 模拟任意处理器\nqemu 支持 30 多种处理器，包括 x86_64、ARM64 与 RISC-V\n• 运行任意操作系统\n在 iOS 的 App 内原生、安全地运行 Windows、Linux 等\n• 快速模拟\n支持 SPICE 半虚拟化与 TCG 的 JIT 编译\n• 高兼容性\n支持 iOS 14+，可在 iPhone 与 iPad 上运行，无需越狱\n• 免费开源\nUTM 及其依赖全部免费开源\n• 易于使用\n在原生界面中配置并自定义你的虚拟机"
   },
+  "io.github.vrcmteam.vrcm": {
+    "subtitle": "把 VRChat 社交生活带到你的手机上",
+    "description": "VRCM 是一款跨平台的 VRChat 伴侣应用，专注于社交联系与便捷体验。探索你的社交圈、回顾一起度过的时光，并从分享链接顺畅跳转到世界、互动与线下聚会。"
+  },
   "cz.kolbi.wqfiles": {
     "subtitle": "面向 iOS 26 与 27 的文件管理器",
     "description": "面向 iOS 26 与 27 的文件浏览器、应用数据管理器和缓存清理工具，基于 worse_query 沙盒技术实现。无需越狱或内核漏洞，即可浏览其他应用的容器、编辑 plist、十六进制与 SQLite 数据库，并备份、恢复或清除应用数据。"
