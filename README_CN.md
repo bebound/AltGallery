@@ -76,6 +76,9 @@ Apple 钱包卡面、锁屏密码键盘主题与 PosterBoard 壁纸——在设�
 ### <img src="apps/BCD/icon.png" alt="BCD icon" width="24" align="top"> <a href="https://github.com/thebcd69/bcd-games">BCD</a>
 iPhone 与 iPad 上的 Windows 游戏——由 Wine、FEX 与 Metal 驱动、内置 Steam 和 GOG 的快速手柄友好启动器。
 
+### <img src="apps/Breeze/icon.png" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
+使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、禁漫天堂等数十个图源，并支持本地与云收藏。
+
 ### <img src="apps/DLiPA/icon.png" alt="DLiPA icon" width="24" align="top"> <a href="https://github.com/AhmedBafkir/DLiPA">DLiPA</a>
 下载、安装并分享 App Store 的 IPA——含历史版本，使用你自己的 Apple ID，无需越狱。
 
