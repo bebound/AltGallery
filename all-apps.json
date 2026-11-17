@@ -411,11 +411,11 @@
       "tintColor": "#D07030",
       "versions": [
         {
-          "version": "0.9.2",
-          "date": "2026-11-16T08:20:09Z",
-          "localizedDescription": "## Erosion-CN v0.9.2\n\n### What's New / 更新内容\n1. **设置页生态联动 & 统一致谢（Settings Refresh & Ecosystem Links）**\n   - Removed the separate \"Special Thanks\" section and unified all upstream authors and open-source references under **Credits & Open-Source References (`致谢与开源参考`)**.\n   - Added **More Open-Source Projects (Kianuni)** section inside Settings showcasing **[AppleFlow](https://github.com/Kianuni/AppleFlow)**, **[WQGuard](https://github.com/Kianuni/WQGuard)**, **[Camlo](https://github.com/Kianuni/Camlo)**, and **[Enkard](https://github.com/Kianuni/Enkard)** with full EN/ZH localization.\n2. **内置分流导出同步 `AppleFlow v1.0.1`（Synced Built-in Routing Export）**\n   - Added missing PCC blind-signature domains (`*.issuer.apple.com`, `ropes.apple.com`) to prevent `PrivateCloudComputeError Code=32033` when using the in-app exported Surge `.sgmodule` or Stash `.stoverride`.\n   - Replaced overly broad `google.com` / `googleapis.com` / `gstatic.com` suffixes with targeted production domains (`lens.google.com`, `gemini.google.com`, `chatgpt.livekit.cloud`, `sora.com`, `claudeusercontent.com`, etc.).\n\n### Install / 下载安装\n- **SideStore / AltStore / Feather 官方源**：`https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json`\n- **直接下载安装包**：下方附件 `Erosion_v0.9.2_Bilingual.ipa`（单包内置中英双语，安装时请保留 App Group 权限）。",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.9.2/Erosion_v0.9.2_Bilingual.ipa",
-          "size": 6279347,
+          "version": "1.0.1",
+          "date": "2026-11-17T05:26:32Z",
+          "localizedDescription": "## Erosion-CN v1.0.1 (Build 26)\n\n### What's New / 更新内容\n1. **Built-in Interactive APFS Swap & Multi-App Migration Guide / 内置 APFS 换包与多开搬家分步教程 (`APFSVaultGuideSheet`)**\n   - Added a bilingual **Usage Guide (`使用说明`)** button right in the **App & Game Save Manager** toolbar, APFS Swap Vault card, and inside **APFS Swap Vault**.\n   - Clearly explains:\n     - **APFS Zero-Space Stage vs `.zip` Save Backup** (when to use each);\n     - **Same-App Re-sign / Reinstall (6 Steps)**: swipe-close → stage → reinstall → launch once to create fresh container & close → restore → re-login once (Keychain) & release vault;\n     - **Official ↔ Clone Migration** (e.g. `com.tencent.xin` → `com.tencent.wx` with automatic `.plist` renaming);\n     - **3 Critical Safety Rules** (never uninstall Erosion before releasing vault, always close target app first, Keychain re-login behavior).\n2. **UI Layout Polish / 存档列表卡片排版优化**\n   - Fixed the 3-line wrapping on container card link buttons (`Documents` / `Preferences` / `Full Container` | `文档目录` / `偏好配置` / `完整目录`).\n3. **Updated Usage Guide & Bilingual Changelog / 文档同步完善**\n   - Updated [USAGE_GUIDE.md](https://github.com/Kianuni/Erosion-CN/blob/main/USAGE_GUIDE.md) with all `v1.0.0 – v1.0.1` features & `iOS 27.3 beta 2` compatibility notes; see [CHANGELOG.md](https://github.com/Kianuni/Erosion-CN/blob/main/CHANGELOG.md) for full bilingual history.\n\n### Install / 下载安装\n- **SideStore / AltStore / Feather Official Source**: `https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json`\n- **IPA Asset**: `Erosion_v1.0.1_Bilingual.ipa` below (bilingual EN/ZH; preserve App Group entitlements when signing).",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.1/Erosion_v1.0.1_Bilingual.ipa",
+          "size": 6696463,
           "minOSVersion": "26.0"
         }
       ]
@@ -1573,6 +1573,30 @@
       ]
     },
     {
+      "name": "VRCM",
+      "bundleIdentifier": "io.github.vrcmteam.vrcm",
+      "developerName": "vrcm-team",
+      "subtitle": "Bring your VRChat social life to your phone",
+      "localizedDescription": "VRCM is a cross-platform VRChat companion focused on social connection and convenience. Explore your social circles, remember time spent together, and move smoothly from shared links to worlds, interactions, and real-world meetups.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Friend-Network.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Gallery-Mobile.png",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Meetup-Card.png"
+      ],
+      "tintColor": "#6451f1",
+      "versions": [
+        {
+          "version": "1.1.6",
+          "date": "2026-11-16T13:50:14Z",
+          "localizedDescription": "## 新增\n\n- Android 和 iOS 支持通过相机或相册扫描 VRChat 链接，图片包含多个二维码时可选择识别结果。\n- 支持扫码审批 VRChat 设备登录，展示请求时间和来源地区；Android 新增扫一扫桌面快捷方式。\n- 新增独立“我的二维码”页面，支持个人主页码、样式切换和分享卡片。\n- 统计数据支持 SQLite 导入导出，可导入 VRCM 或 VRCX 数据库，预览导入内容并去重合并。\n- 设置按账号安全、外观、通知、隐私与数据等分类，集中管理已保存账号的切换和登出。\n- 好友动态新增名字和模型变更记录，并提供独立的模型筛选分类。\n\n## 优化\n\n- 群组房间支持邀请自己，世界详情加载来源房间，展开的房间卡片可打开房主主页。\n- 资料编辑适配 VRChat 新接口，保存简介、社交链接和语言后同步刷新状态。\n\n## 修复\n\n- 后台登录会话失效时自动恢复，避免好友与动态更新长期中断。\n- 修复玩家批量清理在列表刚加载完时点击无响应，以及登录续期后剩余请求中断的问题；避免迟到的续期通知覆盖已成功的语音开关状态。\n- 修复 Android 大型统计快照读取、系统文件选择器导入和导出文件句柄释放问题。\n- 应用内更新遇到包名或签名不匹配的 APK 时停止更新，避免继续换源重试。\n- 修复 Windows 渐进背景模糊导致的卡死、群组代表状态跨资料页不同步，以及模型列表的平台支持标记错误。\n\n****************\n\n## New Features\n\n- Scan VRChat links with the camera or from photos on Android and iOS, and choose a result when an image contains multiple QR codes.\n- Approve VRChat device sign-ins by scanning a code, with the request time and source region shown; Android also adds a launcher shortcut to the scanner.\n- Added a separate My QR Code page with a profile code, appearance options, and a shareable card.\n- Import and export statistics as SQLite files, with support for VRCM and VRCX databases, an import preview, and duplicate merging.\n- Settings are organized into account security, appearance, notifications, privacy and data, and other categories, with saved-account switching and sign-out in one place.\n- Friend activity now includes display-name and avatar changes, with a dedicated avatar filter.\n\n## Optimizations\n\n- Invite yourself to group instances, load the source instance in world details, and open the owner's profile from an expanded instance card.\n- Profile editing follows VRChat's updated API and refreshes the saved bio, social links, and languages consistently.\n\n## Bug Fixes\n\n- Automatically restore expired background sessions to resume friend and activity updates.\n- Fixed bulk player cleanup ignoring clicks just after loading or interrupting remaining requests after session renewal; delayed renewal notifications no longer overwrite successful mute or unmute actions.\n- Fixed large statistics snapshots, imports through Android document providers, and file-handle cleanup after exports.\n- In-app updates stop when an APK has a mismatched package name or signature instead of retrying other mirrors.\n- Fixed Windows freezes caused by progressive backdrop blur, group representation falling out of sync across profiles, and incorrect platform-support indicators in avatar lists.\n\n详情 / Details: <https://github.com/vrcm-team/VRCM/tree/main/docs/releases/1.1.6.md>",
+          "downloadURL": "https://github.com/vrcm-team/VRCM/releases/download/1.1.6/VRCM-v1.1.6.ipa",
+          "size": 23232985,
+          "minOSVersion": "15.3"
+        }
+      ]
+    },
+    {
       "name": "WQ Files",
       "bundleIdentifier": "cz.kolbi.wqfiles",
       "developerName": "kolbicz",
@@ -1693,6 +1717,17 @@
   ],
   "news": [
     {
+      "appID": "com.jbdotparty.Erosion",
+      "title": "Erosion-CN 1.0.1 · 17 Nov 2026",
+      "identifier": "Erosion-CN-release-v1.0.1",
+      "caption": "Erosion-CN 1.0.1 is available.",
+      "date": "2026-11-17T05:26:32Z",
+      "tintColor": "#D07030",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.1"
+    },
+    {
       "appID": "cz.kolbi.wqfiles",
       "title": "WQ Files 0.9.16 · 16 Nov 2026",
       "identifier": "WQ Files-release-v0.9.16",
@@ -1726,6 +1761,17 @@
       "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa3"
     },
     {
+      "appID": "io.github.vrcmteam.vrcm",
+      "title": "VRCM 1.1.6 · 16 Nov 2026",
+      "identifier": "VRCM-release-1.1.6",
+      "caption": "VRCM 1.1.6 is available.",
+      "date": "2026-11-16T13:50:14Z",
+      "tintColor": "#6451f1",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/news.png",
+      "notify": true,
+      "url": "https://github.com/vrcm-team/VRCM/releases/tag/1.1.6"
+    },
+    {
       "appID": "com.wqguard.app",
       "title": "WQGuard 1.2.2 · 16 Nov 2026",
       "identifier": "WQGuard-release-v1.2.2",
@@ -1746,17 +1792,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
       "notify": true,
       "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.6.2"
-    },
-    {
-      "appID": "com.jbdotparty.Erosion",
-      "title": "Erosion-CN 0.9.2 · 16 Nov 2026",
-      "identifier": "Erosion-CN-release-v0.9.2",
-      "caption": "Erosion-CN 0.9.2 is available.",
-      "date": "2026-11-16T08:20:09Z",
-      "tintColor": "#D07030",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.2"
     },
     {
       "appID": "com.naine.doer",

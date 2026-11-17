@@ -21,11 +21,11 @@
       "tintColor": "#D07030",
       "versions": [
         {
-          "version": "0.9.2",
-          "date": "2026-11-16T08:20:09Z",
-          "localizedDescription": "## Erosion-CN v0.9.2\n\n### What's New / 更新内容\n1. **设置页生态联动 & 统一致谢（Settings Refresh & Ecosystem Links）**\n   - Removed the separate \"Special Thanks\" section and unified all upstream authors and open-source references under **Credits & Open-Source References (`致谢与开源参考`)**.\n   - Added **More Open-Source Projects (Kianuni)** section inside Settings showcasing **[AppleFlow](https://github.com/Kianuni/AppleFlow)**, **[WQGuard](https://github.com/Kianuni/WQGuard)**, **[Camlo](https://github.com/Kianuni/Camlo)**, and **[Enkard](https://github.com/Kianuni/Enkard)** with full EN/ZH localization.\n2. **内置分流导出同步 `AppleFlow v1.0.1`（Synced Built-in Routing Export）**\n   - Added missing PCC blind-signature domains (`*.issuer.apple.com`, `ropes.apple.com`) to prevent `PrivateCloudComputeError Code=32033` when using the in-app exported Surge `.sgmodule` or Stash `.stoverride`.\n   - Replaced overly broad `google.com` / `googleapis.com` / `gstatic.com` suffixes with targeted production domains (`lens.google.com`, `gemini.google.com`, `chatgpt.livekit.cloud`, `sora.com`, `claudeusercontent.com`, etc.).\n\n### Install / 下载安装\n- **SideStore / AltStore / Feather 官方源**：`https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json`\n- **直接下载安装包**：下方附件 `Erosion_v0.9.2_Bilingual.ipa`（单包内置中英双语，安装时请保留 App Group 权限）。",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v0.9.2/Erosion_v0.9.2_Bilingual.ipa",
-          "size": 6279347,
+          "version": "1.0.1",
+          "date": "2026-11-17T05:26:32Z",
+          "localizedDescription": "## Erosion-CN v1.0.1 (Build 26)\n\n### What's New / 更新内容\n1. **Built-in Interactive APFS Swap & Multi-App Migration Guide / 内置 APFS 换包与多开搬家分步教程 (`APFSVaultGuideSheet`)**\n   - Added a bilingual **Usage Guide (`使用说明`)** button right in the **App & Game Save Manager** toolbar, APFS Swap Vault card, and inside **APFS Swap Vault**.\n   - Clearly explains:\n     - **APFS Zero-Space Stage vs `.zip` Save Backup** (when to use each);\n     - **Same-App Re-sign / Reinstall (6 Steps)**: swipe-close → stage → reinstall → launch once to create fresh container & close → restore → re-login once (Keychain) & release vault;\n     - **Official ↔ Clone Migration** (e.g. `com.tencent.xin` → `com.tencent.wx` with automatic `.plist` renaming);\n     - **3 Critical Safety Rules** (never uninstall Erosion before releasing vault, always close target app first, Keychain re-login behavior).\n2. **UI Layout Polish / 存档列表卡片排版优化**\n   - Fixed the 3-line wrapping on container card link buttons (`Documents` / `Preferences` / `Full Container` | `文档目录` / `偏好配置` / `完整目录`).\n3. **Updated Usage Guide & Bilingual Changelog / 文档同步完善**\n   - Updated [USAGE_GUIDE.md](https://github.com/Kianuni/Erosion-CN/blob/main/USAGE_GUIDE.md) with all `v1.0.0 – v1.0.1` features & `iOS 27.3 beta 2` compatibility notes; see [CHANGELOG.md](https://github.com/Kianuni/Erosion-CN/blob/main/CHANGELOG.md) for full bilingual history.\n\n### Install / 下载安装\n- **SideStore / AltStore / Feather Official Source**: `https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json`\n- **IPA Asset**: `Erosion_v1.0.1_Bilingual.ipa` below (bilingual EN/ZH; preserve App Group entitlements when signing).",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.1/Erosion_v1.0.1_Bilingual.ipa",
+          "size": 6696463,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.jbdotparty.Erosion",
-      "title": "Erosion-CN 0.9.2 · 16 Nov 2026",
-      "identifier": "Erosion-CN-release-v0.9.2",
-      "caption": "Erosion-CN 0.9.2 is available.",
-      "date": "2026-11-16T08:20:09Z",
+      "title": "Erosion-CN 1.0.1 · 17 Nov 2026",
+      "identifier": "Erosion-CN-release-v1.0.1",
+      "caption": "Erosion-CN 1.0.1 is available.",
+      "date": "2026-11-17T05:26:32Z",
       "tintColor": "#D07030",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
       "notify": true,
-      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v0.9.2"
+      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.1"
     }
   ]
 }
