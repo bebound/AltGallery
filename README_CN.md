@@ -238,6 +238,9 @@ iOS 上的虚拟机——在 iPhone 与 iPad 上运行 Windows、Android 等，�
 ### <img src="apps/Venera-Next/icon.png" alt="VeneraNext icon" width="24" align="top"> <a href="https://github.com/CyrilPeng/Venera-Next">VeneraNext</a>
 跨平台漫画阅读器——基于 Flutter，支持本地漫画、WebDAV 漫画源与第三方网络漫画源。
 
+### <img src="apps/VRCM/icon.png" alt="VRCM icon" width="24" align="top"> <a href="https://github.com/vrcm-team/VRCM">VRCM</a>
+把 VRChat 社交生活带到手机上——好友关系网络、共同游玩记录、VRChat+ 相册双向互传与线下聚会名片。
+
 ### <img src="apps/WQFiles/icon.png" alt="WQ Files icon" width="24" align="top"> <a href="https://github.com/kolbicz/WQFiles">WQ Files</a>
 面向 iOS 26 与 27 的文件管理器（worse_query）——浏览其他 App 的容器、编辑 plist/十六进制/SQLite，备份或清除数据，无需越狱。
 
