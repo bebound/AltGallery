@@ -1,0 +1,46 @@
+{
+  "name": "Breeze",
+  "subtitle": "Breeze AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Breeze",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/icon.png",
+  "website": "https://github.com/breeze-project-org/Breeze",
+  "tintColor": "#E03030",
+  "apps": [
+    {
+      "name": "Breeze",
+      "bundleIdentifier": "com.zephyr.breeze",
+      "developerName": "deretame",
+      "subtitle": "使用 Flutter 开发的插件化漫画阅读器",
+      "localizedDescription": "使用 Flutter 构建的跨平台漫画阅读器，漫画源以插件形式提供，内置插件商店，支持本地与云收藏。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/home.jpeg",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/plugin.jpeg"
+      ],
+      "tintColor": "#E03030",
+      "versions": [
+        {
+          "version": "3.0.38",
+          "date": "2026-11-15T09:03:41Z",
+          "localizedDescription": "## 📝 更新日志\r\n## [v3.0.38]\r\n\r\n### 功能更新\r\n\r\n- 添加编辑已下载漫画的功能\r\n- 添加章节已读标记\r\n- 移动端阅读新增「横屏自动双页」功能\r\n- 新增「内网拦截」开关\r\n- 更新弹窗支持「一周内不再提醒」\r\n- 新增「显示搜索书签」开关\r\n- 追更与更新日志新增 NEW 提示\r\n- 插件筛选面板新增下拉框支持\r\n- 添加doh支持\r\n- 网络层支持域名前置（IP 直连 / SNI 绕过）与 ECH，改善部分图源的连通性 with [daiwenwen3](https://github.com/daiwenwen3)\r\n\r\n### 修复\r\n\r\n- 修复导入漫画时失败的问题\r\n\r\n### 优化\r\n\r\n- 优化部分性能\r\n- 调整部分文本与ui样式\r\n\r\n### 杂项\r\n\r\n- 重做Windows安装器\r\n\r\n---\r\n\r\n### 📦 推荐下载\r\n| 平台 | 下载链接 |\r\n| :--- | :--- |\r\n| **Windows** | [windows-installer-v3.0.38.exe](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/windows-installer-v3.0.38.exe) |\r\n| **macOS** | [Breeze-macOS-v3.0.38.dmg](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-macOS-v3.0.38.dmg) |\r\n| **Android** | [app-arm64-v8a-release-v3.0.38.apk](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/app-arm64-v8a-release-v3.0.38.apk) |\r\n| **iOS** | [Breeze-iOS-v3.0.38.ipa](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-iOS-v3.0.38.ipa) |\r\n| **Linux** | [breeze-v3.0.38.flatpak](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/breeze-v3.0.38.flatpak) |\r\n| **Linux (DEB)** | [breeze_3.0.38_amd64-v3.0.38.deb](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/breeze_3.0.38_amd64-v3.0.38.deb) |\r\n\r\n> 💡 **不知道该下载哪个文件？**\r\n> 请查看 [详细安装指南](https://github.com/breeze-project-org/Breeze#-%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85)。",
+          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-iOS-v3.0.38.ipa",
+          "size": 27173399,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.zephyr.breeze",
+      "title": "Breeze 3.0.38 · 15 Nov 2026",
+      "identifier": "Breeze-release-v3.0.38",
+      "caption": "Breeze 3.0.38 is available.",
+      "date": "2026-11-15T09:03:41Z",
+      "tintColor": "#E03030",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/news.png",
+      "notify": true,
+      "url": "https://github.com/breeze-project-org/Breeze/releases/tag/v3.0.38"
+    }
+  ]
+}
