@@ -109,7 +109,12 @@ which app was meant.
      rewriting the tag, `strip_v_prefix`, or `version_pattern`. Keep the ipa
      until the icon decision below is settled, then delete it.
    - **Icon:** prefer the new repo's artwork (repo, README, `assets/`, or its
-     AltStore source). If the new repo has none, keep the existing
+     AltStore source). When the new repo has a `*.appiconset`
+     (`iosApp/.../Assets.xcassets/AppIcon.appiconset/`), take its **default
+     light `AppIcon.png`**, not the `AppIcon-Dark.png` / `AppIcon-Tinted.png`
+     appearance variants — see `/add-app` step 3, which spells the rule and the
+     download out; the same applies to a repo `Logo.png` that is white-on-
+     transparent. If the new repo has none, keep the existing
      `icon.png` — it is still the app's artwork — rather than falling back to
      the small loose ipa icon; only use `uv run tools/ipa_icon.py` when the
      existing icon is missing or obviously stale.

@@ -1,6 +1,6 @@
 ---
 name: add-app
-description: Add a new app to the AltGallery repo. When the project already ships its own AltStore source (apps.json), extracts the fields it needs from that source to pre-fill config.toml; otherwise reads the bundle identifier and version metadata out of a release .ipa with tools/ipa_bundle_id.py, verifies the version altgen would derive from the release tag or filename against the ipa and switches to version_source = ipa when they differ, and extracts the icon from that ipa with tools/ipa_icon.py when the repo has no icon. Creates apps/<AppName>/, writes config.toml and news.toml, downloads icon + screenshots, samples a tint color from the icon, renders images/news.png, generates apps.json with altgen (local verification only), and adds the README "Available Apps" entry. Both apps.json and all-apps.json are generated and committed by the CI workflow — never update or commit them locally. Use whenever the user wants to add a new app / a new IPA source to the gallery.
+description: Add a new app to the AltGallery repo. When the project already ships its own AltStore source (apps.json), extracts the fields it needs from that source to pre-fill config.toml; otherwise reads the bundle identifier and version metadata out of a release .ipa with tools/ipa_bundle_id.py, verifies the version altgen would derive from the release tag or filename against the ipa and switches to version_source = ipa when they differ, and extracts the icon from that ipa with tools/ipa_icon.py when the repo has no icon (a repo `*.appiconset` wins with its default light `AppIcon.png`, never the dark/tinted variant). Creates apps/<AppName>/, writes config.toml and news.toml, downloads icon + screenshots, samples a tint color from the icon, renders images/news.png, generates apps.json with altgen (local verification only), and adds the README "Available Apps" entry. Both apps.json and all-apps.json are generated and committed by the CI workflow — never update or commit them locally. Use whenever the user wants to add a new app / a new IPA source to the gallery.
 ---
 
 # Adding a New App to AltGallery
@@ -149,6 +149,26 @@ change between apps.
    download the icon and finish the rest of the flow — just remember that the
    screenshots are missing, and output the warning at the end (step 10).
 
+   ⚠️ **When the repo ships an iOS asset catalog, take its default light
+   `AppIcon.png`.** A `*.appiconset` folder (`iosApp/iosApp/Assets.xcassets/AppIcon.appiconset/`
+   or similar) usually holds three 1024x1024 renditions:
+   `AppIcon.png` (default / light), `AppIcon-Dark.png` and
+   `AppIcon-Tinted.png`. Use the plain `AppIcon.png` — that is the icon iOS
+   shows in light mode, and the gallery's cards, README and `news.png` are all
+   drawn on light backgrounds; the dark or tinted renditions read as a
+   different, washed-out icon there. Download it from the repo (bytes as-is,
+   no re-encoding) instead of extracting from the ipa, which is the *second*
+   choice:
+
+   ```bash
+   curl -sL -o apps/<AppName>/icon.png \
+     "https://raw.githubusercontent.com/<owner>/<repo>/<default-branch>/<path-to>/AppIcon.appiconset/AppIcon.png"
+   ```
+
+   A logo is not an icon: a repo `Logo.png` / `icon.svg` is often white-on-
+   transparent or a single flat mark, so it disappears on a light card — check
+   it before using it, and prefer the appiconset (or the ipa) when it is.
+
    ⚠️ **If no icon exists in the repo either**, take it from the release ipa
    (step 2e) — never leave `icon.png` missing, never grab a random web image:
    ```bash
@@ -156,8 +176,11 @@ change between apps.
    ```
    It reads the bundle's loose icons **and** the app's `Assets.car`, so it
    normally lands on the 1024x1024 artwork even though the bundle itself only
-   ships 120x120/152x152 files. It prints the size on stderr — if that is below
-   512px, say so in the final summary, since it looks soft at promo size. Don't
+   ships 120x120/152x152 files. A catalog that carries appearance variants can
+   hand it `AppIcon-Dark.png` instead of the default — open the result and
+   check, and switch to the repo's light `AppIcon.png` when one exists. It
+   prints the size on stderr — if that is below 512px, say so in the final
+   summary, since it looks soft at promo size. Don't
    run it over a repo icon (`--force` is required, on purpose). AGENTS.md →
    [Extracting the App Icon from an
    IPA](../AGENTS.md#extracting-the-app-icon-from-an-ipa).
@@ -337,7 +360,7 @@ change between apps.
 - [ ] version confirmed against the ipa (step 2f): `version_source = "ipa"` (with a comment) when the tag/filename differs, left out when it matches
 - [ ] ipa deleted afterwards
 - [ ] `apps/<AppName>/{config.toml, news.toml, icon.png, images/*}` all present
-- [ ] `icon.png` from the repo, or from the ipa via `tools/ipa_icon.py` when the repo has none — size checked, small size reported to the user
+- [ ] `icon.png` from the repo — the default light `AppIcon.png` from a `*.appiconset` when the repo has one — or from the ipa via `tools/ipa_icon.py` when the repo has none (re-check it did not land on `AppIcon-Dark.png`) — size checked, small size reported to the user
 - [ ] icon/screenshots hosted locally and referenced via `bebound/AltGallery` raw URLs (never the source's remote URLs)
 - [ ] user-supplied screenshots left untouched — original filenames and formats, referenced as-is in `[app] screenshots`
 - [ ] `apps.json` regenerated after the last config change; never hand-edited; gitignored (not committed)
