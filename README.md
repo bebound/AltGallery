@@ -77,7 +77,7 @@ The ultimate multi-region App Store manager — switch storefronts instantly and
 Windows games on iPhone and iPad — a fast, controller-friendly launcher with Steam and GOG built in, powered by Wine, FEX and Metal.
 
 ### <img src="apps/Breeze/icon.png" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
-使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、禁漫天堂等数十个图源，并支持本地与云收藏。
+使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
 ### <img src="apps/DLiPA/icon.png" alt="DLiPA icon" width="24" align="top"> <a href="https://github.com/AhmedBafkir/DLiPA">DLiPA</a>
 Download, install and share App Store IPAs — including older versions — with your own Apple ID, no jailbreak required.
