@@ -242,7 +242,7 @@
       "tintColor": "#3060D0",
       "versions": [
         {
-          "version": "4.2.2",
+          "version": "4.2.0",
           "date": "2026-10-20T03:08:48Z",
           "localizedDescription": "## Changes\n\n- Recover downloads when Apple returns an empty HTTP 500 by retrying the version-pinned request through the bag’s update endpoint.\n- Update ApplePackage to 2.0.3 with Swift 6.2 compatibility fixes.\n- Report Keychain save failures before completing login, and preserve stored data when loading fails.\n- Improve empty account layout, editable device identifiers, and account table column widths.\n- Remove personal metadata from bundled installation certificates and omit the CA private key.\n- Explicitly clear development teams for release builds and check packaged artifacts before publication.\n\n## Installation certificate\n\nThe local installation CA was replaced to remove personal metadata. If you use OTA installation, install and trust the new certificate from Settings after updating.\n\nThe release contains an unsigned iOS IPA and a macOS ZIP without a personal development team.",
           "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.2/Asspp.ipa",
@@ -507,7 +507,7 @@
           "version": "1.1.1",
           "date": "2026-11-13T16:46:05Z",
           "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/main/CHANGELOG_ZH-CN.md)\n\nBuild `11140102`.\n\n### Added\n\n- App Audio Library: replace notification sounds with custom audio. Apps not shown in the list can use the capture guide to obtain their notification-sound paths.\n- Pairing & Device Connection: used to obtain required paths.\n\n### Changed\n\n- Case-insensitive cache UUID comparison (#131)\n- Reject trailing text in date fields (#132)\n- Share-inbox fallback (#133)\n- Validate backup metadata filenames (#134)\n- Reduce cache descriptor string-scan allocations (#135)\n- Reuse one preview snapshot for field search (#136)\n- Preserve field edits over layout presets (#137)\n- Preserve existing plist keys when editing fields (#138)\n- Reduce allocations in exact plist comparisons (#139)\n- Traverse document differences once (#140)\n- Fix Face ID failing after enabling Apple Intelligence (#128)\n- Add missing localization for #128 (#146)\n- Pairing paths are migrated when a reinstall moves the app data container.\n\n### Fixed\n\n- Fix pairing failure in side-loaded release builds.\n- Add the missing Face ID recovery localization strings.\n- Fix audio file selection in side-loaded builds.\n- Refresh captured sounds immediately and cache the app audio list.\n- Show LocalDevVPN guidance and stop capture when the tunnel does not connect.",
-          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.1.1/GestaltX_1.1.1.ipa",
+          "downloadURL": "https://github.com/huami-dev/GestaltX/releases/download/v1.1.1/GestaltX_1.1.1.ipa",
           "size": 6774794,
           "minOSVersion": "26.0"
         }
@@ -1017,11 +1017,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.2.3",
-          "date": "2026-11-15T23:02:54Z",
-          "localizedDescription": "MoviePilot iOS 1.2.3，新增简体中文、繁体中文和英语切换，并与当前实例的 MoviePilot 网页共享语言设置。\n\n### 更新内容\n\n- 在连接页和“连接与显示”中切换简体中文、繁体中文或英语，选择会保存在设备并同步到当前 MoviePilot 实例。\n- 网页端切换语言后，App 的原生菜单、连接表单、通知、搜索、小组件设置和播放器文案随之更新。\n- 每个实例保留各自的语言，语言切换会重新载入当前网页。\n\n### 安装\n\n下载 `MoviePilot-1.2.3-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n此版本无需为此更新前端；独立搜索仍需 [MoviePilot-Frontend v3.2.4](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.4) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[f72877f5722e499e17de38f5db064b11cff54a18](https://github.com/jxxghp/MoviePilot-App/commit/f72877f5722e499e17de38f5db064b11cff54a18)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.3/MoviePilot-1.2.3-unsigned.ipa",
-          "size": 23674695,
+          "version": "1.2.4",
+          "date": "2026-11-18T06:21:53Z",
+          "localizedDescription": "MoviePilot iOS 1.2.4，统一设置与搜索弹窗，修复播放控制并支持 iOS 系统画中画。\n\n### 更新内容\n\n- 主题和语言统一放到“连接与显示”，用户菜单不再重复显示；主题继续沿用当前实例的设置。\n- 搜索结果的单项过滤使用半屏弹窗，支持下拉关闭和右上角关闭；综合筛选保留较大的展示空间。\n- 媒体库搜索与媒体详情共用选集界面，显示集海报、标题、简介和时长，并统一右上角关闭按钮。\n- 修复文件管理等操作菜单在 App 与系统明暗主题不同时出现黑底的问题。\n- 视频画面点击只显示或隐藏控制条，播放、暂停和跳转由对应按钮触发；全屏按钮采用系统圆形玻璃样式，快进快退统一为 10 秒。\n- 小窗播放改为 iOS 系统画中画，支持桌面悬浮、系统移动与缩放、播放控制及返回原播放进度。\n\n### 安装\n\n下载 `MoviePilot-1.2.4-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n搜索弹窗调整需搭配 [MoviePilot-Frontend v3.2.8](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.8)；集海报与标题信息还需要后端的剧集元数据接口，相关代码已合入 v3 分支，等待后续后端发布。旧后端仍可按季集编号播放。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[c81e70c56bdb8768a1e789571e037a807c324615](https://github.com/jxxghp/MoviePilot-App/commit/c81e70c56bdb8768a1e789571e037a807c324615)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.4/MoviePilot-1.2.4-unsigned.ipa",
+          "size": 23681942,
           "minOSVersion": "17.0"
         }
       ]
@@ -1655,11 +1655,11 @@
       "tintColor": "#00C7A5",
       "versions": [
         {
-          "version": "1.2.2",
-          "date": "2026-11-16T12:29:58Z",
-          "localizedDescription": "## WQGuard v1.2.2 (Build 16)\n\n全栈中英双语支持正式发布（解决 Issue #1 / Resolves #1）。\n\n---\n\n### English Release Notes\n\n- **Full-Stack English Localization (`en` / `zh-Hans`)** (Resolves [#1](https://github.com/Kianuni/WQGuard/issues/1), thanks to `@i0ntempest`):\n  - Fixed `WQStrings` explicit `.lproj` bundle lookup so English systems no longer fall back to `CFBundleDevelopmentRegion = zh-Hans`.\n  - Localized all SwiftUI views and `ScanViewModel`, including the **Dashboard** active engine badge & queued `.ipa` summary, the entire **Scan Sources & Pairing** tutorial (`InstalledScanConfigSheet`), and the **IPA Scan** tab lower notes & queue controls (`IPAScanView`).\n  - Localized `InfoPlist.strings` (`en` / `zh-Hans`, including `NSLocalNetworkUsageDescription`).\n  - Localized `WQGuardCore` (`WQLocale`, firmware CVE posture radar, detection indicators, remediation guidance, Lockdown/instproxy diagnostics, and proxy shield headers/comments bumped to `#!version=1.2.2`).\n- **Verification**:\n  - `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`: **685 tests passed, 0 failures** (`LocalizationBilingualTests`, `SurgeModuleTests`, `SecurityAuditV121RegressionTests`, etc.).\n\n### 中文更新说明\n\n- **全栈中英双语本地化（修复 [#1](https://github.com/Kianuni/WQGuard/issues/1)，感谢 `@i0ntempest` 反馈）**：\n  - 修复 `WQStrings` 在 `CFBundleDevelopmentRegion = zh-Hans` 下部分英文键回退到简体中文的 `.lproj` 解析问题，并同步 `en.lproj` / `zh-Hans.lproj`（含 `InfoPlist.strings`）。\n  - 完整本地化 **仪表盘活跃引擎计数角标与待扫 IPA 摘要**、**扫描源与无线配对完整教程页 (`InstalledScanConfigSheet`)**、**IPA 扫描底部说明与队列控制 (`IPAScanView`)**、设置页及 `ScanViewModel`。\n  - 通过新增 `WQLocale` 完成 `WQGuardCore` 核心引擎全链路双语输出（固件漏洞雷达、风险指标描述与修复建议、配对/代理状态诊断及 5 端流量防护规则 `#!version=1.2.2`）。\n- **测试验证**：\n  - Swift 6 严格并发模式下完整测试套件执行 **685 项测试全部通过，0 失败**。\n\n---\n\n### Release Assets / 发布附件\n\n- `WQGuard_v1.2.2.ipa` — Unsigned ad-hoc IPA (`v1.2.2`, Build 16) for iOS 16+ / 17+ / 18+ / 26+\n- `WQGuard-Brotli-Shield.sgmodule` — Surge\n- `WQGuard-Brotli-Shield.module` — Shadowrocket\n- `WQGuard-Brotli-Shield.conf` — Quantumult X\n- `WQGuard-Brotli-Shield.plugin` — Loon\n- `WQGuard-Brotli-Shield.stoverride` — Stash",
-          "downloadURL": "https://github.com/Kianuni/WQGuard/releases/download/v1.2.2/WQGuard_v1.2.2.ipa",
-          "size": 2046154,
+          "version": "1.3.0",
+          "date": "2026-11-18T09:02:27Z",
+          "localizedDescription": "## WQGuard v1.3.0 (Build 17)\n\n2026 最新威胁特征、ARM64 直接系统调用指令深扫、13 项固件漏洞雷达及 3 轮红队对抗验证正式版。\n\n---\n\n### English Release Notes\n\n- **ARM64 Direct Syscall (`svc #0x80` / `0xD4001001`) Scanner (`MachOParser` & `MachOScanner`)**:\n  - Scans executable instructions across `CPU_TYPE_ARM64` and `CPU_TYPE_ARM64_32` slices (ignoring `x86_64` / `i386` / `armv7`), skipping `S_ZEROFILL` and read-only metadata sections while catching hidden custom RX sections and shadowed FAT `arm64e` slices.\n  - FairPlay `encryptedRange`-aware: skips genuine encrypted ciphertext while catching fake partial `cryptid = 1` headers.\n  - Bypasses Layer 1 `App Groups` fast-path gating so binaries using inline `svc #0x80` without `App Groups` are flagged as `HIGH_RISK` (`arm64:svc_0x80`).\n- **2026 Local Exploit & Privacy-Bypass Coverage**:\n  - **`CVE-2026-65339` (`audiomxd` Silent Mic TCC Bypass)**: Detects private `MediaExperience.framework`, `CMSessionSetProperty` / `AudioSessionSetCMProperty`, `com.apple.audio.audiomxd`, `com.apple.coremedia.audiomxd`, and restricted `com.apple.private.mediaexperience*` / `cmsession*` entitlements while exempting public audio playback APIs (`AudioToolbox`, `AVFAudio`, `AURemoteIO`) to prevent emulator/game false positives.\n  - **`BookRestore` / `bl_sbx` & `MobileGestalt` Tampering**: Detects `BookLibraryPrivate.framework`, `bookassetd`, `itunesstored`, `BLDatabaseManager.sqlite`, `downloads.28.sqlitedb`, `com.apple.MobileGestalt.plist`, `mobilegestaltcache`, and restricted `com.apple.itunesstored.private*` / `bookassetd*` / `MobileGestalt*` entitlements (independent of `App Groups`, including `installation_proxy` registry audits).\n  - **`CVE-2026-84493` (`AccessorySetupKit` Bluetooth Bypass)**: Inspects main bundle and embedded `*.appex` extensions for unencrypted sideloaded `AccessorySetupKit` / `ASAccessorySession` usage lacking `NSBluetoothAlwaysUsageDescription` or `NSAccessorySetupKitSupports`, plus restricted `com.apple.private.accessorysetupkit*` entitlements.\n- **Expanded Firmware Posture Radar (`8 -> 13` CVEs)**:\n  - Added `CVE-2026-65339` (`audiomxd`), `CVE-2026-20700` (`dyld` 0day), `CVE-2026-113897` (WebKit Sandbox Escape), `CVE-2026-84493` (`AccessorySetupKit`), and `PoC:BookRestore` (`bl_sbx`).\n  - Updated `0day:worse_query` exposure status: `iOS 26.0–26.7.3` and `iOS 27.0–27.2.x` remain exposed; **`iOS 27.3+` (27.3 beta 2+)** is marked patched.\n- **ClamAV/YARA-Style IOC Token Armor (`IOCTokenArmor`)**:\n  - Runtime XOR-0x5A decoding prevents `WQGuard`'s own ARM64 binary from embedding plaintext exploit needle bytes in `__cstring`, passing strict self-audit (`KNOWN_TOOL`, `isWhitelisted: true`) while still rejecting Trojanized `com.wqguard.app` clones.\n- **Verification**:\n  - Verified across **3 independent adversarial red-team test rounds** (`AdversarialV130Round1SyscallTests`, `AdversarialV130Round2ExploitTests`, `AdversarialV130Round3SystemTests`).\n  - `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`: **37 test suites passed, 750/750 tests passing, 0 failures**.\n\n### 中文更新说明\n\n- **ARM64 直接系统调用 (`svc #0x80` / `0xD4001001`) 指令深扫**：\n  - 针对 `arm64` / `arm64_32` 可执行段及自定义 RX 段执行 4 字节对齐 `svc #0x80` 扫描，跳过只读元数据段与 `S_ZEROFILL`，支持 FairPlay `encryptedRange` 精确避让（同时识破局部伪造 `cryptid=1` 头）与 FAT 多切片隐藏检测，并突破单一 `App Groups` 门控限制。\n- **2026 最新本地越权与隐私绕过特征**：\n  - 新增 **`CVE-2026-65339`**（`audiomxd` / `MediaExperience` 静默录音绕过，同时豁免模拟器和游戏常用的公开 `AudioToolbox` / `AVFAudio`）、**`BookRestore` / `bl_sbx` 与 `MobileGestalt` 越权篡改**、以及 **`CVE-2026-84493`**（`AccessorySetupKit` 主包与 `.appex` 蓝牙无授权声明绕过）。\n- **固件漏洞雷达扩展至 13 项**：\n  - 新增 `CVE-2026-65339`、`CVE-2026-20700`（`dyld` 在野 0day）、`CVE-2026-113897`（WebKit 沙盒逃逸）、`CVE-2026-84493` 与 `PoC:BookRestore`；同步更新 `0day:worse_query` 修复状态（`iOS 27.3+` 已修复，`iOS 26.x` 及 `27.0–27.2.x` 仍暴露）。\n- **`IOCTokenArmor` 自身防误触装甲与测试验证**：\n  - 采用动态运行时 XOR 解码存放新型字节指纹，真实 `WQGuard_v1.3.0.ipa` 自扫保持 `KNOWN_TOOL` 且不削弱反仿冒能力；通过 **3 轮独立红队对抗测试**，Swift 6 严格并发下 **37 个测试套件、750 项测试全部通过（0 失败）**。\n\n---\n\n### Release Assets / 发布附件\n\n- `WQGuard_v1.3.0.ipa` — Unsigned ad-hoc IPA (`v1.3.0`, Build 17) for iOS 16+ / 17+ / 18+ / 26+ / 27+\n- `WQGuard-Brotli-Shield.sgmodule` — Surge\n- `WQGuard-Brotli-Shield.module` — Shadowrocket\n- `WQGuard-Brotli-Shield.conf` — Quantumult X\n- `WQGuard-Brotli-Shield.plugin` — Loon\n- `WQGuard-Brotli-Shield.stoverride` — Stash",
+          "downloadURL": "https://github.com/Kianuni/WQGuard/releases/download/v1.3.0/WQGuard_v1.3.0.ipa",
+          "size": 2078624,
           "minOSVersion": "16.0"
         }
       ]
@@ -1738,6 +1738,28 @@
     }
   ],
   "news": [
+    {
+      "appID": "com.wqguard.app",
+      "title": "WQGuard 1.3.0 · 18 Nov 2026",
+      "identifier": "WQGuard-release-v1.3.0",
+      "caption": "WQGuard 1.3.0 is available.",
+      "date": "2026-11-18T09:02:27Z",
+      "tintColor": "#00C7A5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.3.0"
+    },
+    {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 1.2.4 · 18 Nov 2026",
+      "identifier": "MoviePilot-release-v1.2.4",
+      "caption": "MoviePilot 1.2.4 is available.",
+      "date": "2026-11-18T06:21:53Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.4"
+    },
     {
       "appID": "com.ishtiaqsyed.StatsForIOS",
       "title": "Stats 0.3.18 · 18 Nov 2026",
@@ -1849,17 +1871,6 @@
       "url": "https://github.com/vrcm-team/VRCM/releases/tag/1.1.6"
     },
     {
-      "appID": "com.wqguard.app",
-      "title": "WQGuard 1.2.2 · 16 Nov 2026",
-      "identifier": "WQGuard-release-v1.2.2",
-      "caption": "WQGuard 1.2.2 is available.",
-      "date": "2026-11-16T12:29:58Z",
-      "tintColor": "#00C7A5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.2.2"
-    },
-    {
       "appID": "com.example.HermesEnabler",
       "title": "HermesEnabler 1.0 · 16 Nov 2026",
       "identifier": "HermesEnabler-release-1.6.2",
@@ -1880,17 +1891,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
       "notify": true,
       "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/3.0.7"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.2.3 · 15 Nov 2026",
-      "identifier": "MoviePilot-release-v1.2.3",
-      "caption": "MoviePilot 1.2.3 is available.",
-      "date": "2026-11-15T23:02:54Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.3"
     },
     {
       "appID": "com.thebcd69.bcd",
@@ -2268,9 +2268,9 @@
     },
     {
       "appID": "wiki.qaq.Asspp",
-      "title": "Asspp 4.2.2 · 20 Oct 2026",
+      "title": "Asspp 4.2.0 · 20 Oct 2026",
       "identifier": "Asspp-release-4.2.2",
-      "caption": "Asspp 4.2.2 is available.",
+      "caption": "Asspp 4.2.0 is available.",
       "date": "2026-10-20T03:08:48Z",
       "tintColor": "#3060D0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/news.png",
