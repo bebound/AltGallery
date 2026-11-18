@@ -23,7 +23,6 @@ icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/mast
 screenshots = [
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/apps.png",
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/browse.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png",
 ]
 tint_color = "#A405FA"
 min_os_version = "15.0"
