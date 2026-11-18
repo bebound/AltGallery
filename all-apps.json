@@ -598,11 +598,11 @@
       "tintColor": "#111111",
       "versions": [
         {
-          "version": "2.1.3",
-          "date": "2026-11-15T14:54:47Z",
-          "localizedDescription": "## iPadn 2.1.3\n\n本次为修复与体验优化更新，解决关键词搜索时的并发闪退问题，隔离顶部提示动画重绘，并改进 iOS 27 本机配对引导与灵动岛交接体验。安装包未签名，请用自己的工具签名后安装。\n\n### 修复与优化\n\n- **修复关键词搜索闪退与并发竞争**：移除搜索前并发嵌套任务组与超时竞争探测，改为在搜索结果返回后按商店地区顺序核验候选已下架应用（最多 15 项），并在新搜索、取消搜索或关闭开关时显式取消旧核验任务。\n- **隔离全局提示动画并优化切换账号响应**：将顶部提示与撤销横幅拆分为独立视图，避免横幅弹簧动画触发整个标签页层级重绘；切换账号时先让提示横幅开始渲染，再触发地区同步、重新搜索与已购刷新。\n- **优化 iOS 27 本机配对引导与灵动岛提醒**：点按「打开设置」跳转到系统设置时主动释放后台音频并推送第 1 步灵动岛横幅指引，补充锁屏密码验证提示与 11 种语言文案，后台等待状态更新支持按代数及时取消，避免旧状态阻塞新提醒。\n- 继续支持 iOS / iPadOS 16 及更新版本，各功能保留各自系统版本要求。\n\n### 两个安装包\n\n- `iPadn-2.1.3-unsigned.ipa`：标准版，含实时活动和小组件，签名需要 2 个 App ID。\n- `iPadn-2.1.3-lite-unsigned.ipa`：精简版，不含扩展，只需 1 个 App ID；不提供实时活动或小组件，其他功能相同。\n- SideStore、AltStore、Feather 等签名工具可添加源：`https://raw.githubusercontent.com/mengangs/ipadn/main/altstore-source.json`。\n\n### English\n\nThis maintenance release fixes a concurrency crash during keyword search, isolates top notice banner animations, and polishes iOS 27 on-device pairing guidance and Live Activity handoff.\n\n- **Fix keyword-search crash & concurrency race**: Remove nested concurrent task-group pre-probes during keyword search; verify up to 15 candidate delisted apps sequentially after search results arrive and cancel stale verification tasks on new searches, cancellation or setting toggles.\n- **Isolate notice overlay & smooth account switching**: Extract the top notice/undo banner into its own view so notice spring animations do not re-evaluate the entire tab hierarchy, and let the switched-account banner begin rendering before triggering region sync, search and purchase refresh.\n- **Polish iOS 27 on-device pairing & Live Activity handoff**: Pause background keep-alive and push a Step 1 Dynamic Island guidance banner when opening Settings, clarify `< Settings` navigation and passcode-prompt instructions across all 11 languages, and cancel superseded Live Activity background waits promptly.\n- iOS / iPadOS 16 and later remain supported, subject to each feature's requirements.\n\nBoth packages are unsigned: the standard package includes Live Activities/widgets and needs two App IDs; lite has no extension and needs one. Sign with your own tool before installing.\n\n更早版本的更新内容见 [Releases](https://github.com/mengangs/ipadn/releases)。\n\n两个安装包：`iPadn-2.1.3-unsigned.ipa` 是标准版（含实时活动和桌面小组件，需要 2 个 App ID）；`iPadn-2.1.3-lite-unsigned.ipa` 是精简版（不含扩展，只需 1 个 App ID），适合 App ID 数量受限的签名方式。\n\n验证：设备 Release 编译与 IPA 检查通过；257 项测试通过，0 项失败，1 项跳过。",
-          "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.1.3/iPadn-2.1.3-lite-unsigned.ipa",
-          "size": 49310532,
+          "version": "2.2.0",
+          "date": "2026-11-18T02:18:30Z",
+          "localizedDescription": "## iPadn 2.2.0\n\n本次版本引入本机 FairPlay IPA 解密工作流、基于 AES-256-GCM 的完整账号与配置加密备份恢复，以及详情页预览/评论按需开关，同时强化 C 解密核心与加密内存安全。安装包未签名，请用自己的工具签名后安装。\n\n### 新增功能\n\n- **本机 FairPlay IPA 解密（`FairPlayCore`）**：将零外部依赖纯 C `FairPlayCore` 模块完整集成至工程与专业模式「应用包」页，支持对已合法获取安装包的加密 Mach-O（含嵌套 `PlugIns/*.appex` 与 `Frameworks/` 以及 64 位 Universal/FAT 二进制）执行 SINF 解密、封装与逐架构解密校验，并提供严格脱敏的可导出解密日志。\n- **完整加密备份与恢复（AES-256-GCM + PBKDF2-HMAC-SHA256）**：「账号 › 设置 › 备份与维护」支持明文或设置密码加密导出，涵盖设置、版本来源、关注列表、最近搜索，以及 Apple 账号会话 Cookie、令牌与设备/StoreProof 凭据。导入前先本地验证解密并展示可勾选恢复预览，错误密码给出明确提示而不影响现有数据。\n- **详情页内容按需开关**：「账号 › 设置 › 外观与图标」支持独立开关「显示应用预览图」与「显示应用评论」，关闭后详情页隐藏对应板块并停止请求额外媒体和评论资源（与「发现」及「显示历史版本图标」开关协同）。\n\n### 修复与安全加固\n\n- **修复嵌套应用扩展 FairPlay 扫描与统计**：改为相对路径递归枚举包内文件，确保扩展与内置框架的 `.sinf` 安放路径与校验计数准确无误。\n- **加强加密、C 边界与并发安全**：完善 `FairPlayCore` Mach-O/LC 边界与整型溢出校验及失败临时文件清理；使用独立上下文传递日志回调与活跃任务互斥锁；备份解密/加密派生密钥使用后立即清零，`StoreProof` 恢复时严格过滤不安全文件名；修复导入导出弹窗关闭后的临时文件释放与密码输入框焦点被系统自动填充打断的问题。\n- **日志与诊断脱敏及 11 语言同步**：避免短敏感标记误替换正常版本号或文件名同时守住 `sinf`/Cookie/令牌脱敏边界；同步更新全部 11 种界面语言文本、IPA 验证与随包许可证声明。\n- 继续支持 iOS / iPadOS 16 及更新版本（各功能保留各自系统版本要求）。\n\n### 两个安装包\n\n- `iPadn-2.2.0-unsigned.ipa`：标准版，含实时活动（灵动岛、锁屏进度）与桌面小组件扩展，签名需要 2 个 App ID。\n- `iPadn-2.2.0-lite-unsigned.ipa`：精简版，移除扩展，只需 1 个 App ID；不提供实时活动或小组件，其他功能完全一致。\n- SideStore、AltStore、Feather 等签名工具可添加源：`https://raw.githubusercontent.com/mengangs/ipadn/main/altstore-source.json`。\n\n### English\n\nThis release introduces an on-device FairPlay IPA decryption workflow, full AES-256-GCM encrypted backup & restore, per-section App Detail visibility toggles, and targeted security and reliability hardening across C Mach-O parsing, key zeroization, and log redaction.\n\n- **On-device FairPlay IPA decryption (`FairPlayCore`)**: Integrates the zero-dependency C `FairPlayCore` module into both the Xcode project and Pro mode’s Packages tab. Decrypts encrypted Mach-O binaries (including nested `PlugIns/*.appex`, `Frameworks/`, and 64-bit FAT slices), repacks verified IPAs, and exposes strictly redacted decryption logs.\n- **Encrypted full backup & restore (AES-256-GCM + PBKDF2-HMAC-SHA256)**: Under Account › Settings › Backup & Maintenance, export or restore settings, version sources, followed apps, recent searches, and Apple session credentials / StoreProof state either in plaintext or encrypted with a password. Imports show a selective unlock preview before modifying any local data.\n- **On-demand App Detail toggles**: Toggle App Screenshots and Customer Reviews independently under Account › Settings › Appearance & Icon to hide those sections and skip extra network requests.\n- **Security & reliability fixes**: Fixes nested `.appex`/framework relative path resolution during FairPlay scanning and verifier summary counts, tightens Mach-O load-command bounds/overflow checks and C thread-safe logging, zeroes PBKDF2-derived keys immediately after use, validates restored `StoreProof` paths, prevents Keychain AutoFill from interrupting encrypted backup password fields, and keeps diagnostic/decrypt redaction accurate without corrupting file sizes or versions.\n- All 11 interface languages updated alongside bundled third-party license notices (`ZIPFoundation-MIT.txt`, `Go-BSD-3-Clause.txt`, `LGPL-2.0.txt`). iOS / iPadOS 16 and later remain supported, subject to each feature’s requirements.\n\nBoth packages are unsigned: the standard build includes Live Activities/widgets and needs two App IDs; lite removes the extension and needs one. Sign with your own tool before installing.\n\n更早版本的更新内容见 [Releases](https://github.com/mengangs/ipadn/releases)。\n\n两个安装包：`iPadn-2.2.0-unsigned.ipa` 是标准版（含实时活动和桌面小组件，需要 2 个 App ID）；`iPadn-2.2.0-lite-unsigned.ipa` 是精简版（不含扩展，只需 1 个 App ID），适合 App ID 数量受限的签名方式。\n\n验证：设备 Release 编译与 IPA 检查通过；275 项测试通过，0 项失败，1 项跳过。",
+          "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.2.0/iPadn-2.2.0-lite-unsigned.ipa",
+          "size": 50502422,
           "minOSVersion": "17.0"
         }
       ]
@@ -1390,8 +1390,7 @@
       "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/icon.png",
       "screenshots": [
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/apps.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/browse.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png"
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/browse.png"
       ],
       "tintColor": "#A405FA",
       "versions": [
@@ -1442,11 +1441,11 @@
       "tintColor": "#2090F0",
       "versions": [
         {
-          "version": "0.3.17",
-          "date": "2026-11-18T00:25:30Z",
-          "localizedDescription": "Stats for iPhone 0.3.17 makes the Mac device card more compact and adds a manual refresh.\n\n## What's changed\n\n- See more live metrics sooner with the shorter Mac card. The card keeps the device render, Mac name, chip, connection status, and alerts.\n- Tap the Mac card to open About This Mac. It is still available in Dashboard Settings.\n- Tap the refresh icon to request a new snapshot, recent history, and updated Mac details.\n\n## Download\n\n**Stats for iPhone 0.3.17 (build 20)** requires iOS 17 or later. The arm64 IPA is unsigned for AltStore, SideStore, and LiveContainer.\n\n**SHA-256** f9b77cb1a4a1cdeca6df54993992eb7906e4b4fa0d7cc6fe38f34c3b1ea1e688\n\n[Full changelog](https://github.com/ishtiaq156/stats/compare/v0.3.25...v0.3.26)",
-          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.26/Stats-v0.3.17-iOS.ipa",
-          "size": 2861581,
+          "version": "0.3.18",
+          "date": "2026-11-18T02:58:26Z",
+          "localizedDescription": "Stats for iPhone 0.3.18 adds interactive one-minute CPU and memory charts to the dashboard.\n\n## What's changed\n\n- Drag across either mini chart to see the sample's time and percentage. Light haptics follow the in-app setting.\n- The CPU chart adjusts its percentage scale to make small changes easier to see. The memory chart shows usage, with memory pressure shown separately.\n- The Mac card keeps the last update time and opens About This Mac when tapped. The dashboard refreshes automatically.\n\n## Download\n\n**Stats for iPhone 0.3.18 (build 21)** requires iOS 17 or later. The arm64 IPA is unsigned for AltStore, SideStore, and LiveContainer.\n\n**SHA-256** 6d9931bd5cb7240a4d2a4ff995909e8e6f950fa38e3c3ceae45b483c3eff0b96\n\n[Full changelog](https://github.com/ishtiaq156/stats/compare/v0.3.26...v0.3.27)",
+          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.27/Stats-v0.3.18-iOS.ipa",
+          "size": 2881745,
           "minOSVersion": "17.0"
         }
       ]
@@ -1741,14 +1740,25 @@
   "news": [
     {
       "appID": "com.ishtiaqsyed.StatsForIOS",
-      "title": "Stats 0.3.17 · 18 Nov 2026",
-      "identifier": "Stats-release-v0.3.26",
-      "caption": "Stats 0.3.17 is available.",
-      "date": "2026-11-18T00:25:30Z",
+      "title": "Stats 0.3.18 · 18 Nov 2026",
+      "identifier": "Stats-release-v0.3.27",
+      "caption": "Stats 0.3.18 is available.",
+      "date": "2026-11-18T02:58:26Z",
       "tintColor": "#2090F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
       "notify": true,
-      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.26"
+      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.27"
+    },
+    {
+      "appID": "app.local.iPadn",
+      "title": "iPadn 2.2.0 · 18 Nov 2026",
+      "identifier": "iPadn-release-v2.2.0",
+      "caption": "iPadn 2.2.0 is available.",
+      "date": "2026-11-18T02:18:30Z",
+      "tintColor": "#111111",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mengangs/ipadn/releases/tag/v2.2.0"
     },
     {
       "appID": "com.jbdotparty.Erosion",
@@ -1892,17 +1902,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/news.png",
       "notify": true,
       "url": "https://github.com/thebcd69/bcd-games/releases/tag/v0.1.665"
-    },
-    {
-      "appID": "app.local.iPadn",
-      "title": "iPadn 2.1.3 · 15 Nov 2026",
-      "identifier": "iPadn-release-v2.1.3",
-      "caption": "iPadn 2.1.3 is available.",
-      "date": "2026-11-15T14:54:47Z",
-      "tintColor": "#111111",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png",
-      "notify": true,
-      "url": "https://github.com/mengangs/ipadn/releases/tag/v2.1.3"
     },
     {
       "appID": "com.kdt.livecontainer",
