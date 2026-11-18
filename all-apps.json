@@ -434,11 +434,11 @@
       "tintColor": "#D07030",
       "versions": [
         {
-          "version": "1.0.4",
-          "date": "2026-11-17T14:37:22Z",
-          "localizedDescription": "## Erosion-CN v1.0.4 (Build 29)\n\n> [!IMPORTANT]\n> **System Compatibility / 系统兼容性提示**  \n> - **Supported / 完整支持**：`iOS / iPadOS 27.0 – 27.2.1` and `27.3 beta 1` (`24C503*`).  \n> - **Patched / 已封堵**：Apple patched `worse_query` starting in **`iOS 27.3 beta 2` (`24C5049d+`)**. Do **NOT** update past `27.3 beta 1` if you rely on Erosion-CN.\n\n---\n\n### What's New / 更新内容\n\n1. **Non-Blocking Cold Start in Custom Lock Screen Wallpapers + `Camlo · 开幕` Guide (`PosterBoardView`) / 「自定义锁屏壁纸」零阻塞秒开与 Camlo 动态壁纸引导** *(Special thanks to [@iiichika](https://github.com/iiichika) for the thorough root-cause report in [#51](https://github.com/Kianuni/Erosion-CN/issues/51) / 特别感谢 [@iiichika](https://github.com/iiichika) 在 [#51](https://github.com/Kianuni/Erosion-CN/issues/51) 的详细根因排查)*\n   - **Instant UI & Import Ready**：Removed the full-screen `isReady` gate so the `.tendies` list, bottom import button, and top-right menu load immediately without blocking on cold `PosterBoard` container discovery (fixing the ~39s+ blank screen on iPad / fresh installs).\n   - **Background Lookup & Actionable Retry**：`com.apple.PosterBoard` container resolution now runs asynchronously in the background with an inline status/retry banner, and tapping **Apply** (`应用`) when unready shows an actionable **Retry Lookup** (`重新定位`) alert instead of silently staying disabled.\n   - **Built-In `Camlo · 开幕` Companion Card**：Added a bilingual card at the top of `Custom Lock Screen Wallpapers` introducing our companion on-device dynamic wallpaper studio **[Camlo](https://github.com/Kianuni/Camlo)** (~9 MB, swipe-reveal transitions, Live Photo/video & 3D depth lock screens, 385+ free cloud & museum wallpapers, `.tendies` export) with direct GitHub access and a one-tap **Add Repo Source** menu for SideStore / AltStore / Feather.\n\n2. **Fixed Horizontal Card Clipping in Splash Ad Blocker (`AdCacheBlockerView`) / 修复「开屏广告缓存精准锁死」概览卡片排版溢出** *(Thanks to [@wvcq6xxvkj-star](https://github.com/wvcq6xxvkj-star) for reporting [#52](https://github.com/Kianuni/Erosion-CN/issues/52) / 感谢 [@wvcq6xxvkj-star](https://github.com/Kianuni/Erosion-CN/issues/52) 反馈)*\n   - Removed intrinsic `.fixedSize()` constraints on multi-button `HStack` rows inside inset-grouped cards and moved **Lock All Pending** (`一键全锁`) to a full-width prominent row button so both left and right edges stay cleanly inside card margins on Display Zoom, smaller iPhones, and Larger Text.\n   - Wrapped per-item action rows (`Locate`, `Preview`, `Trash`, `Lock/Unlock`) in `ViewThatFits(in: .horizontal)` and tightened container header flexibility to prevent horizontal clipping across all screen widths.\n\n> 📜 Full changelog / 完整更新日志：**[CHANGELOG.md](https://github.com/Kianuni/Erosion-CN/blob/main/CHANGELOG.md)** · User Guide / 使用指南：**[USAGE_GUIDE.md](https://github.com/Kianuni/Erosion-CN/blob/main/USAGE_GUIDE.md)**\n\n---\n\n### Install & Checksum / 下载安装与校验\n\n- **SideStore / AltStore / Feather Official Source / 官方更新源**：`https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json` *(auto-synced by CI after release / 发版后由 GitHub Actions 自动同步)*\n- **IPA Asset / 安装包文件**：`Erosion_v1.0.4_Bilingual.ipa` (`6,857,330` bytes; preserve `App Group` entitlements when signing)\n- **SHA-256**：`3ce536e48138644d673e43387eb2f21a8fbd9bdc975da635d6626a6177c858fc`",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.4/Erosion_v1.0.4_Bilingual.ipa",
-          "size": 6857330,
+          "version": "1.0.5",
+          "date": "2026-11-17T23:33:43Z",
+          "localizedDescription": "## Erosion-CN v1.0.5 (Build 30)\n\n> [!IMPORTANT]\n> **System Compatibility / 系统兼容性提示**  \n> - **Supported / 完整支持**：`iOS / iPadOS 27.0 – 27.2.1` and `27.3 beta 1` (`24C503*`).  \n> - **Patched / 已封堵**：Apple patched `worse_query` starting in **`iOS 27.3 beta 2` (`24C5049d+`)**. Do **NOT** update past `27.3 beta 1` if you rely on Erosion-CN.\n\n---\n\n### What's New / 更新内容\n\n1. **Fixed Unresponsive \"Clean Selected\" in Container Cache Cleaner (`CacheCleanerView`) / 修复容器缓存「一键清理已选」不生效** *(Thanks to [@KindLin99](https://github.com/KindLin99) for reporting [#53](https://github.com/Kianuni/Erosion-CN/issues/53) / 感谢 [@KindLin99](https://github.com/KindLin99) 反馈 [#53](https://github.com/Kianuni/Erosion-CN/issues/53))*\n   - **Separated Button Styles in Overview Card**：Assigned `.borderless` to **Rescan** (`重新扫描`) and promoted **Clean Selected** (`一键清理已选`) to a full-width `.borderedProminent` button snapshotting targets prior to confirmation, eliminating SwiftUI `List` multi-button tap hijacking.\n   - **Prevented Row Hit-Box Hijacking**：Replaced inline `NavigationLink` on **Inspect** (`查看`) with a `.borderless` button + `.navigationDestination(item:)` so tapping row checkboxes or **Clean** (`清理`) never triggers accidental navigation.\n   - **Ad-Sentinel Protection & Re-Sized Refresh**：Unified scan/purge traversal depth (`Library/Caches` depth `7`, `tmp` depth `6`), skipped `.erosion_adlock` anti-recreate ad folders during cleanup, and updated remaining bytes / auth failure reporting accurately after purge.\n\n2. **Explicit Read-Only & Sentinel State in `InfoViewer` / 文件详情页只读与防重建状态提示**\n   - When a directory or file is already at `0555` / `0444`, the **Set Read-Only** preset button now automatically disables and displays `Already Read-Only` (`当前已是只读锁死状态`) or `Read-Only & Sentinel Active` (`当前已是只读防重建锁死状态`) alongside an `Anti-Recreate Lock` row (`Active (.erosion_adlock)`).\n   - **Restore Read-Write** and **Apply** buttons disable when permissions already match, and restoring write permission on a sentinel directory from `InfoViewer` cleanly unlinks `.erosion_adlock`.\n\n3. **Target Highlighting & Auto-Scroll on Ad Locator (`FileBrowserView` / `AdCacheBlockerView`) / 去广告「定位」自动高亮与居中定位**\n   - Tapping **Locate** (`定位`) in Splash Ad Blocker now highlights the target ad folder/config inside its parent directory and scrolls smoothly to center it, with read-only sandbox grants for locator browsing and container grants ordered prior to `lstat` attribute checks.\n\n> 📜 Full changelog / 完整更新日志：**[CHANGELOG.md](https://github.com/Kianuni/Erosion-CN/blob/main/CHANGELOG.md)** · User Guide / 使用指南：**[USAGE_GUIDE.md](https://github.com/Kianuni/Erosion-CN/blob/main/USAGE_GUIDE.md)**\n\n---\n\n### Install & Checksum / 下载安装与校验\n\n- **SideStore / AltStore / Feather Official Source / 官方更新源**：`https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json` *(auto-synced by CI after release / 发版后由 GitHub Actions 自动同步)*\n- **IPA Asset / 安装包文件**：`Erosion_v1.0.5_Bilingual.ipa` (`6,875,541` bytes; preserve `App Group` entitlements when signing)\n- **SHA-256**：`408c50a9bbb2a84ece90393875bab5d7240f02e784e7a34aaa4d61d7a44a41c3`",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.5/Erosion_v1.0.5_Bilingual.ipa",
+          "size": 6875541,
           "minOSVersion": "26.0"
         }
       ]
@@ -1442,11 +1442,11 @@
       "tintColor": "#2090F0",
       "versions": [
         {
-          "version": "0.3.15",
-          "date": "2026-11-14T12:37:54Z",
-          "localizedDescription": "Stats iPhone 0.3.15 keeps Paired Macs in Mac Connection Settings.\n\n## What's Changed\n\n- Removed the duplicate Paired Macs entry from Dashboard Settings.\n- Paired Macs remains available from Mac Connection Settings.\n\n## Download\n\n- **iPhone app · 0.3.15 (build 18):** `Stats-v0.3.15-iOS.ipa` (iOS 17+, arm64; unsigned for SideStore and AltStore).\n- **SHA-256:** `d44cfd7d0c87186e1ca42e12cf89106b8b2f8e24ed391f0c58bbfe3520120276`\n- Mac Companion 0.3.13 remains compatible.\n\n**Full Changelog:** https://github.com/ishtiaq156/stats/compare/v0.3.21...v0.3.22",
-          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.22/Stats-v0.3.15-iOS.ipa",
-          "size": 2800963,
+          "version": "0.3.17",
+          "date": "2026-11-18T00:25:30Z",
+          "localizedDescription": "Stats for iPhone 0.3.17 makes the Mac device card more compact and adds a manual refresh.\n\n## What's changed\n\n- See more live metrics sooner with the shorter Mac card. The card keeps the device render, Mac name, chip, connection status, and alerts.\n- Tap the Mac card to open About This Mac. It is still available in Dashboard Settings.\n- Tap the refresh icon to request a new snapshot, recent history, and updated Mac details.\n\n## Download\n\n**Stats for iPhone 0.3.17 (build 20)** requires iOS 17 or later. The arm64 IPA is unsigned for AltStore, SideStore, and LiveContainer.\n\n**SHA-256** f9b77cb1a4a1cdeca6df54993992eb7906e4b4fa0d7cc6fe38f34c3b1ea1e688\n\n[Full changelog](https://github.com/ishtiaq156/stats/compare/v0.3.25...v0.3.26)",
+          "downloadURL": "https://github.com/ishtiaq156/stats/releases/download/v0.3.26/Stats-v0.3.17-iOS.ipa",
+          "size": 2861581,
           "minOSVersion": "17.0"
         }
       ]
@@ -1740,6 +1740,28 @@
   ],
   "news": [
     {
+      "appID": "com.ishtiaqsyed.StatsForIOS",
+      "title": "Stats 0.3.17 · 18 Nov 2026",
+      "identifier": "Stats-release-v0.3.26",
+      "caption": "Stats 0.3.17 is available.",
+      "date": "2026-11-18T00:25:30Z",
+      "tintColor": "#2090F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.26"
+    },
+    {
+      "appID": "com.jbdotparty.Erosion",
+      "title": "Erosion-CN 1.0.5 · 17 Nov 2026",
+      "identifier": "Erosion-CN-release-v1.0.5",
+      "caption": "Erosion-CN 1.0.5 is available.",
+      "date": "2026-11-17T23:33:43Z",
+      "tintColor": "#D07030",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.5"
+    },
+    {
       "appID": "cz.kolbi.wqfiles",
       "title": "WQ Files 0.9.18 · 17 Nov 2026",
       "identifier": "WQ Files-release-v0.9.18",
@@ -1749,17 +1771,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
       "notify": true,
       "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.18"
-    },
-    {
-      "appID": "com.jbdotparty.Erosion",
-      "title": "Erosion-CN 1.0.4 · 17 Nov 2026",
-      "identifier": "Erosion-CN-release-v1.0.4",
-      "caption": "Erosion-CN 1.0.4 is available.",
-      "date": "2026-11-17T14:37:22Z",
-      "tintColor": "#D07030",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.4"
     },
     {
       "appID": "io.nekohasekai.screensharing",
@@ -1936,17 +1947,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261114"
-    },
-    {
-      "appID": "com.ishtiaqsyed.StatsForIOS",
-      "title": "Stats 0.3.15 · 14 Nov 2026",
-      "identifier": "Stats-release-v0.3.22",
-      "caption": "Stats 0.3.15 is available.",
-      "date": "2026-11-14T12:37:54Z",
-      "tintColor": "#2090F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.22"
     },
     {
       "appID": "sb.moe.kumone-ios",
