@@ -31,7 +31,7 @@ min_os_version = "17.0"
 # Tags are plain semver (4.2.2 …) — no v prefix to strip.
 strip_v_prefix = false
 include_prereleases = false
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)$"
+version_source = "ipa"
 # asset_pattern is a regex (not glob): every release ships exactly one
 # unsigned ios ipa named Asspp.ipa (Asspp.zip is the macOS build).
 asset_pattern = "^Asspp\\.ipa$"
