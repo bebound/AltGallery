@@ -186,14 +186,21 @@ built from the generated sources:
   `site/vendor/` is staged beside the page with the same content hashes, and
   the vendored scripts are inlined into `preview.html` ahead of `app.js`.
 
-  The site's own icon is drawn from the catalog logo into two files:
-  `_site/icon.png` (256×256, pointed at by `apple-touch-icon`, the larger of
-  the two `<link rel="icon">` tags, and `manifest.json`) and
-  `_site/favicon.ico` (16/32/48 px frames of the same drawing, the other icon
-  tag, and the file served at `/favicon.ico` for the clients that request it
-  without ever reading the page — feed readers, bookmark managers, link
-  previews, crawlers). Both keep the logo's transparent rounded corners rather
-  than an opaque background square.
+  The site's own icons are all drawn from the catalog logo, one file per
+  surface that shows one: `_site/favicon.ico` (16/32/48 px frames),
+  `_site/favicon-16x16.png` / `-32x32.png` / `-96x96.png` (the 96 is a
+  multiple of 48, which is all Google Search draws as a favicon),
+  `_site/apple-touch-icon.png` (180×180, the iOS home screen),
+  `_site/web-app-manifest-192x192.png` / `-512x512.png` and
+  `_site/maskable-512x512.png` for the `_site/site.webmanifest` that
+  Chrome/Android and Edge install from. The tab icons keep the logo's
+  transparent rounded corners; the touch icon and the maskable copy are
+  flattened onto the catalog tint instead — iOS paints an alpha channel black
+  on the home screen, and a maskable icon must have no transparent pixel at
+  all, since Android cuts the launcher's shape out of it. `favicon.ico` is
+  also the file that clients which never read the page (feed readers,
+  bookmark managers, link previews, crawlers) request by name. Every icon
+  link is relative, so `preview.html` finds them beside itself as well.
 
   Staged images are optimized for the size they render at, which is where most
   of the page's weight went: app icons are resized to 128×128 (the largest CSS

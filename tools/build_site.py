@@ -25,12 +25,13 @@ stages everything the site needs:
   _site/app.js               page script
   _site/vendor/              vendored Embla builds the rail loads, plus the
                              MIT notice; hashed like app.js
-  _site/icon.png             the site icon, drawn from the source logo; Safari
-                             favorites, the iOS home screen and the manifest
-                             all use this one file
-  _site/favicon.ico          the same artwork as a real .ico, for the clients
-                             that ask for /favicon.ico without reading the page
-  _site/manifest.json        app name, colors and that icon
+  _site/favicon.ico          the site icons, all drawn from the source logo:
+  _site/favicon-*.png        the tab set (16/32/48 frames in the .ico, plus
+  _site/apple-touch-icon.png 16/32/96 PNGs), the 180 px touch icon iOS puts on
+  _site/web-app-manifest-*   the home screen, the 192/512 icons Chrome/Android
+  _site/maskable-512x512.png and Edge install from, and the opaque maskable
+                             copy Android cuts its launcher shape out of
+  _site/site.webmanifest     app name, colors and those icons
   _site/media/<repo path>    every displayed image, path unchanged
   _site/all-apps.json        catalog the page fetches (copy of the source)
   _site/all-apps-proxy.json  gh-proxy mirror (kept for download/compare)
@@ -70,12 +71,21 @@ manifest rather than an img the page sets from JavaScript, because a browser
 captures a favorite's or a home-screen shortcut's icon when it is added, before
 the catalog has loaded.
 
-Every icon is that one drawing at four sizes: the browser tab, Safari's
-favorites tile, the iOS home screen, and the icons Chrome/Android and Edge
-install from. The .ico is the same drawing again, for the clients that fetch
-/favicon.ico by name without reading the HTML. Nothing is flattened onto a
-background square, so the artwork keeps its own shape wherever it is shown and
-the rounded corners stay transparent.
+Every icon is that one drawing at the size its surface asks for, so no client
+has to downscale a large file into a blurry tab: 16/32/48 frames in
+favicon.ico, the same three as PNGs beside it plus a 96 px one (Google Search
+only draws a favicon whose size is a multiple of 48), the 180 px touch icon for
+the iOS home screen, and 192/512 px for the Web App Manifest that
+Chrome/Android and Edge install from. favicon.ico is also the file the clients
+that never read the page — feed readers, bookmark managers, link previews,
+crawlers — request by name, and a 404 there is what leaves the site unbranded
+in those lists.
+
+The tab icons keep the logo's transparent rounded corners, so a browser draws
+the artwork as it was made on whatever tab strip it has. The touch icon and the
+maskable copy are composited onto the catalog's tint instead: iOS paints an
+alpha channel black on the home screen, and a maskable icon has to be opaque,
+or Android's launcher mask would leave its corners empty.
 
 Because the extension can change, the copies no longer keep the repository
 path verbatim in every case: config.json's "mediaFiles" maps a repository
@@ -140,19 +150,31 @@ SCREENSHOT_MAX_HEIGHT = 800
 WEBP_QUALITY = 82
 ICON_WEBP_QUALITY = 92
 
-# The site's own icon, one PNG that Safari's favorites tile, the iOS home
-# screen and the Web App Manifest all point at. 256 px covers every use: a tab
-# favicon is drawn at 16–32 px, iOS downsamples whatever it is given, and
-# Chrome installs from any icon of 144 px or more.
+# The site's own icons, all resampled from one square master fitted to the
+# source logo. Each surface gets a file of the size it draws (see
+# write_site_icons), so none of them has to downscale a big one.
 SITE_ICON_PX = 256
 
-# The same artwork as a real .ico served at /favicon.ico. A browser reads the
-# page's <link rel="icon"> and is happy with icon.png, but the clients that
-# never parse the HTML — feed readers, bookmark managers, link previews, the
-# occasional crawler — ask for /favicon.ico by name, and a 404 there is what
-# leaves the site unbranded in those lists. The sizes are the ones a tab or a
-# shortcut actually draws.
+# The tab. favicon.ico carries these frames for the clients that read the file
+# itself, and the PNGs are what <link rel="icon"> points at. 96 px is in the
+# list because Google Search only draws a favicon whose size is a multiple of
+# 48 (48, 96, 144…), and 96 is the smallest that still looks sharp on a 2x tab.
 SITE_FAVICON_SIZES = ((16, 16), (32, 32), (48, 48))
+SITE_FAVICON_PNGS = (16, 32, 96)
+
+# The iOS home-screen web clip, the size Apple asks for.
+APPLE_TOUCH_ICON_PX = 180
+
+# The Web App Manifest icons Chrome/Android and Edge install from. 192 and 512
+# are the two sizes such an install uses; the maskable copy is the same drawing
+# grown onto an opaque square, because Android cuts the launcher's shape out of
+# a maskable icon and would otherwise leave its transparent corners empty.
+MANIFEST_ICON_SIZES = (192, 512)
+MASKABLE_ICON_PX = 512
+
+# The colour the touch icon and the maskable one are flattened onto when the
+# catalog carries no tint of its own.
+DEFAULT_TINT = "#3B82F6"
 
 
 def warn(message: str) -> None:
@@ -347,70 +369,126 @@ def image_kind(url: str, icon_urls: set[str], logo_url: str) -> str:
     return "screenshot"
 
 
-def write_site_icon(logo_path: Path, out_dir: Path) -> None:
-    """Write _site/icon.png and _site/favicon.ico, the site's icons.
+def tint_color(source: dict) -> str:
+    """The catalog's brand colour, checked so Pillow can fill with it."""
+    tint = source.get("tintColor") or DEFAULT_TINT
+    try:
+        Image.new("RGB", (1, 1), tint)
+    except ValueError:
+        warn(f"unreadable tintColor {tint!r}; using {DEFAULT_TINT}")
+        return DEFAULT_TINT
+    return tint
 
-    Safari's favorites tile, the iOS home screen and the manifest
-    Chrome/Android and Edge install from all point at the PNG: each of them
-    scales it to whatever size it wants, so extra copies would only be the
-    same drawing at other sizes. The favicon.ico is for the clients that ask
-    for that file by name without ever reading the page — it ships the small
-    tab-sized frames, so they draw one instead of downscaling a 256.
-    The logo's rounded, transparent corners are kept rather than composited
-    onto an opaque square, so every surface shows the artwork as it was made.
+
+def write_site_icons(logo_path: Path, out_dir: Path, tint: str) -> list[str]:
+    """Write the site's icon files, one per surface that draws one.
+
+    The source logo is fitted to one square master, and every file below is a
+    resampling of that master, so a tab, an iOS home screen and an Android
+    launcher each get exactly the size they ask for. Returns the file names
+    written, which the build report lists.
+
+    The tab icons keep the logo's transparent rounded corners; the touch icon
+    and the maskable copy are flattened onto the tint, since iOS draws alpha as
+    black on the home screen and a maskable icon must have no transparent
+    pixels at all — Android cuts the launcher's shape out of it.
     """
     logo = Image.open(logo_path)
     logo.load()
     # A crop to the square, not a stretch: the logo is not guaranteed to be one.
-    square = ImageOps.fit(
+    artwork = ImageOps.fit(
         logo.convert("RGBA"), (SITE_ICON_PX, SITE_ICON_PX), Image.Resampling.LANCZOS
     )
-    square.save(out_dir / "icon.png", optimize=True)
+
+    def scaled(size: int) -> Image.Image:
+        return artwork.resize((size, size), Image.Resampling.LANCZOS)
+
+    def opaque(size: int) -> Image.Image:
+        canvas = Image.new("RGBA", (size, size), tint)
+        canvas.alpha_composite(scaled(size))
+        return canvas.convert("RGB")
+
+    written = []
+    for size in SITE_FAVICON_PNGS:
+        name = f"favicon-{size}x{size}.png"
+        scaled(size).save(out_dir / name, optimize=True)
+        written.append(name)
+
     # PNG-compressed frames: the same three sizes as uncompressed BMP frames
     # would take several times the bytes for no gain at these sizes.
-    square.save(
+    artwork.save(
         out_dir / "favicon.ico",
         format="ICO",
         sizes=SITE_FAVICON_SIZES,
         bitmap_format="png",
     )
+    written.append("favicon.ico")
+
+    opaque(APPLE_TOUCH_ICON_PX).save(out_dir / "apple-touch-icon.png", optimize=True)
+    written.append("apple-touch-icon.png")
+
+    for size in MANIFEST_ICON_SIZES:
+        name = f"web-app-manifest-{size}x{size}.png"
+        scaled(size).save(out_dir / name, optimize=True)
+        written.append(name)
+
+    maskable = f"maskable-{MASKABLE_ICON_PX}x{MASKABLE_ICON_PX}.png"
+    opaque(MASKABLE_ICON_PX).save(out_dir / maskable, optimize=True)
+    written.append(maskable)
+    return written
+
+
+def manifest_icons() -> list[dict]:
+    icons = [
+        {
+            "src": f"web-app-manifest-{size}x{size}.png",
+            "sizes": f"{size}x{size}",
+            "type": "image/png",
+            "purpose": "any",
+        }
+        for size in MANIFEST_ICON_SIZES
+    ]
+    icons.append(
+        {
+            "src": f"maskable-{MASKABLE_ICON_PX}x{MASKABLE_ICON_PX}.png",
+            "sizes": f"{MASKABLE_ICON_PX}x{MASKABLE_ICON_PX}",
+            "type": "image/png",
+            "purpose": "maskable",
+        }
+    )
+    return icons
 
 
 def write_manifest(source: dict, out_dir: Path) -> None:
-    """Write _site/manifest.json.
+    """Write _site/site.webmanifest.
 
-    This is what Chrome/Android and Edge read when the page is installed to
-    the home screen or app launcher; iOS reads the touch icon from the HTML
-    instead, and only takes the name and launch background from here.
+    This is what Chrome/Android and Edge read when the page is installed to the
+    home screen or app launcher; iOS takes its touch icon from the HTML and
+    only reads the name and the launch background from here.
 
-    The file is named .json rather than the conventional .webmanifest on
-    purpose: browsers accept either, but GitHub Pages only maps the extensions
-    in its own fixed table, and an unrecognised one is served as
-    application/octet-stream, which Chrome then refuses to parse as a manifest
-    — silently, taking the Android install icon with it. .json is served as
-    application/json on both hosts this site deploys to.
+    The file keeps the conventional .webmanifest extension: GitHub Pages, the
+    host the page is published from, serves it as application/manifest+json —
+    the type a browser expects for a manifest — and so does any host that reads
+    content types from the standard mime table.
 
-    Android masks every icon to the launcher's shape, and only an icon marked
-    "maskable" is asked to fill that shape: this one keeps the logo's
-    transparent corners, so it is declared as "any" and Android is left to draw
-    it on whatever background it picks.
+    An icon marked "any" is drawn as it was made; the "maskable" one is the
+    same drawing on the tint, which is what Android fills its launcher shape
+    with.
     """
-    tint = source.get("tintColor") or "#3B82F6"
-    icons = [
-        {"src": "icon.png", "sizes": f"{SITE_ICON_PX}x{SITE_ICON_PX}",
-         "type": "image/png", "purpose": "any"},
-    ]
+    name = source.get("name") or "AltGallery"
+    tint = tint_color(source)
     manifest = {
-        "name": source.get("name") or "AltGallery",
-        "short_name": source.get("name") or "AltGallery",
+        "name": name,
+        "short_name": name,
+        "description": source.get("subtitle") or "",
         "start_url": ".",
         "scope": ".",
         "display": "standalone",
         "background_color": tint,
         "theme_color": tint,
-        "icons": icons,
+        "icons": manifest_icons(),
     }
-    (out_dir / "manifest.json").write_text(
+    (out_dir / "site.webmanifest").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
@@ -621,8 +699,11 @@ def main() -> int:
     media_files = stage_media(source, raw_base, out_dir)
 
     logo_relative = repo_relative(source.get("iconURL") or "", raw_base)
+    icon_names: list[str] = []
     if logo_relative and (REPO_ROOT / logo_relative).is_file():
-        write_site_icon(REPO_ROOT / logo_relative, out_dir)
+        icon_names = write_site_icons(
+            REPO_ROOT / logo_relative, out_dir, tint_color(source)
+        )
     else:
         warn("cannot find the site logo in the working tree; the page will have no icon")
     write_manifest(source, out_dir)
@@ -698,9 +779,8 @@ def main() -> int:
         "index.html",
         "style.css",
         "app.js",
-        "icon.png",
-        "favicon.ico",
-        "manifest.json",
+        *icon_names,
+        "site.webmanifest",
         "all-apps.json",
         "all-apps-proxy.json",
         "config.json",
