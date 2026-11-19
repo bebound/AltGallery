@@ -1,0 +1,46 @@
+# altgen config for the WQManager AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "hseons/WQManager"
+
+[source]
+name = "WQManager"
+subtitle = "WQManager AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for WQManager"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/icon.png"
+website = "https://github.com/hseons/WQManager"
+tint_color = "#242529"
+
+[app]
+name = "WQManager"
+bundle_identifier = "mumu.pduola.WQManager"
+developer_name = "hseons"
+subtitle = "无需越狱的 App 数据备份与缓存清理工具"
+description = "一款面向 iOS 26+ 的开源 App 数据管理、备份与单应用缓存清理工具，无需越狱。可把某个 App 的数据目录打包成可校验的备份并写回原 App，也能只清理所选 App 的缓存与临时目录。所有数据都在本机处理，没有账号、没有统计、没有云端。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/apps.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/cleaner.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/history.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/settings.webp",
+]
+tint_color = "#242529"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = ".*\\.ipa$"
+# Read the version from the ipa's Info.plist: the release tag is v0.5.0
+# while the ipa inside it reports 0.5 (build 1).
+version_source = "ipa"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/news.png"
+
+[output]
+path = "apps.json"

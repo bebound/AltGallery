@@ -256,6 +256,9 @@ File manager for iOS 26 and 27 (worse_query) — browse other apps' containers, 
 ### <img src="apps/WQGuard/icon.png" alt="WQGuard icon" width="24" align="top"> <a href="https://github.com/Kianuni/WQGuard">WQGuard</a>
 iOS 沙盒越权检测与侧载 IPA 审查工具——面向 iOS 26.2+ / iOS 27.x 的只读沙盒逃逸检测、Mach-O 静态审计与固件 CVE 防护。
 
+### <img src="apps/WQManager/icon.png" alt="WQManager icon" width="24" align="top"> <a href="https://github.com/hseons/WQManager">WQManager</a>
+无需越狱的 App 数据备份与缓存清理工具 — 备份可导出为 `.wqbackup` 包，恢复写前自动安全备份、写后哈希校验与失败回滚，清理只动所选 App 的缓存与临时目录。
+
 ### <img src="apps/WQToolkit/icon.png" alt="WQToolkit icon" width="24" align="top"> <a href="https://github.com/MchinaMd57764/WQToolkit">WQToolkit</a>
 File browser and maintenance panel for your own app containers — browse, clean and inspect your data and App Groups without a jailbreak.
 

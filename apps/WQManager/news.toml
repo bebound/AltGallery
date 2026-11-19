@@ -1,0 +1,19 @@
+# render_news.py config: uv run tools/render_news.py --out apps/WQManager
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "WQManager"
+tagline = "无需越狱的\nApp 数据备份与缓存清理"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+# The icon is monochrome (cream field, charcoal badge), and the auto-derived
+# background comes out muddy pink, so the icon's own two colors are pinned.
+[colors]
+tint = "#242529"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+tint_alt = "#242529"      # bottom-right glow (default: [source] tint_color)
+background = "#F1EFE9"    # gradient base: the icon's cream field
+bg_mid = "#F9F8F6"        # gradient mid stop (default: derived from background)
+bg_dark = "#EAE6DC"       # gradient end stop (default: derived from background)
+text_color = "#111111"    # app name (auto white/black)
+tagline_color = "#55565C" # tagline text (default: derived from background)
