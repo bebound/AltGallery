@@ -1017,11 +1017,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.2.4",
-          "date": "2026-11-18T06:21:53Z",
-          "localizedDescription": "MoviePilot iOS 1.2.4，统一设置与搜索弹窗，修复播放控制并支持 iOS 系统画中画。\n\n### 更新内容\n\n- 主题和语言统一放到“连接与显示”，用户菜单不再重复显示；主题继续沿用当前实例的设置。\n- 搜索结果的单项过滤使用半屏弹窗，支持下拉关闭和右上角关闭；综合筛选保留较大的展示空间。\n- 媒体库搜索与媒体详情共用选集界面，显示集海报、标题、简介和时长，并统一右上角关闭按钮。\n- 修复文件管理等操作菜单在 App 与系统明暗主题不同时出现黑底的问题。\n- 视频画面点击只显示或隐藏控制条，播放、暂停和跳转由对应按钮触发；全屏按钮采用系统圆形玻璃样式，快进快退统一为 10 秒。\n- 小窗播放改为 iOS 系统画中画，支持桌面悬浮、系统移动与缩放、播放控制及返回原播放进度。\n\n### 安装\n\n下载 `MoviePilot-1.2.4-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n搜索弹窗调整需搭配 [MoviePilot-Frontend v3.2.8](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.8)；集海报与标题信息还需要后端的剧集元数据接口，相关代码已合入 v3 分支，等待后续后端发布。旧后端仍可按季集编号播放。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[c81e70c56bdb8768a1e789571e037a807c324615](https://github.com/jxxghp/MoviePilot-App/commit/c81e70c56bdb8768a1e789571e037a807c324615)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.4/MoviePilot-1.2.4-unsigned.ipa",
-          "size": 23681942,
+          "version": "1.2.5",
+          "date": "2026-11-18T19:29:32Z",
+          "localizedDescription": "MoviePilot iOS 1.2.5，修复播放器选项栏没有可用项目时仍残留空胶囊。\n\n### 更新内容\n\n- 修复没有可用字幕或音轨时，播放器底栏仍显示空的玻璃胶囊。\n\n### 安装\n\n下载 `MoviePilot-1.2.5-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n搜索弹窗调整需搭配 [MoviePilot-Frontend v3.2.8](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.8)；集海报与标题信息还需要后端的剧集元数据接口，相关代码已合入 v3 分支，等待后续后端发布。旧后端仍可按季集编号播放。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.5/MoviePilot-1.2.5-unsigned.ipa",
+          "size": 23681687,
           "minOSVersion": "17.0"
         }
       ]
@@ -1655,11 +1655,11 @@
       "tintColor": "#00C7A5",
       "versions": [
         {
-          "version": "1.3.1",
-          "date": "2026-11-18T13:12:04Z",
-          "localizedDescription": "## WQGuard v1.3.1 (Build 18)\n\n新增 2026 最新 iOS 本地提权/隐私绕过漏洞特征库、ARM64 `svc #0x80` 直接系统调用指令级扫描与 13 项固件 CVE 暴露态势雷达正式版。\n\n---\n\n### 中文更新说明\n\n- **新增 ARM64 `svc #0x80` (`0xD4001001`) 直接系统调用指令级扫描 (`INSN_ARM64_SVC_0X80`)**：\n  - 在 Mach-O 静态分析引擎新增 4 字节对齐指令扫描，覆盖 `arm64` / `arm64e` / `arm64_32` 全切片、`__TEXT,__text` / `__stubs`、自定义可执行段（`VM_PROT_EXECUTE`）、无节头代码间隙及文件支撑节，直接识别绕过 `libsystem_kernel.dylib` 导入表向内核发起系统调用的隐蔽载荷（精准跳过 FairPlay `encryptedRange` 与非代码元数据段）。\n- **新增 `CVE-2026-65339`（`audiomxd` 麦克风静默 TCC 绕过）检测**：\n  - 支持无 App Group 声明的独立前置拦截，覆盖 `MediaExperience.framework` 私有框架、`CMSessionSetProperty` / `AudioSessionSetCMProperty` 私有符号、`com.apple.audio.audiomxd` / `com.apple.coremedia.audiomxd` XPC 服务及私有权限；严格隔离 `AudioToolbox` / `AVFAudio` / `AURemoteIO` 等公开音频接口，对合法模拟器与游戏零误报。\n- **新增 `BookRestore` / `bl_sbx` 沙盒逃逸与 `MobileGestalt` 系统配置篡改检测**：\n  - 拦截引用 `BookLibraryPrivate.framework`、`com.apple.bookassetd` / `com.apple.itunesstored` XPC 服务、`com.apple.itunesstored.private*` 权限、`BLDatabaseManager.sqlite` / `downloads.28.sqlitedb` 越权恢复写目标，以及篡改 `com.apple.MobileGestalt.plist` / `systemgroup.com.apple.mobilegestaltcache` 的侧载包。\n- **新增 `CVE-2026-84493`（`AccessorySetupKit` 蓝牙配对 TCC 绕过）主包与 `.appex` 扩展检测**：\n  - 检测非 App Store 应用及独立 `PlugIns/*.appex` / `Extensions/*.appex` 扩展声明 `com.apple.private.accessorysetupkit*` 私有权限，或调用 `AccessorySetupKit` / `ASAccessorySession` 却缺失 `NSBluetoothAlwaysUsageDescription` 与 `NSAccessorySetupKitSupports` 的静默蓝牙绕过手法。\n- **扩展高危越权 Entitlements 与隐蔽动态加载检测**：\n  - 全链路覆盖 `no-sandbox`、`no-container`、`container-required=false`、`com.apple.private.MobileContainerManager.allowed`、`AppDataContainers`、非系统包 `platform-application=true`、私有 `com.apple.private.tcc.allow*` 免弹窗特权及通配符 `keychain-access-groups` (`*` / `.*`) 检测。\n  - 新增纯 C 字符串 `dlopen` + `dlsym` 动态解析私有框架/符号检测，以及非常规后缀、包内符号链接与畸形损坏 Mach-O (`CorruptMachO:UnparseableBinary`) 深度审计。\n- **2026 固件 CVE 暴露态势雷达扩展至 13 项**：\n  - 新增追踪 **`CVE-2026-20700`**（`dyld` 0-day 任意代码执行，CVSS 9.8）、**`CVE-2026-113897`**（WebKit GPU & WebContent 沙盒逃逸，CVSS 8.8）、**`CVE-2026-65339`**（`audiomxd` 麦克风绕过，CVSS 7.5）、**`CVE-2026-84493`**（`AccessorySetupKit` 蓝牙绕过，CVSS 6.5）与 **`PoC:BookRestore`**（`bookassetd` / `MobileGestalt` 越权覆写，CVSS 7.8）。\n  - 更新 `0day:worse_query` 补丁边界，支持预发布版本号识别（精准区分仍受暴露的 `iOS 27.3 beta 1` 与已修补的 `iOS 27.3 beta 2+` / `27.3` 正式版）。\n\n---\n\n### English Release Notes\n\n- **ARM64 `svc #0x80` (`0xD4001001`) Direct Syscall Instruction Scanner (`INSN_ARM64_SVC_0X80`)**:\n  - Performs 4-byte-aligned instruction-level scanning across all `arm64` / `arm64e` / `arm64_32` slices, `__TEXT,__text` / `__stubs`, custom executable (`VM_PROT_EXECUTE`) segments, unsectioned code gaps, and file-backed sections to catch payloads invoking kernel syscalls directly without `libsystem_kernel.dylib` imports while skipping FairPlay `encryptedRange` and non-code metadata sections.\n- **`CVE-2026-65339` (`audiomxd` Silent Microphone TCC Bypass) Detection**:\n  - Pre-gate standalone detection covering `MediaExperience.framework` linkage, `CMSessionSetProperty` / `AudioSessionSetCMProperty` symbols, `com.apple.audio.audiomxd` / `com.apple.coremedia.audiomxd` XPC endpoints, and private entitlements — with zero false positives on legitimate `AudioToolbox` / `AVFAudio` / `AURemoteIO` apps and emulators.\n- **`BookRestore` / `bl_sbx` Sandbox Escape & `MobileGestalt` Tampering Detection**:\n  - Detects `BookLibraryPrivate.framework`, `com.apple.bookassetd` / `com.apple.itunesstored` XPC endpoints, `com.apple.itunesstored.private*` entitlements, `BLDatabaseManager.sqlite` / `downloads.28.sqlitedb` overwrite targets, and `com.apple.MobileGestalt.plist` / `systemgroup.com.apple.mobilegestaltcache` tampering indicators.\n- **`CVE-2026-84493` (`AccessorySetupKit` Silent Bluetooth TCC Bypass) App & `.appex` Detection**:\n  - Flags non-App Store apps and standalone `PlugIns/*.appex` / `Extensions/*.appex` extensions declaring `com.apple.private.accessorysetupkit*` entitlements or invoking `AccessorySetupKit` / `ASAccessorySession` without required `NSBluetoothAlwaysUsageDescription` and `NSAccessorySetupKitSupports` declarations.\n- **Expanded Dangerous Entitlement & Dynamic Symbol Evasion Auditing**:\n  - Unified `.ipa` / `.tipa`, `.app`, and registry evaluation for `no-sandbox`, `no-container`, `container-required=false`, `com.apple.private.MobileContainerManager.allowed`, `AppDataContainers`, non-Apple `platform-application=true`, `com.apple.private.tcc.allow*`, and wildcard `keychain-access-groups` (`*` / `.*`), plus C-string `dlopen` + `dlsym` private framework/symbol resolution, magic-based non-standard Mach-O discovery, and `CorruptMachO:UnparseableBinary` detection.\n- **13-CVE 2026 Firmware Posture Radar (with Prerelease Beta Precision)**:\n  - Adds **`CVE-2026-20700`** (`dyld` 0-day, CVSS 9.8), **`CVE-2026-113897`** (WebKit GPU & WebContent sandbox escape, CVSS 8.8), **`CVE-2026-65339`** (`audiomxd` mic bypass, CVSS 7.5), **`CVE-2026-84493`** (`AccessorySetupKit` Bluetooth bypass, CVSS 6.5), and **`PoC:BookRestore`** (`bookassetd` / `MobileGestalt` overwrite, CVSS 7.8), and distinguishes exposed `iOS 27.3 beta 1` from patched `iOS 27.3 beta 2+` / `27.3` GA for `0day:worse_query`.\n\n---\n\n### Release Assets / 发布附件\n\n- `WQGuard_v1.3.1.ipa` — Unsigned ad-hoc IPA (`v1.3.1`, Build 18) for iOS 16+ / 17+ / 18+ / 26+ / 27+\n- `WQGuard-Brotli-Shield.sgmodule` — Surge\n- `WQGuard-Brotli-Shield.module` — Shadowrocket\n- `WQGuard-Brotli-Shield.conf` — Quantumult X\n- `WQGuard-Brotli-Shield.plugin` — Loon\n- `WQGuard-Brotli-Shield.stoverride` — Stash",
-          "downloadURL": "https://github.com/Kianuni/WQGuard/releases/download/v1.3.1/WQGuard_v1.3.1.ipa",
-          "size": 2142235,
+          "version": "1.3.2",
+          "date": "2026-11-18T23:55:31Z",
+          "localizedDescription": "## WQGuard v1.3.2 (Build 19)\n\n全面升级**密码学签名链与混合应用资源完整性验真**、**Mach-O/ZIP64 全链路防绕过解析**，并集成 **2026 最新漏洞特征库**、**ARM64 `svc #0x80` 直接系统调用扫描**与 **13 项固件 CVE 暴露雷达**。\n\n---\n\n### 中文更新说明\n\n- **密码学签名链与整包完整性验真（`CSBlobParser` / `ChannelClassifier`）**：\n  - 对声称 `cryptid != 0` 的二进制强制执行 **Apple Root CA (G1/G2/G3) SHA-256 锚定**、**CMS `SignerInfo` 公钥验签**、**`CodeDirectory` 逐页哈希校验**、**Slot 5 / Slot 7 双向封条校验**，以及 **Special Slot `-1` (`Info.plist`)** 与 **Special Slot `-3` (`_CodeSignature/CodeResources`)** 全包资源密封核验。\n  - 彻底拦截**移植正版苹果 CMS 签名链**、**伪造或剥离 `LC_CODE_SIGNATURE` 假冒 `cryptid = 1` 预侧载包**，以及**在正版 FairPlay 钱包内篡改 `main.jsbundle` / 植入未签名 `drainer.js` 或删除 `CodeResources` 的混合重打包攻击**，同时消除正版 App Store 应用内嵌未加密官方框架的误报。\n  - 加固跨架构/多槽位身份一致性判定：屏蔽死 `x86_64` 模拟器切片身份覆盖与单槽 DER 重复键后写遮蔽，采用线性防 DoS + UTF-16 兼容解析 `.mobileprovision` 与 XML Entitlements。\n- **Mach-O 静态反逃逸与隐蔽利用链检测（`MachOParser` / `MachOScanner`）**：\n  - **ARM64 `svc #0x80` (`0xD4001001`) 直接系统调用指令级扫描 (`INSN_ARM64_SVC_0X80`)**：覆盖 `arm64` / `arm64e` / `arm64_32` 全切片、无节头 `LC_MAIN` 可执行段及自定义 RX 代码段，识别绕过 `libsystem_kernel.dylib` 导入表的内联系统调用。\n  - **动态符号与局部 FairPlay 反遮蔽**：支持 `LC_LAZY_LOAD_DYLIB` (`0x20`)、`__TEXT,__stub_helper` 跳转表解析（封堵 `lazy_bind` 死字节遮蔽）、膨胀 `LC_DYLD_CHAINED_FIXUPS` 边界截断保护，并按步进/节窗穿透 `64 KB` CSPRNG 高熵前缀填充，保留未加密 `__TEXT` / `__objc_methname` / `__LINKEDIT` 与 `dlopen` / `NSBundle` + `NSClassFromString` / `NSSelectorFromString` 反射调用的私有 API 检出。\n- **ZIP64 / 嵌套子包与 POSIX 容器零解引用防护（`IPAPackageScanner` / `ContainerScanner` / `MCMReader` / `CSStore2Parser`）**：\n  - 拦截 ZIP64 EOCD/Locator 双目录多态包、流式跳过 DEFLATE 空块探测伪装资源后缀 Mach-O、识别含越界诱饵切片的多切片 FAT 伪装包，并将深扫范围扩展至 **`AppClips/*.app` / `Watch/*.app` / `.appex` / `.xpc` / `.xcframework`** 与包内目录软链接。\n  - 以严格逐分量 POSIX `namei` 语义识别级联软链接与嵌套 `Library/Caches/**` 越界逃逸，`MCMReader`、`CSStore2Parser`、`CLICommandRunner` 与 iOS 端导入流程全线落实 `O_NOFOLLOW | O_NONBLOCK` 防软链接/FIFO 阻塞。\n- **注册表、白名单、`lockdownd` 通信与 Brotli 护盾加固**：\n  - **2026 本地漏洞全覆盖**：集成 **`CVE-2026-65339`**（`audiomxd` 麦克风静默绕过，零误报公开音频/模拟器）、**`BookRestore` / `bl_sbx` & `MobileGestalt`** 篡改、**`CVE-2026-84493`**（`AccessorySetupKit` 蓝牙 TCC 绕过）与 **13 项 2026 固件 CVE 暴露雷达**（新增追踪 **`CVE-2026-20700`** `dyld` 0-day 与 **`CVE-2026-113897`** WebKit 沙盒逃逸，并精确区分 `iOS 27.3 beta 1` 与 `beta 2+`/正式版补丁边界）。\n  - 封堵 TrollStore `iTunesMetadata` / `System` 注册伪装、`devicectl` 缺省签名伪造及未签名/跨源 `TeamID` / `App Group` 寄生白名单投毒；`LockdownInstProxyClient` 强制仅连接本机或私有网段 IP、强制 `EnableSessionSSL` & `EnableServiceSSL` 加密并阻断 `HostCertificate` TLS 反射攻击；`brotli-guard.js` 与代理护盾新增 RFC 9110 分隔符、`dcb` / `x-dcb` / `x-brotli` 阻断与 `-*` 全局排除校验。\n- **全量验证**：\n  - Swift 6 严格并发模式下 **45 个 XCTest 套件、869 项自动化测试全部通过（0 失败）**，并完成 Release `wqguard-cli` 与 `WQGuard_v1.3.2.ipa` 成品严格自审（`KNOWN_TOOL`）。\n\n---\n\n### English Release Notes\n\n- **Cryptographic Signature Chain & Whole-Bundle Integrity Verification (`CSBlobParser` / `ChannelClassifier`)**:\n  - Enforces **Apple Root CA (G1/G2/G3) SHA-256 pinning**, **CMS `SignerInfo` public-key signature verification**, **per-page `CodeDirectory` hash verification**, **bidirectional Slot 5 / Slot 7 sealing**, and **Special Slot `-1` (`Info.plist`) + Special Slot `-3` (`_CodeSignature/CodeResources`)** bundle verification before granting App Store trust.\n  - Defeats grafted Apple CMS chains, stripped/malformed `LC_CODE_SIGNATURE` headers masquerading as `cryptid=1`, and hybrid repackaging attacks (e.g., tampering `main.jsbundle`, injecting unsealed `drainer.js`, or deleting `CodeResources` in FairPlay wallet apps) while avoiding false positives on legitimate Apple-signed apps embedding unencrypted frameworks.\n  - Ignores dead `x86_64` simulator slices, prevents intra-blob DER key shadowing, and uses linear $O(N)$ UTF-16-capable XML scanning for `.mobileprovision` and Slot 5 entitlements.\n- **Mach-O Static Anti-Evasion & 2026 Exploit Coverage (`MachOParser` / `MachOScanner`)**:\n  - **ARM64 `svc #0x80` (`0xD4001001`) Direct Syscall Instruction Scanner (`INSN_ARM64_SVC_0X80`)**: Scans 4-byte-aligned executable code across all `arm64` / `arm64e` / `arm64_32` slices, unsectioned `LC_MAIN` segments, and custom RX sections while skipping genuine FairPlay `encryptedRange` intervals.\n  - Supports `LC_LAZY_LOAD_DYLIB` (`0x20`), `__TEXT,__stub_helper` lazy-bind trampolines, bounded `LC_DYLD_CHAINED_FIXUPS`, CSPRNG-prefix-resistant partial FairPlay entropy checks, unencrypted `__LINKEDIT` / `__objc_methname` inspection, and `dlopen` / `NSBundle` + `NSClassFromString` / `NSSelectorFromString` dynamic reflection detection.\n- **ZIP64, Nested Sub-Bundles & POSIX `namei` Container Forensics (`IPAPackageScanner` / `ContainerScanner` / `MCMReader` / `CSStore2Parser`)**:\n  - Blocks ZIP64 dual-CD polyglot archives, streams past empty DEFLATE padding blocks for magic-based asset scanning, handles 3+ slice FAT binaries with OOB decoy slices, and audits nested **`AppClips/*.app` / `Watch/*.app` / `.appex` / `.xpc` / `.xcframework`** sub-bundles and in-bundle directory symlinks.\n  - Implements token-by-token POSIX `namei` symlink resolution across nested `Library/Caches/**` trees and enforces `O_NOFOLLOW | O_NONBLOCK` across container metadata, CSStore2 snapshots, CLI outputs, and local UI package imports.\n- **Registry, Whitelist, Lockdown TLS & Brotli Shield Hardening**:\n  - Covers **`CVE-2026-65339`** (`audiomxd` silent mic TCC bypass, zero false positives on public audio frameworks/emulators), **`BookRestore` / `bl_sbx` & `MobileGestalt`** tampering, **`CVE-2026-84493`** (`AccessorySetupKit` silent Bluetooth bypass), and the **13-CVE 2026 Firmware Posture Radar** (including **`CVE-2026-20700`**, **`CVE-2026-113897`**, and `iOS 27.3 beta 1` vs. `beta 2+`/GA tracking for `0day:worse_query`).\n  - Blocks TrollStore `iTunesMetadata` / `System` registration spoofing, `devicectl` default-signer spoofing, unsigned/cross-team `TeamID` & `App Group` whitelist poisoning, Lockdown external/plaintext/reflection attacks (loopback/private-IP-only + mandatory SSL + anti-`HostCertificate` reflection), and RFC 9110 / `dcb` / `x-brotli` header smuggling or `-*` MITM kill-switches.\n- **Verification**:\n  - `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`: **45 XCTest suites, 869/869 tests passing, 0 failures**, alongside Release `wqguard-cli` & `WQGuard_v1.3.2.ipa` (`KNOWN_TOOL`) self-audit verification.\n\n---\n\n### Release Assets / 发布附件\n\n- `WQGuard_v1.3.2.ipa` — Unsigned ad-hoc IPA (`v1.3.2`, Build 19) for iOS 16+ / 17+ / 18+ / 26+ / 27+\n- `WQGuard-Brotli-Shield.sgmodule` — Surge\n- `WQGuard-Brotli-Shield.module` — Shadowrocket\n- `WQGuard-Brotli-Shield.conf` — Quantumult X\n- `WQGuard-Brotli-Shield.plugin` — Loon\n- `WQGuard-Brotli-Shield.stoverride` — Stash",
+          "downloadURL": "https://github.com/Kianuni/WQGuard/releases/download/v1.3.2/WQGuard_v1.3.2.ipa",
+          "size": 2363193,
           "minOSVersion": "16.0"
         }
       ]
@@ -1739,6 +1739,28 @@
   ],
   "news": [
     {
+      "appID": "com.wqguard.app",
+      "title": "WQGuard 1.3.2 · 18 Nov 2026",
+      "identifier": "WQGuard-release-v1.3.2",
+      "caption": "WQGuard 1.3.2 is available.",
+      "date": "2026-11-18T23:55:31Z",
+      "tintColor": "#00C7A5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.3.2"
+    },
+    {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 1.2.5 · 18 Nov 2026",
+      "identifier": "MoviePilot-release-v1.2.5",
+      "caption": "MoviePilot 1.2.5 is available.",
+      "date": "2026-11-18T19:29:32Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.5"
+    },
+    {
       "appID": "org.animeko.animeko",
       "title": "Animeko 6.4.1 · 18 Nov 2026",
       "identifier": "Animeko-release-v6.4.1",
@@ -1748,17 +1770,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Animeko/images/news.png",
       "notify": true,
       "url": "https://github.com/open-ani/animeko/releases/tag/v6.4.1"
-    },
-    {
-      "appID": "com.wqguard.app",
-      "title": "WQGuard 1.3.1 · 18 Nov 2026",
-      "identifier": "WQGuard-release-v1.3.1",
-      "caption": "WQGuard 1.3.1 is available.",
-      "date": "2026-11-18T13:12:04Z",
-      "tintColor": "#00C7A5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.3.1"
     },
     {
       "appID": "com.linkpass.kazumi",
@@ -1803,17 +1814,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/UTM/images/news.png",
       "notify": true,
       "url": "https://github.com/utmapp/UTM/releases/tag/v5.0.9-2"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.2.4 · 18 Nov 2026",
-      "identifier": "MoviePilot-release-v1.2.4",
-      "caption": "MoviePilot 1.2.4 is available.",
-      "date": "2026-11-18T06:21:53Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.4"
     },
     {
       "appID": "com.ishtiaqsyed.StatsForIOS",
