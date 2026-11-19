@@ -1,0 +1,43 @@
+# altgen config for the Dartotsu AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "aayush2622/Dartotsu"
+
+[source]
+name = "Dartotsu"
+subtitle = "Dartotsu AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Dartotsu"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/icon.png"
+website = "https://github.com/aayush2622/Dartotsu"
+tint_color = "#20C0F0"
+
+[app]
+name = "Dartotsu"
+bundle_identifier = "ani.aayush262.dartotsu"
+developer_name = "aayush2622"
+subtitle = "Multiplatform anime and manga tracking client"
+description = "A Flutter rewrite of Dantotsu: track and manage your anime, manga and novel lists across AniList, MyAnimeList, Simkl, Kitsu, MangaBaka and MangaUpdates, on Android, iOS, Windows, Linux and macOS."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/images/anime.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/images/manga.webp",
+]
+tint_color = "#20C0F0"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): every release ships Dartotsu-iOS-v<version>.ipa
+asset_pattern = "Dartotsu-iOS-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/images/news.png"
+
+[output]
+path = "apps.json"
