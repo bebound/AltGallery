@@ -121,6 +121,9 @@ Steam Big Picture on iPhone and iPad — runs Valve's client and compatible Wind
 ### <img src="apps/iPadn/icon.png" alt="iPadn icon" width="24" align="top"> <a href="https://github.com/mengangs/ipadn">iPadn</a>
 下载 App Store 的历史版本与已下架应用——搜索并安装你已拥有的应用，支持区域价格比较与 11 种语言。
 
+### <img src="apps/iRAM-Plus/icon.png" alt="iRAM+ icon" width="24" align="top"> <a href="https://github.com/NexSideloading/iRAM-Plus">iRAM+</a>
+Enable Increased Memory Limit for sideloaded apps on device — sign in with the Apple Account that signed them, add the entitlement, then reinstall. Apple-account signatures only.
+
 ### <img src="apps/Iridium/icon.png" alt="Iridium icon" width="24" align="top"> <a href="https://github.com/intraducine/iridium">Iridium</a>
 Experimental Windows-game runtime for iPhone and iPad — one library for the games you own, played with touch, a controller or a keyboard.
 

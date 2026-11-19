@@ -1,0 +1,43 @@
+# altgen config for the iRAM+ AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "NexSideloading/iRAM-Plus"
+
+[source]
+name = "iRAM+"
+subtitle = "iRAM+ AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for iRAM+"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/icon.png"
+website = "https://github.com/NexSideloading/iRAM-Plus"
+tint_color = "#64BE7E"
+
+[app]
+name = "iRAM+"
+bundle_identifier = "novadev.iram-plus"
+developer_name = "NexSideloading"
+subtitle = "Enable Increased Memory Limit for sideloaded apps on device"
+description = "Grant sideloaded apps the Increased Memory Limit and Extended Virtual Addressing entitlements directly on device: sign in with the Apple Account that signed them, pick an app and add the entitlement, then reinstall it. Works only with apps signed by an Apple account, not with enterprise certificates."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/images/start.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/images/app.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/images/settings.webp",
+]
+tint_color = "#64BE7E"
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): every release ships iRAM-Plus.ipa
+asset_pattern = "iRAM-Plus\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/images/news.png"
+
+[output]
+path = "apps.json"

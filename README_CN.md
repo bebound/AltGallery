@@ -121,6 +121,9 @@ iPhone 与 iPad 上的 Steam 大屏幕模式——通过 Madeira 运行时本地
 ### <img src="apps/iPadn/icon.png" alt="iPadn icon" width="24" align="top"> <a href="https://github.com/mengangs/ipadn">iPadn</a>
 下载 App Store 的历史版本与已下架应用——搜索并安装你已拥有的应用，支持区域价格比较与 11 种语言。
 
+### <img src="apps/iRAM-Plus/icon.png" alt="iRAM+ icon" width="24" align="top"> <a href="https://github.com/NexSideloading/iRAM-Plus">iRAM+</a>
+在设备上为侧载应用开启 Increased Memory Limit——登录签名该应用的 Apple 账户、添加权限后重新安装即可。仅适用于 Apple 账户签名的应用。
+
 ### <img src="apps/Iridium/icon.png" alt="Iridium icon" width="24" align="top"> <a href="https://github.com/intraducine/iridium">Iridium</a>
 实验性的 iPhone 与 iPad Windows 游戏运行时——把自有的游戏汇入一个资料库，用触控、手柄或键盘游玩。
 

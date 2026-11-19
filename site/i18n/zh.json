@@ -76,6 +76,10 @@
     "subtitle": "iPhone 与 iPad 上的 Steam 大屏幕模式",
     "description": "通过 Madeira、Wine、FEX 与 Metal，在 iPhone 与 iPad 上本地运行 Valve Steam 客户端的大屏幕模式与兼容的 Windows PC 游戏。实验性；需要 iOS 26+、JIT，以及自备的 Steam 文件。"
   },
+  "novadev.iram-plus": {
+    "subtitle": "在设备上为侧载应用开启 Increased Memory Limit",
+    "description": "在设备上直接为侧载应用添加 Increased Memory Limit 与 Extended Virtual Addressing 权限：登录签名该应用的 Apple 账户，选择应用并添加权限后重新安装即可。仅对 Apple 账户签名的应用生效，企业证书签名的应用无效。"
+  },
   "software.iridium": {
     "subtitle": "实验性的 iPhone 与 iPad Windows 游戏运行时",
     "description": "实验性的 iPhone 与 iPad Windows 游戏运行时，带原生游戏库，以及触控、键盘、鼠标与手柄集成。需要 iOS 18+、JIT 与自备的游戏文件；兼容性因游戏与设备而异。"
