@@ -21,11 +21,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.0.8",
-          "date": "2026-11-18T12:44:12Z",
-          "localizedDescription": "### 新增\n\n- 下载管理器新增「全部开始 / 全部暂停」全局控制按钮（[#37](https://github.com/LinkPass888/Kazumi-Swift/issues/37)）\n- 宽屏设备横屏播放时采用左右双栏布局：左侧播放器+简介，右侧选集与评论标签页完整可见；线路 / 缓存操作栏移至右侧标签页上方，缓存按钮与集数更近（[#34](https://github.com/LinkPass888/Kazumi-Swift/issues/34)）\n- 播放页底部选集 / 简介区支持侧滑返回\n\n### 修复\n\n- 修复 MP4 直链下载进度条一直显示 0%、断点续传失败的问题（[#35](https://github.com/LinkPass888/Kazumi-Swift/issues/35)）\n\n### 优化\n\n- 全屏播放器顶底栏安全区视觉留白对齐；跳过片头按钮与 HUD 气泡尺寸微调\n- OP/ED 进度条片段高亮使用主题强调色；超分辨率与倍速按钮统一纯白渲染\n- 自定义跳过秒数长按输入小数时自动四舍五入取整\n- 后台自动画中画默认关闭；默认硬解改为直通模式，开关画中画不覆盖用户的持久硬解设置",
-          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.0.8/Kazumi_ios_v3.0.8_no_sign.ipa",
-          "size": 24325317,
+          "version": "3.0.9",
+          "date": "2026-11-19T13:39:16Z",
+          "localizedDescription": "### 新增\n\n- 一起看（Syncplay）：按标准 Syncplay 协议与其他客户端同房间同步播放，播放、暂停、拖动进度会自动对齐，支持房间口令与 TLS，顶栏显示实时延迟，可查看房间成员。服务器地址、房间、昵称和口令会记住并纳入设置备份\n- 下载剧集时顺带保存该集弹幕，离线或飞行模式下播放也能直接显示；在本地已有弹幕文件时优先读本地，不再等网络\n\n### 修复\n\n- 修复应用覆盖安装或用侧载工具重签后，沙盒目录变化导致已下载剧集打不开、下载记录失效的问题（[#39](https://github.com/LinkPass888/Kazumi-Swift/issues/39)）：现在按相对路径重新定位本地文件，旧记录里的失效路径也能找回\n- 修复下载剧集后在线选集列表加载不出来的问题\n- 修复弹幕设置里点「关键词屏蔽」会中断播放并退回上一页的问题；屏蔽按字面量和 `/正则/` 实时生效\n- 修复播放时屏幕不按设定常亮、跟随系统锁定时间熄屏的问题\n- 修复规则镜像设置的键名不一致，导致每次冷启动被重置的问题\n- 补齐设置备份遗漏的弹幕样式、硬解与低内存策略、AniSkip、Syncplay 等设置，恢复后立即生效，不需要重启\n- 修复通过 `kazumi://` 规则链接打开应用时不会弹出导入框的问题\n\n### 优化\n\n- 从播放页正常返回详情页时不再多叠一层选源面板；只有起播失败后才自动重开选源\n- 打开弹幕设置面板时自动暂停，关闭后自动续播\n- 全屏横屏时弹幕设置按钮移到弹幕开关右侧，方便双手横持\n- 弹幕请求与视频解析并行，画面出来时弹幕已就绪；同一部番换集不再反复解析弹幕源\n- 追番页封面按可视区并发加载，加载完统一刷新，不再整格网格反复重绘；Bangumi 批量同步合并后一次落盘，避免主线程卡死\n- 播放器菜单探测与定时关闭改成状态驱动，取消每秒重绘；播放进度改为防抖写入\n- WebDAV 同步在云盘内容无变化时跳过上传；DLNA 投屏先探测上次用过的设备，能更快出列表\n- 设置页在 iPad 与 Mac 宽屏下二级页面统一限宽居中；日志页增加「全部」分类与文本过滤\n- 清理无引用的旧同步代码，播放页拆分成多个模块",
+          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.0.9/Kazumi_ios_v3.0.9_no_sign.ipa",
+          "size": 24435927,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.0.8 · 18 Nov 2026",
-      "identifier": "Kazumi-Swift-release-v3.0.8",
-      "caption": "Kazumi-Swift 3.0.8 is available.",
-      "date": "2026-11-18T12:44:12Z",
+      "title": "Kazumi-Swift 3.0.9 · 19 Nov 2026",
+      "identifier": "Kazumi-Swift-release-v3.0.9",
+      "caption": "Kazumi-Swift 3.0.9 is available.",
+      "date": "2026-11-19T13:39:16Z",
       "tintColor": "#45A992",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
       "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.0.8"
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.0.9"
     }
   ]
 }
