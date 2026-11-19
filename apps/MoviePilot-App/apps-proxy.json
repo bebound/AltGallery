@@ -21,11 +21,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "1.2.5",
-          "date": "2026-11-18T19:29:32Z",
-          "localizedDescription": "MoviePilot iOS 1.2.5，修复播放器选项栏没有可用项目时仍残留空胶囊。\n\n### 更新内容\n\n- 修复没有可用字幕或音轨时，播放器底栏仍显示空的玻璃胶囊。\n\n### 安装\n\n下载 `MoviePilot-1.2.5-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n搜索弹窗调整需搭配 [MoviePilot-Frontend v3.2.8](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.8)；集海报与标题信息还需要后端的剧集元数据接口，相关代码已合入 v3 分支，等待后续后端发布。旧后端仍可按季集编号播放。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.5/MoviePilot-1.2.5-unsigned.ipa",
-          "size": 23681687,
+          "version": "1.2.6",
+          "date": "2026-11-19T09:18:19Z",
+          "localizedDescription": "MoviePilot iOS 1.2.6，更新原生音乐播放器并支持仪表板卡片长按播放。\n\n### 更新内容\n\n- 音乐播放页采用专辑封面、居中的歌名与歌手信息、同步歌词和圆形播放控制。\n- 专辑曲目及媒体库搜索结果支持上一首、下一首，切歌时继续使用对应媒体服务器。\n- 仪表板的继续观看和最近入库卡片支持长按，提供本地 iOS 播放及在媒体服务器中打开。\n- 修复系统弹窗关闭后，视频播放控制栏可能不再自动隐藏的问题。\n\n### 安装\n\n下载 `MoviePilot-1.2.6-unsigned.ipa` 后自行重签。本包没有 Apple 证书签名，不能直接安装；原生推送需要开发者团队为 `com.moviepilot.app` 启用 Push Notifications，并使用带该权限的生产描述文件，同时重签小组件、保留一致的 App Groups。免费账户须在重签时移除 `aps-environment`，继续使用主屏幕网页通知。\n\n如果旧版使用 `org.moviepilot.app`，新版会作为独立 App 安装，需要重新登录及绑定通知；旧 App 和数据不会自动迁移或删除。重签后 Bundle ID 与已有安装一致时才能覆盖更新，原生推送还须与 Server 的 topics 允许名单一致。\n\nMoviePilot 后台启用 AppPush 后，在 App **右上角三点 → 连接与显示 → 通知 → 开启系统通知** 中授权，再发送测试通知。Apple `.p8` 私钥、Team ID 与 Key ID 由 Server 配置，App 无需填写。开发签名须同时将 App 的 APNs 环境改为 `development`，不能仅替换描述文件。\n\n音乐封面、队列及仪表板长按播放需搭配本次重建的 [MoviePilot-Frontend v3.2.9](https://github.com/jxxghp/MoviePilot-Frontend/releases/tag/v3.2.9) 或更新的兼容版本。真实 Apple 投递、后台及锁屏接收需在具有推送权限的签名和真机上验证。\n\n[安装与续签](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/install.md) · [小组件](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/widgets.md) · [通知配置](https://github.com/jxxghp/MoviePilot-App/blob/main/guides/notifications.md)\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[682e9532c384af457a275ef5dfe66cbe0672a5cb](https://github.com/jxxghp/MoviePilot-App/commit/682e9532c384af457a275ef5dfe66cbe0672a5cb)。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/jxxghp/MoviePilot-App/releases/download/v1.2.6/MoviePilot-1.2.6-unsigned.ipa",
+          "size": 23699848,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 1.2.5 · 18 Nov 2026",
-      "identifier": "MoviePilot-release-v1.2.5",
-      "caption": "MoviePilot 1.2.5 is available.",
-      "date": "2026-11-18T19:29:32Z",
+      "title": "MoviePilot 1.2.6 · 19 Nov 2026",
+      "identifier": "MoviePilot-release-v1.2.6",
+      "caption": "MoviePilot 1.2.6 is available.",
+      "date": "2026-11-19T09:18:19Z",
       "tintColor": "#8844F6",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
       "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.5"
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.6"
     }
   ]
 }

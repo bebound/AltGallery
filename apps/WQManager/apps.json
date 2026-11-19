@@ -1,0 +1,48 @@
+{
+  "name": "WQManager",
+  "subtitle": "WQManager AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for WQManager",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/icon.png",
+  "website": "https://github.com/hseons/WQManager",
+  "tintColor": "#242529",
+  "apps": [
+    {
+      "name": "WQManager",
+      "bundleIdentifier": "mumu.pduola.WQManager",
+      "developerName": "hseons",
+      "subtitle": "无需越狱的 App 数据备份与缓存清理工具",
+      "localizedDescription": "一款面向 iOS 26+ 的开源 App 数据管理、备份与单应用缓存清理工具，无需越狱。可把某个 App 的数据目录打包成可校验的备份并写回原 App，也能只清理所选 App 的缓存与临时目录。所有数据都在本机处理，没有账号、没有统计、没有云端。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/apps.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/cleaner.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/history.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/settings.webp"
+      ],
+      "tintColor": "#242529",
+      "versions": [
+        {
+          "version": "0.5",
+          "date": "2026-11-18T11:48:53Z",
+          "localizedDescription": "显示版本 **0.5**，构建 **1**；内部发布修订 **0.5.0**。\n\n这个版本的主题是「找得到、看得懂、拿得走」：\n\n- **全局文件搜索**：跨 App 搜索用户文件，结果边扫边出；支持文件名 / 相对路径 / App 名、类型与最小大小筛选、路径 / 大小 / 最新排序。结果可原地预览或打开所在目录，扫描中可取消。\n- **空间变化**：按「较上次 / 近 7 天 / 近 30 天」比较，按增长排序并显示合计占用与净变化；新增全部 App 合计趋势图，单 App 详情保留当前大小、较上次、近 7 天与扫描历史。\n- **文件审计与导出**：大文件 / 重复文件按 App 分组，重复项经 SHA-256 确认；清理时每个 App 至少保留一份，删除进入空间透镜回收站。导出中心可分享或存储到「文件」，目标写入完成才记成功，取消 / 失败会清理临时目录。\n- **安全与一致性**：跨 App 的相同文件不再被当成可互相替代；重复清理不能选中某个 App 的最后一份；上次中断的导出在重开后显示「已中断」；清理 14 个无用本地化 key，中英文 813 个 key 对齐。\n- **界面**：修复空间变化页底部被悬浮 Tab Bar 遮挡；补充全局搜索、空间趋势、导出选择面板的中英文文案。\n\n验证：23 个本地测试程序、9 条模拟器 UI 流程、Debug 模拟器与 Release arm64 构建、`xcodebuild analyze` 全部通过，编译警告 0 条。\n\n已知边界：本轮 IPA 未签名，未在真机安装；超大 App 的冷扫描耗时、App Group 签名、分享 / 存储到「文件」以及强制中断场景仍需真机验收。空间趋势样本不足时显示「—」，这是预期行为。\n\n**遇到问题或有建议，欢迎到 [GitHub Issues](https://github.com/hseons/WQManager/issues) 提出**。请尽量附上系统版本、App 名称、复现步骤和截图；崩溃日志可配合附件中的 dSYM 定位。\n\n附件为**未签名 IPA**、SHA-256 和 dSYM，请按项目说明保留 App Group 权限重新签名后安装。",
+          "downloadURL": "https://github.com/hseons/WQManager/releases/download/v0.5.0/WQManager-0.5-build1-unsigned.ipa",
+          "size": 952702,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "mumu.pduola.WQManager",
+      "title": "WQManager 0.5 · 18 Nov 2026",
+      "identifier": "WQManager-release-v0.5.0",
+      "caption": "WQManager 0.5 is available.",
+      "date": "2026-11-18T11:48:53Z",
+      "tintColor": "#242529",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/news.png",
+      "notify": true,
+      "url": "https://github.com/hseons/WQManager/releases/tag/v0.5.0"
+    }
+  ]
+}
