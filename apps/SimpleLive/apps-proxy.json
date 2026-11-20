@@ -1,0 +1,47 @@
+{
+  "name": "Simple Live",
+  "subtitle": "Simple Live AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Simple Live",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/icon.png",
+  "website": "https://github.com/June6699/dart_simple_live",
+  "tintColor": "#24A7EB",
+  "apps": [
+    {
+      "name": "Simple Live",
+      "bundleIdentifier": "com.xycz.simple-live",
+      "developerName": "June6699",
+      "subtitle": "支持弹幕与 IPTV 的开源多平台直播聚合播放器",
+      "localizedDescription": "简简单单的看直播（Simple Live）是一款使用 Flutter 开发的开源多平台直播聚合播放器，支持虎牙、斗鱼、哔哩哔哩、抖音、快手等平台的直播与弹幕，并内置公开的 IPTV 直播源。支持关注、标签、历史与弹幕屏蔽词，配置可导入导出，并可通过房间服务、局域网或 WebDAV 同步。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/category.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/settings.webp"
+      ],
+      "tintColor": "#24A7EB",
+      "versions": [
+        {
+          "version": "1.13.3",
+          "date": "2026-11-08T13:17:59Z",
+          "localizedDescription": "# Simple Live v1.13.3 更新速览\r\n\r\n发布日期：2026-10-25\r\n\r\n本版主题：发热优化、Windows 退出修复、桌面端快捷键中文输入法适配、B站弹幕缺失修复与虎牙 4K 断流调查结论。2026-11-01 追加全屏四角时钟（#160），2026-11-02 追加音量增强与音量手势修复（#161），2026-11-03 修复抖音部分房间登录墙导致进不去、关注页刷不出，2026-11-08 追加 iOS 系统画中画、取消关注不再触发全量刷新（#163）与 WebDAV 恢复 500 根因修复（#164）。\r\n\r\n经过19次构建，终于解决了，连media_kit都没解决的iOS PIP问题，在一个PR中，获得了思路，经过一些修复，与我们项目实现了兼容。\r\n\r\n在此，感谢各位提供日志的用户：@laobai95 等等多位用户（请在群内提供git用户名）。\r\n## 省电模式（新增，默认关闭）\r\n\r\n- 针对安卓端观看时发热严重的反馈，新增一键「省电模式」（设置 → 直播间设置 → 播放器，置于首位）：视频缩放降档（均衡 → bilinear、画质 → spline36）、弹幕限 60 帧、关闭弹幕描边、放宽安卓播放检测频率、多开上限 4 个且压至最低清晰度。\r\n- 默认关闭，关闭时所有行为与 v1.13.2 完全一致；打开后进入下一个直播间生效。全端开关一致可见（iOS 上为弹幕部分生效）。\r\n\r\n## 弹幕渲染降耗\r\n\r\n- 弹幕描边开关（默认开）：关闭后每条弹幕少一次整段文本绘制，弹幕越密越省。\r\n- 帧率上限（默认跟随屏幕）：高刷屏可限 60 帧，视觉无差异、GPU 负担约减半。\r\n- 修复「描边宽度」设置从未生效的问题（渲染侧此前硬编码为 2）。\r\n- 弹幕层透明度改为逐条并入颜色 alpha，去掉整层离屏合成（视觉不变）。\r\n\r\n## 性能与修复\r\n\r\n- 高热房间 CPU：屏蔽词正则从「每条消息每个词重新编译」改为编译一次缓存，消息量越大收益越明显。\r\n- Windows 退出修复：关闭应用时偶发的「快速异常检测失败」fast-fail 弹窗与进程挂死；本地 fork media_kit_video Windows 部分，纹理与 mpv render context 释放改为同步等待，退出时等待 mpv 关停。\r\n- 关闭窗口弹「Unknown Hard Error」：装有搜狗输入法等第三方输入法的电脑，每次关闭都会弹出系统错误（出错模块 `SogouPY.ime`）；现退出时跳过第三方模块的卸载回调，不再弹窗。\r\n\r\n## 桌面端快捷键（Windows / macOS / Linux）\r\n\r\n- 中文输入法下 F、R、空格等单键快捷键可直接使用，无需先切英文；输入框内照常打中文。\r\n- 带 Ctrl / Alt / Win（macOS 为 Cmd / Ctrl / Option）的组合键不再被拦截，修复 macOS 直播间内 Cmd+Q 无法退出等问题；macOS / Linux 补上空格键播放/暂停；长按只触发一次。\r\n\r\n## B站弹幕缺失修复（#150）\r\n\r\n- B站对弹幕接口的登录态风控（账号被标记后带 cookie 请求被拒）导致弹幕缺失、换号才能恢复；现登录态请求失败时自动回退未登录获取 token，以游客身份连接弹幕。\r\n- 回退不粘连：每次进房先走登录态，风控解除后自动恢复；清晰度与账号其他功能不受影响（取流仍走登录态）。\r\n\r\n## 全屏四角时钟（新增，#160，2026-11-01 追加）\r\n\r\n- 全屏直播画面四角（左上/右上/左下/右下）常驻显示当前时间（HH:mm），不随控制栏隐藏；仅全屏显示，默认关闭、右上角，入口在 直播间设置 → 四角时钟。\r\n- 时钟层不拦截触摸，滑动手势不受影响；组件自管定时器、关闭时零开销。TV 端同版合入同款功能。\r\n\r\n## 音量增强与音量手势修复（#161，2026-11-02 追加）\r\n\r\n- 新增「音量增强」开关（默认关，直播间设置 → 播放器 → 音量）：开启后音量上限 0–300%，超过 100% 为播放器软件增益（最高 ×3.0），不动系统音量；关闭时全部音量入口回到 0–100，与旧版一致。\r\n- 音量弹窗（底栏音量图标，移动端本版起也开放）：滑条 + 预设 0/50/100/200/300（关=0/50/100），增益区显示倍率。\r\n- 修复安卓快速上下滑调音量「实际没有反应」：终值落地不再被丢弃，快速滑动必生效。\r\n- 纯增益在音源响度大时可能破音，调回 200% 以内即可。TV 端同版合入音量控制。\r\n\r\n## 虎牙 4K 断流调查结论（#156，2026-10-31）\r\n\r\n- 虎牙已将 4K / 4K HDR 设为 VIP 专属画质（登录网页端画质列表实测标注）。非 VIP 账号拉 4K 会被 CDN 随机拒绝（`Failed to open`）或限速至不可用带宽，表现为断流卡顿；与客户端参数、登录态、IP 均无关，客户端无解。\r\n- 2K 及以下不受影响，追求流畅建议选 2K；调查中试行的参数修改已验证无效并撤回。\r\n- TV 端结论相同；TV 版本另有轮播列表、标签批量管理与全屏四角时钟。\r\n\r\n## 抖音登录墙房间进不去修复（2026-11-03 追加）\r\n\r\n- 部分抖音房间（如「赛雷三分钟」）App 内报 room 为空进不去、关注页刷不出，但直链导入外部播放器能播。根因是匿名访问被 web 端按房间维度下发扫码登录墙（`enter_mode=1`、不下发 room），换 ttwid / 移动端 UA 均无效。\r\n- 新增移动端 reflow 匿名取房：凭登录墙响应里仍可匿名拿到的主播 `sec_user_id`，请求 reflow 接口（无需 Cookie 与签名）取回真实房间与流地址，在 API 与 HTML 两条路径都做兜底；关注页状态判断同步修复。\r\n- 实网验证 4 档画质真实可播、`getLiveStatus` 正常。TV 端共享核心库同步生效。\r\n\r\n## iOS 系统画中画（新增，2026-11-08 追加）\r\n\r\n- iOS 端新增系统级小窗（画中画，要求 iOS 15+）：直播画面悬浮于桌面与其他应用之上，后台持续观看；采用 AVSampleBufferDisplayLayer 路线，mpv 渲染帧零拷贝桥接进系统小窗。\r\n- 「后台保持画面」开关（设置 → 播放设置 → iOS 小窗，默认开）：开启后进小窗先停播重建管线至软解码+软渲染（纯 CPU，不依赖后台 GPU 权限），切后台画面持续显示，实测连续 76 秒 30fps 零丢帧；关闭为即显省电路线，秒开，切后台画面停住、声音正常。\r\n- 返回 App 自动关闭小窗并恢复应用内播放；小窗内可暂停/恢复播放，与 App 内状态同步。\r\n- 已知说明：重建路线进小窗有 1~2 秒重连空窗；后台持续画面耗电略增，部分设备后台渲染表现不一致，可按实测用开关选择；其他平台（Android 系统小窗、TV）不受本项影响。\r\n\r\n## 取消关注不再触发全量刷新（#163，2026-11-08 追加）\r\n\r\n- 清理关注列表时，每次取消关注都会触发**全部**关注的开播状态刷新（上百关注等于上百次请求），容易触发平台风控。\r\n- 现取消关注仅本地移除（标签归属同步清理），不再发起任何网络请求；开播状态按原有的定时刷新 / 手动刷新节奏更新。\r\n\r\n## WebDAV 恢复 500 根因修复（#164，2026-11-08 追加）\r\n\r\n- 「能上传、不能恢复」的根因确认：Alist 等网关把恢复（GET）请求代理转发到阿里云盘 OSS 签名直链时，应用携带的多余 `Content-Type: text/xml` 头被透传参与签名计算，与直链签名不一致（`SignatureDoesNotMatch`），403 被转成 500 返回。\r\n- 修复：GET 请求不再携带该头（PROPFIND 所需的 XML Content-Type 由组件按规范自行设置，不受影响）。\r\n- 同步失败时的报错增强：附带请求方法、URL、状态码与服务器响应体摘要（300 字符），便于定位服务端问题。\r\n\r\n## 设置页重排\r\n\r\n- 我的-设置入口：直播设置、弹幕设置、多开设置提前聚拢（外观 → 主页 → 直播 → 弹幕 → 多开 → 播放页 → 关注 → 定时 → 其他）。\r\n- 直播设置：省电模式置顶；移动端后台播放相关项并入「直播间」段；实时字幕（实验）移至末尾。\r\n- 弹幕设置拆为屏蔽 / 显示 / 重点动态 / 过滤与延迟四段，屏蔽保持第一。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/June6699/dart_simple_live/releases/download/v1.13.3/ios_no_sign.ipa",
+          "size": 35414735,
+          "minOSVersion": "13.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.xycz.simple-live",
+      "title": "Simple Live 1.13.3 · 08 Nov 2026",
+      "identifier": "Simple Live-release-v1.13.3",
+      "caption": "Simple Live 1.13.3 is available.",
+      "date": "2026-11-08T13:17:59Z",
+      "tintColor": "#24A7EB",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/news.png",
+      "notify": true,
+      "url": "https://github.com/June6699/dart_simple_live/releases/tag/v1.13.3"
+    }
+  ]
+}

@@ -19,11 +19,11 @@
       "tintColor": "#1E8FC7",
       "versions": [
         {
-          "version": "0.9.18",
-          "date": "2026-11-17T15:21:21Z",
-          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.18\n\nYour own inspectors, your own cleaning targets, and Japanese.\n\n## New\n\n- **Custom inspectors** ([#45](https://github.com/kolbicz/WQFiles/issues/45)): small JavaScript programs that show a file's contents your way. Long-press a file → **Open As → Custom Inspector…**. WQ Files ships only the runtime; the inspectors are yours.\n  - **Install:** open a `.zip` holding an inspector with WQ Files (share sheet, AirDrop, Files app), or copy its folder into **Settings → Inspectors**. Installing one with the same name again updates it.\n  - **Write one:** a folder with `manifest.json` and `inspect.js`. The script gets the file as bytes, as text and, for property lists, already parsed, and returns sections with rows or text. A `data.json` can hold your own lookup tables. Two examples and the full format are in the [README](https://github.com/kolbicz/WQFiles#custom-inspectors).\n  - **Results:** tap a value to copy it; Share sends everything as text. Script errors show with their line number.\n  - **Safe by design:** inspectors only read. A script has no access to other files, the network or the app, and is stopped after 2 seconds.\n- **Your own folders and files in the Cache Cleaner:** long-press a folder or file inside an app's data → **Add to Cache Cleaner**. Instagram, for example, keeps uploaded videos in `Library/Application Support/Instagram/VideoUpload` long after they're posted.\n  - Choose **Always Select** (selected after every scan and by Select All, like caches) or **Select by Hand** (you pick it each time). Long-press it in the Cache Cleaner to switch **Select Automatically** later, or to take it off the list.\n  - A folder is emptied (the folder itself stays), a file is deleted.\n  - Only add what the app can do without: anything it keeps there (drafts, downloads, logins) is gone once cleaned. The app's settings folders can't be added.\n  - Saved per app, so it keeps working when the app moves to a new container.\n- **Japanese** ([#69](https://github.com/kolbicz/WQFiles/pull/69)), the 14th language. Thanks to kinboy56.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Custom inspectors idea: deltaII. Translations: iosrxwy and FrogTool (Simplified Chinese), kinboy56 (Japanese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `177b383c541f6deb04db331a8c7b5ed3ba8f574d85e24a72cb867f3699550a18`",
-          "downloadURL": "https://gh-proxy.com/https://github.com/kolbicz/WQFiles/releases/download/v0.9.18/WQFiles.ipa",
-          "size": 2171189,
+          "version": "0.9.19",
+          "date": "2026-11-20T01:16:50Z",
+          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.19\n\nA small fix release, plus optional App Store icons.\n\n## New\n\n- **Settings → App Store Icons** (off by default): other apps' icons can't be read with worse_query, so WQ Files can fetch them from Apple's public App Store lookup instead. This sends the bundle ids of your installed apps and your region to Apple. Sideloaded apps and apps that were removed from the App Store keep the placeholder. Icons are stored in WQ Files (about 7 KB each, not backed up); turning the setting off deletes them.\n\n## Fixed\n\n- **Apps with one-word bundle ids** like Pinterest (`pinterest`) showed \"container identity unavailable\" and 0 KB, and couldn't be opened, backed up or cleared. They work now.\n- **App icons:** other apps' icons can't be read with worse_query, so they show a placeholder. Third-party apps now all get the neutral one, instead of misleading guesses like the Books icon for Facebook or the Music icon for TikTok. Apple services that iOS only gives a placeholder for no longer show iOS's grey grid in dark mode.\n- **Apps list on iOS 27:** the header above the list (number of apps and their size) showed as an empty band, leaving a large gap. It shows its text again, with less space above it.\n- **iOS 27 beta 5 / public beta 3** ([#70](https://github.com/kolbicz/WQFiles/issues/70)): after swiping back from App Backups, the first row on the Backups tab stopped responding. It keeps working now. The blurred band under the bar can still look too tall on that beta; that's an iOS bug. Release versions of iOS aren't affected.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Custom inspectors idea: deltaII. Translations: iosrxwy and FrogTool (Simplified Chinese), kinboy56 (Japanese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to control0forver for testing four debug builds, and to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `32a0821d16b4ddedcc7b2063f90530952a644308009db0522c618c23233cacca`",
+          "downloadURL": "https://gh-proxy.com/https://github.com/kolbicz/WQFiles/releases/download/v0.9.19/WQFiles.ipa",
+          "size": 2182170,
           "minOSVersion": "26.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "cz.kolbi.wqfiles",
-      "title": "WQ Files 0.9.18 · 17 Nov 2026",
-      "identifier": "WQ Files-release-v0.9.18",
-      "caption": "WQ Files 0.9.18 is available.",
-      "date": "2026-11-17T15:21:21Z",
+      "title": "WQ Files 0.9.19 · 20 Nov 2026",
+      "identifier": "WQ Files-release-v0.9.19",
+      "caption": "WQ Files 0.9.19 is available.",
+      "date": "2026-11-20T01:16:50Z",
       "tintColor": "#1E8FC7",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
       "notify": true,
-      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.18"
+      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.19"
     }
   ]
 }

@@ -218,11 +218,11 @@
       "tintColor": "#3CAEFF",
       "versions": [
         {
-          "version": "2.6.0-nightly.20261114.1505",
-          "date": "2026-11-14T15:41:20Z",
-          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- macOS: a refused notarization is not a build failure\n- arm64: the crash post-mortem's microVU readers are Linux only\n- GameDB: Stuntman and Driv3r run the EE at Exact clamping\n- arm64: a SIGILL gets the crash post-mortem too\n- arm64: the crash post-mortem names where the lr points\n- arm64: the crash post-mortem's VU microcode comes from the program's copy\n- arm64: the crash post-mortem names the library a pc outside the JIT is in\n- arm64: the crash post-mortem shows the VU microcode at the fault block\n- arm64: the crash post-mortem names the microVU block that holds the pc\n- LSFG: rebuild the swap chain before the acquire, and make it FIFO\n- microVU: don't finish VU1 through a dispatcher that does not exist\n- Tests: a second boot after a VM that stopped with VU1 busy\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261113...6d9511e29e3e00d5ab78899f5292b967ab850ddb",
-          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261114/ARMSX2-nightly-20261114-6d9511e29e-iOS-arm64.ipa",
-          "size": 40717380,
+          "version": "2.6.0-nightly.20261120.0157",
+          "date": "2026-11-20T02:24:38Z",
+          "localizedDescription": "Automated nightly build for community testing (unsigned).\n\nEvery download is named `ARMSX2-nightly-DATE-COMMIT-PLATFORM`, so builds\nfrom different nights stay distinguishable after you have downloaded them.\n\n- macOS arm64: macOS-arm64.tar.xz\n- Linux arm64: Linux-arm64-4K-pages.AppImage on most distros, or the 16K one on Asahi Linux and other Apple Silicon kernels (run getconf PAGESIZE if unsure)\n- Windows arm64: Windows-arm64.zip\n- RetroArch on Linux arm64: Linux-arm64-libretro-core.tar.zst, a 4K-page build\n- Bare-display kmsdrm handhelds: Linux-arm64-SDL-handheld.tar.zst, a 4K-page build (Rocknix and Batocera run compositors, so use the Qt AppImage there instead)\n- Android: Android-arm64.apk (installs as ARMSX2 Nightly, alongside the stable app)\n- iOS: iOS-arm64.ipa, unsigned, sideload it (installs as ARMSX2 Nightly, alongside the stable app)\n\nComing from an old nightly? Nightlies are now a separate app, ARMSX2 Nightly, next to stable.\n\n- Android: stable cannot install over an old nightly. Back up your saves and memory cards, uninstall the old nightly, then install the stable APK.\n- iOS: your old nightly is the ARMSX2 iOS app and still has your saves. Copy them into ARMSX2 Nightly with the Files app.\n\n## What's new\n- Catalog: a cache entry stamped one second ahead of time() is fresh\n- SDL frontend: pausing a game launched from the command line no longer quits\n- GS/Vulkan: the pipeline builder checks each vertex array against its own limit\n- tests: a Vulkan pipeline with eight vertex attributes takes a second buffer and a ninth attribute\n- eerunner: --frame-hashes reads VU1 memory once the VU1 thread is idle\n- GS/HW: below 1x, give every render target an exact scaled size\n- Android: launch extras that turn PINE on and pick the GPU driver\n- gsctl: pad commands and a TCP connection\n- eerunner: --pad-script, --pad-record, --frame-hashes and the nullhw renderer\n- PINE: messages to hold pads, play pad scripts and record pad input\n- Pad: scripts, clients and recordings can hold a DualShock 2\n- GS/Vulkan: declare the run shader's depth write depth_less too\n- GS/Vulkan: declare the pixel shader's depth write depth_less again\n- GS/Vulkan: flush the run machine's index and table rings before the submit\n- Android: tell apart malisx2 installed but not selected from malisx2 missing\n- gsrunner: drop -readback-kick-passes\n- Android: a changed PGO profile rebuilds every object\n- SIF: a forced stop of SIF0 or SIF1 ends the EE side of the transfer\n- GS/Vulkan: do not spin the GPU for readbacks on Mali\n- Qt: give the GS a pending window type while surfaceless\n- GS/Vulkan: one sampling call per run on Turnip\n- GS/Vulkan: round an unblended draw's output in a blending run\n- GS/Vulkan: no run way for Af through the blend constant\n- GS/Vulkan: merge the blend unit's own alpha blend into runs\n- Android: regenerate the PGO profile on the source with the sprite ramp, alpha rectangle, IOP thread lag and folder memory card changes\n- FolderMcd: read a save file the host will not open for writing\n- tests: a pause flush during a folder card block rewrite keeps the files\n- FolderMcd: rebuild the cluster-to-file map on every flush\n- FolderMcd: skip a flush when nothing was written since the last one\n- FolderMcd: keep a cached page that the flush could not write\n- Android: call the Java file helpers through cached method IDs\n- IOP thread: hold the tight lag bound while a memory card server call runs\n- GS/Vulkan: decide full-screen exclusive from the window system on Windows\n- GS/Metal: shrink the pipeline selector's padding for the two-byte VSSelector\n- GS/Vulkan: accept VK_KHR_calibrated_timestamps as well as the EXT name\n- GS/Vulkan: give a device window support while its Android surface is gone\n- GS/Vulkan: signal the spin semaphore only when the spin has its own queue\n- GS/Vulkan: test the sprite ramp without integer division\n- GS: drop a reference to private notes from the sprite ramp comment\n- GS/Vulkan: carry the sprite ramp in its own vertex shader variant\n- Tests: lift write protection before SetExtraMemory shrinks the map\n- GS: a local move forgets the destination's alpha whatever its format\n- GS: alpha rectangles only from sprites shown to write every pixel\n- GS: keep one target copy for a run of draws on the copy road\n- GameDB: raise Beyond Good & Evil to High blending on mobile\n- GS/Vulkan: keep the sprite ramp off shuffles and filtered sprites\n- GS/Vulkan: lower a texel-coordinate sprite's U/V past its first column on the console's ramp\n- GS: list GSAlphaKnownRects.h in the MSVC project\n- GS: exact alpha-mask drop reads alpha bits known inside rectangles\n- GS: rules for alpha bits known inside rectangles of a target\n- GS: test destination alpha in the shader when the mask keeps bit 7\n- Report: the consent text says reports are kept 14 days, not 90\n- Android: no Qualcomm driver notice at game start\n- Translations: 2.9.4's new strings in all 19 languages\n- iOS: show JIT Off in Settings while the interpreter runs\n- iOS: run a stub from the code arena before using it\n- iOS: ask Dopamine to mark the app debugged at launch\n- iOS: pick the iOS 26 JIT mode from the device tree\n- iOS: split ShaderWorkspaceView around ShaderWorkspaceModel\n- iOS: split AppearanceSettingsView into three section views\n- iOS: reach the About page from the Settings list\n- iOS: split SettingsRootView into its pane, pages and JIT section\n- iOS: move the BIOS library state and row out of BIOSListView\n- iOS: split MenuAudioPackManager into install and event extensions\n- iOS: split OrbitKeysModel into its types and an input extension\n- iOS: correct the skin replace gate's comment and drop its deinit\n- iOS: split the Virtual Pad settings page into a flow model and sections\n- iOS: split RootView into one file per menu type and two modifiers\n- iOS: keep every live view per card in the launch card registry\n- iOS: read the library's landscape state from one container size\n- iOS: export the legacy fallback for an unset orientation option\n- iOS: sort by display name when a favorite toggles\n- iOS: split GameListView into library models, cards and layouts\n- iOS: keep the speed shortcut's live speed across a menu round trip\n- iOS: keep the virtual pad toggle across a menu round trip\n- iOS: drop AppState.selectedTab, which nothing reads\n- iOS: split GameScreenView, with GameSession taking the game lifecycle\n- iOS: split the Cheats panel into a session and three section views\n- iOS: split the pause menu into its footer, panel and navigation graph\n- iOS: split the per-game panel into a draft, session and coordinator\n- MSVC: list the three headers the Visual Studio project was missing\n- Android: say that save states do not load across the Extended RAM switch\n- Tests: run and rewrite an EE JIT block above 64MB with Extended RAM\n- Report: convert GPU clocks to kHz in the power snapshot\n- Report: record live clocks, thermals and power state\n- GameDB: Full clamping, not Exact, is what Stuntman and Driv3r need\n- Android: a switch for Extended RAM (128MB)\n- Memory: Extended RAM runs on the ARM64 EE recompiler outside arcade sessions too\n\nFull changelog: https://github.com/ARMSX2/ARMSX2/compare/nightly-20261114...1d1c26d8a2a7db715c674a2831176b13a256f868",
+          "downloadURL": "https://github.com/ARMSX2/ARMSX2/releases/download/nightly-20261120/ARMSX2-nightly-20261120-1d1c26d8a2-iOS-arm64.ipa",
+          "size": 40427581,
           "minOSVersion": "17.0"
         }
       ]
@@ -1477,6 +1477,30 @@
       ]
     },
     {
+      "name": "Simple Live",
+      "bundleIdentifier": "com.xycz.simple-live",
+      "developerName": "June6699",
+      "subtitle": "支持弹幕与 IPTV 的开源多平台直播聚合播放器",
+      "localizedDescription": "简简单单的看直播（Simple Live）是一款使用 Flutter 开发的开源多平台直播聚合播放器，支持虎牙、斗鱼、哔哩哔哩、抖音、快手等平台的直播与弹幕，并内置公开的 IPTV 直播源。支持关注、标签、历史与弹幕屏蔽词，配置可导入导出，并可通过房间服务、局域网或 WebDAV 同步。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/category.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/settings.webp"
+      ],
+      "tintColor": "#24A7EB",
+      "versions": [
+        {
+          "version": "1.13.3",
+          "date": "2026-11-08T13:17:59Z",
+          "localizedDescription": "# Simple Live v1.13.3 更新速览\r\n\r\n发布日期：2026-10-25\r\n\r\n本版主题：发热优化、Windows 退出修复、桌面端快捷键中文输入法适配、B站弹幕缺失修复与虎牙 4K 断流调查结论。2026-11-01 追加全屏四角时钟（#160），2026-11-02 追加音量增强与音量手势修复（#161），2026-11-03 修复抖音部分房间登录墙导致进不去、关注页刷不出，2026-11-08 追加 iOS 系统画中画、取消关注不再触发全量刷新（#163）与 WebDAV 恢复 500 根因修复（#164）。\r\n\r\n经过19次构建，终于解决了，连media_kit都没解决的iOS PIP问题，在一个PR中，获得了思路，经过一些修复，与我们项目实现了兼容。\r\n\r\n在此，感谢各位提供日志的用户：@laobai95 等等多位用户（请在群内提供git用户名）。\r\n## 省电模式（新增，默认关闭）\r\n\r\n- 针对安卓端观看时发热严重的反馈，新增一键「省电模式」（设置 → 直播间设置 → 播放器，置于首位）：视频缩放降档（均衡 → bilinear、画质 → spline36）、弹幕限 60 帧、关闭弹幕描边、放宽安卓播放检测频率、多开上限 4 个且压至最低清晰度。\r\n- 默认关闭，关闭时所有行为与 v1.13.2 完全一致；打开后进入下一个直播间生效。全端开关一致可见（iOS 上为弹幕部分生效）。\r\n\r\n## 弹幕渲染降耗\r\n\r\n- 弹幕描边开关（默认开）：关闭后每条弹幕少一次整段文本绘制，弹幕越密越省。\r\n- 帧率上限（默认跟随屏幕）：高刷屏可限 60 帧，视觉无差异、GPU 负担约减半。\r\n- 修复「描边宽度」设置从未生效的问题（渲染侧此前硬编码为 2）。\r\n- 弹幕层透明度改为逐条并入颜色 alpha，去掉整层离屏合成（视觉不变）。\r\n\r\n## 性能与修复\r\n\r\n- 高热房间 CPU：屏蔽词正则从「每条消息每个词重新编译」改为编译一次缓存，消息量越大收益越明显。\r\n- Windows 退出修复：关闭应用时偶发的「快速异常检测失败」fast-fail 弹窗与进程挂死；本地 fork media_kit_video Windows 部分，纹理与 mpv render context 释放改为同步等待，退出时等待 mpv 关停。\r\n- 关闭窗口弹「Unknown Hard Error」：装有搜狗输入法等第三方输入法的电脑，每次关闭都会弹出系统错误（出错模块 `SogouPY.ime`）；现退出时跳过第三方模块的卸载回调，不再弹窗。\r\n\r\n## 桌面端快捷键（Windows / macOS / Linux）\r\n\r\n- 中文输入法下 F、R、空格等单键快捷键可直接使用，无需先切英文；输入框内照常打中文。\r\n- 带 Ctrl / Alt / Win（macOS 为 Cmd / Ctrl / Option）的组合键不再被拦截，修复 macOS 直播间内 Cmd+Q 无法退出等问题；macOS / Linux 补上空格键播放/暂停；长按只触发一次。\r\n\r\n## B站弹幕缺失修复（#150）\r\n\r\n- B站对弹幕接口的登录态风控（账号被标记后带 cookie 请求被拒）导致弹幕缺失、换号才能恢复；现登录态请求失败时自动回退未登录获取 token，以游客身份连接弹幕。\r\n- 回退不粘连：每次进房先走登录态，风控解除后自动恢复；清晰度与账号其他功能不受影响（取流仍走登录态）。\r\n\r\n## 全屏四角时钟（新增，#160，2026-11-01 追加）\r\n\r\n- 全屏直播画面四角（左上/右上/左下/右下）常驻显示当前时间（HH:mm），不随控制栏隐藏；仅全屏显示，默认关闭、右上角，入口在 直播间设置 → 四角时钟。\r\n- 时钟层不拦截触摸，滑动手势不受影响；组件自管定时器、关闭时零开销。TV 端同版合入同款功能。\r\n\r\n## 音量增强与音量手势修复（#161，2026-11-02 追加）\r\n\r\n- 新增「音量增强」开关（默认关，直播间设置 → 播放器 → 音量）：开启后音量上限 0–300%，超过 100% 为播放器软件增益（最高 ×3.0），不动系统音量；关闭时全部音量入口回到 0–100，与旧版一致。\r\n- 音量弹窗（底栏音量图标，移动端本版起也开放）：滑条 + 预设 0/50/100/200/300（关=0/50/100），增益区显示倍率。\r\n- 修复安卓快速上下滑调音量「实际没有反应」：终值落地不再被丢弃，快速滑动必生效。\r\n- 纯增益在音源响度大时可能破音，调回 200% 以内即可。TV 端同版合入音量控制。\r\n\r\n## 虎牙 4K 断流调查结论（#156，2026-10-31）\r\n\r\n- 虎牙已将 4K / 4K HDR 设为 VIP 专属画质（登录网页端画质列表实测标注）。非 VIP 账号拉 4K 会被 CDN 随机拒绝（`Failed to open`）或限速至不可用带宽，表现为断流卡顿；与客户端参数、登录态、IP 均无关，客户端无解。\r\n- 2K 及以下不受影响，追求流畅建议选 2K；调查中试行的参数修改已验证无效并撤回。\r\n- TV 端结论相同；TV 版本另有轮播列表、标签批量管理与全屏四角时钟。\r\n\r\n## 抖音登录墙房间进不去修复（2026-11-03 追加）\r\n\r\n- 部分抖音房间（如「赛雷三分钟」）App 内报 room 为空进不去、关注页刷不出，但直链导入外部播放器能播。根因是匿名访问被 web 端按房间维度下发扫码登录墙（`enter_mode=1`、不下发 room），换 ttwid / 移动端 UA 均无效。\r\n- 新增移动端 reflow 匿名取房：凭登录墙响应里仍可匿名拿到的主播 `sec_user_id`，请求 reflow 接口（无需 Cookie 与签名）取回真实房间与流地址，在 API 与 HTML 两条路径都做兜底；关注页状态判断同步修复。\r\n- 实网验证 4 档画质真实可播、`getLiveStatus` 正常。TV 端共享核心库同步生效。\r\n\r\n## iOS 系统画中画（新增，2026-11-08 追加）\r\n\r\n- iOS 端新增系统级小窗（画中画，要求 iOS 15+）：直播画面悬浮于桌面与其他应用之上，后台持续观看；采用 AVSampleBufferDisplayLayer 路线，mpv 渲染帧零拷贝桥接进系统小窗。\r\n- 「后台保持画面」开关（设置 → 播放设置 → iOS 小窗，默认开）：开启后进小窗先停播重建管线至软解码+软渲染（纯 CPU，不依赖后台 GPU 权限），切后台画面持续显示，实测连续 76 秒 30fps 零丢帧；关闭为即显省电路线，秒开，切后台画面停住、声音正常。\r\n- 返回 App 自动关闭小窗并恢复应用内播放；小窗内可暂停/恢复播放，与 App 内状态同步。\r\n- 已知说明：重建路线进小窗有 1~2 秒重连空窗；后台持续画面耗电略增，部分设备后台渲染表现不一致，可按实测用开关选择；其他平台（Android 系统小窗、TV）不受本项影响。\r\n\r\n## 取消关注不再触发全量刷新（#163，2026-11-08 追加）\r\n\r\n- 清理关注列表时，每次取消关注都会触发**全部**关注的开播状态刷新（上百关注等于上百次请求），容易触发平台风控。\r\n- 现取消关注仅本地移除（标签归属同步清理），不再发起任何网络请求；开播状态按原有的定时刷新 / 手动刷新节奏更新。\r\n\r\n## WebDAV 恢复 500 根因修复（#164，2026-11-08 追加）\r\n\r\n- 「能上传、不能恢复」的根因确认：Alist 等网关把恢复（GET）请求代理转发到阿里云盘 OSS 签名直链时，应用携带的多余 `Content-Type: text/xml` 头被透传参与签名计算，与直链签名不一致（`SignatureDoesNotMatch`），403 被转成 500 返回。\r\n- 修复：GET 请求不再携带该头（PROPFIND 所需的 XML Content-Type 由组件按规范自行设置，不受影响）。\r\n- 同步失败时的报错增强：附带请求方法、URL、状态码与服务器响应体摘要（300 字符），便于定位服务端问题。\r\n\r\n## 设置页重排\r\n\r\n- 我的-设置入口：直播设置、弹幕设置、多开设置提前聚拢（外观 → 主页 → 直播 → 弹幕 → 多开 → 播放页 → 关注 → 定时 → 其他）。\r\n- 直播设置：省电模式置顶；移动端后台播放相关项并入「直播间」段；实时字幕（实验）移至末尾。\r\n- 弹幕设置拆为屏蔽 / 显示 / 重点动态 / 过滤与延迟四段，屏蔽保持第一。",
+          "downloadURL": "https://github.com/June6699/dart_simple_live/releases/download/v1.13.3/ios_no_sign.ipa",
+          "size": 35414735,
+          "minOSVersion": "13.0"
+        }
+      ]
+    },
+    {
       "name": "Stats",
       "bundleIdentifier": "com.ishtiaqsyed.StatsForIOS",
       "developerName": "ishtiaq156",
@@ -1679,11 +1703,11 @@
       "tintColor": "#1E8FC7",
       "versions": [
         {
-          "version": "0.9.18",
-          "date": "2026-11-17T15:21:21Z",
-          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.18\n\nYour own inspectors, your own cleaning targets, and Japanese.\n\n## New\n\n- **Custom inspectors** ([#45](https://github.com/kolbicz/WQFiles/issues/45)): small JavaScript programs that show a file's contents your way. Long-press a file → **Open As → Custom Inspector…**. WQ Files ships only the runtime; the inspectors are yours.\n  - **Install:** open a `.zip` holding an inspector with WQ Files (share sheet, AirDrop, Files app), or copy its folder into **Settings → Inspectors**. Installing one with the same name again updates it.\n  - **Write one:** a folder with `manifest.json` and `inspect.js`. The script gets the file as bytes, as text and, for property lists, already parsed, and returns sections with rows or text. A `data.json` can hold your own lookup tables. Two examples and the full format are in the [README](https://github.com/kolbicz/WQFiles#custom-inspectors).\n  - **Results:** tap a value to copy it; Share sends everything as text. Script errors show with their line number.\n  - **Safe by design:** inspectors only read. A script has no access to other files, the network or the app, and is stopped after 2 seconds.\n- **Your own folders and files in the Cache Cleaner:** long-press a folder or file inside an app's data → **Add to Cache Cleaner**. Instagram, for example, keeps uploaded videos in `Library/Application Support/Instagram/VideoUpload` long after they're posted.\n  - Choose **Always Select** (selected after every scan and by Select All, like caches) or **Select by Hand** (you pick it each time). Long-press it in the Cache Cleaner to switch **Select Automatically** later, or to take it off the list.\n  - A folder is emptied (the folder itself stays), a file is deleted.\n  - Only add what the app can do without: anything it keeps there (drafts, downloads, logins) is gone once cleaned. The app's settings folders can't be added.\n  - Saved per app, so it keeps working when the app moves to a new container.\n- **Japanese** ([#69](https://github.com/kolbicz/WQFiles/pull/69)), the 14th language. Thanks to kinboy56.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Custom inspectors idea: deltaII. Translations: iosrxwy and FrogTool (Simplified Chinese), kinboy56 (Japanese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `177b383c541f6deb04db331a8c7b5ed3ba8f574d85e24a72cb867f3699550a18`",
-          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.18/WQFiles.ipa",
-          "size": 2171189,
+          "version": "0.9.19",
+          "date": "2026-11-20T01:16:50Z",
+          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.19\n\nA small fix release, plus optional App Store icons.\n\n## New\n\n- **Settings → App Store Icons** (off by default): other apps' icons can't be read with worse_query, so WQ Files can fetch them from Apple's public App Store lookup instead. This sends the bundle ids of your installed apps and your region to Apple. Sideloaded apps and apps that were removed from the App Store keep the placeholder. Icons are stored in WQ Files (about 7 KB each, not backed up); turning the setting off deletes them.\n\n## Fixed\n\n- **Apps with one-word bundle ids** like Pinterest (`pinterest`) showed \"container identity unavailable\" and 0 KB, and couldn't be opened, backed up or cleared. They work now.\n- **App icons:** other apps' icons can't be read with worse_query, so they show a placeholder. Third-party apps now all get the neutral one, instead of misleading guesses like the Books icon for Facebook or the Music icon for TikTok. Apple services that iOS only gives a placeholder for no longer show iOS's grey grid in dark mode.\n- **Apps list on iOS 27:** the header above the list (number of apps and their size) showed as an empty band, leaving a large gap. It shows its text again, with less space above it.\n- **iOS 27 beta 5 / public beta 3** ([#70](https://github.com/kolbicz/WQFiles/issues/70)): after swiping back from App Backups, the first row on the Backups tab stopped responding. It keeps working now. The blurred band under the bar can still look too tall on that beta; that's an iOS bug. Release versions of iOS aren't affected.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Custom inspectors idea: deltaII. Translations: iosrxwy and FrogTool (Simplified Chinese), kinboy56 (Japanese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to control0forver for testing four debug builds, and to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `32a0821d16b4ddedcc7b2063f90530952a644308009db0522c618c23233cacca`",
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.19/WQFiles.ipa",
+          "size": 2182170,
           "minOSVersion": "26.0"
         }
       ]
@@ -1703,11 +1727,11 @@
       "tintColor": "#00C7A5",
       "versions": [
         {
-          "version": "1.3.4",
-          "date": "2026-11-19T05:42:51Z",
-          "localizedDescription": "## WQGuard v1.3.4 (Build 25)\n\n全面消除 iOS 26 / iOS 27 真机预装系统应用、团队自域钥匙串通配符、TestFlight 测试版应用及 `/private/var` 临时路径解包误报，打通企业签 / 侧载重签后的 `WQGuard` 宿主自白名单闭环，并保留全套密码学签名链验真、Mach-O / ZIP64 全链路防绕过解析、2026 最新漏洞特征库、ARM64 `svc #0x80` 直接系统调用扫描与 13 项固件 CVE 暴露雷达。\n\n---\n\n### 中文更新说明\n\n- **iOS 26 / 27 官方预装与第一方应用零误报加固（`InstalledAppRegistryScanner`）**：\n  - 完整覆盖驻留于 `/private/var/containers/Bundle/Application/<UUID>/` 且在 CoreTrust 静态缓存中省略 `SignerIdentity` 的 120+ 款 Apple 原厂预装可卸载应用与系统 UI 服务（如设置、Siri、信息、健康、App Store、快捷指令、文件、时钟、日历、备忘录、提醒事项、翻译、遥控器、聚焦、库乐队、Swift Playgrounds 等）及官方非 `com.apple.*` 应用（如 App Store 签名的 `Shazam`）。\n  - 完善 Apple 官方内部共享容器命名空间识别（如 `group.tvappservices.*`、`group.is.workflow.*`、`<TeamID>.groups.com.apple.*` 等）与原厂系统级 `no-sandbox` 预装应用边界校验；同时保持对 TrollStore 伪装系统注册、`/var/jb/` 无根越狱路径、`Ad Hoc` / 第三方 `Team ID` / 第三方 `App Group` 伪造包的 100% 高危检出。\n- **团队自域钥匙串通配符精准区分（`ExpandedThreatCatalog` / `IPAPackageScanner`）**：\n  - 将合法的开发者自身团队前缀钥匙串通配符（`<OwnTeamID>.*` 与历史迁移 `<LegacyAppIDPrefix>.*`）与高危全局通配符 `\"*\"`、`\"com.apple.*\"`、跨团队通配符及未签名/Ad-Hoc 通配符严格区分，彻底消除正版 App Store 应用与正常企业签应用（如微博、Erosion、Lokey）的钥匙串误报。\n- **TestFlight 官方渠道精准识别（`InstalledAppRegistryScanner` / `CSBlobParser` / `SecurityPipeline`）**：\n  - 支持识别 Apple 官方 TestFlight 云端重签名证书 `\"TestFlight Beta Distribution\"`，避免将 TestFlight 测试版应用（如 Surge、APTV）误标为「企业签」；同时阻止未加密本地侧载克隆包与 FairPlay 加密 TestFlight 安装项混并，并对第三方组织名含 `TestFlight` 字样的伪造企业证书继续按「企业签」严查。\n- **真机 `/private/var` 解包路径词法规范化修复（`IPAPackageScanner`）**：\n  - 引入不依赖文件系统存在性的纯词法路径规范化 `lexicalStandardizedPath`，彻底修复 iOS 真机 `/private/var/mobile/...` 临时沙盒在解包未签名 `.ipa`（含 `_CodeSignature/` 目录项）时因 `/private` 前缀折叠不一致导致的 `MalformedPackage:ZipSlipOrSymlink` 误报，同时保留对真实 `../` 路径穿越与软链接逃逸的严格拦截。\n- **重签宿主自身白名单闭环（`InstalledAppRegistryScanner` / `WhitelistEngine` / `SecurityPipeline`）**：\n  - 支持经企业描述文件或个人证书重签（含显式 `application-identifier` 变更、App Group 重写及覆盖安装后缓存快照 UUID 变更）的 iOS 运行宿主 `WQGuard` 正确归入「已知工具」（`KNOWN_TOOL`），同时继续严格拦截任何 `.highRisk` 指标、Apple 系统容器组与主流钱包/通讯应用 App Group 抢占。\n- **全量验证**：\n  - Swift 严格并发模式下 45 个 XCTest 套件、872 项自动化测试全部通过（0 失败、0 跳过），并完成 Release `wqguard-cli` 与 `WQGuard_v1.3.4.ipa` 成品严格自审（`KNOWN_TOOL`）及实机验证。\n\n---\n\n### English Release Notes\n\n- **Zero False Positives on iOS 26 / 27 Stock & First-Party Apps (`InstalledAppRegistryScanner`)**:\n  - Added comprehensive verification for 120+ preinstalled/staged Apple stock apps and UI services under `/private/var/containers/Bundle/Application/<UUID>/` where `installation_proxy` omits `SignerIdentity` (including Settings, Siri, Messages, Health, App Store, Shortcuts, Files, Clock, Calendar, Notes, Reminders, Translate, TV Remote, Spotlight, GarageBand, Swift Playgrounds, etc.) as well as Apple-owned App Store apps (`Shazam`), internal Apple App Group namespaces (`group.tvappservices.*`, `group.is.workflow.*`, `<TeamID>.groups.com.apple.*`), and factory `no-sandbox` stock constraints — while preserving 100% `.highRisk` detection on TrollStore system-registration spoofs, rootless jailbreak paths, and third-party Team ID / App Group spoofs.\n- **Own-Team Keychain Wildcard Differentiation (`ExpandedThreatCatalog` / `IPAPackageScanner`)**:\n  - Exempts legitimate developer own-team `<OwnTeamID>.*` and `<LegacyAppIDPrefix>.*` `keychain-access-groups` wildcards on signed builds while continuing to flag global `\"*\"`, `\"com.apple.*\"`, cross-team wildcards, and ad-hoc/unsigned wildcards as `.highRisk`.\n- **Accurate TestFlight Channel Classification (`InstalledAppRegistryScanner` / `CSBlobParser` / `SecurityPipeline`)**:\n  - Recognizes Apple's official `\"TestFlight Beta Distribution\"` cloud re-signing leaf certificate so TestFlight apps (e.g. Surge, APTV) are classified as `TestFlight` (`Safe`) rather than `Enterprise In-House`, while keeping third-party org-name spoofs (`\"iPhone Distribution: TestFlight ...\"`) under strict enterprise scrutiny.\n- **Lexical `/private/var` Temporary Path Canonicalization (`IPAPackageScanner`)**:\n  - Replaced filesystem-dependent `standardizedFileURL` prefix checks with pure lexical canonicalization (`lexicalStandardizedPath`), eliminating false-positive `MalformedPackage:ZipSlipOrSymlink` errors when unpacking `.ipa` archives inside iOS `/private/var/mobile/...` temporary directories while catching all real `../` traversal and symlink escapes.\n- **Re-signed Host Self-Whitelist Continuity (`InstalledAppRegistryScanner` / `WhitelistEngine` / `SecurityPipeline`)**:\n  - Properly recognizes the running iOS `WQGuard` host installation as `KNOWN_TOOL` after enterprise or personal sideload re-signing (including across cached registry snapshots after in-place app updates), while rejecting any `.highRisk` indicator, Apple system group, or wallet/messenger App Group squatting.\n- **Verification**:\n  - `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`: 45 XCTest suites, 872/872 tests passing (0 failures, 0 skipped), plus Release `wqguard-cli` and `WQGuard_v1.3.4.ipa` (`KNOWN_TOOL`) self-audit and physical iPhone verification.\n\n---\n\n### Release Assets / 发布附件\n\n- `WQGuard_v1.3.4.ipa` — Unsigned ad-hoc IPA (`v1.3.4`, Build 25) for iOS 16+ / 17+ / 18+ / 26+ / 27+ (`SHA-256: c8c0f64e1c3e3cef97f387d9a3b14a695419e905135c90bec029eb495e46272d`)\n- `WQGuard-Brotli-Shield.sgmodule` — Surge\n- `WQGuard-Brotli-Shield.module` — Shadowrocket\n- `WQGuard-Brotli-Shield.conf` — Quantumult X\n- `WQGuard-Brotli-Shield.plugin` — Loon\n- `WQGuard-Brotli-Shield.stoverride` — Stash",
-          "downloadURL": "https://github.com/Kianuni/WQGuard/releases/download/v1.3.4/WQGuard_v1.3.4.ipa",
-          "size": 2376779,
+          "version": "1.3.5",
+          "date": "2026-11-20T03:34:18Z",
+          "localizedDescription": "## WQGuard v1.3.5 (Build 26)\n\n全面推进 **CMS 签名链 / 双槽权限 / Mach-O / ZIP64 / 代理防 Brotli 护盾全链路安全加固**，并针对 **iOS 26 / iOS 27 真机系统注册表特性与内部服务容器组** 完成零误报精细校准；全量 **50 个 XCTest 测试套件（1,019 项测试）**在 Swift 严格并发模式下 100% 通过，且完成 `WQGuard_v1.3.5.ipa` 真机实测验证。\n\n---\n\n### 中文更新说明\n\n* **全栈密码学签名与双槽权限防伪加固（`CSBlobParser` / `ChannelClassifier` / `IPAPackageScanner`）**：\n  * 升级 CMS PKCS#7 证书链时间窗口、叶子扩展（EKU / BasicConstraints）与签名属性绑定校验，强化 `CodeResources` 哈希密封与 Mach-O 全切片一致性核验，封堵双槽 XML/DER 权限遮蔽、离线伪造 TestFlight 与嵌套 `.appex` / `.xpc` / 版本化 `.framework` 越权跳板。\n* **Mach-O / ZIP64 / 容器取证深度防绕过与 DoS 防护（`MachOParser` / `MachOScanner` / `ContainerScanner` / `LockdownInstProxyClient`）**：\n  * 完善跨页边界符号扫描、`LC_DYLD_CHAINED_FIXUPS` / `LC_DYLD_INFO_ONLY` 动态导入还原、多段 `LC_ENCRYPTION_INFO_64` 与自定义 RX 段 `svc #0x80` 精确识别；加固 ZIP64 伪造长度流式解压上限、容器非递归 `O_RDONLY | O_NOFOLLOW` 符号链接取证以及 `lockdownd` 环回套接字超时与并发安全。\n* **iOS 26 / 27 真机系统应用零误报精细校准（`InstalledAppRegistryScanner` / `WhitelistEngine`）**：\n  * 完整适配真机 `installation_proxy` 返回未公开内部 Apple `TeamIdentifier`、`/private/preboot/<BootHash>/...` 动态挂载路径、系统预装应用合法私有权限、内部服务容器组（如 `HomePod 设置` 的 `group.homedevicesetup.diagnostics`）以及无 `com.apple.` 前缀裸可执行名 `application-identifier`（如 `/Applications/SESUIServiceApp.app`），同时收紧自定义白名单对受保护钱包 / 社交 / 系统容器组的防抢占限制。\n* **五大代理客户端防 Brotli 溢出护盾加固（`SurgeBrotliShieldHelper` / `brotli-guard.js`）**：\n  * 同步升级至 `#!version=1.3.5`，加固多编码链、异常分隔符及大小写混合 `Content-Encoding: br` 响应头零解压 `HTTP 403` 熔断，完整保留 16 项核心证书锁定排除规则。\n* **全量验证**：\n  * `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`：50 个 XCTest 测试套件、**1,019/1,019** 项自动化测试全部通过（0 失败），完成 Release `wqguard-cli` 与 `WQGuard_v1.3.5.ipa`（`KNOWN_TOOL`）严格自审及物理 iPhone 真机零误报验证。\n\n---\n\n### English Release Notes\n\n* **Full-Stack Cryptographic Signature & Dual-Slot Entitlement Hardening (`CSBlobParser` / `ChannelClassifier` / `IPAPackageScanner`)**:\n  * Upgraded CMS PKCS#7 chain validity window, leaf extension (EKU / BasicConstraints), and signed-attribute binding checks; strengthened `CodeResources` sealing and multi-slice Mach-O consistency checks to block XML/DER slot shadowing, offline TestFlight spoofing, and nested `.appex` / `.xpc` / versioned `.framework` escalation pivots.\n* **Mach-O / ZIP64 / Container Forensics Anti-Evasion & DoS Protection (`MachOParser` / `MachOScanner` / `ContainerScanner` / `LockdownInstProxyClient`)**:\n  * Hardened cross-page symbol scanning, `LC_DYLD_CHAINED_FIXUPS` / `LC_DYLD_INFO_ONLY` stripped-import recovery, multi-segment `LC_ENCRYPTION_INFO_64` intersection, custom RX section `svc #0x80` detection, streaming ZIP64 decompression ceilings, non-recursive `O_RDONLY | O_NOFOLLOW` container symlink tracing, and fail-closed `lockdownd` loopback timeouts and concurrency safety.\n* **Real-Device iOS 26 / 27 System App Zero-False-Positive Calibration (`InstalledAppRegistryScanner` / `WhitelistEngine`)**:\n  * Accurately recognizes real iOS `installation_proxy` records carrying unlisted internal Apple `TeamIdentifier`s, `/private/preboot/<BootHash>/...` dynamic mounts, factory stock entitlements, internal service App Groups (e.g. `group.homedevicesetup.diagnostics` on `HomePod Setup`), and bare single-segment `application-identifier` values (e.g. `/Applications/SESUIServiceApp.app`), while enforcing strict custom-whitelist blocking against protected wallet, messenger, and Apple system App Groups.\n* **5-Client Brotli Overflow Shield Hardening (`SurgeBrotliShieldHelper` / `brotli-guard.js`)**:\n  * Synchronized to `#!version=1.3.5` across all five proxy formats with hardened multi-coding, delimiter, and mixed-case `Content-Encoding: br` header zero-decompression `HTTP 403` protection and full preservation of all 16 SSL-pinning exclusions.\n* **Verification**:\n  * `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`: 50 XCTest suites, **1,019/1,019** tests passing (`0` failures), plus Release `wqguard-cli` & `WQGuard_v1.3.5.ipa` (`KNOWN_TOOL`) self-audit and physical iPhone verification.\n\n---\n\n### Release Assets / 发布附件\n\n* `WQGuard_v1.3.5.ipa` — Unsigned ad-hoc IPA (`v1.3.5`, Build 26) for iOS 16+ / 17+ / 18+ / 26+ / 27+ (`SHA-256: 99afedb15cacb36d133cd86c487834d3ebdcb2be9e18dd76b542b811b010342b`)\n* `WQGuard-Brotli-Shield.sgmodule` — Surge\n* `WQGuard-Brotli-Shield.module` — Shadowrocket\n* `WQGuard-Brotli-Shield.conf` — Quantumult X\n* `WQGuard-Brotli-Shield.plugin` — Loon\n* `WQGuard-Brotli-Shield.stoverride` — Stash",
+          "downloadURL": "https://github.com/Kianuni/WQGuard/releases/download/v1.3.5/WQGuard_v1.3.5.ipa",
+          "size": 2773064,
           "minOSVersion": "16.0"
         }
       ]
@@ -1812,6 +1836,39 @@
   ],
   "news": [
     {
+      "appID": "com.wqguard.app",
+      "title": "WQGuard 1.3.5 · 20 Nov 2026",
+      "identifier": "WQGuard-release-v1.3.5",
+      "caption": "WQGuard 1.3.5 is available.",
+      "date": "2026-11-20T03:34:18Z",
+      "tintColor": "#00C7A5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png",
+      "notify": true,
+      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.3.5"
+    },
+    {
+      "appID": "com.armsx2.ios",
+      "title": "ARMSX2 2.6.0-nightly.20261120.0157 · 20 Nov 2026",
+      "identifier": "ARMSX2-release-nightly-20261120",
+      "caption": "ARMSX2 2.6.0-nightly.20261120.0157 is available.",
+      "date": "2026-11-20T02:24:38Z",
+      "tintColor": "#3CAEFF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "notify": true,
+      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261120"
+    },
+    {
+      "appID": "cz.kolbi.wqfiles",
+      "title": "WQ Files 0.9.19 · 20 Nov 2026",
+      "identifier": "WQ Files-release-v0.9.19",
+      "caption": "WQ Files 0.9.19 is available.",
+      "date": "2026-11-20T01:16:50Z",
+      "tintColor": "#1E8FC7",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
+      "notify": true,
+      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.19"
+    },
+    {
       "appID": "com.jbdotparty.Erosion",
       "title": "Erosion-CN 1.0.6 · 19 Nov 2026",
       "identifier": "Erosion-CN-release-v1.0.6",
@@ -1843,17 +1900,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
       "notify": true,
       "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.6"
-    },
-    {
-      "appID": "com.wqguard.app",
-      "title": "WQGuard 1.3.4 · 19 Nov 2026",
-      "identifier": "WQGuard-release-v1.3.4",
-      "caption": "WQGuard 1.3.4 is available.",
-      "date": "2026-11-19T05:42:51Z",
-      "tintColor": "#00C7A5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.3.4"
     },
     {
       "appID": "com.example.HermesEnabler",
@@ -1931,17 +1977,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
       "notify": true,
       "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.27"
-    },
-    {
-      "appID": "cz.kolbi.wqfiles",
-      "title": "WQ Files 0.9.18 · 17 Nov 2026",
-      "identifier": "WQ Files-release-v0.9.18",
-      "caption": "WQ Files 0.9.18 is available.",
-      "date": "2026-11-17T15:21:21Z",
-      "tintColor": "#1E8FC7",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
-      "notify": true,
-      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.18"
     },
     {
       "appID": "io.nekohasekai.screensharing",
@@ -2041,17 +2076,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
       "notify": true,
       "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.96"
-    },
-    {
-      "appID": "com.armsx2.ios",
-      "title": "ARMSX2 2.6.0-nightly.20261114.1505 · 14 Nov 2026",
-      "identifier": "ARMSX2-release-nightly-20261114",
-      "caption": "ARMSX2 2.6.0-nightly.20261114.1505 is available.",
-      "date": "2026-11-14T15:41:20Z",
-      "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
-      "notify": true,
-      "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261114"
     },
     {
       "appID": "sb.moe.kumone-ios",
@@ -2206,6 +2230,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png",
       "notify": true,
       "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.2.2"
+    },
+    {
+      "appID": "com.xycz.simple-live",
+      "title": "Simple Live 1.13.3 · 08 Nov 2026",
+      "identifier": "Simple Live-release-v1.13.3",
+      "caption": "Simple Live 1.13.3 is available.",
+      "date": "2026-11-08T13:17:59Z",
+      "tintColor": "#24A7EB",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/news.png",
+      "notify": true,
+      "url": "https://github.com/June6699/dart_simple_live/releases/tag/v1.13.3"
     },
     {
       "appID": "com.llayerlinux.LSX4RuntimeProbe",
