@@ -1,0 +1,5 @@
+# news.toml for the MD3Music promo image, rendered by tools/render_news.py.
+# Run: uv run tools/render_news.py --out apps/MD3Music-iOS
+name = "MD3Music"
+# abbreviated subtitle: the name says nothing about the category
+tagline = "酷狗音乐 · Material 3\n音乐播放器"

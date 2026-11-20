@@ -163,6 +163,9 @@ Read manga, novels, and watch anime.
 ### <img src="apps/ManicEMU/icon.png" alt="ManicEMU icon" width="24" align="top"> <a href="https://github.com/Manic-EMU/ManicEMU">ManicEMU</a>
 All-in-one retro game emulator for iOS, with a clean interface and broad platform support.
 
+### <img src="apps/MD3Music-iOS/icon.png" alt="MD3Music icon" width="24" align="top"> <a href="https://github.com/EPXiaohua/MD3Music-iOS">MD3Music</a>
+基于酷狗音乐 API 的 Material 3 音乐播放器 — 内置嵌入式 Rust API 服务器，支持逐字歌词与多种音频输出。
+
 ### <img src="apps/MeloX/icon.png" alt="MeloX icon" width="24" align="top"> <a href="https://github.com/youshen2/MeloX">MeloX</a>
 使用 SwiftUI 开发的网易云音乐第三方客户端——面向 iPhone、iPad、Mac 与 Apple Watch 的原生播放器。
 

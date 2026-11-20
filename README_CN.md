@@ -163,6 +163,9 @@ iPhone 上的 Windows PC 游戏——未经修改的 x86-64 游戏经 Wine、FEX
 ### <img src="apps/ManicEMU/icon.png" alt="ManicEMU icon" width="24" align="top"> <a href="https://github.com/Manic-EMU/ManicEMU">ManicEMU</a>
 面向 iOS 的一体化复古游戏模拟器，界面简洁，平台支持广泛。
 
+### <img src="apps/MD3Music-iOS/icon.png" alt="MD3Music icon" width="24" align="top"> <a href="https://github.com/EPXiaohua/MD3Music-iOS">MD3Music</a>
+基于酷狗音乐 API 的 Material 3 音乐播放器 — 内置嵌入式 Rust API 服务器，支持逐字歌词与多种音频输出。
+
 ### <img src="apps/MeloX/icon.png" alt="MeloX icon" width="24" align="top"> <a href="https://github.com/youshen2/MeloX">MeloX</a>
 使用 SwiftUI 开发的网易云音乐第三方客户端——面向 iPhone、iPad、Mac 与 Apple Watch 的原生播放器。
 

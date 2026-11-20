@@ -1,0 +1,50 @@
+# altgen config for the MD3Music AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "EPXiaohua/MD3Music-iOS"
+
+[source]
+name = "MD3Music"
+subtitle = "MD3Music AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for MD3Music"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/icon.png"
+website = "https://github.com/EPXiaohua/MD3Music-iOS"
+tint_color = "#4F7BCF"
+
+[app]
+name = "MD3Music"
+bundle_identifier = "com.md3music.md3music"
+developer_name = "EPXiaohua"
+subtitle = "基于酷狗音乐 API 的 Material 3 音乐播放器"
+description = "基于酷狗音乐 API 的 Flutter 音乐播放器，内置嵌入式 Rust API 服务器，无需外部服务器即可使用。提供 MD3 与 Apple Music 风格播放页、逐字歌词与多种音频输出能力。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/player.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/fm.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/comment.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/settings.webp",
+]
+tint_color = "#4F7BCF"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Release tags carry a build suffix (v6.2.0+53) and each release ships two
+# ipas, so keep the 3D-cover build only and take the plain version out of the
+# release name ("MD3Music iOS v6.2.0+53") — the ipa inside reports 6.2.0
+# (build 53).
+version_pattern = "(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): MD3Music-3D-unsigned.ipa, not the
+# plain MD3Music-unsigned.ipa that sits beside it in every release.
+asset_pattern = "MD3Music-3D-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/news.png"
+
+[output]
+path = "apps.json"
