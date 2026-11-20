@@ -21,11 +21,11 @@
       "tintColor": "#EF4444",
       "versions": [
         {
-          "version": "0.9.96",
-          "date": "2026-11-14T17:16:59Z",
-          "localizedDescription": "## What's Changed\r\n* fix(appearance): bring back the app-wide Google Fonts picker by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1127\r\n* fix: make the genre chip's searches work, in the source and the library by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1129\r\n* fix(library) select between option by @Lukas-DS in https://github.com/kodjodevf/mangayomi/pull/1131\r\n* fix(js): send PUT, DELETE and PATCH from the extension client by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1132\r\n* fix(migrate): search a few sources at a time and open the dialog at once by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1141\r\n* fix(sync): persist since and lastSync in one awaited write by @sergwei in https://github.com/kodjodevf/mangayomi/pull/1146\r\n* fix(filters): skip malformed filter options instead of dropping the list by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1150\r\n* feat(library): reopen on the last category, and keep the last row clear of the floating bar by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1122\r\n* chore: move to Flutter 3.50 and material_ui by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1154\r\n* fix(mass-migration): give long titles and the migrate choice room on phones by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1153\r\n* fix(library): hide continue-reading button when caught up by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1155\r\n* feat(detail): long press the In library heart to edit categories by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1160\r\n* fix(chapters): show a swiped chapter as read at once by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1159\r\n* fix(downloads): queue order, pause/resume, and move to top/bottom by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1156\r\n* fix(reader): delete a read download once the reader closes by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1157\r\n* Sync between devices, and a standalone sync server by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1158\r\n* feat(library): option to hide the active filter chips by @itsyaba in https://github.com/kodjodevf/mangayomi/pull/1162\r\n\r\n## New Contributors\r\n* @sergwei made their first contribution in https://github.com/kodjodevf/mangayomi/pull/1146\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.95...v0.9.96",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.96/Mangayomi-v0.9.96-ios.ipa",
-          "size": 117340839
+          "version": "0.9.97",
+          "date": "2026-11-20T16:46:43Z",
+          "localizedDescription": "## What's Changed\n* fix(sync): one row over a limit no longer stops every sync by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1168\n* fix(app): keep open pages when the lock screen comes and goes by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1172\n* fix(library): the extension filter offers every extension again by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1173\n* fix(linux): a failed Discord connection no longer crashes the app by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1175\n* fix(sync-server): `pair` opens pairing again by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1177\n* fix(desktop): the window no longer comes back fullscreen by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1178\n* fix(reader): the next page is ready before it is turned to by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1185\n* fix(linux): the reader no longer freezes the app opening under Wayland by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1186\n* perf: no blocking file access on the UI thread, and \"Reduce Motion\" support by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1189\n* feat: show which chapters are missing, and warn before skipping them by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1190\n* fix: pages no longer run under the system's navigation bar by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1191\n* fix: extensions of a removed repository no longer stay listed by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1192\n* l10n: translate the strings left untranslated by @kodjodevf in https://github.com/kodjodevf/mangayomi/pull/1194\n\n\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.9.96...v0.9.97",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.97/Mangayomi-v0.9.97-ios.ipa",
+          "size": 117415847
         }
       ]
     }
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.kodjodevf.mangayomi",
-      "title": "Mangayomi 0.9.96 · 14 Nov 2026",
-      "identifier": "Mangayomi-release-v0.9.96",
-      "caption": "Mangayomi 0.9.96 is available.",
-      "date": "2026-11-14T17:16:59Z",
+      "title": "Mangayomi 0.9.97 · 20 Nov 2026",
+      "identifier": "Mangayomi-release-v0.9.97",
+      "caption": "Mangayomi 0.9.97 is available.",
+      "date": "2026-11-20T16:46:43Z",
       "tintColor": "#EF4444",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.webp",
       "notify": true,
-      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.96"
+      "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.97"
     }
   ]
 }
