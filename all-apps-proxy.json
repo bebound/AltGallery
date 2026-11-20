@@ -976,6 +976,32 @@
       ]
     },
     {
+      "name": "MD3Music",
+      "bundleIdentifier": "com.md3music.md3music",
+      "developerName": "EPXiaohua",
+      "subtitle": "基于酷狗音乐 API 的 Material 3 音乐播放器",
+      "localizedDescription": "基于酷狗音乐 API 的 Flutter 音乐播放器，内置嵌入式 Rust API 服务器，无需外部服务器即可使用。提供 MD3 与 Apple Music 风格播放页、逐字歌词与多种音频输出能力。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/player.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/fm.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/comment.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/settings.webp"
+      ],
+      "tintColor": "#4F7BCF",
+      "versions": [
+        {
+          "version": "6.2.0",
+          "date": "2026-11-09T08:34:00Z",
+          "localizedDescription": "## 已知问题\n\n- **切歌无声 / 上一首残留问题仍存在**：本版已尝试根治（原生层播放/暂停去早退、切歌意图确立后立即静音旧源、挂起后死亡播放器自愈），真机实测概率性仍可复现——后续版本继续排查\n\n## 上游 6.2.0 移植\n\n- 版本号与上游对齐（6.2.0+53），全量同步上游 md3Music 6.2.0：播放链路重构（本地 API 服务器新增响度参数与预热、媒体会话收敛）、依赖更新（m3_expressive、ort_dart、image、sqflite_common_ffi 等）、桌面小组件服务调整与全部上游修复\n- just_audio 播放内核同步至上游版本，iOS fork 补丁（音频焦点中断转发、均衡器挂载、辅助播放器）全部保留并适配新接口\n\n## iOS 修复\n\n- **iOS 26 桌面小组件按钮全部无响应修复**：iOS 26 弃用了在 extension 中设置 `openAppWhenRun` 的行为（点击 intent 根本不执行）；按钮 intent 改为双 target 共享 + 新 `supportedModes` 属性。播放控制类按钮（播放/暂停、上下曲、FM 控制等）现走系统后台执行协议——**点组件直接切歌，不再跳转打开 app**\n- **短暂挂起回前台后播放不了修复**：挂起会触发系统媒体服务重置，播放器实例死亡但应用状态未更新，点播放走快路径无声无错。新增前台死亡观察：播放中但进度 10 秒不动的判定为死播放器，自动重建并恢复到原进度（锁屏/切后台几分钟后回来自动恢复）\n- **挂起恢复后搜索/解析全部失败修复**：挂起后本地 API 服务器工作线程死亡而监听端口残留，旧探测方式被内核代答误判「服务正常」且永不自愈；探测改为真实 HTTP 请求，回前台主动健康检查并按需重建服务\n- **3D 封面系列修复**：iOS 缓存目录异常曾导致推理链路完全静默失败（不推理也无提示），失败原因现已对用户可见；脏缓存条目（索引在、文件丢）被误判为「设备不支持 shader」导致全进程降级多层视差的问题修复——缓存命中增加完整性校验，缺失自动重新推理\n- **歌词画中画修复**：双行布局在较大字号下上下顶边裁切（行距超界），改为按剩余空间三等分居中——任何字号、单双行都完整居中\n- **显示大小**：调整后未点「保留」就杀后台，不再把未确认档位带进下次启动（确认前仅内存预览，点「保留」才落盘）；iOS 隐藏「硬件解码播放」入口（iOS 播放器恒为系统级硬解，无对应开关可做）\n- CI 构建修复：恢复 Rust 静态库编译产物（上游同步时被覆盖丢失导致 iOS 构建失败）\n\n## 其它\n\n- 签名与小组件兼容说明：App Group 兼容**目前仅支持 [iloader](https://github.com/nab138/iloader)**（电脑签）；SideStore/AltStore 手机签后小组件显示「无法加载」是其签名流程丢弃 App Group 权限所致，主应用功能不受影响\n\n未签名 IPA：下载后自行签名安装（推荐 [iloader](https://github.com/nab138/iloader)，免费 Apple ID 签名即可）。\n\n- `MD3Music-unsigned.ipa`：标准版（无 3D 封面，推荐）\n- `MD3Music-3D-unsigned.ipa`：含 3D 封面支持版（内置 Depth Anything V2 深度模型与 MI-GAN 修补模型，设置中开启 3D 封面即可；生成失败时自动回退平面封面，包体约 +40MB）\n\n仅供学习交流，请勿用于商业用途！详见[免责声明](https://github.com/EPXiaohua/MD3Music-iOS/blob/main/DISCLAIMER.md)。如条件允许请支持原作者项目：[zzyoxml/md3Music](https://github.com/zzyoxml/md3Music/)。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/EPXiaohua/MD3Music-iOS/releases/download/v6.2.0%2B53/MD3Music-3D-unsigned.ipa",
+          "size": 59561466,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
       "name": "MeloX",
       "bundleIdentifier": "moye.MeloX",
       "developerName": "youshen2",
@@ -2219,6 +2245,17 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/images/news.png",
       "notify": true,
       "url": "https://github.com/aayush2622/Dartotsu/releases/tag/v1.2.1"
+    },
+    {
+      "appID": "com.md3music.md3music",
+      "title": "MD3Music 6.2.0 · 09 Nov 2026",
+      "identifier": "MD3Music-release-v6.2.0+53",
+      "caption": "MD3Music 6.2.0 is available.",
+      "date": "2026-11-09T08:34:00Z",
+      "tintColor": "#4F7BCF",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/news.png",
+      "notify": true,
+      "url": "https://github.com/EPXiaohua/MD3Music-iOS/releases/tag/v6.2.0+53"
     },
     {
       "appID": "com.stik.stikdebug",
