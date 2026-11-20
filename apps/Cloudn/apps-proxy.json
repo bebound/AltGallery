@@ -1,0 +1,47 @@
+{
+  "name": "Cloudn",
+  "subtitle": "Cloudn AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Cloudn",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/icon.png",
+  "website": "https://github.com/mengangs/Cloudn",
+  "tintColor": "#B4532F",
+  "apps": [
+    {
+      "name": "Cloudn",
+      "bundleIdentifier": "com.mengangs.Cloudn",
+      "developerName": "mengangs",
+      "subtitle": "网盘分享与短视频高速解析下载",
+      "localizedDescription": "粘贴分享链接，浏览并高速下载网盘文件与短视频，所有解析在手机本地完成，无服务器不收集数据。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/icon.png",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/analysis.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/download.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/my.webp"
+      ],
+      "tintColor": "#B4532F",
+      "versions": [
+        {
+          "version": "1.4.2",
+          "date": "2026-11-14T07:41:19Z",
+          "localizedDescription": "# Cloudn 1.4.2\n\n这一版新增 SideStore / AltStore 侧载软件源支持，修复 Instagram 网页登录点「完成」卡住的问题，并带来多项稳定性、解析与性能优化。\n\n## 新增与改进\n\n- **SideStore / AltStore 软件源**：新增 [altstore.json](https://raw.githubusercontent.com/mengangs/Cloudn/main/altstore.json) 订阅源并在发版时自动更新；在「设置 › 更新 › 添加侧载软件源」中可一键添加到 SideStore / AltStore 或复制源地址。\n- **Instagram 网页登录修复**：支持从 `sessionid` 提取用户 ID 并补全 `ds_user_id`，实时合并页面 `document.cookie`，放宽非登录页重定向时的校验误判，并在未检测到登录态或校验失败时弹出明确提示。\n- **并发与稳定性优化**：加强下载与解析任务防重入保护、完善各网盘/视频解析器与分享扩展边界处理，提升列表滚动、实时活动与无障碍体验。\n\n## 安装\n\n推荐通过 SideStore / AltStore 订阅本仓库软件源直接接收更新；也可下载下方附件里的 `Cloudn-v1.4.2.ipa` 自行签名后安装（需要 iOS 17 及以上）。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/mengangs/Cloudn/releases/download/v1.4.2/Cloudn-v1.4.2.ipa",
+          "size": 9034290,
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.mengangs.Cloudn",
+      "title": "Cloudn 1.4.2 · 14 Nov 2026",
+      "identifier": "Cloudn-release-v1.4.2",
+      "caption": "Cloudn 1.4.2 is available.",
+      "date": "2026-11-14T07:41:19Z",
+      "tintColor": "#B4532F",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/news.png",
+      "notify": true,
+      "url": "https://github.com/mengangs/Cloudn/releases/tag/v1.4.2"
+    }
+  ]
+}
