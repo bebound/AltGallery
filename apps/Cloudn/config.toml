@@ -1,0 +1,42 @@
+# altgen config for the Cloudn AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "mengangs/Cloudn"
+
+[source]
+name = "Cloudn"
+subtitle = "Cloudn AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Cloudn"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/icon.png"
+website = "https://github.com/mengangs/Cloudn"
+tint_color = "#B4532F"
+
+[app]
+name = "Cloudn"
+bundle_identifier = "com.mengangs.Cloudn"
+developer_name = "mengangs"
+subtitle = "网盘分享与短视频高速解析下载"
+description = "粘贴分享链接，浏览并高速下载网盘文件与短视频，所有解析在手机本地完成，无服务器不收集数据。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/analysis.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/download.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/my.webp",
+]
+tint_color = "#B4532F"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Each release ships exactly one ipa, named Cloudn-v<version>.ipa.
+asset_pattern = "Cloudn-v.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/news.png"
+
+[output]
+path = "apps.json"

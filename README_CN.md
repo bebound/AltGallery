@@ -79,6 +79,9 @@ iPhone 与 iPad 上的 Windows 游戏——由 Wine、FEX 与 Metal 驱动、内
 ### <img src="apps/Breeze/icon.png" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
 使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
+### <img src="apps/Cloudn/icon.png" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
+网盘分享与短视频高速解析下载 — 支持 19+ 网盘、近 50 个短视频与图集平台，解析全部在手机本地完成。
+
 ### <img src="apps/Dartotsu/icon.png" alt="Dartotsu icon" width="24" align="top"> <a href="https://github.com/aayush2622/Dartotsu">Dartotsu</a>
 跨平台的动漫与漫画追番管理客户端——Dantotsu 的 Flutter 重写版，在同一个书库里同步 AniList、MyAnimeList、Simkl、Kitsu、MangaBaka 与 MangaUpdates。
 
