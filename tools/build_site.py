@@ -286,7 +286,7 @@ def display_images(source: dict) -> list[str]:
     """Every image URL the page renders: logos, icons and screenshots.
 
     News artwork is not displayed — the recent-updates rail draws its promo
-    tile in markup instead of loading the generated news.png — so those files
+    tile in markup instead of loading the generated news.webp — so those files
     stay out of media/ even though the catalog still links them.
     """
     urls = [source.get("iconURL") or ""]

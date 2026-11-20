@@ -47,7 +47,7 @@ build_version_pattern = "_([0-9]+)\\.ipa$"
 [news]
 title_template = "{name} {version} · {date}"
 # shared promo image rendered by tools/render_news.py
-image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.png"
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.webp"
 
 [output]
 path = "apps.json"

@@ -44,7 +44,7 @@ asset_pattern = "MD3Music-3D-unsigned\\.ipa$"
 [news]
 title_template = "{name} {version} · {date}"
 # shared promo image rendered by tools/render_news.py
-image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/news.png"
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/news.webp"
 
 [output]
 path = "apps.json"

@@ -33,7 +33,7 @@ initiative, and do not end a turn with "shall I commit this?" either.
 Leaving your changes in the working tree is the expected end state: report
 what changed (files touched, what was regenerated) and stop there. This
 applies to generated files too (`apps.json`, `all-apps.json`,
-`images/news.png`) — never commit them, and never ask about committing them.
+`images/news.webp`) — never commit them, and never ask about committing them.
 
 ## Comments
 
@@ -56,9 +56,9 @@ apps/<AppName>/
 ├── config.toml      # altgen configuration file
 ├── news.toml        # news image config (name, tagline, optional colors)
 ├── icon.png         # app icon
-├── images/          # screenshots + news.png promo image
+├── images/          # screenshots + news.webp promo image
 │   ├── home.png     # screenshot, listed in [app] screenshots (extension kept as-is)
-│   └── news.png     # generated promo image (referenced from [news] image_url)
+│   └── news.webp    # generated promo image (referenced from [news] image_url)
 └── apps.json        # generated AltStore source (gitignored), do not hand-edit
 ```
 
@@ -254,7 +254,7 @@ only when you actually want to look at the page.
 
 ## Generating News Images
 
-Each app has a shared `news.png` ("NEW UPDATE" — icon, name, tagline)
+Each app has a shared `news.webp` ("NEW UPDATE" — icon, name, tagline)
 referenced by all its news entries via `[news] image_url`. Re-render every
 app's image (from each app's `news.toml`: `name`, `tagline`, optional
 `[colors]`) with:
@@ -267,9 +267,19 @@ or a single app with `uv run tools/render_news.py --out apps/<AppName>`.
 Unset colors are auto-derived from `config.toml` tints and the icon's dominant
 color (Pillow comes from the script's inline metadata, so there is nothing to
 install first — no external rasterizer either). The rendered
-`apps/<AppName>/images/news.png` stays in the working
+`apps/<AppName>/images/news.webp` stays in the working
 tree — the URL in `config.toml` `[news] image_url` already points at it. Do
 not auto-commit it.
+
+The promo is written as a **lossy WebP (`NEWS_WEBP_QUALITY = 90`)**, not a
+PNG: the artwork is a smooth gradient with large type, so q90 lands at about a
+third of the PNG's bytes (159 → 43 KiB per image, ~12 → ~3.4 MiB across the
+gallery) at a PSNR around 44 dB, and every subscriber downloads that file from
+`raw.githubusercontent.com`. A `news.png` left behind by an older render is
+deleted on the next run, and a new app's `[news] image_url` must end in
+`news.webp` — the site's `media/` copy is unaffected either way, since
+`tools/build_site.py` re-encodes display images regardless of their source
+format.
 
 ### The tagline
 
@@ -425,7 +435,7 @@ format — AltStore loads whatever URL it is given, and the repo already ships
 plenty of `.jpg`/`.jpeg` shots. The user's set is the set; don't keep hunting
 the repo for alternatives.
 
-`news.png` is the one file in that folder that is generated — leave it to
+`news.webp` is the one file in that folder that is generated — leave it to
 `tools/render_news.py` (see [Generating News
 Images](#generating-news-images)).
 
@@ -476,7 +486,7 @@ When the subtitle itself is wrong or stale, fix it in `config.toml` and
 regenerate — the README line, the Chinese overlay and the site all follow it.
 
 `news.toml`'s `tagline` is a fourth string, and deliberately not the subtitle:
-it is drawn inside `images/news.png` and must fit two full-size lines there, so
+it is drawn inside `images/news.webp` and must fit two full-size lines there, so
 abbreviations ("Sideload apps with AltServer" for "Sideload non-notarized apps
 with AltServer") are the point, not drift. See [The
 tagline](#the-tagline).
@@ -508,6 +518,6 @@ preserved), re-extracts every field from the new repo using the same
 procedure as **add-app**, refreshes the icon/screenshots, updates
 `config.toml` (repo, names, developer, URLs, tint, min OS, `[versions]`
 patterns), rewrites `news.toml` including stale pinned/derived colors,
-re-renders `images/news.png`, regenerates `apps.json`, and updates the README
+re-renders `images/news.webp`, regenerates `apps.json`, and updates the README
 entry. The reference sections linked under [Adding a New
 App](#adding-a-new-app) apply here too.

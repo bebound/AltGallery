@@ -42,7 +42,7 @@ asset_pattern = "^rush-hours-unsigned\\.ipa$"
 [news]
 title_template = "{name} {version} · {date}"
 # shared promo image rendered by tools/render_news.py
-image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png"
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.webp"
 
 [output]
 path = "apps.json"

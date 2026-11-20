@@ -39,7 +39,7 @@
       "caption": "Aidoku 0.9 is available.",
       "date": "2026-10-16T22:25:27Z",
       "tintColor": "#FF375F",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/news.webp",
       "notify": true,
       "url": "https://github.com/Aidoku/Aidoku/releases/tag/v0.9-4"
     }

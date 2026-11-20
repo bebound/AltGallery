@@ -1,6 +1,6 @@
 ---
 name: update
-description: Regenerate everything in the AltGallery repo — run ./update.sh (regenerate every apps/<AppName>/apps.json from config.toml and merge them into all-apps.json) and ./update_news.sh (re-render every app's images/news.png from its news.toml). apps.json / all-apps.json are gitignored (committed by the workflow); leave re-rendered images/news.png files uncommitted for the user to review. Use when the user wants to refresh / update / regenerate all app sources and news images.
+description: Regenerate everything in the AltGallery repo — run ./update.sh (regenerate every apps/<AppName>/apps.json from config.toml and merge them into all-apps.json) and ./update_news.sh (re-render every app's images/news.webp from its news.toml). apps.json / all-apps.json are gitignored (committed by the workflow); leave re-rendered images/news.webp files uncommitted for the user to review. Use when the user wants to refresh / update / regenerate all app sources and news images.
 ---
 
 # Update All App Sources & News Images
@@ -12,7 +12,7 @@ Refresh every generated artifact in the repo:
    ```bash
    ./update.sh
    ```
-2. **Re-render every news image** — each `apps/<AppName>/images/news.png`
+2. **Re-render every news image** — each `apps/<AppName>/images/news.webp`
    from its `news.toml`:
    ```bash
    ./update_news.sh
@@ -30,7 +30,7 @@ Notes:
 - `apps/<AppName>/apps.json` and `all-apps.json` are gitignored — after
   `update.sh` they won't show in `git status`; the workflow
   (`.github/workflows/update.yml`) regenerates and commits them. Only the
-  re-rendered `images/news.png` files stay in the working tree for you to
+  re-rendered `images/news.webp` files stay in the working tree for you to
   review and commit.
 - AGENTS.md rule: never leave a `config.toml` and its `apps.json` out of
   sync; `all-apps.json` is regenerated whenever any source changes.

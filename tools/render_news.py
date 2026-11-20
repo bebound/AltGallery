@@ -12,6 +12,9 @@ its white stroke, the "NEW UPDATE" badge, and the app name + description in the
 right column. Layout is computed from Pillow font metrics (exact per-glyph
 widths), so the text always fits the column even with CJK strings.
 
+The file is written as a lossy WebP at q90 (`NEWS_WEBP_QUALITY`) to
+images/news.webp, and the [news] image_url in config.toml points there.
+
 Configuration comes from <out>/news.toml (see the template below); any CLI flag
 overrides its news.toml counterpart. Colors left unset are derived into a
 harmonious scheme:
@@ -91,6 +94,16 @@ NAME_LETTER_SPACING = 1  # letter-spacing of the app name
 BADGE_LETTER_SPACING = 6
 BADGE_TEXT = "NEW UPDATE"
 BADGE_TEXT_Y = 830  # baseline of the badge caption (matches the old template)
+
+# The promo is written as a lossy WebP: the artwork is a smooth gradient with
+# large type, exactly what WebP compresses best — at q90 it is roughly a third
+# of the PNG's bytes (159 -> 43 KiB on average) at a PSNR around 44 dB, and
+# AltStore fetches the file from raw.githubusercontent.com on every source
+# refresh, so those bytes are what a subscriber downloads. `method=6` is the
+# slowest/smallest search, `image.save` is used because it is the API that
+# takes both options.
+NEWS_WEBP_QUALITY = 90
+NEWS_WEBP_METHOD = 6
 
 _HEX_RE = re.compile(r"^#[0-9a-fA-F]{6}$")
 
@@ -601,18 +614,26 @@ def main() -> None:
         "tagline_color": _hex_rgb(tagline_color),
     }
 
-    png_path = out / "images" / "news.png"
-    png_path.parent.mkdir(parents=True, exist_ok=True)
+    news_path = out / "images" / "news.webp"
+    news_path.parent.mkdir(parents=True, exist_ok=True)
+    # The promo used to be a PNG; a stale copy next to the WebP would be a
+    # second 160 KiB file nothing references, so drop it.
+    stale = news_path.with_suffix(".png")
+    if stale.exists():
+        stale.unlink()
+        print(f"removed stale {stale}")
     img = _base_canvas(draw_colors)
     _draw_circles(img)
     _draw_icon(img, out / args.icon)
     _draw_badge(img, draw_colors)
     _draw_layout(img, name, name_font, name_y, tag_lines, tag_ys, tagline_font,
                  draw_colors)
-    img.convert("RGB").save(png_path, format="PNG")
+    img.convert("RGB").save(
+        news_path, format="WEBP", quality=NEWS_WEBP_QUALITY, method=NEWS_WEBP_METHOD
+    )
 
-    size = png_path.stat().st_size
-    print(f"wrote {png_path} ({size/1024:.0f} KiB)")
+    size = news_path.stat().st_size
+    print(f"wrote {news_path} ({size/1024:.0f} KiB)")
 
 
 if __name__ == "__main__":

@@ -294,7 +294,7 @@ AltGallery/
 │       ├── config.toml   # altgen configuration
 │       ├── news.toml     # news image config (name, tagline, optional colors)
 │       ├── icon.png      # resource files live here
-│       ├── images/       # screenshots + news.png promo image
+│       ├── images/       # screenshots + news.webp promo image
 │       └── apps.json     # generated AltStore source
 └── ...
 ```

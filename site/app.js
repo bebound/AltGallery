@@ -444,7 +444,7 @@
   }
 
   // The rail renders its own promo tile in markup instead of loading the
-  // generated news.png: a pale tint gradient with the two radial glows, the
+  // generated news.webp: a pale tint gradient with the two radial glows, the
   // rounded icon with a "NEW UPDATE" badge, and the name + tagline — the same
   // language as tools/render_news.py, but sharp at any size and cheap to load.
   function recentCard(app, index) {

@@ -38,7 +38,7 @@ build_version_pattern = "build(\\d+)"
 [news]
 title_template = "{name} {version} · {date}"
 # shared promo image rendered by tools/render_news.py
-image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.png"
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.webp"
 
 [output]
 path = "apps.json"

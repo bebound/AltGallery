@@ -1,6 +1,6 @@
 ---
 name: update-app
-description: Handle a repo migration or app rename for an app already in AltGallery. The user supplies the existing app folder name and the new repo URL; Claude moves the folder with git mv (preserving history), re-extracts the project metadata from the new repo (AltStore source / README / release ipa — description, subtitle, bundle id, developer, icon, screenshots), re-checks the tag/filename-derived version against the release ipa (version_source = ipa when they differ), updates config.toml (repo, URLs, tint, min_os_version, asset_pattern), deletes and rewrites news.toml from the template when the icon changed (none of the old color pins survive the new artwork) or updates it in place when it did not, always re-renders images/news.png, regenerates apps.json, and updates the README entry. Use when an app's GitHub repo moves to a new owner/repo, the app is renamed, or both.
+description: Handle a repo migration or app rename for an app already in AltGallery. The user supplies the existing app folder name and the new repo URL; Claude moves the folder with git mv (preserving history), re-extracts the project metadata from the new repo (AltStore source / README / release ipa — description, subtitle, bundle id, developer, icon, screenshots), re-checks the tag/filename-derived version against the release ipa (version_source = ipa when they differ), updates config.toml (repo, URLs, tint, min_os_version, asset_pattern), deletes and rewrites news.toml from the template when the icon changed (none of the old color pins survive the new artwork) or updates it in place when it did not, always re-renders images/news.webp, regenerates apps.json, and updates the README entry. Use when an app's GitHub repo moves to a new owner/repo, the app is renamed, or both.
 ---
 
 # Updating an App: Repo Migration or Rename
@@ -155,7 +155,7 @@ which app was meant.
    | `[app] icon_url`, `screenshots` | `.../apps/<NewName>/...` |
    | `[app] tint_color`, `min_os_version` | new values when the icon / ipa changed |
    | `[versions]` | re-derive from the new repo's latest release (step 5) |
-   | `[news] image_url` | `.../apps/<NewName>/images/news.png` |
+   | `[news] image_url` | `.../apps/<NewName>/images/news.webp` |
 
    `[output] path = "apps.json"` never changes.
 
@@ -198,7 +198,7 @@ which app was meant.
 
      Never copy old pins into the fresh file — a pin sampled from the old icon
      is exactly the stale value this reset removes. Then re-render
-     `images/news.png` (step 6); the old promo image is invalid too.
+     `images/news.webp` (step 6); the old promo image is invalid too.
    - **Icon unchanged:** edit the existing file in place — header `--out`
      path, `name` → new display name, `tagline` → an abbreviation of the new
      `subtitle` that fits two full-size lines on the image and does not repeat
@@ -260,7 +260,7 @@ PY
 
    Always re-render: the icon and the name are baked into the image, so a
    refreshed icon or a reset `news.toml` (step 5) must produce a new
-   `news.png`. Writes `apps/<NewName>/images/news.png` into the working
+   `news.webp`. Writes `apps/<NewName>/images/news.webp` into the working
    tree — do not auto-commit it.
 
 7. **Regenerate the source** (never hand-edit `apps.json`):
@@ -336,7 +336,7 @@ PY
 - [ ] only iPhone-sized screenshots downloaded (portrait, ratio ~1.7–2.2), filtered by pixel dimensions — never viewed, analyzed or cropped; candidates listed for the user to pick and rename
 - [ ] `config.toml`: repo, source/app names, developer, URLs, tint, min OS and `[versions]` patterns all updated; every `apps/<OldName>/` URL gone
 - [ ] `news.toml`: deleted and rewritten from the template when the icon changed (no old pins carried over); updated in place otherwise; name, tagline, header path and commented "current result" palette current
-- [ ] `images/news.png` re-rendered after the news.toml reset, with the new icon and name
+- [ ] `images/news.webp` re-rendered after the news.toml reset, with the new icon and name
 - [ ] `apps.json` regenerated via `./update.sh <NewName>`, never hand-edited, not committed
 - [ ] `all-apps.json` left modified in the working tree, not committed
 - [ ] README entry updated in both `README.md` and `README_CN.md` (href, icon `align="top"`, display name, Chinese description) and re-sorted if needed

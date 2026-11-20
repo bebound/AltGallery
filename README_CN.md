@@ -294,7 +294,7 @@ AltGallery/
 │       ├── config.toml   # altgen 配置
 │       ├── news.toml     # 资讯图片配置（name、tagline，可选 colors）
 │       ├── icon.png      # 资源文件放在这里
-│       ├── images/       # 截图 + news.png 宣传图
+│       ├── images/       # 截图 + news.webp 宣传图
 │       └── apps.json     # 生成的 AltStore 源
 └── ...
 ```

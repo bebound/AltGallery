@@ -1,6 +1,6 @@
 ---
 name: add-app
-description: Add a new app to the AltGallery repo. When the project already ships its own AltStore source (apps.json), extracts the fields it needs from that source to pre-fill config.toml; otherwise reads the bundle identifier and version metadata out of a release .ipa with tools/ipa_bundle_id.py, verifies the version altgen would derive from the release tag or filename against the ipa and switches to version_source = ipa when they differ, and extracts the icon from that ipa with tools/ipa_icon.py when the repo has no icon (a repo `*.appiconset` wins with its default light `AppIcon.png`, never the dark/tinted variant). Creates apps/<AppName>/, writes config.toml and news.toml, downloads icon + screenshots, samples a tint color from the icon, renders images/news.png, generates apps.json with altgen (local verification only), and adds the README "Available Apps" entry. Both apps.json and all-apps.json are generated and committed by the CI workflow — never update or commit them locally. Use whenever the user wants to add a new app / a new IPA source to the gallery.
+description: Add a new app to the AltGallery repo. When the project already ships its own AltStore source (apps.json), extracts the fields it needs from that source to pre-fill config.toml; otherwise reads the bundle identifier and version metadata out of a release .ipa with tools/ipa_bundle_id.py, verifies the version altgen would derive from the release tag or filename against the ipa and switches to version_source = ipa when they differ, and extracts the icon from that ipa with tools/ipa_icon.py when the repo has no icon (a repo `*.appiconset` wins with its default light `AppIcon.png`, never the dark/tinted variant). Creates apps/<AppName>/, writes config.toml and news.toml, downloads icon + screenshots, samples a tint color from the icon, renders images/news.webp, generates apps.json with altgen (local verification only), and adds the README "Available Apps" entry. Both apps.json and all-apps.json are generated and committed by the CI workflow — never update or commit them locally. Use whenever the user wants to add a new app / a new IPA source to the gallery.
 ---
 
 # Adding a New App to AltGallery
@@ -176,7 +176,7 @@ change between apps.
    or similar) usually holds three 1024x1024 renditions:
    `AppIcon.png` (default / light), `AppIcon-Dark.png` and
    `AppIcon-Tinted.png`. Use the plain `AppIcon.png` — that is the icon iOS
-   shows in light mode, and the gallery's cards, README and `news.png` are all
+   shows in light mode, and the gallery's cards, README and `news.webp` are all
    drawn on light backgrounds; the dark or tinted renditions read as a
    different, washed-out icon there. Download it from the repo (bytes as-is,
    no re-encoding) instead of extracting from the ipa, which is the *second*
@@ -281,7 +281,8 @@ change between apps.
    ```bash
    uv run tools/render_news.py --out apps/<AppName>
    ```
-   Renders `apps/<AppName>/images/news.png` (1600x1200, 4:3) into the working
+   Renders `apps/<AppName>/images/news.webp` (1600x1200, 4:3, lossy WebP at
+   q90) into the working
    tree (do not auto-commit). The image is drawn entirely with Pillow — no
    external rasterizer — and the script's inline PEP 723 metadata names
    Pillow, so `uv run` supplies it; bare `python3 tools/render_news.py` skips
@@ -389,7 +390,7 @@ change between apps.
 - [ ] user-supplied screenshots left untouched — original filenames and formats, referenced as-is in `[app] screenshots`
 - [ ] `apps.json` regenerated after the last config change; never hand-edited; gitignored (not committed)
 - [ ] `all-apps.json` NOT touched — CI workflow regenerates and commits it
-- [ ] `images/news.png` rendered; not auto-committed
+- [ ] `images/news.webp` rendered; not auto-committed
 - [ ] README entry added to both `README.md` and `README_CN.md`, icon with `align="top"`
 - [ ] README line starts with `config.toml` `subtitle`, plus at most one detail clause
 - [ ] `README.md` keeps the project's own language, `README_CN.md` carries a Chinese description (translated when the app is English)
