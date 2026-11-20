@@ -121,7 +121,14 @@ which app was meant.
    - **Screenshots:** download the new repo's screenshots when it has them;
      otherwise keep the existing local screenshots (still valid, already
      hosted here). If there are none at all, warn at the end exactly as
-     `/add-app` step 10 requires.
+     `/add-app` step 10 requires. Take **only iPhone-sized shots** (portrait,
+     height/width roughly 1.7–2.2 — 750×1334, 1170×2532, 1179×2556,
+     1290×2796; not iPad 4:3, landscape or Android captures), filtered by
+     pixel dimensions with Pillow (`Image.open(p).size`, already a repo tool
+     dependency — see `AGENTS.md` → Screenshots for the one-liner), and
+     **never view, describe, compare or crop them** — the user picks the
+     suitable shots and renames them, so keep every candidate under its
+     original filename and list them in the final summary.
    - Copy assets into `apps/<NewName>/` and reference them through the
      `bebound/AltGallery` raw URLs — never point `config.toml` at the source's
      remote URLs.
@@ -326,6 +333,7 @@ PY
 - [ ] tag/filename-derived version re-checked against the new repo's release ipa; `version_source = "ipa"` added, kept, or dropped to match
 - [ ] icon refreshed from the new repo when available; existing icon kept when not
 - [ ] new screenshots downloaded when available; existing kept otherwise; missing screenshots warned about
+- [ ] only iPhone-sized screenshots downloaded (portrait, ratio ~1.7–2.2), filtered by pixel dimensions — never viewed, analyzed or cropped; candidates listed for the user to pick and rename
 - [ ] `config.toml`: repo, source/app names, developer, URLs, tint, min OS and `[versions]` patterns all updated; every `apps/<OldName>/` URL gone
 - [ ] `news.toml`: deleted and rewritten from the template when the icon changed (no old pins carried over); updated in place otherwise; name, tagline, header path and commented "current result" palette current
 - [ ] `images/news.png` re-rendered after the news.toml reset, with the new icon and name

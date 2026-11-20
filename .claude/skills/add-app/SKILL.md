@@ -132,9 +132,31 @@ change between apps.
 3. **Download icon and screenshots**
    Fetch from the project's GitHub repo (e.g. `raw.githubusercontent.com`, or
    the repo's `assets/` folder) into `apps/<AppName>/icon.png` and
-   `apps/<AppName>/images/*.png` (~3 portrait shots, e.g. `home.png`,
-   `detail.png`, `comment.png`). When a source was found in step 2, its
-   `iconURL` / `screenshots` tell you exactly which files to grab.
+   `apps/<AppName>/images/*` keeping each file's original name and extension.
+   When a source was found in step 2, its `iconURL` / `screenshots` tell you
+   exactly which files to grab.
+
+   ⚠️ **Only download iPhone-sized screenshots, and never analyze them.**
+   Filter candidates by pixel dimensions alone — portrait, aspect ratio
+   (height/width) roughly 1.7–2.2, like 750×1334, 1170×2532, 1179×2556,
+   1290×2796. Skip iPad (4:3, ~1024×1366), landscape, Android/tablet captures
+   and marketing artwork. Read the size with Pillow — already the repo's tool
+   dependency, so nothing extra is installed — rather than by opening the
+   image:
+
+   ```bash
+   uv run --python 3.11 --with pillow python3 -c "
+   import sys; from PIL import Image
+   for p in sys.argv[1:]:
+       w, h = Image.open(p).size; print(f'{w}x{h}  ratio {h/w:.2f}  {p}')" apps/<AppName>/images/*
+   ```
+
+   Never Read, view, describe, compare or crop them — no thumbnails, no
+   choosing "the best three". **The user picks the suitable shots and renames
+   them**, so keep every downloaded candidate under its original filename,
+   list what was downloaded, and let the user decide which files go into
+   `[app] screenshots` (editing that list is the only follow-up). Image
+   analysis burns tokens on a decision that is not yours to make.
 
    ⚠️ **Screenshots the user provides are used exactly as given**
    (attached files, a folder, an unpacked zip): copy them into
@@ -362,6 +384,8 @@ change between apps.
 - [ ] `apps/<AppName>/{config.toml, news.toml, icon.png, images/*}` all present
 - [ ] `icon.png` from the repo — the default light `AppIcon.png` from a `*.appiconset` when the repo has one — or from the ipa via `tools/ipa_icon.py` when the repo has none (re-check it did not land on `AppIcon-Dark.png`) — size checked, small size reported to the user
 - [ ] icon/screenshots hosted locally and referenced via `bebound/AltGallery` raw URLs (never the source's remote URLs)
+- [ ] only iPhone-sized screenshots downloaded (portrait, ratio ~1.7–2.2) — filtered by pixel dimensions, never by viewing the images
+- [ ] screenshots neither analyzed nor cropped nor culled; every candidate kept under its original filename and listed for the user to pick and rename
 - [ ] user-supplied screenshots left untouched — original filenames and formats, referenced as-is in `[app] screenshots`
 - [ ] `apps.json` regenerated after the last config change; never hand-edited; gitignored (not committed)
 - [ ] `all-apps.json` NOT touched — CI workflow regenerates and commits it

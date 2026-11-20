@@ -394,6 +394,28 @@ but cannot extract them).
 Screenshots live in `apps/<AppName>/images/` and are listed by URL in
 `[app] screenshots` in `config.toml`.
 
+**Download iPhone-sized screenshots only, and never look at them.** Filter by
+pixel dimensions, not by opening the image: a candidate qualifies when it is
+portrait and its aspect ratio is an iPhone one — height/width roughly 1.7–2.2,
+e.g. 750×1334, 1170×2532, 1179×2556, 1290×2796. Skip iPad panels (4:3,
+~1024×1366), landscape shots, Android/tablet captures, and web/marketing
+artwork. Read the size with Pillow — the repo's existing tool dependency, so
+nothing extra to install — which costs no tokens:
+
+```bash
+uv run --python 3.11 --with pillow python3 -c "
+import sys; from PIL import Image
+for p in sys.argv[1:]:
+    w, h = Image.open(p).size; print(f'{w}x{h}  ratio {h/w:.2f}  {p}')" apps/<AppName>/images/*
+```
+
+Do **not** view, describe, judge or crop the screenshots' content — no Read,
+no thumbnails, no picking the "best three". **The user picks the suitable
+shots and renames them**, so keep every downloaded candidate under its
+original filename, list the files for the user, and let them decide which ones
+go into `[app] screenshots` (updating that list is all it takes afterwards).
+Analyzing images here only burns tokens for a decision that is not yours.
+
 When the user supplies screenshots by hand (attached images, a folder, an
 unpacked zip), **use them exactly as given**: copy them into
 `apps/<AppName>/images/` with their original filenames and formats (`.png`,
