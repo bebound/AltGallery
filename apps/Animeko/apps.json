@@ -39,7 +39,7 @@
       "caption": "Animeko 6.4.1 is available.",
       "date": "2026-11-18T14:44:06Z",
       "tintColor": "#0050A0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Animeko/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Animeko/images/news.webp",
       "notify": true,
       "url": "https://github.com/open-ani/animeko/releases/tag/v6.4.1"
     }

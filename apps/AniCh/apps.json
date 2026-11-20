@@ -39,7 +39,7 @@
       "caption": "AniCh 1.5.27 is available.",
       "date": "2026-10-05T03:15:29Z",
       "tintColor": "#F0E0D0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/news.webp",
       "notify": true,
       "url": "https://github.com/Sle2p/AniCh/releases/tag/1.5.27"
     }

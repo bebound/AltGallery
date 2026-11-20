@@ -39,7 +39,7 @@
       "caption": "KMusic 2.3.0 is available.",
       "date": "2026-03-12T08:39:59Z",
       "tintColor": "#F03050",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/news.webp",
       "notify": true,
       "url": "https://github.com/Mac-XK/KMusic/releases/tag/歌一刀2.3.0"
     }

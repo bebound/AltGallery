@@ -267,11 +267,11 @@
       "tintColor": "#F070F0",
       "versions": [
         {
-          "version": "0.1.665",
-          "date": "2026-11-15T15:07:37Z",
-          "localizedDescription": "**BCD is in alpha:** an early stage of development, before beta. Many games run, many do not yet, and things can break between builds. When a game fails, please send a log.\n\n## Red Dead Redemption 2\n\n- **No processor time lost on exceptions.** RDR2 asks Windows for the time tens of thousands of times a second, and every one of those calls used to take an exception that BCD caught and answered: about 20,000 a second through the tick count, and up to about 18,000 more through timer calls in the game's own process, which Rockstar's launcher starts. Both now run as plain calls, so a performance core no longer goes to exceptions and iOS has less reason to lower the processor clock.\n- **Rockstar's launcher off the fast cores sooner.** The launcher, its Social Club helper and its service move to the efficiency cores one second after the game starts drawing instead of after a minute, leaving the performance cores and the power budget to the game.\n- **New recommended settings.** BCD's own diagnostics sample less and its helper threads run on the efficiency cores; the game gets a larger memory pool, the swap file for game data only and faster Direct3D 12 paths. These settings held 30 FPS on a 12 GB iPhone. On the game's page use **Options › Recommended settings › Reset to Recommended** to get them.\n\nThe two time fixes help GTA V and every other 64-bit game too (below); the sooner launcher move and the new settings are RDR2's own.\n\n## Also in this build\n\nVulkan for 32-bit programs, GOG games of the older download kind, a newer Steam client for the games that need it, and a long list of fixes from testers' logs. Everything new is off until you turn it on, except the fixes.\n\n## Faster\n\n- **64-bit games no longer pay for asking the time.** Windows programs read the tick count from a shared page at a fixed address that iOS does not allow, so every `GetTickCount` and `GetTickCount64` call cost an exception that BCD caught and answered. Red Dead Redemption 2 asks about 20,000 times a second, enough to keep a performance core busy and make iOS lower the CPU clock sooner. BCD's 64-bit kernel32 now reads the same page directly: the same values, no exception. On for every 64-bit program; `env.MADEIRA_USD_DIRECT = 0` restores the old path.\n- **Games started by a launcher stop taking exceptions on library calls:** a program that another program starts (RDR2 and GTA V Enhanced from Rockstar's launcher, Social Club's helper) now calls between Windows' own libraries directly, as the first program always did. Before, each such call took an exception, for example every timer call through `timeGetTime`: up to about 18,000 a second in RDR2. Together with the tick count fix above, RDR2 no longer spends a performance core on exceptions. `env.MADEIRA_AUX_IAT_HEAL_CHILD = 0` turns it off.\n- **Direct3D 12 sampler cache:** identical samplers are created once. On by default; `sampler-cache = 0` turns it off.\n- **Time zones:** a program that asks for the local time no longer makes Windows look up the time zone each time.\n- **Thread registers:** a program that reads its threads' registers often (a garbage collector, a profiler) no longer makes BCD read its settings files each time.\n\n## New\n\n- **Vulkan for 32-bit programs:** the same `vulkan = moltenvk` line that gives a 64-bit game Vulkan now works for 32-bit games too.\n- **GOG: older downloads.** A GOG game that only has GOG's older kind of download (Return to Castle Wolfenstein, the Quake games) now installs, updates and repairs in BCD's GOG downloader, with the same pause, resume and progress as the others.\n- **BCD Dock: newer Steam client (September 2026).** Some games ask for a newer Steam interface than the January 2026 client has (Grim Dawn, Hades II, Enshrouded). **Settings › BCD Dock › Newer Steam client** installs the September 2026 client. BCD renames the old client folder (nothing is deleted) and moves your games, saves and settings into the new one. Off by default.\n- **Steam Friends through BCD Dock:** your friends list, their status, invites and joining a friend, through Valve's own client. Off by default.\n- **GOG Galaxy features for a GOG game:** a GOG game's sign-in, achievements, statistics, leaderboards and play time, per game. Off by default (`env.BCD_GOG_GALAXY = 1`).\n- **KosmicKrisp:** a second Vulkan driver for a game's `vulkan` line, on iOS 26. Off by default.\n- **Shader compiler for wgpu games:** a 64-bit game built with wgpu on Direct3D 12 can compile its shaders with the DirectX Shader Compiler that BCD builds, where Wine's compiler cannot (skate.'s PC port). Per game (`env.MADEIRA_OPTIN_DLLS = dxcompiler`); auto-tune adds it after that failure.\n- **Run-time compiled Direct3D effects**, **Direct3D 9 luminance render targets** (opt-in) and a **Japanese locale per game**.\n- **New opt-in switches for Direct3D 9, 10 and 11** (the libraries built from source: 32-bit games and the 64-bit `D3D11_SRC` set): dropping shader objects after use (`dxmt = d3d11.keepShaderIR=0`), a later Direct3D 9 readback (`env.DXMT_D9_LATE_READBACK = 1`), shared textures inside one process (`env.MADEIRA_D3D11_LOCAL_SHARE = 1`), typeless texture compression (`env.DXMT_TYPELESS_COMPRESSION = 1`) and two command-list memory switches (`env.DXMT_CMDLIST_KEEP_BLOCK`, `env.DXMT_DYN_KEEP`).\n- **Direct3D 12:** concurrent compute encoders, off unless `cs-concurrent = 1`.\n- **CPU features:** `env.MADEIRA_FEX_CPUID_CLASSIC = 2` reports 1 GB pages as well as the two older bits of `1`.\n- **Two experimental 64-bit sets built from BCD's own source,** both off by default:\n  - `env.MADEIRA_WIN64_FRESH = 1`: Wine's 64-bit libraries rebuilt with every BCD fix. Before, some of those fixes reached only 32-bit games: a message box that ignored its timeout, the reasons a signature check failed, and which file a failed import came from.\n  - `env.MADEIRA_DXMT_FRESH = 1`: the 64-bit Direct3D 10/11 libraries rebuilt the same way, including the fix for a GPU hang with geometry and tessellation shaders.\n- **Very large reservations (The Witcher 3 DirectX 12, HITMAN (2016)):** `oversize-reserve-virtual = 1` gives a game that reserves 64 GB or more a range nothing else of the game can land in. This was the cause of The Witcher 3's DirectX 12 crash 13 seconds in. The recommended settings of both games turn it on.\n\n## Fixes and improvements\n\n> **Tried a game on an earlier build? Reset its settings first.** On the game's page: **Options › Recommended settings › Reset to Recommended**, then check that **Options › Auto-tune › Auto-tune this game** is on.\n\n- **JIT:**\n  - with the method on **Automatic**, BCD now uses its own helper once this device is paired with BCD, even when StikDebug is installed. In testers' logs, 8 of 109 StikDebug memory requests were never answered, against none of 248 for BCD's helper. If the device refuses BCD's pairing, the same attempt goes on with StikDebug;\n  - two **Enable JIT** requests at once now share one helper instead of starting two;\n  - **Check setup** that meets a developer disk image another step has just installed tries once more.\n- **After iOS closes a game for memory:** pressing Play right after BCD reopens now waits up to 5 seconds for the verdict on the session that was closed, so its new settings apply to this start.\n- **Lock handling:** BCD no longer releases a lock that a running thread still holds. Every game now uses the safer mode that GTA V, RDR2 and the Horizon games already used; this fixes freezes and crashes after such a release.\n- **Direct3D 11:** the 64-bit Direct3D 11 library used by the launchers of RDR2 and GTA V Enhanced, and by games with `D3D11_SRC`, gets three fixes the 32-bit one already had:\n  - short constant buffers;\n  - 16-bit index ranges;\n  - a tiny fullscreen window.\n- **Direct3D 9, 10 and 11** (built from source): compute views are restored with the rest of the state, anisotropy is kept in range, Direct3D 10's start instance and the index buffer query are right, a resolved view reports its mip count as Windows does, and a Direct3D 12 device that presents through Vulkan gets its swap chain (`env.MADEIRA_DXGI_VK_SWAPCHAIN = 0` turns this off).\n- **LEGO City Undercover:** the fix for a layer format Metal refuses now reaches 64-bit Direct3D 11 through the `D3D11_SRC` set (its recommended settings use it).\n- **Direct3D 12:** a pipeline that Metal refuses because of its dual-source blend is built again without those factors (Freddy's House, Poppy Playtime, ReSkate).\n- **64-bit programs that do not fit:** a 64-bit program file that finds no room under BCD's own reserved area gets one more try without that limit (GTA IV's Rockstar Launcher; `env.MADEIRA_IMAGE_RELAX = 0` turns it off).\n- **Windows:**\n  - network and random-number calls into memory iOS does not let the kernel write now work;\n  - a pipe's state can be set on a unix pipe;\n  - a setup program no longer asks for its install media again and again;\n  - the free space of a drive iOS reports as 0 falls back to the file system's own figure;\n  - a request for token information outside the table is refused instead of read past it;\n  - in 32-bit programs: a lock's waker no longer touches a waiting thread's freed queue entry, and an exception handler removed while the one before it ran is no longer called.\n- **Windows Vulkan:** a game started from the library or through BCD Dock now finds Vulkan.\n- **Freezes:** the Windows server no longer reads settings or writes a log line while a game thread is paused (Requiem: Avenging Angel, Counter-Strike Nexon).\n- **Emulator:**\n  - a program that ends no longer runs on into freed memory (Football Manager 27);\n  - an optional exact mode for 64-bit x87 integers.\n- **Sending logs:**\n  - the comment box of **Send Log** no longer hangs;\n  - a log carries more of a game's own error reports (a Java fatal error report, Unity's console, a message repeated without end shown once) and, after a session that did not end cleanly, how it ended.\n- **GOG:**\n  - an update or a repair no longer writes a support file over a game file that was right;\n  - a GOG installer in a game folder is no longer listed as a game.\n- **Find games:** a game's crash handler or crash reporter no longer becomes its card (Timberborn from an external drive).\n- **Launchers and installers** that cannot be started as a game point to the Desktop's Start menu.\n- **Game page notes:**\n  - a game in a folder whose name Windows' older file functions cannot read;\n  - a game that needs glide2x.dll.\n- **Messages:**\n  - a game closed by iOS for memory says by how much;\n  - a JIT shortcut that cannot be found is no longer an error.\n- **Steam:** malformed data from Steam is refused instead of stopping the app.\n- **FFmpeg** updated to 7.1.5.\n- **Auto-tune** knows many more cases from testers' logs. Among them:\n  - protected programs that rewrite their own code (Undisputed, Football Manager 27, Hitman: Blood Money, the Street Fighter 6 demo, Euro Truck Simulator, Persona 3 Reload);\n  - The Witcher 3's DirectX 12 crash;\n  - the Steam interface a game misses;\n  - StikDebug requests that were never answered.\n\n## Games: fixes from testers' logs\n\nMost of these settings were made from testers' logs and have not been tried on a device yet. A game you set up on an earlier build gets them with **Reset to Recommended** (see above). Please send a log either way: it is how the next step is found.\n\n**Past the wall they stopped at:**\n- **Persona 3 Reload:** the logos and movies flashed (a flat colour or diagonal streaks); the recommended settings fix how the video picture is read and bring the settings the game was tested with.\n- **Kingdom Come: Deliverance II:** the game ended with \"Failed to load the Game DLL\": its game library needs Windows' Restart Manager, which BCD's 64-bit set did not give every game. The recommended settings add it.\n- **Dying Light: The Beast:** the renderer saved its pipelines through a pipeline library it never got, and crashed. BCD now answers that call for the game and reports Direct3D feature level 12_1, which the renderer asks for first.\n- **MECCHA CHAMELEON:** the engine's loading thread asked for the audio devices before starting Windows' COM and called through the empty answer. Such a thread now gets a shared COM apartment.\n- **HITMAN (2016):** the game asks for a 64 GB block of address space and shrank the request a little after every refusal: 3 million refusals in six minutes and no picture. The new very large reservation serves it.\n- **The Witcher 3 (DirectX 12):** it crashed 13 seconds in, because its 64 GB area overlapped another of its own blocks. The new reservation keeps that area free.\n- **Fernbus Simulator:** its first atomic write into its own program faulted on BCD's copy of the program; the program now runs from where it was loaded.\n- **Anodyne:** its .NET runtime writes code into its own pages, and every one of those writes was emulated (4 million in 30 seconds, no picture). Those pages are now plain memory for this 32-bit game.\n- **State of Decay: Year-One Survival Edition:** the engine stopped at \"Unsupported video card detected!\"; the game now sees a GeForce GTX 1060, a card it knows.\n- **Wreckfest** and **DEMON'S TILT:** they read the first entry of an empty display list and crashed. The virtual monitor now has a name and a list of modes (Crash Bandicoot N. Sane Trilogy went from none to 20 with the same settings).\n- **Day of the Tentacle Remastered:** it draws with OpenGL only; its settings turn on BCD's OpenGL.\n- **DOOM 3: BFG Edition:** it threw an error when BCD shortened OpenGL's list of extensions (a fix for older id Software games); it now gets the whole list.\n- **LEGO City Undercover:** iOS closed BCD at the first frame, because the game asked for a picture format Metal does not show. The 64-bit Direct3D 11 library with the fix is now the game's.\n- **Rise of the Tomb Raider:** the game makes a picture buffer more than two billion pixels tall, and every frame failed. Its Direct3D 11 library now refuses that buffer as Windows does.\n- **skate. (PC port):** its shaders did not compile with Wine's compiler; the game now uses BCD's DirectX Shader Compiler.\n- **Mewgenics:** its sound came short; BCD's audio timing is changed for this game.\n\n**Protected games** (the protection reads Windows' shared system page):\n- **Final Fantasy Resonance** and its demo, **Planet Coaster 2**, **Planet Zoo 2**, **ONIMUSHA: Way of the Sword** and **Resident Evil Requiem:** the protection now reads its registers as the game left them. Planet Zoo 2 and ONIMUSHA also get a fixed place for their large program. Planet Zoo 2 then stops after it contacts its server; no setting is known for that yet.\n- **Football Manager 27** and **Hitman: Blood Money:** the emulator translates one block of code at a time inside them (Football Manager 27's plugin made a wrong pointer inside its copy protection; Blood Money's packer ran twice).\n\n**Memory on smaller devices:**\n- **Dark Souls III** (devices under 10 GB): expanded compressed textures took the game to iOS's memory limit. The largest level of every compressed texture is now dropped on those devices only (slightly softer textures). On a 6 GB phone, lower the game's texture quality as well.\n- **Firewatch** (under 10 GB): A15 iPhones expand compressed textures four to eight times; the largest level is dropped near the limit.\n- **OPERATOR** (8 GB): iOS closed it at the limit while it loaded; its two largest texture levels are dropped.\n- **Half Sword demo** (under 12 GB): large memory blocks go to the swap file.\n- **Metal Gear Solid 2 (Master Collection)** (6 GB phones): after the title it played a video without the decoders it needed and ran out of memory; its settings turn on BCD's video playback for it.\n\n**Logs that say more** (settings that collect what the next fix needs): **Bugsnax** (it stops after its first frames: leave it 90 seconds on the first screen, then send the log), **Quaver** (\"already running\"), **Metal Gear Solid: Peace Walker** (black picture), the **Resident Evil Requiem** demo, **Crash Bandicoot N. Sane Trilogy** (now past its empty display list, next a crash at its second swap chain), **Unreal Tournament: Game of the Year Edition**, **Clair Obscur: Expedition 33** (which also tries a video library Unreal may need) and **Project Zomboid** (a Java fatal error; it also tries a stricter memory order in the emulator, which is slower).\n\n## Known issues\n\n- **Foldable iPhone:** installed directly, iOS shows BCD in a small window on the inner display, because BCD is still built with the iOS 26 SDK. Inside LiveContainer it fills the screen.\n- **Call of Duty: Infinite Warfare** reserves more address space than any iPhone or iPad gives and stops early. No setting changes this yet.\n- **Heavy games after a few minutes:** iOS lowers the processor clock after a few minutes of heavy play, even when the phone is not hot. A game that needs much of the processor loses frame rate then: in The Last of Us Part I it about halves after three to four minutes.\n\nInstall help, game reports and ideas: the BCD-Games Discord is open, https://discord.gg/43TmupTVug",
-          "downloadURL": "https://github.com/thebcd69/bcd-games/releases/download/v0.1.665/BCD.ipa",
-          "size": 222775641,
+          "version": "0.1.682",
+          "date": "2026-11-20T06:41:53Z",
+          "localizedDescription": "**BCD is in alpha:** an early stage of development, before beta. Many games run, many do not yet, and things can break between builds. When a game fails, please send a log.\n\n> **Tried a game on an earlier build? Reset its settings first.** On the game's page: **Options › Recommended settings › Reset to Recommended**, then check that **Options › Auto-tune › Auto-tune this game** is on.\n\n## iPhone Duo is supported\n\n- **BCD fills both displays.** BCD is now built with the iOS 27 SDK, so installed directly it fills the whole inner display, open or half open, and the outer display when the phone is closed. Until now it got a small window on the inner display unless it ran inside LiveContainer.\n- **The interface fits every pose.** On the outer display in landscape, and on the inner display held upright, the top bar was wider than the screen and the Settings button ran off the edge. Now the bar measures itself: when it does not fit, the update chip says **Update** and the memory and controller chips step aside. Upright, the outer display's tab bar now reaches past the camera column. A bar that fits is exactly as before, on every iPhone and iPad.\n- **Duo enhancements** (**Settings › Graphics › Foldable iPhone**, experimental, off by default): the **Update available** button could hardly be read in the system's glass. It is clear now.\n- Checked screen by screen, open, half open and closed, in landscape and upright, in Apple's iPhone Duo simulator. Games already ran on iPhone Duo; tell us how this build plays on yours, and send a log if anything looks wrong.\n\n## Steam in BCD Dock\n\n- **Steam no longer stays on \"connecting\".** Steam's client in BCD Dock contacts Steam's crash report server at every start, and one of that server's addresses stopped answering: a Dock start could wait on \"connecting\" for minutes, or never sign in. BCD now refuses that one server name (BCD sends Steam no crash dumps anyway), so Steam signs in and the game starts. `env.MADEIRA_DNS_REFUSE_CRASH = 0` restores the old lookup.\n- **Steam components are not started as games.** Play on **Steamworks Common Redistributables** or **EA app Installer**, which Steam lists with the games, now says that it is a Steam component and that you should start the game itself, instead of opening Steam's own error or waiting five minutes.\n- **\"Steam is still preparing this game's program\"** appears on the starting screen after 20 seconds instead of 60, so you know to keep BCD open.\n\n## External drives on iOS 26\n\n- **Add a drive or folder now opens on iOS 26 and earlier.** On those versions the folder picker in **Settings › Storage › External drives** never appeared: the button did nothing. It is now the system's folder picker presented directly; the folder is still used in place, never copied. **Reconnect** uses the same picker.\n- **Windows prefix › Import an export** had the same problem on iOS 26 and earlier and now opens too.\n\n## New\n\n- **Unity games that need Windows Runtime types start without a setting.** Before a start BCD reads the game's own 64-bit programs and libraries, and when one of them needs the Windows Runtime buffer interface (many Unity games: Car For Sale Simulator 2023, Tears of Metal, Turbo Dismount 2, The Long Dark, The Phantom ...), the session gets Wine's Windows Runtime types library. Until now such a game closed at once with a missing-library error (c0000135) unless its settings had `env.MADEIRA_WINTYPES = 1`. A game's own `env.MADEIRA_WINTYPES = 0` keeps it off.\n- **Large games with a fixed-address program start the first time.** BCD now measures the window such a program needs from the game's folder before every start, from the library as from BCD Dock (`exe-window-auto`, on by default; `exe-window-auto = 0` in a game's settings turns it off). Until now a game like Persona 5 Royal, Far Cry Primal, Mega Man Battle Network Legacy Collection or Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2 failed its first start with c0000018 and needed auto-tune's second try.\n- **Auto-tune suggests a setting to a game that plays, but slowly.** Until now auto-tune only acted after a game failed. When a game played but its .NET, Mono or Java runtime kept BCD busy with tens of thousands of slow memory writes a second, or its sound was scratchy for the first 20 seconds, auto-tune now suggests the one setting that changes it after the session. You choose **Try it next start**, **Not now** or **Stop for this game**. Nothing changes without your yes. If the game does not play better with the setting, auto-tune takes it back and the game is as it was. The game's page keeps a suggestion you put off.\n- **OpenGL and Vulkan tests in the Start menu.** Next to the DirectX tests, **Start › BCD Tests** now has an OpenGL test and a Vulkan test, each in 64-bit and 32-bit: a spinning textured cube with a PASS or FAIL verdict in the title and in the log. OpenGL and Vulkan are per-session settings; with them off, the test says where to turn them on (the Windows desktop's **Options › Direct3D**).\n- **Recommended settings reach more Steam games.** A game whose recommended settings were known only by its program name now gets them when it is started from the Steam library or BCD Dock too (BCD looks for the program in the game's folder).\n- **Tap to hold** (touch controls editor, for each control): one tap holds a key, mouse or controller button, the next tap lets go.\n- **Native ARM64 Windows programs** outside the Windows folder now run on BCD's ARM64 core.\n- **LuaJIT with C-style comments:** `env.MADEIRA_LUAJIT_C_COMMENTS = 1` gives a 64-bit game whose own Lua is written with `/* */` and `//` comments a LuaJIT that reads them, for libraries that need memory below 2 GB. Grim Dawn's recommended settings start its compatibility build with it.\n- **Compressed textures on iPhones without block-compression support (experimental):** on A13 to A16 iPhones every block-compressed texture is expanded to four to eight times its size, and games that load many of them are closed by iOS. With `env.MADEIRA_MIP_CLAMP_AUTO = 2`, a 64-bit Direct3D 11 game on such an iPhone that comes within 1.5 GB of its memory limit gets its single-level compressed textures at half their width and height, and the largest level of compressed textures from 256 px dropped (value 1 starts at 1,024 px and never shrinks a single-level texture). Such textures look blurrier. For this BCD runs its own build of Direct3D 11, and only on those iPhones: a device that reads compressed textures keeps the usual one, where value 2 works exactly like value 1, and a device with room is untouched. Schedule I, and Shroom and Gloom and Nunholy on devices with less than 12 GB, get it in their recommended settings, and auto-tune tries it after the existing texture clamp. Not confirmed on a device yet.\n- **KosmicKrisp (`vulkan = kosmickrisp`) survives a lost shader compiler:** when iOS ends the Metal compiler service under memory pressure, a shader compile is retried instead of failing the game (Enshrouded); at most four compiles run at once, and the shader cache may grow to 4 GB.\n- **A second, patched MoltenVK (experimental):** `vulkan = moltenvk-patched` (a line in the game's settings; on devices with KosmicKrisp, the game page's Vulkan choice also offers **MoltenVK (patched)**) runs a newer MoltenVK with tessellation, barrier and indirect-draw changes made for Enshrouded; such a game's OpenGL uses it too. `vulkan = moltenvk` and OpenGL games keep the MoltenVK they had.\n- **Unity games on devices with little address space (experimental):** on iPhones and iPads that leave BCD only 4 to 5 GB of free address space, after such a stop auto-tune tries a mode that fits up to 16 of a Unity game's 511 MB blocks of address space (`env.MADEIRA_UNITY_SMALL_VA = 1`). Games that ask for more blocks still stop.\n- **KosmicKrisp gets twelve more fixes:** an instance with no layers (OpenGL on KosmicKrisp needs it), border colours for OpenGL, undefined images in shaders, pipeline-statistics queries, 8-sample pipelines on 4-sample devices, a shader operation Metal rejected, timestamp fences, texel buffer views without a format, draws the geometry heap has no room for, and three smaller fixes.\n- **A missing library next to the program (experimental):** `env.MADEIRA_IMPORT_APPDIR = 1` makes Windows' loader look in the program's own folder once more for a library a plug-in module needs (Doki Doki Literature Club's recommended settings turn it on); every such miss is named in the log.\n- **Faster calls into Direct3D 11 and other system libraries (experimental):** `env.MADEIRA_FEX_EC_EXIT_POOL = 1` in a game's settings lets the emulator skip a table search on calls through the method tables of Direct3D 11, DXGI, XAudio2 and other system objects. Without it that search took up to half of a 64-bit Direct3D 11 game's render thread. Every call gives the same result. Off by default until it is measured on devices: try it in a 64-bit game that is held back by its processor, and send a log with and without it.\n- **Clearer warnings on a game's page:** a Red Dead Redemption 2 copy that lacks NvLowLatencyVk.dll (a small file of the game beside RDR2.exe) says the copy is incomplete instead of ending with a missing-library error, and Unity games on devices that leave BCD only about 5 GB of address space say they probably cannot start there.\n\n## Faster\n\n- **Placing memory:** the free-address scan no longer tries addresses above the top of the app's address map. On installs without the extended address space, and on some 3 to 6 GB devices, a failed placement spent most of its time there (`env.MADEIRA_VA_SCAN_CEILING = 0` restores the old scan).\n- **Starting large games:** when a game's program files are prepared in memory, values that cannot point into them are no longer looked up. This saves up to 10 seconds at the start of large games (`env.MADEIRA_IAT_SYNC_SPAN = 0` restores the old lookup).\n- **Folder listings in Windows:** a file's extended attributes are listed once instead of twice, so Steam's folder scans while it prepares a game run up to about a quarter faster (`env.MADEIRA_XATTR_ONE_LIST = 0` restores the old reads).\n\n## Fixes and improvements\n\n- **OpenGL games:** a graphics call could reach BCD's OpenGL layer without its thread information when iOS interrupted it at one exact point; the game then crashed or misbehaved minutes later (Alien Tenant, Buckshot Roulette, Mewgenics and other OpenGL games). That step is now checked and repeated when it happens.\n- **Memory:** a program's code copies are dropped together with the memory it releases, so a new allocation at the same address no longer has its writes sent to the old copy (games that free and reserve the same region again: Ratchet & Clank: Rift Apart, the EA app, Battlefield 2 with dgVoodoo, Requiem with a Glide wrapper). `env.MADEIRA_ALIAS_RELEASE = 0` restores the old behaviour; `= 1` also zeroes each copy when the memory is decommitted.\n- **Crashes fixed:**\n  - a game's main thread no longer dies a few seconds in when a program image it had copied was unmapped (Hellblade II: Senua's Saga, Red Dead Redemption 2, the EA app);\n  - a thread ending in a 32-bit program no longer reads a torn-down thread block (Far Cry 3 and others);\n  - Direct3D 12 root signatures with up to 64 parameters (was 32; Mechstermination Force);\n  - a program that changes a page's protection while its out-parameter lies on that page (FTL, Peggle Deluxe);\n  - DirectInput callbacks written with the C calling convention no longer break the program's stack (The Wolf Among Us);\n  - Quantum Break and other 64-bit programs that start `cmd.exe` get a 64-bit command prompt.\n- **Sound:** the XAudio2 callback-order fix now actually ships in BCD's XAudio2 libraries, so auto-tune's line for a game that crashed on its first sound callbacks (The Elder Scrolls V: Skyrim, about 30 seconds in) takes effect.\n- **Memory:**\n  - the free-address scan starts at the lowest address iOS maps for the app, so placing a small block no longer tries tens of thousands of refused addresses first (`env.MADEIRA_VA_SCAN_FLOOR = 0` restores the old scan);\n  - a game whose large program BCD must place at a fixed address (Hogwarts Legacy) gets the free part of that range when iOS put something small inside it, instead of stopping.\n- **32-bit programs:**\n  - a 32-bit game started together with Windows' services (PES 2017, Phantasy Star Online Blue Burst) can reach Windows' GDI table;\n  - a failed setup of a 32-bit process ends only that process;\n  - Windows' DEP options are given to a 32-bit caller only;\n  - `env.MADEIRA_WOW_JUMBO_INSIDE = 2` places a program's 1 GB reserve inside its own window again (The Binding of Isaac);\n  - a crash report now also says where the faulting address came from.\n- **BCD Dock:**\n  - a game's one-time installs run for a Steam library on an external drive too;\n  - when Steam's sign-in gets no answer for 45 seconds, the starting screen says that the connection to Steam's servers is slow or blocked;\n  - a session ends when the game's Steam host crashes at shutdown or when the game starts its crash uploader and ends (Enshrouded, Exo7, Dressmaker), instead of waiting;\n  - Steam is no longer started offline while the JIT shortcut briefly holds cellular data off;\n  - clearer messages when Steam's client cannot reach Valve's servers and when there is no saved sign-in for an offline start.\n- **Epic:**\n  - the Rockstar launcher of an Epic game (GTA V Enhanced) runs in the Windows desktop, where the Windows services it needs run (`env.BCD_EPIC_SERVICES_DESKTOP = 0` keeps the direct start);\n  - Epic's older JSON build manifests are read (Bus Simulator 21);\n  - the end-of-session message no longer says the host stopped when it never ran.\n- **EA:** Need for Speed: Most Wanted (2012) from Steam gets Windows' service manager and the EA app's libraries in its recommended settings, for EA's launcher that asks to enable background services (not confirmed on a device yet).\n- **Background:** a KosmicKrisp game (Metal 4) is held in the background like the others.\n- **Steam sign-in:** a network error while Steam waits for your approval on the Steam app no longer ends the sign-in; BCD waits and asks again.\n- **Direct3D 12:**\n  - a released texture is kept until the GPU has finished with it. Mina the Hollower, Ghost of Tsushima and skate. ended when the GPU still used a texture the game had released (`tex-defer = 0` restores the old behaviour);\n  - a copy between an uncompressed texture and a block-compressed one now works (`t2t-reinterp = 0` turns it off).\n- **A 64-bit program that writes into its own memory through Windows** (Trackmania): with `env.MADEIRA_SELF_WRITE = 1`, `env.MADEIRA_SELF_WRITE_PRIVATE = 1` also covers its own allocations.\n- **Windows' non-blocking overlapped I/O polls** (opt-in): `env.MADEIRA_OVERLAPPED_SYSTEM_APC = 1` lets such a poll finish its I/O, plus `kernelbase` in `env.MADEIRA_OPTIN_DLLS` for a 64-bit program (Trackmania's recommended settings set both).\n- **Optional Windows DLLs:** `mscms` can be added to `env.MADEIRA_OPTIN_DLLS` (Adobe AIR games such as Brawlhalla).\n- **Steam:**\n  - Trackmania's required Ubisoft Connect files are downloaded with the game (other shared install files are still left out);\n  - downloads keep a content server in rotation until it fails three times (`env.MADEIRA_STEAM_CDN_ROTATE = 0` restores the old order);\n  - a Steam Cloud file whose download was cut short is fetched once more;\n  - files Steam packs as zlib, gzip or raw deflate are read;\n  - a file that does not check out is named in the log with what arrived.\n- **Epic and EA:** repairing a large game no longer lets memory grow until iOS closes BCD.\n- **Send Log:** a log sent after updating BCD is filed under the build that wrote it, not under the build that sent it.\n- **Messages name the right screens:**\n  - **Settings › Visual C++ runtime**, **Settings › Memory & performance** and **Settings › BCD Dock**;\n  - a Windows desktop that is still running points to **Open** on Home's Windows desktop card.\n- **Logs:**\n  - a settings line written without `env.` (for example `MADEIRA_X = 1`) is named in the log, since nothing reads it;\n  - the time BCD's fault handler spends on emulated writes is measured correctly again: it was cut to 32 bits.\n- **Auto-tune:**\n  - a game iOS closes at 95 % of its memory limit, or after one or two freezes right at the limit, now counts as closed for memory, so auto-tune tries the swap file for it (DRAGON BALL Sparking! ZERO, DummyWar); before, it tried nothing;\n  - a game that closed by itself before showing a picture is no longer written off when you then leave the app, so its fix is tried (The Binding of Isaac);\n  - on a phone that gives apps about 4 GB, the message after a memory stop with nothing left to try names the class of device the game needs;\n  - a 6 GB phone's memory stop in a Direct3D 12 game is no longer blamed on graphics memory;\n  - about 120 new or corrected rules from players' logs, among them:\n    - Vulkan games that need KosmicKrisp;\n    - Keen engine games;\n    - Unity games on devices with little address space;\n    - 32-bit games on 454 GB address maps;\n    - Baldur's Gate II: Enhanced Edition's OpenGL;\n    - Days Gone's spatial audio;\n    - HITMAN World of Assassination's address reserve;\n    - Doki Doki Literature Club's libraries;\n    - a Steam client too old for a game's Steam library, and the memory the Steam client itself needs on 6 GB phones;\n    - PlayStation 4 programs;\n    - a Godot OpenGL test that waits for ever;\n    - Trackmania's missing Ubisoft Connect files;\n    - Grand Theft Auto IV's 32-bit window;\n    - Digimon Story Time Stranger's address reserve;\n    - Unreal Engine 5 reserves served in part;\n    - a mod updater's dialog that stays open;\n    - Steam's sign-in waiting on the crash report server;\n    - Media Foundation games that need MFPlay (Disney Speedstorm) or the video processor (Devil May Cry HD Collection);\n    - 64-bit Epic games whose sign-in host never reported (Windbound, Frostpunk);\n    - NW.js games whose renderer crashed (an experiment);\n    - Direct3D 8 games without OpenGL (Thief: Deadly Shadows);\n    - a 64-bit Direct3D 9 game that quits without a message (Euro Truck Simulator 2: BCD's own Direct3D 9);\n    - a self-modifying start-up check (Persona 3 Reload Demo, Yakuza: Like a Dragon);\n    - Cyberpunk 2077's 64 GB reserve;\n    - compressed textures that stay too large after the texture clamp;\n    - EA's launcher started outside BCD Dock;\n    - a game's own hardware check (Red Dead Redemption 2: answer Yes) and video-memory check (FINAL FANTASY XIII);\n    - games that need NVIDIA PhysX (**Start › BCD Runtimes › PhysX**) or Direct3D 12 feature level 12_1 (FINAL FANTASY TACTICS - The Ivalice Chronicles);\n  - Play waits up to 30 seconds for the verdict of a run iOS ended, and the on-device log scan is faster;\n  - corrections: an OpenGL ES session's BCD Dock host and Battle.net's setup after its own error screen get their advice;\n  - a setting that passed a game's own AVX check is kept;\n  - after a BGFX game fails to get an OpenGL context, auto-tune tries Desktop OpenGL;\n  - its advice for a game that misses a Steam interface names the SteamOS/Linux compatibility option, and it reads only the current launch.\n\n## Games\n\n- **New recommended settings:**\n  - Action and adventure: The Plucky Squire, HITMAN World of Assassination, Legacy of Kain Soul Reaver 1&2 Remastered, Alice: Madness Returns, Dead Rising 2, Sleeping Dogs, Days Gone, Darwin's Paradox!, The Coffin of Andy and Leyley, Assassin's Creed Mirage, Far Cry Primal, Devil May Cry HD Collection, Thief: Deadly Shadows, Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2, The Phantom.\n  - RPG: FINAL FANTASY XIII, Baldur's Gate II: Enhanced Edition, Game of Thrones: Kingsroad, Digimon Story Time Stranger, ONE PIECE: PIRATE WARRIORS 3, Persona 5 Royal, Mega Man Battle Network Legacy Collection Vol. 1.\n  - Survival, building and simulation: Enshrouded, The Sims Legacy Collection, Jurassic World Evolution, The Long Dark, Slime Rancher, Frostpunk (Epic Games Store), Windbound (Epic Games Store), Car For Sale Simulator 2023.\n  - Racing, shooting and fighting: Trackmania, OutRun 2006: Coast 2 Coast, Ground Branch, Brawlhalla, Disney Speedstorm, Turbo Dismount 2.\n  - Indie: CatMailCo, One More Lawn, Vampire Crawlers, FUMES, Dumpster Gang, Tears of Metal, Snapshot!, Nunholy.\n  - Visual novel: Nora to Oujo to Noraneko Heart (ノラと皇女と野良猫ハート).\n- **Updated:**\n  - Rockstar: Grand Theft Auto IV: The Complete Edition, Grand Theft Auto III.\n  - Big releases: Hogwarts Legacy, The Last of Us Part I, Marvel's Spider-Man Remastered, METAL GEAR SOLID V: THE PHANTOM PAIN, Persona 3 Reload, Yakuza: Like a Dragon.\n  - Far Cry 3 (Steam and other copies), Euro Truck Simulator 2, The Elder Scrolls IV: Oblivion, S.T.A.L.K.E.R. (X-Ray engine games).\n  - FINAL FANTASY TACTICS - The Ivalice Chronicles, FINAL FANTASY RESONANCE, Zenless Zone Zero, DRAGON BALL FighterZ.\n  - REPLACED, REANIMAL, Cult of the Lamb, Unrailed! 2: Back on Track, Doki Doki Literature Club, The Wolf Among Us Remastered, The Binding of Isaac: Rebirth, STAR WARS Galactic Racer, Quaver, Anodyne.\n  - Need for Speed: Most Wanted (2012), Outlast (the DRM-free copy's launcher), Schedule I, Shroom and Gloom.\n  - Half-Life and the other GoldSrc games (Desktop OpenGL).\n\n## Known issues\n\n- **Call of Duty: Infinite Warfare** reserves more address space than any iPhone or iPad gives and stops early. No setting changes this yet.\n- **Football Manager 27** stops within the first minute of play on every device. No setting changes this yet.\n- **Heavy games after a few minutes:** iOS lowers the processor clock after a few minutes of heavy play, even when the phone is not hot.\n\nInstall help, game reports and ideas: the BCD-Games Discord is open, https://discord.gg/43TmupTVug",
+          "downloadURL": "https://github.com/thebcd69/bcd-games/releases/download/v0.1.682/BCD.ipa",
+          "size": 224532521,
           "minOSVersion": "18.0"
         }
       ]
@@ -768,11 +768,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.0.9",
-          "date": "2026-11-19T13:39:16Z",
-          "localizedDescription": "### 新增\n\n- 一起看（Syncplay）：按标准 Syncplay 协议与其他客户端同房间同步播放，播放、暂停、拖动进度会自动对齐，支持房间口令与 TLS，顶栏显示实时延迟，可查看房间成员。服务器地址、房间、昵称和口令会记住并纳入设置备份\n- 下载剧集时顺带保存该集弹幕，离线或飞行模式下播放也能直接显示；在本地已有弹幕文件时优先读本地，不再等网络\n\n### 修复\n\n- 修复应用覆盖安装或用侧载工具重签后，沙盒目录变化导致已下载剧集打不开、下载记录失效的问题（[#39](https://github.com/LinkPass888/Kazumi-Swift/issues/39)）：现在按相对路径重新定位本地文件，旧记录里的失效路径也能找回\n- 修复下载剧集后在线选集列表加载不出来的问题\n- 修复弹幕设置里点「关键词屏蔽」会中断播放并退回上一页的问题；屏蔽按字面量和 `/正则/` 实时生效\n- 修复播放时屏幕不按设定常亮、跟随系统锁定时间熄屏的问题\n- 修复规则镜像设置的键名不一致，导致每次冷启动被重置的问题\n- 补齐设置备份遗漏的弹幕样式、硬解与低内存策略、AniSkip、Syncplay 等设置，恢复后立即生效，不需要重启\n- 修复通过 `kazumi://` 规则链接打开应用时不会弹出导入框的问题\n\n### 优化\n\n- 从播放页正常返回详情页时不再多叠一层选源面板；只有起播失败后才自动重开选源\n- 打开弹幕设置面板时自动暂停，关闭后自动续播\n- 全屏横屏时弹幕设置按钮移到弹幕开关右侧，方便双手横持\n- 弹幕请求与视频解析并行，画面出来时弹幕已就绪；同一部番换集不再反复解析弹幕源\n- 追番页封面按可视区并发加载，加载完统一刷新，不再整格网格反复重绘；Bangumi 批量同步合并后一次落盘，避免主线程卡死\n- 播放器菜单探测与定时关闭改成状态驱动，取消每秒重绘；播放进度改为防抖写入\n- WebDAV 同步在云盘内容无变化时跳过上传；DLNA 投屏先探测上次用过的设备，能更快出列表\n- 设置页在 iPad 与 Mac 宽屏下二级页面统一限宽居中；日志页增加「全部」分类与文本过滤\n- 清理无引用的旧同步代码，播放页拆分成多个模块",
-          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.0.9/Kazumi_ios_v3.0.9_no_sign.ipa",
-          "size": 24435927,
+          "version": "3.1.0",
+          "date": "2026-11-20T09:01:33Z",
+          "localizedDescription": "### 新增\n\n- 下载支持后台保活与断点续传：切出应用甚至被系统挂起后下载仍会继续，中断后能接着续传，不再从头来\n- 观看历史支持按番名或规则名搜索、多选批量删除；有详情页地址的记录可以直接跳回该条目\n- 「我的」页最近观看的番剧支持一秒续播：从记录直接进章节解析，缓存直链失效时会自动回退重新检索一次，不会卡死\n- 规则仓库支持在自定义仓库与内置仓库之间直接切换，切换即保存并清空旧缓存；规则商店增加「更新全部」，规则管理进入时自动静默刷新目录，规则管理入口显示可更新数量\n- 以图搜番会保留本次会话的图片与识别结果，进详情页或返回后不用重新选图和识别\n- 搜索历史选中关键词后直接回填当前搜索页，不再一层层套新页面\n- 详情页在有观看记录时主按钮直接「续播」，旁边新增紧凑的「换源」入口，两者垂直排列\n\n### 修复\n\n- 修复下载进度只存在内存里，强杀应用后重启显示旧进度的问题：进度现在会周期性落盘，退到后台立即持久化\n- 修复从播放页正常返回详情页时还会多弹一层选源面板的问题：现在只有起播失败后主动点「返回选源」才会重开，并且按番剧区分，不会跨页误弹\n- 修复弹幕请求重复发起、白白消耗配额的问题：同一集加载中或已加载完成时不再重复请求；拉取时机改到章节与目标集确认之后，与网页嗅探并行，既不拖慢首帧，也不会在没有播放源时白拉一次\n- 规则仓库切换的生效状态此前不持久化，重启后会回到第一条自定义仓库，现已修复\n- 修复部分横幅提示缺少样式参数导致的显示问题\n\n### 优化\n\n- 搜索页进入时键盘与页面推入同步弹出，不再等布局完成才聚焦\n- 手动匹配弹幕打开时自动搜索，并定位高亮当前集，同一部番内切集复用匹配结果\n- 追番页下拉可直接触发 Bangumi 同步；未配置令牌时会引导到同步设置\n- WebDAV 首次测试连通后自动开启一次同步开关（含历史、追番、弹幕屏蔽），之后手动关闭不会再被强行打开；Bangumi 同步允许已绑定令牌的用户在关闭自动同步时手动同步一次\n- 观看历史与「我的」页最近观看使用同一套去重口径",
+          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.1.0/Kazumi_ios_v3.1.0_no_sign.ipa",
+          "size": 24518636,
           "minOSVersion": "26.0"
         }
       ]
@@ -1140,10 +1140,10 @@
       "versions": [
         {
           "version": "1.3.3",
-          "date": "2026-11-13T04:41:44Z",
-          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.3\n- Build Date: 2026-11-13\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(push): iOS 设置 JPush Alias 报 6002 超时且提示原始异常串 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/166\n* feat: 适配 Vue 插件（PVE 守护神 / 爱快路由 / 豆瓣档案 / 夸克网盘 / 随机图床） by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/167\n* feat(media_detail): 豆瓣评论与详情页 UI 优化 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/169\n* feat(media_detail): 完善豆瓣评论列表 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/175\n* release: v1.3.2 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/176\n* style(download): 重设计下载资源弹窗 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/180\n* feat(widget): 订阅日历小组件支持多尺寸并修复 ColorOS 尺寸错乱 by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/181\n* release: v1.3.3 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/183\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.1-2026-11-06...release-v1.3.3-2026-11-13",
-          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.3-2026-11-13/ios-v1.3.3-2026-11-13.ipa",
-          "size": 37758540,
+          "date": "2026-11-20T06:01:32Z",
+          "localizedDescription": "MoviePilot Release\n\n- Version: 1.3.3\n- Build Date: 2026-11-20\n- Android: Signed universal APK\n- Android: Signed arm64-v8a APK\n- iOS: Unsigned IPA\n\niOS 安装说明：\n- IPA 为未签名包\n- 请使用自己的 Apple Developer 账号通过 AltStore、Sideloadly 或 Xcode 进行签名安装\n\n\n## What's Changed\n* fix(push): iOS 设置 JPush Alias 报 6002 超时且提示原始异常串 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/166\n* feat: 适配 Vue 插件（PVE 守护神 / 爱快路由 / 豆瓣档案 / 夸克网盘 / 随机图床） by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/167\n* feat(media_detail): 豆瓣评论与详情页 UI 优化 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/169\n* feat(media_detail): 完善豆瓣评论列表 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/175\n* release: v1.3.2 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/176\n* style(download): 重设计下载资源弹窗 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/180\n* feat(widget): 订阅日历小组件支持多尺寸并修复 ColorOS 尺寸错乱 by @xijin285 in https://github.com/singleton-altman/MoviePilotLite/pull/181\n* release: v1.3.3 by @singleton-altman in https://github.com/singleton-altman/MoviePilotLite/pull/183\n\n\n**Full Changelog**: https://github.com/singleton-altman/MoviePilotLite/compare/release-v1.3.1-2026-11-06...release-v1.3.3-2026-11-20",
+          "downloadURL": "https://github.com/singleton-altman/MoviePilotLite/releases/download/release-v1.3.3-2026-11-20/ios-v1.3.3-2026-11-20.ipa",
+          "size": 37758534,
           "minOSVersion": "15.0"
         }
       ]
@@ -1777,11 +1777,11 @@
       "tintColor": "#00C7A5",
       "versions": [
         {
-          "version": "1.3.5",
-          "date": "2026-11-20T03:34:18Z",
-          "localizedDescription": "## WQGuard v1.3.5 (Build 26)\n\n全面推进 **CMS 签名链 / 双槽权限 / Mach-O / ZIP64 / 代理防 Brotli 护盾全链路安全加固**，并针对 **iOS 26 / iOS 27 真机系统注册表特性与内部服务容器组** 完成零误报精细校准；全量 **50 个 XCTest 测试套件（1,019 项测试）**在 Swift 严格并发模式下 100% 通过，且完成 `WQGuard_v1.3.5.ipa` 真机实测验证。\n\n---\n\n### 中文更新说明\n\n* **全栈密码学签名与双槽权限防伪加固（`CSBlobParser` / `ChannelClassifier` / `IPAPackageScanner`）**：\n  * 升级 CMS PKCS#7 证书链时间窗口、叶子扩展（EKU / BasicConstraints）与签名属性绑定校验，强化 `CodeResources` 哈希密封与 Mach-O 全切片一致性核验，封堵双槽 XML/DER 权限遮蔽、离线伪造 TestFlight 与嵌套 `.appex` / `.xpc` / 版本化 `.framework` 越权跳板。\n* **Mach-O / ZIP64 / 容器取证深度防绕过与 DoS 防护（`MachOParser` / `MachOScanner` / `ContainerScanner` / `LockdownInstProxyClient`）**：\n  * 完善跨页边界符号扫描、`LC_DYLD_CHAINED_FIXUPS` / `LC_DYLD_INFO_ONLY` 动态导入还原、多段 `LC_ENCRYPTION_INFO_64` 与自定义 RX 段 `svc #0x80` 精确识别；加固 ZIP64 伪造长度流式解压上限、容器非递归 `O_RDONLY | O_NOFOLLOW` 符号链接取证以及 `lockdownd` 环回套接字超时与并发安全。\n* **iOS 26 / 27 真机系统应用零误报精细校准（`InstalledAppRegistryScanner` / `WhitelistEngine`）**：\n  * 完整适配真机 `installation_proxy` 返回未公开内部 Apple `TeamIdentifier`、`/private/preboot/<BootHash>/...` 动态挂载路径、系统预装应用合法私有权限、内部服务容器组（如 `HomePod 设置` 的 `group.homedevicesetup.diagnostics`）以及无 `com.apple.` 前缀裸可执行名 `application-identifier`（如 `/Applications/SESUIServiceApp.app`），同时收紧自定义白名单对受保护钱包 / 社交 / 系统容器组的防抢占限制。\n* **五大代理客户端防 Brotli 溢出护盾加固（`SurgeBrotliShieldHelper` / `brotli-guard.js`）**：\n  * 同步升级至 `#!version=1.3.5`，加固多编码链、异常分隔符及大小写混合 `Content-Encoding: br` 响应头零解压 `HTTP 403` 熔断，完整保留 16 项核心证书锁定排除规则。\n* **全量验证**：\n  * `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`：50 个 XCTest 测试套件、**1,019/1,019** 项自动化测试全部通过（0 失败），完成 Release `wqguard-cli` 与 `WQGuard_v1.3.5.ipa`（`KNOWN_TOOL`）严格自审及物理 iPhone 真机零误报验证。\n\n---\n\n### English Release Notes\n\n* **Full-Stack Cryptographic Signature & Dual-Slot Entitlement Hardening (`CSBlobParser` / `ChannelClassifier` / `IPAPackageScanner`)**:\n  * Upgraded CMS PKCS#7 chain validity window, leaf extension (EKU / BasicConstraints), and signed-attribute binding checks; strengthened `CodeResources` sealing and multi-slice Mach-O consistency checks to block XML/DER slot shadowing, offline TestFlight spoofing, and nested `.appex` / `.xpc` / versioned `.framework` escalation pivots.\n* **Mach-O / ZIP64 / Container Forensics Anti-Evasion & DoS Protection (`MachOParser` / `MachOScanner` / `ContainerScanner` / `LockdownInstProxyClient`)**:\n  * Hardened cross-page symbol scanning, `LC_DYLD_CHAINED_FIXUPS` / `LC_DYLD_INFO_ONLY` stripped-import recovery, multi-segment `LC_ENCRYPTION_INFO_64` intersection, custom RX section `svc #0x80` detection, streaming ZIP64 decompression ceilings, non-recursive `O_RDONLY | O_NOFOLLOW` container symlink tracing, and fail-closed `lockdownd` loopback timeouts and concurrency safety.\n* **Real-Device iOS 26 / 27 System App Zero-False-Positive Calibration (`InstalledAppRegistryScanner` / `WhitelistEngine`)**:\n  * Accurately recognizes real iOS `installation_proxy` records carrying unlisted internal Apple `TeamIdentifier`s, `/private/preboot/<BootHash>/...` dynamic mounts, factory stock entitlements, internal service App Groups (e.g. `group.homedevicesetup.diagnostics` on `HomePod Setup`), and bare single-segment `application-identifier` values (e.g. `/Applications/SESUIServiceApp.app`), while enforcing strict custom-whitelist blocking against protected wallet, messenger, and Apple system App Groups.\n* **5-Client Brotli Overflow Shield Hardening (`SurgeBrotliShieldHelper` / `brotli-guard.js`)**:\n  * Synchronized to `#!version=1.3.5` across all five proxy formats with hardened multi-coding, delimiter, and mixed-case `Content-Encoding: br` header zero-decompression `HTTP 403` protection and full preservation of all 16 SSL-pinning exclusions.\n* **Verification**:\n  * `swift test --disable-sandbox -Xswiftc -strict-concurrency=complete`: 50 XCTest suites, **1,019/1,019** tests passing (`0` failures), plus Release `wqguard-cli` & `WQGuard_v1.3.5.ipa` (`KNOWN_TOOL`) self-audit and physical iPhone verification.\n\n---\n\n### Release Assets / 发布附件\n\n* `WQGuard_v1.3.5.ipa` — Unsigned ad-hoc IPA (`v1.3.5`, Build 26) for iOS 16+ / 17+ / 18+ / 26+ / 27+ (`SHA-256: 99afedb15cacb36d133cd86c487834d3ebdcb2be9e18dd76b542b811b010342b`)\n* `WQGuard-Brotli-Shield.sgmodule` — Surge\n* `WQGuard-Brotli-Shield.module` — Shadowrocket\n* `WQGuard-Brotli-Shield.conf` — Quantumult X\n* `WQGuard-Brotli-Shield.plugin` — Loon\n* `WQGuard-Brotli-Shield.stoverride` — Stash",
-          "downloadURL": "https://github.com/Kianuni/WQGuard/releases/download/v1.3.5/WQGuard_v1.3.5.ipa",
-          "size": 2773064,
+          "version": "1.3.6",
+          "date": "2026-11-20T07:45:40Z",
+          "localizedDescription": "## WQGuard v1.3.6 (Build 27)\n\n### Highlights / 更新摘要\n\n#### 1. Engine 2 Real-World IPA ZIP Compatibility Fix (Issue #2)\nResolved two real-world IPA scanning failures reported in [Issue #2](https://github.com/Kianuni/WQGuard/issues/2) while keeping strict archive integrity and anti-tampering checks enforced:\n- **Streaming `GPFlag` bit-3 (`0x0008`) without trailing Data Descriptor**: App Store / IPA repackagers frequently keep bit 3 set in Local File Headers even after populating Central Directory sizes and CRCs without emitting a trailing Data Descriptor (`descLen == 0`). `NativeZIPArchiveReader` now supports `descLen == 0` alongside 12/16/20/24-byte descriptors while continuing to reject contradictory non-zero Local Header bit-3 fields (`corruptHeader`).\n- **Deflated empty directories & NUL alignment padding**: Added support for `method == 8` empty directory entries (`uncompSize == 0`, `compSize <= 16`) and up to 64 KB of `0x00` alignment padding between entries.\n- **Uncompacted `.appex` / orphan local header isolation (`isOrphanLocalEntry`)**: Superseded or unreferenced `0x04034b50` local headers in archive gaps are isolated from the primary bundle lookup, `hasArchiveMobileProvision`, and Pass 1/Pass 2 scans, yet any unreferenced Mach-O or `.dylib` payloads remain audited in **Pass 2b** and flag `Unreferenced ZIP Local Header` seal tampering on otherwise Apple-signed packages.\n- **iOS `/var` vs `/private/var` Zip Slip false-positive elimination**: Lexical path standardization (`lexicalStandardizedPath`, introduced in `v1.3.4+` and verified end-to-end in `v1.3.6`) prevents iOS sandbox `/private/var` symlink differences from triggering false Zip Slip errors on valid entries (e.g., `Payload/Stremio.app/de.lproj/`).\n\n#### 2. Strict Concurrency Cleanup in `MachOParser`\n- Eliminated the remaining `#SendableClosureCaptures` warnings in `Sources/WQGuardCore/MachO/MachOParser.swift` by capturing immutable chunk slices (`immutableChunks`) and collecting parallel scan outputs through an `@unchecked Sendable` result box (`ChunkResultsBox`).\n\n---\n\n### Verification & Checksums / 验证与校验\n\n- **XCTest Suite (`-strict-concurrency=complete`)**: **50 suites / 1,020 tests passed**, 0 failures, 0 skipped, **0 warnings in `Sources/WQGuardCore`**\n- **CLI Self-Audit**: `wqguard-cli --ipa WQGuard_v1.3.6.ipa --format json` → `\"riskTier\" : \"KNOWN_TOOL\"`, exit code `0`\n- **`WQGuard_v1.3.6.ipa`** (`2,788,591` bytes / `2.7M`)\n  - **SHA-256**: `1a85d5d4ac1cd9fafbd0c9d92bbd3c85793878465216efaefab00702b498806f`\n\n### Release Assets / 发布附件\n\n1. `WQGuard_v1.3.6.ipa` — Unsigned/ad-hoc sideloadable iOS IPA (`Build 27`)\n2. `WQGuard-Brotli-Shield.sgmodule` — Surge Shield Module (`#!version=1.3.6`)\n3. `WQGuard-Brotli-Shield.module` — Shadowrocket Shield Module (`#!version=1.3.6`)\n4. `WQGuard-Brotli-Shield.conf` — Quantumult X Shield Config (`#!version=1.3.6`)\n5. `WQGuard-Brotli-Shield.plugin` — Loon Shield Plugin (`#!version=1.3.6`)\n6. `WQGuard-Brotli-Shield.stoverride` — Stash Shield Override (`#!version=1.3.6`)",
+          "downloadURL": "https://github.com/Kianuni/WQGuard/releases/download/v1.3.6/WQGuard_v1.3.6.ipa",
+          "size": 2788591,
           "minOSVersion": "16.0"
         }
       ]
@@ -1886,26 +1886,59 @@
   ],
   "news": [
     {
+      "appID": "com.linkpass.kazumi",
+      "title": "Kazumi-Swift 3.1.0 · 20 Nov 2026",
+      "identifier": "Kazumi-Swift-release-v3.1.0",
+      "caption": "Kazumi-Swift 3.1.0 is available.",
+      "date": "2026-11-20T09:01:33Z",
+      "tintColor": "#45A992",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.1.0"
+    },
+    {
+      "appID": "com.wqguard.app",
+      "title": "WQGuard 1.3.6 · 20 Nov 2026",
+      "identifier": "WQGuard-release-v1.3.6",
+      "caption": "WQGuard 1.3.6 is available.",
+      "date": "2026-11-20T07:45:40Z",
+      "tintColor": "#00C7A5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.3.6"
+    },
+    {
+      "appID": "com.thebcd69.bcd",
+      "title": "BCD 0.1.682 · 20 Nov 2026",
+      "identifier": "BCD-release-v0.1.682",
+      "caption": "BCD 0.1.682 is available.",
+      "date": "2026-11-20T06:41:53Z",
+      "tintColor": "#F070F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/thebcd69/bcd-games/releases/tag/v0.1.682"
+    },
+    {
+      "appID": "com.altman.moviepilot",
+      "title": "MoviePilotLite 1.3.3 · 20 Nov 2026",
+      "identifier": "MoviePilotLite-release-release-v1.3.3-2026-11-20",
+      "caption": "MoviePilotLite 1.3.3 is available.",
+      "date": "2026-11-20T06:01:32Z",
+      "tintColor": "#8050F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.3-2026-11-20"
+    },
+    {
       "appID": "io.nekohasekai.swipt",
       "title": "Swipt 0.1.0 · 20 Nov 2026",
       "identifier": "Swipt-release-nightly",
       "caption": "Swipt 0.1.0 is available.",
       "date": "2026-11-20T05:39:28Z",
       "tintColor": "#455A64",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/news.webp",
       "notify": true,
       "url": "https://github.com/swipt-automation/swipt/releases/tag/nightly"
-    },
-    {
-      "appID": "com.wqguard.app",
-      "title": "WQGuard 1.3.5 · 20 Nov 2026",
-      "identifier": "WQGuard-release-v1.3.5",
-      "caption": "WQGuard 1.3.5 is available.",
-      "date": "2026-11-20T03:34:18Z",
-      "tintColor": "#00C7A5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQGuard/images/news.png",
-      "notify": true,
-      "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.3.5"
     },
     {
       "appID": "com.armsx2.ios",
@@ -1914,7 +1947,7 @@
       "caption": "ARMSX2 2.6.0-nightly.20261120.0157 is available.",
       "date": "2026-11-20T02:24:38Z",
       "tintColor": "#3CAEFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.webp",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261120"
     },
@@ -1925,7 +1958,7 @@
       "caption": "WQ Files 0.9.19 is available.",
       "date": "2026-11-20T01:16:50Z",
       "tintColor": "#1E8FC7",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.webp",
       "notify": true,
       "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.19"
     },
@@ -1936,20 +1969,9 @@
       "caption": "Erosion-CN 1.0.6 is available.",
       "date": "2026-11-19T13:48:12Z",
       "tintColor": "#D07030",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.webp",
       "notify": true,
       "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.6"
-    },
-    {
-      "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.0.9 · 19 Nov 2026",
-      "identifier": "Kazumi-Swift-release-v3.0.9",
-      "caption": "Kazumi-Swift 3.0.9 is available.",
-      "date": "2026-11-19T13:39:16Z",
-      "tintColor": "#45A992",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
-      "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.0.9"
     },
     {
       "appID": "org.moviepilot.app",
@@ -1958,7 +1980,7 @@
       "caption": "MoviePilot 1.2.6 is available.",
       "date": "2026-11-19T09:18:19Z",
       "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
       "notify": true,
       "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v1.2.6"
     },
@@ -1969,7 +1991,7 @@
       "caption": "HermesEnabler 1.0 is available.",
       "date": "2026-11-19T02:24:27Z",
       "tintColor": "#70C0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.webp",
       "notify": true,
       "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.6.3"
     },
@@ -1980,7 +2002,7 @@
       "caption": "Animeko 6.4.1 is available.",
       "date": "2026-11-18T14:44:06Z",
       "tintColor": "#0050A0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Animeko/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Animeko/images/news.webp",
       "notify": true,
       "url": "https://github.com/open-ani/animeko/releases/tag/v6.4.1"
     },
@@ -1991,7 +2013,7 @@
       "caption": "AniBaka 5.2.5 is available.",
       "date": "2026-11-18T12:04:44Z",
       "tintColor": "#0077B6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.webp",
       "notify": true,
       "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.5+261113"
     },
@@ -2002,7 +2024,7 @@
       "caption": "WQManager 0.5 is available.",
       "date": "2026-11-18T11:48:53Z",
       "tintColor": "#242529",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/news.webp",
       "notify": true,
       "url": "https://github.com/hseons/WQManager/releases/tag/v0.5.0"
     },
@@ -2013,7 +2035,7 @@
       "caption": "iPadn 2.2.1 is available.",
       "date": "2026-11-18T10:04:29Z",
       "tintColor": "#111111",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.webp",
       "notify": true,
       "url": "https://github.com/mengangs/ipadn/releases/tag/v2.2.1"
     },
@@ -2024,7 +2046,7 @@
       "caption": "UTM 5.0.9-2 is available.",
       "date": "2026-11-18T09:03:04Z",
       "tintColor": "#1a2cc2",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/UTM/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/UTM/images/news.webp",
       "notify": true,
       "url": "https://github.com/utmapp/UTM/releases/tag/v5.0.9-2"
     },
@@ -2035,7 +2057,7 @@
       "caption": "Stats 0.3.18 is available.",
       "date": "2026-11-18T02:58:26Z",
       "tintColor": "#2090F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/news.webp",
       "notify": true,
       "url": "https://github.com/ishtiaq156/stats/releases/tag/v0.3.27"
     },
@@ -2046,7 +2068,7 @@
       "caption": "Open Screen Sharing 1.0.7 is available.",
       "date": "2026-11-17T10:21:29Z",
       "tintColor": "#1060F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/news.webp",
       "notify": true,
       "url": "https://github.com/nekohasekai/open-screen-sharing/releases/tag/v1.0.7"
     },
@@ -2057,7 +2079,7 @@
       "caption": "Mornye 5.4.0 is available.",
       "date": "2026-11-17T09:32:14Z",
       "tintColor": "#1E4E4F",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/news.webp",
       "notify": true,
       "url": "https://github.com/mornyeapp/Mornye/releases/tag/v5.4.0"
     },
@@ -2068,7 +2090,7 @@
       "caption": "Doer 1.8.8.1 is available.",
       "date": "2026-11-17T09:01:54Z",
       "tintColor": "#4080E0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Doer/images/news.webp",
       "notify": true,
       "url": "https://github.com/moliango/doer/releases/tag/v1.8.8.1"
     },
@@ -2079,7 +2101,7 @@
       "caption": "YouProEXTRA 21.46.3 is available.",
       "date": "2026-11-16T18:58:39Z",
       "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/news.webp",
       "notify": true,
       "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa3"
     },
@@ -2090,20 +2112,9 @@
       "caption": "VRCM 1.1.6 is available.",
       "date": "2026-11-16T13:50:14Z",
       "tintColor": "#6451f1",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/news.webp",
       "notify": true,
       "url": "https://github.com/vrcm-team/VRCM/releases/tag/1.1.6"
-    },
-    {
-      "appID": "com.thebcd69.bcd",
-      "title": "BCD 0.1.665 · 15 Nov 2026",
-      "identifier": "BCD-release-v0.1.665",
-      "caption": "BCD 0.1.665 is available.",
-      "date": "2026-11-15T15:07:37Z",
-      "tintColor": "#F070F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/news.png",
-      "notify": true,
-      "url": "https://github.com/thebcd69/bcd-games/releases/tag/v0.1.665"
     },
     {
       "appID": "com.kdt.livecontainer",
@@ -2112,7 +2123,7 @@
       "caption": "LiveContainer+SideStore 3.8.14 is available.",
       "date": "2026-11-15T14:10:09Z",
       "tintColor": "#0784FC",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.webp",
       "notify": true,
       "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/nightly"
     },
@@ -2123,7 +2134,7 @@
       "caption": "Breeze 3.0.38 is available.",
       "date": "2026-11-15T09:03:41Z",
       "tintColor": "#E03030",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/news.webp",
       "notify": true,
       "url": "https://github.com/breeze-project-org/Breeze/releases/tag/v3.0.38"
     },
@@ -2134,7 +2145,7 @@
       "caption": "Mangayomi 0.9.96 is available.",
       "date": "2026-11-14T17:16:59Z",
       "tintColor": "#EF4444",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.webp",
       "notify": true,
       "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.96"
     },
@@ -2145,7 +2156,7 @@
       "caption": "Kumone 0.3.37 is available.",
       "date": "2026-11-14T11:23:41Z",
       "tintColor": "#EC4949",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.webp",
       "notify": true,
       "url": "https://github.com/missuo/kumone/releases/tag/v0.3.37"
     },
@@ -2156,7 +2167,7 @@
       "caption": "PiliPlus 2.2.1 is available.",
       "date": "2026-11-14T08:11:53Z",
       "tintColor": "#73b480",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/news.webp",
       "notify": true,
       "url": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/tag/2.2.1"
     },
@@ -2167,7 +2178,7 @@
       "caption": "Cloudn 1.4.2 is available.",
       "date": "2026-11-14T07:41:19Z",
       "tintColor": "#B4532F",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/news.webp",
       "notify": true,
       "url": "https://github.com/mengangs/Cloudn/releases/tag/v1.4.2"
     },
@@ -2178,7 +2189,7 @@
       "caption": "Apollo for Reddit - GLASS 4.1.0 is available.",
       "date": "2026-11-14T03:22:21Z",
       "tintColor": "#6050F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.webp",
       "notify": true,
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_4.1.0"
     },
@@ -2189,7 +2200,7 @@
       "caption": "AnimeFlow 2.6.8 is available.",
       "date": "2026-11-13T20:37:13Z",
       "tintColor": "#124EB3",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.webp",
       "notify": true,
       "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.8"
     },
@@ -2200,7 +2211,7 @@
       "caption": "GestaltX 1.1.1 is available.",
       "date": "2026-11-13T16:46:05Z",
       "tintColor": "#007AFF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/news.webp",
       "notify": true,
       "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.1.1"
     },
@@ -2211,20 +2222,9 @@
       "caption": "OpenParsec 2.0.0 is available.",
       "date": "2026-11-13T07:02:53Z",
       "tintColor": "#BB01F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/news.webp",
       "notify": true,
       "url": "https://github.com/hugeBlack/OpenParsec/releases/tag/2.0.0"
-    },
-    {
-      "appID": "com.altman.moviepilot",
-      "title": "MoviePilotLite 1.3.3 · 13 Nov 2026",
-      "identifier": "MoviePilotLite-release-release-v1.3.3-2026-11-13",
-      "caption": "MoviePilotLite 1.3.3 is available.",
-      "date": "2026-11-13T04:41:44Z",
-      "tintColor": "#8050F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.png",
-      "notify": true,
-      "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.3-2026-11-13"
     },
     {
       "appID": "com.example.kazumi",
@@ -2233,7 +2233,7 @@
       "caption": "Kazumi 2.4.4 is available.",
       "date": "2026-11-12T10:27:44Z",
       "tintColor": "#4CAF50",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.webp",
       "notify": true,
       "url": "https://github.com/Predidit/Kazumi/releases/tag/2.4.4"
     },
@@ -2244,7 +2244,7 @@
       "caption": "WQToolkit 1.0 is available.",
       "date": "2026-11-11T22:59:56Z",
       "tintColor": "#6090D0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/news.webp",
       "notify": true,
       "url": "https://github.com/MchinaMd57764/WQToolkit/releases/tag/v1.0"
     },
@@ -2255,7 +2255,7 @@
       "caption": "RewindBox 0.0.11 is available.",
       "date": "2026-11-10T19:41:55Z",
       "tintColor": "#50DD8B",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/news.webp",
       "notify": true,
       "url": "https://github.com/TarbleFR/RewindBox/releases/tag/0.0.11"
     },
@@ -2266,7 +2266,7 @@
       "caption": "Rush Hours 2.2.2 is available.",
       "date": "2026-11-10T17:40:40Z",
       "tintColor": "#E5A019",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.webp",
       "notify": true,
       "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.2.2-b70"
     },
@@ -2277,7 +2277,7 @@
       "caption": "Dartotsu 1.2.1 is available.",
       "date": "2026-11-10T09:17:52Z",
       "tintColor": "#20C0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dartotsu/images/news.webp",
       "notify": true,
       "url": "https://github.com/aayush2622/Dartotsu/releases/tag/v1.2.1"
     },
@@ -2288,7 +2288,7 @@
       "caption": "MD3Music 6.2.0 is available.",
       "date": "2026-11-09T08:34:00Z",
       "tintColor": "#4F7BCF",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MD3Music-iOS/images/news.webp",
       "notify": true,
       "url": "https://github.com/EPXiaohua/MD3Music-iOS/releases/tag/v6.2.0+53"
     },
@@ -2299,7 +2299,7 @@
       "caption": "StikDebug 3.2.2 is available.",
       "date": "2026-11-08T22:05:57Z",
       "tintColor": "#3B86F7",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/StikDebug/images/news.webp",
       "notify": true,
       "url": "https://github.com/StikDebug/StikDebug/releases/tag/3.2.2"
     },
@@ -2310,7 +2310,7 @@
       "caption": "Simple Live 1.13.3 is available.",
       "date": "2026-11-08T13:17:59Z",
       "tintColor": "#24A7EB",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/news.webp",
       "notify": true,
       "url": "https://github.com/June6699/dart_simple_live/releases/tag/v1.13.3"
     },
@@ -2321,7 +2321,7 @@
       "caption": "LSX4 128.9934 is available.",
       "date": "2026-11-08T00:33:06Z",
       "tintColor": "#C09050",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.webp",
       "notify": true,
       "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9934"
     },
@@ -2332,7 +2332,7 @@
       "caption": "Tsumiru 1.6.5 is available.",
       "date": "2026-11-07T23:44:29Z",
       "tintColor": "#7c7bff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/news.webp",
       "notify": true,
       "url": "https://github.com/Suwayomi/Suwayomi-Tsumiru/releases/tag/v1.6.5"
     },
@@ -2343,7 +2343,7 @@
       "caption": "VeneraNext 1.18.3 is available.",
       "date": "2026-11-07T18:10:18Z",
       "tintColor": "#2090E0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.webp",
       "notify": true,
       "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.3"
     },
@@ -2354,7 +2354,7 @@
       "caption": "MiniWatts 1.7.0 is available.",
       "date": "2026-11-07T08:08:32Z",
       "tintColor": "#30E0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/news.webp",
       "notify": true,
       "url": "https://github.com/ResistanceTo/MiniWatts/releases/tag/v1.7.0"
     },
@@ -2365,7 +2365,7 @@
       "caption": "ZhihuMinusMinus 0.9.10 is available.",
       "date": "2026-11-06T14:01:41Z",
       "tintColor": "#0084ff",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.webp",
       "notify": true,
       "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.10"
     },
@@ -2376,7 +2376,7 @@
       "caption": "iDeck 0.1.3 is available.",
       "date": "2026-11-06T05:45:57Z",
       "tintColor": "#50D0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDeck/images/news.webp",
       "notify": true,
       "url": "https://github.com/kuscholar/iDeck/releases/tag/v0.1.3-alpha.6"
     },
@@ -2387,7 +2387,7 @@
       "caption": "Husk 3.4 is available.",
       "date": "2026-11-05T03:33:53Z",
       "tintColor": "#5949E5",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/news.webp",
       "notify": true,
       "url": "https://github.com/Leviidev/Husk/releases/tag/3.4"
     },
@@ -2398,7 +2398,7 @@
       "caption": "Madeira 0.2.0 is available.",
       "date": "2026-11-04T03:29:04Z",
       "tintColor": "#7B68EE",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Madeira/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Madeira/images/news.webp",
       "notify": true,
       "url": "https://github.com/willfaust/Madeira/releases/tag/v0.2.0"
     },
@@ -2409,7 +2409,7 @@
       "caption": "Silverphase 1.1.1 is available.",
       "date": "2026-11-02T16:14:09Z",
       "tintColor": "#FF9F0A",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/news.webp",
       "notify": true,
       "url": "https://github.com/akinal5765-byte/Silverphase/releases/tag/v1.1.1"
     },
@@ -2420,7 +2420,7 @@
       "caption": "Playport 0.5.0 is available.",
       "date": "2026-11-02T10:13:17Z",
       "tintColor": "#F5B544",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/news.webp",
       "notify": true,
       "url": "https://github.com/playportdev/playport/releases/tag/v0.5.0"
     },
@@ -2431,7 +2431,7 @@
       "caption": "ManicEMU 2.0.2 is available.",
       "date": "2026-11-02T08:03:58Z",
       "tintColor": "#F02040",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.webp",
       "notify": true,
       "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.2"
     },
@@ -2442,7 +2442,7 @@
       "caption": "MeloX 1.4.1 is available.",
       "date": "2026-10-30T13:43:14Z",
       "tintColor": "#E01F2D",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MeloX/images/news.webp",
       "notify": true,
       "url": "https://github.com/youshen2/MeloX/releases/tag/v1.4.1"
     },
@@ -2453,7 +2453,7 @@
       "caption": "LinuxRunner 1.0.1 is available.",
       "date": "2026-10-27T07:30:48Z",
       "tintColor": "#60B0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LinuxRunner/images/news.webp",
       "notify": true,
       "url": "https://github.com/mxhm11cr/LinuxRunner/releases/tag/v1.0.1"
     },
@@ -2464,7 +2464,7 @@
       "caption": "Roam Control 0.9.9 is available.",
       "date": "2026-10-20T19:33:03Z",
       "tintColor": "#1090F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Roam-Control/images/news.webp",
       "notify": true,
       "url": "https://github.com/seanhowarthdev/Roam-Control/releases/tag/v0.9.9"
     },
@@ -2475,7 +2475,7 @@
       "caption": "Asspp 4.2.0 is available.",
       "date": "2026-10-20T03:08:48Z",
       "tintColor": "#3060D0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Asspp/images/news.webp",
       "notify": true,
       "url": "https://github.com/Lakr233/Asspp/releases/tag/4.2.2"
     },
@@ -2486,7 +2486,7 @@
       "caption": "Pixiv-SwiftUI 0.16.3 is available.",
       "date": "2026-10-19T14:07:18Z",
       "tintColor": "#13A1FD",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/news.webp",
       "notify": true,
       "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.3"
     },
@@ -2497,7 +2497,7 @@
       "caption": "Musly 2.0.3 is available.",
       "date": "2026-10-18T18:19:33Z",
       "tintColor": "#FA243C",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.webp",
       "notify": true,
       "url": "https://github.com/dddevid/Musly/releases/tag/v2.0.3"
     },
@@ -2508,7 +2508,7 @@
       "caption": "LightNovelShelf 1.13.2 is available.",
       "date": "2026-10-18T10:47:40Z",
       "tintColor": "#4E4592",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/images/news.webp",
       "notify": true,
       "url": "https://github.com/LightNovelShelf/Flutter/releases/tag/v1.13.2"
     },
@@ -2519,7 +2519,7 @@
       "caption": "Aidoku 0.9 is available.",
       "date": "2026-10-16T22:25:27Z",
       "tintColor": "#FF375F",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/news.webp",
       "notify": true,
       "url": "https://github.com/Aidoku/Aidoku/releases/tag/v0.9-4"
     },
@@ -2530,7 +2530,7 @@
       "caption": "TiebaPure 1.4.15 is available.",
       "date": "2026-10-10T06:07:37Z",
       "tintColor": "#708070",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/news.webp",
       "notify": true,
       "url": "https://github.com/infinityf4p/TiebaPure-iOS/releases/tag/v1.4.15"
     },
@@ -2541,7 +2541,7 @@
       "caption": "PureLive 3.1.19 is available.",
       "date": "2026-10-10T04:32:55Z",
       "tintColor": "#50B0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.webp",
       "notify": true,
       "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.19"
     },
@@ -2552,7 +2552,7 @@
       "caption": "AniCh 1.5.27 is available.",
       "date": "2026-10-05T03:15:29Z",
       "tintColor": "#F0E0D0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/news.webp",
       "notify": true,
       "url": "https://github.com/Sle2p/AniCh/releases/tag/1.5.27"
     },
@@ -2563,7 +2563,7 @@
       "caption": "AirCard-iOS 1.3.2 is available.",
       "date": "2026-10-04T12:22:53Z",
       "tintColor": "#5020E0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AirCard/images/news.webp",
       "notify": true,
       "url": "https://github.com/Mak5er/AirCard-iOS/releases/tag/v1.3.2"
     },
@@ -2574,7 +2574,7 @@
       "caption": "Iridium 0.2.0 is available.",
       "date": "2026-10-04T02:20:31Z",
       "tintColor": "#1C1C1E",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/news.webp",
       "notify": true,
       "url": "https://github.com/intraducine/iridium/releases/tag/v0.2.0"
     },
@@ -2585,7 +2585,7 @@
       "caption": "AltStore 2.3.1 is available.",
       "date": "2026-09-30T20:16:23Z",
       "tintColor": "#018084",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/news.webp",
       "notify": true,
       "url": "https://github.com/altstoreio/AltStore/releases/tag/v2.3"
     },
@@ -2596,7 +2596,7 @@
       "caption": "Orchard 0.2 is available.",
       "date": "2026-09-25T16:12:05Z",
       "tintColor": "#F0C060",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/images/news.webp",
       "notify": true,
       "url": "https://github.com/MakrSas/orchard-ios/releases/tag/v0.2"
     },
@@ -2607,7 +2607,7 @@
       "caption": "SceneBox 1.0.4 is available.",
       "date": "2026-09-23T15:44:54Z",
       "tintColor": "#E0E000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SceneBox/images/news.webp",
       "notify": true,
       "url": "https://github.com/donbytyqi/scenebox/releases/tag/v1.0.4"
     },
@@ -2618,7 +2618,7 @@
       "caption": "iRAM+ 1.3.1 is available.",
       "date": "2026-09-18T23:43:28Z",
       "tintColor": "#64BE7E",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/images/news.webp",
       "notify": true,
       "url": "https://github.com/NexSideloading/iRAM-Plus/releases/tag/v1.3.1"
     },
@@ -2629,7 +2629,7 @@
       "caption": "SideStore 0.7.0-20260911.328+6032424a is available.",
       "date": "2026-09-15T11:12:49Z",
       "tintColor": "#A405FA",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.webp",
       "notify": true,
       "url": "https://github.com/SideStore/SideStore/releases/tag/0.7.0-alpha"
     },
@@ -2640,7 +2640,7 @@
       "caption": "Fathom 1.0.0 is available.",
       "date": "2026-09-14T23:13:23Z",
       "tintColor": "#68D8D8",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fathom/images/news.webp",
       "notify": true,
       "url": "https://github.com/Leviidev/Fathom/releases/tag/v1.0.0"
     },
@@ -2651,7 +2651,7 @@
       "caption": "Opaline 1.12.0 is available.",
       "date": "2026-09-10T02:02:27Z",
       "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.webp",
       "notify": true,
       "url": "https://github.com/verback2308/Opaline/releases/tag/1.12.0"
     },
@@ -2662,7 +2662,7 @@
       "caption": "PSX3IOS 0.2.7-beta is available.",
       "date": "2026-09-01T12:12:58Z",
       "tintColor": "#5080D0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/news.webp",
       "notify": true,
       "url": "https://github.com/xmiguel911x/PSX3IOS/releases/tag/v0.2.7-beta"
     },
@@ -2673,7 +2673,7 @@
       "caption": "DLiPA 1.4 is available.",
       "date": "2026-08-03T08:46:29Z",
       "tintColor": "#27A0F4",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/news.webp",
       "notify": true,
       "url": "https://github.com/AhmedBafkir/DLiPA/releases/tag/v1.4"
     },
@@ -2684,7 +2684,7 @@
       "caption": "EhPanda 2.8.1 is available.",
       "date": "2026-07-20T12:12:04Z",
       "tintColor": "#0f766e",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/news.webp",
       "notify": true,
       "url": "https://github.com/EhPanda-Team/EhPanda/releases/tag/v2.8.1"
     },
@@ -2695,7 +2695,7 @@
       "caption": "iTorrent 2.2.0-1 is available.",
       "date": "2026-07-19T09:59:41Z",
       "tintColor": "#F19E69",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/news.webp",
       "notify": true,
       "url": "https://github.com/XITRIX/iTorrent/releases/tag/v2.2.0-1"
     },
@@ -2706,7 +2706,7 @@
       "caption": "LiveContainer+SideStore 3.8.0 is available.",
       "date": "2026-07-17T07:44:20Z",
       "tintColor": "#0784FC",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.webp",
       "notify": true,
       "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/3.8.0"
     },
@@ -2717,7 +2717,7 @@
       "caption": "Feather 2.9.0 is available.",
       "date": "2026-07-05T02:11:53Z",
       "tintColor": "#848ef9",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/news.webp",
       "notify": true,
       "url": "https://github.com/claration/feather/releases/tag/v2.9.0"
     },
@@ -2728,7 +2728,7 @@
       "caption": "DukeX 1.0.2 is available.",
       "date": "2026-06-30T12:21:27Z",
       "tintColor": "#8FCA39",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/news.webp",
       "notify": true,
       "url": "https://github.com/MaftyManicEMU/DukeX/releases/tag/v1.0.2"
     },
@@ -2739,7 +2739,7 @@
       "caption": "DolphiniOS 5.0.0b6 is available.",
       "date": "2026-06-20T07:01:54Z",
       "tintColor": "#E0B030",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/news.webp",
       "notify": true,
       "url": "https://github.com/OatmealDome/dolphin-ios/releases/tag/v5.0.0b6"
     },
@@ -2750,7 +2750,7 @@
       "caption": "KMusic 2.3.0 is available.",
       "date": "2026-03-12T08:39:59Z",
       "tintColor": "#F03050",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/KMusic/images/news.webp",
       "notify": true,
       "url": "https://github.com/Mac-XK/KMusic/releases/tag/歌一刀2.3.0"
     }

@@ -40,7 +40,7 @@
       "caption": "AniBaka 5.2.5 is available.",
       "date": "2026-11-18T12:04:44Z",
       "tintColor": "#0077B6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniBaka/images/news.webp",
       "notify": true,
       "url": "https://github.com/AniBakaBaka/AniBaka/releases/tag/5.2.5+261113"
     }

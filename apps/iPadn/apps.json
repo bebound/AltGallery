@@ -40,7 +40,7 @@
       "caption": "iPadn 2.2.1 is available.",
       "date": "2026-11-18T10:04:29Z",
       "tintColor": "#111111",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/news.webp",
       "notify": true,
       "url": "https://github.com/mengangs/ipadn/releases/tag/v2.2.1"
     }

@@ -42,7 +42,7 @@
       "caption": "Kazumi 2.4.4 is available.",
       "date": "2026-11-12T10:27:44Z",
       "tintColor": "#4CAF50",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.webp",
       "notify": true,
       "url": "https://github.com/Predidit/Kazumi/releases/tag/2.4.4"
     }

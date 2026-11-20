@@ -38,7 +38,7 @@
       "caption": "SideStore 0.7.0-20260911.328+6032424a is available.",
       "date": "2026-09-15T11:12:49Z",
       "tintColor": "#A405FA",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SideStore/images/news.webp",
       "notify": true,
       "url": "https://github.com/SideStore/SideStore/releases/tag/0.7.0-alpha"
     }

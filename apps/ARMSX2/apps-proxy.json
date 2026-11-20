@@ -39,7 +39,7 @@
       "caption": "ARMSX2 2.6.0-nightly.20261120.0157 is available.",
       "date": "2026-11-20T02:24:38Z",
       "tintColor": "#3CAEFF",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.png",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.webp",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261120"
     }

@@ -37,7 +37,7 @@
       "caption": "Open Screen Sharing 1.0.7 is available.",
       "date": "2026-11-17T10:21:29Z",
       "tintColor": "#1060F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/news.webp",
       "notify": true,
       "url": "https://github.com/nekohasekai/open-screen-sharing/releases/tag/v1.0.7"
     }

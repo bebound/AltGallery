@@ -39,7 +39,7 @@
       "caption": "DLiPA 1.4 is available.",
       "date": "2026-08-03T08:46:29Z",
       "tintColor": "#27A0F4",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/news.webp",
       "notify": true,
       "url": "https://github.com/AhmedBafkir/DLiPA/releases/tag/v1.4"
     }

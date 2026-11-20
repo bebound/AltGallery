@@ -39,7 +39,7 @@
       "caption": "ManicEMU 2.0.2 is available.",
       "date": "2026-11-02T08:03:58Z",
       "tintColor": "#F02040",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ManicEMU/images/news.webp",
       "notify": true,
       "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.2"
     }

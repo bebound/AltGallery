@@ -37,7 +37,7 @@
       "caption": "HermesEnabler 1.0 is available.",
       "date": "2026-11-19T02:24:27Z",
       "tintColor": "#70C0F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/HermesEnabler/images/news.webp",
       "notify": true,
       "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.6.3"
     }

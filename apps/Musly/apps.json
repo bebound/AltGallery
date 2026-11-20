@@ -39,7 +39,7 @@
       "caption": "Musly 2.0.3 is available.",
       "date": "2026-10-18T18:19:33Z",
       "tintColor": "#FA243C",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.webp",
       "notify": true,
       "url": "https://github.com/dddevid/Musly/releases/tag/v2.0.3"
     }

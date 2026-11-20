@@ -39,7 +39,7 @@
       "caption": "VRCM 1.1.6 is available.",
       "date": "2026-11-16T13:50:14Z",
       "tintColor": "#6451f1",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/news.png",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/news.webp",
       "notify": true,
       "url": "https://github.com/vrcm-team/VRCM/releases/tag/1.1.6"
     }

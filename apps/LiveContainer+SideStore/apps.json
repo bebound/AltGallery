@@ -47,7 +47,7 @@
       "caption": "LiveContainer+SideStore 3.8.14 is available.",
       "date": "2026-11-15T14:10:09Z",
       "tintColor": "#0784FC",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.webp",
       "notify": true,
       "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/nightly"
     },
@@ -58,7 +58,7 @@
       "caption": "LiveContainer+SideStore 3.8.0 is available.",
       "date": "2026-07-17T07:44:20Z",
       "tintColor": "#0784FC",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.webp",
       "notify": true,
       "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/3.8.0"
     }

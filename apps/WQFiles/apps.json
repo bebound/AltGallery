@@ -37,7 +37,7 @@
       "caption": "WQ Files 0.9.19 is available.",
       "date": "2026-11-20T01:16:50Z",
       "tintColor": "#1E8FC7",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.webp",
       "notify": true,
       "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.19"
     }

@@ -39,7 +39,7 @@
       "caption": "Opaline 1.12.0 is available.",
       "date": "2026-09-10T02:02:27Z",
       "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Opaline/images/news.webp",
       "notify": true,
       "url": "https://github.com/verback2308/Opaline/releases/tag/1.12.0"
     }

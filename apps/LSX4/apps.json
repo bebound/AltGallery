@@ -39,7 +39,7 @@
       "caption": "LSX4 128.9934 is available.",
       "date": "2026-11-08T00:33:06Z",
       "tintColor": "#C09050",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/news.webp",
       "notify": true,
       "url": "https://github.com/lpfoj/lsx4/releases/tag/ios-jit-128.9934"
     }

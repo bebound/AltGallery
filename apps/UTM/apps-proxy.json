@@ -39,7 +39,7 @@
       "caption": "UTM 5.0.9-2 is available.",
       "date": "2026-11-18T09:03:04Z",
       "tintColor": "#1a2cc2",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/UTM/images/news.png",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/UTM/images/news.webp",
       "notify": true,
       "url": "https://github.com/utmapp/UTM/releases/tag/v5.0.9-2"
     }

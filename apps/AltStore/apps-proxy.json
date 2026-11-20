@@ -42,7 +42,7 @@
       "caption": "AltStore 2.3.1 is available.",
       "date": "2026-09-30T20:16:23Z",
       "tintColor": "#018084",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/news.png",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/news.webp",
       "notify": true,
       "url": "https://github.com/altstoreio/AltStore/releases/tag/v2.3"
     }

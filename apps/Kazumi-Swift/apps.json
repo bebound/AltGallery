@@ -21,11 +21,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.0.9",
-          "date": "2026-11-19T13:39:16Z",
-          "localizedDescription": "### 新增\n\n- 一起看（Syncplay）：按标准 Syncplay 协议与其他客户端同房间同步播放，播放、暂停、拖动进度会自动对齐，支持房间口令与 TLS，顶栏显示实时延迟，可查看房间成员。服务器地址、房间、昵称和口令会记住并纳入设置备份\n- 下载剧集时顺带保存该集弹幕，离线或飞行模式下播放也能直接显示；在本地已有弹幕文件时优先读本地，不再等网络\n\n### 修复\n\n- 修复应用覆盖安装或用侧载工具重签后，沙盒目录变化导致已下载剧集打不开、下载记录失效的问题（[#39](https://github.com/LinkPass888/Kazumi-Swift/issues/39)）：现在按相对路径重新定位本地文件，旧记录里的失效路径也能找回\n- 修复下载剧集后在线选集列表加载不出来的问题\n- 修复弹幕设置里点「关键词屏蔽」会中断播放并退回上一页的问题；屏蔽按字面量和 `/正则/` 实时生效\n- 修复播放时屏幕不按设定常亮、跟随系统锁定时间熄屏的问题\n- 修复规则镜像设置的键名不一致，导致每次冷启动被重置的问题\n- 补齐设置备份遗漏的弹幕样式、硬解与低内存策略、AniSkip、Syncplay 等设置，恢复后立即生效，不需要重启\n- 修复通过 `kazumi://` 规则链接打开应用时不会弹出导入框的问题\n\n### 优化\n\n- 从播放页正常返回详情页时不再多叠一层选源面板；只有起播失败后才自动重开选源\n- 打开弹幕设置面板时自动暂停，关闭后自动续播\n- 全屏横屏时弹幕设置按钮移到弹幕开关右侧，方便双手横持\n- 弹幕请求与视频解析并行，画面出来时弹幕已就绪；同一部番换集不再反复解析弹幕源\n- 追番页封面按可视区并发加载，加载完统一刷新，不再整格网格反复重绘；Bangumi 批量同步合并后一次落盘，避免主线程卡死\n- 播放器菜单探测与定时关闭改成状态驱动，取消每秒重绘；播放进度改为防抖写入\n- WebDAV 同步在云盘内容无变化时跳过上传；DLNA 投屏先探测上次用过的设备，能更快出列表\n- 设置页在 iPad 与 Mac 宽屏下二级页面统一限宽居中；日志页增加「全部」分类与文本过滤\n- 清理无引用的旧同步代码，播放页拆分成多个模块",
-          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.0.9/Kazumi_ios_v3.0.9_no_sign.ipa",
-          "size": 24435927,
+          "version": "3.1.0",
+          "date": "2026-11-20T09:01:33Z",
+          "localizedDescription": "### 新增\n\n- 下载支持后台保活与断点续传：切出应用甚至被系统挂起后下载仍会继续，中断后能接着续传，不再从头来\n- 观看历史支持按番名或规则名搜索、多选批量删除；有详情页地址的记录可以直接跳回该条目\n- 「我的」页最近观看的番剧支持一秒续播：从记录直接进章节解析，缓存直链失效时会自动回退重新检索一次，不会卡死\n- 规则仓库支持在自定义仓库与内置仓库之间直接切换，切换即保存并清空旧缓存；规则商店增加「更新全部」，规则管理进入时自动静默刷新目录，规则管理入口显示可更新数量\n- 以图搜番会保留本次会话的图片与识别结果，进详情页或返回后不用重新选图和识别\n- 搜索历史选中关键词后直接回填当前搜索页，不再一层层套新页面\n- 详情页在有观看记录时主按钮直接「续播」，旁边新增紧凑的「换源」入口，两者垂直排列\n\n### 修复\n\n- 修复下载进度只存在内存里，强杀应用后重启显示旧进度的问题：进度现在会周期性落盘，退到后台立即持久化\n- 修复从播放页正常返回详情页时还会多弹一层选源面板的问题：现在只有起播失败后主动点「返回选源」才会重开，并且按番剧区分，不会跨页误弹\n- 修复弹幕请求重复发起、白白消耗配额的问题：同一集加载中或已加载完成时不再重复请求；拉取时机改到章节与目标集确认之后，与网页嗅探并行，既不拖慢首帧，也不会在没有播放源时白拉一次\n- 规则仓库切换的生效状态此前不持久化，重启后会回到第一条自定义仓库，现已修复\n- 修复部分横幅提示缺少样式参数导致的显示问题\n\n### 优化\n\n- 搜索页进入时键盘与页面推入同步弹出，不再等布局完成才聚焦\n- 手动匹配弹幕打开时自动搜索，并定位高亮当前集，同一部番内切集复用匹配结果\n- 追番页下拉可直接触发 Bangumi 同步；未配置令牌时会引导到同步设置\n- WebDAV 首次测试连通后自动开启一次同步开关（含历史、追番、弹幕屏蔽），之后手动关闭不会再被强行打开；Bangumi 同步允许已绑定令牌的用户在关闭自动同步时手动同步一次\n- 观看历史与「我的」页最近观看使用同一套去重口径",
+          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.1.0/Kazumi_ios_v3.1.0_no_sign.ipa",
+          "size": 24518636,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.0.9 · 19 Nov 2026",
-      "identifier": "Kazumi-Swift-release-v3.0.9",
-      "caption": "Kazumi-Swift 3.0.9 is available.",
-      "date": "2026-11-19T13:39:16Z",
+      "title": "Kazumi-Swift 3.1.0 · 20 Nov 2026",
+      "identifier": "Kazumi-Swift-release-v3.1.0",
+      "caption": "Kazumi-Swift 3.1.0 is available.",
+      "date": "2026-11-20T09:01:33Z",
       "tintColor": "#45A992",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.webp",
       "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.0.9"
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.1.0"
     }
   ]
 }

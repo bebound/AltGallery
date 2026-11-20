@@ -39,7 +39,7 @@
       "caption": "Playport 0.5.0 is available.",
       "date": "2026-11-02T10:13:17Z",
       "tintColor": "#F5B544",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/news.webp",
       "notify": true,
       "url": "https://github.com/playportdev/playport/releases/tag/v0.5.0"
     }

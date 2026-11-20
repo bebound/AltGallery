@@ -40,7 +40,7 @@
       "caption": "Feather 2.9.0 is available.",
       "date": "2026-07-05T02:11:53Z",
       "tintColor": "#848ef9",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/news.png",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/news.webp",
       "notify": true,
       "url": "https://github.com/claration/feather/releases/tag/v2.9.0"
     }
