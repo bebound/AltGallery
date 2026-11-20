@@ -226,6 +226,9 @@ Untethered alternative app store for iOS — resigns and installs IPAs with your
 ### <img src="apps/Silverphase/icon.png" alt="Silverphase icon" width="24" align="top"> <a href="https://github.com/akinal5765-byte/Silverphase">Silverphase</a>
 面向 iPhone 与 iPad 的原生胶片与印相模拟器——选好胶片与相纸，再从曝光、显影一路塑形到扫描。
 
+### <img src="apps/SimpleLive/icon.png" alt="Simple Live icon" width="24" align="top"> <a href="https://github.com/June6699/dart_simple_live">Simple Live</a>
+支持弹幕与 IPTV 的开源多平台直播聚合播放器——基于 Flutter，同一套代码覆盖手机、桌面与电视端。
+
 ### <img src="apps/Stats/icon.png" alt="Stats icon" width="24" align="top"> <a href="https://github.com/ishtiaq156/stats">Stats</a>
 Your Mac's activity, at a glance — a local-first system monitor over an encrypted local connection, with a lightweight Mac companion.
 

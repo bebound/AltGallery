@@ -226,6 +226,9 @@ iPhone 与 iPad 的模拟器前端——基于 NeoStation 的分支，主机风�
 ### <img src="apps/Silverphase/icon.png" alt="Silverphase icon" width="24" align="top"> <a href="https://github.com/akinal5765-byte/Silverphase">Silverphase</a>
 面向 iPhone 与 iPad 的原生胶片与印相模拟器——选好胶片与相纸，再从曝光、显影一路塑形到扫描。
 
+### <img src="apps/SimpleLive/icon.png" alt="Simple Live icon" width="24" align="top"> <a href="https://github.com/June6699/dart_simple_live">Simple Live</a>
+支持弹幕与 IPTV 的开源多平台直播聚合播放器——基于 Flutter，同一套代码覆盖手机、桌面与电视端。
+
 ### <img src="apps/Stats/icon.png" alt="Stats icon" width="24" align="top"> <a href="https://github.com/ishtiaq156/stats">Stats</a>
 一眼看到 Mac 的状态——通过加密的本地连接查看系统活动，配轻量的 Mac 端。
 

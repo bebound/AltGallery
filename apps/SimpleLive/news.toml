@@ -1,0 +1,17 @@
+# render_news.py config: uv run tools/render_news.py --out apps/SimpleLive
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "Simple Live"
+tagline = "带弹幕的\n多平台直播聚合播放器"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#24A7EB"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#24A7EB"      # bottom-right glow (default: [source] tint_color)
+# background = "#D9EEF8"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#E8F4FB"        # gradient mid stop (derived from background)
+# bg_dark = "#C2E2F4"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#3D8FB8" # tagline text (derived from background)
