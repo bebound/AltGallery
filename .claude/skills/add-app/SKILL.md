@@ -136,6 +136,12 @@ change between apps.
    When a source was found in step 2, its `iconURL` / `screenshots` tell you
    exactly which files to grab.
 
+   The icon keeps its original extension: `icon.png` is the convention, but
+   `icon.webp` (or `.jpg`/`.jpeg`) is fine when that is the artwork's native
+   format — keep the stem `icon` and point both `icon_url` fields at the real
+   file, plus the README heading (`apps/<AppName>/icon.webp`). `altgen` copies
+   the URL verbatim, and `render_news.py` finds the icon by stem.
+
    ⚠️ **Only download iPhone-sized screenshots, and never analyze them.**
    Filter candidates by pixel dimensions alone — portrait, aspect ratio
    (height/width) roughly 1.7–2.2, like 750×1334, 1170×2532, 1179×2556,
@@ -316,6 +322,8 @@ change between apps.
    ### <img src="apps/<AppName>/icon.png" alt="<AppName> icon" width="24" align="top"> <a href="https://github.com/owner/name"><AppName></a>
    Short one-line description.
    ```
+   Use the icon's actual file name in the `src` (`icon.webp` when the artwork
+   is kept as WebP — a Markdown `src` has to name the real file).
    ⚠️ Use `align="top"` on the icon — `align="center"` renders ~7px low on
    GitHub. The icon sits **outside** the link, uses a **repo-relative** path
    (`apps/<AppName>/icon.png`, never a `raw.githubusercontent.com` URL), and a
@@ -382,8 +390,8 @@ change between apps.
 - [ ] `bundle_identifier` and `min_os_version` from the source or the ipa (`tools/ipa_bundle_id.py`) — no `com.example.*` placeholder
 - [ ] version confirmed against the ipa (step 2f): `version_source = "ipa"` (with a comment) when the tag/filename differs, left out when it matches
 - [ ] ipa deleted afterwards
-- [ ] `apps/<AppName>/{config.toml, news.toml, icon.png, images/*}` all present
-- [ ] `icon.png` from the repo — the default light `AppIcon.png` from a `*.appiconset` when the repo has one — or from the ipa via `tools/ipa_icon.py` when the repo has none (re-check it did not land on `AppIcon-Dark.png`) — size checked, small size reported to the user
+- [ ] `apps/<AppName>/{config.toml, news.toml, icon.<ext>, images/*}` all present
+- [ ] `icon.png` (or `icon.webp`/`.jpg`, keeping the artwork's real format — both `icon_url` fields and the README heading point at the actual file) from the repo — the default light `AppIcon.png` from a `*.appiconset` when the repo has one — or from the ipa via `tools/ipa_icon.py` when the repo has none (re-check it did not land on `AppIcon-Dark.png`) — size checked, small size reported to the user
 - [ ] icon/screenshots hosted locally and referenced via `bebound/AltGallery` raw URLs (never the source's remote URLs)
 - [ ] only iPhone-sized screenshots downloaded (portrait, ratio ~1.7–2.2) — filtered by pixel dimensions, never by viewing the images
 - [ ] screenshots neither analyzed nor cropped nor culled; every candidate kept under its original filename and listed for the user to pick and rename

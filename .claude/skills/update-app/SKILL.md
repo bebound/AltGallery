@@ -146,7 +146,7 @@ which app was meant.
    | `[github] repo` | `<new-owner>/<repo>` |
    | `[source] name`, `subtitle`, `description` | new display name; keep the shared "… AltStore source by AltGallery & AltGen" wording |
    | `[source] website` | new repo URL |
-   | `[source] icon_url` | `.../apps/<NewName>/icon.png` |
+   | `[source] icon_url` | `.../apps/<NewName>/icon.<ext>` (the icon's real extension) |
    | `[source] tint_color` | new brand color when it changed (source `tintColor`, normalized to `#RRGGBB`) |
    | `[app] name` | new display name |
    | `[app] bundle_identifier` | re-verified value (step 3) |
@@ -226,7 +226,7 @@ from pathlib import Path
 from render_news import (load_configs, extract_icon_color,
                          derive_light_background, derive_background,
                          derive_bg_stops, auto_text_color,
-                         derive_tagline_color)
+                         derive_tagline_color, resolve_icon)
 
 out = Path("apps/<NewName>")
 news, cfg = load_configs(out)
@@ -238,7 +238,7 @@ tint = colors.get("tint") or app_tint or "#73B480"
 tint_alt = colors.get("tint_alt") or src_tint or tint
 bg = colors.get("background")
 if bg is None:
-    icon_color = extract_icon_color(out / "icon.png")
+    icon_color = extract_icon_color(resolve_icon(out))
     bg = derive_light_background(icon_color) if icon_color else derive_background(tint)
 mid, dark = derive_bg_stops(bg)
 print("tint          =", tint.upper())
@@ -281,11 +281,13 @@ PY
    Replace the app's `###` heading and description line in **Available Apps**:
 
    ```html
-   ### <img src="apps/<NewName>/icon.png" alt="<display name> icon" width="24" align="top"> <a href="https://github.com/<new-owner>/<repo>"><display name></a>
+   ### <img src="apps/<NewName>/icon.<ext>" alt="<display name> icon" width="24" align="top"> <a href="https://github.com/<new-owner>/<repo>"><display name></a>
    One-line description.
    ```
 
    - Keep `align="top"` on the icon (`align="center"` renders ~7px low).
+   - Name the icon's real file in `src` — `icon.webp` when the artwork is
+     kept as WebP, not a hardcoded `icon.png`.
    - Icon outside the link, repo-relative `src` (no `raw.githubusercontent.com`),
      one space before the linked name.
    - The heading text is the **display name**, which may differ from the

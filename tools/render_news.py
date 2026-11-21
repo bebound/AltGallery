@@ -16,8 +16,10 @@ The file is written as a lossy WebP at q90 (`NEWS_WEBP_QUALITY`) to
 images/news.webp, and the [news] image_url in config.toml points there.
 
 Configuration comes from <out>/news.toml (see the template below); any CLI flag
-overrides its news.toml counterpart. Colors left unset are derived into a
-harmonious scheme:
+overrides its news.toml counterpart. The app icon is read from <out>/icon.<ext>
+— `icon.png` for most apps, but `icon.webp` (or .jpg/.jpeg) works the same
+when the artwork is kept in that format; --icon overrides the file name.
+Colors left unset are derived into a harmonious scheme:
   - tint / tint_alt   -> [app] / [source] tint_color
   - background        -> light shade of the icon's dominant color, so the
                          promo blends with the app's artwork; falls back to
@@ -106,6 +108,13 @@ NEWS_WEBP_QUALITY = 90
 NEWS_WEBP_METHOD = 6
 
 _HEX_RE = re.compile(r"^#[0-9a-fA-F]{6}$")
+
+# The app icon sits in the app folder as `icon.<ext>`; most apps keep it as
+# `icon.png`, but a higher-resolution WebP is just as valid artwork (and the
+# folder layout does not pin the extension). Pillow reads either one, so the
+# icon is resolved by stem with the formats tried in this order — the same
+# way `[app] screenshots` keeps its extension as-is.
+ICON_SUFFIXES = (".png", ".webp", ".jpg", ".jpeg")
 
 # Font candidates per role, in preference order. Each is (path, ttc index);
 # the first that loads is used. Helvetica covers Latin, Hiragino Sans GB (and
@@ -356,6 +365,29 @@ def derive_tagline_color(bg: str) -> str:
     return _hls_to_hex(h, 0.72, min(s, 0.35))
 
 
+def resolve_icon(app_dir: Path, icon: str | None = None) -> Path:
+    """The app's icon file inside ``app_dir``.
+
+    ``icon`` (the CLI value) may be a full relative file name — used as-is
+    when it exists, so a stray `icon@2x.png` still wins. Otherwise it is a
+    stem (`icon`), or None, in which case the first existing
+    `icon<ICON_SUFFIXES>` is picked. Falls back to `icon.png` so the caller
+    reports a missing file against the conventional path.
+    """
+    if icon:
+        candidate = app_dir / icon
+        if candidate.exists():
+            return candidate
+        stem = candidate.stem
+    else:
+        stem = "icon"
+    for suffix in ICON_SUFFIXES:
+        candidate = app_dir / f"{stem}{suffix}"
+        if candidate.exists():
+            return candidate
+    return app_dir / f"{stem}.png"
+
+
 def extract_icon_color(icon_path: Path) -> str | None:
     """Dominant colorful color of the app icon, for a light background.
 
@@ -553,13 +585,16 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Render AltStore news promo image")
     ap.add_argument("--name", help="app display name (default: news.toml)")
     ap.add_argument("--tagline", help="short one-line descriptor (default: news.toml)")
-    ap.add_argument("--icon", default="icon.png", help="icon path, relative to --out dir")
+    ap.add_argument("--icon", default="icon",
+                    help="icon file or stem, relative to --out dir "
+                         "(default: icon, resolved to icon.png / icon.webp / …)")
     ap.add_argument("--tint", help="badge/glow accent color (default: config.toml [app] tint_color)")
     ap.add_argument("--tint-alt", help="secondary accent color (default: config.toml [source] tint_color)")
     ap.add_argument("--out", required=True, help="output directory (the app folder, e.g. apps/PiliPlus)")
     args = ap.parse_args()
 
     out = Path(args.out)
+    icon_path = resolve_icon(out, args.icon)
     news, cfg = load_configs(out)
     colors = news.get("colors", {}) or {}
 
@@ -579,7 +614,7 @@ def main() -> None:
     # stop can be pinned individually in news.toml).
     bg = colors.get("background")
     if bg is None:
-        icon_color = extract_icon_color(out / args.icon)
+        icon_color = extract_icon_color(icon_path)
         bg = derive_light_background(icon_color) if icon_color else derive_background(tint)
     bg = check_hex(bg, "background")
     derived_mid, derived_dark = derive_bg_stops(bg)
@@ -624,7 +659,7 @@ def main() -> None:
         print(f"removed stale {stale}")
     img = _base_canvas(draw_colors)
     _draw_circles(img)
-    _draw_icon(img, out / args.icon)
+    _draw_icon(img, icon_path)
     _draw_badge(img, draw_colors)
     _draw_layout(img, name, name_font, name_y, tag_lines, tag_ys, tagline_font,
                  draw_colors)

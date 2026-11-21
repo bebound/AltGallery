@@ -55,7 +55,7 @@ Each IPA gets its own folder under `apps/`, e.g. `apps/PiliPlus/`:
 apps/<AppName>/
 ├── config.toml      # altgen configuration file
 ├── news.toml        # news image config (name, tagline, optional colors)
-├── icon.png         # app icon
+├── icon.png         # app icon (icon.webp / .jpg also fine — see Icon Format)
 ├── images/          # screenshots + news.webp promo image
 │   ├── home.png     # screenshot, listed in [app] screenshots (extension kept as-is)
 │   └── news.webp    # generated promo image (referenced from [news] image_url)
@@ -266,7 +266,9 @@ app's image (from each app's `news.toml`: `name`, `tagline`, optional
 or a single app with `uv run tools/render_news.py --out apps/<AppName>`.
 Unset colors are auto-derived from `config.toml` tints and the icon's dominant
 color (Pillow comes from the script's inline metadata, so there is nothing to
-install first — no external rasterizer either). The rendered
+install first — no external rasterizer either). The icon is found by stem, so
+`icon.png` and `icon.webp` both work with no flag (see [Icon
+format](#icon-format)). The rendered
 `apps/<AppName>/images/news.webp` stays in the working
 tree — the URL in `config.toml` `[news] image_url` already points at it. Do
 not auto-commit it.
@@ -339,6 +341,24 @@ When a new app lacks an official tint, use the result as `[app] tint_color`
 (brand color) — but eyeball the icon first: a multi-color or pale icon may
 not have an obvious single brand color, so the sample needs human
 confirmation.
+
+### Icon format
+
+`icon.png` is the convention, not a requirement: the file may be
+`icon.webp` (or `.jpg`/`.jpeg`) when that is the artwork's native format — a
+WebP master keeps a hi-res icon at a fraction of the PNG bytes, and AltStore,
+the site and `render_news.py` all read whatever format the URL serves. Keep
+the stem `icon` and the extension real, and point both `icon_url` fields in
+`config.toml` at the actual file (`.../apps/<AppName>/icon.webp`), since
+altgen copies the URL verbatim.
+
+`tools/render_news.py` resolves the stem itself (`resolve_icon()`): with no
+`--icon` it picks the first of `icon.png` / `icon.webp` / `icon.jpg` /
+`icon.jpeg` that exists, so `./update_news.sh` needs no per-app flag; passing
+`--icon <file>` uses that file when it exists, else its stem is resolved the
+same way. When importing `extract_icon_color()` by hand (above), substitute
+the app's real file name — `icon.webp` with a `.png` path just returns `None`
+and silently falls back to the tint-derived background.
 
 ## Reading an IPA's Bundle ID
 
