@@ -21,11 +21,11 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.9.10",
-          "date": "2026-11-06T14:01:41Z",
-          "localizedDescription": "### What's Changed\r\n* 统一首页导航与内容操作栏外观 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/187\r\n* 调整 Android 页面进入和返回转场 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/186\r\n* 优化文章与想法详情首屏和操作栏 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/188\r\n\r\n<img height=\"500\" alt=\"telegram-cloud-photo-size-5-6296309837490493137-w\" src=\"https://github.com/user-attachments/assets/bbed6e50-bf62-4205-a4ef-65cc71fd9174\" />\r\n\r\n<img height=\"500\" alt=\"telegram-cloud-photo-size-5-6298716015608665964-w\" src=\"https://github.com/user-attachments/assets/99226fd4-0af5-47a7-b3aa-5aae9ac0b929\" />\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.9...v0.9.10",
-          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.9.10/zhihu-minus-minus-v0.9.10-unsigned.ipa",
-          "size": 14833319,
+          "version": "0.10.0",
+          "date": "2026-11-21T03:09:18Z",
+          "localizedDescription": "### What's Changed\r\n\r\n* 下拉刷新不清空已加载列表内容 by @duofuwang in https://github.com/huamurui/zhihu-minus-minus/pull/193\r\n* fix: 个人主页分页拼接时按 id 去重 by @NobetaSena in https://github.com/huamurui/zhihu-minus-minus/pull/198\r\n* 完善划线评论、选区操作与富文本阅读 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/200\r\n* 稳定折叠回答卡片的滚动位置，直接展示同题问题详情 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/201\r\n* fix: 预览列表模式下点回答卡片不发起标题过渡 by @NobetaSena in https://github.com/huamurui/zhihu-minus-minus/pull/202\r\n* 为「我的」页添加随滚动收起的头像和模糊封面 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/205\r\n* fix: 展开问题描述时不再闪出灰色占位条 by @NobetaSena in https://github.com/huamurui/zhihu-minus-minus/pull/203\r\n* 修复 Android 下拉刷新手势，调整 iOS 为 42 个等距齿位 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/206\r\n* 改善 iOS 双栏弹窗，支持知乎扫码登录和无图模式 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/207\r\n* 长图文正文分批渲染，优先显示首屏 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/208\r\n* 让「我的」页头像随滚动融入灵动岛和相机挖孔 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/210\r\n\r\n### New Contributors\r\n* @duofuwang made their first contribution in https://github.com/huamurui/zhihu-minus-minus/pull/193\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.10...v0.10.0",
+          "downloadURL": "https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.10.0/zhihu-minus-minus-v0.10.0-unsigned.ipa",
+          "size": 14901422,
           "minOSVersion": "15.1"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.9.10 · 06 Nov 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.9.10",
-      "caption": "ZhihuMinusMinus 0.9.10 is available.",
-      "date": "2026-11-06T14:01:41Z",
+      "title": "ZhihuMinusMinus 0.10.0 · 21 Nov 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.10.0",
+      "caption": "ZhihuMinusMinus 0.10.0 is available.",
+      "date": "2026-11-21T03:09:18Z",
       "tintColor": "#0084ff",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.webp",
       "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.9.10"
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.10.0"
     }
   ]
 }
