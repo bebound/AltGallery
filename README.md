@@ -109,7 +109,7 @@ x86-64 PC emulator for iOS — runs x86-64 Linux executables by translating them
 ### <img src="apps/Feather/icon.png" alt="Feather icon" width="24" align="top"> <a href="https://github.com/claration/feather">Feather</a>
 On-device signing application — sign and install IPAs with your own Apple Developer certificate, no computer needed.
 
-### <img src="apps/Fladder/icon.png" alt="Fladder icon" width="24" align="top"> <a href="https://github.com/DonutWare/Fladder">Fladder</a>
+### <img src="apps/Fladder/icon.webp" alt="Fladder icon" width="24" align="top"> <a href="https://github.com/DonutWare/Fladder">Fladder</a>
 A cross-platform Jellyfin frontend built on Flutter — stream or sync media to your device, with multiple servers and profiles and Seerr integration.
 
 ### <img src="apps/GestaltX/icon.png" alt="GestaltX icon" width="24" align="top"> <a href="https://github.com/huamidev/GestaltX">GestaltX</a>

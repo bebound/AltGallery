@@ -8,7 +8,7 @@ repo = "DonutWare/Fladder"
 name = "Fladder"
 subtitle = "Fladder AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Fladder"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.webp"
 website = "https://github.com/DonutWare/Fladder"
 tint_color = "#F04040"
 
@@ -18,7 +18,7 @@ bundle_identifier = "nl.jknaapen.fladder"
 developer_name = "DonutWare"
 subtitle = "A cross-platform Jellyfin frontend built on Flutter"
 description = "A cross-platform Jellyfin frontend built on top of Flutter, for iOS. Stream or sync media locally, switch between multiple servers and profiles, and download items with their progress kept in sync."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.webp"
 screenshots = [
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Dashboard.webp",
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Details.webp",
