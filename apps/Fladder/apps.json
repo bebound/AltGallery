@@ -1,0 +1,48 @@
+{
+  "name": "Fladder",
+  "subtitle": "Fladder AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Fladder",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png",
+  "website": "https://github.com/DonutWare/Fladder",
+  "tintColor": "#F04040",
+  "apps": [
+    {
+      "name": "Fladder",
+      "bundleIdentifier": "nl.jknaapen.fladder",
+      "developerName": "DonutWare",
+      "subtitle": "A cross-platform Jellyfin frontend built on Flutter",
+      "localizedDescription": "A cross-platform Jellyfin frontend built on top of Flutter, for iOS. Stream or sync media locally, switch between multiple servers and profiles, and download items with their progress kept in sync.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Dashboard.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Details.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Library.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Player.webp"
+      ],
+      "tintColor": "#F04040",
+      "versions": [
+        {
+          "version": "0.12.1",
+          "date": "2026-11-20T18:51:46Z",
+          "localizedDescription": "## 📋 What's Changed\r\n\r\n>INFO\r\n0.12.1 is a hot-fix for Linux users, specifically those using Nvidia gpus. Flutter contained a bug causing the screen to render at 1/4 of the actual window size. Other platforms remain the same as 0.12.0\r\n\r\nThis was supposed to be a small release that improves performance for low-end devices I swear.\r\n\r\n## Performance Improvements\r\nFladder now checks the device available RAM and adjusts accordingly disabling things that might overfill the memory, all of this can be tweaked later on by the user in Settings -> Fladder.\r\nThere where also a lot of small performance improvements throughout the app no matter the device or settings.\r\n<img width=\"1017\" height=\"78\" alt=\"image\" src=\"https://github.com/user-attachments/assets/04030c2b-b5c2-47ba-82ba-9f47998f5e56\" />\r\n\r\n## Improved library filters\r\n - Library filters can now be added to the home-screen and/or side \r\n - Filter settings sync to your Jellyfin account so they are shared between devices\r\n - Small bugfixes to how the filters work\r\n\r\n## Dashboard screen\r\nAdd the option to re-order or disable items on the dashboard screens.\r\nThese settings are saved to the Jellyfin profile\r\n<img width=\"1010\" height=\"310\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d685a3ab-39a5-4a92-a36e-41a7f212599b\" />\r\n\r\n## New secure option\r\nYou can now secure a profile with a pattern lock similar to the Android secure lock.\r\nThis works for all platforms except when using dPad navigation\r\n<img width=\"429\" height=\"458\" alt=\"image\" src=\"https://github.com/user-attachments/assets/35c63073-24ed-43ba-85fc-a86bb66b659f\" />\r\n\r\n> [!WARNING]\r\n(Linux)\r\nFladder now uses a new rendering backend (impeller). This gives improved performance, however on some hardware/software combinations could cause issues. If you experience any of these issues use the toggle in Settings -> Fladder to go back to the previous renderer. <img width=\"993\" height=\"108\" alt=\"image\" src=\"https://github.com/user-attachments/assets/97d2a200-84db-4166-97b1-8529e2bb17fc\" />\r\n\r\nSee the full change log for any other features or fixes.\r\n\r\n### New Features 🏕\r\n\r\n- **Music:** Shuffle home playlists by default (1a029097)\r\n- **dPad:** Add a list of buttons to act as \"back\" (3f8f3c07)\r\n- Improve pin input and add pattern input option (dd2a2b54)\r\n- Add websocket for live updates of some screens (6ec02109)\r\n- **Android:** Implement refresh rate matching for native player (#997)\r\n- Previous and next chapter buttons (#1063)\r\n- Hotkey for subtitle offset (#1067)\r\n- Add the option to change the users internet url (42fa3592)\r\n- Autoscroll with the middle mouse button on desktop (#1169)\r\n- Fix/remap deeplinks to fladder:// (9fbf94a8)\r\n- Save filters to server profile and re-order dashboard screen (#1141)\r\n\r\n### Bugfixes 🐞\r\n\r\n- **Linux:** Impeller toggle caused data directory reset (b80aa878)\r\n- **Linux:** Include sqlite in flutters native assets (3267cc32)\r\n- **Linux:** Flatpak connectivity provider failing on network state check (c205efd6)\r\n- **Music:** Replay-gain fix and stabilize the queue mess when skipping (96aa62c7)\r\n- **Windows:** Smtc exception breaking window management (a8816b62)\r\n- When logging in as a existing user, update that user instead of replacing. (f7465b4c)\r\n- Use internal mpv subtrack (ea60414e)\r\n- Make the photo gallery video player more stable and improve cacheNeighbors (ac96cd5f)\r\n- Copy media viewer logic from Polder (0866f2c8)\r\n- Use the correct position values when starting playback (b777ebdb)\r\n- Sync/update media-kit and fix iOS builds (c2ea06d0)\r\n- Circular dependency when using volume gesture (05f568e1)\r\n- **Touch:** Show/hide video controls not properly responding to touch (657e746c)\r\n- **macOS:** Flutter window resizing crash (c63b1f08)\r\n- Full screen music player closing with open dialog (05393509)\r\n- Remove heavy calculations in horizontal list (091cb3a5)\r\n- Quickly scrolling to the left in a horizontal list (9e1d6457)\r\n- Hide chapter buttons on smaller devices (26c04f79)\r\n- Use new linux test branch for media_kit (d6f31220)\r\n- Update podfiles for iOS and macOS (4d7bd84f)\r\n- Predictive back android (86ca55ba)\r\n- Libass fallback font name fix (#1157)\r\n- Keep subtitles visible during Next-up preview (#1150)\r\n- Playback state not being stopped correctly (5d12e7b8)\r\n- **AndroidTV:** Last leanbackmode not being saved (65202bf0)\r\n- Linux build error (de7b5a2a)\r\n- Small loading order issues homescreens (dbdbdeac)\r\n- Dashboard filters loading multiple times (5319e380)\r\n- Multi-window playback status (2fb42f2a)\r\n- **Desktop:** Multi-window instance hitting the file limit and keep api providers (f29baff4)\r\n- Photo album syncing (2e2a7530)\r\n- Settings not applying correctly without \"enter/send\" pressed fix: Constantly polling changes and calling dashboard providers (91992fcd)\r\n- Small fixes for new saved filters (773f3ce4)\r\n- Incorrect display of season and series posters jellyfin 12.0 (#1142)\r\n- Jellyfin 12.0 api_key deprecation (5cff64dd)\r\n\r\n### Documentation 📖\r\n\r\n- Use conventional commits for changelog (5beb8392)\r\n\r\n### Other Changes\r\n\r\n- **Linux:** Add option to enable/disable the impeller renderer (21c65489)\r\n- Updated translations from  Hosted Weblate (#1171)\r\n- Updated to flutter 3.50.0 move all imports to either legacy or the new material library. Updated packages to their latest versions re-generated pidgeons (5b73e14b)\r\n- Update exoplayer (265c42b3)\r\n- Improve dpad navigation focus and performance (cccc9221)\r\n- Update flutter to 3.47.7 (5d4c1487)\r\n- Improve performance on low end devices (#1174)\r\n- Remove scheduled build (#1132)\r\n- Update flatpak summary (#1128)\r\n- Update Flutter SDK version to 3.50.1 (#1195)\r\n- Improve looping mpv (6f9f18e9)\r\n\r\n**Full Changelog:** https://github.com/DonutWare/Fladder/compare/v0.11.1...v0.12.1",
+          "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.12.1/Fladder-iOS-0.12.1.ipa",
+          "size": 36768050,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "nl.jknaapen.fladder",
+      "title": "Fladder 0.12.1 · 20 Nov 2026",
+      "identifier": "Fladder-release-v0.12.1",
+      "caption": "Fladder 0.12.1 is available.",
+      "date": "2026-11-20T18:51:46Z",
+      "tintColor": "#F04040",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/DonutWare/Fladder/releases/tag/v0.12.1"
+    }
+  ]
+}
