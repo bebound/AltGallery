@@ -1,0 +1,43 @@
+# altgen config for the Fladder AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "DonutWare/Fladder"
+
+[source]
+name = "Fladder"
+subtitle = "Fladder AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Fladder"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png"
+website = "https://github.com/DonutWare/Fladder"
+tint_color = "#F04040"
+
+[app]
+name = "Fladder"
+bundle_identifier = "nl.jknaapen.fladder"
+developer_name = "DonutWare"
+subtitle = "A cross-platform Jellyfin frontend built on Flutter"
+description = "A cross-platform Jellyfin frontend built on top of Flutter, for iOS. Stream or sync media locally, switch between multiple servers and profiles, and download items with their progress kept in sync."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Dashboard.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Details.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Library.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Player.webp",
+]
+tint_color = "#F04040"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Releases ship several platforms; only the iOS ipa is picked up.
+asset_pattern = "Fladder-iOS-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -109,6 +109,9 @@ iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱——基于 worse_que
 ### <img src="apps/Feather/icon.png" alt="Feather icon" width="24" align="top"> <a href="https://github.com/claration/feather">Feather</a>
 设备端签名工具——用你自己的 Apple 开发者证书签名并安装 IPA，无需电脑。
 
+### <img src="apps/Fladder/icon.png" alt="Fladder icon" width="24" align="top"> <a href="https://github.com/DonutWare/Fladder">Fladder</a>
+基于 Flutter 的跨平台 Jellyfin 客户端——可在线串流或同步媒体到本地，支持多服务器与多用户，并集成 Seerr。
+
 ### <img src="apps/GestaltX/icon.png" alt="GestaltX icon" width="24" align="top"> <a href="https://github.com/huamidev/GestaltX">GestaltX</a>
 面向 iOS 27 的 MobileGestalt 编辑器——区域代码调整、设备预设、能力开关与带类型的 plist 字段编辑器，支持备份。
 

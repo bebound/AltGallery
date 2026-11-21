@@ -203,5 +203,9 @@
   "com.google.ios.youtube": {
     "subtitle": "可自定义调整项的 YouTube 修改版",
     "description": "面向 iOS 的 YouTube YouPro 修改版。包含去广告、后台播放、下载、iSponsorBlock、画中画，以及大量可自定义的调整项。"
+  },
+  "nl.jknaapen.fladder": {
+    "subtitle": "基于 Flutter 的跨平台 Jellyfin 客户端",
+    "description": "基于 Flutter 的跨平台 Jellyfin 客户端（iOS 版）。可在线串流或同步媒体到本地，支持在多个服务器与用户之间切换，下载内容时进度保持同步。"
   }
 }
