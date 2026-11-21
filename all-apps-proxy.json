@@ -545,7 +545,7 @@
       "developerName": "DonutWare",
       "subtitle": "A cross-platform Jellyfin frontend built on Flutter",
       "localizedDescription": "A cross-platform Jellyfin frontend built on top of Flutter, for iOS. Stream or sync media locally, switch between multiple servers and profiles, and download items with their progress kept in sync.",
-      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.webp",
       "screenshots": [
         "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Dashboard.webp",
         "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Details.webp",

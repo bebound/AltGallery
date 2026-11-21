@@ -2,7 +2,7 @@
   "name": "Fladder",
   "subtitle": "Fladder AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for Fladder",
-  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.webp",
   "website": "https://github.com/DonutWare/Fladder",
   "tintColor": "#F04040",
   "apps": [
@@ -12,7 +12,7 @@
       "developerName": "DonutWare",
       "subtitle": "A cross-platform Jellyfin frontend built on Flutter",
       "localizedDescription": "A cross-platform Jellyfin frontend built on top of Flutter, for iOS. Stream or sync media locally, switch between multiple servers and profiles, and download items with their progress kept in sync.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.png",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/icon.webp",
       "screenshots": [
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Dashboard.webp",
         "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Fladder/images/Details.webp",
