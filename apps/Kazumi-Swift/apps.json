@@ -21,11 +21,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.1.0",
-          "date": "2026-11-20T09:01:33Z",
-          "localizedDescription": "### 新增\n\n- 下载支持后台保活与断点续传：切出应用甚至被系统挂起后下载仍会继续，中断后能接着续传，不再从头来\n- 观看历史支持按番名或规则名搜索、多选批量删除；有详情页地址的记录可以直接跳回该条目\n- 「我的」页最近观看的番剧支持一秒续播：从记录直接进章节解析，缓存直链失效时会自动回退重新检索一次，不会卡死\n- 规则仓库支持在自定义仓库与内置仓库之间直接切换，切换即保存并清空旧缓存；规则商店增加「更新全部」，规则管理进入时自动静默刷新目录，规则管理入口显示可更新数量\n- 以图搜番会保留本次会话的图片与识别结果，进详情页或返回后不用重新选图和识别\n- 搜索历史选中关键词后直接回填当前搜索页，不再一层层套新页面\n- 详情页在有观看记录时主按钮直接「续播」，旁边新增紧凑的「换源」入口，两者垂直排列\n\n### 修复\n\n- 修复下载进度只存在内存里，强杀应用后重启显示旧进度的问题：进度现在会周期性落盘，退到后台立即持久化\n- 修复从播放页正常返回详情页时还会多弹一层选源面板的问题：现在只有起播失败后主动点「返回选源」才会重开，并且按番剧区分，不会跨页误弹\n- 修复弹幕请求重复发起、白白消耗配额的问题：同一集加载中或已加载完成时不再重复请求；拉取时机改到章节与目标集确认之后，与网页嗅探并行，既不拖慢首帧，也不会在没有播放源时白拉一次\n- 规则仓库切换的生效状态此前不持久化，重启后会回到第一条自定义仓库，现已修复\n- 修复部分横幅提示缺少样式参数导致的显示问题\n\n### 优化\n\n- 搜索页进入时键盘与页面推入同步弹出，不再等布局完成才聚焦\n- 手动匹配弹幕打开时自动搜索，并定位高亮当前集，同一部番内切集复用匹配结果\n- 追番页下拉可直接触发 Bangumi 同步；未配置令牌时会引导到同步设置\n- WebDAV 首次测试连通后自动开启一次同步开关（含历史、追番、弹幕屏蔽），之后手动关闭不会再被强行打开；Bangumi 同步允许已绑定令牌的用户在关闭自动同步时手动同步一次\n- 观看历史与「我的」页最近观看使用同一套去重口径",
-          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.1.0/Kazumi_ios_v3.1.0_no_sign.ipa",
-          "size": 24518636,
+          "version": "3.1.1",
+          "date": "2026-11-21T14:56:42Z",
+          "localizedDescription": "### 新增\n\n- 封面展开成详情页时改用新的缩放转场：卡片按自身圆角连续变形，展开与收回与 Apple TV App 的转场观感一致；追番页的收藏状态角标改为独立响应，点它不会再连带打开详情页\n- 观看历史在宽屏（可用宽度 ≥ 700）改为两到三列网格，与时间表页的排布一致\n\n### 修复\n\n- 修复 iPhone Duo 展开时推荐页横向海报货架溢出到右侧竖栏下面的问题\n- 修复 Duo 从全屏播放退出后再展开，界面仍被钉在竖向无法跟随设备旋转的问题\n- 修复手机横屏等矮屏下追番页与更多列表的封面被撑得比竖屏大近一倍的问题，改为按更小的步长分列\n\n### 优化\n\n- 时间表在横屏按窗口左右安全区计算页宽，翻页后不再露出下一天的一角\n- 更多列表页的卡片标题对齐追番页：12pt 常规字重、两行、行距 3.6、与海报顶部留 6pt，字号变化时高度跟着缩放\n- 从详情页返回推荐页时不再重读磁盘缓存并覆写列表，避免整页与所有卡片重新排版\n- 更多列表去掉右下角回顶悬浮按钮，恢复普通滚动；底部留白相应收紧",
+          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.1.1/Kazumi_ios_v3.1.1_no_sign.ipa",
+          "size": 24528156,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.1.0 · 20 Nov 2026",
-      "identifier": "Kazumi-Swift-release-v3.1.0",
-      "caption": "Kazumi-Swift 3.1.0 is available.",
-      "date": "2026-11-20T09:01:33Z",
+      "title": "Kazumi-Swift 3.1.1 · 21 Nov 2026",
+      "identifier": "Kazumi-Swift-release-v3.1.1",
+      "caption": "Kazumi-Swift 3.1.1 is available.",
+      "date": "2026-11-21T14:56:42Z",
       "tintColor": "#45A992",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.webp",
       "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.1.0"
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.1.1"
     }
   ]
 }
