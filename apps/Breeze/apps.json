@@ -20,11 +20,11 @@
       "tintColor": "#E03030",
       "versions": [
         {
-          "version": "3.0.38",
-          "date": "2026-11-15T09:03:41Z",
-          "localizedDescription": "## 📝 更新日志\r\n## [v3.0.38]\r\n\r\n### 功能更新\r\n\r\n- 添加编辑已下载漫画的功能\r\n- 添加章节已读标记\r\n- 移动端阅读新增「横屏自动双页」功能\r\n- 新增「内网拦截」开关\r\n- 更新弹窗支持「一周内不再提醒」\r\n- 新增「显示搜索书签」开关\r\n- 追更与更新日志新增 NEW 提示\r\n- 插件筛选面板新增下拉框支持\r\n- 添加doh支持\r\n- 网络层支持域名前置（IP 直连 / SNI 绕过）与 ECH，改善部分图源的连通性 with [daiwenwen3](https://github.com/daiwenwen3)\r\n\r\n### 修复\r\n\r\n- 修复导入漫画时失败的问题\r\n\r\n### 优化\r\n\r\n- 优化部分性能\r\n- 调整部分文本与ui样式\r\n\r\n### 杂项\r\n\r\n- 重做Windows安装器\r\n\r\n---\r\n\r\n### 📦 推荐下载\r\n| 平台 | 下载链接 |\r\n| :--- | :--- |\r\n| **Windows** | [windows-installer-v3.0.38.exe](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/windows-installer-v3.0.38.exe) |\r\n| **macOS** | [Breeze-macOS-v3.0.38.dmg](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-macOS-v3.0.38.dmg) |\r\n| **Android** | [app-arm64-v8a-release-v3.0.38.apk](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/app-arm64-v8a-release-v3.0.38.apk) |\r\n| **iOS** | [Breeze-iOS-v3.0.38.ipa](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-iOS-v3.0.38.ipa) |\r\n| **Linux** | [breeze-v3.0.38.flatpak](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/breeze-v3.0.38.flatpak) |\r\n| **Linux (DEB)** | [breeze_3.0.38_amd64-v3.0.38.deb](https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/breeze_3.0.38_amd64-v3.0.38.deb) |\r\n\r\n> 💡 **不知道该下载哪个文件？**\r\n> 请查看 [详细安装指南](https://github.com/breeze-project-org/Breeze#-%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85)。",
-          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.0.38/Breeze-iOS-v3.0.38.ipa",
-          "size": 27173399,
+          "version": "3.1.0",
+          "date": "2026-11-21T13:52:36Z",
+          "localizedDescription": "## 📝 更新日志\n## [v3.1.0]\n\n### 功能更新\n\n- 添加鸿蒙（HarmonyOS NEXT）支持\n- 添加导入外部漫画功能，支持文件夹与 CBZ / CBR / CB7 / CBT 等压缩包\n- 编辑已下载漫画时支持导入章节与图片、编辑分卷\n- 外观设置新增「漫画详情页」样式，可分别隐藏点赞、评论、本地收藏与云收藏按钮\n- 新增显示滚动条与滚动条常驻开关\n- 同步设置支持自定义自动同步间隔\n- 阅读设置新增「条漫放大后连续滚动」实验性开关 by [0kitasan](https://github.com/0kitasan)\n\n### 修复\n\n- 修复书架文件夹的漫画数量不随来源筛选变化的问题\n- 修复下载任务重启后进度丢失的问题\n- 修复不包含下载内容的备份无法导入的问题\n\n### 优化\n\n- 优化插件启动速度\n- 优化内存占用\n\n### ui调整\n\n- 调整部分ui样式\n\n### 杂项\n\n- 数据存储全面迁移到 SQLite\n\n---\n\n### 📦 推荐下载\n| 平台 | 下载链接 |\n| :--- | :--- |\n| **Windows** | [windows-installer-v3.1.0.exe](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/windows-installer-v3.1.0.exe) |\n| **macOS** | [Breeze-macOS-v3.1.0.dmg](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-macOS-v3.1.0.dmg) |\n| **Android** | [app-arm64-v8a-release-v3.1.0.apk](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/app-arm64-v8a-release-v3.1.0.apk) |\n| **iOS** | [Breeze-iOS-v3.1.0.ipa](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-iOS-v3.1.0.ipa) |\n| **Linux** | [breeze-v3.1.0.flatpak](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/breeze-v3.1.0.flatpak) |\n| **Linux (DEB)** | [breeze_3.1.0_amd64-v3.1.0.deb](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/breeze_3.1.0_amd64-v3.1.0.deb) |\n| **HarmonyOS (未签名)** | [Breeze-ohos-arm64-v3.1.0.hap](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-ohos-arm64-v3.1.0.hap) |\n\n> 💡 **不知道该下载哪个文件？**\n> 请查看 [详细安装指南](https://github.com/breeze-project-org/Breeze#-%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85)。\n> ⚠️ **HarmonyOS HAP 未签名**（仅 arm64，最低 HarmonyOS 5.0.5(17)）：需要用自己设备信任的证书/profile 自签后安装，不能用 OpenHarmony 测试证书装零售机。",
+          "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-iOS-v3.1.0.ipa",
+          "size": 27861953,
           "minOSVersion": "15.0"
         }
       ]
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "com.zephyr.breeze",
-      "title": "Breeze 3.0.38 · 15 Nov 2026",
-      "identifier": "Breeze-release-v3.0.38",
-      "caption": "Breeze 3.0.38 is available.",
-      "date": "2026-11-15T09:03:41Z",
+      "title": "Breeze 3.1.0 · 21 Nov 2026",
+      "identifier": "Breeze-release-v3.1.0",
+      "caption": "Breeze 3.1.0 is available.",
+      "date": "2026-11-21T13:52:36Z",
       "tintColor": "#E03030",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/news.webp",
       "notify": true,
-      "url": "https://github.com/breeze-project-org/Breeze/releases/tag/v3.0.38"
+      "url": "https://github.com/breeze-project-org/Breeze/releases/tag/v3.1.0"
     }
   ]
 }
