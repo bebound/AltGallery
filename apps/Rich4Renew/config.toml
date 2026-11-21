@@ -1,0 +1,48 @@
+# altgen config for the Rich4Renew AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "iam567/rich4-renew-app"
+
+[source]
+name = "Rich4Renew"
+subtitle = "Rich4Renew AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Rich4Renew"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/icon.webp"
+website = "https://github.com/iam567/rich4-renew-app"
+tint_color = "#F0D020"
+
+[app]
+name = "Rich4Renew"
+bundle_identifier = "pro.areu.rich4"
+developer_name = "iam567"
+subtitle = "大富翁4 高清重制版，新增歌舞伎町地图与大富豪模式"
+description = "《大富翁4》的高清重制版：Vite + TypeScript 重写的游戏本体，Capacitor 打包成 iOS App，规则依原版反组译还原，并加入新玩法「大富豪模式」与新地图「歌舞伎町」。支持 iPhone 与 iPad，iOS 15.0 及以上。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/01-title.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/02-classic-taiwan.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/03-tokyo.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/04-kabukicho.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/05-jiqing-tiananmen.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/06-lottery.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/07-missile-film.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/08-party-taunt.webp",
+]
+tint_color = "#F0D020"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release ships one unsigned ipa
+# named rich4-<version>-unsigned.ipa
+asset_pattern = "rich4-.*-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/news.webp"
+
+[output]
+path = "apps.json"

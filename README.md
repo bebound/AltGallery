@@ -217,6 +217,9 @@ PlayStation 3 emulator for iPhone and iPad — built on RPCS3, with community pa
 ### <img src="apps/RewindBox/icon.png" alt="RewindBox icon" width="24" align="top"> <a href="https://github.com/TarbleFR/RewindBox">RewindBox</a>
 Emulation frontend for iPhone and iPad — a NeoStation fork pairing a console-style library with Libretro cores, Dolphin, ARMSX2, MeloNX and RPCS3.
 
+### <img src="apps/Rich4Renew/icon.webp" alt="Rich4Renew icon" width="24" align="top"> <a href="https://github.com/iam567/rich4-renew-app">Rich4Renew</a>
+大富翁4 高清重制版，新增歌舞伎町地图与大富豪模式 — Vite + TypeScript 重写的游戏本体，Capacitor 打包成 iOS App，规则依原版反组译还原。
+
 ### <img src="apps/Roam-Control/icon.png" alt="Roam Control icon" width="24" align="top"> <a href="https://github.com/seanhowarthdev/Roam-Control">Roam Control</a>
 Choose, test and move your iPhone's reported location — simulate walking routes and keep favourites from one Apple Maps interface.
 

@@ -1,0 +1,19 @@
+# render_news.py config: uv run tools/render_news.py --out apps/Rich4Renew
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "Rich4Renew"
+tagline = "大富翁4 高清重制版"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#F0D020"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#F0D020"      # bottom-right glow (default: [source] tint_color)
+# background = "#EBE8D6"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#F3F2E7"        # gradient mid stop (derived from background)
+# bg_dark = "#DED9BB"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# Pinned: the derived tagline color (#BDAE51) sat too close to the gold
+# background, leaving the tagline nearly invisible.
+tagline_color = "#8A6508"   # tagline text (derived from background)
