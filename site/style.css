@@ -966,14 +966,48 @@
     letter-spacing: -0.01em;
   }
   .m-section > h3 span { color: var(--muted); font-weight: 500; }
+  /* The screenshot strip. It is the detail sheet's one sideways scroller, so it
+     carries the rail's arrow pair (a mouse wheel never scrolls a horizontal
+     box) and a thumb that is really drawn, because macOS only shows its overlay
+     scrollbar while something is already moving. */
+  .shots-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 9px;
+  }
+  .shots-head h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+  .shots-tools { display: flex; gap: 6px; }
+  .shots-tools[hidden] { display: none; }
   .shots {
     display: flex;
     gap: 12px;
     overflow-x: auto;
-    padding: 2px 2px 8px;
-    scrollbar-width: none;
+    /* A sideways drag stays in the strip instead of chaining to the iOS back
+       swipe or bouncing the sheet. */
+    overscroll-behavior-x: contain;
+    padding: 2px 2px 10px;
+    /* Room below the shots' rounded corners for the thumb. `thin` plus the
+       colour pair is Firefox and Chrome 121+, the prefixed rules below are
+       Safari and older Chrome. */
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--fg) 22%, transparent) transparent;
   }
-  .shots::-webkit-scrollbar { display: none; }
+  .shots::-webkit-scrollbar { height: 8px; }
+  .shots::-webkit-scrollbar-track { background: transparent; }
+  .shots::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--fg) 22%, transparent);
+    border-radius: 999px;
+  }
+  .shots::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--fg) 34%, transparent);
+  }
   .shots img {
     height: clamp(220px, 34vh, 340px);
     width: auto;

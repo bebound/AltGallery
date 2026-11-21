@@ -77,6 +77,8 @@
       "card.about": "About",
       "card.screenshots": "Screenshots",
       "card.screenshotAlt": "Screenshot {n}",
+      "card.shotsPrev": "Previous screenshots",
+      "card.shotsNext": "More screenshots",
       "card.notes": "Release notes",
       "card.github": "GitHub",
       "card.download": "Download IPA",
@@ -126,6 +128,8 @@
       "card.about": "简介",
       "card.screenshots": "截图",
       "card.screenshotAlt": "截图 {n}",
+      "card.shotsPrev": "上一组截图",
+      "card.shotsNext": "下一组截图",
       "card.notes": "发布说明",
       "card.github": "GitHub",
       "card.download": "下载 IPA",
@@ -199,6 +203,7 @@
   }
   const PLUS_ICON = ["M8 3.4v9.2", "M3.4 8h9.2"];
   const CHEV_RIGHT = ["M6.4 3.6 10.8 8l-4.4 4.4"];
+  const CHEV_LEFT = ["M9.6 3.6 5.2 8l4.4 4.4"];
 
   function proxyPrefix() {
     return (data && data.proxyPrefix) || DEFAULT_PROXY_PREFIX;
@@ -941,10 +946,45 @@
     return root;
   }
 
+  // Re-run by the window resize handler and by every image that finishes
+  // loading: the strip's overflow is not known until the shots have laid out.
+  let shotsSync = null;
+
   function screenshotsBlock(app) {
     const list = (app.screenshots || []).slice(0, 20);
     if (!list.length) return null;
+    // A mouse wheel does not scroll a horizontal box, and macOS draws its
+    // overlay scrollbar only once something is already moving, so the strip
+    // carries the same arrow pair as the recently-updated rail.
+    const prev = h(
+      "button",
+      { type: "button", class: "rail-btn", "aria-label": t("card.shotsPrev") },
+      svgIcon(CHEV_LEFT, 15)
+    );
+    const next = h(
+      "button",
+      { type: "button", class: "rail-btn", "aria-label": t("card.shotsNext") },
+      svgIcon(CHEV_RIGHT, 15)
+    );
+    const tools = h("div", { class: "shots-tools" }, prev, next);
     const strip = h("div", { class: "shots" });
+
+    const sync = () => {
+      const max = strip.scrollWidth - strip.clientWidth;
+      // A strip that fits has nowhere to go: hide the pair rather than show two
+      // dead buttons.
+      tools.hidden = max <= 4;
+      prev.disabled = strip.scrollLeft <= 4;
+      next.disabled = strip.scrollLeft >= max - 4;
+    };
+    const step = (direction) => {
+      const distance = Math.max(strip.clientWidth * 0.8, 160) * direction;
+      strip.scrollBy({ left: distance, behavior: reduceMotion() ? "auto" : "smooth" });
+    };
+    prev.addEventListener("click", () => step(-1));
+    next.addEventListener("click", () => step(1));
+    strip.addEventListener("scroll", sync, { passive: true });
+
     list.forEach((url, index) => {
       const image = h("img", {
         src: assetURL(url),
@@ -952,10 +992,21 @@
         loading: "lazy",
         decoding: "async"
       });
+      image.addEventListener("load", sync);
       image.addEventListener("error", () => image.remove());
       strip.append(image);
     });
-    return h("section", { class: "m-section" }, h("h3", { text: t("card.screenshots") }), strip);
+
+    sync();
+    shotsSync = sync;
+    // The first sync runs before the images have given the strip its width.
+    requestAnimationFrame(sync);
+    return h(
+      "section",
+      { class: "m-section" },
+      h("div", { class: "shots-head" }, h("h3", { text: t("card.screenshots") }), tools),
+      strip
+    );
   }
 
   function appCard(app, index) {
@@ -1067,6 +1118,7 @@
 
   function renderModalBody() {
     const app = state.modalId ? appById.get(state.modalId) : null;
+    shotsSync = null;
     if (!app) {
       modalBody.replaceChildren();
       return;
@@ -1629,6 +1681,9 @@
       fitPromoNames([...updatesTrack.children]);
       updateRailButtons();
       syncRailAuto();
+      // The sheet's screenshot strip is width-dependent too; it is rebuilt on
+      // every open, so this only matters while one is on screen.
+      if (shotsSync) shotsSync();
     }, 180);
   });
 
