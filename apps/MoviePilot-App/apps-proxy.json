@@ -21,11 +21,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "2.0.0",
-          "date": "2026-11-21T15:21:39Z",
-          "localizedDescription": "MoviePilot iOS 2.0.0 全原生架构版本，主体功能全面改为原生 SwiftUI 实现并直接对接 MoviePilot V3 后端 API。\n\n### 主要特性\n\n- **全原生 SwiftUI 体验**：4+1 Liquid Glass 底部导航（发现、探索、我的、设置 + 动态上下文主操作/全局搜索），重复点击底栏弹出极简 8 项快捷菜单（订阅、日历、资源、下载、文件、历史、工作流、插件）。\n- **影院级发现与详情**：发现页透明片名 Logo 主视觉、模块显隐与排序编辑、多来源探索片库、演职员与剧集分季详情、本地 VLCKit/AVKit/PiP 音视频播放。\n- **完整业务与自动化**：订阅中心与订阅广场、资源搜索与下载管理、整理历史搜索与整理队列、多存储文件管理、纯原生工作流节点画布、站点上下行图示与站点范围设置、AI 智能助手 SSE 流式对话。\n- **插件生态与系统集成**：原生 JSON 插件配置表单、数据页图表与无标题仪表盘无缝融合（保留受控 Vue 插件隔离容器）；原生 APNs 推送通知、桌面小组件、深链与主屏幕快捷项。\n- **捷径与诊断中心**：内置系统模块健康检查、网络延迟测试、名称识别与过滤规则测试、实时日志及定时服务手动触发。\n\n### 安装\n\n下载 `MoviePilot-2.0.0-unsigned.ipa` 后自行重签安装（需要 **iOS 16+**，桌面小组件需要 **iOS 17+**）。原生推送需开发者证书为 `com.moviepilot.app` 启用 Push Notifications；重签小组件须保持一致的 App Groups 配置。\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[af8980dbe0c05476db89736184e4211a9e7ccf40](https://github.com/jxxghp/MoviePilot-App/commit/af8980dbe0c05476db89736184e4211a9e7ccf40)。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.0/MoviePilot-2.0.0-unsigned.ipa",
-          "size": 29112508,
+          "version": "2.0.1",
+          "date": "2026-11-22T10:49:29Z",
+          "localizedDescription": "MoviePilot iOS 2.0.1 新增全媒体服务器原生浏览、剧/季/集三层详情页、播前音轨与字幕选择以及本地播放器分集连播能力，继续保持与 MoviePilot V3 后端与原生影院视觉的一致体验。\n\n### 2.0.1 新增特性\n\n- **原生媒体库浏览页**：点击发现页「媒体库」卡片直接进入应用内原生浏览页，支持多服务器/媒体库切换、关键词搜索、排序（最近添加/发行日期/评分/名称/最近观看）、多维筛选（观看状态、风格、年份）与分页加载，兼容 Emby、Jellyfin、Plex、飞牛影视、绿联影视、极影视、Vyo 与 Navidrome。\n- **全入口媒体服务器详情页**：点击发现页「最新入库」、继续观看「查看详情」、媒体库浏览卡片、媒体库搜索结果卡片以及仪表盘「最近入库」均可直接进入对应详情页，保持与现有媒体详情页一致的影院视觉，并支持播放、订阅、资源搜索与外部媒体服务器打开。\n- **剧 / 季 / 集三层浏览与分集连播**：完整支持按剧集、分季、单集三层结构下钻浏览与面包屑返回；按剧或季播放时自动构建分集播放队列，本地播放器新增上一集/下一集、选集列表、锁屏切集、片尾 5 秒自动连播倒计时浮层与观看进度回传。\n- **播前版本 / 音轨 / 字幕选择**：电影与单集详情页新增 iOS 设置风播前参数选择卡片，支持在开播前预选多版本文件、音轨与内嵌/外挂字幕，由本地 VLCKit 播放模块在轨道就绪后自动应用。\n\n### 安装\n\n下载 `MoviePilot-2.0.1-unsigned.ipa` 后自行重签安装（需要 **iOS 16+**，桌面小组件需要 **iOS 17+**）。原生推送需开发者证书为 `com.moviepilot.app` 启用 Push Notifications；重签小组件须保持一致的 App Groups 配置。\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[6dc2a135e3ee81362c0649664b04e6592c661615](https://github.com/jxxghp/MoviePilot-App/commit/6dc2a135e3ee81362c0649664b04e6592c661615)。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.1/MoviePilot-2.0.1-unsigned.ipa",
+          "size": 34973857,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 2.0.0 · 21 Nov 2026",
-      "identifier": "MoviePilot-release-v2.0.0",
-      "caption": "MoviePilot 2.0.0 is available.",
-      "date": "2026-11-21T15:21:39Z",
+      "title": "MoviePilot 2.0.1 · 22 Nov 2026",
+      "identifier": "MoviePilot-release-v2.0.1",
+      "caption": "MoviePilot 2.0.1 is available.",
+      "date": "2026-11-22T10:49:29Z",
       "tintColor": "#8844F6",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
       "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.0"
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.1"
     }
   ]
 }
