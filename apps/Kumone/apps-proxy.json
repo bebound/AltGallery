@@ -21,11 +21,11 @@
       "tintColor": "#EC4949",
       "versions": [
         {
-          "version": "0.3.37",
-          "date": "2026-11-14T11:23:41Z",
-          "localizedDescription": "![分享评论 · Share a comment](https://raw.githubusercontent.com/missuo/kumone/v0.3.37/docs/releases/0.3.37-comment-share.png)\n\n![macOS 播放页评论 · Comments on the macOS now-playing page](https://raw.githubusercontent.com/missuo/kumone/v0.3.37/docs/releases/0.3.37-macos-comments.png)\n\n### Added\n\n- **Comments**: long-press a comment (right-click on macOS) to share it as a picture — the comment and who wrote it, with the song's title, artist and cover, over the cover's colours — then share it or save it to Photos (copy it on macOS). Copy Comment copies its text.\n- **Comments**: on macOS (and iPad), a Lyrics | Comments switch above the now-playing lyrics shows the playing song's comments in their place; songs without lyrics but with comments now get the column too.\n\n### Fixed\n\n- **iOS 17**: tapping the mini player no longer freezes the app with the now-playing page never appearing; the cause has been found and fixed. Swiping from the lyrics to the comments is back on iOS 16/17 (#213).\n- **Now playing**: on iPhone, the volume panel now closes when you tap anywhere else on the page, not only the speaker button again.\n\n---\n\n### 新增\n\n- **评论**：长按一条评论（macOS 上右键）即可把它分享成一张图片：评论内容和评论者，配上歌名、歌手和专辑封面，底色取自封面；可以直接分享或保存到相册（macOS 上为拷贝图片）。「复制评论」可复制评论文字。\n- **评论**：macOS（以及 iPad）播放页的歌词上方新增「歌词 | 评论」切换，可在歌词的位置查看正在播放歌曲的评论；没有歌词但有评论的歌曲也会显示这一栏。\n\n### 修复\n\n- **iOS 17**：点击迷你播放条后应用卡死、播放页一直出不来的问题已找到原因并修复；iOS 16/17 上也恢复了歌词左滑查看评论（#213）。\n- **播放页**：iPhone 上打开音量面板后，点页面其他任意位置即可关闭，不必再点一次喇叭按钮。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/missuo/kumone/releases/download/v0.3.37/Kumone-iOS-0.3.37.ipa",
-          "size": 4407346,
+          "version": "0.3.38",
+          "date": "2026-11-22T15:28:06Z",
+          "localizedDescription": "### Added\n\n- **macOS**: an Add to Playlist button next to the heart in the player bar saves the playing song to one of your playlists in one click (#232, thanks @WillowBranch127).\n- **iOS**: a Swipe Left from Lyrics for Comments switch in Settings turns the swipe off for anyone who triggers it by accident; View Comments stays in the now-playing menu (#225).\n\n### Fixed\n\n- **iOS**: skipping to another song now stops the previous one straight away, instead of letting it play on for a few seconds under the new song's title and lyrics (#221).\n- **Now playing**: after a relaunch, the restored song's lyrics load right away instead of spinning until you press play (#219).\n- **macOS 26**: with Liquid Glass, the page no longer covers part of the floating sidebar; a gap now runs between them, also with the window inactive (#229).\n- **macOS**: opening Roam with a song loaded no longer pushes the sidebar up under the window buttons (#227).\n- **macOS**: dragging the desktop lyrics no longer brings a minimized or hidden main window back to the front (#187).\n- **Comments**: shared comment pictures no longer have a thin white line along the bottom.\n\n---\n\n### 新增\n\n- **macOS**：播放条爱心旁新增「收藏到歌单」按钮，一键把正在播放的歌收藏到歌单（#232，感谢 @WillowBranch127）。\n- **iOS**：设置中新增「左滑歌词查看评论」开关，容易误触的话可以关掉；关掉后播放页菜单中的「查看评论」仍然可用（#225）。\n\n### 修复\n\n- **iOS**：切歌时会立刻停掉上一首，不会再在新歌的歌名和歌词下继续播放上一首几秒（#221）。\n- **播放页**：重新打开应用后，恢复的歌曲会直接加载歌词，不用等按下播放才出来（#219）。\n- **macOS 26**：开启液态玻璃时，主界面不会再盖住悬浮侧边栏的一部分，两者之间留出间距，窗口失去焦点时也一样（#229）。\n- **macOS**：有歌曲时打开「漫游」，侧边栏不会再被顶到窗口按钮下面（#227）。\n- **macOS**：拖动桌面歌词时，不会再把已最小化或隐藏的主窗口带回前台（#187）。\n- **评论**：分享的评论图片底部不会再有一条细白线。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/missuo/kumone/releases/download/v0.3.38/Kumone-iOS-0.3.38.ipa",
+          "size": 4420454,
           "minOSVersion": "16.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "sb.moe.kumone-ios",
-      "title": "Kumone 0.3.37 · 14 Nov 2026",
-      "identifier": "Kumone-release-v0.3.37",
-      "caption": "Kumone 0.3.37 is available.",
-      "date": "2026-11-14T11:23:41Z",
+      "title": "Kumone 0.3.38 · 22 Nov 2026",
+      "identifier": "Kumone-release-v0.3.38",
+      "caption": "Kumone 0.3.38 is available.",
+      "date": "2026-11-22T15:28:06Z",
       "tintColor": "#EC4949",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.webp",
       "notify": true,
-      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.37"
+      "url": "https://github.com/missuo/kumone/releases/tag/v0.3.38"
     }
   ]
 }
