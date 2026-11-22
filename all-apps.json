@@ -145,11 +145,11 @@
       "tintColor": "#124EB3",
       "versions": [
         {
-          "version": "2.6.8",
-          "date": "2026-11-13T20:37:13Z",
-          "localizedDescription": "### 🔄 更新内容\n\n## 2.6.8 更新\n\n## 新增\n\n- 壁纸页面支持关键词筛选、支持收藏壁纸集合(登录后)、我的页面右上角打开收藏集合\n- 重构视频资源下载模块，下载功能完全和播放页解耦不在需要等待内容解析完成后才能看到下载菜单，可以在番剧详情剧集弹窗和播放页剧集区域进入下载页面\n- 排行榜页面加载动画替换成骨架屏\n- 壁纸页面加载动画替换成骨架屏\n- 播放页的番剧详情信息展示方式从原来的内嵌路由替换成抽屉方式展示\n-  Linux 支持 Nix 安装(详情在仓库README下载项查看) #128 (@yebei199)\n\n## 优化\n\n- 优化更新信息页面布局\n- 优化大屏设置侧边栏效果(开启磨砂玻璃ui)\n- 优化推荐、排行榜页面开始磨砂玻璃时的页面顶部状态效果\n- 离开社区页面10秒后取消实时数据更新订阅减小服务器压力\n- 优化animeflow服务器网络请求延迟(可能有用)\n\n## 修复\n\n- 修复部分数据源线路名称文字ui溢出问题\n- 修复宽屏设备打开壁纸详情页时切换tabview时的异常问题\n- 修复在切换视频播放源时没有自动保持播放进度问题\n- 修复 Linux 客户端窗口问题 #129 (@lyndon0na)\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
-          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.6.8/AnimeFlow-ios-2.6.8.ipa",
-          "size": 29518672,
+          "version": "2.7.0",
+          "date": "2026-11-22T04:50:04Z",
+          "localizedDescription": "### 🔄 更新内容\n\n## 2.7.0 更新\n\n## 新增\n\n- 在数据源弹窗右上角点击文件按钮支持导入播放本地视频进行播放\n- android(ExoPlayer)、ios(AVPlayer)原生播放器支持超分辨效率挡\n- 字体库支持多线路下载资源\n\n## 优化\n\n- 优化播放器亮度、音量调节ui效果\n\n## 修复\n\n- 修复切换播放源时没有立即结束当前正在播放的视频\n- 修复播放器亮度、音量调节ui抖动问题\n- 修复Linux平台在NVIDIA上窗口画面偏移问题\n\n---\n\n### 📦 下载\n- 每个设备的安装包后缀: ``苹果手机(.ipa)、 安卓手机(.apk)、windows电脑(.zip或.exe)、mac电脑(.dmg)、linux电脑(.tar.gz或.deb)``\n- android分多个包: ``v7a(32位架构旧手机或TV)、arm64(新手机,推荐用这个)、x86(模拟器) ``\n- windows分多个包: ``.zip(解压直接使用)、.exe(安装后使用，推荐用这个) ``",
+          "downloadURL": "https://github.com/openAnimeFlow/AnimeFlow/releases/download/v2.7.0/AnimeFlow-ios-2.7.0.ipa",
+          "size": 29735422,
           "minOSVersion": "15.0"
         }
       ]
@@ -292,7 +292,7 @@
         {
           "version": "3.1.0",
           "date": "2026-11-21T13:52:36Z",
-          "localizedDescription": "## 📝 更新日志\n## [v3.1.0]\n\n### 功能更新\n\n- 添加鸿蒙（HarmonyOS NEXT）支持\n- 添加导入外部漫画功能，支持文件夹与 CBZ / CBR / CB7 / CBT 等压缩包\n- 编辑已下载漫画时支持导入章节与图片、编辑分卷\n- 外观设置新增「漫画详情页」样式，可分别隐藏点赞、评论、本地收藏与云收藏按钮\n- 新增显示滚动条与滚动条常驻开关\n- 同步设置支持自定义自动同步间隔\n- 阅读设置新增「条漫放大后连续滚动」实验性开关 by [0kitasan](https://github.com/0kitasan)\n\n### 修复\n\n- 修复书架文件夹的漫画数量不随来源筛选变化的问题\n- 修复下载任务重启后进度丢失的问题\n- 修复不包含下载内容的备份无法导入的问题\n\n### 优化\n\n- 优化插件启动速度\n- 优化内存占用\n\n### ui调整\n\n- 调整部分ui样式\n\n### 杂项\n\n- 数据存储全面迁移到 SQLite\n\n---\n\n### 📦 推荐下载\n| 平台 | 下载链接 |\n| :--- | :--- |\n| **Windows** | [windows-installer-v3.1.0.exe](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/windows-installer-v3.1.0.exe) |\n| **macOS** | [Breeze-macOS-v3.1.0.dmg](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-macOS-v3.1.0.dmg) |\n| **Android** | [app-arm64-v8a-release-v3.1.0.apk](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/app-arm64-v8a-release-v3.1.0.apk) |\n| **iOS** | [Breeze-iOS-v3.1.0.ipa](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-iOS-v3.1.0.ipa) |\n| **Linux** | [breeze-v3.1.0.flatpak](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/breeze-v3.1.0.flatpak) |\n| **Linux (DEB)** | [breeze_3.1.0_amd64-v3.1.0.deb](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/breeze_3.1.0_amd64-v3.1.0.deb) |\n| **HarmonyOS (未签名)** | [Breeze-ohos-arm64-v3.1.0.hap](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-ohos-arm64-v3.1.0.hap) |\n\n> 💡 **不知道该下载哪个文件？**\n> 请查看 [详细安装指南](https://github.com/breeze-project-org/Breeze#-%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85)。\n> ⚠️ **HarmonyOS HAP 未签名**（仅 arm64，最低 HarmonyOS 5.0.5(17)）：需要用自己设备信任的证书/profile 自签后安装，不能用 OpenHarmony 测试证书装零售机。",
+          "localizedDescription": "## 📝 更新日志\r\n## [v3.1.0]\r\n\r\n### 功能更新\r\n\r\n- 添加鸿蒙（HarmonyOS NEXT）支持\r\n- 添加导入外部漫画功能，支持文件夹与 CBZ / CBR / CB7 / CBT 等压缩包\r\n- 编辑已下载漫画时支持导入章节与图片、编辑分卷\r\n- 外观设置新增「漫画详情页」样式，可分别隐藏点赞、评论、本地收藏与云收藏按钮\r\n- 新增显示滚动条与滚动条常驻开关\r\n- 同步设置支持自定义自动同步间隔\r\n- 阅读设置新增「条漫放大后连续滚动」实验性开关 by [0kitasan](https://github.com/0kitasan)\r\n\r\n### 修复\r\n\r\n- 修复书架文件夹的漫画数量不随来源筛选变化的问题\r\n- 修复下载任务重启后进度丢失的问题\r\n- 修复不包含下载内容的备份无法导入的问题\r\n\r\n### 优化\r\n\r\n- 优化插件启动速度\r\n- 优化内存占用\r\n\r\n### ui调整\r\n\r\n- 调整部分ui样式\r\n\r\n### 杂项\r\n\r\n- 数据存储全面迁移到 SQLite\r\n\r\n---\r\n\r\n### 📦 推荐下载\r\n| 平台 | 下载链接 |\r\n| :--- | :--- |\r\n| **Windows** | [windows-installer-v3.1.0.exe](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/windows-installer-v3.1.0.exe) |\r\n| **macOS** | [Breeze-macOS-v3.1.0.dmg](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-macOS-v3.1.0.dmg) |\r\n| **Android** | [app-arm64-v8a-release-v3.1.0.apk](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/app-arm64-v8a-release-v3.1.0.apk) |\r\n| **iOS** | [Breeze-iOS-v3.1.0.ipa](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-iOS-v3.1.0.ipa) |\r\n| **Linux** | [breeze-v3.1.0.flatpak](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/breeze-v3.1.0.flatpak) |\r\n| **Linux (DEB)** | [breeze_3.1.0_amd64-v3.1.0.deb](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/breeze_3.1.0_amd64-v3.1.0.deb) |\r\n| **HarmonyOS** | [Breeze-ohos-arm64-v3.1.0.hap](https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-ohos-arm64-v3.1.0.hap) |\r\n\r\n> 💡 **不知道该下载哪个文件？**\r\n> 请查看 [详细安装指南](https://github.com/breeze-project-org/Breeze#-%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85)。",
           "downloadURL": "https://github.com/breeze-project-org/Breeze/releases/download/v3.1.0/Breeze-iOS-v3.1.0.ipa",
           "size": 27861953,
           "minOSVersion": "15.0"
@@ -769,11 +769,11 @@
       "tintColor": "#4CAF50",
       "versions": [
         {
-          "version": "2.4.5",
-          "date": "2026-11-21T05:56:21Z",
-          "localizedDescription": "- 重新设计播放页的选集与评论面板\r\n- 番剧详情页的评分编辑在窄屏上改为底部面板\r\n- 追番页头部随列表滚动，竖屏可显示更多内容 (#2859)\r\n- 优化 Material 3 Expressive 组件的选中配色与过渡动画\r\n- 精简各页面的说明文案\r\n- 修复 Linux 下部分 NVIDIA 设备画面偏移到左下角的问题 (#2838)\r\n- 修复 Windows 启动后画面偶发拉伸的问题",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.4.5/Kazumi_ios_2.4.5_no_sign.ipa",
-          "size": 30370674,
+          "version": "2.4.6",
+          "date": "2026-11-22T05:42:23Z",
+          "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则，支持规则导入与规则分享，支持基于 Anime4K 的实时超分辨率。\n\n其他特性：番剧目录与搜索、分集播放、番剧弹幕、追番列表、历史记录、倍速播放、多视频源支持、配色方案等。",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.4.6/Kazumi_ios_2.4.6_no_sign.ipa",
+          "size": 30369553,
           "minOSVersion": "13.0"
         }
       ]
@@ -1142,9 +1142,9 @@
         {
           "version": "2.0.0",
           "date": "2026-11-21T15:21:39Z",
-          "localizedDescription": "MoviePilot iOS 2.0.0 全原生架构版本，主体功能全面改为原生 SwiftUI 实现并直接对接 MoviePilot V3 后端 API。\n\n### 主要特性\n\n- **全原生 SwiftUI 体验**：4+1 Liquid Glass 底部导航（发现、探索、我的、设置 + 动态上下文主操作/全局搜索），重复点击底栏弹出极简 8 项快捷菜单（订阅、日历、资源、下载、文件、历史、工作流、插件）。\n- **影院级发现与详情**：发现页透明片名 Logo 主视觉、模块显隐与排序编辑、多来源探索片库、演职员与剧集分季详情、本地 VLCKit/AVKit/PiP 音视频播放。\n- **完整业务与自动化**：订阅中心与订阅广场、资源搜索与下载管理、整理历史搜索与整理队列、多存储文件管理、纯原生工作流节点画布、站点上下行图示与站点范围设置、AI 智能助手 SSE 流式对话。\n- **插件生态与系统集成**：原生 JSON 插件配置表单、数据页图表与无标题仪表盘无缝融合（保留受控 Vue 插件隔离容器）；原生 APNs 推送通知、桌面小组件、深链与主屏幕快捷项。\n- **捷径与诊断中心**：内置系统模块健康检查、网络延迟测试、名称识别与过滤规则测试、实时日志及定时服务手动触发。\n\n### 安装\n\n下载 `MoviePilot-2.0.0-unsigned.ipa` 后自行重签安装（需要 **iOS 16+**，桌面小组件需要 **iOS 17+**）。原生推送需开发者证书为 `com.moviepilot.app` 启用 Push Notifications；重签小组件须保持一致的 App Groups 配置。\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[2c3fff54b8e31b33c3587fae76f3edad1a087cb0](https://github.com/jxxghp/MoviePilot-App/commit/2c3fff54b8e31b33c3587fae76f3edad1a087cb0)。",
+          "localizedDescription": "MoviePilot iOS 2.0.0 全原生架构版本，主体功能全面改为原生 SwiftUI 实现并直接对接 MoviePilot V3 后端 API。\n\n### 主要特性\n\n- **全原生 SwiftUI 体验**：4+1 Liquid Glass 底部导航（发现、探索、我的、设置 + 动态上下文主操作/全局搜索），重复点击底栏弹出极简 8 项快捷菜单（订阅、日历、资源、下载、文件、历史、工作流、插件）。\n- **影院级发现与详情**：发现页透明片名 Logo 主视觉、模块显隐与排序编辑、多来源探索片库、演职员与剧集分季详情、本地 VLCKit/AVKit/PiP 音视频播放。\n- **完整业务与自动化**：订阅中心与订阅广场、资源搜索与下载管理、整理历史搜索与整理队列、多存储文件管理、纯原生工作流节点画布、站点上下行图示与站点范围设置、AI 智能助手 SSE 流式对话。\n- **插件生态与系统集成**：原生 JSON 插件配置表单、数据页图表与无标题仪表盘无缝融合（保留受控 Vue 插件隔离容器）；原生 APNs 推送通知、桌面小组件、深链与主屏幕快捷项。\n- **捷径与诊断中心**：内置系统模块健康检查、网络延迟测试、名称识别与过滤规则测试、实时日志及定时服务手动触发。\n\n### 安装\n\n下载 `MoviePilot-2.0.0-unsigned.ipa` 后自行重签安装（需要 **iOS 16+**，桌面小组件需要 **iOS 17+**）。原生推送需开发者证书为 `com.moviepilot.app` 启用 Push Notifications；重签小组件须保持一致的 App Groups 配置。\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[af8980dbe0c05476db89736184e4211a9e7ccf40](https://github.com/jxxghp/MoviePilot-App/commit/af8980dbe0c05476db89736184e4211a9e7ccf40)。",
           "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.0/MoviePilot-2.0.0-unsigned.ipa",
-          "size": 28791003,
+          "size": 29112508,
           "minOSVersion": "17.0"
         }
       ]
@@ -1807,11 +1807,11 @@
       "tintColor": "#1E8FC7",
       "versions": [
         {
-          "version": "0.9.19",
-          "date": "2026-11-20T01:16:50Z",
-          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.19\n\nA small fix release, plus optional App Store icons.\n\n## New\n\n- **Settings → App Store Icons** (off by default): other apps' icons can't be read with worse_query, so WQ Files can fetch them from Apple's public App Store lookup instead. This sends the bundle ids of your installed apps and your region to Apple. Sideloaded apps and apps that were removed from the App Store keep the placeholder. Icons are stored in WQ Files (about 7 KB each, not backed up); turning the setting off deletes them.\n\n## Fixed\n\n- **Apps with one-word bundle ids** like Pinterest (`pinterest`) showed \"container identity unavailable\" and 0 KB, and couldn't be opened, backed up or cleared. They work now.\n- **App icons:** other apps' icons can't be read with worse_query, so they show a placeholder. Third-party apps now all get the neutral one, instead of misleading guesses like the Books icon for Facebook or the Music icon for TikTok. Apple services that iOS only gives a placeholder for no longer show iOS's grey grid in dark mode.\n- **Apps list on iOS 27:** the header above the list (number of apps and their size) showed as an empty band, leaving a large gap. It shows its text again, with less space above it.\n- **iOS 27 beta 5 / public beta 3** ([#70](https://github.com/kolbicz/WQFiles/issues/70)): after swiping back from App Backups, the first row on the Backups tab stopped responding. It keeps working now. The blurred band under the bar can still look too tall on that beta; that's an iOS bug. Release versions of iOS aren't affected.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Custom inspectors idea: deltaII. Translations: iosrxwy and FrogTool (Simplified Chinese), kinboy56 (Japanese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to control0forver for testing four debug builds, and to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `32a0821d16b4ddedcc7b2063f90530952a644308009db0522c618c23233cacca`",
-          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.19/WQFiles.ipa",
-          "size": 2182170,
+          "version": "0.9.20",
+          "date": "2026-11-21T21:41:37Z",
+          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.20\n\nApps Manager backups, and safer handling of databases that are in use.\n\n## New\n\n- **Import Apps Manager backups** ([#19](https://github.com/kolbicz/WQFiles/issues/19)): **Apps** → tap the app → **Import as Backup…** now accepts `.adbk` files from Apps Manager. The app's data is saved as a normal WQ Files backup, ready to restore.\n  - Only the app's own data folder is imported. App Group data in the file isn't, because WQ Files backups don't include App Groups. The keychain items Apps Manager saves are encrypted, so they can't be imported either. When you import, WQ Files lists what it left out.\n  - If the file says it belongs to a different app than the one you tapped, WQ Files asks first, as with any other import.\n  - Opening an `.adbk` from the Files app or the share sheet doesn't start an import; start it from Apps.\n\n## Fixed\n\n- **Files another app is using:** deleting or replacing them, for example an app's database in its App Group while the app runs, failed with \"Resource temporarily unavailable (errno 35)\". WQ Files now says another app is using the file and that quitting that app and trying again should work. Its extensions or widgets can keep the file open even after you quit it.\n- **Databases in use stay intact:** an app's database comes with `-wal` and `-shm` files next to it, and while the app runs, iOS doesn't lock the `-wal` file. WQ Files could delete or replace it while refusing the database file, which lost the app's newest data. Now a database and its `-wal`, `-shm` and `-journal` files are only changed together: if one of them is in use, none of them is touched. This applies to deleting (also whole folders), replacing on import and editing.\n- **Deleting or importing several files at once:** each database is handled before its `-wal` and `-shm` files, which are skipped if the database itself couldn't be deleted or replaced. \"N of M files were imported\" is translated now.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Custom inspectors idea: deltaII. Translations: iosrxwy and FrogTool (Simplified Chinese), kinboy56 (Japanese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to braless for the Apps Manager sample, and to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `9ddfa3c1ff01de4d76f601d3b6b76390436136d529f029b9bfaa48c501cfe197`",
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.20/WQFiles.ipa",
+          "size": 2199929,
           "minOSVersion": "26.0"
         }
       ]
@@ -1940,6 +1940,39 @@
   ],
   "news": [
     {
+      "appID": "com.example.kazumi",
+      "title": "Kazumi 2.4.6 · 22 Nov 2026",
+      "identifier": "Kazumi-release-2.4.6",
+      "caption": "Kazumi 2.4.6 is available.",
+      "date": "2026-11-22T05:42:23Z",
+      "tintColor": "#4CAF50",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.4.6"
+    },
+    {
+      "appID": "com.ligg.animeflow",
+      "title": "AnimeFlow 2.7.0 · 22 Nov 2026",
+      "identifier": "AnimeFlow-release-v2.7.0",
+      "caption": "AnimeFlow 2.7.0 is available.",
+      "date": "2026-11-22T04:50:04Z",
+      "tintColor": "#124EB3",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.7.0"
+    },
+    {
+      "appID": "cz.kolbi.wqfiles",
+      "title": "WQ Files 0.9.20 · 21 Nov 2026",
+      "identifier": "WQ Files-release-v0.9.20",
+      "caption": "WQ Files 0.9.20 is available.",
+      "date": "2026-11-21T21:41:37Z",
+      "tintColor": "#1E8FC7",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.20"
+    },
+    {
       "appID": "com.armsx2.ios",
       "title": "ARMSX2 2.6.0-nightly.20261121.1609 · 21 Nov 2026",
       "identifier": "ARMSX2-release-nightly-20261121",
@@ -1993,17 +2026,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/news.webp",
       "notify": true,
       "url": "https://github.com/breeze-project-org/Breeze/releases/tag/v3.1.0"
-    },
-    {
-      "appID": "com.example.kazumi",
-      "title": "Kazumi 2.4.5 · 21 Nov 2026",
-      "identifier": "Kazumi-release-2.4.5",
-      "caption": "Kazumi 2.4.5 is available.",
-      "date": "2026-11-21T05:56:21Z",
-      "tintColor": "#4CAF50",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/Predidit/Kazumi/releases/tag/2.4.5"
     },
     {
       "appID": "com.huamu013.ZhihuMinusMinus",
@@ -2103,17 +2125,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.webp",
       "notify": true,
       "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.3-2026-11-20"
-    },
-    {
-      "appID": "cz.kolbi.wqfiles",
-      "title": "WQ Files 0.9.19 · 20 Nov 2026",
-      "identifier": "WQ Files-release-v0.9.19",
-      "caption": "WQ Files 0.9.19 is available.",
-      "date": "2026-11-20T01:16:50Z",
-      "tintColor": "#1E8FC7",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.19"
     },
     {
       "appID": "com.jbdotparty.Erosion",
@@ -2290,17 +2301,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Apollo-Reborn/images/news.webp",
       "notify": true,
       "url": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_4.1.0"
-    },
-    {
-      "appID": "com.ligg.animeflow",
-      "title": "AnimeFlow 2.6.8 · 13 Nov 2026",
-      "identifier": "AnimeFlow-release-v2.6.8",
-      "caption": "AnimeFlow 2.6.8 is available.",
-      "date": "2026-11-13T20:37:13Z",
-      "tintColor": "#124EB3",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AnimeFlow/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/openAnimeFlow/AnimeFlow/releases/tag/v2.6.8"
     },
     {
       "appID": "com.huami.gestultx",

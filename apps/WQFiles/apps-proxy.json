@@ -19,11 +19,11 @@
       "tintColor": "#1E8FC7",
       "versions": [
         {
-          "version": "0.9.19",
-          "date": "2026-11-20T01:16:50Z",
-          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.19\n\nA small fix release, plus optional App Store icons.\n\n## New\n\n- **Settings → App Store Icons** (off by default): other apps' icons can't be read with worse_query, so WQ Files can fetch them from Apple's public App Store lookup instead. This sends the bundle ids of your installed apps and your region to Apple. Sideloaded apps and apps that were removed from the App Store keep the placeholder. Icons are stored in WQ Files (about 7 KB each, not backed up); turning the setting off deletes them.\n\n## Fixed\n\n- **Apps with one-word bundle ids** like Pinterest (`pinterest`) showed \"container identity unavailable\" and 0 KB, and couldn't be opened, backed up or cleared. They work now.\n- **App icons:** other apps' icons can't be read with worse_query, so they show a placeholder. Third-party apps now all get the neutral one, instead of misleading guesses like the Books icon for Facebook or the Music icon for TikTok. Apple services that iOS only gives a placeholder for no longer show iOS's grey grid in dark mode.\n- **Apps list on iOS 27:** the header above the list (number of apps and their size) showed as an empty band, leaving a large gap. It shows its text again, with less space above it.\n- **iOS 27 beta 5 / public beta 3** ([#70](https://github.com/kolbicz/WQFiles/issues/70)): after swiping back from App Backups, the first row on the Backups tab stopped responding. It keeps working now. The blurred band under the bar can still look too tall on that beta; that's an iOS bug. Release versions of iOS aren't affected.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Custom inspectors idea: deltaII. Translations: iosrxwy and FrogTool (Simplified Chinese), kinboy56 (Japanese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to control0forver for testing four debug builds, and to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `32a0821d16b4ddedcc7b2063f90530952a644308009db0522c618c23233cacca`",
-          "downloadURL": "https://gh-proxy.com/https://github.com/kolbicz/WQFiles/releases/download/v0.9.19/WQFiles.ipa",
-          "size": 2182170,
+          "version": "0.9.20",
+          "date": "2026-11-21T21:41:37Z",
+          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.20\n\nApps Manager backups, and safer handling of databases that are in use.\n\n## New\n\n- **Import Apps Manager backups** ([#19](https://github.com/kolbicz/WQFiles/issues/19)): **Apps** → tap the app → **Import as Backup…** now accepts `.adbk` files from Apps Manager. The app's data is saved as a normal WQ Files backup, ready to restore.\n  - Only the app's own data folder is imported. App Group data in the file isn't, because WQ Files backups don't include App Groups. The keychain items Apps Manager saves are encrypted, so they can't be imported either. When you import, WQ Files lists what it left out.\n  - If the file says it belongs to a different app than the one you tapped, WQ Files asks first, as with any other import.\n  - Opening an `.adbk` from the Files app or the share sheet doesn't start an import; start it from Apps.\n\n## Fixed\n\n- **Files another app is using:** deleting or replacing them, for example an app's database in its App Group while the app runs, failed with \"Resource temporarily unavailable (errno 35)\". WQ Files now says another app is using the file and that quitting that app and trying again should work. Its extensions or widgets can keep the file open even after you quit it.\n- **Databases in use stay intact:** an app's database comes with `-wal` and `-shm` files next to it, and while the app runs, iOS doesn't lock the `-wal` file. WQ Files could delete or replace it while refusing the database file, which lost the app's newest data. Now a database and its `-wal`, `-shm` and `-journal` files are only changed together: if one of them is in use, none of them is touched. This applies to deleting (also whole folders), replacing on import and editing.\n- **Deleting or importing several files at once:** each database is handled before its `-wal` and `-shm` files, which are skipped if the database itself couldn't be deleted or replaced. \"N of M files were imported\" is translated now.\n\n## Credit\n\nNew design: GpGp700. Sandbox technique: [worse_query](https://github.com/forcequitOS/worse_query) by Taj C (forcequit). Container enumeration: [KAMUI](https://github.com/murk-sus/kamui-escape) by murk-sus. Resumable scans: hhh2210. Custom inspectors idea: deltaII. Translations: iosrxwy and FrogTool (Simplified Chinese), kinboy56 (Japanese), hfip (Arabic), hooray804 (Korean), Reinascape (Russian), romlayvn-93 (Vietnamese), buraakkcayir (Turkish review). Thanks to braless for the Apps Manager sample, and to everyone who sent screenshots and Logs. GPL-3.0-or-later.\n\nSHA-256 of WQFiles.ipa: `9ddfa3c1ff01de4d76f601d3b6b76390436136d529f029b9bfaa48c501cfe197`",
+          "downloadURL": "https://gh-proxy.com/https://github.com/kolbicz/WQFiles/releases/download/v0.9.20/WQFiles.ipa",
+          "size": 2199929,
           "minOSVersion": "26.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "cz.kolbi.wqfiles",
-      "title": "WQ Files 0.9.19 · 20 Nov 2026",
-      "identifier": "WQ Files-release-v0.9.19",
-      "caption": "WQ Files 0.9.19 is available.",
-      "date": "2026-11-20T01:16:50Z",
+      "title": "WQ Files 0.9.20 · 21 Nov 2026",
+      "identifier": "WQ Files-release-v0.9.20",
+      "caption": "WQ Files 0.9.20 is available.",
+      "date": "2026-11-21T21:41:37Z",
       "tintColor": "#1E8FC7",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.webp",
       "notify": true,
-      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.19"
+      "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.20"
     }
   ]
 }

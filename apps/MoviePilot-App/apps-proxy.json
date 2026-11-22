@@ -23,9 +23,9 @@
         {
           "version": "2.0.0",
           "date": "2026-11-21T15:21:39Z",
-          "localizedDescription": "MoviePilot iOS 2.0.0 全原生架构版本，主体功能全面改为原生 SwiftUI 实现并直接对接 MoviePilot V3 后端 API。\n\n### 主要特性\n\n- **全原生 SwiftUI 体验**：4+1 Liquid Glass 底部导航（发现、探索、我的、设置 + 动态上下文主操作/全局搜索），重复点击底栏弹出极简 8 项快捷菜单（订阅、日历、资源、下载、文件、历史、工作流、插件）。\n- **影院级发现与详情**：发现页透明片名 Logo 主视觉、模块显隐与排序编辑、多来源探索片库、演职员与剧集分季详情、本地 VLCKit/AVKit/PiP 音视频播放。\n- **完整业务与自动化**：订阅中心与订阅广场、资源搜索与下载管理、整理历史搜索与整理队列、多存储文件管理、纯原生工作流节点画布、站点上下行图示与站点范围设置、AI 智能助手 SSE 流式对话。\n- **插件生态与系统集成**：原生 JSON 插件配置表单、数据页图表与无标题仪表盘无缝融合（保留受控 Vue 插件隔离容器）；原生 APNs 推送通知、桌面小组件、深链与主屏幕快捷项。\n- **捷径与诊断中心**：内置系统模块健康检查、网络延迟测试、名称识别与过滤规则测试、实时日志及定时服务手动触发。\n\n### 安装\n\n下载 `MoviePilot-2.0.0-unsigned.ipa` 后自行重签安装（需要 **iOS 16+**，桌面小组件需要 **iOS 17+**）。原生推送需开发者证书为 `com.moviepilot.app` 启用 Push Notifications；重签小组件须保持一致的 App Groups 配置。\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[2c3fff54b8e31b33c3587fae76f3edad1a087cb0](https://github.com/jxxghp/MoviePilot-App/commit/2c3fff54b8e31b33c3587fae76f3edad1a087cb0)。",
+          "localizedDescription": "MoviePilot iOS 2.0.0 全原生架构版本，主体功能全面改为原生 SwiftUI 实现并直接对接 MoviePilot V3 后端 API。\n\n### 主要特性\n\n- **全原生 SwiftUI 体验**：4+1 Liquid Glass 底部导航（发现、探索、我的、设置 + 动态上下文主操作/全局搜索），重复点击底栏弹出极简 8 项快捷菜单（订阅、日历、资源、下载、文件、历史、工作流、插件）。\n- **影院级发现与详情**：发现页透明片名 Logo 主视觉、模块显隐与排序编辑、多来源探索片库、演职员与剧集分季详情、本地 VLCKit/AVKit/PiP 音视频播放。\n- **完整业务与自动化**：订阅中心与订阅广场、资源搜索与下载管理、整理历史搜索与整理队列、多存储文件管理、纯原生工作流节点画布、站点上下行图示与站点范围设置、AI 智能助手 SSE 流式对话。\n- **插件生态与系统集成**：原生 JSON 插件配置表单、数据页图表与无标题仪表盘无缝融合（保留受控 Vue 插件隔离容器）；原生 APNs 推送通知、桌面小组件、深链与主屏幕快捷项。\n- **捷径与诊断中心**：内置系统模块健康检查、网络延迟测试、名称识别与过滤规则测试、实时日志及定时服务手动触发。\n\n### 安装\n\n下载 `MoviePilot-2.0.0-unsigned.ipa` 后自行重签安装（需要 **iOS 16+**，桌面小组件需要 **iOS 17+**）。原生推送需开发者证书为 `com.moviepilot.app` 启用 Push Notifications；重签小组件须保持一致的 App Groups 配置。\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[af8980dbe0c05476db89736184e4211a9e7ccf40](https://github.com/jxxghp/MoviePilot-App/commit/af8980dbe0c05476db89736184e4211a9e7ccf40)。",
           "downloadURL": "https://gh-proxy.com/https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.0/MoviePilot-2.0.0-unsigned.ipa",
-          "size": 28791003,
+          "size": 29112508,
           "minOSVersion": "17.0"
         }
       ]
