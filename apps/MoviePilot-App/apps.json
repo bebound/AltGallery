@@ -22,10 +22,10 @@
       "versions": [
         {
           "version": "2.0.2",
-          "date": "2026-11-22T15:10:36Z",
-          "localizedDescription": "MoviePilot iOS 2.0.2 全面适配 **iPad**（竖屏、横屏、分屏与原生侧边栏工作台）与 **iPhone Duo**（系统竖向侧边操作区），带来跨设备形态一致且充分利用大屏与侧边交互区的原生体验。\n\n### 2.0.2 新增与优化\n\n- **iPhone Duo 系统竖向侧边操作区全面适配**：彻底移除传统底部导航栏样式，将「发现 / 探索 / 我的 / 设置 / 更多功能 / 智能助手」与动态主动作/全局搜索原生承载至 iPhone Duo 系统竖向侧边操作区（`axisBehavior(.verticalPreferred)`）；子页面自动保留返回、页面工具与更多入口，全屏视频播放按系统建议自动关闭竖向侧栏以呈现完整宽银幕画面，发现页与详情页沉浸头图无缝延展至侧边透明玻璃后方且前景内容严格避让安全区。\n- **iPad 原生侧边栏与自适应大屏布局**：iPadOS 18+ 启用 `sidebarAdaptable` 顶部浮动胶囊 + 可展开原生侧边栏，工作台（我的订阅、订阅日历、站点资源、下载、文件管理、整理历史、工作流、插件）与快捷工具（音乐、消息中心、智能助手）可一键直达，弹窗自动采用宽敞的 `page` 尺寸。\n- **全页面响应式栅格与 Bento 仪表盘**：\n  - 仪表盘在 iPad 宽屏下升级为 4 列媒体库统计 + 双列 Bento 模块排布，显著降低纵向滚动距离。\n  - 发现页主视觉高宽比、海报/横幅卡尺寸与分类列数按实时容器宽度自适应，兼容全屏、分屏与侧边栏展开态。\n  - 探索、媒体库浏览、订阅广场、音乐探索按实时宽度在 3~6 列（方卡 2~5 列）平滑切换；订阅、下载、站点、工作流、插件列表与剧集分季在宽屏下自动升级为双列卡片网格。\n  - 影视与媒体库详情页在宽屏下居中控宽、操作栏单行均衡排布，播放器支持 iPad 全四向旋转。\n- **三端交互与稳定性优化（iPhone / iPad / iPhone Duo 同步）**：\n  - **播放器顶栏精简**：视频播放界面右上角统一精简为「小屏播放」与「更多（`…`）」两个玻璃按钮，字幕、音轨、画面比例、播放速度全部收纳至「`…`」实时下拉菜单。\n  - **设置页版本号展示**：设置页面底部居中展示当前 App 版本号。\n  - **后台重启会话失效自动退回登录**：修复 MoviePilot 后台重启导致令牌失效（含 401 及旧版 403 令牌校验失败、SSE 流、播放清单请求与前台恢复校验）后界面无响应的问题，立即清理会话与弹窗并退回登录界面。\n  - **站点资源浏览修复**：选择全站或多个站点时自动禁用「浏览」按钮，仅选择单个站点时可用；单站浏览切换至 `/api/v1/site/resource/{site_id}` 并完整兼容扁平 `TorrentInfo` 解析，修复单站浏览报错问题。\n\n### 安装\n\n下载 `MoviePilot-2.0.2-unsigned.ipa` 后自行重签安装（需要 **iOS 16+**，桌面小组件需要 **iOS 17+**，iPhone Duo 竖向侧边操作区需要 **iOS 27.1+**）。原生推送需开发者证书为 `com.moviepilot.app` 启用 Push Notifications；重签小组件须保持一致的 App Groups 配置。\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[583d58f465a55f562780b19a9fd93cd47d4aca24](https://github.com/jxxghp/MoviePilot-App/commit/583d58f465a55f562780b19a9fd93cd47d4aca24)。",
+          "date": "2026-11-23T02:09:11Z",
+          "localizedDescription": "MoviePilot iOS 2.0.2 全面适配 **iPad**（竖屏、横屏、分屏与原生侧边栏工作台）与 **iPhone Duo**（系统竖向侧边操作区），带来跨设备形态一致且充分利用大屏与侧边交互区的原生体验。\n\n### 2.0.2 新增与优化\n\n- **iPhone Duo 系统竖向侧边操作区全面适配**：彻底移除传统底部导航栏样式，将「发现 / 探索 / 我的 / 设置 / 更多功能 / 智能助手」与动态主动作/全局搜索原生承载至 iPhone Duo 系统竖向侧边操作区（`axisBehavior(.verticalPreferred)`）；子页面自动保留返回、页面工具与更多入口，全屏视频播放按系统建议自动关闭竖向侧栏以呈现完整宽银幕画面，发现页与详情页沉浸头图无缝延展至侧边透明玻璃后方且前景内容严格避让安全区。\n- **iPad 原生侧边栏与自适应大屏布局**：iPadOS 18+ 启用 `sidebarAdaptable` 顶部浮动胶囊 + 可展开原生侧边栏，工作台（我的订阅、订阅日历、站点资源、下载、文件管理、整理历史、工作流、插件）与快捷工具（音乐、消息中心、智能助手）可一键直达，弹窗自动采用宽敞的 `page` 尺寸。\n- **全页面响应式栅格与 Bento 仪表盘**：\n  - 仪表盘在 iPad 宽屏下升级为 4 列媒体库统计 + 双列 Bento 模块排布，显著降低纵向滚动距离。\n  - 发现页主视觉高宽比、海报/横幅卡尺寸与分类列数按实时容器宽度自适应，兼容全屏、分屏与侧边栏展开态。\n  - 探索、媒体库浏览、订阅广场、音乐探索按实时宽度在 3~6 列（方卡 2~5 列）平滑切换；订阅、下载、站点、工作流、插件列表与剧集分季在宽屏下自动升级为双列卡片网格。\n  - 影视与媒体库详情页在宽屏下居中控宽、操作栏单行均衡排布，播放器支持 iPad 全四向旋转。\n- **三端交互与稳定性优化（iPhone / iPad / iPhone Duo 同步）**：\n  - **播放器顶栏精简**：视频播放界面右上角统一精简为「小屏播放」与「更多（`…`）」两个玻璃按钮，字幕、音轨、画面比例、播放速度全部收纳至「`…`」实时下拉菜单。\n  - **设置页版本号展示**：设置页面底部居中展示当前 App 版本号。\n  - **后台重启会话失效自动退回登录**：修复 MoviePilot 后台重启导致令牌失效（含 401 及旧版 403 令牌校验失败、SSE 流、播放清单请求与前台恢复校验）后界面无响应的问题，立即清理会话与弹窗并退回登录界面。\n  - **站点资源浏览修复**：选择全站或多个站点时自动禁用「浏览」按钮，仅选择单个站点时可用；单站浏览切换至 `/api/v1/site/resource/{site_id}` 并完整兼容扁平 `TorrentInfo` 解析，修复单站浏览报错问题。\n  - **智能助手对话体验优化**：优化“思考中”状态为纯文本显示（去除外层胶囊边框），非管理员账号自动跳过管理员专属斜杠命令加载。\n\n### 安装\n\n下载 `MoviePilot-2.0.2-unsigned.ipa` 后自行重签安装（需要 **iOS 16+**，桌面小组件需要 **iOS 17+**，iPhone Duo 竖向侧边操作区需要 **iOS 27.1+**）。原生推送需开发者证书为 `com.moviepilot.app` 启用 Push Notifications；重签小组件须保持一致的 App Groups 配置。\n\nRelease 同时提供 `SHA256SUMS`。本包使用 iPhoneOS SDK 和 arm64 架构构建。\n\n构建源码：[ad4e7d50fe79dc5b915ef9a223c362ab6cc8ee18](https://github.com/jxxghp/MoviePilot-App/commit/ad4e7d50fe79dc5b915ef9a223c362ab6cc8ee18)。",
           "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.2/MoviePilot-2.0.2-unsigned.ipa",
-          "size": 35085203,
+          "size": 35107401,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,10 +34,10 @@
   "news": [
     {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 2.0.2 · 22 Nov 2026",
+      "title": "MoviePilot 2.0.2 · 23 Nov 2026",
       "identifier": "MoviePilot-release-v2.0.2",
       "caption": "MoviePilot 2.0.2 is available.",
-      "date": "2026-11-22T15:10:36Z",
+      "date": "2026-11-23T02:09:11Z",
       "tintColor": "#8844F6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
       "notify": true,

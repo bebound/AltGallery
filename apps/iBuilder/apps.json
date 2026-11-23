@@ -1,0 +1,47 @@
+{
+  "name": "iBuilder",
+  "subtitle": "iBuilder AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for iBuilder",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/icon.webp",
+  "website": "https://github.com/Absenti/iBuilder",
+  "tintColor": "#EFB15A",
+  "apps": [
+    {
+      "name": "iBuilder",
+      "bundleIdentifier": "dev.ibuilder.app",
+      "developerName": "Absenti",
+      "subtitle": "Switch games, built on your iPhone",
+      "localizedDescription": "iBuilder turns a Switch game dump you own into a native iOS build on the iPhone itself: extract, rewrite, translate the shaders, sign and play. Experimental: results differ per game.\n\nNo game, firmware or key is included or downloaded. Use it only with your own games and the prod.keys of your own console. Not affiliated with Nintendo or Apple.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/library.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/build.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/settings.webp"
+      ],
+      "tintColor": "#EFB15A",
+      "versions": [
+        {
+          "version": "0.1.7",
+          "date": "2026-11-22T19:54:57Z",
+          "localizedDescription": "> [!WARNING]\n> No game, firmware or key is included or downloaded. Use iBuilder only with games you own and the `prod.keys` dumped from your own console. Not affiliated with Nintendo or Apple.\n\n**New**\n- **No rebuild after an app update** that does not change what a built game is made of (a new *framework id*: host, rewriter, assembler, signer, profiles, game tables). The first update to 0.1.7 still rebuilds each game once.\n- **Beach Buggy Racing 2**: shaders read from Vector Unit's `.apf` archives (0 → 496), and the game no longer quits at start (engine: the friends notification queue opens offline). A game marked \"no shader\" by an older split is split again automatically.\n- **\"Not supported yet\"** on a game whose build found no shader it can read (Play asks first); **\"The game closed itself\"** on the next launch when a game calls exit at start, with Share the log.\n- Shader preparation progress in the Library's one-game view and the iPad hero.\n\n**Fixes**\n- **Exported IPAs rejected by on-device signers** (FlareStore: \"Can't get BundleID, BundleVersion, or BundleExecute in Info.plist!\"): the exported `Info.plist` used `<true />`, which zsign's plist reader refuses; it is now written as `<true/>` and checked as zsign reads it.\n\n**Install**: SideStore source `https://raw.githubusercontent.com/Absenti/iBuilder/main/apps.json`, or the `.ipa` below. Bundle id `dev.ibuilder.app`, iOS 26+, iPhone 12 or later. Assets: the `.ipa`, its `.sha256`, and `.ipa.verify.tar.gz` (the verifier that checked it: 251 checks passed).",
+          "downloadURL": "https://github.com/Absenti/iBuilder/releases/download/v0.1.7/GameApp-rust-20261122-195251-rust2353f307.ipa",
+          "size": 40973312,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "dev.ibuilder.app",
+      "title": "iBuilder 0.1.7 · 22 Nov 2026",
+      "identifier": "iBuilder-release-v0.1.7",
+      "caption": "iBuilder 0.1.7 is available.",
+      "date": "2026-11-22T19:54:57Z",
+      "tintColor": "#EFB15A",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Absenti/iBuilder/releases/tag/v0.1.7"
+    }
+  ]
+}
