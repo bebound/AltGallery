@@ -21,11 +21,11 @@
       "tintColor": "#EFB15A",
       "versions": [
         {
-          "version": "0.1.7",
-          "date": "2026-11-22T19:54:57Z",
-          "localizedDescription": "> [!WARNING]\n> No game, firmware or key is included or downloaded. Use iBuilder only with games you own and the `prod.keys` dumped from your own console. Not affiliated with Nintendo or Apple.\n\n**New**\n- **No rebuild after an app update** that does not change what a built game is made of (a new *framework id*: host, rewriter, assembler, signer, profiles, game tables). The first update to 0.1.7 still rebuilds each game once.\n- **Beach Buggy Racing 2**: shaders read from Vector Unit's `.apf` archives (0 → 496), and the game no longer quits at start (engine: the friends notification queue opens offline). A game marked \"no shader\" by an older split is split again automatically.\n- **\"Not supported yet\"** on a game whose build found no shader it can read (Play asks first); **\"The game closed itself\"** on the next launch when a game calls exit at start, with Share the log.\n- Shader preparation progress in the Library's one-game view and the iPad hero.\n\n**Fixes**\n- **Exported IPAs rejected by on-device signers** (FlareStore: \"Can't get BundleID, BundleVersion, or BundleExecute in Info.plist!\"): the exported `Info.plist` used `<true />`, which zsign's plist reader refuses; it is now written as `<true/>` and checked as zsign reads it.\n\n**Install**: SideStore source `https://raw.githubusercontent.com/Absenti/iBuilder/main/apps.json`, or the `.ipa` below. Bundle id `dev.ibuilder.app`, iOS 26+, iPhone 12 or later. Assets: the `.ipa`, its `.sha256`, and `.ipa.verify.tar.gz` (the verifier that checked it: 251 checks passed).",
-          "downloadURL": "https://github.com/Absenti/iBuilder/releases/download/v0.1.7/GameApp-rust-20261122-195251-rust2353f307.ipa",
-          "size": 40973312,
+          "version": "0.1.8",
+          "date": "2026-11-23T14:31:19Z",
+          "localizedDescription": "> [!WARNING]\n> No game, firmware or key is included or downloaded. Use iBuilder only with games you own and the `prod.keys` dumped from your own console. Not affiliated with Nintendo or Apple.\n\n> [!IMPORTANT]\n> **Every game rebuilds its shaders once** after this update: the shader chain moves to `6c53446391cc` (nxnative 033793f0), and a library is named by its chain. iOS's Metal shader cache also starts empty once, so the first play of each game stutters more.\n\n**New**\n- **Shader chain 6c53446391cc**, nxnative's current one: 37 upstream translator and host changes, including the Switch 2 mesh/task fixes. The Rust build gives the same library bytes as upstream (5,348 Ocarina shaders compared).\n- **More games found compatible**: shader readers for EA (FIFA 18: 0 → 330 shaders), CRI CPK, Diablo III, Unreal IoStore and encrypted paks, Smash Bros. Ultimate, Trinity (stored files), Frostbite (stored data), TT Games DAT, Larian LSPK, Blizzard CASC, Camelot CRA, PDAT, Rockstar RPF6, REDengine, RAGE WAD, NXCX, Telltale, GIANTS SHARC, Virtuos VBF, UbiArt IPK v5, MT Framework ARC v9. OpenGL and Vulkan games get their shaders too (glslang is now in the app; the engine compiles them on the phone).\n- **Build screen: Mode Cool / Fast** in place of Close. Cool (default) keeps the app smooth and the phone cooler; Fast builds at full speed, hotter. A running build follows a change.\n- **Faster builds**: a per-shader stream instead of batches; a rebuild after an update or a DLC reuses the shaders that did not change; a build resumed after iOS ended the app keeps half its threads instead of one. The build log now shows where the time went (translator, SPIRV-Cross, cores busy, translator GC).\n- **Settings**: *Check the shader cache* (on: a game iOS's cache forgot after a reboot or an iOS update is prepared again), *Faster shader preparation* (off: the device's full compiler concurrency when cool or charging), *Optimized translator (experimental)* (off: smaller shaders, may show graphics errors).\n- Shader libraries compiled for size (`optimizationLevel = Size`, the engine and the preparation alike).\n\n**Known limits**\n- Still refused: Oodle-compressed shaders (Octopath Traveler 0, FINAL FANTASY RESONANCE, Yoshi and the Mysterious Book, Mario & Luigi: Brothership, EA SPORTS FC 27, LEGO Star Wars base game, Pokémon Legends: Z-A), XNB LZX, Next Level Games archives; Camelot games need a capture of their file-table NRO.\n- The new readers are checked against nxnative on synthetic games, not on every real game; FIFA 18 is split and translated, not yet played. Nothing in this release has been played on an iPhone before publishing.\n\n**Install**: SideStore source `https://raw.githubusercontent.com/Absenti/iBuilder/main/apps.json`, or the `.ipa` below. Bundle id `dev.ibuilder.app`, iOS 26+, iPhone 12 or later. Assets: the `.ipa`, its `.sha256`, and `.ipa.verify.tar.gz` (the verifier that checked it: 261 checks passed).",
+          "downloadURL": "https://github.com/Absenti/iBuilder/releases/download/v0.1.8/GameApp-rust-20261123-142811-rustcf3c2f55.ipa",
+          "size": 42455597,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "dev.ibuilder.app",
-      "title": "iBuilder 0.1.7 · 22 Nov 2026",
-      "identifier": "iBuilder-release-v0.1.7",
-      "caption": "iBuilder 0.1.7 is available.",
-      "date": "2026-11-22T19:54:57Z",
+      "title": "iBuilder 0.1.8 · 23 Nov 2026",
+      "identifier": "iBuilder-release-v0.1.8",
+      "caption": "iBuilder 0.1.8 is available.",
+      "date": "2026-11-23T14:31:19Z",
       "tintColor": "#EFB15A",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/news.webp",
       "notify": true,
-      "url": "https://github.com/Absenti/iBuilder/releases/tag/v0.1.7"
+      "url": "https://github.com/Absenti/iBuilder/releases/tag/v0.1.8"
     }
   ]
 }
