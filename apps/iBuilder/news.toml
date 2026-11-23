@@ -1,0 +1,17 @@
+# render_news.py config: uv run tools/render_news.py --out apps/iBuilder
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "iBuilder"
+tagline = "Your Switch games\nas native iOS apps"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#EFB15A"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#EFB15A"      # bottom-right glow (default: [source] tint_color)
+# background = "#F7ECDB"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#FBF5EC"        # gradient mid stop (derived from background)
+# bg_dark = "#EFDDC2"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#C98B3C" # tagline text (derived from background)

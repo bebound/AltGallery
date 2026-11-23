@@ -121,6 +121,9 @@ iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱——基于 worse_que
 ### <img src="apps/Husk/icon.png" alt="Husk icon" width="24" align="top"> <a href="https://github.com/Leviidev/Husk">Husk</a>
 iOS 上的 Android 应用启动器——放入 APK 轻点即全屏打开，需要 JIT 与附加调试器。
 
+### <img src="apps/iBuilder/icon.webp" alt="iBuilder icon" width="24" align="top"> <a href="https://github.com/Absenti/iBuilder">iBuilder</a>
+在 iPhone 上把 Switch 游戏构建成原生 iOS 应用——用你自己的游戏转储在手机上完成打包。需要 A14 或更新芯片、iOS 26。
+
 ### <img src="apps/iDeck/icon.png" alt="iDeck icon" width="24" align="top"> <a href="https://github.com/kuscholar/iDeck">iDeck</a>
 iPhone 与 iPad 上的 Steam 大屏幕模式——通过 Madeira 运行时本地运行 Valve 客户端与兼容的 Windows 游戏。
 

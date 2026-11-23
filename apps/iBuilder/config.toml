@@ -1,0 +1,42 @@
+# altgen config for the iBuilder AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Absenti/iBuilder"
+
+[source]
+name = "iBuilder"
+subtitle = "iBuilder AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for iBuilder"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/icon.webp"
+website = "https://github.com/Absenti/iBuilder"
+tint_color = "#EFB15A"
+
+[app]
+name = "iBuilder"
+bundle_identifier = "dev.ibuilder.app"
+developer_name = "Absenti"
+subtitle = "Switch games, built on your iPhone"
+description = "iBuilder turns a Switch game dump you own into a native iOS build on the iPhone itself: extract, rewrite, translate the shaders, sign and play. Experimental: results differ per game.\n\nNo game, firmware or key is included or downloaded. Use it only with your own games and the prod.keys of your own console. Not affiliated with Nintendo or Apple."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/library.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/build.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/settings.webp",
+]
+tint_color = "#EFB15A"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = ".*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/news.webp"
+
+[output]
+path = "apps.json"

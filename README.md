@@ -121,6 +121,9 @@ Enable Hermès Watch Faces on any Apple Watch — plus Ultra faces and on-watch 
 ### <img src="apps/Husk/icon.png" alt="Husk icon" width="24" align="top"> <a href="https://github.com/Leviidev/Husk">Husk</a>
 Android app launcher for iOS — drop in an APK, tap it, and the app opens full-screen. JIT and an attached debugger are required.
 
+### <img src="apps/iBuilder/icon.webp" alt="iBuilder icon" width="24" align="top"> <a href="https://github.com/Absenti/iBuilder">iBuilder</a>
+Switch games, built on your iPhone — turns your own game dump into a native iOS build on device. Needs an A14 chip or later, iOS 26.
+
 ### <img src="apps/iDeck/icon.png" alt="iDeck icon" width="24" align="top"> <a href="https://github.com/kuscholar/iDeck">iDeck</a>
 Steam Big Picture on iPhone and iPad — runs Valve's client and compatible Windows games locally through Madeira's runtime.
 

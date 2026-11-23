@@ -88,6 +88,10 @@
     "subtitle": "iOS 种子客户端。",
     "description": "iTorrent 是一款普通的 iOS 种子客户端，支持「文件」App，功能远不止于此。\n\n这个 App 能做什么：\n\n• 后台下载\n• 实况活动与灵动岛进度条\n• 下载到外置存储\n• 顺序下载（可用 VLC 边下边看影片）\n• 从分享菜单（Safari 及其他应用）添加种子文件\n• 直接在 Safari 中添加磁力链接\n• 把文件存入「文件」App\n• 直接从 App 内分享文件\n• 通过 URL 下载种子\n• 通过磁力链接下载种子\n• 种子下载完成时发送通知\n• Web/WebDAV 服务器\n• 选择文件的下载优先级\n• 切换深色主题界面\n• 颜色个性化\n• RSS 订阅"
   },
+  "dev.ibuilder.app": {
+    "subtitle": "在 iPhone 上构建 Switch 游戏",
+    "description": "iBuilder 在 iPhone 本机上把你自有的 Switch 游戏转储做成原生 iOS 构建：提取、改写、转换着色器、签名并运行。实验性功能，不同游戏的效果各异。\n\n不附带也不下载任何游戏、固件或密钥。请仅用于自有的游戏，并使用本机导出的 prod.keys。与任天堂及 Apple 无关。"
+  },
   "dev.linuxrunner.app": {
     "subtitle": "在 iOS 上运行 ARM64 Linux 应用与桌面",
     "description": "在 iOS 上运行 ARM64 Linux 应用与桌面环境，无需越狱、虚拟机或 JIT。"
