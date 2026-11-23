@@ -817,11 +817,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.1.1",
-          "date": "2026-11-21T14:56:42Z",
-          "localizedDescription": "### 新增\n\n- 封面展开成详情页时改用新的缩放转场：卡片按自身圆角连续变形，展开与收回与 Apple TV App 的转场观感一致；追番页的收藏状态角标改为独立响应，点它不会再连带打开详情页\n- 观看历史在宽屏（可用宽度 ≥ 700）改为两到三列网格，与时间表页的排布一致\n\n### 修复\n\n- 修复 iPhone Duo 展开时推荐页横向海报货架溢出到右侧竖栏下面的问题\n- 修复 Duo 从全屏播放退出后再展开，界面仍被钉在竖向无法跟随设备旋转的问题\n- 修复手机横屏等矮屏下追番页与更多列表的封面被撑得比竖屏大近一倍的问题，改为按更小的步长分列\n\n### 优化\n\n- 时间表在横屏按窗口左右安全区计算页宽，翻页后不再露出下一天的一角\n- 更多列表页的卡片标题对齐追番页：12pt 常规字重、两行、行距 3.6、与海报顶部留 6pt，字号变化时高度跟着缩放\n- 从详情页返回推荐页时不再重读磁盘缓存并覆写列表，避免整页与所有卡片重新排版\n- 更多列表去掉右下角回顶悬浮按钮，恢复普通滚动；底部留白相应收紧",
-          "downloadURL": "https://gh-proxy.com/https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.1.1/Kazumi_ios_v3.1.1_no_sign.ipa",
-          "size": 24528156,
+          "version": "3.1.2",
+          "date": "2026-11-23T06:25:05Z",
+          "localizedDescription": "### 新增\n\n- 时间表支持按放送时刻排序：同一列内从早到晚排列，没有时刻的排在最后；排序用的时刻与卡片底部「HH:mm 更新」同源\n- 更新提醒通知可附带番剧封面：只从本地图片缓存取图，没有缓存就不附，不会为此额外联网\n\n### 修复\n\n- 修复在 Bangumi 上改追番状态、打评分、发评论时经常失败的问题：原来把这些操作发到了已经停用的旧地址，现在改回官方接口\n- 修复同步到 Bangumi 失败时只弹一句「同步失败」、看不出为什么的问题，现在会写明具体原因；标记看过也会区分成功与失败，并显示是第几集\n- 修复滑到时间表底部后再大量过滤或换排序，列表卡在可视区外导致整页空白的问题\n\n### 优化\n\n- 详情页顶部提示条改为胶囊样式并接入安全区，出现和消失更顺滑\n- 缩略图未下载完时先复用已缓存的小图，不再显示空白；小尺寸请求也能直接命中已缓存的大图\n- 「我的」页最近观看卡片提前预取封面，滚动时不再闪白\n\n### 已知问题\n\n- 部分番剧的详情页侧滑退出无法打断，按钮悬空慢淡出。这是 SwiftUI 原生转场机制的限制，暂时没有优化计划",
+          "downloadURL": "https://gh-proxy.com/https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.1.2/Kazumi_ios_v3.1.2_no_sign.ipa",
+          "size": 24543702,
           "minOSVersion": "26.0"
         }
       ]
@@ -1964,6 +1964,17 @@
   ],
   "news": [
     {
+      "appID": "com.linkpass.kazumi",
+      "title": "Kazumi-Swift 3.1.2 · 23 Nov 2026",
+      "identifier": "Kazumi-Swift-release-v3.1.2",
+      "caption": "Kazumi-Swift 3.1.2 is available.",
+      "date": "2026-11-23T06:25:05Z",
+      "tintColor": "#45A992",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.1.2"
+    },
+    {
       "appID": "com.thebcd69.bcd",
       "title": "BCD 0.1.712 · 23 Nov 2026",
       "identifier": "BCD-release-v0.1.712",
@@ -2094,17 +2105,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/news.webp",
       "notify": true,
       "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.20"
-    },
-    {
-      "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.1.1 · 21 Nov 2026",
-      "identifier": "Kazumi-Swift-release-v3.1.1",
-      "caption": "Kazumi-Swift 3.1.1 is available.",
-      "date": "2026-11-21T14:56:42Z",
-      "tintColor": "#45A992",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.1.1"
     },
     {
       "appID": "com.zephyr.breeze",
