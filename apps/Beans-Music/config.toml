@@ -1,0 +1,45 @@
+# altgen config for the Beans-Music AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "XIaodou0416/Beans-Music"
+
+[source]
+name = "Beans Music"
+subtitle = "Beans Music AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Beans Music"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/icon.webp"
+website = "https://github.com/XIaodou0416/Beans-Music"
+tint_color = "#F0D050"
+
+[app]
+name = "Beans Music"
+bundle_identifier = "com.beans.app"
+developer_name = "XIaodou0416"
+subtitle = "使用 SwiftUI 开发的多平台音乐播放器"
+description = "面向 iOS 15 及以上的开源 SwiftUI 音乐播放器，内置网易云音乐、QQ 音乐与酷狗音乐，支持本地歌单、离线下载、逐字歌词、多种播放页布局与均衡器等自定义能力。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/player.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/lyrics.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/library.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/search.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/settings.webp",
+]
+tint_color = "#F0D050"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = "Beans-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -76,6 +76,9 @@ The ultimate multi-region App Store manager — switch storefronts instantly and
 ### <img src="apps/BCD/icon.png" alt="BCD icon" width="24" align="top"> <a href="https://github.com/thebcd69/bcd-games">BCD</a>
 Windows games on iPhone and iPad — a fast, controller-friendly launcher with Steam and GOG built in, powered by Wine, FEX and Metal.
 
+### <img src="apps/Beans-Music/icon.webp" alt="Beans Music icon" width="24" align="top"> <a href="https://github.com/XIaodou0416/Beans-Music">Beans Music</a>
+使用 SwiftUI 开发的多平台音乐播放器——内置网易云、QQ 与酷狗音乐源，支持本地歌单、离线下载与逐字歌词。
+
 ### <img src="apps/Breeze/icon.png" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
 使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
