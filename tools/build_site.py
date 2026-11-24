@@ -96,6 +96,11 @@ the slow part of a build, and it is the part that used to sit silent for a
 while. The bar writes to stderr and turns itself off when that is not a
 terminal, so a CI log keeps the plain report line it always had.
 
+The re-encoding itself runs in a ProcessPoolExecutor, one worker per CPU by
+default (--jobs N overrides it), because Pillow's WebP encoder holds the GIL
+and threads would not help. Results still arrive in submission order, so the
+staged files — and which source wins a .webp name — do not depend on timing.
+
 Local preview (pick either, from the repo root; uv reads the inline PEP 723
 metadata and installs Pillow and tqdm):
 
@@ -109,9 +114,12 @@ import argparse
 import hashlib
 import io
 import json
+import os
 import re
 import shutil
 import sys
+from collections.abc import Iterator
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -367,6 +375,45 @@ def optimized_bytes(kind: str, local: Path) -> bytes:
     return min(candidates, key=len)
 
 
+def optimize_one(task: tuple[str, str]) -> tuple[str, bytes | None, str | None]:
+    """Re-encode one image in a worker process.
+
+    Returns the repository path, the WebP bytes (None when the image could not
+    be encoded) and the error message. An exception becomes a string, so one
+    unreadable image cannot take the pool down with it.
+    """
+    relative, kind = task
+    try:
+        return relative, optimized_bytes(kind, REPO_ROOT / relative), None
+    except Exception as exc:  # unreadable or unsupported artwork
+        return relative, None, str(exc)
+
+
+def optimize_many(
+    tasks: list[tuple[str, str]], jobs: int
+) -> Iterator[tuple[str, bytes | None, str | None]]:
+    """Re-encode every task, spread over worker processes, in task order.
+
+    Re-encoding is pure CPU work on independent files, so it scales with the
+    cores. Results still come back in the order they were submitted, which
+    keeps the staging rule in stage_media deterministic: the first source to
+    claim a .webp name is the one that keeps it.
+
+    One job (or one task) runs inline, in this process: spawning a pool costs
+    more than it saves at that size.
+    """
+    if jobs <= 1 or len(tasks) <= 1:
+        yield from map(optimize_one, tasks)
+        return
+    workers = min(jobs, len(tasks))
+    # Small chunks: an icon is milliseconds, a screenshot about a second, so a
+    # big chunk would leave one worker holding a queue of slow files while the
+    # others idle.
+    chunksize = max(1, len(tasks) // (workers * 4))
+    with ProcessPoolExecutor(max_workers=workers) as pool:
+        yield from pool.map(optimize_one, tasks, chunksize=chunksize)
+
+
 def image_kind(url: str, icon_urls: set[str], logo_url: str) -> str:
     if url == logo_url:
         return "logo"
@@ -499,13 +546,16 @@ def write_manifest(source: dict, out_dir: Path) -> None:
     )
 
 
-def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
+def stage_media(source: dict, raw_base: str, out_dir: Path, jobs: int = 1) -> dict[str, str]:
     """Stage every displayed image into <out_dir>/media/.
 
     Icons and screenshots are downscaled and re-encoded to WebP when that
     makes them smaller; anything else is copied verbatim. Returns the served
     path for each repository path, which config.json hands to the page — the
     two differ when an image became a .webp.
+
+    The re-encoding runs across `jobs` worker processes; the decision about
+    what to serve and the writes themselves stay here, in the parent.
     """
     media_root = out_dir / MEDIA_DIR
     icon_urls = {app.get("iconURL") for app in source.get("apps", [])}
@@ -519,13 +569,27 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
     if media_root.exists():
         shutil.rmtree(media_root)
 
-    urls = display_images(source)
+    # A plain stderr write would be painted over by the next bar refresh, so
+    # warnings are held back and printed once the bar has cleared itself.
+    problems: list[str] = []
+    tasks: list[tuple[str, str]] = []
+    for url in display_images(source):
+        relative = repo_relative(url, raw_base)
+        if relative is None:
+            continue
+        if not (REPO_ROOT / relative).is_file():
+            problems.append(f"{relative}: not in the working tree; the page will miss it under media/")
+            continue
+        tasks.append((relative, image_kind(url, icon_urls, logo_url)))
+
     # Re-encoding every icon and screenshot is the slow half of a build, so it
-    # gets a bar. `disable=None` is tqdm's "only when stderr is a terminal":
-    # piped output and CI logs keep the single report line below. It sits on
-    # stderr for the same reason, leaving stdout as the build's report.
+    # gets a bar and the worker pool. `disable=None` is tqdm's "only when
+    # stderr is a terminal": piped output and CI logs keep the single report
+    # line below. It sits on stderr for the same reason, leaving stdout as the
+    # build's report.
     progress = tqdm(
-        urls,
+        optimize_many(tasks, jobs),
+        total=len(tasks),
         desc="Optimizing images",
         unit="img",
         disable=None,
@@ -533,41 +597,32 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
         file=sys.stderr,
         dynamic_ncols=True,
     )
-    # A plain stderr write would be painted over by the next bar refresh, so
-    # warnings are held back and printed once the bar has cleared itself.
-    problems: list[str] = []
-    for url in progress:
-        relative = repo_relative(url, raw_base)
-        if relative is None:
-            continue
+    for relative, webp, error in progress:
         local = REPO_ROOT / relative
-        if not local.is_file():
-            problems.append(f"{relative}: not in the working tree; the page will miss it under media/")
-            continue
         # The bar is the only sign of life during a slow encode; naming the
-        # file being worked on says which one is slow.
+        # file whose result just arrived says which one was slow.
         progress.set_description_str(f"Optimizing {relative.rsplit('/', 1)[-1][:34]}", refresh=False)
 
-        original = local.read_bytes()
-        data = original
+        size = local.stat().st_size
+        data = None
         target = relative
-        try:
-            webp = optimized_bytes(image_kind(url, icon_urls, logo_url), local)
-        except Exception as exc:  # unreadable or unsupported artwork
-            problems.append(f"{relative}: cannot re-encode ({exc}); serving it unchanged")
+        if error is not None:
+            problems.append(f"{relative}: cannot re-encode ({error}); serving it unchanged")
         else:
             webp_path = str(Path(relative).with_suffix(".webp"))
             # Two sources (home.png and home.jpg, say) can want the same name;
             # the first one keeps it and the rest stay in their own format.
-            if len(webp) < len(original) and webp_path not in taken:
+            if len(webp) < size and webp_path not in taken:
                 data, target = webp, webp_path
+        if data is None:
+            data = local.read_bytes()
         path = media_root / target
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
         served[relative] = target
         taken.add(target)
         copied += 1
-        before += len(original)
+        before += size
         after += len(data)
 
     for message in problems:
@@ -693,6 +748,12 @@ def main() -> int:
     parser.add_argument("--proxy", type=Path, default=DEFAULT_PROXY)
     parser.add_argument("--site", type=Path, default=DEFAULT_SITE)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument(
+        "--jobs",
+        type=int,
+        default=os.cpu_count() or 1,
+        help="worker processes for image re-encoding (default: one per CPU, 1 disables the pool)",
+    )
     args = parser.parse_args()
 
     def resolve(path: Path) -> Path:
@@ -724,7 +785,7 @@ def main() -> int:
         vendor[name] = path.read_bytes()
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    media_files = stage_media(source, raw_base, out_dir)
+    media_files = stage_media(source, raw_base, out_dir, max(1, args.jobs))
 
     logo_relative = repo_relative(source.get("iconURL") or "", raw_base)
     icon_names: list[str] = []
