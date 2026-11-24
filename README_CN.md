@@ -67,6 +67,9 @@ Apple 钱包卡面、锁屏密码键盘主题与 PosterBoard 壁纸——在设�
 ### <img src="apps/Apollo-Reborn/icon.webp" alt="Apollo Reborn icon" width="24" align="top"> <a href="https://github.com/Apollo-Reborn/Apollo-Reborn">Apollo Reborn</a>
 带液态玻璃补丁的 Apollo-Reborn 版本——用你自己的 API Key，让 Apollo for Reddit 在 2023 年 6 月关停后继续可用。
 
+### <img src="apps/Applesauce/icon.webp" alt="Applesauce icon" width="24" align="top"> <a href="https://github.com/0xjohnnydev/Applesauce">Applesauce</a>
+一款好玩的 iOS 模拟器——无需越狱即可在 iOS 15+ 上运行受支持的 32 位 iPhone 游戏，但每次启动都需要 JIT。
+
 ### <img src="apps/ARMSX2/icon.webp" alt="ARMSX2 icon" width="24" align="top"> <a href="https://github.com/ARMSX2/ARMSX2">ARMSX2</a>
 面向 ARM64 的 PlayStation 2 模拟器——基于 PCSX2 的免费开源分支，带原生 JIT 重编译器。
 

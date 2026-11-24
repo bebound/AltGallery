@@ -227,5 +227,9 @@
   "com.twindesk.ios": {
     "subtitle": "把 iPhone 与你的电脑当作一台工作台",
     "description": "TwinDesk 把 iPhone 或 iPad 与 Mac、Windows 或 Linux 电脑合为一台工作台：镜像电脑屏幕或用作扩展显示屏，共享文件、剪贴板、通知、声音、摄像头与远程控制，可通过 Wi-Fi、USB 或蓝牙连接。电脑端需要安装 TwinDesk 桌面应用。"
+  },
+  "io.github.johnny901901901.applesauce": {
+    "subtitle": "一款好玩的 iOS 模拟器",
+    "description": "在现代设备上运行受支持的 32 位 iPhone 游戏，内置 HyperHLE v1.0.6 与 touchHLE 0.2.3 两个模拟器核心，可逐款游戏选择使用哪一个。这是一个非官方分支，未获上述任一项目认可。每次应用以新进程启动时都需要开启 JIT。不附带任何游戏。"
   }
 }

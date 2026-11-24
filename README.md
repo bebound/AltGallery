@@ -67,6 +67,9 @@ Sideload non-notarized apps with AltServer — the original alternative app stor
 ### <img src="apps/Apollo-Reborn/icon.webp" alt="Apollo Reborn icon" width="24" align="top"> <a href="https://github.com/Apollo-Reborn/Apollo-Reborn">Apollo Reborn</a>
 Apollo-Reborn build with Liquid Glass patch — keeps Apollo for Reddit working with your own API keys after its June 2023 shutdown.
 
+### <img src="apps/Applesauce/icon.webp" alt="Applesauce icon" width="24" align="top"> <a href="https://github.com/0xjohnnydev/Applesauce">Applesauce</a>
+A playful emulator for iOS — runs supported 32-bit iPhone games on iOS 15+ with no jailbreak, though JIT is required.
+
 ### <img src="apps/ARMSX2/icon.webp" alt="ARMSX2 icon" width="24" align="top"> <a href="https://github.com/ARMSX2/ARMSX2">ARMSX2</a>
 PlayStation 2 emulator for ARM64 — a free, open-source fork of PCSX2 with native JIT recompilers, for phones, PCs and handhelds.
 
