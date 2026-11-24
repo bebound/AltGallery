@@ -8,7 +8,7 @@ repo = "lpfoj/lsx4"
 name = "LSX4"
 subtitle = "LSX4 AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for LSX4"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/icon.webp"
 website = "https://github.com/lpfoj/lsx4"
 tint_color = "#C09050"
 
@@ -18,8 +18,8 @@ bundle_identifier = "com.llayerlinux.LSX4RuntimeProbe"
 developer_name = "lpfoj"
 subtitle = "Open-source PS4/PS5 emulator"
 description = "An open-source PlayStation 4/5 emulator for Android and iOS. The current iOS build supports PS4 gameplay and requires iOS 26+ with JIT."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/icon.png"
-screenshots = ["https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/home.png", "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/settings.png"]
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/icon.webp"
+screenshots = ["https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/home.webp", "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LSX4/images/settings.webp"]
 tint_color = "#C09050"
 min_os_version = "26.0"
 

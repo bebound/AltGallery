@@ -8,7 +8,7 @@ repo = "Leviidev/Husk"
 name = "Husk"
 subtitle = "Husk AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Husk"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/icon.webp"
 website = "https://github.com/Leviidev/Husk"
 tint_color = "#5949E5"
 
@@ -18,10 +18,10 @@ bundle_identifier = "com.husk.app"
 developer_name = "Leviidev"
 subtitle = "Android app launcher for iOS"
 description = "Run Android apps on iOS: drop in an APK, tap it, and the Android app opens full-screen on a QEMU guest with hardware-accelerated display and audio. Needs JIT plus a debugger attached at runtime, so it requires a sideloading setup that can provide get-task-allow rather than a plain re-sign."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/main.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/main.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/settings.webp",
 ]
 tint_color = "#5949E5"
 min_os_version = "16.4"

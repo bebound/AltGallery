@@ -8,7 +8,7 @@ repo = "vrcm-team/VRCM"
 name = "VRCM"
 subtitle = "VRCM AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for VRCM"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/icon.webp"
 website = "https://github.com/vrcm-team/VRCM"
 tint_color = "#6451f1"
 
@@ -18,11 +18,11 @@ bundle_identifier = "io.github.vrcmteam.vrcm"
 developer_name = "vrcm-team"
 subtitle = "Bring your VRChat social life to your phone"
 description = "VRCM is a cross-platform VRChat companion focused on social connection and convenience. Explore your social circles, remember time spent together, and move smoothly from shared links to worlds, interactions, and real-world meetups."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Friend-Network.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Gallery-Mobile.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Meetup-Card.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Friend-Network.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Gallery-Mobile.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/Feature-Meetup-Card.webp",
 ]
 tint_color = "#6451f1"
 min_os_version = "15.3"

@@ -14,7 +14,7 @@ repo = "TarbleFR/RewindBox"
 name = "RewindBox"
 subtitle = "RewindBox AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for RewindBox"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/icon.webp"
 website = "https://github.com/TarbleFR/RewindBox"
 tint_color = "#50DD8B"
 
@@ -24,10 +24,10 @@ bundle_identifier = "com.neogamelab.neostation"
 developer_name = "TarbleFR"
 subtitle = "Emulation frontend for iPhone and iPad"
 description = "An independently maintained iOS/iPadOS fork of NeoStation with a gamepad-friendly, console-style game library and embedded Libretro cores, MeloNX, Dolphin, ARMSX2 and RPCS3 runtimes, JIT workflows and support for user-supplied firmware, keys and BIOS."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RewindBox/images/settings.webp",
 ]
 tint_color = "#50DD8B"
 # README requires iOS 18 or newer, and the IPA's Info.plist now agrees

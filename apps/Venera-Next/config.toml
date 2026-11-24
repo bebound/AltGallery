@@ -8,7 +8,7 @@ repo = "CyrilPeng/Venera-Next"
 name = "VeneraNext"
 subtitle = "VeneraNext AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for VeneraNext"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/icon.webp"
 website = "https://github.com/CyrilPeng/Venera-Next"
 tint_color = "#2090E0"
 
@@ -18,11 +18,11 @@ bundle_identifier = "com.github.cyrilpeng.veneranext"
 developer_name = "CyrilPeng"
 subtitle = "跨平台漫画阅读器"
 description = "基于 Flutter 的跨平台漫画阅读器，支持本地漫画、WebDAV 漫画源与第三方网络漫画源，支持 Android、iOS、Windows、Linux、macOS 平台。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/home.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/explorer.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/search.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/explorer.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/search.webp",
 ]
 tint_color = "#2090E0"
 min_os_version = "14.0"

@@ -8,7 +8,7 @@ repo = "nekohasekai/open-screen-sharing"
 name = "Open Screen Sharing"
 subtitle = "Open Screen Sharing AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Open Screen Sharing"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.webp"
 website = "https://github.com/nekohasekai/open-screen-sharing"
 tint_color = "#1060F0"
 
@@ -18,9 +18,9 @@ bundle_identifier = "io.nekohasekai.screensharing"
 developer_name = "nekohasekai"
 subtitle = "Remote desktop client optimized for Mac screen sharing"
 description = "Open Screen Sharing is a free and open-source remote desktop client optimized for Mac screen sharing and public networks, while also offering first-class support for standard VNC and RDP."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/session.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/session.webp",
 ]
 tint_color = "#1060F0"
 min_os_version = "15.0"

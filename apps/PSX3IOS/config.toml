@@ -11,7 +11,7 @@ repo = "xmiguel911x/PSX3IOS"
 name = "PSX3IOS"
 subtitle = "PSX3IOS AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for PSX3IOS"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/icon.webp"
 website = "https://github.com/xmiguel911x/PSX3IOS"
 tint_color = "#5080D0"
 
@@ -21,11 +21,11 @@ bundle_identifier = "com.miguel.psx3ios"
 developer_name = "xmiguel911x"
 subtitle = "PlayStation 3 emulator for iPhone and iPad"
 description = "A PlayStation 3 emulator for iPhone and iPad, built on RPCS3. Real games boot and play — the whole emulator core is exposed, with community game patches, trophies, play time, save data and 14 languages. Works with or without JIT."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/home.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/install.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/settings.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/install.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PSX3IOS/images/settings.webp",
 ]
 tint_color = "#5080D0"
 min_os_version = "15.0"

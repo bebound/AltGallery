@@ -8,7 +8,7 @@ repo = "mengangs/ipadn"
 name = "iPadn"
 subtitle = "iPadn AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for iPadn"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.webp"
 website = "https://github.com/mengangs/ipadn"
 tint_color = "#111111"
 
@@ -18,12 +18,12 @@ bundle_identifier = "app.local.iPadn"
 developer_name = "mengangs"
 subtitle = "下载 App Store 的历史版本与已下架应用"
 description = "在 iPhone 与 iPad 上搜索、下载并安装你已拥有的应用——包括历史版本与已下架应用，支持区域价格比较与原生安装。支持 iPhone、iPad、Apple TV 与 Mac 应用，提供 11 种语言。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/search.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/detail.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/versions.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/prices.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/search.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/detail.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/versions.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iPadn/images/prices.webp",
 ]
 tint_color = "#111111"
 min_os_version = "17.0"

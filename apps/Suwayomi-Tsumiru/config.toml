@@ -8,7 +8,7 @@ repo = "Suwayomi/Suwayomi-Tsumiru"
 name = "Tsumiru"
 subtitle = "Tsumiru AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Tsumiru"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/icon.webp"
 website = "https://github.com/Suwayomi/Suwayomi-Tsumiru"
 tint_color = "#7c7bff"
 
@@ -18,10 +18,10 @@ bundle_identifier = "com.suwayomi.tachideskSorayomi"
 developer_name = "Suwayomi"
 subtitle = "Native manga & manhwa reader for Suwayomi-Server"
 description = "Tsumiru is a native client for reading manga & manhwa from a Suwayomi-Server instance, built for long webtoon binges. Offline downloads with an on-device catalog, a rebuilt continuous-scroll webtoon reader, incognito mode, and 13 built-in themes."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/list.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/update.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/list.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Suwayomi-Tsumiru/images/update.webp",
 ]
 tint_color = "#7c7bff"
 min_os_version = "14.0"

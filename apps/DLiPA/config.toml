@@ -8,7 +8,7 @@ repo = "AhmedBafkir/DLiPA"
 name = "DLiPA"
 subtitle = "DLiPA AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for DLiPA"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/icon.webp"
 website = "https://github.com/AhmedBafkir/DLiPA"
 tint_color = "#27A0F4"
 
@@ -18,11 +18,11 @@ bundle_identifier = "com.ahmedbafkir.dlipa"
 developer_name = "Ahmed Bafkir"
 subtitle = "Download, install and share App Store IPAs"
 description = "An iOS app inspired by ipatool. Sign in with your Apple ID to search the App Store, download any app as an IPA, including older versions, and install or share it without a jailbreak."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/search.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/versions.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/downloads.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/search.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/versions.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DLiPA/images/downloads.webp",
 ]
 tint_color = "#27A0F4"
 min_os_version = "13.0"

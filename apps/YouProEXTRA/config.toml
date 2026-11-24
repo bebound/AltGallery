@@ -8,7 +8,7 @@ repo = "mrdrvt99/YouProEXTRA"
 name = "YouProEXTRA"
 subtitle = "YouProEXTRA AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for YouProEXTRA"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/icon.webp"
 website = "https://github.com/mrdrvt99/YouProEXTRA"
 tint_color = "#FF0000"
 
@@ -18,10 +18,10 @@ bundle_identifier = "com.google.ios.youtube"
 developer_name = "alibusut"
 subtitle = "YouTube mod with customizable tweaks"
 description = "YouPro mod of YouTube for iOS. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and a host of customizable tweaks."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/list.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/play.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/list.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/YouProEXTRA/images/play.webp",
 ]
 tint_color = "#FF0000"
 min_os_version = "16.0"

@@ -8,7 +8,7 @@ repo = "breeze-project-org/Breeze"
 name = "Breeze"
 subtitle = "Breeze AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Breeze"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/icon.webp"
 website = "https://github.com/breeze-project-org/Breeze"
 tint_color = "#E03030"
 
@@ -18,10 +18,10 @@ bundle_identifier = "com.zephyr.breeze"
 developer_name = "deretame"
 subtitle = "使用 Flutter 开发的插件化漫画阅读器"
 description = "使用 Flutter 构建的跨平台漫画阅读器，漫画源以插件形式提供，内置插件商店，支持本地与云收藏。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/home.jpeg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/plugin.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Breeze/images/plugin.webp",
 ]
 tint_color = "#E03030"
 min_os_version = "15.0"

@@ -8,7 +8,7 @@ repo = "Eslzzyl/Pixiv-SwiftUI"
 name = "Pixiv-SwiftUI"
 subtitle = "Pixiv-SwiftUI AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Pixiv-SwiftUI"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/icon.webp"
 website = "https://github.com/Eslzzyl/Pixiv-SwiftUI"
 tint_color = "#13A1FD"
 
@@ -18,11 +18,11 @@ bundle_identifier = "org.eu.eslzzyl.Pixiv-SwiftUI"
 developer_name = "Eslzzyl"
 subtitle = "基于 SwiftUI 的 Pixiv 第三方客户端"
 description = "基于 SwiftUI 开发的 Pixiv 第三方客户端，支持 iOS/iPadOS/macOS。提供插画、漫画与小说的推荐、排行榜、搜索与收藏，内置评论系统、批量下载、数据导入导出、深色模式与主题自定义。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/recommend.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/detail.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/search.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/recommend.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/detail.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Pixiv-SwiftUI/images/search.webp",
 ]
 tint_color = "#13A1FD"
 min_os_version = "17.0"

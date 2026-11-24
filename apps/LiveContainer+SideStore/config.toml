@@ -8,7 +8,7 @@ repo = "LiveContainer/LiveContainer"
 name = "LiveContainer+SideStore"
 subtitle = "LiveContainer+SideStore AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for LiveContainer+SideStore"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/icon.webp"
 website = "https://github.com/LiveContainer/LiveContainer"
 tint_color = "#0784FC"
 
@@ -18,11 +18,11 @@ bundle_identifier = "com.kdt.livecontainer"
 developer_name = "LiveContainer Team"
 subtitle = "Run iOS apps without actually installing them!"
 description = "An app launcher that runs iOS apps without actually installing them. This build of LiveContainer comes with a built-in SideStore for refreshing your apps."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/apps.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/sources.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/apps.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/sources.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/settings.webp",
 ]
 tint_color = "#0784FC"
 min_os_version = "15.0"

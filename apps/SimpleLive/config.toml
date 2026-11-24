@@ -8,7 +8,7 @@ repo = "June6699/dart_simple_live"
 name = "Simple Live"
 subtitle = "Simple Live AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Simple Live"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/icon.webp"
 website = "https://github.com/June6699/dart_simple_live"
 tint_color = "#24A7EB"
 
@@ -18,7 +18,7 @@ bundle_identifier = "com.xycz.simple-live"
 developer_name = "June6699"
 subtitle = "支持弹幕与 IPTV 的开源多平台直播聚合播放器"
 description = "简简单单的看直播（Simple Live）是一款使用 Flutter 开发的开源多平台直播聚合播放器，支持虎牙、斗鱼、哔哩哔哩、抖音、快手等平台的直播与弹幕，并内置公开的 IPTV 直播源。支持关注、标签、历史与弹幕屏蔽词，配置可导入导出，并可通过房间服务、局域网或 WebDAV 同步。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/icon.webp"
 screenshots = [
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/home.webp",
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/SimpleLive/images/category.webp",

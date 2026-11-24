@@ -9,7 +9,7 @@ repo = "kodjodevf/mangayomi"
 name = "Mangayomi"
 subtitle = "Mangayomi AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Mangayomi"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/icon.webp"
 website = "https://github.com/kodjodevf/mangayomi"
 tint_color = "#EF4444"
 
@@ -19,11 +19,11 @@ bundle_identifier = "com.kodjodevf.mangayomi"
 developer_name = "Moustapha Kodjo Amadou"
 subtitle = "Read manga, novels, and watch anime"
 description = "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/screenshot1.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/screenshot2.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/screenshot3.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/screenshot1.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/screenshot2.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/screenshot3.webp",
 ]
 tint_color = "#EF4444"
 

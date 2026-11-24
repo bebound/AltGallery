@@ -8,7 +8,7 @@ repo = "hugeBlack/OpenParsec"
 name = "OpenParsec"
 subtitle = "OpenParsec AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for OpenParsec"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.webp"
 website = "https://github.com/hugeBlack/OpenParsec"
 tint_color = "#BB01F0"
 
@@ -18,9 +18,9 @@ bundle_identifier = "com.aigch.OpenParsec"
 developer_name = "hugeBlack"
 subtitle = "Open Parsec client for iOS/iPadOS"
 description = "An open-source Parsec client for iOS/iPadOS with mouse, keyboard, and touch-screen support."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/login.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/login.webp",
 ]
 tint_color = "#BB01F0"
 min_os_version = "14.0"

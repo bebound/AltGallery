@@ -10,7 +10,7 @@ repo = "Aidoku/Aidoku"
 name = "Aidoku"
 subtitle = "Home of Aidoku, free and open source manga reader for iOS and iPadOS"
 description = "This is the AltStore Source for Aidoku, free and open source manga reader for iOS and iPadOS.\n\nFor full details on what's included, check the website: https://aidoku.app/"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/icon.webp"
 website = "https://aidoku.app/"
 tint_color = "#FF375F"
 
@@ -20,11 +20,11 @@ bundle_identifier = "app.aidoku.Aidoku"
 developer_name = "Skitty"
 subtitle = "Free and open source manga reader for iOS and iPadOS"
 description = "A free and open source manga reading application for iOS and iPadOS."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/library.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/source.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/reader.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/library.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/source.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Aidoku/images/reader.webp",
 ]
 tint_color = "#FF375F"
 min_os_version = "15.0"

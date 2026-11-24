@@ -10,7 +10,7 @@ repo = "ARMSX2/ARMSX2"
 name = "ARMSX2"
 subtitle = "ARMSX2 AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for ARMSX2"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/icon.webp"
 website = "https://github.com/ARMSX2/ARMSX2"
 tint_color = "#3CAEFF"
 
@@ -20,11 +20,11 @@ bundle_identifier = "com.armsx2.ios"
 developer_name = "ARMSX2"
 subtitle = "PlayStation 2 emulator for ARM64"
 description = "A free and open-source PlayStation 2 (PS2) emulator based on PCSX2, with native ARM64 JIT recompilers. Play PS2 games on your phone, PC, or gaming handheld."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/game.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/list.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/game.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/list.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/settings.webp",
 ]
 tint_color = "#3CAEFF"
 min_os_version = "17.0"

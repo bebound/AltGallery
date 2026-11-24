@@ -9,7 +9,7 @@ repo = "singleton-altman/MoviePilotLite"
 name = "MoviePilotLite"
 subtitle = "MoviePilotLite AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for MoviePilotLite"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/icon.webp"
 website = "https://github.com/singleton-altman/MoviePilotLite"
 tint_color = "#8050F0"
 
@@ -19,11 +19,11 @@ bundle_identifier = "com.altman.moviepilot"
 developer_name = "singleton-altman"
 subtitle = "MoviePilot 移动端，基于 Flutter 实现"
 description = "基于 MoviePilot 的 Flutter 跨端客户端，对接 MoviePilot v2 API，在手机上完成订阅、搜索、下载、整理与系统运维等常用操作。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/recommend.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/explorer.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/recommend.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/explorer.webp",
 ]
 tint_color = "#8050F0"
 min_os_version = "15.0"

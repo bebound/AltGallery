@@ -8,7 +8,7 @@ repo = "mengangs/Cloudn"
 name = "Cloudn"
 subtitle = "Cloudn AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Cloudn"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/icon.webp"
 website = "https://github.com/mengangs/Cloudn"
 tint_color = "#B4532F"
 
@@ -18,7 +18,7 @@ bundle_identifier = "com.mengangs.Cloudn"
 developer_name = "mengangs"
 subtitle = "网盘分享与短视频高速解析下载"
 description = "粘贴分享链接，浏览并高速下载网盘文件与短视频，所有解析在手机本地完成，无服务器不收集数据。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/icon.webp"
 screenshots = [
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/analysis.webp",
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Cloudn/images/download.webp",

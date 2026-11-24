@@ -8,7 +8,7 @@ repo = "MaftyManicEMU/DukeX"
 name = "DukeX"
 subtitle = "DukeX AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for DukeX"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/icon.webp"
 website = "https://github.com/MaftyManicEMU/DukeX"
 tint_color = "#8FCA39"
 
@@ -18,11 +18,11 @@ bundle_identifier = "com.mafty.dukex"
 developer_name = "Manic EMU Development Team"
 subtitle = "Original Xbox emulation for iOS"
 description = "DukeX is an experimental iOS-focused frontend for xemu. It embeds the xemu core in a native Swift shell and presents the Vulkan renderer through MoltenVK and native Metal."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/library.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/activity.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/game.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/library.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/activity.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DukeX/images/game.webp",
 ]
 tint_color = "#8FCA39"
 min_os_version = "16.0"

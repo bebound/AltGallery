@@ -9,7 +9,7 @@ repo = "MchinaMd57764/WQToolkit"
 name = "WQToolkit"
 subtitle = "WQToolkit AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for WQToolkit"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/icon.webp"
 website = "https://github.com/MchinaMd57764/WQToolkit"
 tint_color = "#6090D0"
 
@@ -19,11 +19,11 @@ bundle_identifier = "com.zhangfuhao.wqtoolkit"
 developer_name = "MchinaMd57764"
 subtitle = "File browser and maintenance panel for your own app containers"
 description = "An iOS toolkit built on an App Group container-query primitive: browse, clean and inspect your own app data containers without a jailbreak. Includes a file browser, cache scan, device info, a MobileGestalt cache panel and data lenses, with a bilingual UI and iPhone/iPad layouts."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/files.jpeg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/settings.jpeg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/tweaks.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/files.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/settings.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/tweaks.webp",
 ]
 tint_color = "#6090D0"
 min_os_version = "27.0"

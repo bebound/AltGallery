@@ -9,7 +9,7 @@ repo = "infinityf4p/TiebaPure-iOS"
 name = "TiebaPure"
 subtitle = "TiebaPure AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for TiebaPure"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/icon.webp"
 website = "https://github.com/infinityf4p/TiebaPure-iOS"
 tint_color = "#708070"
 
@@ -19,11 +19,11 @@ bundle_identifier = "dev.infinityf4p.tiebapure"
 developer_name = "infinityf4p"
 subtitle = "基于 SwiftUI 的第三方百度贴吧客户端"
 description = "原生 SwiftUI 构建的非官方贴吧 iOS 客户端。未登录访客即可浏览首页推荐、进吧与吧内列表、帖子详情与楼中楼、搜索、图片缩放与视频播放；登录后支持消息、关注与粉丝、收藏帖子（与官方客户端同步）、每日签到、点赞与发帖回复。另有关键词/用户/贴吧屏蔽、浏览历史与阅读位置恢复、iPad 双栏布局，以及 `tiebapure://` 深链接。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/thread.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/search.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/thread.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TiebaPure/images/search.webp",
 ]
 tint_color = "#708070"
 min_os_version = "16.4"

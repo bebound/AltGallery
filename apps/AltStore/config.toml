@@ -9,7 +9,7 @@ repo = "altstoreio/AltStore"
 name = "AltStore"
 subtitle = "AltStore AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for AltStore"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/icon.webp"
 website = "https://github.com/altstoreio/AltStore"
 tint_color = "#018084"
 
@@ -19,14 +19,14 @@ bundle_identifier = "com.rileytestut.AltStore"
 developer_name = "Riley & Shane"
 subtitle = "Sideload non-notarized apps with AltServer."
 description = "AltStore Classic allows you to sideload non-notarized .ipa files with AltServer on a Mac or PC."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/myapps.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/app-detail.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/browse.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/sources.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/add-source.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/myapps.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/app-detail.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/browse.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/sources.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/add-source.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AltStore/images/settings.webp",
 ]
 tint_color = "#018084"
 min_os_version = "17.4"

@@ -8,7 +8,7 @@ repo = "kolbicz/WQFiles"
 name = "WQ Files"
 subtitle = "WQ Files AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for WQ Files"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/icon.webp"
 website = "https://github.com/kolbicz/WQFiles"
 tint_color = "#1E8FC7"
 
@@ -18,9 +18,9 @@ bundle_identifier = "cz.kolbi.wqfiles"
 developer_name = "kolbicz"
 subtitle = "File manager for iOS 26 and 27 (worse_query)"
 description = "File browser, app data manager and cache cleaner for iOS 26 and 27, built on the worse_query sandbox technique. Browse other apps' containers, edit plists, hex and SQLite databases, and back up, restore or clear app data without a jailbreak or kernel exploit."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/home.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQFiles/images/home.webp",
 ]
 tint_color = "#1E8FC7"
 min_os_version = "26.0"

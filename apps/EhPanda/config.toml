@@ -9,7 +9,7 @@ repo = "EhPanda-Team/EhPanda"
 name = "EhPanda"
 subtitle = "EhPanda AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for EhPanda"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/icon.webp"
 website = "https://github.com/EhPanda-Team/EhPanda"
 tint_color = "#0f766e"
 
@@ -19,11 +19,11 @@ bundle_identifier = "app.ehpanda"
 developer_name = "EhPanda-Team"
 subtitle = "An unofficial E-Hentai App for iOS built with SwiftUI & TCA"
 description = "EhPanda is an unofficial E-Hentai app for iOS & iPadOS built with SwiftUI & TCA. It supports almost all E-Hentai gallery categories, gallery browsing with filters, gallery details with tags & related galleries, posting / editing / replying to comments, H@H archiving, torrent listing, E-Hentai settings, and SNI-bypass (domain fronting) for restricted networks. Localization is built in and the app icon and accent color are customizable."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/detail.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/comment.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/detail.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EhPanda/images/comment.webp",
 ]
 tint_color = "#0f766e"
 min_os_version = "26.0"

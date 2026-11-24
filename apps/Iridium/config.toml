@@ -8,7 +8,7 @@ repo = "intraducine/iridium"
 name = "Iridium"
 subtitle = "Iridium AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Iridium"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/icon.webp"
 website = "https://github.com/intraducine/iridium"
 tint_color = "#1C1C1E"
 
@@ -18,10 +18,10 @@ bundle_identifier = "software.iridium"
 developer_name = "intraducine"
 subtitle = "Experimental Windows-game runtime for iPhone and iPad"
 description = "An experimental iPhone and iPad Windows-game runtime, with a native game library and touch, keyboard, mouse, and controller integration. Requires iOS 18+, JIT, and your own game files; compatibility varies by game and device."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/all-games.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/all-games.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/settings.webp",
 ]
 tint_color = "#1C1C1E"
 min_os_version = "18.0"

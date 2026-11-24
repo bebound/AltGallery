@@ -8,7 +8,7 @@ repo = "NexSideloading/iRAM-Plus"
 name = "iRAM+"
 subtitle = "iRAM+ AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for iRAM+"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/icon.webp"
 website = "https://github.com/NexSideloading/iRAM-Plus"
 tint_color = "#64BE7E"
 
@@ -18,7 +18,7 @@ bundle_identifier = "novadev.iram-plus"
 developer_name = "NexSideloading"
 subtitle = "Enable Increased Memory Limit for sideloaded apps on device"
 description = "Grant sideloaded apps the Increased Memory Limit and Extended Virtual Addressing entitlements directly on device: sign in with the Apple Account that signed them, pick an app and add the entitlement, then reinstall it. Works only with apps signed by an Apple account, not with enterprise certificates."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/icon.webp"
 screenshots = [
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/images/start.webp",
   "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iRAM-Plus/images/app.webp",

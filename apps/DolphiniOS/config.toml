@@ -8,7 +8,7 @@ repo = "OatmealDome/dolphin-ios"
 name = "DolphiniOS"
 subtitle = "DolphiniOS AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for DolphiniOS"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/icon.webp"
 website = "https://github.com/OatmealDome/dolphin-ios"
 tint_color = "#E0B030"
 
@@ -18,11 +18,11 @@ bundle_identifier = "me.oatmealdome.DolphiniOS-njb-patreon-beta"
 developer_name = "OatmealDome"
 subtitle = "GameCube and Wii emulator for iOS/iPadOS"
 description = "Dolphin for iOS, reborn. A GameCube and Wii emulator for iPhone and iPad."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/game.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/game.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DolphiniOS/images/settings.webp",
 ]
 tint_color = "#E0B030"
 min_os_version = "14.0"

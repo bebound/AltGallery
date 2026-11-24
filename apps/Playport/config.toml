@@ -8,7 +8,7 @@ repo = "playportdev/playport"
 name = "Playport"
 subtitle = "Playport AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Playport"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/icon.webp"
 website = "https://github.com/playportdev/playport"
 tint_color = "#F5B544"
 
@@ -19,12 +19,12 @@ bundle_identifier = "dev.playport.app"
 developer_name = "playportdev"
 subtitle = "PC games on your iPhone. Natively, no streaming."
 description = "Playport runs Windows games, 64-bit and 32-bit, on a stock, non-jailbroken iPhone: install a game from your library onto the phone, pick up a controller and press Play. The game runs on the phone's own CPU and GPU — no PC, no cloud, no stream. Requires iOS 26 or later with JIT enabled through LocalDevVPN or StikDebug."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/icon.webp"
 # Ordered as the app presents itself: the home page, then the game library, then a game's page.
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/library.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/game-page.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/library.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Playport/images/game-page.webp",
 ]
 # The amber of the porthole ring in the app icon and the project's own logo/badges.
 tint_color = "#F5B544"

@@ -8,7 +8,7 @@ repo = "dddevid/Musly"
 name = "Musly"
 subtitle = "Musly AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Musly"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/icon.webp"
 website = "https://github.com/dddevid/Musly"
 tint_color = "#FA243C"
 
@@ -18,11 +18,11 @@ bundle_identifier = "com.dddevid.musly"
 developer_name = "dddevid"
 subtitle = "Free Navidrome client & Subsonic music player"
 description = "Musly is a free Navidrome client and Subsonic music player with an Apple Music-inspired interface. Stream your self-hosted library from Navidrome, Subsonic, or Airsonic servers on iOS, Android, desktop, and more."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/detail.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/player.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/detail.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/player.webp",
 ]
 tint_color = "#FA243C"
 min_os_version = "15.0"

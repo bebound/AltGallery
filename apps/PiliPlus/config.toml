@@ -8,7 +8,7 @@ repo = "bggRGjQaUbCoE/PiliPlus"
 name = "PiliPlus"
 subtitle = "PiliPlus AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for PiliPlus"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/icon.webp"
 website = "https://github.com/bggRGjQaUbCoE/PiliPlus"
 tint_color = "#00AEEF"
 
@@ -18,11 +18,11 @@ bundle_identifier = "com.example.piliplus"
 developer_name = "bggRGjQaUbCoE"
 subtitle = "使用Flutter开发的BiliBili第三方客户端"
 description = "使用Flutter开发的BiliBili第三方客户端"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/bangumi.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/dynamic.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/bangumi.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PiliPlus/images/dynamic.webp",
 ]
 tint_color = "#73b480"
 min_os_version = "14.0"

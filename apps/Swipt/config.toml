@@ -10,7 +10,7 @@ repo = "swipt-automation/swipt"
 name = "Swipt"
 subtitle = "Swipt AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Swipt"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/icon.webp"
 website = "https://github.com/swipt-automation/swipt"
 tint_color = "#78909C"
 
@@ -20,11 +20,11 @@ bundle_identifier = "io.nekohasekai.swipt"
 developer_name = "nekohasekai"
 subtitle = "The universal iOS automation platform"
 description = "Swipt automates this iPhone or iPad with JavaScript swiplets. It bundles a TypeScript SDK built on CoreDevice and the accessibility services, plus an MCP-compatible API for driving and debugging swiplets from your computer."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/swiplets.jpeg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/developer.jpeg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/pair.jpeg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/swiplets.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/developer.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/pair.webp",
 ]
 tint_color = "#455A64"
 min_os_version = "16.4"

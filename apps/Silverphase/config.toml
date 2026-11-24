@@ -9,7 +9,7 @@ repo = "akinal5765-byte/Silverphase"
 name = "Silverphase"
 subtitle = "Silverphase AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Silverphase"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/icon.webp"
 website = "https://github.com/akinal5765-byte/Silverphase"
 tint_color = "#FF9F0A"
 
@@ -19,11 +19,11 @@ bundle_identifier = "com.silverphase.editor"
 developer_name = "akinal5765-byte"
 subtitle = "面向 iPhone 与 iPad 的原生胶片与印相模拟器"
 description = "一张照片要经历相机输入、胶片、显影、放印与扫描。选好胶片与相纸，再用曝光、显影反差、滤镜与画幅尺寸塑造影像，颗粒、光晕与片边都在同一条成像管线中生成。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/canvas.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/panel.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/materials.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/canvas.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/panel.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Silverphase/images/materials.webp",
 ]
 tint_color = "#FF9F0A"
 min_os_version = "18.0"

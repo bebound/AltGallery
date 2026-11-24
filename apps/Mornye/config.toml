@@ -8,7 +8,7 @@ repo = "mornyeapp/Mornye"
 name = "Mornye"
 subtitle = "Mornye AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Mornye"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.webp"
 website = "https://github.com/mornyeapp/Mornye"
 tint_color = "#1E4E4F"
 
@@ -18,12 +18,12 @@ bundle_identifier = "com.zarz.mornye"
 developer_name = "zarzet"
 subtitle = "Hi-res music player with downloads"
 description = "Mornye is a Flutter and Rust music app with a full-screen player, hi-res and bit-perfect output, synced word-by-word lyrics, and installable extensions for metadata and audio downloads. Downloads and your own music folders share one local library, and SMB, WebDAV, HTTP or Subsonic servers can stream straight to the phone."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/nowplaying.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/lyrics.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/devices.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/settings.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/nowplaying.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/lyrics.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/devices.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mornye/images/settings.webp",
 ]
 tint_color = "#1E4E4F"
 min_os_version = "16.0"

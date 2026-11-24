@@ -9,7 +9,7 @@ repo = "XITRIX/iTorrent"
 name = "iTorrent"
 subtitle = "iTorrent AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for iTorrent"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/icon.webp"
 website = "https://github.com/XITRIX/iTorrent"
 tint_color = "#F19E69"
 
@@ -19,11 +19,11 @@ bundle_identifier = "com.xitrix.iTorrent2"
 developer_name = "XITRIX"
 subtitle = "Torrent client for iOS"
 description = "iTorrent is an ordinary torrent client for iOS with Files app support and much more.\n\nWhat can this app do:\n\n• Download in the background\n• Live Activity and Dynamic Island progress bar\n• Downloading on external drives\n• Sequential download (use VLC to watch films while loading)\n• Add torrent files from Share menu (Safari and other apps)\n• Add magnet links directly from Safari\n• Store files in Files app\n• File sharing directly from app\n• Download torrent by url\n• Download torrent by magnet\n• Send notification on torrent downloaded\n• Web/WebDav Server\n• Select files download priority\n• Change UI to dark theme\n• Color personalization\n• RSS Feed"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/detail.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/player.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/detail.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/player.webp",
 ]
 tint_color = "#F19E69"
 min_os_version = "16.0"

@@ -43,265 +43,265 @@
 
 ## 可用应用
 
-### <img src="apps/Aidoku/icon.png" alt="Aidoku icon" width="24" align="top"> <a href="https://github.com/Aidoku/Aidoku">Aidoku</a>
+### <img src="apps/Aidoku/icon.webp" alt="Aidoku icon" width="24" align="top"> <a href="https://github.com/Aidoku/Aidoku">Aidoku</a>
 免费开源的 iOS 与 iPadOS 漫画阅读器——支持 WASM 扩展源、本地 CBZ、下载与 AniList/MyAnimeList 追番同步。
 
-### <img src="apps/AirCard/icon.png" alt="AirCard-iOS icon" width="24" align="top"> <a href="https://github.com/Mak5er/AirCard-iOS">AirCard-iOS</a>
+### <img src="apps/AirCard/icon.webp" alt="AirCard-iOS icon" width="24" align="top"> <a href="https://github.com/Mak5er/AirCard-iOS">AirCard-iOS</a>
 Apple 钱包卡面、锁屏密码键盘主题与 PosterBoard 壁纸——在设备上直接应用，无需越狱。
 
-### <img src="apps/AltStore/icon.png" alt="AltStore icon" width="24" align="top"> <a href="https://github.com/altstoreio/AltStore">AltStore</a>
+### <img src="apps/AltStore/icon.webp" alt="AltStore icon" width="24" align="top"> <a href="https://github.com/altstoreio/AltStore">AltStore</a>
 通过 AltServer 侧载未公证的应用——面向未越狱 iOS 设备的原创第三方应用商店。
 
-### <img src="apps/AniBaka/icon.png" alt="AniBaka icon" width="24" align="top"> <a href="https://github.com/AniBakaBaka/AniBaka">AniBaka</a>
+### <img src="apps/AniBaka/icon.webp" alt="AniBaka icon" width="24" align="top"> <a href="https://github.com/AniBakaBaka/AniBaka">AniBaka</a>
 跨平台番剧聚合、媒体播放与弹幕客户端——多番剧源、多弹幕、高清无广告，支持动漫实时超分辨率。
 
-### <img src="apps/AniCh/icon.png" alt="AniCh icon" width="24" align="top"> <a href="https://github.com/Sle2p/AniCh">AniCh</a>
+### <img src="apps/AniCh/icon.webp" alt="AniCh icon" width="24" align="top"> <a href="https://github.com/Sle2p/AniCh">AniCh</a>
 支持超分辨率的在线动漫弹幕播放器——多平台、多番剧源，提供倍速播放、追番管理、弹幕过滤与离线缓存。
 
-### <img src="apps/AnimeFlow/icon.png" alt="AnimeFlow icon" width="24" align="top"> <a href="https://github.com/openAnimeFlow/AnimeFlow">AnimeFlow</a>
+### <img src="apps/AnimeFlow/icon.webp" alt="AnimeFlow icon" width="24" align="top"> <a href="https://github.com/openAnimeFlow/AnimeFlow">AnimeFlow</a>
 跨平台动漫视频播放器，支持多数据源、实时 4K 超分辨率与弹幕，并可与 Bangumi 同步追番。
 
-### <img src="apps/Animeko/icon.png" alt="Animeko icon" width="24" align="top"> <a href="https://github.com/open-ani/animeko">Animeko</a>
+### <img src="apps/Animeko/icon.webp" alt="Animeko icon" width="24" align="top"> <a href="https://github.com/open-ani/animeko">Animeko</a>
 一站式弹幕追番平台，支持 Bangumi 云同步、多视频数据源聚合、离线缓存与弹幕云过滤。
 
-### <img src="apps/Apollo-Reborn/icon.png" alt="Apollo Reborn icon" width="24" align="top"> <a href="https://github.com/Apollo-Reborn/Apollo-Reborn">Apollo Reborn</a>
+### <img src="apps/Apollo-Reborn/icon.webp" alt="Apollo Reborn icon" width="24" align="top"> <a href="https://github.com/Apollo-Reborn/Apollo-Reborn">Apollo Reborn</a>
 带液态玻璃补丁的 Apollo-Reborn 版本——用你自己的 API Key，让 Apollo for Reddit 在 2023 年 6 月关停后继续可用。
 
-### <img src="apps/ARMSX2/icon.png" alt="ARMSX2 icon" width="24" align="top"> <a href="https://github.com/ARMSX2/ARMSX2">ARMSX2</a>
+### <img src="apps/ARMSX2/icon.webp" alt="ARMSX2 icon" width="24" align="top"> <a href="https://github.com/ARMSX2/ARMSX2">ARMSX2</a>
 面向 ARM64 的 PlayStation 2 模拟器——基于 PCSX2 的免费开源分支，带原生 JIT 重编译器。
 
-### <img src="apps/Asspp/icon.png" alt="Asspp icon" width="24" align="top"> <a href="https://github.com/Lakr233/Asspp">Asspp</a>
+### <img src="apps/Asspp/icon.webp" alt="Asspp icon" width="24" align="top"> <a href="https://github.com/Lakr233/Asspp">Asspp</a>
 多区域 App Store 管理利器——即时切换商店区域、保留任意区域的官方 IPA 资料库，无需退出登录。
 
-### <img src="apps/BCD/icon.png" alt="BCD icon" width="24" align="top"> <a href="https://github.com/thebcd69/bcd-games">BCD</a>
+### <img src="apps/BCD/icon.webp" alt="BCD icon" width="24" align="top"> <a href="https://github.com/thebcd69/bcd-games">BCD</a>
 iPhone 与 iPad 上的 Windows 游戏——由 Wine、FEX 与 Metal 驱动、内置 Steam 和 GOG 的快速手柄友好启动器。
 
 ### <img src="apps/Beans-Music/icon.webp" alt="Beans Music icon" width="24" align="top"> <a href="https://github.com/XIaodou0416/Beans-Music">Beans Music</a>
 使用 SwiftUI 开发的多平台音乐播放器——内置网易云、QQ 与酷狗音乐源，支持本地歌单、离线下载与逐字歌词。
 
-### <img src="apps/Breeze/icon.png" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
+### <img src="apps/Breeze/icon.webp" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
 使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
-### <img src="apps/Cloudn/icon.png" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
+### <img src="apps/Cloudn/icon.webp" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
 网盘分享与短视频高速解析下载 — 支持 19+ 网盘、近 50 个短视频与图集平台，解析全部在手机本地完成。
 
-### <img src="apps/Dartotsu/icon.png" alt="Dartotsu icon" width="24" align="top"> <a href="https://github.com/aayush2622/Dartotsu">Dartotsu</a>
+### <img src="apps/Dartotsu/icon.webp" alt="Dartotsu icon" width="24" align="top"> <a href="https://github.com/aayush2622/Dartotsu">Dartotsu</a>
 跨平台的动漫与漫画追番管理客户端——Dantotsu 的 Flutter 重写版，在同一个书库里同步 AniList、MyAnimeList、Simkl、Kitsu、MangaBaka 与 MangaUpdates。
 
-### <img src="apps/DLiPA/icon.png" alt="DLiPA icon" width="24" align="top"> <a href="https://github.com/AhmedBafkir/DLiPA">DLiPA</a>
+### <img src="apps/DLiPA/icon.webp" alt="DLiPA icon" width="24" align="top"> <a href="https://github.com/AhmedBafkir/DLiPA">DLiPA</a>
 下载、安装并分享 App Store 的 IPA——含历史版本，使用你自己的 Apple ID，无需越狱。
 
-### <img src="apps/Doer/icon.png" alt="Doer icon" width="24" align="top"> <a href="https://github.com/moliango/doer">Doer</a>
+### <img src="apps/Doer/icon.webp" alt="Doer icon" width="24" align="top"> <a href="https://github.com/moliango/doer">Doer</a>
 Linux.do 的原生 iOS 客户端。
 
-### <img src="apps/DolphiniOS/icon.png" alt="DolphiniOS icon" width="24" align="top"> <a href="https://github.com/OatmealDome/dolphin-ios">DolphiniOS</a>
+### <img src="apps/DolphiniOS/icon.webp" alt="DolphiniOS icon" width="24" align="top"> <a href="https://github.com/OatmealDome/dolphin-ios">DolphiniOS</a>
 iOS/iPadOS 的 GameCube 与 Wii 模拟器——基于全新 DolphiniOS 代码库的 Dolphin 移植版。
 
-### <img src="apps/DukeX/icon.png" alt="DukeX icon" width="24" align="top"> <a href="https://github.com/MaftyManicEMU/DukeX">DukeX</a>
+### <img src="apps/DukeX/icon.webp" alt="DukeX icon" width="24" align="top"> <a href="https://github.com/MaftyManicEMU/DukeX">DukeX</a>
 iOS 上的初代 Xbox 模拟器，基于 xemu 构建并配有原生 Swift 界面。
 
 ### <img src="apps/Dusklight/icon.webp" alt="Dusklight icon" width="24" align="top"> <a href="https://github.com/TwilitRealm/dusklight">Dusklight</a>
 经典冒险游戏的原生移植 — 《黄昏公主》的逆向工程重制版，具备现代渲染与灵活操控，需自备游戏镜像。
 
-### <img src="apps/EhPanda/icon.png" alt="EhPanda icon" width="24" align="top"> <a href="https://github.com/EhPanda-Team/EhPanda">EhPanda</a>
+### <img src="apps/EhPanda/icon.webp" alt="EhPanda icon" width="24" align="top"> <a href="https://github.com/EhPanda-Team/EhPanda">EhPanda</a>
 使用 SwiftUI 与 TCA 构建的非官方 E-Hentai iOS 应用。
 
-### <img src="apps/Erosion-CN/icon.png" alt="Erosion-CN icon" width="24" align="top"> <a href="https://github.com/Kianuni/Erosion-CN">Erosion-CN</a>
+### <img src="apps/Erosion-CN/icon.webp" alt="Erosion-CN icon" width="24" align="top"> <a href="https://github.com/Kianuni/Erosion-CN">Erosion-CN</a>
 iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱——基于 worse_query，内置写入安全加固、应用前差异预览与原厂状态恢复。
 
-### <img src="apps/Fathom/icon.png" alt="Fathom icon" width="24" align="top"> <a href="https://github.com/Leviidev/Fathom">Fathom</a>
+### <img src="apps/Fathom/icon.webp" alt="Fathom icon" width="24" align="top"> <a href="https://github.com/Leviidev/Fathom">Fathom</a>
 面向 iOS 的 x86-64 PC 模拟器——通过 FEXCore 在运行时将 x86-64 Linux 可执行文件转译为 ARM64 运行。需要 JIT，并在运行时附加调试器。
 
-### <img src="apps/Feather/icon.png" alt="Feather icon" width="24" align="top"> <a href="https://github.com/claration/feather">Feather</a>
+### <img src="apps/Feather/icon.webp" alt="Feather icon" width="24" align="top"> <a href="https://github.com/claration/feather">Feather</a>
 设备端签名工具——用你自己的 Apple 开发者证书签名并安装 IPA，无需电脑。
 
 ### <img src="apps/Fladder/icon.webp" alt="Fladder icon" width="24" align="top"> <a href="https://github.com/DonutWare/Fladder">Fladder</a>
 基于 Flutter 的跨平台 Jellyfin 客户端——可在线串流或同步媒体到本地，支持多服务器与多用户，并集成 Seerr。
 
-### <img src="apps/GestaltX/icon.png" alt="GestaltX icon" width="24" align="top"> <a href="https://github.com/huamidev/GestaltX">GestaltX</a>
+### <img src="apps/GestaltX/icon.webp" alt="GestaltX icon" width="24" align="top"> <a href="https://github.com/huamidev/GestaltX">GestaltX</a>
 面向 iOS 27 的 MobileGestalt 编辑器——区域代码调整、设备预设、能力开关与带类型的 plist 字段编辑器，支持备份。
 
 ### <img src="apps/GlobalRefresh/icon.webp" alt="GlobalRefresh icon" width="24" align="top"> <a href="https://github.com/Yoroin/GlobalRefresh-PiP">GlobalRefresh</a>
 基于 iOS 画中画的悬浮窗高刷辅助工具——后台保活与完全隐藏，适配 iOS 15–27。
 
-### <img src="apps/HermesEnabler/icon.png" alt="HermesEnabler icon" width="24" align="top"> <a href="https://github.com/pookjw/HermesEnabler">HermesEnabler</a>
+### <img src="apps/HermesEnabler/icon.webp" alt="HermesEnabler icon" width="24" align="top"> <a href="https://github.com/pookjw/HermesEnabler">HermesEnabler</a>
 在任意 Apple Watch 上启用 Hermès 表盘——另含 Ultra 表盘以及手表端显示、传感器与 Siri 调整。需要 watchOS 27.0–27.3 beta 1。
 
-### <img src="apps/Husk/icon.png" alt="Husk icon" width="24" align="top"> <a href="https://github.com/Leviidev/Husk">Husk</a>
+### <img src="apps/Husk/icon.webp" alt="Husk icon" width="24" align="top"> <a href="https://github.com/Leviidev/Husk">Husk</a>
 iOS 上的 Android 应用启动器——放入 APK 轻点即全屏打开，需要 JIT 与附加调试器。
 
 ### <img src="apps/iBuilder/icon.webp" alt="iBuilder icon" width="24" align="top"> <a href="https://github.com/Absenti/iBuilder">iBuilder</a>
 在 iPhone 上把 Switch 游戏构建成原生 iOS 应用——用你自己的游戏转储在手机上完成打包。需要 A14 或更新芯片、iOS 26。
 
-### <img src="apps/iDeck/icon.png" alt="iDeck icon" width="24" align="top"> <a href="https://github.com/kuscholar/iDeck">iDeck</a>
+### <img src="apps/iDeck/icon.webp" alt="iDeck icon" width="24" align="top"> <a href="https://github.com/kuscholar/iDeck">iDeck</a>
 iPhone 与 iPad 上的 Steam 大屏幕模式——通过 Madeira 运行时本地运行 Valve 客户端与兼容的 Windows 游戏。
 
-### <img src="apps/iPadn/icon.png" alt="iPadn icon" width="24" align="top"> <a href="https://github.com/mengangs/ipadn">iPadn</a>
+### <img src="apps/iPadn/icon.webp" alt="iPadn icon" width="24" align="top"> <a href="https://github.com/mengangs/ipadn">iPadn</a>
 下载 App Store 的历史版本与已下架应用——搜索并安装你已拥有的应用，支持区域价格比较与 11 种语言。
 
-### <img src="apps/iRAM-Plus/icon.png" alt="iRAM+ icon" width="24" align="top"> <a href="https://github.com/NexSideloading/iRAM-Plus">iRAM+</a>
+### <img src="apps/iRAM-Plus/icon.webp" alt="iRAM+ icon" width="24" align="top"> <a href="https://github.com/NexSideloading/iRAM-Plus">iRAM+</a>
 在设备上为侧载应用开启 Increased Memory Limit——登录签名该应用的 Apple 账户、添加权限后重新安装即可。仅适用于 Apple 账户签名的应用。
 
-### <img src="apps/Iridium/icon.png" alt="Iridium icon" width="24" align="top"> <a href="https://github.com/intraducine/iridium">Iridium</a>
+### <img src="apps/Iridium/icon.webp" alt="Iridium icon" width="24" align="top"> <a href="https://github.com/intraducine/iridium">Iridium</a>
 实验性的 iPhone 与 iPad Windows 游戏运行时——把自有的游戏汇入一个资料库，用触控、手柄或键盘游玩。
 
-### <img src="apps/iTorrent/icon.png" alt="iTorrent icon" width="24" align="top"> <a href="https://github.com/XITRIX/iTorrent">iTorrent</a>
+### <img src="apps/iTorrent/icon.webp" alt="iTorrent icon" width="24" align="top"> <a href="https://github.com/XITRIX/iTorrent">iTorrent</a>
 iOS 种子客户端。
 
-### <img src="apps/Kazumi/icon.png" alt="Kazumi icon" width="24" align="top"> <a href="https://github.com/Predidit/Kazumi">Kazumi</a>
+### <img src="apps/Kazumi/icon.webp" alt="Kazumi icon" width="24" align="top"> <a href="https://github.com/Predidit/Kazumi">Kazumi</a>
 基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率，使用 Flutter 实现。
 
-### <img src="apps/Kazumi-Swift/icon.png" alt="Kazumi-Swift icon" width="24" align="top"> <a href="https://github.com/LinkPass888/Kazumi-Swift">Kazumi-Swift</a>
+### <img src="apps/Kazumi-Swift/icon.webp" alt="Kazumi-Swift icon" width="24" align="top"> <a href="https://github.com/LinkPass888/Kazumi-Swift">Kazumi-Swift</a>
 基于自定义规则的番剧采集APP，支持流媒体在线观看、弹幕与实时超分辨率，使用 SwiftUI 实现。
 
-### <img src="apps/KMusic/icon.png" alt="KMusic icon" width="24" align="top"> <a href="https://github.com/Mac-XK/KMusic">KMusic</a>
+### <img src="apps/KMusic/icon.webp" alt="KMusic icon" width="24" align="top"> <a href="https://github.com/Mac-XK/KMusic">KMusic</a>
 基于 SwiftUI 的多源音乐聚合播放器，支持 iOS/macOS，内置酷我、酷狗、QQ 音乐、网易云等多平台音源与 LRC 歌词同步。
 
-### <img src="apps/Kumone/icon.png" alt="Kumone icon" width="24" align="top"> <a href="https://github.com/missuo/kumone">Kumone</a>
+### <img src="apps/Kumone/icon.webp" alt="Kumone icon" width="24" align="top"> <a href="https://github.com/missuo/kumone">Kumone</a>
 原生 NetEase Cloud Music iOS 客户端（雲の音），直连网易云音乐真实 API，支持灰色歌曲解锁与歌词。
 
-### <img src="apps/LightNovelShelf/icon.png" alt="LightNovelShelf icon" width="24" align="top"> <a href="https://github.com/LightNovelShelf/Flutter">LightNovelShelf</a>
+### <img src="apps/LightNovelShelf/icon.webp" alt="LightNovelShelf icon" width="24" align="top"> <a href="https://github.com/LightNovelShelf/Flutter">LightNovelShelf</a>
 轻书架官方 Flutter 客户端，支持书架管理、在线阅读与翻页动画。
 
-### <img src="apps/LinuxRunner/icon.png" alt="LinuxRunner icon" width="24" align="top"> <a href="https://github.com/mxhm11cr/LinuxRunner">LinuxRunner</a>
+### <img src="apps/LinuxRunner/icon.webp" alt="LinuxRunner icon" width="24" align="top"> <a href="https://github.com/mxhm11cr/LinuxRunner">LinuxRunner</a>
 在 iOS 上运行 ARM64 Linux 应用与桌面——无需越狱、虚拟机或 JIT，桌面环境还可使用外接显示器。
 
-### <img src="apps/LiveContainer+SideStore/icon.png" alt="LiveContainer+SideStore icon" width="24" align="top"> <a href="https://github.com/LiveContainer/LiveContainer">LiveContainer+SideStore</a>
+### <img src="apps/LiveContainer+SideStore/icon.webp" alt="LiveContainer+SideStore icon" width="24" align="top"> <a href="https://github.com/LiveContainer/LiveContainer">LiveContainer+SideStore</a>
 无需真正安装即可运行 iOS 应用！此版本内置 SideStore，用于续签你的应用。
 
-### <img src="apps/LSX4/icon.png" alt="LSX4 icon" width="24" align="top"> <a href="https://github.com/lpfoj/lsx4">LSX4</a>
+### <img src="apps/LSX4/icon.webp" alt="LSX4 icon" width="24" align="top"> <a href="https://github.com/lpfoj/lsx4">LSX4</a>
 开源 PS4/PS5 模拟器——当前 iOS 版本可游玩 PS4 游戏，需要 iOS 26+ 与 JIT。
 
-### <img src="apps/Madeira/icon.png" alt="Madeira icon" width="24" align="top"> <a href="https://github.com/willfaust/Madeira">Madeira</a>
+### <img src="apps/Madeira/icon.webp" alt="Madeira icon" width="24" align="top"> <a href="https://github.com/willfaust/Madeira">Madeira</a>
 iPhone 上的 Windows PC 游戏——未经修改的 x86-64 游戏经 Wine、FEX-Emu 与 Metal 运行，无需越狱。
 
-### <img src="apps/Mangayomi/icon.png" alt="Mangayomi icon" width="24" align="top"> <a href="https://github.com/kodjodevf/mangayomi">Mangayomi</a>
+### <img src="apps/Mangayomi/icon.webp" alt="Mangayomi icon" width="24" align="top"> <a href="https://github.com/kodjodevf/mangayomi">Mangayomi</a>
 阅读漫画、小说，观看番剧。
 
-### <img src="apps/ManicEMU/icon.png" alt="ManicEMU icon" width="24" align="top"> <a href="https://github.com/Manic-EMU/ManicEMU">ManicEMU</a>
+### <img src="apps/ManicEMU/icon.webp" alt="ManicEMU icon" width="24" align="top"> <a href="https://github.com/Manic-EMU/ManicEMU">ManicEMU</a>
 面向 iOS 的一体化复古游戏模拟器，界面简洁，平台支持广泛。
 
-### <img src="apps/MD3Music-iOS/icon.png" alt="MD3Music icon" width="24" align="top"> <a href="https://github.com/EPXiaohua/MD3Music-iOS">MD3Music</a>
+### <img src="apps/MD3Music-iOS/icon.webp" alt="MD3Music icon" width="24" align="top"> <a href="https://github.com/EPXiaohua/MD3Music-iOS">MD3Music</a>
 基于酷狗音乐 API 的 Material 3 音乐播放器 — 内置嵌入式 Rust API 服务器，支持逐字歌词与多种音频输出。
 
-### <img src="apps/MeloX/icon.png" alt="MeloX icon" width="24" align="top"> <a href="https://github.com/youshen2/MeloX">MeloX</a>
+### <img src="apps/MeloX/icon.webp" alt="MeloX icon" width="24" align="top"> <a href="https://github.com/youshen2/MeloX">MeloX</a>
 使用 SwiftUI 开发的网易云音乐第三方客户端——面向 iPhone、iPad、Mac 与 Apple Watch 的原生播放器。
 
-### <img src="apps/MoviePilot-App/icon.png" alt="MoviePilot icon" width="24" align="top"> <a href="https://github.com/jxxghp/MoviePilot-App">MoviePilot</a>
+### <img src="apps/MoviePilot-App/icon.webp" alt="MoviePilot icon" width="24" align="top"> <a href="https://github.com/jxxghp/MoviePilot-App">MoviePilot</a>
 MoviePilot 的 iOS 原生客户端——系统原生导航、搜索与快捷面板，业务页面复用 MoviePilot-Frontend，需要 iOS 16+ 和自有 MoviePilot 实例。
 
-### <img src="apps/MoviePilotLite/icon.png" alt="MoviePilotLite icon" width="24" align="top"> <a href="https://github.com/singleton-altman/MoviePilotLite">MoviePilotLite</a>
+### <img src="apps/MoviePilotLite/icon.webp" alt="MoviePilotLite icon" width="24" align="top"> <a href="https://github.com/singleton-altman/MoviePilotLite">MoviePilotLite</a>
 MoviePilot 移动端，基于 Flutter 实现。
 
-### <img src="apps/Musly/icon.png" alt="Musly icon" width="24" align="top"> <a href="https://github.com/dddevid/Musly">Musly</a>
+### <img src="apps/Musly/icon.webp" alt="Musly icon" width="24" align="top"> <a href="https://github.com/dddevid/Musly">Musly</a>
 免费的 Navidrome 客户端与 Subsonic 音乐播放器，采用 Apple Music 风格界面。
 
-### <img src="apps/MiniWatts/icon.png" alt="MiniWatts icon" width="24" align="top"> <a href="https://github.com/ResistanceTo/MiniWatts">MiniWatts</a>
+### <img src="apps/MiniWatts/icon.webp" alt="MiniWatts icon" width="24" align="top"> <a href="https://github.com/ResistanceTo/MiniWatts">MiniWatts</a>
 电池、充电与温度测量工具——显示充电器的输出、有多少真正进入电芯、其余化为热量，以及手机上的每一个温度传感器。
 
-### <img src="apps/Mornye/icon.png" alt="Mornye icon" width="24" align="top"> <a href="https://github.com/mornyeapp/Mornye">Mornye</a>
+### <img src="apps/Mornye/icon.webp" alt="Mornye icon" width="24" align="top"> <a href="https://github.com/mornyeapp/Mornye">Mornye</a>
 支持下载的高解析音乐播放器——Flutter 与 Rust 打造，位完美输出、滚动歌词，还可从 SMB、WebDAV 或 Subsonic 串流。
 
-### <img src="apps/Opaline/icon.png" alt="Opaline icon" width="24" align="top"> <a href="https://github.com/verback2308/Opaline">Opaline</a>
+### <img src="apps/Opaline/icon.webp" alt="Opaline icon" width="24" align="top"> <a href="https://github.com/verback2308/Opaline">Opaline</a>
 面向 iOS 12+ 的 YouTube 客户端——轻量、注重隐私，支持 SponsorBlock、Return YouTube Dislike 与最高 1080p 播放。
 
-### <img src="apps/OpenScreenSharing/icon.png" alt="Open Screen Sharing icon" width="24" align="top"> <a href="https://github.com/nekohasekai/open-screen-sharing">Open Screen Sharing</a>
+### <img src="apps/OpenScreenSharing/icon.webp" alt="Open Screen Sharing icon" width="24" align="top"> <a href="https://github.com/nekohasekai/open-screen-sharing">Open Screen Sharing</a>
 针对 Mac 屏幕共享优化的远程桌面客户端——同时支持标准 VNC 与 RDP。
 
-### <img src="apps/OpenParsec/icon.png" alt="OpenParsec icon" width="24" align="top"> <a href="https://github.com/hugeBlack/OpenParsec">OpenParsec</a>
+### <img src="apps/OpenParsec/icon.webp" alt="OpenParsec icon" width="24" align="top"> <a href="https://github.com/hugeBlack/OpenParsec">OpenParsec</a>
 面向 iOS/iPadOS 的开源 Parsec 客户端——支持鼠标、键盘与触屏。
 
 ### <img src="apps/Orca/icon.webp" alt="Orca icon" width="24" align="top"> <a href="https://github.com/huami1314/orca-ios">Orca</a>
 Orca（智能体开发环境）的 iPhone 客户端——与智能体对话、在内置 Ghostty 终端里跟踪工具调用，并用画中画保持会话，配对 Mac 上的 Orca 即可使用。
 
-### <img src="apps/Orchard/icon.png" alt="Orchard icon" width="24" align="top"> <a href="https://github.com/MakrSas/orchard-ios">Orchard</a>
+### <img src="apps/Orchard/icon.webp" alt="Orchard icon" width="24" align="top"> <a href="https://github.com/MakrSas/orchard-ios">Orchard</a>
 在 iPhone 应用里运行 Apple Silicon macOS Ventura——通过 Apple 自有链路启动真实 arm64 客户机，经由 Metal 绘制。
 
-### <img src="apps/PiliPlus/icon.png" alt="PiliPlus icon" width="24" align="top"> <a href="https://github.com/bggRGjQaUbCoE/PiliPlus">PiliPlus</a>
+### <img src="apps/PiliPlus/icon.webp" alt="PiliPlus icon" width="24" align="top"> <a href="https://github.com/bggRGjQaUbCoE/PiliPlus">PiliPlus</a>
 使用Flutter开发的BiliBili第三方客户端。
 
-### <img src="apps/Pixiv-SwiftUI/icon.png" alt="Pixiv-SwiftUI icon" width="24" align="top"> <a href="https://github.com/Eslzzyl/Pixiv-SwiftUI">Pixiv-SwiftUI</a>
+### <img src="apps/Pixiv-SwiftUI/icon.webp" alt="Pixiv-SwiftUI icon" width="24" align="top"> <a href="https://github.com/Eslzzyl/Pixiv-SwiftUI">Pixiv-SwiftUI</a>
 基于 SwiftUI 的 Pixiv 第三方客户端，支持 iOS/iPadOS/macOS。
 
-### <img src="apps/Playport/icon.png" alt="Playport icon" width="24" align="top"> <a href="https://github.com/playportdev/playport">Playport</a>
+### <img src="apps/Playport/icon.webp" alt="Playport icon" width="24" align="top"> <a href="https://github.com/playportdev/playport">Playport</a>
 iPhone 上的 PC 游戏，原生运行、无需串流——64 位与 32 位 Windows 游戏跑在手机自己的 CPU 与 GPU 上。
 
-### <img src="apps/PSX3IOS/icon.png" alt="PSX3IOS icon" width="24" align="top"> <a href="https://github.com/xmiguel911x/PSX3IOS">PSX3IOS</a>
+### <img src="apps/PSX3IOS/icon.webp" alt="PSX3IOS icon" width="24" align="top"> <a href="https://github.com/xmiguel911x/PSX3IOS">PSX3IOS</a>
 面向 iPhone 与 iPad 的 PlayStation 3 模拟器——基于 RPCS3，支持社区补丁、成就、游玩时长与存档数据。
 
-### <img src="apps/PureLive/icon.png" alt="PureLive icon" width="24" align="top"> <a href="https://github.com/liuchuancong/pure_live">PureLive</a>
+### <img src="apps/PureLive/icon.webp" alt="PureLive icon" width="24" align="top"> <a href="https://github.com/liuchuancong/pure_live">PureLive</a>
 基于 Flutter 的开源多平台直播聚合播放器，支持 Bilibili、虎牙、斗鱼、快手、抖音、网易 CC、Twitch 及自定义 M3U/M3U8 直播源。
 
-### <img src="apps/RewindBox/icon.png" alt="RewindBox icon" width="24" align="top"> <a href="https://github.com/TarbleFR/RewindBox">RewindBox</a>
+### <img src="apps/RewindBox/icon.webp" alt="RewindBox icon" width="24" align="top"> <a href="https://github.com/TarbleFR/RewindBox">RewindBox</a>
 iPhone 与 iPad 的模拟器前端——基于 NeoStation 的分支，主机风格资料库搭配 Libretro 核心、Dolphin、ARMSX2、MeloNX 与 RPCS3。
 
 ### <img src="apps/Rich4Renew/icon.webp" alt="Rich4Renew icon" width="24" align="top"> <a href="https://github.com/iam567/rich4-renew-app">Rich4Renew</a>
 大富翁4 高清重制版，新增歌舞伎町地图与大富豪模式 — Vite + TypeScript 重写的游戏本体，Capacitor 打包成 iOS App，规则依原版反组译还原。
 
-### <img src="apps/Roam-Control/icon.png" alt="Roam Control icon" width="24" align="top"> <a href="https://github.com/seanhowarthdev/Roam-Control">Roam Control</a>
+### <img src="apps/Roam-Control/icon.webp" alt="Roam Control icon" width="24" align="top"> <a href="https://github.com/seanhowarthdev/Roam-Control">Roam Control</a>
 选择、测试并移动 iPhone 上报的位置——在统一的 Apple 地图界面里模拟步行路线、保存收藏。
 
-### <img src="apps/RushHours/icon.png" alt="Rush Hours icon" width="24" align="top"> <a href="https://github.com/ekomlenovic/rush_hour_ios_android">Rush Hours</a>
+### <img src="apps/RushHours/icon.webp" alt="Rush Hours icon" width="24" align="top"> <a href="https://github.com/ekomlenovic/rush_hour_ios_android">Rush Hours</a>
 移动车辆，让红色小车脱身。免费滑块解谜，700+ 关卡世界地图、每日与每周挑战、关卡编辑器与多人模式。
 
-### <img src="apps/SceneBox/icon.png" alt="SceneBox icon" width="24" align="top"> <a href="https://github.com/donbytyqi/scenebox">SceneBox</a>
+### <img src="apps/SceneBox/icon.webp" alt="SceneBox icon" width="24" align="top"> <a href="https://github.com/donbytyqi/scenebox">SceneBox</a>
 面向 iOS、iPadOS、tvOS 与 Mac（Catalyst）的种子串流客户端，使用 SwiftUI 编写。
 
-### <img src="apps/SideStore/icon.png" alt="SideStore icon" width="24" align="top"> <a href="https://github.com/SideStore/SideStore">SideStore</a>
+### <img src="apps/SideStore/icon.webp" alt="SideStore icon" width="24" align="top"> <a href="https://github.com/SideStore/SideStore">SideStore</a>
 面向 iOS 的免数据线第三方应用商店——用个人 Apple ID 重签名并安装 IPA，并在后台自动续签，无需 AltServer。
 
-### <img src="apps/Silverphase/icon.png" alt="Silverphase icon" width="24" align="top"> <a href="https://github.com/akinal5765-byte/Silverphase">Silverphase</a>
+### <img src="apps/Silverphase/icon.webp" alt="Silverphase icon" width="24" align="top"> <a href="https://github.com/akinal5765-byte/Silverphase">Silverphase</a>
 面向 iPhone 与 iPad 的原生胶片与印相模拟器——选好胶片与相纸，再从曝光、显影一路塑形到扫描。
 
-### <img src="apps/SimpleLive/icon.png" alt="Simple Live icon" width="24" align="top"> <a href="https://github.com/June6699/dart_simple_live">Simple Live</a>
+### <img src="apps/SimpleLive/icon.webp" alt="Simple Live icon" width="24" align="top"> <a href="https://github.com/June6699/dart_simple_live">Simple Live</a>
 支持弹幕与 IPTV 的开源多平台直播聚合播放器——基于 Flutter，同一套代码覆盖手机、桌面与电视端。
 
-### <img src="apps/Stats/icon.png" alt="Stats icon" width="24" align="top"> <a href="https://github.com/ishtiaq156/stats">Stats</a>
+### <img src="apps/Stats/icon.webp" alt="Stats icon" width="24" align="top"> <a href="https://github.com/ishtiaq156/stats">Stats</a>
 一眼看到 Mac 的状态——通过加密的本地连接查看系统活动，配轻量的 Mac 端。
 
-### <img src="apps/StikDebug/icon.png" alt="StikDebug icon" width="24" align="top"> <a href="https://github.com/StikDebug/StikDebug">StikDebug</a>
+### <img src="apps/StikDebug/icon.webp" alt="StikDebug icon" width="24" align="top"> <a href="https://github.com/StikDebug/StikDebug">StikDebug</a>
 面向 iOS 17.4+ 的在设备端 JIT 启用工具与设备工具箱，基于 idevice 构建。
 
-### <img src="apps/Swipt/icon.png" alt="Swipt icon" width="24" align="top"> <a href="https://github.com/swipt-automation/swipt">Swipt</a>
+### <img src="apps/Swipt/icon.webp" alt="Swipt icon" width="24" align="top"> <a href="https://github.com/swipt-automation/swipt">Swipt</a>
 通用 iOS 自动化平台——JavaScript swiplet、TypeScript SDK 与兼容 MCP 的 API。
 
-### <img src="apps/TiebaPure/icon.png" alt="TiebaPure icon" width="24" align="top"> <a href="https://github.com/infinityf4p/TiebaPure-iOS">TiebaPure</a>
+### <img src="apps/TiebaPure/icon.webp" alt="TiebaPure icon" width="24" align="top"> <a href="https://github.com/infinityf4p/TiebaPure-iOS">TiebaPure</a>
 基于 SwiftUI 的第三方百度贴吧客户端——支持 iOS 16.4+，可浏览、搜索、收藏、查看媒体与本地阅读记录。
 
-### <img src="apps/Suwayomi-Tsumiru/icon.png" alt="Tsumiru icon" width="24" align="top"> <a href="https://github.com/Suwayomi/Suwayomi-Tsumiru">Tsumiru</a>
+### <img src="apps/Suwayomi-Tsumiru/icon.webp" alt="Tsumiru icon" width="24" align="top"> <a href="https://github.com/Suwayomi/Suwayomi-Tsumiru">Tsumiru</a>
 面向 Suwayomi-Server 的原生漫画与条漫阅读器——离线下载、设备端目录与重构的连续滚动阅读器。
 
 ### <img src="apps/TwinDesk/icon.webp" alt="TwinDesk icon" width="24" align="top"> <a href="https://github.com/InukaAsith/TwinDesk">TwinDesk</a>
 把 iPhone 与你的电脑合为一台工作台——共享屏幕、文件、剪贴板、通知与摄像头，一套鼠标键盘通用，支持 Wi-Fi、USB 与蓝牙连接。
 
-### <img src="apps/UTM/icon.png" alt="UTM icon" width="24" align="top"> <a href="https://github.com/utmapp/UTM">UTM</a>
+### <img src="apps/UTM/icon.webp" alt="UTM icon" width="24" align="top"> <a href="https://github.com/utmapp/UTM">UTM</a>
 iOS 上的虚拟机——在 iPhone 与 iPad 上运行 Windows、Android 等，支持 30 多种处理器与 JIT 加速。
 
-### <img src="apps/Venera-Next/icon.png" alt="VeneraNext icon" width="24" align="top"> <a href="https://github.com/CyrilPeng/Venera-Next">VeneraNext</a>
+### <img src="apps/Venera-Next/icon.webp" alt="VeneraNext icon" width="24" align="top"> <a href="https://github.com/CyrilPeng/Venera-Next">VeneraNext</a>
 跨平台漫画阅读器——基于 Flutter，支持本地漫画、WebDAV 漫画源与第三方网络漫画源。
 
-### <img src="apps/VRCM/icon.png" alt="VRCM icon" width="24" align="top"> <a href="https://github.com/vrcm-team/VRCM">VRCM</a>
+### <img src="apps/VRCM/icon.webp" alt="VRCM icon" width="24" align="top"> <a href="https://github.com/vrcm-team/VRCM">VRCM</a>
 把 VRChat 社交生活带到手机上——好友关系网络、共同游玩记录、VRChat+ 相册双向互传与线下聚会名片。
 
-### <img src="apps/WQFiles/icon.png" alt="WQ Files icon" width="24" align="top"> <a href="https://github.com/kolbicz/WQFiles">WQ Files</a>
+### <img src="apps/WQFiles/icon.webp" alt="WQ Files icon" width="24" align="top"> <a href="https://github.com/kolbicz/WQFiles">WQ Files</a>
 面向 iOS 26 与 27 的文件管理器（worse_query）——浏览其他 App 的容器、编辑 plist/十六进制/SQLite，备份或清除数据，无需越狱。
 
-### <img src="apps/WQGuard/icon.png" alt="WQGuard icon" width="24" align="top"> <a href="https://github.com/Kianuni/WQGuard">WQGuard</a>
+### <img src="apps/WQGuard/icon.webp" alt="WQGuard icon" width="24" align="top"> <a href="https://github.com/Kianuni/WQGuard">WQGuard</a>
 iOS 沙盒越权检测与侧载 IPA 审查工具——面向 iOS 26.2+ / iOS 27.x 的只读沙盒逃逸检测、Mach-O 静态审计与固件 CVE 防护。
 
-### <img src="apps/WQManager/icon.png" alt="WQManager icon" width="24" align="top"> <a href="https://github.com/hseons/WQManager">WQManager</a>
+### <img src="apps/WQManager/icon.webp" alt="WQManager icon" width="24" align="top"> <a href="https://github.com/hseons/WQManager">WQManager</a>
 无需越狱的 App 数据备份与缓存清理工具 — 备份可导出为 `.wqbackup` 包，恢复写前自动安全备份、写后哈希校验与失败回滚，清理只动所选 App 的缓存与临时目录。
 
-### <img src="apps/WQToolkit/icon.png" alt="WQToolkit icon" width="24" align="top"> <a href="https://github.com/MchinaMd57764/WQToolkit">WQToolkit</a>
+### <img src="apps/WQToolkit/icon.webp" alt="WQToolkit icon" width="24" align="top"> <a href="https://github.com/MchinaMd57764/WQToolkit">WQToolkit</a>
 基于 App Group 容器查询原语的 iOS 工具箱——无需越狱即可浏览、清理与检查自己的应用数据容器，内置文件浏览器、缓存扫描与设备信息。
 
 ### <img src="apps/WrapPin/icon.webp" alt="WrapPin icon" width="24" align="top"> <a href="https://github.com/suversal/WrapPin">WrapPin</a>
 本机虚拟定位与步行路线测试工具 — 通过设备配对在 iPhone 上固定位置、模拟步行或驾车路线，停止时恢复真实位置。
 
-### <img src="apps/YouProEXTRA/icon.png" alt="YouProEXTRA icon" width="24" align="top"> <a href="https://github.com/mrdrvt99/YouProEXTRA">YouProEXTRA</a>
+### <img src="apps/YouProEXTRA/icon.webp" alt="YouProEXTRA icon" width="24" align="top"> <a href="https://github.com/mrdrvt99/YouProEXTRA">YouProEXTRA</a>
 可自定义调整项的 YouTube 修改版——把 YouPro、YTLite 等模块打包进一个 IPA 构建工具。
 
-### <img src="apps/ZhihuMinusMinus/icon.png" alt="ZhihuMinusMinus icon" width="24" align="top"> <a href="https://github.com/huamurui/zhihu-minus-minus">ZhihuMinusMinus</a>
+### <img src="apps/ZhihuMinusMinus/icon.webp" alt="ZhihuMinusMinus icon" width="24" align="top"> <a href="https://github.com/huamurui/zhihu-minus-minus">ZhihuMinusMinus</a>
 轻量、纯净的第三方知乎客户端，基于 React Native (Expo) 构建，无广告，支持多账号切换、游客模式与深色模式。
 
 ## 项目结构

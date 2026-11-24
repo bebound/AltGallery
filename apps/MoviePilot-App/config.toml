@@ -10,7 +10,7 @@ repo = "jxxghp/MoviePilot-App"
 name = "MoviePilot"
 subtitle = "MoviePilot AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for MoviePilot"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/icon.webp"
 website = "https://github.com/jxxghp/MoviePilot-App"
 tint_color = "#8844F6"
 
@@ -20,11 +20,11 @@ bundle_identifier = "org.moviepilot.app"
 developer_name = "jxxghp"
 subtitle = "MoviePilot 的 iOS 原生客户端"
 description = "MoviePilot 的 iOS 客户端，使用系统原生导航、搜索与快捷面板，业务页面、弹窗和插件界面复用 MoviePilot-Frontend，支持 iOS 26+ 的 Liquid Glass、侧滑返回、卡片长按菜单与前后台恢复。"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/recommend.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/downloads.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/recommend.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/downloads.webp",
 ]
 tint_color = "#8844F6"
 min_os_version = "17.0"

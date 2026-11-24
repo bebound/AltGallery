@@ -10,7 +10,7 @@ repo = "ResistanceTo/MiniWatts"
 name = "MiniWatts"
 subtitle = "MiniWatts AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for MiniWatts"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/icon.webp"
 website = "https://github.com/ResistanceTo/MiniWatts"
 # Sampled from the icon's cyan lightning bolt (the app's dark-mode accent).
 tint_color = "#30E0F0"
@@ -21,12 +21,12 @@ bundle_identifier = "org.zhaohe.MiniWatts"
 developer_name = "ResistanceTo"
 subtitle = "Battery, charging and thermal instrument"
 description = "An iPhone battery and charging monitor built on Apple's private APIs: the charger's real watts, how much of that reaches the cell, where the rest goes as heat, and every temperature sensor in the phone. No network code — nothing it reads leaves your phone."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/power.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/thermal.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/adapter.jpg",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/history.jpg",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/power.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/thermal.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/adapter.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MiniWatts/images/history.webp",
 ]
 tint_color = "#30E0F0"
 min_os_version = "17.0"

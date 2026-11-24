@@ -9,7 +9,7 @@ repo = "claration/feather"
 name = "Feather"
 subtitle = "Feather AltStore source by AltGallery & AltGen"
 description = "Auto-updated AltStore source for Feather"
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/icon.webp"
 website = "https://github.com/claration/feather"
 tint_color = "#848ef9"
 
@@ -19,12 +19,12 @@ bundle_identifier = "thewonderofyou.Feather"
 developer_name = "Samara"
 subtitle = "On-device signing application"
 description = "Free on-device iOS/iPadOS application manager and installer. Feather uses certificates from the Apple Developer Program to sign and install ipas on stock iOS, with built-in app management."
-icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/icon.png"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/icon.webp"
 screenshots = [
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/home.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/repos.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/sign.png",
-  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/store.png",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/repos.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/sign.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Feather/images/store.webp",
 ]
 tint_color = "#848ef9"
 min_os_version = "16.0"
