@@ -202,6 +202,9 @@ Remote desktop client optimized for Mac screen sharing — also speaks standard 
 ### <img src="apps/OpenParsec/icon.png" alt="OpenParsec icon" width="24" align="top"> <a href="https://github.com/hugeBlack/OpenParsec">OpenParsec</a>
 Open Parsec client for iOS/iPadOS — open source, with mouse, keyboard and touch-screen support.
 
+### <img src="apps/Orca/icon.webp" alt="Orca icon" width="24" align="top"> <a href="https://github.com/huami1314/orca-ios">Orca</a>
+iPhone client for Orca, the agent development environment — chat with agents, follow their tool calls in a built-in Ghostty terminal and keep a session in Picture in Picture from your phone, paired with Orca on your Mac.
+
 ### <img src="apps/Orchard/icon.png" alt="Orchard icon" width="24" align="top"> <a href="https://github.com/MakrSas/orchard-ios">Orchard</a>
 Apple Silicon macOS Ventura running inside an iPhone app — a real arm64 guest booted through Apple's own chain, drawn through Metal.
 

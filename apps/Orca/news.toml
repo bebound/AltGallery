@@ -1,0 +1,17 @@
+# render_news.py config: uv run tools/render_news.py --out apps/Orca
+# Colors are pinned explicitly: Orca's icon is a black mark on white, so the
+# auto-derived tagline picked up a grey cast from the icon's white ground. A
+# neutral grey scale matches the monochrome mark instead.
+
+name = "Orca"
+tagline = "Chat with agents\non your Mac"
+
+# Color notes — each key below controls one element of the image.
+[colors]
+tint = "#151619"          # NEW UPDATE badge + top-left glow
+tint_alt = "#151619"      # bottom-right glow
+background = "#ECEDEF"    # gradient base
+bg_mid = "#F6F7F8"        # gradient mid stop
+bg_dark = "#DBDDE0"       # gradient end stop
+text_color = "#111111"    # app name
+tagline_color = "#565A61" # tagline text

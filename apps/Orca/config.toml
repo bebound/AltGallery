@@ -1,0 +1,42 @@
+# altgen config for the Orca AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "huami1314/orca-ios"
+
+[source]
+name = "Orca"
+subtitle = "Orca AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Orca"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/icon.webp"
+website = "https://github.com/huami1314/orca-ios"
+tint_color = "#151619"
+
+[app]
+name = "Orca"
+bundle_identifier = "com.thm.orcaios"
+developer_name = "huami1314"
+subtitle = "iPhone client for Orca, the agent development environment"
+description = "Community-maintained iPhone client for Orca, the agent development environment: pair with Orca on your Mac and chat with agents, follow their tool calls and run commands in an embedded Ghostty terminal, with Live Activities, Picture in Picture and push notifications when the app is closed. Requires iOS 26 and a Mac running Orca."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/main.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/work.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/notification.webp",
+]
+tint_color = "#151619"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob); the release ships Orca-iOS-v<version>-unsigned.ipa
+asset_pattern = "Orca-iOS-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/news.webp"
+
+[output]
+path = "apps.json"

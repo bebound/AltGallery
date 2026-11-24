@@ -202,6 +202,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <img src="apps/OpenParsec/icon.png" alt="OpenParsec icon" width="24" align="top"> <a href="https://github.com/hugeBlack/OpenParsec">OpenParsec</a>
 面向 iOS/iPadOS 的开源 Parsec 客户端——支持鼠标、键盘与触屏。
 
+### <img src="apps/Orca/icon.webp" alt="Orca icon" width="24" align="top"> <a href="https://github.com/huami1314/orca-ios">Orca</a>
+Orca（智能体开发环境）的 iPhone 客户端——与智能体对话、在内置 Ghostty 终端里跟踪工具调用，并用画中画保持会话，配对 Mac 上的 Orca 即可使用。
+
 ### <img src="apps/Orchard/icon.png" alt="Orchard icon" width="24" align="top"> <a href="https://github.com/MakrSas/orchard-ios">Orchard</a>
 在 iPhone 应用里运行 Apple Silicon macOS Ventura——通过 Apple 自有链路启动真实 arm64 客户机，经由 Metal 绘制。
 
