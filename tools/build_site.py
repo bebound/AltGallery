@@ -1,7 +1,7 @@
 #!/usr/bin/env -S uv run --script
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["pillow>=12.3.0"]
+# dependencies = ["pillow>=12.3.0", "tqdm>=4.66.0"]
 # ///
 """Stage the AltGallery GitHub Pages site in _site/.
 
@@ -91,8 +91,13 @@ Because the extension can change, the copies no longer keep the repository
 path verbatim in every case: config.json's "mediaFiles" maps a repository
 path to the file to serve, and the page resolves a display URL through it.
 
+Staging prints a progress bar: re-encoding every icon and screenshot is
+the slow part of a build, and it is the part that used to sit silent for a
+while. The bar writes to stderr and turns itself off when that is not a
+terminal, so a CI log keeps the plain report line it always had.
+
 Local preview (pick either, from the repo root; uv reads the inline PEP 723
-metadata and installs Pillow):
+metadata and installs Pillow and tqdm):
 
   uv run tools/build_site.py && open _site/preview.html   # no server needed
   uv run tools/build_site.py && python3 -m http.server -d _site
@@ -111,6 +116,7 @@ from pathlib import Path
 from urllib.parse import unquote
 
 from PIL import Image, ImageOps
+from tqdm import tqdm
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SOURCE = Path("all-apps.json")
@@ -513,14 +519,34 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
     if media_root.exists():
         shutil.rmtree(media_root)
 
-    for url in display_images(source):
+    urls = display_images(source)
+    # Re-encoding every icon and screenshot is the slow half of a build, so it
+    # gets a bar. `disable=None` is tqdm's "only when stderr is a terminal":
+    # piped output and CI logs keep the single report line below. It sits on
+    # stderr for the same reason, leaving stdout as the build's report.
+    progress = tqdm(
+        urls,
+        desc="Optimizing images",
+        unit="img",
+        disable=None,
+        leave=False,
+        file=sys.stderr,
+        dynamic_ncols=True,
+    )
+    # A plain stderr write would be painted over by the next bar refresh, so
+    # warnings are held back and printed once the bar has cleared itself.
+    problems: list[str] = []
+    for url in progress:
         relative = repo_relative(url, raw_base)
         if relative is None:
             continue
         local = REPO_ROOT / relative
         if not local.is_file():
-            warn(f"{relative}: not in the working tree; the page will miss it under media/")
+            problems.append(f"{relative}: not in the working tree; the page will miss it under media/")
             continue
+        # The bar is the only sign of life during a slow encode; naming the
+        # file being worked on says which one is slow.
+        progress.set_description_str(f"Optimizing {relative.rsplit('/', 1)[-1][:34]}", refresh=False)
 
         original = local.read_bytes()
         data = original
@@ -528,7 +554,7 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
         try:
             webp = optimized_bytes(image_kind(url, icon_urls, logo_url), local)
         except Exception as exc:  # unreadable or unsupported artwork
-            warn(f"{relative}: cannot re-encode ({exc}); serving it unchanged")
+            problems.append(f"{relative}: cannot re-encode ({exc}); serving it unchanged")
         else:
             webp_path = str(Path(relative).with_suffix(".webp"))
             # Two sources (home.png and home.jpg, say) can want the same name;
@@ -544,6 +570,8 @@ def stage_media(source: dict, raw_base: str, out_dir: Path) -> dict[str, str]:
         before += len(original)
         after += len(data)
 
+    for message in problems:
+        warn(message)
     print(
         f"Staged {copied} display images in {MEDIA_DIR}/: "
         f"{before / 1024 / 1024:.1f} MB -> {after / 1024 / 1024:.1f} MB"

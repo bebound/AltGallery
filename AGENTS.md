@@ -211,8 +211,12 @@ built from the generated sources:
   screenshots are Display P3) is carried into the WebP, so colours do not
   shift. Because the extension usually changes, `config.json`'s `mediaFiles`
   maps each repository path to the file actually staged; a file that stays in
-  its original format keeps its path. Needs Pillow, which the script's inline
-  PEP 723 metadata names, so `uv run` installs it — not stdlib only.
+  its original format keeps its path. Needs Pillow and tqdm, which the script's
+  inline PEP 723 metadata names, so `uv run` installs them — not stdlib only.
+  Staging prints a tqdm bar on stderr (the re-encode is the slow part of a
+  build); it turns itself off when stderr is not a terminal, so CI logs keep
+  just the `Staged N display images` line, and the warnings the loop collects
+  are printed after the bar clears instead of being painted over.
 - `.github/workflows/pages.yml` — builds and deploys only when the update
   workflow finishes (an update run triggered by the push, including the
   bot's own commits, which never trigger `push` workflows), plus manual
