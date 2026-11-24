@@ -1,0 +1,47 @@
+{
+  "name": "Applesauce",
+  "subtitle": "Applesauce AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Applesauce",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/icon.webp",
+  "website": "https://github.com/0xjohnnydev/Applesauce",
+  "tintColor": "#F01F14",
+  "apps": [
+    {
+      "name": "Applesauce",
+      "bundleIdentifier": "io.github.johnny901901901.applesauce",
+      "developerName": "Unofficial iOS port contributors",
+      "subtitle": "A playful emulator for iOS",
+      "localizedDescription": "Plays supported 32-bit iPhone games on modern devices, carrying both the HyperHLE v1.0.6 and touchHLE 0.2.3 emulator cores so you can pick which one runs each game. An unaffiliated fork, endorsed by neither project. JIT must be enabled for each new app process. No games are included.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/images/library-games.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/images/settings.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/images/about.webp"
+      ],
+      "tintColor": "#F01F14",
+      "versions": [
+        {
+          "version": "0.4.2",
+          "date": "2026-08-15T23:21:28Z",
+          "localizedDescription": "# Applesauce 0.4.2\n\nFive fixes, mostly found by pushing Blade Dash and Talking Tom until they\nbroke. Nothing about installing or your library changes — pick the same IPA\nyou used for 0.4.0.\n\nApplesauce is an unaffiliated fork. The emulation is the work of\n[touchHLE](https://github.com/touchHLE/touchHLE) and its fork\n[HyperHLE](https://github.com/HyperHLE/HyperHLE); neither project is connected\nto this one or endorses it. Please report problems here rather than to them.\n\n## The on-screen keyboard now appears in games that use text fields\n\nGames that focus a text field — The Sims Medieval naming your Sim or kingdom,\nPeggle's profile certificate, Blokus, Spore — loaded the iOS keyboard\nsubsystem but no keyboard ever came up, so those names could not be entered.\nThe cause was run-loop starvation: the emulator holds the main thread and only\nlet iOS service its run loop for microseconds per frame, far too little for the\nasynchronous keyboard-presentation handshake to finish, so iOS invalidated the\nkeyboard service connection. The emulator now services the run loop generously\nwhile a text field is focused, which is not performance-sensitive because those\nare name-entry screens.\n\n## Talking-character apps can use the microphone\n\nApps like Talking Tom sat silent because input audio queues were created but\nnever delivered any audio. They now capture through the microphone, and iOS\nshows its normal microphone-permission prompt the first time a game records.\nAlong the way this also fixes two things that made Talking Tom unusable:\n\n- **It no longer freezes after a couple of taps.** Its recorder treated a\n  buffer that reported zero packets as empty and re-enqueued it without ever\n  looking at the audio, so it waited forever for speech that had already\n  arrived. The real sample count is reported now.\n- **Opening the upgrade screen no longer crashes.** That screen loads a\n  UTF-16 text file, the format Apple recommended for older apps, and the\n  loader used to abort on it. It reads UTF-16 in either byte order now.\n\n## Games that crashed on launch now start\n\nBlade Dash — and other games built on Google's protobuf/Tag Manager runtime —\ncrashed immediately with a stack overflow or an infinite loop. Three separate\ncauses:\n\n- The old-toolchain `[super …]` call was unbound, turning every super-call\n  into infinite recursion on the object itself.\n- `NSAllocateObject` was implemented by re-sending `alloc`, which recursed\n  forever whenever an app allocates with a computed size.\n- Legitimately deep start-up chains (protobuf nests initialisation through\n  hundreds of classes) overflowed the small per-thread host stack before the\n  recursion guard could catch it; threads get a much larger stack now.\n\n## Notes\n\nThese fixes are in the HyperHLE core and the shared iOS layer. As always, JIT\nmust be enabled before starting a game, and gameplay behaviour on a physical\ndevice can differ from the simulator — please report anything that still\nmisbehaves, with the log from **On My iPhone → Applesauce → touchhle-host.log**.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/0xjohnnydev/Applesauce/releases/download/ios-v0.4.2/Applesauce-iOS-unsigned.ipa",
+          "size": 41666853,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "io.github.johnny901901901.applesauce",
+      "title": "Applesauce 0.4.2 · 15 Aug 2026",
+      "identifier": "Applesauce-release-ios-v0.4.2",
+      "caption": "Applesauce 0.4.2 is available.",
+      "date": "2026-08-15T23:21:28Z",
+      "tintColor": "#F01F14",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/0xjohnnydev/Applesauce/releases/tag/ios-v0.4.2"
+    }
+  ]
+}

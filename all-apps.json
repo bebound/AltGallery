@@ -204,6 +204,30 @@
       ]
     },
     {
+      "name": "Applesauce",
+      "bundleIdentifier": "io.github.johnny901901901.applesauce",
+      "developerName": "Unofficial iOS port contributors",
+      "subtitle": "A playful emulator for iOS",
+      "localizedDescription": "Plays supported 32-bit iPhone games on modern devices, carrying both the HyperHLE v1.0.6 and touchHLE 0.2.3 emulator cores so you can pick which one runs each game. An unaffiliated fork, endorsed by neither project. JIT must be enabled for each new app process. No games are included.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/images/library-games.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/images/settings.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/images/about.webp"
+      ],
+      "tintColor": "#F01F14",
+      "versions": [
+        {
+          "version": "0.4.2",
+          "date": "2026-08-15T23:21:28Z",
+          "localizedDescription": "# Applesauce 0.4.2\n\nFive fixes, mostly found by pushing Blade Dash and Talking Tom until they\nbroke. Nothing about installing or your library changes — pick the same IPA\nyou used for 0.4.0.\n\nApplesauce is an unaffiliated fork. The emulation is the work of\n[touchHLE](https://github.com/touchHLE/touchHLE) and its fork\n[HyperHLE](https://github.com/HyperHLE/HyperHLE); neither project is connected\nto this one or endorses it. Please report problems here rather than to them.\n\n## The on-screen keyboard now appears in games that use text fields\n\nGames that focus a text field — The Sims Medieval naming your Sim or kingdom,\nPeggle's profile certificate, Blokus, Spore — loaded the iOS keyboard\nsubsystem but no keyboard ever came up, so those names could not be entered.\nThe cause was run-loop starvation: the emulator holds the main thread and only\nlet iOS service its run loop for microseconds per frame, far too little for the\nasynchronous keyboard-presentation handshake to finish, so iOS invalidated the\nkeyboard service connection. The emulator now services the run loop generously\nwhile a text field is focused, which is not performance-sensitive because those\nare name-entry screens.\n\n## Talking-character apps can use the microphone\n\nApps like Talking Tom sat silent because input audio queues were created but\nnever delivered any audio. They now capture through the microphone, and iOS\nshows its normal microphone-permission prompt the first time a game records.\nAlong the way this also fixes two things that made Talking Tom unusable:\n\n- **It no longer freezes after a couple of taps.** Its recorder treated a\n  buffer that reported zero packets as empty and re-enqueued it without ever\n  looking at the audio, so it waited forever for speech that had already\n  arrived. The real sample count is reported now.\n- **Opening the upgrade screen no longer crashes.** That screen loads a\n  UTF-16 text file, the format Apple recommended for older apps, and the\n  loader used to abort on it. It reads UTF-16 in either byte order now.\n\n## Games that crashed on launch now start\n\nBlade Dash — and other games built on Google's protobuf/Tag Manager runtime —\ncrashed immediately with a stack overflow or an infinite loop. Three separate\ncauses:\n\n- The old-toolchain `[super …]` call was unbound, turning every super-call\n  into infinite recursion on the object itself.\n- `NSAllocateObject` was implemented by re-sending `alloc`, which recursed\n  forever whenever an app allocates with a computed size.\n- Legitimately deep start-up chains (protobuf nests initialisation through\n  hundreds of classes) overflowed the small per-thread host stack before the\n  recursion guard could catch it; threads get a much larger stack now.\n\n## Notes\n\nThese fixes are in the HyperHLE core and the shared iOS layer. As always, JIT\nmust be enabled before starting a game, and gameplay behaviour on a physical\ndevice can differ from the simulator — please report anything that still\nmisbehaves, with the log from **On My iPhone → Applesauce → touchhle-host.log**.",
+          "downloadURL": "https://github.com/0xjohnnydev/Applesauce/releases/download/ios-v0.4.2/Applesauce-iOS-unsigned.ipa",
+          "size": 41666853,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
       "name": "ARMSX2",
       "bundleIdentifier": "com.armsx2.ios",
       "developerName": "ARMSX2",
@@ -299,6 +323,30 @@
           "localizedDescription": "本次更新：\n\n- 增加网易云音乐和 QQ 音乐歌单广场搜索功能\n- 优化歌曲封面缓存\n- 优化歌词划动后自动回到当前播放歌词的问题\n- 优化整体流畅性，低系统版本请实测反馈\n- 优化网易云私人漫游；如遇问题可尝试心动模式\n- 简化搜索界面，移除均衡器注释\n- 更换酷狗音乐歌单广场接口\n- 修复 QQ 音乐本身有会员但无法播放的问题\n- 修复 iOS 26 以下系统无法返回的问题",
           "downloadURL": "https://github.com/XIaodou0416/Beans-Music/releases/download/v1.6.6/Beans-unsigned.ipa",
           "size": 8761833,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
+      "name": "BiliSponsorBlock",
+      "bundleIdentifier": "tv.danmaku.bilianime",
+      "developerName": "lcmovie",
+      "subtitle": "官方哔哩哔哩 iOS App 的 SponsorBlock 空降助手插件",
+      "localizedDescription": "适用于官方哔哩哔哩 iOS App 的空降助手插件，通过注入 dylib 的方式提供 SponsorBlock 片段识别、提示与自动跳过功能。可分别为赞助、自我推广、互动提醒、片头片尾、离题等片段分类设置处理方式，并在播放器进度条上以分类颜色标记片段。借助 BilibiliSponsorBlock 项目获取空降片段数据。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/images/preview-1.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/images/preview-2.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/images/preview-3.webp"
+      ],
+      "tintColor": "#FB7299",
+      "versions": [
+        {
+          "version": "9.10.0",
+          "date": "2026-10-19T07:09:39Z",
+          "localizedDescription": "## ✨ 主要更新\r\n\r\n### 片段跳过\r\n- 使用上游 BilibiliSponsorBlock 的片段数据。\r\n- 支持按分类设置总是跳过、每次播放跳过一次、手动跳过、仅显示或禁用。\r\n- 优化半屏、横屏全屏及竖屏播放器适配。\r\n- 优化手动拖动进度后的跳过恢复逻辑。\r\n- 自动跳过后显示提示，支持点击撤销。\r\n- 在进度条中显示片段标记，弹出控制条的标记随控制条显示和收起。\r\n\r\n### 片段提交\r\n- 新增参考 PiliPlus 交互设计的片段提交面板。\r\n- 支持添加多个片段、取当前播放时间、手动编辑时间、选择分类与动作、预览及确认提交。\r\n- 提交按钮随播放器控制菜单显示和收起，减少对视频画面的遮挡。\r\n\r\n### 设置与更新\r\n- 优化设置入口、字体、颜色、间距及开关布局。\r\n- 空降助手入口仅显示在主设置页面顶部。\r\n- 新增 GitHub 稳定发行版更新提醒，支持手动检查。\r\n- 保留跳过次数、节省时间统计及个人提交身份。\r\n- 项目链接统一显示为“本项目地址”和“上游地址”。\r\n\r\n## 📦 安装方式\r\n\r\n1. 下载 `BiliSponsorBlock-v2.0.0.dylib`。\r\n2. 移除旧版插件注入项，只保留本版本。\r\n3. 沿用原来的注入、重签名和安装方式。\r\n4. 重启 App，在「设置 → 空降助手 → 版本号」确认显示 `2.0.0`。\r\n\r\n或自签安装bili-9.10.0-BiliSponsorBlock.V2.0.0.ipa\r\n\r\n升级无需清除 App 数据。完整发行包内附安装说明及 SHA-256 校验信息。\r\n\r\n## 📱 适配说明\r\n\r\n- 架构：ARM64\r\n- 最低系统：iOS 15.0\r\n- 主要适配版本：哔哩哔哩 iOS 9.0.0及以后；哔哩哔哩国际版 v6.3.0及以后（原白哔哩不支持）\r\n\r\n静音和整片标记可提交，当前版本不自动执行静音或整片拦截。\r\n\r\n## 🙏 致谢\r\n\r\n- [BilibiliSponsorBlock](https://github.com/hanydd/BilibiliSponsorBlock)：上游项目与片段数据服务。\r\n- [PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus)：空降助手交互与提交方案参考。",
+          "downloadURL": "https://github.com/lcmovie/BiliSponsorBlock-ios/releases/download/v2.0.0/bili-9.10.0-BiliSponsorBlock.V2.0.0.ipa",
+          "size": 279835183,
           "minOSVersion": "15.0"
         }
       ]
@@ -1017,14 +1065,6 @@
           "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
           "size": 23997201,
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.8.0",
-          "date": "2026-07-17T07:44:20Z",
-          "localizedDescription": "# ⚠️This build is OUTDATED. Please use [nightly version](https://github.com/LiveContainer/LiveContainer/releases/tag/nightly) instead.\r\n\r\n# LiveContainer 3.8.0\r\n\r\n> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (`LiveContainer+SideStore.ipa`), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n# New Features\r\n\r\n## Storage Management\r\n\r\n- Added a new storage management view with a breakdown of app bundles, containers, temporary files, app group data, tweaks, and other files. (Hidden apps' size is included in \"other\" section until unlocked)\r\n- Added per-app storage details, including app bundle size, container sizes, and last-used date.\r\n- Added actions to clean temporary files and caches, including guest app caches and LiveContainer's own caches.\r\n\r\n## Multiple LiveContainers\r\n- Added configurable launch priority for multiple LiveContainer instances, making shared-app shortcuts choose available instances in the order you prefer. (#1367)\r\n\r\n## Share to Apps in LiveContainer\r\nAdded a share extension to LiveContainer. When you share a URL or a file from iOS's share sheet, LiveContainer will ask which app you would like to open the URL/file in, so the old share to LiveContainer shortcut method is no longer needed. When an ipa file is shared in this way, LiveContainer will ask if you want to install it in LiveContainer or in the built-in SideStore (if installed) (#1357)\r\n\r\n## Multitasking\r\n\r\n- Added per-app multitask preferences. Each app can now follow the global setting, always launch in multitask mode, or avoid multitask mode. (#1208)\r\n- Improved multitask dock behavior: the dock can be made smaller, hidden more cleanly, and has improved padding. (#1228, #1250)\r\n- Added more multitask window animations and improved native-window scene handling.\r\n- URL schemes and `open-url` payloads can be passed to already-running multitask apps and native windows.\r\n\r\n## JIT\r\n- Added StosDebug support as a JIT enabler.\r\n\r\n## TweakLoader\r\nYou can now disable tweaks in the \"Tweaks\" page in LiveContainer's UI. by @SAOMDVN\r\n\r\n# Improvements\r\n- Added support for manually setting a container's IDFV. (#1194)\r\n- IDFV spoofing works even when Tweakloader is not loaded.\r\n- Reworked signing logic for tweaks and app installation, with multithreaded signing support.\r\n- Download alerts now block tab switching while a download is in progress.\r\n- Crash reports are shown in a sheet instead of a large alert for better performance on newer iOS versions.\r\n- Add a \"Clear Notification\" button (#1388)\r\n- Added some popular NSBonjourServices keys so apps can discover AirPlay devices and remote pairing pairable hosts in the local network. (#1417)\r\n\r\n# Bug Fixes\r\n\r\n- Fixed `livecontainer://open-url` dropping the deep link when launching an app from a cold start. (#1339)\r\n- Fixed the Add to Home Screen menu failing or behaving incorrectly by replacing the SwiftUI context menu implementation. (#1209)\r\n- Fixed a crash when opening Container Preferences if the app did not contain an `en.lproj` path. (#1239)\r\n- Fixed apps and AltStore sources not being searchable in some cases. (#1365, #1368)\r\n- Fixed converting a shared app back to private after aborting an install with the same bundle identifier, which could leave stale container state behind. (#1347)\r\n- Fixed shortcuts and JIT flows getting stuck on a busy LiveContainer instance instead of using another available instance. (#1386)\r\n- Fixed file picker not workings for some apps because Tweakloader is not loaded after enabling \"Hide LiveContainer from dyld API\". (#1430)\r\n- Fixed several app launch compatibility issues on iOS 26.5 beta, and some multitask/JIT app launches. (#1300, #1310, #1329)\r\n- Fixed multitask keyboard focus issues on iOS 17.4+, including cases where the keyboard would not appear, Passwords would immediately close, or video playback would freeze in multitask mode. (#1402, #844, #870)\r\n- Added support for iOS 27 developer beta. (#1394, #1417, #1416)\r\n- Fix background downloads in multitask apps (choosing \"Keep App Extensions (Register App ID for Each Extension)\" is required). (#1415)\r\n\r\n# Localization\r\n\r\n- Updated translations. Added Spanish translation by @Deci8BelioS\r\n\r\n# Credits\r\n\r\nThanks to everyone who contributed code, fixes, testing, and reports for this release, including @boa-z, @ruri1208, @Project516, @yazdipour, @stossy11, and @SAOMDVN.\r\n\r\nGreat thanks to everyone who helped translate LiveContainer.",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer%2BSideStore.ipa",
-          "size": 35403538,
-          "minOSVersion": "15.0"
         }
       ]
     },
@@ -1629,6 +1669,28 @@
           "downloadURL": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/download/v2.2.2-b70/rush-hours-unsigned.ipa",
           "size": 19091977,
           "minOSVersion": "16.4"
+        }
+      ]
+    },
+    {
+      "name": "RyukSign",
+      "bundleIdentifier": "ryuk2.anoxclan.com",
+      "developerName": "faroukbmiled",
+      "subtitle": "On-device iOS app signer and installer",
+      "localizedDescription": "RyukSign is an on-device app signer and installer for iOS, derived from Feather (by claration). Sign and install apps with a .p12 / .mobileprovision pair, manage tweaks (.dylib/.deb/.framework/.bundle/.appex), transfer files over HTTP/WebDAV, and track app updates — entirely on-device.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/images/main.webp"
+      ],
+      "tintColor": "#C96FAD",
+      "versions": [
+        {
+          "version": "4.1.0",
+          "date": "2026-11-18T16:37:57Z",
+          "localizedDescription": "## What's new in 4.1.0\n\n### New\n\n- Added Update All to Sources updates with search, a source picker for each app, and a choice to add, sign, or sign and install\n- Added long press actions to grouped updates, including Ignore Updates\n- Added a Versions to Delete option to Automatic Cleanup to also remove same or newer copies after installing\n- Added your Library's identifiers for the same app to the Identifier editor when signing\n\n### Improvements\n\n- Improved updates to keep the bundle identifier of your installed or signed copy, so they replace it instead of installing a second app\n\n### Fixes\n\n- Fixed apps missing their provisioning profile after signing and Remove Provisioning not working\n- Fixed large apps timing out or showing Failed while still installing\n- Fixed installs getting stuck halfway\n- Fixed tiny apps showing Failed after installing\n- Fixed the wrong app icon showing in Sources updates after another app finished updating\n- Fixed a black screen when using View in Sources from an update's source list\n\n\n## Install\n\n- Download **RyukSign.ipa** from the assets below and sign it, or\n- Add the RyukSign source to get updates in the app: `https://raw.githubusercontent.com/faroukbmiled/RyukSign/main/app-repo.json`\n\n**Full changelog:** https://github.com/faroukbmiled/RyukSign/compare/v4.0.0...v4.1.0\n\n<sub>Built 2026-11-18 from [`fc365a3`](https://github.com/faroukbmiled/RyukSign/commit/fc365a31fb0981681a4d9a03ceabf344f53191ed)</sub>",
+          "downloadURL": "https://github.com/faroukbmiled/RyukSign/releases/download/v4.1.0/RyukSign.ipa",
+          "size": 22041701,
+          "minOSVersion": "16.0"
         }
       ]
     },
@@ -2400,6 +2462,17 @@
       "url": "https://github.com/pookjw/HermesEnabler/releases/tag/1.6.3"
     },
     {
+      "appID": "ryuk2.anoxclan.com",
+      "title": "RyukSign 4.1.0 · 18 Nov 2026",
+      "identifier": "RyukSign-release-v4.1.0",
+      "caption": "RyukSign 4.1.0 is available.",
+      "date": "2026-11-18T16:37:57Z",
+      "tintColor": "#C96FAD",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/faroukbmiled/RyukSign/releases/tag/v4.1.0"
+    },
+    {
       "appID": "org.animeko.animeko",
       "title": "Animeko 6.4.1 · 18 Nov 2026",
       "identifier": "Animeko-release-v6.4.1",
@@ -2796,6 +2869,17 @@
       "url": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/tag/v0.16.3"
     },
     {
+      "appID": "tv.danmaku.bilianime",
+      "title": "BiliSponsorBlock 9.10.0 · 19 Oct 2026",
+      "identifier": "BiliSponsorBlock-release-v2.0.0",
+      "caption": "BiliSponsorBlock 9.10.0 is available.",
+      "date": "2026-10-19T07:09:39Z",
+      "tintColor": "#FB7299",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/lcmovie/BiliSponsorBlock-ios/releases/tag/v2.0.0"
+    },
+    {
       "appID": "com.dddevid.musly",
       "title": "Musly 2.0.3 · 18 Oct 2026",
       "identifier": "Musly-release-v2.0.3",
@@ -2994,6 +3078,17 @@
       "url": "https://github.com/xmiguel911x/PSX3IOS/releases/tag/v0.2.7-beta"
     },
     {
+      "appID": "io.github.johnny901901901.applesauce",
+      "title": "Applesauce 0.4.2 · 15 Aug 2026",
+      "identifier": "Applesauce-release-ios-v0.4.2",
+      "caption": "Applesauce 0.4.2 is available.",
+      "date": "2026-08-15T23:21:28Z",
+      "tintColor": "#F01F14",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Applesauce/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/0xjohnnydev/Applesauce/releases/tag/ios-v0.4.2"
+    },
+    {
       "appID": "com.ahmedbafkir.dlipa",
       "title": "DLiPA 1.4 · 03 Aug 2026",
       "identifier": "DLiPA-release-v1.4",
@@ -3025,17 +3120,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iTorrent/images/news.webp",
       "notify": true,
       "url": "https://github.com/XITRIX/iTorrent/releases/tag/v2.2.0-1"
-    },
-    {
-      "appID": "com.kdt.livecontainer",
-      "title": "LiveContainer+SideStore 3.8.0 · 17 Jul 2026",
-      "identifier": "LiveContainer+SideStore-release-3.8.0",
-      "caption": "LiveContainer+SideStore 3.8.0 is available.",
-      "date": "2026-07-17T07:44:20Z",
-      "tintColor": "#0784FC",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/3.8.0"
     },
     {
       "appID": "thewonderofyou.Feather",

@@ -1,0 +1,45 @@
+{
+  "name": "RyukSign",
+  "subtitle": "RyukSign AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for RyukSign",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/icon.webp",
+  "website": "https://github.com/faroukbmiled/RyukSign",
+  "tintColor": "#C96FAD",
+  "apps": [
+    {
+      "name": "RyukSign",
+      "bundleIdentifier": "ryuk2.anoxclan.com",
+      "developerName": "faroukbmiled",
+      "subtitle": "On-device iOS app signer and installer",
+      "localizedDescription": "RyukSign is an on-device app signer and installer for iOS, derived from Feather (by claration). Sign and install apps with a .p12 / .mobileprovision pair, manage tweaks (.dylib/.deb/.framework/.bundle/.appex), transfer files over HTTP/WebDAV, and track app updates — entirely on-device.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/images/main.webp"
+      ],
+      "tintColor": "#C96FAD",
+      "versions": [
+        {
+          "version": "4.1.0",
+          "date": "2026-11-18T16:37:57Z",
+          "localizedDescription": "## What's new in 4.1.0\n\n### New\n\n- Added Update All to Sources updates with search, a source picker for each app, and a choice to add, sign, or sign and install\n- Added long press actions to grouped updates, including Ignore Updates\n- Added a Versions to Delete option to Automatic Cleanup to also remove same or newer copies after installing\n- Added your Library's identifiers for the same app to the Identifier editor when signing\n\n### Improvements\n\n- Improved updates to keep the bundle identifier of your installed or signed copy, so they replace it instead of installing a second app\n\n### Fixes\n\n- Fixed apps missing their provisioning profile after signing and Remove Provisioning not working\n- Fixed large apps timing out or showing Failed while still installing\n- Fixed installs getting stuck halfway\n- Fixed tiny apps showing Failed after installing\n- Fixed the wrong app icon showing in Sources updates after another app finished updating\n- Fixed a black screen when using View in Sources from an update's source list\n\n\n## Install\n\n- Download **RyukSign.ipa** from the assets below and sign it, or\n- Add the RyukSign source to get updates in the app: `https://raw.githubusercontent.com/faroukbmiled/RyukSign/main/app-repo.json`\n\n**Full changelog:** https://github.com/faroukbmiled/RyukSign/compare/v4.0.0...v4.1.0\n\n<sub>Built 2026-11-18 from [`fc365a3`](https://github.com/faroukbmiled/RyukSign/commit/fc365a31fb0981681a4d9a03ceabf344f53191ed)</sub>",
+          "downloadURL": "https://gh-proxy.com/https://github.com/faroukbmiled/RyukSign/releases/download/v4.1.0/RyukSign.ipa",
+          "size": 22041701,
+          "minOSVersion": "16.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "ryuk2.anoxclan.com",
+      "title": "RyukSign 4.1.0 · 18 Nov 2026",
+      "identifier": "RyukSign-release-v4.1.0",
+      "caption": "RyukSign 4.1.0 is available.",
+      "date": "2026-11-18T16:37:57Z",
+      "tintColor": "#C96FAD",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/faroukbmiled/RyukSign/releases/tag/v4.1.0"
+    }
+  ]
+}
