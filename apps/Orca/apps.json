@@ -21,11 +21,11 @@
       "tintColor": "#151619",
       "versions": [
         {
-          "version": "0.1.2",
-          "date": "2026-11-24T07:00:40Z",
-          "localizedDescription": "**Full Changelog**: https://github.com/huami1314/orca-ios/compare/v0.1.1...v0.1.2",
-          "downloadURL": "https://github.com/huami1314/orca-ios/releases/download/v0.1.2/Orca-iOS-v0.1.2-unsigned.ipa",
-          "size": 14888486,
+          "version": "0.1.3",
+          "date": "2026-11-24T13:10:03Z",
+          "localizedDescription": "## What's Changed\n* fix(workspace): show parent and child worktrees by @fobole-openthedoor in https://github.com/huami1314/orca-ios/pull/2\n* feat(pip): scroll compact agent status one row at a time by @fobole-openthedoor in https://github.com/huami1314/orca-ios/pull/3\n\n\n**Full Changelog**: https://github.com/huami1314/orca-ios/compare/v0.1.2...v0.1.3",
+          "downloadURL": "https://github.com/huami1314/orca-ios/releases/download/v0.1.3/Orca-iOS-v0.1.3-unsigned.ipa",
+          "size": 14908074,
           "minOSVersion": "26.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "com.thm.orcaios",
-      "title": "Orca 0.1.2 · 24 Nov 2026",
-      "identifier": "Orca-release-v0.1.2",
-      "caption": "Orca 0.1.2 is available.",
-      "date": "2026-11-24T07:00:40Z",
+      "title": "Orca 0.1.3 · 24 Nov 2026",
+      "identifier": "Orca-release-v0.1.3",
+      "caption": "Orca 0.1.3 is available.",
+      "date": "2026-11-24T13:10:03Z",
       "tintColor": "#151619",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/news.webp",
       "notify": true,
-      "url": "https://github.com/huami1314/orca-ios/releases/tag/v0.1.2"
+      "url": "https://github.com/huami1314/orca-ios/releases/tag/v0.1.3"
     }
   ]
 }
