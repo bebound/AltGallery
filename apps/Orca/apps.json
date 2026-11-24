@@ -1,0 +1,47 @@
+{
+  "name": "Orca",
+  "subtitle": "Orca AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Orca",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/icon.webp",
+  "website": "https://github.com/huami1314/orca-ios",
+  "tintColor": "#151619",
+  "apps": [
+    {
+      "name": "Orca",
+      "bundleIdentifier": "com.thm.orcaios",
+      "developerName": "huami1314",
+      "subtitle": "iPhone client for Orca, the agent development environment",
+      "localizedDescription": "Community-maintained iPhone client for Orca, the agent development environment: pair with Orca on your Mac and chat with agents, follow their tool calls and run commands in an embedded Ghostty terminal, with Live Activities, Picture in Picture and push notifications when the app is closed. Requires iOS 26 and a Mac running Orca.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/main.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/work.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/notification.webp"
+      ],
+      "tintColor": "#151619",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "date": "2026-11-23T20:24:59Z",
+          "localizedDescription": "**Full Changelog**: https://github.com/huami1314/orca-ios/commits/v0.1.0",
+          "downloadURL": "https://github.com/huami1314/orca-ios/releases/download/v0.1.0/Orca-iOS-v0.1.0-unsigned.ipa",
+          "size": 14691056,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.thm.orcaios",
+      "title": "Orca 0.1.0 · 23 Nov 2026",
+      "identifier": "Orca-release-v0.1.0",
+      "caption": "Orca 0.1.0 is available.",
+      "date": "2026-11-23T20:24:59Z",
+      "tintColor": "#151619",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/huami1314/orca-ios/releases/tag/v0.1.0"
+    }
+  ]
+}

@@ -1258,11 +1258,11 @@
       "tintColor": "#1060F0",
       "versions": [
         {
-          "version": "1.0.9",
-          "date": "2026-11-23T11:24:00Z",
-          "localizedDescription": "* Add High Definition option for Internet connections\r\n* Add multiple addresses and Tailscale discovery\r\n* Fixes and improvements",
-          "downloadURL": "https://github.com/nekohasekai/open-screen-sharing/releases/download/v1.0.9/OpenScreenSharing.ipa",
-          "size": 11742697,
+          "version": "1.0.10",
+          "date": "2026-11-24T04:34:33Z",
+          "localizedDescription": "* Replace floating toolbar handle with assistive ball\n* Fixes and improvements",
+          "downloadURL": "https://github.com/nekohasekai/open-screen-sharing/releases/download/v1.0.10/OpenScreenSharing.ipa",
+          "size": 11765704,
           "minOSVersion": "15.0"
         }
       ]
@@ -1286,6 +1286,30 @@
           "downloadURL": "https://github.com/NearFrame/OpenParsec/releases/download/2.0.0/OpenParsec.ipa",
           "size": 4445097,
           "minOSVersion": "14.0"
+        }
+      ]
+    },
+    {
+      "name": "Orca",
+      "bundleIdentifier": "com.thm.orcaios",
+      "developerName": "huami1314",
+      "subtitle": "iPhone client for Orca, the agent development environment",
+      "localizedDescription": "Community-maintained iPhone client for Orca, the agent development environment: pair with Orca on your Mac and chat with agents, follow their tool calls and run commands in an embedded Ghostty terminal, with Live Activities, Picture in Picture and push notifications when the app is closed. Requires iOS 26 and a Mac running Orca.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/main.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/work.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/notification.webp"
+      ],
+      "tintColor": "#151619",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "date": "2026-11-23T20:24:59Z",
+          "localizedDescription": "**Full Changelog**: https://github.com/huami1314/orca-ios/commits/v0.1.0",
+          "downloadURL": "https://github.com/huami1314/orca-ios/releases/download/v0.1.0/Orca-iOS-v0.1.0-unsigned.ipa",
+          "size": 14691056,
+          "minOSVersion": "26.0"
         }
       ]
     },
@@ -1964,6 +1988,17 @@
   ],
   "news": [
     {
+      "appID": "io.nekohasekai.screensharing",
+      "title": "Open Screen Sharing 1.0.10 · 24 Nov 2026",
+      "identifier": "Open Screen Sharing-release-v1.0.10",
+      "caption": "Open Screen Sharing 1.0.10 is available.",
+      "date": "2026-11-24T04:34:33Z",
+      "tintColor": "#1060F0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/nekohasekai/open-screen-sharing/releases/tag/v1.0.10"
+    },
+    {
       "appID": "com.armsx2.ios",
       "title": "ARMSX2 2.6.0-nightly.20261123.2028 · 23 Nov 2026",
       "identifier": "ARMSX2-release-nightly-20261123",
@@ -1973,6 +2008,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.webp",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261123"
+    },
+    {
+      "appID": "com.thm.orcaios",
+      "title": "Orca 0.1.0 · 23 Nov 2026",
+      "identifier": "Orca-release-v0.1.0",
+      "caption": "Orca 0.1.0 is available.",
+      "date": "2026-11-23T20:24:59Z",
+      "tintColor": "#151619",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/huami1314/orca-ios/releases/tag/v0.1.0"
     },
     {
       "appID": "app.local.iPadn",
@@ -1995,17 +2041,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iBuilder/images/news.webp",
       "notify": true,
       "url": "https://github.com/Absenti/iBuilder/releases/tag/v0.1.8"
-    },
-    {
-      "appID": "io.nekohasekai.screensharing",
-      "title": "Open Screen Sharing 1.0.9 · 23 Nov 2026",
-      "identifier": "Open Screen Sharing-release-v1.0.9",
-      "caption": "Open Screen Sharing 1.0.9 is available.",
-      "date": "2026-11-23T11:24:00Z",
-      "tintColor": "#1060F0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/nekohasekai/open-screen-sharing/releases/tag/v1.0.9"
     },
     {
       "appID": "com.linkpass.kazumi",
