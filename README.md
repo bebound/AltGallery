@@ -247,6 +247,9 @@ Choose, test and move your iPhone's reported location — simulate walking route
 ### <img src="apps/RushHours/icon.webp" alt="Rush Hours icon" width="24" align="top"> <a href="https://github.com/ekomlenovic/rush_hour_ios_android">Rush Hours</a>
 Slide the cars, free the red one. A free sliding-block puzzle with 700+ levels on a world map, daily and weekly challenges, a level creator and multiplayer.
 
+### <img src="apps/RyukSign/icon.webp" alt="RyukSign icon" width="24" align="top"> <a href="https://github.com/faroukbmiled/RyukSign">RyukSign</a>
+On-device iOS app signer and installer — a Feather fork with a tweak manager, WebDAV file transfer and background downloads.
+
 ### <img src="apps/SceneBox/icon.webp" alt="SceneBox icon" width="24" align="top"> <a href="https://github.com/donbytyqi/scenebox">SceneBox</a>
 Torrent streaming client for iOS, iPadOS, tvOS and Mac (Catalyst), written in SwiftUI.
 

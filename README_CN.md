@@ -247,6 +247,9 @@ iPhone 与 iPad 的模拟器前端——基于 NeoStation 的分支，主机风�
 ### <img src="apps/RushHours/icon.webp" alt="Rush Hours icon" width="24" align="top"> <a href="https://github.com/ekomlenovic/rush_hour_ios_android">Rush Hours</a>
 移动车辆，让红色小车脱身。免费滑块解谜，700+ 关卡世界地图、每日与每周挑战、关卡编辑器与多人模式。
 
+### <img src="apps/RyukSign/icon.webp" alt="RyukSign icon" width="24" align="top"> <a href="https://github.com/faroukbmiled/RyukSign">RyukSign</a>
+iOS 端本地应用签名与安装工具 — Feather 分支，附带插件管理器、WebDAV 文件传输与后台下载。
+
 ### <img src="apps/SceneBox/icon.webp" alt="SceneBox icon" width="24" align="top"> <a href="https://github.com/donbytyqi/scenebox">SceneBox</a>
 面向 iOS、iPadOS、tvOS 与 Mac（Catalyst）的种子串流客户端，使用 SwiftUI 编写。
 

@@ -1,0 +1,41 @@
+# altgen config for the RyukSign AltStore source.
+# Run: uvx altgen -c config.toml
+# RyukSign: on-device iOS app signer and installer, a fork of Feather
+
+[github]
+repo = "faroukbmiled/RyukSign"
+
+[source]
+name = "RyukSign"
+subtitle = "RyukSign AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for RyukSign"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/icon.webp"
+website = "https://github.com/faroukbmiled/RyukSign"
+tint_color = "#C96FAD"
+
+[app]
+name = "RyukSign"
+bundle_identifier = "ryuk2.anoxclan.com"
+developer_name = "faroukbmiled"
+subtitle = "On-device iOS app signer and installer"
+description = "RyukSign is an on-device app signer and installer for iOS, derived from Feather (by claration). Sign and install apps with a .p12 / .mobileprovision pair, manage tweaks (.dylib/.deb/.framework/.bundle/.appex), transfer files over HTTP/WebDAV, and track app updates — entirely on-device."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/images/main.webp",
+]
+tint_color = "#C96FAD"
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): every release ships a single RyukSign.ipa
+asset_pattern = "RyukSign\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/images/news.webp"
+
+[output]
+path = "apps.json"

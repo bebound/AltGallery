@@ -64,6 +64,10 @@
     "subtitle": "设备端签名与应用管理工具",
     "description": "免费的在设备上管理与安装 iOS/iPadOS 应用的工具。Feather 使用 Apple Developer Program 的证书为 ipa 签名并在原版 iOS 上安装，内置应用管理功能。"
   },
+  "ryuk2.anoxclan.com": {
+    "subtitle": "iOS 端本地应用签名与安装工具",
+    "description": "RyukSign 是 iOS 端本地应用签名与安装工具，基于 Feather（作者 claration）派生。使用 .p12 与 .mobileprovision 证书对为应用签名并安装，支持管理插件（.dylib/.deb/.framework/.bundle/.appex）、通过 HTTP/WebDAV 传输文件，以及跟踪应用更新 —— 全部在设备上完成。"
+  },
   "com.huami.gestultx": {
     "subtitle": "支持区域代码调整与预设的 iOS 27 MobileGestalt 编辑器",
     "description": "面向 iOS 27.x 的 MobileGestalt 编辑器，支持区域代码与销售区域修改、设备预设、备份，以及带类型校验的字段编辑器。基于 worse_query；设备端访问 MobileGestalt 需要 iOS 27，重签名时需要共同的 App Group。"

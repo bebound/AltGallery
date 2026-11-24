@@ -1,0 +1,17 @@
+# render_news.py config: uv run tools/render_news.py --out apps/RyukSign
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "RyukSign"
+tagline = "On-device iOS\napp signer"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#C96FAD"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#C96FAD"      # bottom-right glow (default: [source] tint_color)
+# background = "#D6EBDD"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#E7F3EB"        # gradient mid stop (derived from background)
+# bg_dark = "#BBDEC6"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#9A4E80" # tagline text (derived from background)
