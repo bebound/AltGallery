@@ -466,21 +466,10 @@ decompresses the LZFSE streams and re-encodes them as a standard PNG. It
 prefers square renditions named like an icon, because a catalog also holds
 launch images and other artwork. Writes the raw square artwork — `render_news.py`
 rounds it at draw time — and refuses to overwrite an icon without `--force`.
-Its one dependency is the [`lzfse`](https://pypi.org/project/lzfse/) package,
-named in the inline metadata, so `uv run` installs it (as it does for every
-tool in this repo); everything else is stdlib (`zipfile`, `plistlib`, `zlib`).
 
 Apple's **CgBI** PNGs (BGRA, premultiplied, raw-deflate) break Pillow, so the
 tool decodes them to a standard PNG that `render_news.py` can read; plain
 PNGs/JPEGs are copied as-is.
-
-LZFSE is decoded by that package, which wraps Apple's reference implementation
-and builds on any platform — no `libcompression`, no macOS-only path. When the
-largest icon really is small (a catalog with no larger rendition, or an ipa that
-ships no catalog), the tool warns below 512px: say so when reporting a result
-and prefer the project's own artwork wherever it exists. `assetutil --info
-Assets.car` is the quick way to see what a catalog holds (it lists renditions
-but cannot extract them).
 
 ## Converting Artwork to WebP
 
