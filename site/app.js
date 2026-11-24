@@ -992,9 +992,30 @@
         loading: "lazy",
         decoding: "async"
       });
-      image.addEventListener("load", sync);
-      image.addEventListener("error", () => image.remove());
-      strip.append(image);
+      // The wrapper holds the shot's box before the picture arrives (see the
+      // `.shots .shot` rules), so the strip is its final width from the first
+      // frame. Its `--shot-ar` guess is replaced by the decoded ratio the
+      // moment the image can supply one, and `.ready` is what starts the
+      // reveal — the class, not the element, so a lazy shot that decodes late
+      // still animates in instead of arriving already finished.
+      const shot = h("div", { class: "shot", style: "--shot-i:" + index }, image);
+      const reveal = () => {
+        if (image.naturalWidth && image.naturalHeight) {
+          shot.style.setProperty("--shot-ar", (image.naturalWidth / image.naturalHeight).toFixed(4));
+        }
+        shot.classList.add("ready");
+        sync();
+      };
+      image.addEventListener("load", reveal);
+      image.addEventListener("error", () => {
+        shot.remove();
+        sync();
+      });
+      // A cached shot can already be complete by the time the element is in
+      // the tree; its load event may have fired, and the reveal would never
+      // start.
+      if (image.complete && image.naturalWidth) reveal();
+      strip.append(shot);
     });
 
     sync();

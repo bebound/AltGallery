@@ -1008,15 +1008,90 @@
   .shots::-webkit-scrollbar-thumb:hover {
     background: color-mix(in srgb, var(--fg) 34%, transparent);
   }
-  .shots img {
-    height: clamp(220px, 34vh, 340px);
-    width: auto;
-    max-width: none;
-    display: block;
+  /* A shot reserves its box before its bytes land. Without that, every image
+     is a 1px sliver until decode and the strip pops into place all at once —
+     the jump this reveal replaces. The frame carries a real aspect ratio
+     (`--shot-ar`, corrected from the decoded image) and holds a shimmering
+     placeholder until the picture lands, so the strip is its final shape from
+     the first frame instead of snapping from a line of slivers to a row of
+     photos. */
+  .shots .shot {
+    position: relative;
     flex: 0 0 auto;
+    height: clamp(220px, 34vh, 340px);
+    aspect-ratio: var(--shot-ar, 0.46);
     border: 1px solid var(--line);
     border-radius: 16px;
     background: var(--surface-2);
+    overflow: hidden;
+  }
+  .shots .shot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      transparent 30%,
+      color-mix(in srgb, var(--fg) 7%, transparent) 50%,
+      transparent 70%
+    );
+    background-size: 220% 100%;
+    animation: shot-shimmer 1.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes shot-shimmer {
+    from { background-position: 130% 0; }
+    to { background-position: -30% 0; }
+  }
+  /* The placeholder dissolves only as the picture comes in. Hiding it the
+     instant `.ready` lands would leave an empty frame through the animation's
+     stagger delay. */
+  .shots .shot.ready::after {
+    animation:
+      shot-shimmer 1.5s ease-in-out infinite,
+      shot-placeholder-out 0.45s ease forwards;
+    animation-delay: 0s, calc(min(var(--shot-i, 0), 6) * 55ms + 0.12s);
+  }
+  @keyframes shot-placeholder-out {
+    to { opacity: 0; visibility: hidden; }
+  }
+  .shots img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    opacity: 0;
+  }
+  /* Every shot enters the same way: the page's own rise, done inside the
+     frame — up from below, sharpening out of a blur, fading in. The frame
+     keeps its placeholder until the picture lands, and a shot that stayed
+     lazy until the strip was scrolled to still gets the movement, because the
+     animation hangs off `.ready` rather than off the element appearing.
+     Alternating a wipe direction per shot was the mistake here: these are one
+     app's screens in a row, so opposite directions read as objects moving
+     against each other. Variety comes from the stagger instead — the strip
+     arrives as a run, 55ms apart, which is the same rhythm the hero and the
+     cards use. */
+  .shots .shot.ready img {
+    animation: shot-in 0.62s var(--ease-out) forwards;
+    animation-delay: calc(min(var(--shot-i, 0), 6) * 55ms);
+  }
+  /* The start state is scaled past the frame so the upward travel never
+     exposes an edge inside `overflow: hidden`; the blur bleeds into the frame
+     and sharpens away with the fade. */
+  @keyframes shot-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(1.06);
+      filter: blur(7px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
   }
   .md { max-width: 68ch; color: var(--soft); font-size: 14.5px; line-height: 1.6; overflow-wrap: anywhere; }
   .md p { margin: 0 0 9px; }
@@ -1095,7 +1170,7 @@
     .hero-sub { font-size: 15.5px; }
     .hero-actions .btn { padding: 10px 18px; font-size: 14px; }
     .grid { grid-template-columns: minmax(0, 1fr); }
-    .shots img { height: 230px; }
+    .shots .shot { height: 230px; }
     .rail-tools { display: none; }
   }
   @media (max-width: 440px) {
@@ -1111,6 +1186,8 @@
       transition-duration: 0.001ms !important;
     }
     .hero > *, .recent-card.enter > *, .card.enter { opacity: 1; transform: none; filter: none; }
+    .shots .shot.ready img { opacity: 1; transform: none; filter: none; animation: none; }
+    .shots .shot::after { display: none; }
     [data-reveal] { opacity: 1; transform: none; }
     .recent-card:hover .recent-media,
     .recent-card:active .recent-media { transform: none; }
