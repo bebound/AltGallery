@@ -1,0 +1,46 @@
+{
+  "name": "Dusklight",
+  "subtitle": "Dusklight AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Dusklight",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/icon.webp",
+  "website": "https://github.com/TwilitRealm/dusklight",
+  "tintColor": "#C4901E",
+  "apps": [
+    {
+      "name": "Dusklight",
+      "bundleIdentifier": "dev.twilitrealm.dusk",
+      "developerName": "Twilit Realm",
+      "subtitle": "A native port of a classic adventure",
+      "localizedDescription": "Dusklight brings a classic adventure natively to the iPhone and iPad with modern rendering, flexible controls and quality-of-life options. You must provide a dump of your own copy of the original game to play.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/images/screenshot-01.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/images/screenshot-02.webp"
+      ],
+      "tintColor": "#C4901E",
+      "versions": [
+        {
+          "version": "2.0.3",
+          "date": "2026-09-30T07:06:44Z",
+          "localizedDescription": "**What's new:**\r\n\r\n* **Added:** New InterpService: Provides interpolation for custom model rendering. ([#2636](https://github.com/TwilitRealm/dusklight/pull/2636))\r\n* **Added:** GfxService v1.4: Provides backing textures for resolved framebuffers. ([#2643](https://github.com/TwilitRealm/dusklight/pull/2643), [Aurora #260](https://github.com/encounter/aurora/pull/260))\r\n* **Fixed:** Vulkan startup crash on Android devices with Adreno GPUs, including the Galaxy S23 and Odin 2. ([Aurora `bded88e95d`](https://github.com/encounter/aurora/commit/bded88e95d5a1a7c8b2d747843cb8cde17b39838), [#2563](https://github.com/TwilitRealm/dusklight/issues/2563))\r\n* **Fixed:** HTTPS requests failing in Linux AppImage builds because system CA certificates weren't found. ([Borealis `4ac5e7052a`](https://github.com/encounter/borealis/commit/4ac5e7052a8c49a122f8d57f626b5c75c5ca6968))\r\n* **Fixed:** WebSocket service being unavailable in Linux AppImage builds. ([`40457c6adb`](https://github.com/TwilitRealm/dusklight/commit/40457c6adb381928e4b5fef6ed459ed291edd5e2), [Borealis `4ac5e7052a`](https://github.com/encounter/borealis/commit/4ac5e7052a8c49a122f8d57f626b5c75c5ca6968))\r\n* **Fixed:** False memory card corruption errors after resetting and switching game modes. ([`7b60dc8f24`](https://github.com/TwilitRealm/dusklight/commit/7b60dc8f24c03656ca69d51cacec84832df9e227))\r\n* **Fixed:** Incorrect camera framing in the cutscene before Goron Mines. ([#2648](https://github.com/TwilitRealm/dusklight/pull/2648), [#956](https://github.com/TwilitRealm/dusklight/issues/956))\r\n* **Fixed:** Crashes and missing fire when retrying the burning house sequence in Kakariko Village after dying. ([#2649](https://github.com/TwilitRealm/dusklight/pull/2649), [#1441](https://github.com/TwilitRealm/dusklight/issues/1441))\r\n* **Changed:** Significantly improved Mod Manager performance, especially with a large number of mods. ([`ceda410434`](https://github.com/TwilitRealm/dusklight/commit/ceda410434286107741eb43c7e3ade914c5f1751), [`eb5ad19dbc`](https://github.com/TwilitRealm/dusklight/commit/eb5ad19dbc488345163f0c076911fb38368cf115))\r\n* **Changed:** Significantly improved Logs window performance. ([`55e2904ce0`](https://github.com/TwilitRealm/dusklight/commit/55e2904ce03548348021ec0137616e5d65683982))\r\n* **Changed:** Updated bundled Dusklight Randomizer to v1.0.6. ([`b9c370d5d1`](https://github.com/TwilitRealm/dusklight/commit/b9c370d5d1851b83040e8c767cbbbce8e580185b))\r\n  * Fixed entrance randomizer logic incorrectly treating human and wolf abilities as interchangeable in Twilight. ([Randomizer `cfa99c1944`](https://github.com/TwilitRealm/dusklight-randomizer/commit/cfa99c1944f36c4285923be65cbda6916a31ff15))\r\n  * Fixed some logical areas not taking into account that you could change time of day with Midna. ([Randomizer `cfa99c1944`](https://github.com/TwilitRealm/dusklight-randomizer/commit/cfa99c1944f36c4285923be65cbda6916a31ff15))\r\n  * Fixed boss exits when dungeon entrances are shuffled but boss entrances are not. ([Randomizer `6f650ca077`](https://github.com/TwilitRealm/dusklight-randomizer/commit/6f650ca0771375ca3a09679d99d9e60c48b5a59a))\r\n  * Fixed inaccessible doors in Kakariko Twilight before obtaining the village's warp portal, which could cause entrance randomizer softlocks. ([Randomizer `12d7cf807a`](https://github.com/TwilitRealm/dusklight-randomizer/commit/12d7cf807a325da71e264d9e2dd36d4ff09103b7))\r\n  * Fixed music staying muted after entering a shuffled boss room through the Forest Temple boss door. ([Randomizer `ee58b04d21`](https://github.com/TwilitRealm/dusklight-randomizer/commit/ee58b04d21cd413da2607e8fc79e2521d7bc6764), [Randomizer #85](https://github.com/TwilitRealm/dusklight-randomizer/issues/85))\r\n  * Fixed the map not appearing after howling at the Snowpeak Howling Stone. ([Randomizer `2d97aa9a6c`](https://github.com/TwilitRealm/dusklight-randomizer/commit/2d97aa9a6c68e85a51b2a80aabce26d6228a1fbc))\r\n  * Prevented starting the broken goat-catching sequence with Bo in Ordon Village. ([Randomizer `4f5bb4e14d`](https://github.com/TwilitRealm/dusklight-randomizer/commit/4f5bb4e14d76037981ea83fad384d98545f9c337))\r\n  * Fixed some item checks in Ordon Village and south of Castle Town in alternate story states. ([Randomizer `4f5bb4e14d`](https://github.com/TwilitRealm/dusklight-randomizer/commit/4f5bb4e14d76037981ea83fad384d98545f9c337), [`e8d2c020c2`](https://github.com/TwilitRealm/dusklight-randomizer/commit/e8d2c020c27cdbd754a0a5aea8ea4b27335b9d1d))\r\n  * Corrected the logic connection between Snowpeak Ruins' double Freezard room and the west courtyard balcony. ([Randomizer `325fcf9358`](https://github.com/TwilitRealm/dusklight-randomizer/commit/325fcf9358adc41ab56f65b27be79e8eb5721442))\r\n\r\nThanks to all contributors:\r\n@dbalatoni13\r\n@encounter\r\n@gymnast86\r\n@PJB3005\r\n\r\n**Full Changelog**: https://github.com/TwilitRealm/dusklight/compare/v2.0.2...v2.0.3",
+          "downloadURL": "https://github.com/TwilitRealm/dusklight/releases/download/v2.0.3/Dusklight-v2.0.3-ios-arm64.ipa",
+          "size": 37056541,
+          "minOSVersion": "14.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "dev.twilitrealm.dusk",
+      "title": "Dusklight 2.0.3 · 30 Sep 2026",
+      "identifier": "Dusklight-release-v2.0.3",
+      "caption": "Dusklight 2.0.3 is available.",
+      "date": "2026-09-30T07:06:44Z",
+      "tintColor": "#C4901E",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/TwilitRealm/dusklight/releases/tag/v2.0.3"
+    }
+  ]
+}
