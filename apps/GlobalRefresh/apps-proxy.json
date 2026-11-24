@@ -1,0 +1,48 @@
+{
+  "name": "GlobalRefresh",
+  "subtitle": "GlobalRefresh AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for GlobalRefresh",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/icon.webp",
+  "website": "https://github.com/Yoroin/GlobalRefresh-PiP",
+  "tintColor": "#177FFD",
+  "apps": [
+    {
+      "name": "GlobalRefresh",
+      "bundleIdentifier": "com.yoroin.globalrefresh",
+      "developerName": "Yoroin",
+      "subtitle": "基于 iOS 画中画的悬浮窗高刷辅助工具",
+      "localizedDescription": "基于 iOS 画中画的悬浮窗工具，可辅助解锁 ProMotion 120Hz 表现，支持自定义悬浮窗大小（可完全隐藏）、后台保活以及多悬浮窗共存。适配 iOS 15–27。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/frame_rate.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/tutorial-step-1.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/tutorial-step-2.webp"
+      ],
+      "tintColor": "#177FFD",
+      "versions": [
+        {
+          "version": "1.1.2",
+          "date": "2026-11-20T10:21:33Z",
+          "localizedDescription": "# 全局高刷 1.1.2（26.11.20）\n\n本版本提供正式版通用未签名 IPA，可通过牛蛙助手、AltStore、Sideloadly 等工具自行签名安装。\n\n构建号：`2026112101`\n\nIPA 文件：`GlobalRefresh_1.1.2_2026112101_unsigned.ipa`\n\nSHA-256：`776b590301dc70314323d8f5b0d3055d6d04e7b093b184d8c8d05eb363537e74`\n\n## 重新打包说明（26.11.21）\n\n构建号更新为 `2026112101`，恢复 iPhone 和 iPad 的图标文件索引，解决部分签名工具导入 IPA 后不显示应用图标的问题。主包 `Info.plist` 仍为 XML；程序、悬浮窗逻辑及图标资源均未改动。\n\n遇到签名工具内图标空白的用户，请下载新版附件后重新导入。已正常安装使用的用户无需仅为此重新安装。\n\n## 更新内容\n\n- \\* 修复 iOS 16 及以上悬浮窗关闭按钮偶尔重新出现的问题（即屏幕中间的水滴图标）\n- \\* 修复部分 iOS 15 设备无法启动悬浮窗的问题，恢复原生启动流程\n- 优化画中画并存，增加当前会话内的检查和有限补试；系统暂时挂起悬浮窗时，不再误判为关闭\n- 默认 VideoCall 与仅 PiP 保活组合的内容更新由 60fps 调整为 30fps，减少后台刷新开销\n- 优化小屏首页布局，避免启动按钮被底栏遮挡\n- 新增当前 App 的运存和线程数显示\n- 修复线程统计资源未释放、离开帧率演示页后刷新驱动未清理的问题；PlayerLayer 兼容方案改为在后台准备视频素材，避免阻塞界面\n- 支持导出和分享诊断日志；减少日志重复写盘，覆盖更新后保留已有退出记录和系统诊断\n- 优化快捷指令链接识别，保留原有入口；修复切换更新渠道时可能显示旧结果的问题，支持检测同版本的新构建\n\n## 来源与署名\n\n感谢 CaiWanFeng 提供原始 PiP 示例。本项目由 Yoroin 在此基础上继续开发和维护。\n\n原 Demo 项目：[CaiWanFeng/PiP](https://github.com/CaiWanFeng/PiP)\n\n当前项目：[Yoroin/GlobalRefresh-PiP](https://github.com/Yoroin/GlobalRefresh-PiP)\n\n基于本项目继续开发或分发时，请保留原作者、后续维护者及对应项目地址，并注明代码来源。\n\n## 自签说明\n\n此 IPA 不绑定个人证书，主程序和内嵌框架均未签名，也不含 `embedded.mobileprovision` 或 `_CodeSignature`。安装前请使用自己的 Apple ID 或证书签名。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/Yoroin/GlobalRefresh-PiP/releases/download/v1.1.2/GlobalRefresh_1.1.2_2026112101_unsigned.ipa",
+          "size": 7878284,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.yoroin.globalrefresh",
+      "title": "GlobalRefresh 1.1.2 · 20 Nov 2026",
+      "identifier": "GlobalRefresh-release-v1.1.2",
+      "caption": "GlobalRefresh 1.1.2 is available.",
+      "date": "2026-11-20T10:21:33Z",
+      "tintColor": "#177FFD",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Yoroin/GlobalRefresh-PiP/releases/tag/v1.1.2"
+    }
+  ]
+}

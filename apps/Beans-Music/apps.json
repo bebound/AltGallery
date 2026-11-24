@@ -1,0 +1,50 @@
+{
+  "name": "Beans Music",
+  "subtitle": "Beans Music AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Beans Music",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/icon.webp",
+  "website": "https://github.com/XIaodou0416/Beans-Music",
+  "tintColor": "#F0D050",
+  "apps": [
+    {
+      "name": "Beans Music",
+      "bundleIdentifier": "com.beans.app",
+      "developerName": "XIaodou0416",
+      "subtitle": "使用 SwiftUI 开发的多平台音乐播放器",
+      "localizedDescription": "面向 iOS 15 及以上的开源 SwiftUI 音乐播放器，内置网易云音乐、QQ 音乐与酷狗音乐，支持本地歌单、离线下载、逐字歌词、多种播放页布局与均衡器等自定义能力。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/player.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/lyrics.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/library.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/search.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/settings.webp"
+      ],
+      "tintColor": "#F0D050",
+      "versions": [
+        {
+          "version": "1.6.6",
+          "date": "2026-09-06T12:41:32Z",
+          "localizedDescription": "本次更新：\n\n- 增加网易云音乐和 QQ 音乐歌单广场搜索功能\n- 优化歌曲封面缓存\n- 优化歌词划动后自动回到当前播放歌词的问题\n- 优化整体流畅性，低系统版本请实测反馈\n- 优化网易云私人漫游；如遇问题可尝试心动模式\n- 简化搜索界面，移除均衡器注释\n- 更换酷狗音乐歌单广场接口\n- 修复 QQ 音乐本身有会员但无法播放的问题\n- 修复 iOS 26 以下系统无法返回的问题",
+          "downloadURL": "https://github.com/XIaodou0416/Beans-Music/releases/download/v1.6.6/Beans-unsigned.ipa",
+          "size": 8761833,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.beans.app",
+      "title": "Beans Music 1.6.6 · 06 Sep 2026",
+      "identifier": "Beans Music-release-v1.6.6",
+      "caption": "Beans Music 1.6.6 is available.",
+      "date": "2026-09-06T12:41:32Z",
+      "tintColor": "#F0D050",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Beans-Music/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/XIaodou0416/Beans-Music/releases/tag/v1.6.6"
+    }
+  ]
+}
