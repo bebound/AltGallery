@@ -1,0 +1,55 @@
+# altgen config for the BiliSponsorBlock AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "lcmovie/BiliSponsorBlock-ios"
+
+[source]
+name = "BiliSponsorBlock"
+subtitle = "BiliSponsorBlock AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for BiliSponsorBlock"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/icon.webp"
+website = "https://github.com/lcmovie/BiliSponsorBlock-ios"
+tint_color = "#FB7299"
+
+[app]
+name = "BiliSponsorBlock"
+# Read from the release ipa: the repacked build carries Bilibili's own
+# Info.plist, so this is the official Bilibili client's identifier.
+bundle_identifier = "tv.danmaku.bilianime"
+developer_name = "lcmovie"
+subtitle = "官方哔哩哔哩 iOS App 的 SponsorBlock 空降助手插件"
+description = "适用于官方哔哩哔哩 iOS App 的空降助手插件，通过注入 dylib 的方式提供 SponsorBlock 片段识别、提示与自动跳过功能。可分别为赞助、自我推广、互动提醒、片头片尾、离题等片段分类设置处理方式，并在播放器进度条上以分类颜色标记片段。借助 BilibiliSponsorBlock 项目获取空降片段数据。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/images/preview-1.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/images/preview-2.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/images/preview-3.webp",
+]
+tint_color = "#FB7299"
+# The plugin targets iOS 15.0+ (README); the ipa's Info.plist still reports
+# MinimumOSVersion 10.0 because it is Bilibili's own, not the plugin's.
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each iOS release ships one ipa, named
+# bili-<host version>-BiliSponsorBlock.V<plugin version>.ipa.
+asset_pattern = ".*\\.ipa$"
+# The tag is the plugin's own version (v2.0.0), but the ipa is a repack of the
+# official Bilibili client and keeps its Info.plist, so the installed app
+# reports Bilibili's version (9.10.0). AltStore/SideStore compare the source
+# version against that installed version, so 2.0.0 would read as older than
+# what is installed and updates would never be offered. Take the host version
+# from the asset filename instead — the tag-derived one is overridden.
+version_pattern = "bili-([0-9.]+)-BiliSponsorBlock"
+version_source = "filename"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BiliSponsorBlock/images/news.webp"
+
+[output]
+path = "apps.json"

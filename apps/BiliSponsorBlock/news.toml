@@ -1,0 +1,17 @@
+# render_news.py config: uv run tools/render_news.py --out apps/BiliSponsorBlock
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "BiliSponsorBlock"
+tagline = "哔哩哔哩空降助手\n自动跳过赞助片段"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#FB7299"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#FB7299"      # bottom-right glow (default: [source] tint_color)
+# background = "#FBDDE6"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#FDEBF0"        # gradient mid stop (derived from background)
+# bg_dark = "#F8C8D7"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#D6527A" # tagline text (derived from background)
