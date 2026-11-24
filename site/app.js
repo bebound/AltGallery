@@ -351,13 +351,28 @@
     return terms.every((term) => haystack.includes(term));
   }
 
+  // An app whose name matches the query ranks above one that only matched its
+  // description, so the obvious candidate is never buried by the default
+  // date order. The rank is a prefix to the normal sort, not a replacement:
+  // within each group the chosen sort still applies.
+  function nameRank(app) {
+    const query = state.query.trim().toLowerCase();
+    if (!query) return 0;
+    const name = String(app.name || "").toLowerCase();
+    if (!name) return 2;
+    if (name.includes(query)) return 0;
+    const terms = query.split(/\s+/).filter(Boolean);
+    return terms.some((term) => name.includes(term)) ? 1 : 2;
+  }
+
   function visibleApps() {
     const list = data.apps.filter(matches);
     const compare = collator();
+    const rank = new Map(list.map((app) => [app, nameRank(app)]));
     if (state.sort === "name") {
-      list.sort((a, b) => compare.compare(a.name, b.name));
+      list.sort((a, b) => rank.get(a) - rank.get(b) || compare.compare(a.name, b.name));
     } else {
-      list.sort((a, b) => (b.date || "").localeCompare(a.date || "") || compare.compare(a.name, b.name));
+      list.sort((a, b) => rank.get(a) - rank.get(b) || (b.date || "").localeCompare(a.date || "") || compare.compare(a.name, b.name));
     }
     return list;
   }
