@@ -21,6 +21,12 @@ change between apps.
 
 ## Procedure
 
+> **Cost note.** Every tool call costs a full re-read of the prompt and this
+> skill, so batch independent probes (one `curl … | jq` for several endpoints,
+> one loop over `apps/*/config.toml`) into a single Bash call, and stop probing
+> once the remaining questions can no longer change a decision. AGENTS.md →
+> [Exploration Cost](../../../AGENTS.md#exploration-cost).
+
 1. **Create the folder**
    ```bash
    mkdir -p apps/<AppName>/images
@@ -269,6 +275,20 @@ change between apps.
    ```
    ⚠️ **Eyeball the result — human confirmation required.** Multi-color or
    pale icons may not have an obvious single brand color.
+
+   ⚠️ **This is a one-decision step, not a research task.** Run the sampler,
+   then the histogram at AGENTS.md → [Deciding the
+   tint](../../../AGENTS.md#deciding-the-tint--one-histogram-then-stop), and
+   branch:
+
+   - one saturated colour beside black/white → that is the tint;
+   - **greys only → the icon is monochrome and the project has no brand
+     colour**: pin a neutral grey scale in `news.toml` (step 6) and move on.
+     Do **not** go looking for one in the project's site, CSS tokens, theme
+     source, logo SVG or asset catalog — the histogram has already answered;
+   - two saturated colours → ask the user.
+
+   Worked examples: `apps/Iridium/`, `apps/iPadn/`, `apps/Orca/`.
 
 6. **Write `news.toml`** — copy `apps/PiliPlus/news.toml` the same way (it
    documents every optional `[colors]` key as a comment), then change only

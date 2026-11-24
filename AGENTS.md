@@ -342,6 +342,39 @@ When a new app lacks an official tint, use the result as `[app] tint_color`
 not have an obvious single brand color, so the sample needs human
 confirmation.
 
+### Deciding the tint — one histogram, then stop
+
+The sample plus the icon's dominant colours settle it in one call; nothing
+afterwards can change the answer, so nothing afterwards is worth running.
+
+```bash
+PYTHONPATH=tools uv run --python 3.11 --with pillow python3 -c "
+from PIL import Image; from collections import Counter
+im = Image.open('apps/<AppName>/icon.png').convert('RGB').resize((64, 64))
+for col, n in Counter(im.get_flattened_data()).most_common(8):
+    print('#%02X%02X%02X' % col, n)"
+```
+
+Branch once:
+
+- **One saturated colour next to black/white** — that colour is the brand
+  tint. Pin it, move on.
+- **Greys only** — the icon is monochrome and has no brand colour to
+  recover. Pin a neutral grey scale in `news.toml` and move on:
+  `tint` / `tint_alt` the near-black of the mark, `background` / `bg_mid` /
+  `bg_dark` a light grey ramp, `tagline_color` a mid grey. `apps/Iridium/`,
+  `apps/iPadn/` and `apps/Orca/` are the worked examples, each with a comment
+  saying why it is pinned.
+- **Two saturated colours** — genuinely ambiguous, the one case worth asking
+  the user about.
+
+⚠️ **A monochrome mark means the project has no brand colour — do not go
+looking for one.** Searching the upstream website, the desktop `main.css`,
+`mobile-theme.ts`, the logo SVG or the app's asset catalog after the
+histogram already said "greys only" cannot change the answer; it only defers
+a decision the histogram has made. Orca's black-on-white icon cost 28 shell
+calls of exactly this search and still ended on a pinned neutral grey.
+
 ### Icon format
 
 `icon.png` is the convention, not a requirement: the file may be
@@ -359,6 +392,26 @@ altgen copies the URL verbatim.
 same way. When importing `extract_icon_color()` by hand (above), substitute
 the app's real file name — `icon.webp` with a `.png` path just returns `None`
 and silently falls back to the tint-derived background.
+
+## Exploration Cost
+
+A session's cost here is dominated by the fixed prefix, not by any single
+tool call: the system prompt, AGENTS.md, an invoke-time skill and the tool
+schemas are all re-read on **every** request (as cache reads). Measured on
+the Orca add: ~96 tool calls became 192 requests, the ~35k-token prefix was
+re-read 192 times, and ~50% of all input tokens went to that prefix alone.
+Fewer, larger requests beat smaller, many requests.
+
+- **Batch independent probes** into one Bash call — one `curl … | jq` over
+  several endpoints, one `for` loop over `apps/*/config.toml` — instead of
+  one call per question.
+- **Don't re-poll.** After a successful `git status` or fetch, use the result
+  in hand rather than asking again to confirm.
+- **Decide from the cheapest signal.** A histogram, a `jq` field or a file
+  extension usually settles what a repo tour would only defer.
+- **Stop when the answer is on the table.** Exploration that can no longer
+  change the decision is pure cost — see [Deciding the
+  tint](#deciding-the-tint--one-histogram-then-stop) for the canonical trap.
 
 ## Reading an IPA's Bundle ID
 

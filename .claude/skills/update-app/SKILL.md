@@ -215,7 +215,11 @@ which app was meant.
    ⚠️ `render_news.py` is a uv script, so importing it as a module means
    recreating its inline metadata: `--python 3.11 --with pillow` plus
    `PYTHONPATH=tools`, never the bare `python3`. Remember the AGENTS.md caveat
-   about sampling a dark/monochrome icon.
+   about sampling a dark/monochrome icon — and that it is one decision, not a
+   search: when the histogram shows greys only, the mark is monochrome, so pin
+   a neutral grey scale instead of hunting the new project's site, CSS tokens
+   or theme source for a colour it does not have (AGENTS.md → [Deciding the
+   tint](../../../AGENTS.md#deciding-the-tint--one-histogram-then-stop)).
 
    Print the effective palette for the (new or unchanged) icon — run this
    block as-is; it stays at column 0 so the heredoc delimiter works:
