@@ -271,6 +271,9 @@ The universal iOS automation platform — JavaScript swiplets, a TypeScript SDK 
 ### <img src="apps/Suwayomi-Tsumiru/icon.png" alt="Tsumiru icon" width="24" align="top"> <a href="https://github.com/Suwayomi/Suwayomi-Tsumiru">Tsumiru</a>
 Native manga & manhwa reader for Suwayomi-Server — offline downloads with an on-device catalogue and a rebuilt continuous-scroll webtoon reader.
 
+### <img src="apps/TwinDesk/icon.webp" alt="TwinDesk icon" width="24" align="top"> <a href="https://github.com/InukaAsith/TwinDesk">TwinDesk</a>
+Your iPhone and your computers as one desk — screens, files, clipboard, notifications, camera and one mouse and keyboard, over Wi-Fi, USB or Bluetooth.
+
 ### <img src="apps/UTM/icon.png" alt="UTM icon" width="24" align="top"> <a href="https://github.com/utmapp/UTM">UTM</a>
 Virtual machines for iOS — run Windows, Android and more on your iPhone or iPad, with 30+ processors and JIT-backed emulation.
 

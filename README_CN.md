@@ -271,6 +271,9 @@ iPhone 与 iPad 的模拟器前端——基于 NeoStation 的分支，主机风�
 ### <img src="apps/Suwayomi-Tsumiru/icon.png" alt="Tsumiru icon" width="24" align="top"> <a href="https://github.com/Suwayomi/Suwayomi-Tsumiru">Tsumiru</a>
 面向 Suwayomi-Server 的原生漫画与条漫阅读器——离线下载、设备端目录与重构的连续滚动阅读器。
 
+### <img src="apps/TwinDesk/icon.webp" alt="TwinDesk icon" width="24" align="top"> <a href="https://github.com/InukaAsith/TwinDesk">TwinDesk</a>
+把 iPhone 与你的电脑合为一台工作台——共享屏幕、文件、剪贴板、通知与摄像头，一套鼠标键盘通用，支持 Wi-Fi、USB 与蓝牙连接。
+
 ### <img src="apps/UTM/icon.png" alt="UTM icon" width="24" align="top"> <a href="https://github.com/utmapp/UTM">UTM</a>
 iOS 上的虚拟机——在 iPhone 与 iPad 上运行 Windows、Android 等，支持 30 多种处理器与 JIT 加速。
 

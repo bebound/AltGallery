@@ -1,0 +1,17 @@
+# render_news.py config: uv run tools/render_news.py --out apps/TwinDesk
+# Colors are pinned explicitly: TwinDesk's icon is a black mark with grey
+# windows on a black ground, so the sampler recovers no usable background
+# shade. A light grey ramp with a slight indigo cast matches the mark.
+
+name = "TwinDesk"
+tagline = "iPhone and computers,\nas one desk"
+
+# Color notes — each key below controls one element of the image.
+[colors]
+tint = "#5E5CE6"          # NEW UPDATE badge + top-left glow
+tint_alt = "#8E8CFF"      # bottom-right glow
+background = "#EAEAF3"    # gradient base
+bg_mid = "#F4F4FA"        # gradient mid stop
+bg_dark = "#D8D8E6"       # gradient end stop
+text_color = "#111111"    # app name
+tagline_color = "#5A5A78" # tagline text

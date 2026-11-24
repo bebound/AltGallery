@@ -1,0 +1,47 @@
+# altgen config for the TwinDesk AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "InukaAsith/TwinDesk"
+
+[source]
+name = "TwinDesk"
+subtitle = "TwinDesk AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for TwinDesk"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TwinDesk/icon.webp"
+website = "https://github.com/InukaAsith/TwinDesk"
+tint_color = "#5E5CE6"
+
+[app]
+name = "TwinDesk"
+bundle_identifier = "com.twindesk.ios"
+developer_name = "Inuka Asith"
+subtitle = "Use your iPhone and your computers as one desk"
+description = "TwinDesk turns your iPhone or iPad and your Mac, Windows PC or Linux computer into one desk: the computer's screen mirrored or used as a second display, files, clipboard, notifications, sound, camera and remote control, over Wi-Fi, USB or Bluetooth. It needs the TwinDesk desktop app on the computer."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TwinDesk/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TwinDesk/images/screen-1.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TwinDesk/images/screen-2.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TwinDesk/images/screen-3.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TwinDesk/images/screen-4.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TwinDesk/images/screen-6.webp",
+]
+# Indigo accent of the app icon — the tint the project's own source uses.
+tint_color = "#5E5CE6"
+# MinimumOSVersion of the shipped 3.2.1 ipa.
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release also ships Android, Linux,
+# macOS and Windows builds — match only the iOS ipa, TwinDesk.ipa.
+asset_pattern = "^TwinDesk\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TwinDesk/images/news.webp"
+
+[output]
+path = "apps.json"
