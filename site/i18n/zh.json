@@ -1,5 +1,9 @@
 {
   "_comment": "Chinese subtitle/description overlay for the site, keyed by bundleIdentifier. Each field translates the matching config.toml [app] field: subtitle is the short one-liner, description the longer paragraph — not the README_CN.md line, which adds detail after the subtitle. Apps whose catalog text is already Chinese need no entry; the page falls back to it. Hand-maintained; tools/build_site.py folds it into config.json.",
+  "dev.twilitrealm.dusk": {
+    "subtitle": "经典冒险游戏的原生移植",
+    "description": "Dusklight 将经典冒险游戏以原生方式带到 iPhone 与 iPad，具备现代渲染、灵活的操控与多项体验优化。游玩需要自备正版游戏镜像。"
+  },
   "ani.aayush262.dartotsu": {
     "subtitle": "跨平台的动漫与漫画追番管理客户端",
     "description": "Dantotsu 的 Flutter 重写版：在同一个应用里管理动漫、漫画与小说列表，支持 AniList、MyAnimeList、Simkl、Kitsu、MangaBaka 与 MangaUpdates，覆盖 Android、iOS、Windows、Linux 与 macOS。"

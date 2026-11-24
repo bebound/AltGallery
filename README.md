@@ -100,6 +100,9 @@ GameCube and Wii emulator for iOS/iPadOS — a port of the Dolphin Emulator, bui
 ### <img src="apps/DukeX/icon.png" alt="DukeX icon" width="24" align="top"> <a href="https://github.com/MaftyManicEMU/DukeX">DukeX</a>
 Original Xbox emulation for iOS, built from xemu with a native Swift interface.
 
+### <img src="apps/Dusklight/icon.webp" alt="Dusklight icon" width="24" align="top"> <a href="https://github.com/TwilitRealm/dusklight">Dusklight</a>
+A native port of a classic adventure — a reverse-engineered reimplementation of Twilight Princess, with modern rendering and flexible controls. Bring your own game dump.
+
 ### <img src="apps/EhPanda/icon.png" alt="EhPanda icon" width="24" align="top"> <a href="https://github.com/EhPanda-Team/EhPanda">EhPanda</a>
 An unofficial E-Hentai App for iOS built with SwiftUI & TCA.
 

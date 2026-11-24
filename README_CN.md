@@ -100,6 +100,9 @@ iOS/iPadOS 的 GameCube 与 Wii 模拟器——基于全新 DolphiniOS 代码库
 ### <img src="apps/DukeX/icon.png" alt="DukeX icon" width="24" align="top"> <a href="https://github.com/MaftyManicEMU/DukeX">DukeX</a>
 iOS 上的初代 Xbox 模拟器，基于 xemu 构建并配有原生 Swift 界面。
 
+### <img src="apps/Dusklight/icon.webp" alt="Dusklight icon" width="24" align="top"> <a href="https://github.com/TwilitRealm/dusklight">Dusklight</a>
+经典冒险游戏的原生移植 — 《黄昏公主》的逆向工程重制版，具备现代渲染与灵活操控，需自备游戏镜像。
+
 ### <img src="apps/EhPanda/icon.png" alt="EhPanda icon" width="24" align="top"> <a href="https://github.com/EhPanda-Team/EhPanda">EhPanda</a>
 使用 SwiftUI 与 TCA 构建的非官方 E-Hentai iOS 应用。
 

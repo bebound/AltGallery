@@ -1,0 +1,44 @@
+# altgen config for the Dusklight AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "TwilitRealm/dusklight"
+
+[source]
+name = "Dusklight"
+subtitle = "Dusklight AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Dusklight"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/icon.webp"
+website = "https://github.com/TwilitRealm/dusklight"
+tint_color = "#C4901E"
+
+[app]
+name = "Dusklight"
+bundle_identifier = "dev.twilitrealm.dusk"
+developer_name = "Twilit Realm"
+subtitle = "A native port of a classic adventure"
+description = "Dusklight brings a classic adventure natively to the iPhone and iPad with modern rendering, flexible controls and quality-of-life options. You must provide a dump of your own copy of the original game to play."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/images/screenshot-01.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/images/screenshot-02.webp",
+]
+# The amber of the app icon's background — the tint the official source uses.
+tint_color = "#C4901E"
+# MinimumOSVersion of the shipped 2.0.3 ipa.
+min_os_version = "14.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release also ships Android, Linux,
+# macOS and Windows builds — match only the iOS ipa.
+asset_pattern = "Dusklight-.*-ios-arm64\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dusklight/images/news.webp"
+
+[output]
+path = "apps.json"
