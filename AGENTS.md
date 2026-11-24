@@ -55,9 +55,9 @@ Each IPA gets its own folder under `apps/`, e.g. `apps/PiliPlus/`:
 apps/<AppName>/
 ├── config.toml      # altgen configuration file
 ├── news.toml        # news image config (name, tagline, optional colors)
-├── icon.png         # app icon (icon.webp / .jpg also fine — see Icon Format)
+├── icon.webp        # app icon (converted to WebP — see Icon Format)
 ├── images/          # screenshots + news.webp promo image
-│   ├── home.png     # screenshot, listed in [app] screenshots (extension kept as-is)
+│   ├── home.webp    # screenshot, listed in [app] screenshots (converted to WebP)
 │   └── news.webp    # generated promo image (referenced from [news] image_url)
 └── apps.json        # generated AltStore source (gitignored), do not hand-edit
 ```
@@ -327,8 +327,11 @@ with Pillow and buckets the pixels). Just call it:
 ```bash
 PYTHONPATH=tools uv run --python 3.11 --with pillow python3 -c \
   "from render_news import extract_icon_color; from pathlib import Path; \
-   print(extract_icon_color(Path('apps/<AppName>/icon.png')))"
+   print(extract_icon_color(Path('apps/<AppName>/icon.webp')))"
 ```
+
+Substitute the app's real icon file name: `icon.webp` for anything added or
+updated since the WebP rule, `icon.png` for an app that predates it.
 
 **Importing a tool as a module means recreating what its inline metadata would
 do**: `--python 3.11` matches its `requires-python` (the script uses
@@ -350,7 +353,7 @@ afterwards can change the answer, so nothing afterwards is worth running.
 ```bash
 PYTHONPATH=tools uv run --python 3.11 --with pillow python3 -c "
 from PIL import Image; from collections import Counter
-im = Image.open('apps/<AppName>/icon.png').convert('RGB').resize((64, 64))
+im = Image.open('apps/<AppName>/icon.webp').convert('RGB').resize((64, 64))
 for col, n in Counter(im.get_flattened_data()).most_common(8):
     print('#%02X%02X%02X' % col, n)"
 ```
@@ -377,12 +380,14 @@ calls of exactly this search and still ended on a pinned neutral grey.
 
 ### Icon format
 
-`icon.png` is the convention, not a requirement: the file may be
-`icon.webp` (or `.jpg`/`.jpeg`) when that is the artwork's native format — a
-WebP master keeps a hi-res icon at a fraction of the PNG bytes, and AltStore,
-the site and `render_news.py` all read whatever format the URL serves. Keep
-the stem `icon` and the extension real, and point both `icon_url` fields in
-`config.toml` at the actual file (`.../apps/<AppName>/icon.webp`), since
+`icon.webp` is what the gallery stores: an icon is converted with
+`tools/to_webp.py` before `render_news.py` runs (see [Converting Artwork to
+WebP](#converting-artwork-to-webp)). A WebP master keeps a hi-res icon at a
+fraction of the PNG bytes, and AltStore, the site and `render_news.py` all
+read whatever format the URL serves.
+
+Keep the stem `icon` and the extension real, and point both `icon_url` fields
+in `config.toml` at the actual file (`.../apps/<AppName>/icon.webp`), since
 altgen copies the URL verbatim.
 
 `tools/render_news.py` resolves the stem itself (`resolve_icon()`): with no
@@ -390,8 +395,8 @@ altgen copies the URL verbatim.
 `icon.jpeg` that exists, so `./update_news.sh` needs no per-app flag; passing
 `--icon <file>` uses that file when it exists, else its stem is resolved the
 same way. When importing `extract_icon_color()` by hand (above), substitute
-the app's real file name — `icon.webp` with a `.png` path just returns `None`
-and silently falls back to the tint-derived background.
+the app's real file name — a `.png` path for what is now `icon.webp` just
+returns `None` and silently falls back to the tint-derived background.
 
 ## Exploration Cost
 
@@ -442,6 +447,7 @@ Only when the project has **no** icon to download (nothing in the repo, README,
 ```bash
 uv run tools/ipa_icon.py App.ipa --list                     # candidates: size + file name
 uv run tools/ipa_icon.py App.ipa --out apps/<AppName>/icon.png
+uv run tools/to_webp.py apps/<AppName>/icon.png             # store it as icon.webp
 ```
 
 Takes the largest icon the bundle lists (`CFBundleIcons`/`CFBundleIconFiles`,
@@ -472,6 +478,30 @@ and prefer the project's own artwork wherever it exists. `assetutil --info
 Assets.car` is the quick way to see what a catalog holds (it lists renditions
 but cannot extract them).
 
+## Converting Artwork to WebP
+
+All of an app's artwork is stored as WebP — the icon and the screenshots,
+whether they were downloaded upstream or supplied by hand:
+
+```bash
+uv run tools/to_webp.py apps/<AppName>/icon.png apps/<AppName>/images/*
+```
+
+Each file keeps its stem and becomes `<stem>.webp`; the original is deleted
+once the WebP is written. A file named `icon` is encoded lossless-or-q92
+(whichever is smaller), everything else q82 — the settings
+`tools/build_site.py` serves. An embedded ICC profile survives (most
+screenshots are Display P3), and the resolution is left alone: a 1024 icon
+stays 1024. An already-WebP file is skipped, so a rerun is harmless.
+
+Because the extension changes, every reference must name the new file: both
+`icon_url` fields and the README heading, and each `[app] screenshots` entry
+(`images/home.webp`, not `images/home.png`).
+
+⚠️ Convert the icon **before** rendering news: `render_news.py` finds the
+icon by stem, so it reads `icon.webp` by itself once the conversion ran (see
+[Icon format](#icon-format)).
+
 ## Screenshots
 
 Screenshots live in `apps/<AppName>/images/` and are listed by URL in
@@ -499,14 +529,16 @@ original filename, list the files for the user, and let them decide which ones
 go into `[app] screenshots` (updating that list is all it takes afterwards).
 Analyzing images here only burns tokens for a decision that is not yours.
 
+Screenshots are **converted to WebP** before they are listed — the stem is
+unchanged, only the extension moves to `.webp` (see [Converting Artwork to
+WebP](#converting-artwork-to-webp)). List the `.webp` names you actually
+wrote.
+
 When the user supplies screenshots by hand (attached images, a folder, an
-unpacked zip), **use them exactly as given**: copy them into
-`apps/<AppName>/images/` with their original filenames and formats (`.png`,
-`.jpg`/`.jpeg`, …), and point each `screenshots` entry at the real file. Never
-rename them to `home.png`/`detail.png` and never re-encode or convert the
-format — AltStore loads whatever URL it is given, and the repo already ships
-plenty of `.jpg`/`.jpeg` shots. The user's set is the set; don't keep hunting
-the repo for alternatives.
+unpacked zip), **that set is the set**: copy them into
+`apps/<AppName>/images/`, convert them to WebP like any other artwork, and
+point each `screenshots` entry at the `.webp` file. Never rename them to
+`home.png`/`detail.png`. Don't keep hunting the repo for alternatives.
 
 `news.webp` is the one file in that folder that is generated — leave it to
 `tools/render_news.py` (see [Generating News

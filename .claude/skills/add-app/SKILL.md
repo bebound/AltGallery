@@ -1,6 +1,6 @@
 ---
 name: add-app
-description: Add a new app to the AltGallery repo. When the project already ships its own AltStore source (apps.json), extracts the fields it needs from that source to pre-fill config.toml; otherwise reads the bundle identifier and version metadata out of a release .ipa with tools/ipa_bundle_id.py, verifies the version altgen would derive from the release tag or filename against the ipa and switches to version_source = ipa when they differ, and extracts the icon from that ipa with tools/ipa_icon.py when the repo has no icon (a repo `*.appiconset` wins with its default light `AppIcon.png`, never the dark/tinted variant). Creates apps/<AppName>/, writes config.toml and news.toml, downloads icon + screenshots, samples a tint color from the icon, renders images/news.webp, generates apps.json with altgen (local verification only), and adds the README "Available Apps" entry. Both apps.json and all-apps.json are generated and committed by the CI workflow — never update or commit them locally. Use whenever the user wants to add a new app / a new IPA source to the gallery.
+description: Add a new app to the AltGallery repo. When the project already ships its own AltStore source (apps.json), extracts the fields it needs from that source to pre-fill config.toml; otherwise reads the bundle identifier and version metadata out of a release .ipa with tools/ipa_bundle_id.py, verifies the version altgen would derive from the release tag or filename against the ipa and switches to version_source = ipa when they differ, and extracts the icon from that ipa with tools/ipa_icon.py when the repo has no icon (a repo `*.appiconset` wins with its default light `AppIcon.png`, never the dark/tinted variant). Creates apps/<AppName>/, writes config.toml and news.toml, downloads icon + screenshots and converts both to WebP with tools/to_webp.py before rendering the news image, samples a tint color from the icon, renders images/news.webp, generates apps.json with altgen (local verification only), and adds the README "Available Apps" entry. Both apps.json and all-apps.json are generated and committed by the CI workflow — never update or commit them locally. Use whenever the user wants to add a new app / a new IPA source to the gallery.
 ---
 
 # Adding a New App to AltGallery
@@ -142,11 +142,15 @@ change between apps.
    When a source was found in step 2, its `iconURL` / `screenshots` tell you
    exactly which files to grab.
 
-   The icon keeps its original extension: `icon.png` is the convention, but
-   `icon.webp` (or `.jpg`/`.jpeg`) is fine when that is the artwork's native
-   format — keep the stem `icon` and point both `icon_url` fields at the real
-   file, plus the README heading (`apps/<AppName>/icon.webp`). `altgen` copies
-   the URL verbatim, and `render_news.py` finds the icon by stem.
+   The icon is stored as `icon.webp`: download it as whatever the project
+   ships (`icon.png`, `AppIcon.png`, `.jpg`), then convert it in step 3b. Keep
+   the stem `icon` and point both `icon_url` fields at the real file, plus the
+   README heading (`apps/<AppName>/icon.webp`) — `altgen` copies the URL
+   verbatim, and `render_news.py` finds the icon by stem.
+
+   ⚠️ Convert it in step 3b before anything reads it — `render_news.py` finds
+   the icon by stem, so it must see `icon.webp`; every URL written later names
+   the `.webp` file.
 
    ⚠️ **Only download iPhone-sized screenshots, and never analyze them.**
    Filter candidates by pixel dimensions alone — portrait, aspect ratio
@@ -165,18 +169,20 @@ change between apps.
 
    Never Read, view, describe, compare or crop them — no thumbnails, no
    choosing "the best three". **The user picks the suitable shots and renames
-   them**, so keep every downloaded candidate under its original filename,
-   list what was downloaded, and let the user decide which files go into
-   `[app] screenshots` (editing that list is the only follow-up). Image
-   analysis burns tokens on a decision that is not yours to make.
+   them**, so keep every downloaded candidate under its original filename
+   (the WebP conversion keeps the stem and only moves the extension), list
+   what was downloaded with its `.webp` name, and let the user decide which
+   files go into `[app] screenshots` (editing that list is the only
+   follow-up). Image analysis burns tokens on a decision that is not yours to
+   make.
 
-   ⚠️ **Screenshots the user provides are used exactly as given**
-   (attached files, a folder, an unpacked zip): copy them into
-   `apps/<AppName>/images/` keeping their original filenames and formats
-   (`.png`, `.jpg`/`.jpeg`, …), and point `[app] screenshots` at those exact
-   names. Never rename them to `home.png`/`detail.png` and never convert the
-   format. When the user supplies the set, it wins — skip the repo hunt, and
-   the missing-screenshots warning (step 10) does not apply.
+   ⚠️ **Screenshots the user provides are the set to use** (attached files,
+   a folder, an unpacked zip): copy them into `apps/<AppName>/images/`
+   keeping their original names, convert them in step 3b like any other
+   artwork, and point `[app] screenshots` at the `.webp` files. Never rename
+   them to `home.png`/`detail.png`. When the user supplies the set, it wins —
+   skip the repo hunt, and the missing-screenshots warning (step 10) does not
+   apply.
 
    ⚠️ **If no screenshots can be found** (no `screenshots` field in the source,
    no `images`/`assets` folder in the repo, README links broken, etc.), still
@@ -207,6 +213,7 @@ change between apps.
    (step 2e) — never leave `icon.png` missing, never grab a random web image:
    ```bash
    uv run tools/ipa_icon.py /tmp/<AppName>.ipa --out apps/<AppName>/icon.png
+   uv run tools/to_webp.py apps/<AppName>/icon.png      # -> icon.webp (step 3b)
    ```
    It reads the bundle's loose icons **and** the app's `Assets.car`, so it
    normally lands on the 1024x1024 artwork even though the bundle itself only
@@ -218,6 +225,22 @@ change between apps.
    run it over a repo icon (`--force` is required, on purpose). AGENTS.md →
    [Extracting the App Icon from an
    IPA](../AGENTS.md#extracting-the-app-icon-from-an-ipa).
+
+3b. **Convert the artwork to WebP**
+
+   ```bash
+   uv run tools/to_webp.py apps/<AppName>/icon.png apps/<AppName>/images/*
+   ```
+
+   Every image in the folder becomes `<stem>.webp` beside the original, which
+   is deleted once the WebP is written — there is no exception for where it
+   came from. `icon` is encoded lossless-or-q92 (whichever is smaller),
+   everything else q82; an embedded ICC profile is carried over, so Display P3
+   screenshots keep their colours, and resolution is untouched. An already
+   WebP file is skipped, so a rerun is harmless.
+
+   Run this **before step 6** (render_news) and before listing screenshots —
+   the `.webp` names are the ones every later step references.
 
 4. **Write `config.toml`** — `apps/PiliPlus/config.toml` is the repo's
    reference config. **Read it and copy it**, don't retype a remembered
@@ -271,8 +294,12 @@ change between apps.
    `extract_icon_color()` instead of re-implementing the PIL sampling (see
    AGENTS.md → [Icon Color Sampling](#icon-color-sampling-pil)):
    ```bash
-   PYTHONPATH=tools uv run --python 3.11 --with pillow python3 -c "from render_news import extract_icon_color; from pathlib import Path; print(extract_icon_color(Path('apps/<AppName>/icon.png')))"
+   PYTHONPATH=tools uv run --python 3.11 --with pillow python3 -c "from render_news import extract_icon_color; from pathlib import Path; print(extract_icon_color(Path('apps/<AppName>/icon.webp')))"
    ```
+
+   Use the icon's real file name — after step 3b that is `icon.webp`; a `.png`
+   path against a converted icon returns `None`.
+
    ⚠️ **Eyeball the result — human confirmation required.** Multi-color or
    pale icons may not have an obvious single brand color.
 
@@ -308,11 +335,12 @@ change between apps.
    uv run tools/render_news.py --out apps/<AppName>
    ```
    Renders `apps/<AppName>/images/news.webp` (1600x1200, 4:3, lossy WebP at
-   q90) into the working
-   tree (do not auto-commit). The image is drawn entirely with Pillow — no
-   external rasterizer — and the script's inline PEP 723 metadata names
-   Pillow, so `uv run` supplies it; bare `python3 tools/render_news.py` skips
-   that metadata and fails with an import error.
+   q90) into the working tree (do not auto-commit). It reads the icon by
+   stem, so it must run **after** step 3b converted it to `icon.webp`. The
+   image is drawn entirely with Pillow — no external rasterizer — and the
+   script's inline PEP 723 metadata names Pillow, so `uv run` supplies it;
+   bare `python3 tools/render_news.py` skips that metadata and fails with an
+   import error.
 
 7. **Generate `apps.json`** — **never hand-edit it**:
    ```bash
@@ -339,14 +367,14 @@ change between apps.
 9. **Update README** — add the app to **Available Apps**, icon inline before
    the name:
    ```html
-   ### <img src="apps/<AppName>/icon.png" alt="<AppName> icon" width="24" align="top"> <a href="https://github.com/owner/name"><AppName></a>
+   ### <img src="apps/<AppName>/icon.webp" alt="<AppName> icon" width="24" align="top"> <a href="https://github.com/owner/name"><AppName></a>
    Short one-line description.
    ```
-   Use the icon's actual file name in the `src` (`icon.webp` when the artwork
-   is kept as WebP — a Markdown `src` has to name the real file).
+   Use the icon's actual file name in the `src` (`icon.webp` after step 3b — a
+   Markdown `src` has to name the real file).
    ⚠️ Use `align="top"` on the icon — `align="center"` renders ~7px low on
    GitHub. The icon sits **outside** the link, uses a **repo-relative** path
-   (`apps/<AppName>/icon.png`, never a `raw.githubusercontent.com` URL), and a
+   (`apps/<AppName>/icon.webp`, never a `raw.githubusercontent.com` URL), and a
    space separates it from the linked name.
 
    Then add the same entry to `README_CN.md` (the Chinese README linked from
@@ -411,11 +439,12 @@ change between apps.
 - [ ] version confirmed against the ipa (step 2f): `version_source = "ipa"` (with a comment) when the tag/filename differs, left out when it matches
 - [ ] ipa deleted afterwards
 - [ ] `apps/<AppName>/{config.toml, news.toml, icon.<ext>, images/*}` all present
-- [ ] `icon.png` (or `icon.webp`/`.jpg`, keeping the artwork's real format — both `icon_url` fields and the README heading point at the actual file) from the repo — the default light `AppIcon.png` from a `*.appiconset` when the repo has one — or from the ipa via `tools/ipa_icon.py` when the repo has none (re-check it did not land on `AppIcon-Dark.png`) — size checked, small size reported to the user
+- [ ] icon and screenshots converted to WebP (step 3b) **before** rendering news; every `icon_url`, README `src` and `[app] screenshots` entry names the `.webp` file
+- [ ] `icon.webp` from the repo — the default light `AppIcon.png` from a `*.appiconset` when the repo has one — or from the ipa via `tools/ipa_icon.py` when the repo has none (re-check it did not land on `AppIcon-Dark.png`) — size checked, small size reported to the user
 - [ ] icon/screenshots hosted locally and referenced via `bebound/AltGallery` raw URLs (never the source's remote URLs)
 - [ ] only iPhone-sized screenshots downloaded (portrait, ratio ~1.7–2.2) — filtered by pixel dimensions, never by viewing the images
-- [ ] screenshots neither analyzed nor cropped nor culled; every candidate kept under its original filename and listed for the user to pick and rename
-- [ ] user-supplied screenshots left untouched — original filenames and formats, referenced as-is in `[app] screenshots`
+- [ ] screenshots neither analyzed nor cropped nor culled; every candidate kept under its original stem (now `.webp`) and listed for the user to pick and rename
+- [ ] user-supplied screenshots kept under their original names and converted to WebP with everything else, referenced as `.webp` in `[app] screenshots`
 - [ ] `apps.json` regenerated after the last config change; never hand-edited; gitignored (not committed)
 - [ ] `all-apps.json` NOT touched — CI workflow regenerates and commits it
 - [ ] `images/news.webp` rendered; not auto-committed

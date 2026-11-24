@@ -1,6 +1,6 @@
 ---
 name: update-app
-description: Handle a repo migration or app rename for an app already in AltGallery. The user supplies the existing app folder name and the new repo URL; Claude moves the folder with git mv (preserving history), re-extracts the project metadata from the new repo (AltStore source / README / release ipa — description, subtitle, bundle id, developer, icon, screenshots), re-checks the tag/filename-derived version against the release ipa (version_source = ipa when they differ), updates config.toml (repo, URLs, tint, min_os_version, asset_pattern), deletes and rewrites news.toml from the template when the icon changed (none of the old color pins survive the new artwork) or updates it in place when it did not, always re-renders images/news.webp, regenerates apps.json, and updates the README entry. Use when an app's GitHub repo moves to a new owner/repo, the app is renamed, or both.
+description: Handle a repo migration or app rename for an app already in AltGallery. The user supplies the existing app folder name and the new repo URL; Claude moves the folder with git mv (preserving history), re-extracts the project metadata from the new repo (AltStore source / README / release ipa — description, subtitle, bundle id, developer, icon, screenshots), converts the icon and screenshots to WebP before re-rendering news, re-checks the tag/filename-derived version against the release ipa (version_source = ipa when they differ), updates config.toml (repo, URLs, tint, min_os_version, asset_pattern), deletes and rewrites news.toml from the template when the icon changed (none of the old color pins survive the new artwork) or updates it in place when it did not, always re-renders images/news.webp, regenerates apps.json, and updates the README entry. Use when an app's GitHub repo moves to a new owner/repo, the app is renamed, or both.
 ---
 
 # Updating an App: Repo Migration or Rename
@@ -114,21 +114,24 @@ which app was meant.
      light `AppIcon.png`**, not the `AppIcon-Dark.png` / `AppIcon-Tinted.png`
      appearance variants — see `/add-app` step 3, which spells the rule and the
      download out; the same applies to a repo `Logo.png` that is white-on-
-     transparent. If the new repo has none, keep the existing
-     `icon.png` — it is still the app's artwork — rather than falling back to
-     the small loose ipa icon; only use `uv run tools/ipa_icon.py` when the
-     existing icon is missing or obviously stale.
+     transparent. If the new repo has none, keep the existing `icon.webp` — it
+     is still the app's artwork — rather than falling back to the small loose
+     ipa icon; only use `uv run tools/ipa_icon.py` when the existing icon is
+     missing or obviously stale (then convert it too).
    - **Screenshots:** download the new repo's screenshots when it has them;
      otherwise keep the existing local screenshots (still valid, already
      hosted here). If there are none at all, warn at the end exactly as
-     `/add-app` step 10 requires. Take **only iPhone-sized shots** (portrait,
+     `/add-app` step 10 requires. Convert the artwork to WebP after the
+     download (`/add-app` step 3b): `uv run tools/to_webp.py
+     apps/<NewName>/icon.png apps/<NewName>/images/*`, the icon **before** the
+     news render. Take **only iPhone-sized shots** (portrait,
      height/width roughly 1.7–2.2 — 750×1334, 1170×2532, 1179×2556,
      1290×2796; not iPad 4:3, landscape or Android captures), filtered by
      pixel dimensions with Pillow (`Image.open(p).size`, already a repo tool
      dependency — see `AGENTS.md` → Screenshots for the one-liner), and
      **never view, describe, compare or crop them** — the user picks the
      suitable shots and renames them, so keep every candidate under its
-     original filename and list them in the final summary.
+     original stem (now `.webp`) and list them in the final summary.
    - Copy assets into `apps/<NewName>/` and reference them through the
      `bebound/AltGallery` raw URLs — never point `config.toml` at the source's
      remote URLs.
@@ -185,8 +188,8 @@ which app was meant.
    is new they cannot be trusted.
 
    - **Icon updated** (step 3 replaced `icon.png` from the new repo or via
-     `uv run tools/ipa_icon.py`): delete `news.toml` and write it fresh,
-     exactly like `/add-app` step 6 — copy `apps/PiliPlus/news.toml` (it
+     `uv run tools/ipa_icon.py`, then converted to `icon.webp`): delete
+     `news.toml` and write it fresh, exactly like `/add-app` step 6 — copy `apps/PiliPlus/news.toml` (it
      documents every optional `[colors]` key as a comment), keep every
      `[colors]` key commented out so all colors auto-derive from the new icon,
      and change only `name`, `tagline`, and the header `--out apps/<NewName>`
@@ -339,6 +342,7 @@ PY
 - [ ] tag/filename-derived version re-checked against the new repo's release ipa; `version_source = "ipa"` added, kept, or dropped to match
 - [ ] icon refreshed from the new repo when available; existing icon kept when not
 - [ ] new screenshots downloaded when available; existing kept otherwise; missing screenshots warned about
+- [ ] icon/screenshots converted to WebP before the news render; `icon_url`, README `src` and `[app] screenshots` name the `.webp` files
 - [ ] only iPhone-sized screenshots downloaded (portrait, ratio ~1.7–2.2), filtered by pixel dimensions — never viewed, analyzed or cropped; candidates listed for the user to pick and rename
 - [ ] `config.toml`: repo, source/app names, developer, URLs, tint, min OS and `[versions]` patterns all updated; every `apps/<OldName>/` URL gone
 - [ ] `news.toml`: deleted and rewritten from the template when the icon changed (no old pins carried over); updated in place otherwise; name, tagline, header path and commented "current result" palette current
