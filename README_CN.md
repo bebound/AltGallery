@@ -115,6 +115,9 @@ iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱——基于 worse_que
 ### <img src="apps/GestaltX/icon.png" alt="GestaltX icon" width="24" align="top"> <a href="https://github.com/huamidev/GestaltX">GestaltX</a>
 面向 iOS 27 的 MobileGestalt 编辑器——区域代码调整、设备预设、能力开关与带类型的 plist 字段编辑器，支持备份。
 
+### <img src="apps/GlobalRefresh/icon.webp" alt="GlobalRefresh icon" width="24" align="top"> <a href="https://github.com/Yoroin/GlobalRefresh-PiP">GlobalRefresh</a>
+基于 iOS 画中画的悬浮窗高刷辅助工具——后台保活与完全隐藏，适配 iOS 15–27。
+
 ### <img src="apps/HermesEnabler/icon.png" alt="HermesEnabler icon" width="24" align="top"> <a href="https://github.com/pookjw/HermesEnabler">HermesEnabler</a>
 在任意 Apple Watch 上启用 Hermès 表盘——另含 Ultra 表盘以及手表端显示、传感器与 Siri 调整。需要 watchOS 27.0–27.3 beta 1。
 

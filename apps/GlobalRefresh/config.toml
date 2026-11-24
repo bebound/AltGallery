@@ -1,0 +1,43 @@
+# altgen config for the GlobalRefresh AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Yoroin/GlobalRefresh-PiP"
+
+[source]
+name = "GlobalRefresh"
+subtitle = "GlobalRefresh AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for GlobalRefresh"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/icon.webp"
+website = "https://github.com/Yoroin/GlobalRefresh-PiP"
+tint_color = "#177FFD"
+
+[app]
+name = "GlobalRefresh"
+bundle_identifier = "com.yoroin.globalrefresh"
+developer_name = "Yoroin"
+subtitle = "基于 iOS 画中画的悬浮窗高刷辅助工具"
+description = "基于 iOS 画中画的悬浮窗工具，可辅助解锁 ProMotion 120Hz 表现，支持自定义悬浮窗大小（可完全隐藏）、后台保活以及多悬浮窗共存。适配 iOS 15–27。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/frame_rate.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/tutorial-step-1.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/tutorial-step-2.webp",
+]
+tint_color = "#177FFD"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): release assets are GlobalRefresh_<version>_<build>_unsigned.ipa
+asset_pattern = "GlobalRefresh_.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GlobalRefresh/images/news.webp"
+
+[output]
+path = "apps.json"
