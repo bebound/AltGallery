@@ -1304,11 +1304,11 @@
       "tintColor": "#151619",
       "versions": [
         {
-          "version": "0.1.0",
-          "date": "2026-11-23T20:24:59Z",
-          "localizedDescription": "**Full Changelog**: https://github.com/huami1314/orca-ios/commits/v0.1.0",
-          "downloadURL": "https://gh-proxy.com/https://github.com/huami1314/orca-ios/releases/download/v0.1.0/Orca-iOS-v0.1.0-unsigned.ipa",
-          "size": 14691056,
+          "version": "0.1.2",
+          "date": "2026-11-24T07:00:40Z",
+          "localizedDescription": "**Full Changelog**: https://github.com/huami1314/orca-ios/compare/v0.1.1...v0.1.2",
+          "downloadURL": "https://gh-proxy.com/https://github.com/huami1314/orca-ios/releases/download/v0.1.2/Orca-iOS-v0.1.2-unsigned.ipa",
+          "size": 14888486,
           "minOSVersion": "26.0"
         }
       ]
@@ -1988,6 +1988,17 @@
   ],
   "news": [
     {
+      "appID": "com.thm.orcaios",
+      "title": "Orca 0.1.2 · 24 Nov 2026",
+      "identifier": "Orca-release-v0.1.2",
+      "caption": "Orca 0.1.2 is available.",
+      "date": "2026-11-24T07:00:40Z",
+      "tintColor": "#151619",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/huami1314/orca-ios/releases/tag/v0.1.2"
+    },
+    {
       "appID": "io.nekohasekai.screensharing",
       "title": "Open Screen Sharing 1.0.10 · 24 Nov 2026",
       "identifier": "Open Screen Sharing-release-v1.0.10",
@@ -2008,17 +2019,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ARMSX2/images/news.webp",
       "notify": true,
       "url": "https://github.com/ARMSX2/ARMSX2/releases/tag/nightly-20261123"
-    },
-    {
-      "appID": "com.thm.orcaios",
-      "title": "Orca 0.1.0 · 23 Nov 2026",
-      "identifier": "Orca-release-v0.1.0",
-      "caption": "Orca 0.1.0 is available.",
-      "date": "2026-11-23T20:24:59Z",
-      "tintColor": "#151619",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orca/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/huami1314/orca-ios/releases/tag/v0.1.0"
     },
     {
       "appID": "app.local.iPadn",
