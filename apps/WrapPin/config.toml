@@ -1,0 +1,44 @@
+# altgen config for the WrapPin AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "suversal/WrapPin"
+
+[source]
+name = "WrapPin"
+subtitle = "WrapPin AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for WrapPin"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/icon.webp"
+website = "https://github.com/suversal/WrapPin"
+tint_color = "#0E254C"
+
+[app]
+name = "WrapPin"
+bundle_identifier = "com.suversal.wrappin"
+developer_name = "suversal"
+subtitle = "本机虚拟定位与步行路线测试工具"
+description = "WrapPin 是 Sean Howarth 原项目 Roam Control 的非官方社区中文分支，可通过设备配对在 iPhone 上选择固定位置、模拟步行或驾车路线，并在停止时恢复真实位置。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/images/fixed-location.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/images/walking-active.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/images/settings.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/images/privacy.webp",
+]
+tint_color = "#1060F0"
+min_os_version = "18.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release ships a Standard and a
+# Tunnel ipa — Standard is the SideStore-signable one we track.
+asset_pattern = "WrapPin-Standard-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -289,6 +289,9 @@ iOS 沙盒越权检测与侧载 IPA 审查工具——面向 iOS 26.2+ / iOS 27.
 ### <img src="apps/WQToolkit/icon.png" alt="WQToolkit icon" width="24" align="top"> <a href="https://github.com/MchinaMd57764/WQToolkit">WQToolkit</a>
 File browser and maintenance panel for your own app containers — browse, clean and inspect your data and App Groups without a jailbreak.
 
+### <img src="apps/WrapPin/icon.webp" alt="WrapPin icon" width="24" align="top"> <a href="https://github.com/suversal/WrapPin">WrapPin</a>
+本机虚拟定位与步行路线测试工具 — 通过设备配对在 iPhone 上固定位置、模拟步行或驾车路线，停止时恢复真实位置。
+
 ### <img src="apps/YouProEXTRA/icon.png" alt="YouProEXTRA icon" width="24" align="top"> <a href="https://github.com/mrdrvt99/YouProEXTRA">YouProEXTRA</a>
 YouTube mod with customizable tweaks — YouPro, YTLite and other modules bundled into one IPA builder.
 
