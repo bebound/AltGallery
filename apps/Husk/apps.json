@@ -2,7 +2,7 @@
   "name": "Husk",
   "subtitle": "Husk AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for Husk",
-  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/icon.png",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/icon.webp",
   "website": "https://github.com/Leviidev/Husk",
   "tintColor": "#5949E5",
   "apps": [
@@ -12,10 +12,10 @@
       "developerName": "Leviidev",
       "subtitle": "Android app launcher for iOS",
       "localizedDescription": "Run Android apps on iOS: drop in an APK, tap it, and the Android app opens full-screen on a QEMU guest with hardware-accelerated display and audio. Needs JIT plus a debugger attached at runtime, so it requires a sideloading setup that can provide get-task-allow rather than a plain re-sign.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/icon.png",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/icon.webp",
       "screenshots": [
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/main.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/settings.png"
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/main.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Husk/images/settings.webp"
       ],
       "tintColor": "#5949E5",
       "versions": [

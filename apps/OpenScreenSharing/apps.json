@@ -2,7 +2,7 @@
   "name": "Open Screen Sharing",
   "subtitle": "Open Screen Sharing AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for Open Screen Sharing",
-  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.png",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.webp",
   "website": "https://github.com/nekohasekai/open-screen-sharing",
   "tintColor": "#1060F0",
   "apps": [
@@ -12,9 +12,9 @@
       "developerName": "nekohasekai",
       "subtitle": "Remote desktop client optimized for Mac screen sharing",
       "localizedDescription": "Open Screen Sharing is a free and open-source remote desktop client optimized for Mac screen sharing and public networks, while also offering first-class support for standard VNC and RDP.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.png",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/icon.webp",
       "screenshots": [
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/session.png"
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/session.webp"
       ],
       "tintColor": "#1060F0",
       "versions": [

@@ -2,7 +2,7 @@
   "name": "OpenParsec",
   "subtitle": "OpenParsec AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for OpenParsec",
-  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.png",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.webp",
   "website": "https://github.com/hugeBlack/OpenParsec",
   "tintColor": "#BB01F0",
   "apps": [
@@ -12,9 +12,9 @@
       "developerName": "hugeBlack",
       "subtitle": "Open Parsec client for iOS/iPadOS",
       "localizedDescription": "An open-source Parsec client for iOS/iPadOS with mouse, keyboard, and touch-screen support.",
-      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.png",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/icon.webp",
       "screenshots": [
-        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/login.png"
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenParsec/images/login.webp"
       ],
       "tintColor": "#BB01F0",
       "versions": [

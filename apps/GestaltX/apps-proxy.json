@@ -2,7 +2,7 @@
   "name": "GestaltX",
   "subtitle": "GestaltX AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for GestaltX",
-  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/icon.png",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/icon.webp",
   "website": "https://github.com/huamidev/GestaltX",
   "tintColor": "#007AFF",
   "apps": [
@@ -12,9 +12,9 @@
       "developerName": "huamidev",
       "subtitle": "MobileGestalt editor for iOS 27 with region-code tweaks and presets",
       "localizedDescription": "A MobileGestalt editor for iOS 27.x with region-code and sales-region tweaks, device presets, backups, and a typed field editor. Powered by worse_query; requires iOS 27 for on-device MobileGestalt access and a common App Group when re-signing.",
-      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/icon.png",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/icon.webp",
       "screenshots": [
-        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/home.jpeg"
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GestaltX/images/home.webp"
       ],
       "tintColor": "#007AFF",
       "versions": [

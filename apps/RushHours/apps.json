@@ -2,7 +2,7 @@
   "name": "Rush Hours",
   "subtitle": "Rush Hours AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for Rush Hours",
-  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.png",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.webp",
   "website": "https://github.com/ekomlenovic/rush_hour_ios_android",
   "tintColor": "#E5A019",
   "apps": [
@@ -12,12 +12,12 @@
       "developerName": "ekomlenovic",
       "subtitle": "Slide the cars, free the red one.",
       "localizedDescription": "A free sliding-block traffic puzzle: slide the cars and trucks along their lanes to drive the red car out. 700+ campaign levels, daily and weekly challenges, a level creator and optional self-hosted multiplayer — no ads, no in-app purchases, no tracking.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.png",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/icon.webp",
       "screenshots": [
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/gameplay.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/map.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/daily.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/creator.png"
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/gameplay.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/map.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/daily.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/creator.webp"
       ],
       "tintColor": "#E5A019",
       "versions": [

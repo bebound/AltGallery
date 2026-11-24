@@ -2,7 +2,7 @@
   "name": "Stats",
   "subtitle": "Stats AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for Stats",
-  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/icon.png",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/icon.webp",
   "website": "https://github.com/ishtiaq156/stats",
   "tintColor": "#2090F0",
   "apps": [
@@ -12,9 +12,9 @@
       "developerName": "ishtiaq156",
       "subtitle": "Your Mac's activity, at a glance",
       "localizedDescription": "View your Mac's system activity on iPhone over a local encrypted connection. A native, local-first system monitor with a lightweight Mac companion and a mobile dashboard.",
-      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/icon.png",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/icon.webp",
       "screenshots": [
-        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/link.jpeg"
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Stats/images/link.webp"
       ],
       "tintColor": "#2090F0",
       "versions": [

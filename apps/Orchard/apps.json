@@ -2,7 +2,7 @@
   "name": "Orchard",
   "subtitle": "Orchard AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for Orchard",
-  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/icon.png",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/icon.webp",
   "website": "https://github.com/MakrSas/orchard-ios",
   "tintColor": "#F0C060",
   "apps": [
@@ -12,9 +12,9 @@
       "developerName": "MakrSas",
       "subtitle": "Apple Silicon macOS Ventura running inside an iPhone app",
       "localizedDescription": "Boots a real arm64 macOS Ventura guest on iPhone through Apple's own chain (AVPBooter, iBoot and XNU) on QEMU's apple-vm machine, with the GPU drawn through Metal by reims-vgpu. Requires JIT, a signing tool that adds the increased memory limit, and a macOS VM you make yourself. It is slow — light scenes reach 30–40 fps at best.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/icon.png",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/icon.webp",
       "screenshots": [
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/images/main.png"
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Orchard/images/main.webp"
       ],
       "tintColor": "#F0C060",
       "versions": [

@@ -2,7 +2,7 @@
   "name": "Iridium",
   "subtitle": "Iridium AltStore source by AltGallery & AltGen",
   "description": "Auto-updated AltStore source for Iridium",
-  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/icon.png",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/icon.webp",
   "website": "https://github.com/intraducine/iridium",
   "tintColor": "#1C1C1E",
   "apps": [
@@ -12,10 +12,10 @@
       "developerName": "intraducine",
       "subtitle": "Experimental Windows-game runtime for iPhone and iPad",
       "localizedDescription": "An experimental iPhone and iPad Windows-game runtime, with a native game library and touch, keyboard, mouse, and controller integration. Requires iOS 18+, JIT, and your own game files; compatibility varies by game and device.",
-      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/icon.png",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/icon.webp",
       "screenshots": [
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/all-games.png",
-        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/settings.png"
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/all-games.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Iridium/images/settings.webp"
       ],
       "tintColor": "#1C1C1E",
       "versions": [
