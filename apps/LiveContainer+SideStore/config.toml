@@ -33,7 +33,7 @@ include_prereleases = true
 # and LiveContainer+SideStore.ipa, so narrow to the SideStore bundle.
 asset_pattern = "LiveContainer\\+SideStore\\.ipa$"
 # include nightly version and stable version
-max_versions = 2
+max_versions = 1
 version_source = "ipa"
 
 [news]
