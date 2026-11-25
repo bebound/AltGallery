@@ -271,5 +271,9 @@
   "org.d2rmobile.app": {
     "subtitle": "在 iPhone 和 iPad 上玩《暗黑破坏神 II：狱火重生》",
     "description": "在 iPhone 和 iPad 上离线玩《暗黑破坏神 II：狱火重生》，支持触屏或手柄操作。需自备 Nintendo Switch 游戏文件——应用本身不包含任何游戏内容。"
+  },
+  "org.spotube.spotube.Spotube": {
+    "subtitle": "跨平台开源音乐流媒体应用",
+    "description": "一个跨平台、可扩展的开源音乐流媒体平台。通过社区插件接入你自己的音乐元数据、歌单与音频源，支持时间同步歌词与曲目下载，不收集遥测或用户数据。"
   }
 }

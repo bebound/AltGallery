@@ -295,6 +295,9 @@ iOS 端本地应用签名与安装工具 — Feather 分支，附带插件管理
 ### <img src="apps/SimpleLive/icon.webp" alt="Simple Live icon" width="24" align="top"> <a href="https://github.com/June6699/dart_simple_live">Simple Live</a>
 支持弹幕与 IPTV 的开源多平台直播聚合播放器——基于 Flutter，同一套代码覆盖手机、桌面与电视端。
 
+### <img src="apps/Spotube/icon.webp" alt="Spotube icon" width="24" align="top"> <a href="https://github.com/team-spotube/spotube">Spotube</a>
+跨平台开源音乐流媒体应用——通过插件接入你自己的音乐源，支持时间同步歌词与离线下载。
+
 ### <img src="apps/Stats/icon.webp" alt="Stats icon" width="24" align="top"> <a href="https://github.com/ishtiaq156/stats">Stats</a>
 一眼看到 Mac 的状态——通过加密的本地连接查看系统活动，配轻量的 Mac 端。
 

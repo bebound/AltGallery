@@ -1,0 +1,52 @@
+# altgen config for the Spotube AltStore source.
+# Run: uvx altgen -c config.toml
+# Spotube: cross-platform open-source music streaming app (Compose Multiplatform)
+
+[github]
+repo = "team-spotube/spotube"
+
+[source]
+name = "Spotube"
+subtitle = "Spotube AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Spotube"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Spotube/icon.webp"
+website = "https://github.com/team-spotube/spotube"
+tint_color = "#4C7EEB"
+
+[app]
+name = "Spotube"
+bundle_identifier = "org.spotube.spotube.Spotube"
+developer_name = "team-spotube"
+subtitle = "Cross-platform open-source music streaming app"
+description = "A cross-platform, extensible open-source music streaming platform. Bring your own music metadata, playlists and audio sources through community plugins, with time-synced lyrics, downloadable tracks and no telemetry or user data collection."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Spotube/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Spotube/images/phone-1.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Spotube/images/phone-2.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Spotube/images/phone-3.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Spotube/images/phone-4.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Spotube/images/phone-5.webp",
+]
+tint_color = "#4C7EEB"
+min_os_version = "18.2"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# The iOS bundle never stamps a version: Info.plist has no
+# CFBundleShortVersionString override and the xcode project sets no
+# MARKETING_VERSION, so every ipa reports a constant "1.0" (build 1) while the
+# release tags carry the real version (v6.0.0 here, matching the Gradle
+# `version = "6.0.0"`). Read the version from the tag, not the ipa.
+version_pattern = "^v?(\\d+\\.\\d+\\.\\d+)"
+# The ipa asset was renamed from Spotube-iOS.ipa to Spotube-ios.ipa, so match
+# any ipa rather than one exact file name.
+asset_pattern = ".*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Spotube/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -295,6 +295,9 @@ Untethered alternative app store for iOS — resigns and installs IPAs with your
 ### <img src="apps/SimpleLive/icon.webp" alt="Simple Live icon" width="24" align="top"> <a href="https://github.com/June6699/dart_simple_live">Simple Live</a>
 支持弹幕与 IPTV 的开源多平台直播聚合播放器——基于 Flutter，同一套代码覆盖手机、桌面与电视端。
 
+### <img src="apps/Spotube/icon.webp" alt="Spotube icon" width="24" align="top"> <a href="https://github.com/team-spotube/spotube">Spotube</a>
+Cross-platform open-source music streaming app — plugin-powered music sources, time-synced lyrics and offline downloads.
+
 ### <img src="apps/Stats/icon.webp" alt="Stats icon" width="24" align="top"> <a href="https://github.com/ishtiaq156/stats">Stats</a>
 Your Mac's activity, at a glance — a local-first system monitor over an encrypted local connection, with a lightweight Mac companion.
 
