@@ -205,6 +205,9 @@ All-in-one retro game emulator for iOS, with a clean interface and broad platfor
 ### <img src="apps/MD3Music-iOS/icon.webp" alt="MD3Music icon" width="24" align="top"> <a href="https://github.com/EPXiaohua/MD3Music-iOS">MD3Music</a>
 基于酷狗音乐 API 的 Material 3 音乐播放器 — 内置嵌入式 Rust API 服务器，支持逐字歌词与多种音频输出。
 
+### <img src="apps/Melee-PC/icon.webp" alt="Melee-PC icon" width="24" align="top"> <a href="https://github.com/999sian/melee-pc">Melee-PC</a>
+Native port of Super Smash Bros. Melee — bring your own dump of the original game disc to play.
+
 ### <img src="apps/MeloX/icon.webp" alt="MeloX icon" width="24" align="top"> <a href="https://github.com/youshen2/MeloX">MeloX</a>
 使用 SwiftUI 开发的网易云音乐第三方客户端——面向 iPhone、iPad、Mac 与 Apple Watch 的原生播放器。
 

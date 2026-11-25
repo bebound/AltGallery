@@ -1,0 +1,46 @@
+# altgen config for the Melee-PC AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "999sian/melee-pc"
+
+[source]
+name = "Melee-PC"
+subtitle = "Melee-PC AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Melee-PC"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/icon.webp"
+website = "https://github.com/999sian/melee-pc"
+tint_color = "#F08040"
+
+[app]
+name = "Melee-PC"
+bundle_identifier = "dev.melee.melee-pc.KMT3995P5V"
+developer_name = "999sian"
+subtitle = "Native port of Super Smash Bros. Melee"
+description = "A native port of Super Smash Bros. Melee (NTSC-U 1.02) built from the decompilation project, with modern rendering and quality-of-life options. You must provide your own dump of the original game disc to play; no game data is included."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/title.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/character-select.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/gameplay-4p.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/launcher.webp",
+]
+# Sampled from the icon's dominant orange accent on its dark background.
+tint_color = "#F08040"
+# MinimumOSVersion of the shipped 0.4.2 ipa.
+min_os_version = "14.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release also ships Android, Linux,
+# macOS and Windows builds — match only the iOS ipa.
+asset_pattern = "Melee-iOS-arm64\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/news.webp"
+
+[output]
+path = "apps.json"
