@@ -109,6 +109,9 @@ Original Xbox emulation for iOS, built from xemu with a native Swift interface.
 ### <img src="apps/Dusklight/icon.webp" alt="Dusklight icon" width="24" align="top"> <a href="https://github.com/TwilitRealm/dusklight">Dusklight</a>
 A native port of a classic adventure — a reverse-engineered reimplementation of Twilight Princess, with modern rendering and flexible controls. Bring your own game dump.
 
+### <img src="apps/Dylix/icon.webp" alt="Dylix icon" width="24" align="top"> <a href="https://github.com/yangokok886/dylix">Dylix</a>
+iPhone / iPad 上的 AI 插件开发工作台——内嵌 Clang / LLD 与 Logos 在设备本机编译 dylib 与 deb，并支持 GitHub / Gitee 同步与二进制分析。
+
 ### <img src="apps/EhPanda/icon.webp" alt="EhPanda icon" width="24" align="top"> <a href="https://github.com/EhPanda-Team/EhPanda">EhPanda</a>
 An unofficial E-Hentai App for iOS built with SwiftUI & TCA.
 

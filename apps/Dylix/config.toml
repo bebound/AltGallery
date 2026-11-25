@@ -1,0 +1,47 @@
+# altgen config for the Dylix AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "yangokok886/dylix"
+
+[source]
+name = "Dylix"
+subtitle = "Dylix AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Dylix"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/icon.webp"
+website = "https://github.com/yangokok886/dylix"
+tint_color = "#F0D080"
+
+[app]
+name = "Dylix"
+bundle_identifier = "com.xuegao.theosmobilecompiler"
+developer_name = "yangokok886"
+subtitle = "iPhone / iPad 上的 AI 插件开发工作台"
+description = "原生 iOS 插件开发工作台：在手机上管理源码、编辑代码，调用内嵌 Clang / LLD 和 Logos 生成本机编译的 dylib 与 deb；AI 助手可按权限读取头文件、解释代码并修改项目。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/projects.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/editor.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/chat.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/files.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/artifacts.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/git.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/settings.webp",
+]
+tint_color = "#F0D080"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): releases also ship source zips,
+# dylibs and debs, so match the app ipa name only.
+asset_pattern = "Dylix-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/news.webp"
+
+[output]
+path = "apps.json"
