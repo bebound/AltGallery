@@ -271,6 +271,9 @@ On-device iOS app signer and installer — a Feather fork with a tweak manager, 
 ### <img src="apps/SceneBox/icon.webp" alt="SceneBox icon" width="24" align="top"> <a href="https://github.com/donbytyqi/scenebox">SceneBox</a>
 Torrent streaming client for iOS, iPadOS, tvOS and Mac (Catalyst), written in SwiftUI.
 
+### <img src="apps/Shirox/icon.webp" alt="Shirox icon" width="24" align="top"> <a href="https://github.com/xibrox/Shirox">Shirox</a>
+Personal anime and manga library manager for iOS — track with AniList and MyAnimeList, and play from your own sources on iPhone, iPad and Mac.
+
 ### <img src="apps/SideStore/icon.webp" alt="SideStore icon" width="24" align="top"> <a href="https://github.com/SideStore/SideStore">SideStore</a>
 Untethered alternative app store for iOS — resigns and installs IPAs with your own Apple ID and refreshes them in the background, no AltServer.
 

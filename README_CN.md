@@ -271,6 +271,9 @@ iOS 端本地应用签名与安装工具 — Feather 分支，附带插件管理
 ### <img src="apps/SceneBox/icon.webp" alt="SceneBox icon" width="24" align="top"> <a href="https://github.com/donbytyqi/scenebox">SceneBox</a>
 面向 iOS、iPadOS、tvOS 与 Mac（Catalyst）的种子串流客户端，使用 SwiftUI 编写。
 
+### <img src="apps/Shirox/icon.webp" alt="Shirox icon" width="24" align="top"> <a href="https://github.com/xibrox/Shirox">Shirox</a>
+面向 iOS 的个人动漫与漫画库管理器——通过 AniList 和 MyAnimeList 追踪进度，并从你连接的来源在 iPhone、iPad 与 Mac 上播放。
+
 ### <img src="apps/SideStore/icon.webp" alt="SideStore icon" width="24" align="top"> <a href="https://github.com/SideStore/SideStore">SideStore</a>
 面向 iOS 的免数据线第三方应用商店——用个人 Apple ID 重签名并安装 IPA，并在后台自动续签，无需 AltServer。
 

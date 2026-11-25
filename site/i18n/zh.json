@@ -251,5 +251,9 @@
   "com.nuvio.media": {
     "subtitle": "接入自有片源的开源媒体客户端",
     "description": "免费开源的媒体应用，把你自己添加的片源整理成一个媒体库，自动匹配海报、评分与字幕，并在手机、桌面与电视之间同步你的播放进度。基于 Kotlin Multiplatform 与 Compose Multiplatform 开发，需要 iOS 16.1 或更高版本。"
+  },
+  "com.shirox.app": {
+    "subtitle": "面向 iOS 的个人动漫与漫画库管理器",
+    "description": "免费、源码可得的库管理器，适用于 iPhone、iPad 和 Mac。追踪你的观看与阅读进度，与 AniList 和 MyAnimeList 同步，并从你连接的来源播放。"
   }
 }
