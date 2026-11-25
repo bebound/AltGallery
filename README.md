@@ -97,6 +97,9 @@ Imageboard browser for iOS and Android — a Flutter client with multi-column la
 ### <img src="apps/Cloudn/icon.webp" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
 网盘分享与短视频高速解析下载 — 支持 19+ 网盘、近 50 个短视频与图集平台，解析全部在手机本地完成。
 
+### <img src="apps/D2RMobile/icon.webp" alt="D2R Mobile icon" width="24" align="top"> <a href="https://github.com/d2r-mobile/d2r-mobile">D2R Mobile</a>
+Play Diablo II: Resurrected on iPhone and iPad — offline with touch or controller, bring your own Switch game files.
+
 ### <img src="apps/Dartotsu/icon.webp" alt="Dartotsu icon" width="24" align="top"> <a href="https://github.com/aayush2622/Dartotsu">Dartotsu</a>
 Multiplatform anime and manga tracking client — a Flutter rewrite of Dantotsu that syncs AniList, MyAnimeList, Simkl, Kitsu, MangaBaka and MangaUpdates from one library.
 

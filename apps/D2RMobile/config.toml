@@ -1,0 +1,46 @@
+# altgen config for the D2RMobile AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "d2r-mobile/d2r-mobile"
+
+[source]
+name = "D2R Mobile"
+subtitle = "D2R Mobile AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for D2R Mobile"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/icon.webp"
+website = "https://github.com/d2r-mobile/d2r-mobile"
+tint_color = "#F09020"
+
+[app]
+name = "D2R Mobile"
+bundle_identifier = "org.d2rmobile.app"
+developer_name = "d2r-mobile"
+subtitle = "Play Diablo II: Resurrected on iPhone and iPad"
+description = "Play Diablo II: Resurrected offline on iPhone and iPad with touch or controller support. Bring your own Nintendo Switch game files — the app includes no game content."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/map.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/trove.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/score.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/tomb.webp",
+]
+tint_color = "#F09020"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Read the version from the ipa's Info.plist: the release tag is v1.0.1
+# while the ipa inside it reports 1.0 (build 1).
+version_source = "ipa"
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = "D2RMobile-shell\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/news.webp"
+
+[output]
+path = "apps.json"

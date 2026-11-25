@@ -1,0 +1,17 @@
+# render_news.py config: uv run tools/render_news.py --out apps/D2RMobile
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "D2R Mobile"
+tagline = "Diablo II: Resurrected\non iOS"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#F09020"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#F09020"      # bottom-right glow (default: [source] tint_color)
+# background = "#F7EEE0"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#FBF5EC"        # gradient mid stop (derived from background)
+# bg_dark = "#EADDC8"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#A77C46" # tagline text (derived from background)
