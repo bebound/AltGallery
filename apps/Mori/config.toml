@@ -1,0 +1,47 @@
+# altgen config for the Mori AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "coflyn/Mori"
+
+[source]
+name = "Mori"
+subtitle = "Mori AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Mori"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/icon.webp"
+website = "https://github.com/coflyn/Mori"
+tint_color = "#27282A"
+
+[app]
+name = "Mori"
+bundle_identifier = "com.mori.downloader"
+developer_name = "coflyn"
+subtitle = "Client-side media downloader for 16 platforms"
+description = "Save videos, photos and audio from TikTok, Instagram, YouTube, Twitter/X, Spotify, Apple Music, Pinterest, Facebook, Threads, Bandcamp, Pixiv, Bilibili, Douyin, RedNote, Reddit and TeraBox, with built-in tools for stream sniffing, audio extraction, image conversion and PDF compression. Everything runs on-device — no accounts, ads or tracking."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/1.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/2.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/3.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/4.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/5.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/6.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/7.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/8.webp",
+]
+tint_color = "#27282A"
+min_os_version = "14.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob); each release ships Mori-v<version>-iOS-Unsigned.ipa beside an apk
+asset_pattern = ".*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/news.webp"
+
+[output]
+path = "apps.json"

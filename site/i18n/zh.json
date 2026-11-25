@@ -239,5 +239,9 @@
   "com.ipaside.escapeos": {
     "subtitle": "设备端浏览与备份其他应用 Data 容器的工具",
     "description": "无需越狱即可在设备上浏览、编辑、备份并恢复其他应用的 Data 容器（Documents、Library、tmp）：支持文件复制与压缩/解压（zip、7z、tar、gz、bz2、xz、lz4、lzma、deb）、查看 SQLite 数据库，并为每份备份生成 SHA-256 清单。需要 iOS 26.0 或更高版本、LocalDevVPN，以及 iPASide 写入的配对文件。"
+  },
+  "com.mori.downloader": {
+    "subtitle": "支持 16 个平台的本地媒体下载器",
+    "description": "从 TikTok、Instagram、YouTube、Twitter/X、Spotify、Apple Music、Pinterest、Facebook、Threads、Bandcamp、Pixiv、Bilibili、抖音、小红书、Reddit 与 TeraBox 保存视频、图片和音频，并内置流嗅探、音频提取、图片转换与 PDF 压缩工具。全部在设备本地运行——无需账号、无广告、无追踪。"
   }
 }

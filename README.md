@@ -214,6 +214,9 @@ Free Navidrome client & Subsonic music player with an Apple Music-inspired inter
 ### <img src="apps/MiniWatts/icon.webp" alt="MiniWatts icon" width="24" align="top"> <a href="https://github.com/ResistanceTo/MiniWatts">MiniWatts</a>
 Battery, charging and thermal instrument — what the charger delivers, how much reaches the cell, where the rest goes as heat, and every temperature sensor.
 
+### <img src="apps/Mori/icon.webp" alt="Mori icon" width="24" align="top"> <a href="https://github.com/coflyn/Mori">Mori</a>
+Client-side media downloader for 16 platforms — watermark-free videos, photos and audio saved on-device, with a built-in stream sniffer, audio extractor and PDF tools.
+
 ### <img src="apps/Mornye/icon.webp" alt="Mornye icon" width="24" align="top"> <a href="https://github.com/mornyeapp/Mornye">Mornye</a>
 Hi-res music player with downloads — a Flutter and Rust player with bit-perfect output, synced lyrics and streaming from SMB, WebDAV or Subsonic.
 

@@ -214,6 +214,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <img src="apps/MiniWatts/icon.webp" alt="MiniWatts icon" width="24" align="top"> <a href="https://github.com/ResistanceTo/MiniWatts">MiniWatts</a>
 电池、充电与温度测量工具——显示充电器的输出、有多少真正进入电芯、其余化为热量，以及手机上的每一个温度传感器。
 
+### <img src="apps/Mori/icon.webp" alt="Mori icon" width="24" align="top"> <a href="https://github.com/coflyn/Mori">Mori</a>
+支持 16 个平台的本地媒体下载器——无水印保存视频、图片与音频，自带流嗅探、音频提取与 PDF 处理工具。
+
 ### <img src="apps/Mornye/icon.webp" alt="Mornye icon" width="24" align="top"> <a href="https://github.com/mornyeapp/Mornye">Mornye</a>
 支持下载的高解析音乐播放器——Flutter 与 Rust 打造，位完美输出、滚动歌词，还可从 SMB、WebDAV 或 Subsonic 串流。
 
