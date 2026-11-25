@@ -1,0 +1,46 @@
+{
+  "name": "Photos Backup",
+  "subtitle": "Photos Backup AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Photos Backup",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/icon.webp",
+  "website": "https://github.com/g8row/PhotosBackup",
+  "tintColor": "#2080F0",
+  "apps": [
+    {
+      "name": "Photos Backup",
+      "bundleIdentifier": "com.g8row.photosbackup",
+      "developerName": "g8row",
+      "subtitle": "On-device Google Photos backup",
+      "localizedDescription": "An experimental, fully on-device iPhone app for backing up selected photos, videos, and albums to Google Photos.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/activity.webp"
+      ],
+      "tintColor": "#2080F0",
+      "versions": [
+        {
+          "version": "0.3.8",
+          "date": "2026-11-10T17:28:17Z",
+          "localizedDescription": "## New\n\n- **Keep Running in Background.** On by default, in **Settings → Background**. While a backup has work iOS won't move on its own, the app keeps itself from being suspended the way SideStore does, by playing silence mixed with whatever else is playing. No permission is needed, and the backup keeps going with the app closed or the phone locked. When the queue is done, after 12 hours, or if iOS interrupts it, it stops and the app sleeps again. If calls or music keep stopping it, switch **Method** to **Location**, which asks for location permission and uses coarse updates instead. ([#2](https://github.com/g8row/PhotosBackup/issues/2), [#41](https://github.com/g8row/PhotosBackup/pull/41))\n\n- **Backup keeps going after you leave the app (iOS 26), for real this time.** 0.3.7's IPA was built with Xcode 16.4, which left this feature out, so there was no Live Activity. Releases are now built with Xcode 26.3. ([#39](https://github.com/g8row/PhotosBackup/pull/39))\n\n- **An edited video's original is backed up too**, so the Google Photos app counts it, including Cinematic videos, which the camera saves as edited. ([#38](https://github.com/g8row/PhotosBackup/pull/38), thanks @saileshbro)\n\n- **Back Up Live Photo Motion is now on by default.** ([#38](https://github.com/g8row/PhotosBackup/pull/38))\n\n## Fixed\n\n- **The app forgot what it had already backed up.** ([#34](https://github.com/g8row/PhotosBackup/issues/34), [#22](https://github.com/g8row/PhotosBackup/issues/22), [#40](https://github.com/g8row/PhotosBackup/pull/40), thanks @josippapez) The app forgot every photo iOS reported as changed, and iOS reports a lot more than edits: favourites, albums, and the photo analysis it redoes on the whole library after an iOS update. One report had a single background window forget 36,615 backups. A photo is now only re-checked when its edit actually changed, and photos backed up before this release keep their record.\n\n- **Big backups are much lighter on CPU and disk.** ([#13](https://github.com/g8row/PhotosBackup/issues/13), [#34](https://github.com/g8row/PhotosBackup/issues/34), [#42](https://github.com/g8row/PhotosBackup/pull/42)) Uploads were hashing one file at a time, and the queue was rewritten to disk several times a second. That's what iOS was closing the app for in the reports. Hashing now runs alongside the uploads, and the queue is saved at most once a second.\n\n- **The screen stays on while a backup runs in the app** if Keep Running in Background is off. With it on, the phone can lock normally. ([#37](https://github.com/g8row/PhotosBackup/issues/37))\n\n- **The Activity tab is fast on big backups.** ([#8](https://github.com/g8row/PhotosBackup/issues/8), [#42](https://github.com/g8row/PhotosBackup/pull/42)) It drew a row for every item in the queue. It now shows what's in progress or failed, the next 20 and the last 50 finished, and says how many more there are.\n\n## Worth knowing\n\n- **If your progress already reset on 0.3.7**, the first launch may go over those photos once more. Most settle without uploading anything, and it shouldn't happen again.\n- **Keep Running in Background uses more battery**, and swiping the app away in the app switcher still stops it. Charging overnight is still the best time for a big backup.\n- The diagnostic report now has a **Keep-alive** line saying whether it was running.\n\n## Notes\n\n- 208 tests, 206 passing (2 opt-in live tests skipped).\n- Tested on iOS 26.5 and 18.6 simulators. Not tested on a device yet. If something is off, **Settings → Support → Create Diagnostic Report** and attach it to an issue.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/g8row/PhotosBackup/releases/download/0.3.8/PhotosBackup.ipa",
+          "size": 2816914,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.g8row.photosbackup",
+      "title": "Photos Backup 0.3.8 · 10 Nov 2026",
+      "identifier": "Photos Backup-release-0.3.8",
+      "caption": "Photos Backup 0.3.8 is available.",
+      "date": "2026-11-10T17:28:17Z",
+      "tintColor": "#2080F0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/g8row/PhotosBackup/releases/tag/0.3.8"
+    }
+  ]
+}

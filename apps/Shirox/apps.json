@@ -1,0 +1,48 @@
+{
+  "name": "Shirox",
+  "subtitle": "Shirox AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Shirox",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/icon.webp",
+  "website": "https://github.com/xibrox/Shirox",
+  "tintColor": "#1C1C1E",
+  "apps": [
+    {
+      "name": "Shirox",
+      "bundleIdentifier": "com.shirox.app",
+      "developerName": "xibrox",
+      "subtitle": "Personal anime and manga library manager for iOS",
+      "localizedDescription": "A free, source-available library manager for iPhone, iPad and Mac. Track what you watch and read, keep it in sync with AniList and MyAnimeList, and play it from the sources you connect.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/detail.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/library.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/player.webp"
+      ],
+      "tintColor": "#1C1C1E",
+      "versions": [
+        {
+          "version": "1.0.6",
+          "date": "2026-10-08T13:11:34Z",
+          "localizedDescription": "Discord: your status now goes out while something plays, not only once you pause, and it has a progress bar that follows seeks and playback speed. Titles played from Simkl show their season (\"Season 2 · Episode 5\"), and manga shows the same TV icon as anime. The status keeps working after the app was away for a while, and two token refreshes at once no longer sign you out of Discord without a word.\n\nSubtitles: every cue on screen is shown at once, so a long sign no longer hides the dialogue under it. Bottom Padding goes up to 400 pt, so subtitles can sit on the picture when you watch in portrait. The units on the Subtitles settings page are translated.\n\nSimkl: episodes of a title opened from Simkl can be downloaded and have their progress reset from their menu, like AniList episodes.\n\nShirox speaks Thai, in Settings › General › Change Language. The Started On and Finished On labels read as dates in every language, and the already downloaded and already queued toasts are translated.\n\nApp icons: Manga, a new home screen icon in Settings › General › App Icon.\n\nAlso: the player's subtitle settings and episode pickers take your accent color, holding the tab bar opens its menu on every tab when the bar minimizes on scroll, and a few spots that could crash on bad input from a server now handle it.\n\n\n**Downloads:** Shirox.ipa (iPhone, iPad), Shirox-macOS.dmg (Mac), Shirox-Catalyst.dmg (Mac, Catalyst build).",
+          "downloadURL": "https://github.com/xibrox/Shirox/releases/download/latest/Shirox.ipa",
+          "size": 27327422,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.shirox.app",
+      "title": "Shirox 1.0.6 · 08 Oct 2026",
+      "identifier": "Shirox-release-latest",
+      "caption": "Shirox 1.0.6 is available.",
+      "date": "2026-10-08T13:11:34Z",
+      "tintColor": "#1C1C1E",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/xibrox/Shirox/releases/tag/latest"
+    }
+  ]
+}

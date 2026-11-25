@@ -1,0 +1,45 @@
+{
+  "name": "Chance",
+  "subtitle": "Chance AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Chance",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/icon.webp",
+  "website": "https://github.com/moffatman/chan",
+  "tintColor": "#497C4A",
+  "apps": [
+    {
+      "name": "Chance",
+      "bundleIdentifier": "com.moffatman.chan",
+      "developerName": "Callum Moffat",
+      "subtitle": "Imageboard browser for iOS and Android",
+      "localizedDescription": "Chance is an imageboard browser built with Flutter for iOS and Android, with features like multi-column layout, media gallery, saved threads, filters, and archive support.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/images/main.webp"
+      ],
+      "tintColor": "#497C4A",
+      "versions": [
+        {
+          "version": "1.2.9",
+          "date": "2026-11-22T21:26:03Z",
+          "localizedDescription": "**You will not be able to downgrade from this version due to changes in the saved database format. Please backup before upgrading if you want to be able to downgrade**\r\n\r\n---\r\n\r\n## New Features\r\n\r\n- iPhone Duo interface\r\n  - Sidebar aligned with iOS standard\r\n  - Status bar handling\r\n  - New compact sidebar layout for different functions\r\n  - Swipe left/right at bottom of screen to switch tabs even with sidebar layout\r\n- AyaseQuart archive support\r\n- Rewrite of tree comment tracking\r\n  - For \"new posts inserted at bottom\" mode (default)\r\n  - Goal is that posts are never inserted into existing/scrolled-past trees\r\n  - Add the parent as a dimmed context in the inserted subtrees\r\n- Customizable filter highlight color\r\n  - Matched text is highlighted specifically\r\n- Text highlighting combines across multiple sources\r\n\r\n## General Improvements\r\n\r\n- Added video gestures and controls to soundposts\r\n- Better handling of Reddit login firewall\r\n  - Added alternative API to /morechildren\r\n- Added haptic feedback in a lot of places\r\n- Tweaks to the luck algorithm\r\n- Show usernames as Reddit quotelinks instead of identifiers (not relevant)\r\n- Long-press \"#\" button in search page to open a board/thread/comment by URL\r\n- Use alternative FoolFuuka search page to bypass server-side block\r\n- Rewrite archive handling\r\n  - Goal is that thread doesn't get stuck in archived mode\r\n- Optimized new tab board picker\r\n  - If closed without picking a board, the new tab will be closed too\r\n  - Appears instantly without flash of empty catalog\r\n- Added a long-press menu to cross-thread quotelinks\r\n- Drag to reorder saved threads in drawer (when sorting by order added)\r\n\r\n## Tweaks\r\n\r\n- Board switcher optimizations\r\n- Smarter selection of next tab after closing a tab\r\n- Format boards according to site in error messages\r\n- Optimized xenforo-based forum loading performance\r\n- Hero animation from rich link thumbnails\r\n- \"hn\" shortcut for Hacker News in board switcher\r\n- Optimized shorter thread indicator menu error messages\r\n- Don't insert (OP) quotelink on top level Reddit comments\r\n- Try to preserve Reddit title when thread is deleted\r\n- Rewrote search query pagination interface\r\n- Centered active thread in catalog instead of aligning to bottom\r\n- New style for selected threads to match tabs\r\n- Better support for cyclic/infinite threads on dvach and 8chan\r\n- Highlight currently selected board in board switcher\r\n\r\n## Bugfixes\r\n\r\n- Scrolling to top when tapping buttons at top of screen (iPad, iPhone Duo)\r\n- Timeout when trying to register with Firebase notifications\r\n- Gray screen flash in captcha popup\r\n- False-positive compatibility error due to cached GREASE TLS algorithms\r\n- Broken videos when swiping quickly on Reddit\r\n- Some boards on 8chan tried to post 5 images per post instead of 3\r\n- Potential fixes for \"App not responding\" on Android\r\n- (Dead) seen in quotelinks in search results\r\n- (OP) not seen in quotelink search results\r\n- Try to avoid stale site data when files per post changes\r\n- Newly discovered pages were not marked as unread\r\n- Missing handling for loading a forum post from an unloaded page\r\n- Attachment preloading errors popped up for background threads\r\n- Reloading threads could get stuck if switching tab during load\r\n- Post scroll position was not optimal when loading an earlier forum page\r\n- Poor handling of non-existent subreddits\r\n- Cancelling one http/2 request could break the others on the same connection\r\n- Reddit crossposts with quotes had broken OPs\r\n- Cloudflare could popup from reply box image suggestion requests\r\n- Edited posts not properly recognized as changed\r\n- Reddit threads could be come corrupted on boards with very high identifier values\r\n- Error loading reddit children could cause an improper alert popup\r\n- Replies count/button not shown in split tree scenario\r\n- Transient message popups had no height cap\r\n- Thread auto-update would try to extend deep comment chains\r\n  - Since this is now heavily restricted by Reddit, just refresh the thread root\r\n- new/unseen label always shown on unloaded comments on Reddit\r\n- Post highlighting transitioned at end of refresh instead of at beginning\r\n- Comment loading errors were not dismissible by tapping in the background\r\n- Posting on holotower gave an error message since PHP update\r\n- gelbooru image urls could not be loaded due to their hotlink protection\r\n- Reddit username /u/ prefix handling was not consistent\r\n- Non-favourited subreddits would disappear after 3 days\r\n- Many search query fields would not enable the search button when changing them\r\n- OP post always grew in height on load when discovering how many replies it had\r\n- Long search filters got cut off in the search history\r\n- Thread had to reload when switching between one/two pane layout\r\n- Rich links could get cut off when width was limited\r\n- QUIC and HTTP/3 crash fixes\r\n- Poor handling of some weird dvach sticky threads\r\n- Precaching attempted to download deleted files\r\n- Reordering watched threads from drawer broke in reverse-sort order",
+          "downloadURL": "https://github.com/moffatman/chan/releases/download/v1.2.9%2B126-forked-engine/Chance.ipa",
+          "size": 32818095,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.moffatman.chan",
+      "title": "Chance 1.2.9 · 22 Nov 2026",
+      "identifier": "Chance-release-v1.2.9+126-forked-engine",
+      "caption": "Chance 1.2.9 is available.",
+      "date": "2026-11-22T21:26:03Z",
+      "tintColor": "#497C4A",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/moffatman/chan/releases/tag/v1.2.9+126-forked-engine"
+    }
+  ]
+}

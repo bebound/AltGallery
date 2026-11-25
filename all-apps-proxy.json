@@ -399,6 +399,28 @@
       ]
     },
     {
+      "name": "Chance",
+      "bundleIdentifier": "com.moffatman.chan",
+      "developerName": "Callum Moffat",
+      "subtitle": "Imageboard browser for iOS and Android",
+      "localizedDescription": "Chance is an imageboard browser built with Flutter for iOS and Android, with features like multi-column layout, media gallery, saved threads, filters, and archive support.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/images/main.webp"
+      ],
+      "tintColor": "#497C4A",
+      "versions": [
+        {
+          "version": "1.2.9",
+          "date": "2026-11-22T21:26:03Z",
+          "localizedDescription": "**You will not be able to downgrade from this version due to changes in the saved database format. Please backup before upgrading if you want to be able to downgrade**\r\n\r\n---\r\n\r\n## New Features\r\n\r\n- iPhone Duo interface\r\n  - Sidebar aligned with iOS standard\r\n  - Status bar handling\r\n  - New compact sidebar layout for different functions\r\n  - Swipe left/right at bottom of screen to switch tabs even with sidebar layout\r\n- AyaseQuart archive support\r\n- Rewrite of tree comment tracking\r\n  - For \"new posts inserted at bottom\" mode (default)\r\n  - Goal is that posts are never inserted into existing/scrolled-past trees\r\n  - Add the parent as a dimmed context in the inserted subtrees\r\n- Customizable filter highlight color\r\n  - Matched text is highlighted specifically\r\n- Text highlighting combines across multiple sources\r\n\r\n## General Improvements\r\n\r\n- Added video gestures and controls to soundposts\r\n- Better handling of Reddit login firewall\r\n  - Added alternative API to /morechildren\r\n- Added haptic feedback in a lot of places\r\n- Tweaks to the luck algorithm\r\n- Show usernames as Reddit quotelinks instead of identifiers (not relevant)\r\n- Long-press \"#\" button in search page to open a board/thread/comment by URL\r\n- Use alternative FoolFuuka search page to bypass server-side block\r\n- Rewrite archive handling\r\n  - Goal is that thread doesn't get stuck in archived mode\r\n- Optimized new tab board picker\r\n  - If closed without picking a board, the new tab will be closed too\r\n  - Appears instantly without flash of empty catalog\r\n- Added a long-press menu to cross-thread quotelinks\r\n- Drag to reorder saved threads in drawer (when sorting by order added)\r\n\r\n## Tweaks\r\n\r\n- Board switcher optimizations\r\n- Smarter selection of next tab after closing a tab\r\n- Format boards according to site in error messages\r\n- Optimized xenforo-based forum loading performance\r\n- Hero animation from rich link thumbnails\r\n- \"hn\" shortcut for Hacker News in board switcher\r\n- Optimized shorter thread indicator menu error messages\r\n- Don't insert (OP) quotelink on top level Reddit comments\r\n- Try to preserve Reddit title when thread is deleted\r\n- Rewrote search query pagination interface\r\n- Centered active thread in catalog instead of aligning to bottom\r\n- New style for selected threads to match tabs\r\n- Better support for cyclic/infinite threads on dvach and 8chan\r\n- Highlight currently selected board in board switcher\r\n\r\n## Bugfixes\r\n\r\n- Scrolling to top when tapping buttons at top of screen (iPad, iPhone Duo)\r\n- Timeout when trying to register with Firebase notifications\r\n- Gray screen flash in captcha popup\r\n- False-positive compatibility error due to cached GREASE TLS algorithms\r\n- Broken videos when swiping quickly on Reddit\r\n- Some boards on 8chan tried to post 5 images per post instead of 3\r\n- Potential fixes for \"App not responding\" on Android\r\n- (Dead) seen in quotelinks in search results\r\n- (OP) not seen in quotelink search results\r\n- Try to avoid stale site data when files per post changes\r\n- Newly discovered pages were not marked as unread\r\n- Missing handling for loading a forum post from an unloaded page\r\n- Attachment preloading errors popped up for background threads\r\n- Reloading threads could get stuck if switching tab during load\r\n- Post scroll position was not optimal when loading an earlier forum page\r\n- Poor handling of non-existent subreddits\r\n- Cancelling one http/2 request could break the others on the same connection\r\n- Reddit crossposts with quotes had broken OPs\r\n- Cloudflare could popup from reply box image suggestion requests\r\n- Edited posts not properly recognized as changed\r\n- Reddit threads could be come corrupted on boards with very high identifier values\r\n- Error loading reddit children could cause an improper alert popup\r\n- Replies count/button not shown in split tree scenario\r\n- Transient message popups had no height cap\r\n- Thread auto-update would try to extend deep comment chains\r\n  - Since this is now heavily restricted by Reddit, just refresh the thread root\r\n- new/unseen label always shown on unloaded comments on Reddit\r\n- Post highlighting transitioned at end of refresh instead of at beginning\r\n- Comment loading errors were not dismissible by tapping in the background\r\n- Posting on holotower gave an error message since PHP update\r\n- gelbooru image urls could not be loaded due to their hotlink protection\r\n- Reddit username /u/ prefix handling was not consistent\r\n- Non-favourited subreddits would disappear after 3 days\r\n- Many search query fields would not enable the search button when changing them\r\n- OP post always grew in height on load when discovering how many replies it had\r\n- Long search filters got cut off in the search history\r\n- Thread had to reload when switching between one/two pane layout\r\n- Rich links could get cut off when width was limited\r\n- QUIC and HTTP/3 crash fixes\r\n- Poor handling of some weird dvach sticky threads\r\n- Precaching attempted to download deleted files\r\n- Reordering watched threads from drawer broke in reverse-sort order",
+          "downloadURL": "https://gh-proxy.com/https://github.com/moffatman/chan/releases/download/v1.2.9%2B126-forked-engine/Chance.ipa",
+          "size": 32818095,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
       "name": "Cloudn",
       "bundleIdentifier": "com.mengangs.Cloudn",
       "developerName": "mengangs",
@@ -1288,6 +1310,31 @@
       ]
     },
     {
+      "name": "Melee-PC",
+      "bundleIdentifier": "dev.melee.melee-pc.KMT3995P5V",
+      "developerName": "999sian",
+      "subtitle": "Native port of Super Smash Bros. Melee",
+      "localizedDescription": "A native port of Super Smash Bros. Melee (NTSC-U 1.02) built from the decompilation project, with modern rendering and quality-of-life options. You must provide your own dump of the original game disc to play; no game data is included.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/title.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/character-select.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/gameplay-4p.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/launcher.webp"
+      ],
+      "tintColor": "#F08040",
+      "versions": [
+        {
+          "version": "0.4.2",
+          "date": "2026-10-21T00:08:51Z",
+          "localizedDescription": "**Beta, for testing only.** Expect crashes and missing features.\n\nYou need your own Super Smash Bros. Melee disc image. **No game data ships in\nthese artifacts** — the port reads everything, including its font atlases, from\nthe image you supply at runtime.\n\n**USA revision 2 (NTSC-U 1.02, GALE01)** is the supported disc. A Europe (PAL,\nGALP01) image boots experimentally, running the USA game code on PAL data with\nEnglish (UK) text.\n\n<!-- Published verbatim by the release job (gh release create --notes-file).\n     Per release: replace Highlights and Fixes, refresh Known issues and\n     Requirements, link earlier releases, and update the feature status table\n     in README.md (it is the single source\n     of truth for what works; nothing here may contradict it). -->\n\n## Highlights\n\n- Fixed the Adventure mode Mushroom Kingdom crash when blocks are hit (#144).\n- Fixed macOS bundles missing transitive `@rpath` libraries, including\n  `libbrotlicommon.1.dylib`, which could prevent the app from launching (#145).\n- Fixed coloured bars at the top left of widescreen fights when off-screen\n  fighter magnifiers are drawn. Verified on Linux/Vulkan in Kongo Jungle and\n  Onett; Windows/Direct3D hardware verification is still pending.\n\n## Fixes\n\n- Replaced GameCube byte-offset overlays with native field access for\n  Mushroom Kingdom block objects, Multi-Man Melee record initialization, and\n  Super Scope charge resets. This avoids invalid pointers, missing records,\n  and writes into unrelated CPU state on 64-bit hosts (#144).\n- macOS packaging now resolves and bundles transitive `@rpath` dependencies\n  and rejects bundles with missing libraries before publishing (#145).\n- Magnifier capture cameras now copy and clear their whole temporary viewport,\n  preserving fighter proportions and preventing leftover depth from hiding\n  parts of the stage. Added a regression test for original, widescreen and\n  ultrawide framebuffer aspects.\n\n## Known issues\n\nOpen reports are tracked on the [issue tracker](https://github.com/999sian/melee-pc/issues);\nthe numbers below link there.\n\n**All platforms**\n\n- Rendering artifacts and Kirby grab/throw behaviour remain under investigation (#130).\n- Online play is a prototype. LAN Play, Direct Connect, Unranked and Ranked are\n  implemented and rendezvous through the public DHT, but pairing across two\n  NATs in general and live ranked acceptance are unproven, and cross-platform simulation\n  determinism is not claimed. Ratings are community-computed and unverified.\n  Every datagram is authenticated (protocol 9), and the LAN lobby\n  only pairs identical builds, so both players should use the same release. A\n  connect code is 8 characters after the `#`.\n- Widescreen applies to fights (VS, Sudden Death, Training); menus, results and\n  cutscenes stay at the original aspect. The wide HUD is a separate toggle and\n  only moves the timer and the 2-4 player HUD groups.\n- A move, stage or effect whose shader is still compiling is missing from the\n  picture for a few frames (previously a freeze, #46). The bundled seed is\n  queued for compilation on worker threads when the game starts, and the\n  launcher waits for that queue when you press Play -- press Play again to skip\n  the wait. `MELEE_PIPELINE_SYNC=1` restores the old wait-for-compile\n  behaviour, and `MELEE_PIPELINE_JOBS=<n>` sets the compile thread count.\n  On Android, shaders compile inline to avoid driver failures seen when\n  pipelines are created on a second thread, so expect first-use stutter.\n- Only Vulkan, Direct3D 12/11 and Metal backends are shipped; OpenGL and\n  OpenGL ES-only GPUs and drivers do not run the game (#64, #66).\n- Gamepad buttons, sticks and triggers can be remapped; dash sensitivity,\n  tap-jump disable and input buffer settings are not available (#3).\n- Some users cannot get past the launcher; if the launcher shows but the game\n  never starts, run with the log enabled and attach it (#40).\n\n**Browser**\n\n- Tested in Chrome only; Firefox and Safari WebGPU support is incomplete.\n- Only a raw, uncompressed USA revision 2 (GALE01) image loads: no `.ciso`,\n  `.rvz` or PAL.\n- No online play, and no gamepad remapping (the default mapping is used; the\n  keys are listed under the canvas).\n\n**Windows**\n\n- Classic mode startup crashes remain under investigation (#128).\n- v0.1.6-beta and later can close immediately when starting the game from the\n  launcher on machines where v0.1.5-beta worked (#62, #63). Attach\n  `melee-pc.log` (or run `RUN-AND-LOG.bat`).\n- Intel Gen7 iGPUs (HD 4000/4400/4600, Ivy Bridge/Haswell, e.g. i5-4200U) are\n  refused by D3D12, and the Direct3D 11 path they are meant to fall back to has\n  not been verified on that hardware. A `DXGI_ERROR_DEVICE_HUNG` mid-match\n  there (#67) is the 2020-era Intel driver timing out on the GPU; there is no\n  further API to fall back to on it. The log names the adapter, backend and\n  driver version.\n\n**Android**\n\n- Battle rendering is reported blank unless paused on Pixel 9 Pro (#129).\n  This release does not yet have a verified fix for that device.\n- Startup or Play-button crashes remain reported on Retroid Pocket 6 and\n  AYN Odin 2 (#136, #137); device logs and hardware verification are outstanding.\n- Some devices close the app at launch before the launcher appears, reported\n  on an Honor 200 (Snapdragon 7 Gen 3) and an AYN Odin 2 (#59, #23).\n- Android 9 and devices without Vulkan are not supported (#66).\n\n**macOS**\n\n- The macOS builds are experimental; the Intel one is untested on hardware.\n  The game's C is compiled with Homebrew GCC (`scalar_storage_order`), the\n  C++ with Apple clang.\n\n## Config / save compatibility\n\n- `launcher.cfg` (key/value text in the `melee-pc` preference directory:\n  `~/.local/share/melee-pc`, `%APPDATA%\\melee-pc`, or\n  `~/Library/Application Support/melee-pc`) loads across versions: unknown\n  keys are ignored and missing keys take their defaults.\n- Memory cards are Dolphin-compatible `.gci` files and are unchanged by this\n  release.\n- Gamepad bindings live in aurora's per-device `.controller` files next to\n  `launcher.cfg`.\n- The pipeline cache (`pipeline_cache.db` in the same directory) is rebuilt as\n  needed; deleting it only costs first-use shader stutter.\n\n## Requirements\n\n- Windows 10/11 (x86-64 or ARM64): Direct3D 12 feature level 11_0 or Vulkan\n  1.1; a Direct3D 11 fallback exists but is unverified.\n  Linux (x86-64 or aarch64): Vulkan 1.1. macOS: Metal (Apple Silicon tested).\n  Android: arm64 with Vulkan 1.1. iOS 14+: arm64, Metal. Browser: Chrome or\n  Edge with WebGPU.\n- Keep `resources/` (and on Windows the DLLs) beside the executable.\n- A Melee USA 1.02 (GALE01) disc image (`.iso`, `.gcm`, `.ciso` or `.rvz`).\n\n## Downloads\n\n| Platform | File | Notes |\n|---|---|---|\n| Linux x86-64 | `Melee-x86_64.AppImage` | Needs a Vulkan driver. `chmod +x`, then run. |\n| Linux x86-64 | `melee-linux-x86_64.tar.gz` | Portable directory; run `run.sh`. |\n| Linux aarch64 (ARM64) | `Melee-aarch64.AppImage` | For 64-bit ARM Linux (Raspberry Pi 5, Asahi Linux, Orange Pi). |\n| Linux aarch64 (ARM64) | `melee-linux-aarch64.tar.gz` | Portable directory for 64-bit ARM Linux; run `run.sh`. |\n| Windows x86-64 | `Melee-Windows-x86_64.zip` | Extract and run `melee.exe`. Keep the DLLs and `resources/` beside it. |\n| Windows ARM64 | `Melee-Windows-arm64.zip` | Native 64-bit ARM build for Windows on ARM (Snapdragon X Elite, Surface Pro). |\n| Android arm64 | `Melee-Android-arm64.apk` | Release build, signed. Allow install from unknown sources. |\n| iOS arm64 | `Melee-iOS-arm64.ipa` | Sideloadable IPA (AltStore, Sideloadly, TrollStore) with Metal backend. |\n| macOS arm64 | `Melee-macOS-arm64.zip` | Apple Silicon. Ad-hoc signed: right-click > Open on first launch. |\n| macOS x86_64 | `Melee-macOS-x86_64.zip` | Intel. Same notes; built but not yet tested on Intel hardware. |\n| Browser | [999sian.github.io/melee-pc/play](https://999sian.github.io/melee-pc/play/) | Chrome or Edge with WebGPU. Raw `.iso`/`.gcm` only; no online play. |\n\nLaunch with no arguments to open the launcher and pick a disc, or pass the\nimage path directly:\n\n```sh\n./Melee-x86_64.AppImage /path/to/melee.iso\n```\n\n## Previous releases\n\nSee [earlier releases](https://github.com/999sian/melee-pc/releases) for prior changelogs.\n\n## What works\n\nEvery game mode runs. The per-feature list, including what is only partly\ndone, is the status table in\n[README.md](https://github.com/999sian/melee-pc#status); it is the single\nsource of truth and these notes defer to it.\n\n## Controls\n\nArrows or WASD = stick, IJKL = C-stick, X = A, Z = B, C = X, V = Y, Q/E = L/R,\nTab = Z, Enter = Start, TFGH = D-pad. Gamepads work through SDL and can be\nremapped; an official GameCube adapter is read directly. **F1** opens the\nsettings overlay.\n\n## Contributors\n\n### Project Contributors\n- **@forkyfoo** — Mushroom Kingdom, Multi-Man Melee and Super Scope 64-bit fixes (#144), and macOS library bundling fix (#145).\n- **@999sian** — Project Lead, Phase 1 features, multi-core optimizations, file cache, Android & Windows porting, and stability fixes.\n- **@theofficialgman** — Linux aarch64 (ARM64) support, Nod aarch64 prebuilts, 4-core & ARM scheduling optimizations (#44, #47).\n- **@alexscott2718-gif** — Graphics backend selection, command line overrides, and engine logging.\n- **@r-burns** — Melee decompilation and 64-bit portability foundations.\n- **@MarkMcCaskey** — Decompilation and core engine maintenance.\n- **@ribbanya** (Robin Avery) — Decompilation and memory card subsystem.\n- **@PsiLupan** (Will Carter) — Decompilation and subsystem typing.\n- **@itsgrimetime** (Mike Grimes) — Decompilation foundations.\n- **@Joyastick** — Real two-machine netplay testing and fixes (#91, #92, #93).\n\n### Community Testers & Issue Reporters\nSpecial thanks to our community members whose detailed bug reports and reproduction steps directly helped diagnose and resolve issues in these releases:\n- **@jennywakeman-xj9** (#30, #31, #32, #33, #34, #35, #36, #38, #39, #51, #53, #54, #55, #56, #57, #58)\n- **@omega-tuna** (#48)\n- **@VTuberSkye** (#45)\n- **@4zy1** (#49, #50)\n- **@stevenstallone** (#52)\n- **@mmedeiro1-a11y** (#43)\n- **@Keithmccloud** (#59)\n- **@Smashhacker** (#41, #60)\n- **@whirlwindpedro** (#40)\n- **@zamiba** (#42)\n- **@nitrostemp** (#37)\n\n### Upstream Projects & Foundations\n- **[doldecomp/melee](https://github.com/doldecomp/melee)** — The Super Smash Bros. Melee decompilation team and contributors.\n- **[encounter/aurora](https://github.com/encounter/aurora)** — Luke Street (@encounter) and contributors for the GameCube hardware emulation layer and WebGPU backend.\n- **[TwilitRealm/dusklight](https://github.com/TwilitRealm/dusklight)** — Architectural inspiration for GameCube PC ports.\n- **SDL3, RmlUi, stb_vorbis, and Dawn teams** for the runtime engine libraries.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/999sian/melee-pc/releases/download/v0.4.2/Melee-iOS-arm64.ipa",
+          "size": 10181174,
+          "minOSVersion": "14.0"
+        }
+      ]
+    },
+    {
       "name": "MeloX",
       "bundleIdentifier": "moye.MeloX",
       "developerName": "youshen2",
@@ -1600,6 +1647,29 @@
       ]
     },
     {
+      "name": "Photos Backup",
+      "bundleIdentifier": "com.g8row.photosbackup",
+      "developerName": "g8row",
+      "subtitle": "On-device Google Photos backup",
+      "localizedDescription": "An experimental, fully on-device iPhone app for backing up selected photos, videos, and albums to Google Photos.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/activity.webp"
+      ],
+      "tintColor": "#2080F0",
+      "versions": [
+        {
+          "version": "0.3.8",
+          "date": "2026-11-10T17:28:17Z",
+          "localizedDescription": "## New\n\n- **Keep Running in Background.** On by default, in **Settings → Background**. While a backup has work iOS won't move on its own, the app keeps itself from being suspended the way SideStore does, by playing silence mixed with whatever else is playing. No permission is needed, and the backup keeps going with the app closed or the phone locked. When the queue is done, after 12 hours, or if iOS interrupts it, it stops and the app sleeps again. If calls or music keep stopping it, switch **Method** to **Location**, which asks for location permission and uses coarse updates instead. ([#2](https://github.com/g8row/PhotosBackup/issues/2), [#41](https://github.com/g8row/PhotosBackup/pull/41))\n\n- **Backup keeps going after you leave the app (iOS 26), for real this time.** 0.3.7's IPA was built with Xcode 16.4, which left this feature out, so there was no Live Activity. Releases are now built with Xcode 26.3. ([#39](https://github.com/g8row/PhotosBackup/pull/39))\n\n- **An edited video's original is backed up too**, so the Google Photos app counts it, including Cinematic videos, which the camera saves as edited. ([#38](https://github.com/g8row/PhotosBackup/pull/38), thanks @saileshbro)\n\n- **Back Up Live Photo Motion is now on by default.** ([#38](https://github.com/g8row/PhotosBackup/pull/38))\n\n## Fixed\n\n- **The app forgot what it had already backed up.** ([#34](https://github.com/g8row/PhotosBackup/issues/34), [#22](https://github.com/g8row/PhotosBackup/issues/22), [#40](https://github.com/g8row/PhotosBackup/pull/40), thanks @josippapez) The app forgot every photo iOS reported as changed, and iOS reports a lot more than edits: favourites, albums, and the photo analysis it redoes on the whole library after an iOS update. One report had a single background window forget 36,615 backups. A photo is now only re-checked when its edit actually changed, and photos backed up before this release keep their record.\n\n- **Big backups are much lighter on CPU and disk.** ([#13](https://github.com/g8row/PhotosBackup/issues/13), [#34](https://github.com/g8row/PhotosBackup/issues/34), [#42](https://github.com/g8row/PhotosBackup/pull/42)) Uploads were hashing one file at a time, and the queue was rewritten to disk several times a second. That's what iOS was closing the app for in the reports. Hashing now runs alongside the uploads, and the queue is saved at most once a second.\n\n- **The screen stays on while a backup runs in the app** if Keep Running in Background is off. With it on, the phone can lock normally. ([#37](https://github.com/g8row/PhotosBackup/issues/37))\n\n- **The Activity tab is fast on big backups.** ([#8](https://github.com/g8row/PhotosBackup/issues/8), [#42](https://github.com/g8row/PhotosBackup/pull/42)) It drew a row for every item in the queue. It now shows what's in progress or failed, the next 20 and the last 50 finished, and says how many more there are.\n\n## Worth knowing\n\n- **If your progress already reset on 0.3.7**, the first launch may go over those photos once more. Most settle without uploading anything, and it shouldn't happen again.\n- **Keep Running in Background uses more battery**, and swiping the app away in the app switcher still stops it. Charging overnight is still the best time for a big backup.\n- The diagnostic report now has a **Keep-alive** line saying whether it was running.\n\n## Notes\n\n- 208 tests, 206 passing (2 opt-in live tests skipped).\n- Tested on iOS 26.5 and 18.6 simulators. Not tested on a device yet. If something is off, **Settings → Support → Create Diagnostic Report** and attach it to an issue.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/g8row/PhotosBackup/releases/download/0.3.8/PhotosBackup.ipa",
+          "size": 2816914,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
       "name": "PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
@@ -1767,7 +1837,7 @@
           "date": "2026-11-25T06:52:08Z",
           "localizedDescription": "## 谢谢大家\n说好的 1.3 来了。谢谢每一位在玩、在报 bug、在评论区出主意的朋友，这一版等得比较久，谢谢大家的耐心。\n\n1.3 最大的心血是两张古代大地图：大唐长安的「开元盛世」，和北宋汴京的「清明上河」——还有八百里水泊梁山。城墙、楼阁、路人、音乐、小报、小游戏，一样一样全是重新做的。\n\n**这个游戏属于每一位喜欢大富翁4的玩家：永远不收任何费用，也不做任何商业用途，大家尽管拿去玩、拿去分享。**\n\n- **想玩两张新地图，请下载这个页面的 1.3.0 安装包覆盖安装**，存档会保留（保险起见，可以先在「游戏设置 → 存档备份」导出一份）。游戏内更新到的是「1.3.0 simple」版：只有几 MB，不含这两张地图，其他功能（私服、联机等）跟完整版一样，可以和完整版的玩家一起玩。iPhone 要连私服，需要装 1.3.0 安装包。\n- **国内下载慢**：在国内提供下载需要备案，我个人没办法申请，建议挂梯子下载，或者等网盘版。\n- **遇到 bug 或小问题**：可以在 [Issues](https://github.com/iam567/rich4-renew-app/issues) 提交，也可以在 B 站 UP 主 **TrustBox**、**阿姆西_MC** 发布的大富翁4 重制版视频下面留言，各个评论区我都会看，能修的一定会修。\n\n祝大家玩得开心，梁山见！\n\n## v1.3 更新内容\n\n- **两张全新的古代大地图，都在「自制地图」里，音乐、界面、开场动画、小报和卦肆（新闻、命运）、路人全是自己的一套，钱也用「文」：**\n  - **开元盛世（大唐长安）**：贡院答题考状元、斗鸡场下注、驿站快马、博戏坊押大小、发配所，路上还有几十个「小事件」格子，踩上去随机前进后退。\n  - **清明上河（北宋汴京）**：城墙、虹桥、樊楼、大相国寺都立起来了。城外是水泊梁山——坐汴河漕运的船过去，打虎、射野猪、跟燕青摔跤、十字坡看碗，抽 108 张「梁山令」，凑齐一组好汉到聚义厅换奖励。\n  - 清明上河的企业各有各的用处：汴河漕运把人送上梁山，东京车坊收加油费，将作监帮你加盖，官窑卖瓷器，常平仓卖保险；当上董事长还有专属好处。\n- **新增「私服」：想自己架一台给朋友玩的人，可以下载「私服架设包」，一条命令装好。** 派对模式的「局域网房间」改成了「私服房间」，里面有局域网、连线私服和私服列表；输入房间码就会自动连到那台私服。私服可以有公告、活动报名、私信、介绍和横幅，掉线两分钟内回来座位还在。iPhone 要装 1.3 的安装包才能连私服。\n- **新增「游戏节奏」：慢节奏、原版、快节奏三种。** 慢节奏：物价涨得慢、过路费六折、周转不灵可以清算资产；快节奏：物价涨得快，房价地价 1.2 倍。排行榜只收原版节奏。\n- **所有股票都能自由买卖：** 企业的保留股份不用再走到那栋楼才能买，在股市就能直接按市价买；买不了的时候会写明原因。\n- **电脑版的存档改放在游戏目录里的 save 文件夹**（Windows 在 Rich4.exe 旁边，Mac 在「大富翁4」旁边），换电脑直接复制走；原来的存档第一次打开会自动复制过去。标题画面多了「回到桌面」。\n- 新增「状态条」：游戏画面右上角显示现在的状态，例如谁坐牢还剩几天、股市休市还剩几天，可以收起来。\n- 结果窗口：一次影响很多人或很多块地时，列成清单慢慢滚动，相同的合并成一行，镜头不再一个个跑。\n- 冬眠的人轮到时只弹一条消息，镜头不再切过去。\n- 地狱难度：研究所做的道具在商店里变灰，点一下老板会说明不能卖。\n- 嫁祸卡可以再嫁祸：被嫁祸的人可以用自己的免罪卡或嫁祸卡，直到有人没有为止。飞弹、核弹炸到旅馆，里面的客人也会受伤住院。\n- 新闻、命运送的道具，只会是商店里买得到的。\n- 大富豪模式：卡片改成全国共用一池，商店没有常备卡片了。\n- 修正：有些新闻的结果写成「undefined 的 12 支股票」。\n- 修正：创作乐园的地图说明太长时，按钮被挤出画面。\n- 修正：很旧的安卓系统和部分电视停在绿色画面打不开（需要装 1.3 的安装包）。\n- 修正：iPhone 上连点屏幕下方会退回主屏幕；现在要滑两次才会退出。\n- 修正：简体显示里「著称」「毕昇」等字。\n- 1.3 只能和 1.3 的玩家一起玩派对模式。存档可以直接沿用。\n\n### v1.2.5（2026-11-17，游戏内更新）\n- 修正：抢夺卡现在是「用抢夺卡换对方一张卡」。卡片栏满了也不会再要你丢掉一张；抢到对方的抢夺卡，自己手里会留下一张（以前地狱难度下两边的抢夺卡都会不见）。派对模式里有旧版本的玩家一起玩时，按旧规则进行。\n- **新增：排行榜「总榜」。** 地图那一排最前面多了「总榜」，所有地图一起排名，每个成绩下面标出是在哪张地图打的。\n- 星座主题、武侠主题、恐龙主题、城市主题四张地图，名字改成「星座」「武侠」「恐龙」「城市」。\n- 自建地图的物件重新分类：地面、道路、格子、地标、建筑、植被、装饰，地标按洲分，建筑、植被、装饰也各有小分类；原版八张地图里的房子、商店、公园、地标也都可以拿来用了。\n\n## 安装\n- 安卓手机：下载 `rich4-1.3.0.apk`，在手机上打开安装（第一次要允许「安装未知来源的应用」）。\n- 安卓电视／电视盒子：下载 `rich4-1.3.0-androidtv.apk` 安装，桌面上会出现「大富翁4 TV」；用遥控器或手柄玩。手机版的 apk 也能装在电视上（两个是同一个 App，装一个就好）。\n- iPhone：`rich4-1.3.0-unsigned.ipa` 是未签名的安装包，需要自己签名后安装。\n- Windows：下载 `rich4-1.3.0-windows.zip`，解压后打开 `Rich4` 文件夹，双击 `Rich4.exe`。第一次打开如果出现「Windows 已保护你的电脑」，点「更多信息 → 仍要执行」。开局域网房间时如果防火墙询问，请选「允许」。存档在 `Rich4` 文件夹里的 `save`。\n- Windows 7 / 8：下载 `rich4-1.3.0-win7.zip`，用法和上面的 Windows 版一样。Windows 10、11 请用上面的 Windows 版。\n- Mac：下载 `rich4-1.3.0-mac.dmg`，打开后把「大富翁4」拖进「应用程序」（Intel 和 M 芯片都能用）。第一次打开请在「应用程序」里对它按右键 →「打开」。\n- 想自己架私服：下载 `rich4-server.zip`，里面有架设说明（README.md）。\n\n装新版会保留原来的存档。",
           "downloadURL": "https://gh-proxy.com/https://github.com/iam567/rich4-renew-app/releases/download/v1.3.0/rich4-1.3.0-unsigned.ipa",
-          "size": 1698625065,
+          "size": 1698625747,
           "minOSVersion": "15.0"
         }
       ]
@@ -1840,6 +1910,31 @@
           "downloadURL": "https://gh-proxy.com/https://github.com/donbytyqi/scenebox/releases/download/v1.0.4/SceneBox-1.0.4.ipa",
           "size": 30593765,
           "minOSVersion": "18.0"
+        }
+      ]
+    },
+    {
+      "name": "Shirox",
+      "bundleIdentifier": "com.shirox.app",
+      "developerName": "xibrox",
+      "subtitle": "Personal anime and manga library manager for iOS",
+      "localizedDescription": "A free, source-available library manager for iPhone, iPad and Mac. Track what you watch and read, keep it in sync with AniList and MyAnimeList, and play it from the sources you connect.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/detail.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/library.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/player.webp"
+      ],
+      "tintColor": "#1C1C1E",
+      "versions": [
+        {
+          "version": "1.0.6",
+          "date": "2026-10-08T13:11:34Z",
+          "localizedDescription": "Discord: your status now goes out while something plays, not only once you pause, and it has a progress bar that follows seeks and playback speed. Titles played from Simkl show their season (\"Season 2 · Episode 5\"), and manga shows the same TV icon as anime. The status keeps working after the app was away for a while, and two token refreshes at once no longer sign you out of Discord without a word.\n\nSubtitles: every cue on screen is shown at once, so a long sign no longer hides the dialogue under it. Bottom Padding goes up to 400 pt, so subtitles can sit on the picture when you watch in portrait. The units on the Subtitles settings page are translated.\n\nSimkl: episodes of a title opened from Simkl can be downloaded and have their progress reset from their menu, like AniList episodes.\n\nShirox speaks Thai, in Settings › General › Change Language. The Started On and Finished On labels read as dates in every language, and the already downloaded and already queued toasts are translated.\n\nApp icons: Manga, a new home screen icon in Settings › General › App Icon.\n\nAlso: the player's subtitle settings and episode pickers take your accent color, holding the tab bar opens its menu on every tab when the bar minimizes on scroll, and a few spots that could crash on bad input from a server now handle it.\n\n\n**Downloads:** Shirox.ipa (iPhone, iPad), Shirox-macOS.dmg (Mac), Shirox-Catalyst.dmg (Mac, Catalyst build).",
+          "downloadURL": "https://gh-proxy.com/https://github.com/xibrox/Shirox/releases/download/latest/Shirox.ipa",
+          "size": 27327422,
+          "minOSVersion": "15.0"
         }
       ]
     },
@@ -2535,6 +2630,17 @@
       "url": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2"
     },
     {
+      "appID": "com.moffatman.chan",
+      "title": "Chance 1.2.9 · 22 Nov 2026",
+      "identifier": "Chance-release-v1.2.9+126-forked-engine",
+      "caption": "Chance 1.2.9 is available.",
+      "date": "2026-11-22T21:26:03Z",
+      "tintColor": "#497C4A",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/moffatman/chan/releases/tag/v1.2.9+126-forked-engine"
+    },
+    {
       "appID": "sb.moe.kumone-ios",
       "title": "Kumone 0.3.38 · 22 Nov 2026",
       "identifier": "Kumone-release-v0.3.38",
@@ -2909,6 +3015,17 @@
       "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.2.2-b70"
     },
     {
+      "appID": "com.g8row.photosbackup",
+      "title": "Photos Backup 0.3.8 · 10 Nov 2026",
+      "identifier": "Photos Backup-release-0.3.8",
+      "caption": "Photos Backup 0.3.8 is available.",
+      "date": "2026-11-10T17:28:17Z",
+      "tintColor": "#2080F0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/g8row/PhotosBackup/releases/tag/0.3.8"
+    },
+    {
       "appID": "com.md3music.md3music",
       "title": "MD3Music 6.2.0 · 09 Nov 2026",
       "identifier": "MD3Music-release-v6.2.0+53",
@@ -3074,6 +3191,17 @@
       "url": "https://github.com/mxhm11cr/LinuxRunner/releases/tag/v1.0.1"
     },
     {
+      "appID": "dev.melee.melee-pc.KMT3995P5V",
+      "title": "Melee-PC 0.4.2 · 21 Oct 2026",
+      "identifier": "Melee-PC-release-v0.4.2",
+      "caption": "Melee-PC 0.4.2 is available.",
+      "date": "2026-10-21T00:08:51Z",
+      "tintColor": "#F08040",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Melee-PC/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/999sian/melee-pc/releases/tag/v0.4.2"
+    },
+    {
       "appID": "wiki.qaq.Asspp",
       "title": "Asspp 4.2.0 · 20 Oct 2026",
       "identifier": "Asspp-release-4.2.2",
@@ -3149,6 +3277,17 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PureLive/images/news.webp",
       "notify": true,
       "url": "https://github.com/liuchuancong/pure_live/releases/tag/v3.1.19"
+    },
+    {
+      "appID": "com.shirox.app",
+      "title": "Shirox 1.0.6 · 08 Oct 2026",
+      "identifier": "Shirox-release-latest",
+      "caption": "Shirox 1.0.6 is available.",
+      "date": "2026-10-08T13:11:34Z",
+      "tintColor": "#1C1C1E",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Shirox/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/xibrox/Shirox/releases/tag/latest"
     },
     {
       "appID": "app.anich",
