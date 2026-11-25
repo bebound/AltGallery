@@ -1536,6 +1536,28 @@
       ]
     },
     {
+      "name": "NusaNX",
+      "bundleIdentifier": "com.nusanx.studio",
+      "developerName": "optimalabsistem",
+      "subtitle": "Convert Switch game containers into native iOS/iPadOS apps on device",
+      "localizedDescription": "Transforms legal Nintendo Switch game containers (.nsp/.xci) into standalone native iOS/iPadOS apps directly on-device — ARM64 game code runs natively while Switch NVN/OpenGL shaders are translated to Apple Metal. Requires an M1 iPad or A17 Pro iPhone with iOS/iPadOS 26 or newer.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NusaNX/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NusaNX/images/main.webp"
+      ],
+      "tintColor": "#00C2FF",
+      "versions": [
+        {
+          "version": "0.1.1-beta",
+          "date": "2026-11-18T15:08:38Z",
+          "localizedDescription": "## Fixed & Improved\r\n\r\n    - Fixed a file picker bug.\r\n    - Fixed excessive texture re-uploads causing severe FPS drops in Grand Bazaar and Other Games.\r\n   \r\n    ## Experimental\r\n\r\n    - Added on-device `.nup` support, including updates and DLC.\r\n    - Some shaders and character textures may still appear black.\r\n    - Game compatibility varies; LiveContainer may require the file picker fix.\r\n\r\n    ## Requirements\r\n\r\n    **For running converted games:**\r\n    - **iPad:** Apple M1 chip or later, running iPadOS 26.0 or later.\r\n    - **iPhone:** A17 Pro chip or later, running iOS 26.0 or later.\r\n    - Metal 4 support.\r\n\r\n    **For conversion and installation:**\r\n    - Your own legally obtained game dumps.\r\n    - Your own `prod.keys` for encrypted game containers.\r\n    - Sufficient free storage for extraction and IPA generation.\r\n    - A signing and sideloading method for unsigned IPA packages.\r\n\r\n    ## Installation\r\n\r\n    1. Download `NusaNX.ipa` from the release assets.\r\n    2. Sign and sideload the converter using your preferred method.\r\n    3. Import your `prod.keys` and a supported `.nsp` or `.xci` game dump.\r\n    4. Build the game's IPA, then sign and sideload it separately.\r\n\r\n    ## Known Limitations\r\n\r\n    - This is a beta release; stability, performance, and compatibility vary by game and\r\n    device.\r\n    - Successful conversion does not guarantee that a game will boot or run correctly.\r\n    - `.nup` import is not currently supported by the iPad converter.\r\n    - The Xbox controller mapping fix is included in this build, but still requires\r\n    physical-controller testing.\r\n    - Both the converter and generated IPA packages are unsigned.\r\n\r\n    ## Legal Notice\r\n\r\n    No Nintendo firmware, decryption keys, or game assets are included. Use only game dumps\r\n    and keys you are legally authorized to use.\r\n\r\n    This project is not affiliated with or endorsed by Nintendo.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/optimalabsistem/NusaNX/releases/download/v0.1.1-beta/NusaNX.0.1.1.Beta.ipa",
+          "size": 4820492,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
       "name": "Nuvio",
       "bundleIdentifier": "com.nuvio.media",
       "developerName": "NuvioMedia",
@@ -2866,6 +2888,17 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/images/news.webp",
       "notify": true,
       "url": "https://github.com/faroukbmiled/RyukSign/releases/tag/v4.1.0"
+    },
+    {
+      "appID": "com.nusanx.studio",
+      "title": "NusaNX 0.1.1-beta · 18 Nov 2026",
+      "identifier": "NusaNX-release-v0.1.1-beta",
+      "caption": "NusaNX 0.1.1-beta is available.",
+      "date": "2026-11-18T15:08:38Z",
+      "tintColor": "#00C2FF",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NusaNX/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/optimalabsistem/NusaNX/releases/tag/v0.1.1-beta"
     },
     {
       "appID": "org.animeko.animeko",
