@@ -255,5 +255,9 @@
   "com.shirox.app": {
     "subtitle": "面向 iOS 的个人动漫与漫画库管理器",
     "description": "免费、源码可得的库管理器，适用于 iPhone、iPad 和 Mac。追踪你的观看与阅读进度，与 AniList 和 MyAnimeList 同步，并从你连接的来源播放。"
+  },
+  "com.moffatman.chan": {
+    "subtitle": "适用于 iOS 与 Android 的匿名版浏览器",
+    "description": "Chance 是一款基于 Flutter 构建的 iOS 与 Android 匿名版浏览器，支持多栏布局、媒体画廊、收藏串帖、过滤器与归档访问等功能。"
   }
 }

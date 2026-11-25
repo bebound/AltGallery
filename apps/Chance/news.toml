@@ -1,0 +1,13 @@
+# News promo image config (rendered by tools/render_news.py).
+# All keys are optional; leave them commented to use the defaults.
+name = "Chance"
+tagline = "Imageboard browser\nfor iOS and Android"
+
+# [colors]
+# background    = "#RRGGBB"   # background top
+# bg_mid        = "#RRGGBB"   # background gradient midpoint
+# bg_dark       = "#RRGGBB"   # background bottom
+# tint          = "#RRGGBB"   # icon glow / outer ring
+# tint_alt      = "#RRGGBB"   # gradient accent (inner ring, name)
+# tagline_color = "#RRGGBB"   # tagline text
+# badge_outline = "#RRGGBB"   # "NEW UPDATE" pill outline

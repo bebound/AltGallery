@@ -91,6 +91,9 @@ Open-source YouTube Music client for iPhone and iPad — a SwiftUI port of BitCh
 ### <img src="apps/Breeze/icon.webp" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
 使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
+### <img src="apps/Chance/icon.webp" alt="Chance icon" width="24" align="top"> <a href="https://github.com/moffatman/chan">Chance</a>
+Imageboard browser for iOS and Android — a Flutter client with multi-column layout, media gallery, saved threads, filters, and archive support.
+
 ### <img src="apps/Cloudn/icon.webp" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
 网盘分享与短视频高速解析下载 — 支持 19+ 网盘、近 50 个短视频与图集平台，解析全部在手机本地完成。
 

@@ -91,6 +91,9 @@ iPhone 与 iPad 上的 Windows 游戏——由 Wine、FEX 与 Metal 驱动、内
 ### <img src="apps/Breeze/icon.webp" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
 使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
+### <img src="apps/Chance/icon.webp" alt="Chance icon" width="24" align="top"> <a href="https://github.com/moffatman/chan">Chance</a>
+适用于 iOS 与 Android 的匿名版浏览器——基于 Flutter 的客户端，支持多栏布局、媒体画廊、收藏串帖、过滤器与归档支持。
+
 ### <img src="apps/Cloudn/icon.webp" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
 网盘分享与短视频高速解析下载 — 支持 19+ 网盘、近 50 个短视频与图集平台，解析全部在手机本地完成。
 

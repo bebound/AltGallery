@@ -1,0 +1,45 @@
+# altgen config for the Chance AltStore source.
+# Run: uvx altgen -c config.toml
+# Chance: Flutter imageboard browser for iOS and Android
+
+[github]
+repo = "moffatman/chan"
+
+[source]
+name = "Chance"
+subtitle = "Chance AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Chance"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/icon.webp"
+website = "https://github.com/moffatman/chan"
+tint_color = "#497C4A"
+
+[app]
+name = "Chance"
+bundle_identifier = "com.moffatman.chan"
+developer_name = "Callum Moffat"
+subtitle = "Imageboard browser for iOS and Android"
+description = "Chance is an imageboard browser built with Flutter for iOS and Android, with features like multi-column layout, media gallery, saved threads, filters, and archive support."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/images/main.webp",
+]
+tint_color = "#497C4A"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Tags are like v1.2.9+126-forked-engine; extract the clean semver from the
+# release name (v1.2.9+126), which matches the ipa's version (1.2.9).
+version_source = "release"
+version_pattern = "^v?(\\d+\\.\\d+\\.\\d+)"
+# Each release ships a single iOS ipa named Chance.ipa.
+asset_pattern = "Chance\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Chance/images/news.webp"
+
+[output]
+path = "apps.json"
