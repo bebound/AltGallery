@@ -1,0 +1,48 @@
+{
+  "name": "TDrive",
+  "subtitle": "TDrive AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for TDrive",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/icon.webp",
+  "website": "https://github.com/ndgthuan/tdrive",
+  "tintColor": "#20A0E0",
+  "apps": [
+    {
+      "name": "TDrive",
+      "bundleIdentifier": "com.jeetraj.tdrive",
+      "developerName": "ndgthuan",
+      "subtitle": "Turn your private Telegram storage into a cloud drive",
+      "localizedDescription": "TDrive turns your private Telegram storage into a drive you can browse, search, preview, share and mount, with an AI assistant, automatic photo backup and client-side encryption. Requires Telegram API credentials from my.telegram.org.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_01_home_drive_switcher.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_02_home_shared_drives.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_03_account_folder.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_04_account_drives.webp"
+      ],
+      "tintColor": "#20A0E0",
+      "versions": [
+        {
+          "version": "3.1.9",
+          "date": "2026-11-02T07:08:10Z",
+          "localizedDescription": "# TDrive v3.1.9\n\nThis release changes how Android folder import handles a file that already\nexists on the drive under the same name. Instead of skipping or renaming it\nsilently, TDrive asks what to do. It also creates the folder you picked even\nwhen that folder is empty. Bản phát hành này thay đổi cách nhập thư mục trên\nAndroid khi một tệp đã có trên drive với cùng tên. Thay vì bỏ qua hoặc đổi tên\nâm thầm, TDrive sẽ hỏi bạn muốn làm gì. Thư mục bạn chọn cũng được tạo ngay cả\nkhi thư mục đó trống.\n\n## Highlights\n\n- Same name, different size: before anything is sent, TDrive asks whether to\n  Replace the file on the drive, Keep both, or Skip. Skip is the default, and\n  canceling the question sends nothing. With several clashes, one choice can be\n  applied to all of them.\n- Replace moves the old file to Trash, where you can restore it. The new copy\n  is confirmed on the drive before the old one is moved, and then it takes the\n  original name.\n- Keep both saves the new file as the first free name, such as `photo_1.jpg`.\n  The name also avoids folders that the same import is about to create.\n- An empty folder you pick is created on the drive, even when nothing goes into it.\n- The Transfers entry notes how many files were replaced, kept or skipped.\n\n## Known limits\n\n- Replace uses Trash, so the old file can be restored, but it is not a\n  Telegram revision.\n- A file whose size is unknown, or whose drive check fails, is uploaded as a\n  copy without asking.\n- Retrying a failed import does not carry your clash answers, so the question\n  can appear again.\n- A file name that contains a backslash makes its whole upload batch fail.\n- The Transfers row title can cut off the replaced and kept counts. The full\n  text is in the history and notification.\n- The Android build was tested on an x86_64 emulator with automated tests. The\n  ARM64 release APK was not run on a phone.\n\n## Downloads\n\n| Platform | File | Notes |\n| --- | --- | --- |\n| Windows 10/11 (64-bit) | `TDrive-v3.1.9-windows-amd64-setup.exe` | Installer. A portable `TDrive-v3.1.9-windows-amd64.zip` is also attached. |\n| macOS (Apple silicon) | `TDrive-v3.1.9-macos-arm64.zip` | Unzip and drag TDrive to Applications. |\n| Linux (64-bit) | `TDrive-v3.1.9-x86_64.AppImage` | `chmod +x` it, then run it. Needs glibc 2.35 or newer. |\n| Android 7.0 or newer (ARM64) | `TDrive-v3.1.9-android-arm64.apk` | Allow installs from your browser or file manager when Android asks. |\n| iPhone / iPad (iOS 16 or newer) | `TDrive-v3.1.9-ios-unsigned.ipa` | Not signed. Install with TrollStore, Sideloadly or AltStore. |\n\n## Integrity\n\n- `checksums.txt` lists SHA-256 digests for the downloadable packages.\n- `checksums.txt.sig` authenticates that manifest for the desktop updater using the embedded Ed25519 trust keys.\n- Android release certificate SHA-256: `A8:F4:4A:72:E0:56:E1:79:DE:19:4C:F3:E3:10:84:9D:5C:B6:BA:5A:58:EC:5F:A6:AD:BA:DD:29:FB:DC:22:92`.\n\n## Credits\n\nOriginal TDrive by [Jeetraj](https://github.com/jeetrex17/TDrive), MIT License. This fork is maintained by [Nguyễn Dương Gia Thuận](https://github.com/ndgthuan/tdrive).\n\n**Full changelog:** https://github.com/ndgthuan/tdrive/compare/v3.1.8...v3.1.9",
+          "downloadURL": "https://github.com/ndgthuan/tdrive/releases/download/v3.1.9/TDrive-v3.1.9-ios-unsigned.ipa",
+          "size": 36249723,
+          "minOSVersion": "16.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.jeetraj.tdrive",
+      "title": "TDrive 3.1.9 · 02 Nov 2026",
+      "identifier": "TDrive-release-v3.1.9",
+      "caption": "TDrive 3.1.9 is available.",
+      "date": "2026-11-02T07:08:10Z",
+      "tintColor": "#20A0E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/ndgthuan/tdrive/releases/tag/v3.1.9"
+    }
+  ]
+}

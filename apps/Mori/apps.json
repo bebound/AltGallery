@@ -1,0 +1,52 @@
+{
+  "name": "Mori",
+  "subtitle": "Mori AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Mori",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/icon.webp",
+  "website": "https://github.com/coflyn/Mori",
+  "tintColor": "#27282A",
+  "apps": [
+    {
+      "name": "Mori",
+      "bundleIdentifier": "com.mori.downloader",
+      "developerName": "coflyn",
+      "subtitle": "Client-side media downloader for 16 platforms",
+      "localizedDescription": "Save videos, photos and audio from TikTok, Instagram, YouTube, Twitter/X, Spotify, Apple Music, Pinterest, Facebook, Threads, Bandcamp, Pixiv, Bilibili, Douyin, RedNote, Reddit and TeraBox, with built-in tools for stream sniffing, audio extraction, image conversion and PDF compression. Everything runs on-device — no accounts, ads or tracking.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/1.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/2.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/3.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/4.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/5.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/6.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/7.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/8.webp"
+      ],
+      "tintColor": "#27282A",
+      "versions": [
+        {
+          "version": "4.6.1",
+          "date": "2026-11-20T23:42:35Z",
+          "localizedDescription": "# What's New in Mori 4.6.1\r\n\r\n### New Features & Enhancements\r\n\r\n* **Direct iOS Camera Roll Save (#27)**: Added native Photos framework integration (`saveToCameraRoll`) in AppDelegate to save downloaded videos and photos directly to iOS Camera Roll without third-party dialogs.\r\n* **Full Spanish (es) Localization (#30)**: Added complete Spanish language translation across app UI, tools, settings, and documentation.\r\n* **Chinese Share Link Extraction (#26)**: Added parser preserving extraction codes from Chinese cloud drive and media share captions (Quark, UC, Baidu, 115, Lanzou).\r\n* **Multilingual Documentation**: Added localized README and installation guides for Indonesian (`id`), Simplified Chinese (`zh-CN`), and Spanish (`es`) with interactive language switchers.\r\n* **Full i18n Key Synchronization**: Synchronized all 9 locale dictionaries to 630 translation keys and added native Android Indonesian string resources (`values-in`).\r\n\r\n### Bug Fixes & Scraper Repairs\r\n\r\n* **iOS Auto-Zoom on Input Focus (#31)**: Enforced 16px font sizing and locked viewport scale to prevent WebKit auto-zooming when tapping the input or paste bar.\r\n* **Bilibili Akamai 403 & Stream Headers (#31)**: Injected required Referer (`https://www.bilibili.com/`) and User-Agent headers on Akamai CDN streams, removed universal byte-range header to prevent broken HTTP 206 responses, and added HTML error page detection to stop saving corrupt error responses.\r\n* **Mori CLI Playlist Downloads**: Fixed playlist downloads and dynamic version resolution in `@coflyn/mori` (v1.2.2).\r\n\r\n### Performance & Reliability\r\n\r\n* **History & Gallery Memory Optimization**: Cached video thumbnails directly to disk via Filesystem, added paginated progressive rendering for large media lists, and removed redundant background scanning loops.\r\n\r\n**Full Changelog**: https://github.com/coflyn/Mori/compare/v4.6.0...v4.6.1",
+          "downloadURL": "https://github.com/coflyn/Mori/releases/download/v4.6.1/Mori-v4.6.1-iOS-Unsigned.ipa",
+          "size": 2214932,
+          "minOSVersion": "14.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.mori.downloader",
+      "title": "Mori 4.6.1 · 20 Nov 2026",
+      "identifier": "Mori-release-v4.6.1",
+      "caption": "Mori 4.6.1 is available.",
+      "date": "2026-11-20T23:42:35Z",
+      "tintColor": "#27282A",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/coflyn/Mori/releases/tag/v4.6.1"
+    }
+  ]
+}

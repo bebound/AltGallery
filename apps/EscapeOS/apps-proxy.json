@@ -1,0 +1,46 @@
+{
+  "name": "EscapeOS",
+  "subtitle": "EscapeOS AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for EscapeOS",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/icon.webp",
+  "website": "https://github.com/pwnapplehat/EscapeOS",
+  "tintColor": "#3AA39D",
+  "apps": [
+    {
+      "name": "EscapeOS",
+      "bundleIdentifier": "com.ipaside.escapeos",
+      "developerName": "pwnapplehat",
+      "subtitle": "On-device file browser and backup tool for another app's Data container",
+      "localizedDescription": "Browse, edit, back up and restore another app's Data container on device: Documents, Library and tmp, file copy and compress/extract (zip, 7z, tar, gz, bz2, xz, lz4, lzma, deb), SQLite viewing, and SHA-256 manifests on every backup. No jailbreak, no Keychain. Requires iOS 26.0 or later, LocalDevVPN and a pairing file placed by iPASide.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/pair.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/settings.webp"
+      ],
+      "tintColor": "#3AA39D",
+      "versions": [
+        {
+          "version": "0.3.2",
+          "date": "2026-11-11T14:19:37Z",
+          "localizedDescription": "## Added\n\n- **App Groups.** An app's page lists its groups when the install record includes them, and opens a group that has a folder. Reset App Data still does not touch groups.\n- **Import a backup.** Backups, Import Backup copies an exported EscapeOS backup zip back into Files, On My iPhone, EscapeOS, Backups. A zip that is not one of these backups is refused. An existing name is kept.\n\n## Changed\n\n- **Search Whole App.** A file opens the folder it is in and marks that file. A folder still opens.\n- **iOS 26.0 is the minimum.** The IPA does not install below that.\n\nApp Groups, search, and backup import were confirmed on device the same day.\n\n`EscapeOS-0.3.2.ipa` SHA-256:\n\n```\n49edbca809d4b07c8863971ba40a2551537d433872f03cedd1c13ce2e0975e1e\n```\n\n`libidevice_ffi.a` is unchanged from 0.3.1:\n\n```\n6524066d54ef23e00d46445c04dfc694e180196d54119d718f68434fa225be35\n```",
+          "downloadURL": "https://gh-proxy.com/https://github.com/pwnapplehat/EscapeOS/releases/download/v0.3.2/EscapeOS-0.3.2.ipa",
+          "size": 7683406,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.ipaside.escapeos",
+      "title": "EscapeOS 0.3.2 · 11 Nov 2026",
+      "identifier": "EscapeOS-release-v0.3.2",
+      "caption": "EscapeOS 0.3.2 is available.",
+      "date": "2026-11-11T14:19:37Z",
+      "tintColor": "#3AA39D",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/pwnapplehat/EscapeOS/releases/tag/v0.3.2"
+    }
+  ]
+}

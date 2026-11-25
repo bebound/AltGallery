@@ -1,0 +1,46 @@
+{
+  "name": "Ghost Remote",
+  "subtitle": "Ghost Remote AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Ghost Remote",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/icon.webp",
+  "website": "https://github.com/owngoal-dev/iGhostVT",
+  "tintColor": "#009051",
+  "apps": [
+    {
+      "name": "Ghost Remote",
+      "bundleIdentifier": "wiki.qaq.GhostRemote",
+      "developerName": "OwnGoal Studio",
+      "subtitle": "Open terminals on your other iGhostVT devices",
+      "localizedDescription": "Ghost Remote opens terminals on your iPhone, iPad or Mac running iGhostVT, from an iPhone or iPad without custom firmware. Turn on remote access on the device running iGhostVT, then tap + in Ghost Remote and pair with the six-digit code it shows. Terminals open over your local network, or from anywhere through a relay you run yourself.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/main.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/settings.webp"
+      ],
+      "tintColor": "#009051",
+      "versions": [
+        {
+          "version": "1.6.41",
+          "date": "2026-11-24T08:59:44Z",
+          "localizedDescription": "iGhostVT 1.6.41 includes the MCP server helper in Mac self-update signature checks and in the Mac install and update scripts; it connects to devices on any 1.6 release.\n\n- Mac self-updates checked the Developer ID team signature of `ighostvtd`, `ighostvtd-io`, `ighostvtd-remote` and `ighostvt-cli`, but omitted `ighostvt-mcp`. The updater now verifies `ighostvt-mcp` on its own alongside the other bundled helpers before installing an update.\n- `Scripts/mac-update-from-github.sh` now re-signs and stops `ighostvt-mcp` when replacing an installed Mac bundle, and `Scripts/mac-install.sh` stops `ighostvt-mcp` alongside the other helpers during an in-place Mac upgrade.\n\nChoose `iphoneos-arm64e` for roothide, `iphoneos-arm64` for a rootless bootstrap, `iGhostVT-1.6.41-macos-notarized.zip` for a Mac — it is signed and notarized, so it opens without clearing quarantine, and updates itself — or `GhostRemote-1.6.41.ipa` for an iPhone or iPad without custom firmware, which your sideloading app signs as it installs it. To run the relay, use the attached `compose.yml`; the image is `ghcr.io/owngoal-dev/ighostvt-relay`, and the digest is in `relay-image.txt`. SHA-256 sums are in `SHA256SUMS`, and the Mac app's in `SHA256SUMS.macos`.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/owngoal-dev/iGhostVT/releases/download/v1.6.41/GhostRemote-1.6.41.ipa",
+          "size": 7304124,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "wiki.qaq.GhostRemote",
+      "title": "Ghost Remote 1.6.41 · 24 Nov 2026",
+      "identifier": "Ghost Remote-release-v1.6.41",
+      "caption": "Ghost Remote 1.6.41 is available.",
+      "date": "2026-11-24T08:59:44Z",
+      "tintColor": "#009051",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/owngoal-dev/iGhostVT/releases/tag/v1.6.41"
+    }
+  ]
+}

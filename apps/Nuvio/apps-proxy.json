@@ -1,0 +1,45 @@
+{
+  "name": "Nuvio",
+  "subtitle": "Nuvio AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Nuvio",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/icon.webp",
+  "website": "https://github.com/NuvioMedia/NuvioMobile",
+  "tintColor": "#1E88E5",
+  "apps": [
+    {
+      "name": "Nuvio",
+      "bundleIdentifier": "com.nuvio.media",
+      "developerName": "NuvioMedia",
+      "subtitle": "Open-source media client for your own sources",
+      "localizedDescription": "A free, open-source media app that turns your own sources into a library with artwork, ratings, subtitles and your place saved on every screen. Built with Kotlin Multiplatform and Compose Multiplatform; requires iOS 16.1 or later.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/images/main.webp"
+      ],
+      "tintColor": "#1E88E5",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "date": "2026-11-21T14:50:47Z",
+          "localizedDescription": "- c31c30e1 fix(player): ignore gesture insets for bottom controls on android @skoruppa  \r\n- 4baf886e fix(ios): keep downloads out of iCloud and computer backups @claude  \r\n- f81edc65 fix(debrid): match TorBox alternative-hash cache answers @WhiteGiso  \r\n- 103c5e07 fix(trakt): prevent unbounded library refresh queue @enricopro",
+          "downloadURL": "https://gh-proxy.com/https://github.com/NuvioMedia/NuvioMobile/releases/download/1.0.1/nuvio-1.0.1-full-release.ipa",
+          "size": 69936384,
+          "minOSVersion": "16.1"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.nuvio.media",
+      "title": "Nuvio 1.0.1 · 21 Nov 2026",
+      "identifier": "Nuvio-release-1.0.1",
+      "caption": "Nuvio 1.0.1 is available.",
+      "date": "2026-11-21T14:50:47Z",
+      "tintColor": "#1E88E5",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/NuvioMedia/NuvioMobile/releases/tag/1.0.1"
+    }
+  ]
+}

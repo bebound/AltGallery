@@ -1,0 +1,51 @@
+{
+  "name": "Dylix",
+  "subtitle": "Dylix AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Dylix",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/icon.webp",
+  "website": "https://github.com/yangokok886/dylix",
+  "tintColor": "#F0D080",
+  "apps": [
+    {
+      "name": "Dylix",
+      "bundleIdentifier": "com.xuegao.theosmobilecompiler",
+      "developerName": "yangokok886",
+      "subtitle": "iPhone / iPad 上的 AI 插件开发工作台",
+      "localizedDescription": "原生 iOS 插件开发工作台：在手机上管理源码、编辑代码，调用内嵌 Clang / LLD 和 Logos 生成本机编译的 dylib 与 deb；AI 助手可按权限读取头文件、解释代码并修改项目。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/projects.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/editor.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/chat.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/files.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/artifacts.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/git.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/settings.webp"
+      ],
+      "tintColor": "#F0D080",
+      "versions": [
+        {
+          "version": "1.1.4",
+          "date": "2026-11-22T07:30:21Z",
+          "localizedDescription": "# Dylix 1.1.4（284）\n\n1. 优化上下文与缓存：保留稳定请求前缀，完善缓存用量统计和长会话上下文处理，减少重复读取与循环执行。\n2. 完善会话交互：区分空消息续接与普通发送，支持任务执行中补充或修正消息，改进中断后的任务衔接。\n3. 修复项目关联：普通聊天、头文件导出和分享文件会话关联项目时继续使用原会话，保留聊天、附件与任务记录。\n4. 完善协议适配：调整 Anthropic 缓存标记及流式用量处理，保留原始会话证据，区分本地估算与服务商计费用量。\n5. 更新构建与启动配置：使用 Xcode 自带 iOS 27.2 SDK，修复新 SDK 下的场景启动配置，统一版本为 1.1.4（284）。\n\n配套 FLEX 插件版本保持 1.0.3。开源版不包含私有提示词上传服务、后端或个人凭据。\n\n验证范围与结果见 [1.1.4 发布验证](RELEASE_1.1.4_VALIDATION.md)。IPA 为待证书重签名安装包。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/yangokok886/dylix/releases/download/v1.1.4/Dylix-1.1.4-build284-opensource-unsigned.ipa",
+          "size": 103764788,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.xuegao.theosmobilecompiler",
+      "title": "Dylix 1.1.4 · 22 Nov 2026",
+      "identifier": "Dylix-release-v1.1.4",
+      "caption": "Dylix 1.1.4 is available.",
+      "date": "2026-11-22T07:30:21Z",
+      "tintColor": "#F0D080",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/yangokok886/dylix/releases/tag/v1.1.4"
+    }
+  ]
+}

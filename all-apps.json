@@ -352,6 +352,30 @@
       ]
     },
     {
+      "name": "BitChord",
+      "bundleIdentifier": "com.music.bitchord",
+      "developerName": "Hero154",
+      "subtitle": "Open-source YouTube Music client for iPhone and iPad",
+      "localizedDescription": "A native SwiftUI port of BitChord for Android. Search, browse and play the YouTube Music catalogue, with synced lyrics from a dozen providers, downloads, crossfade, Automix, SMB and WebDAV libraries, Last.fm scrobbling and Listen Together. Requires iOS 17 or later.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/explore.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/library.webp"
+      ],
+      "tintColor": "#FC546C",
+      "versions": [
+        {
+          "version": "1.0.2",
+          "date": "2026-11-13T12:21:05Z",
+          "localizedDescription": "Improves playback on slow connections and resolves tester reported issues.\n\nNew\n- Send lyrics as a card, choose which lines to include.\n- Direct source streaming (new option that is disabled by default). \"Queue only\" starts upcoming songs in the queue on a higher priority source found ahead of time. \"Always\" waits up to 12 seconds for one on each track. YouTube will still be used as fallback.\n- Lockscreen animated covers.\n- App icon selector in Settings (5 icons).\n- Audio Quality shown in Discord card when hovering over the cover.\n- Sign-in and Scrobbling working with Last.fm.\n- Log file is stored on the device. This can be shared via the Settings (row) or disabled.\n\nFixed\n- Songs will now start playing on a slow connection and will no longer cut out or jump to the next song.\n- Crossfade will no longer lag.\n- Songs would cut out halfway through due to downloading in the background.\n- A song can no longer be replaced by a copy more than 5 seconds longer or shorter than it.\n- Lyrics would get ahead if you skip through the song. Now in sync again.\n- Offline Backup set to Always now plays from the device.\n- Cover is now shown with the player and if you skip it shows the next cover instantly.\n- Downloads will now restart the track if a partial file goes missing. Songs that have been duplicated are also counted once.\n- Long lists can be scrolled through without rebuilding each row.\n\nOverwrite the previous app. Downloads, Library & Settings are retained.\n\nInstall from the sideload source `https://bitchord.hero154.com/source.json`. The attached IPA is build 9, the same file as on the source. SHA-256: 96da0c1248ca33fee6e9bba4de369fc63c76caced3f6ec487f3a332e0196af42.",
+          "downloadURL": "https://github.com/maanya145/BitChord-iOS/releases/download/v1.0.2/BitChord-1.0.2-9.ipa",
+          "size": 55046727,
+          "minOSVersion": "17.0"
+        }
+      ]
+    },
+    {
       "name": "Breeze",
       "bundleIdentifier": "com.zephyr.breeze",
       "developerName": "deretame",
@@ -542,6 +566,34 @@
       ]
     },
     {
+      "name": "Dylix",
+      "bundleIdentifier": "com.xuegao.theosmobilecompiler",
+      "developerName": "yangokok886",
+      "subtitle": "iPhone / iPad 上的 AI 插件开发工作台",
+      "localizedDescription": "原生 iOS 插件开发工作台：在手机上管理源码、编辑代码，调用内嵌 Clang / LLD 和 Logos 生成本机编译的 dylib 与 deb；AI 助手可按权限读取头文件、解释代码并修改项目。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/projects.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/editor.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/chat.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/files.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/artifacts.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/git.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/settings.webp"
+      ],
+      "tintColor": "#F0D080",
+      "versions": [
+        {
+          "version": "1.1.4",
+          "date": "2026-11-22T07:30:21Z",
+          "localizedDescription": "# Dylix 1.1.4（284）\n\n1. 优化上下文与缓存：保留稳定请求前缀，完善缓存用量统计和长会话上下文处理，减少重复读取与循环执行。\n2. 完善会话交互：区分空消息续接与普通发送，支持任务执行中补充或修正消息，改进中断后的任务衔接。\n3. 修复项目关联：普通聊天、头文件导出和分享文件会话关联项目时继续使用原会话，保留聊天、附件与任务记录。\n4. 完善协议适配：调整 Anthropic 缓存标记及流式用量处理，保留原始会话证据，区分本地估算与服务商计费用量。\n5. 更新构建与启动配置：使用 Xcode 自带 iOS 27.2 SDK，修复新 SDK 下的场景启动配置，统一版本为 1.1.4（284）。\n\n配套 FLEX 插件版本保持 1.0.3。开源版不包含私有提示词上传服务、后端或个人凭据。\n\n验证范围与结果见 [1.1.4 发布验证](RELEASE_1.1.4_VALIDATION.md)。IPA 为待证书重签名安装包。",
+          "downloadURL": "https://github.com/yangokok886/dylix/releases/download/v1.1.4/Dylix-1.1.4-build284-opensource-unsigned.ipa",
+          "size": 103764788,
+          "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
       "name": "EhPanda",
       "bundleIdentifier": "app.ehpanda",
       "developerName": "EhPanda-Team",
@@ -580,11 +632,34 @@
       "tintColor": "#D07030",
       "versions": [
         {
-          "version": "1.0.6",
-          "date": "2026-11-19T13:48:12Z",
-          "localizedDescription": "## Erosion-CN v1.0.6 (Build 31)\n\n> [!IMPORTANT]\n> **System Compatibility / 系统兼容性提示**  \n> - **Supported / 完整支持**：`iOS / iPadOS 27.0 – 27.2.1` and `27.3 beta 1` (`24C503*`).  \n> - **Patched / 已封堵**：Apple patched `worse_query` starting in **`iOS 27.3 beta 2` (`24C5049d+`)**. Do **NOT** update past `27.3 beta 1` if you rely on Erosion-CN.\n\n---\n\n### What's New / 更新内容\n\n1. **General Splash Ad Blocker Whitelist & Manual Manager (`AdWhitelistStore` / `AdWhitelistManagerSheet`) / 去广告应用与路径通用白名单及手动管理面板** *(Thanks to [@appleoner](https://github.com/appleoner) for suggesting [#56](https://github.com/Kianuni/Erosion-CN/issues/56) / 感谢 [@appleoner](https://github.com/appleoner) 在 [#56](https://github.com/Kianuni/Erosion-CN/issues/56) 提出建议)*\n   - **Dedicated Whitelist Manager (`白名单`)**：Added top-bar & Overview card entry points supporting **manual `Bundle ID` / `AppGroup ID` entry**, **quick-picking from installed third-party containers**, **manual container subpath entry**, and one-tap deletion of rules.\n   - **Per-App, Per-Path & File Browser Controls**：Whitelist an entire app + its matching `group.<bundleID>` AppGroups from the container `⋯` menu, exempt a specific folder/config via the row **Ignore (`加白`)** button, or long-press any file/folder in **File Browser** → **Add to Ad Whitelist**.\n   - **Auto-Skip & Auto-Restore**：Whitelisted apps and paths automatically skip global **Lock All** (`一键全锁`) and immediately restore `0755`/`0644` writable permissions (cleaning `.erosion_adlock`) when added. Includes a removable default crash-guard entry for **SMZDM (`什么值得买` · `com.smzdm.client.ios`)**.\n\n2. **Built-In Taobao Splash Boot Paths / 内置手机淘宝开屏启动图与配置路径识别** *(Thanks to [@guestwrt](https://github.com/guestwrt) for sharing in [#56](https://github.com/Kianuni/Erosion-CN/issues/56) / 感谢 [@guestwrt](https://github.com/guestwrt) 在 [#56](https://github.com/Kianuni/Erosion-CN/issues/56) 实测反馈)*\n   - Added `Documents/TBDocuments/bootImagebiz` and `Documents/TBDocuments/bootImageDoc` for **Taobao (`com.taobao.taobao4iphone`)**, enabling automatic detection and one-tap anti-recreate `0555`/`0444` locking alongside `TanxAd`, `TanxSDK`, and `SplashAd`.\n\n3. **Native Battery Cycle & Manufacture Date Guard on iPhone 15+ & Modern iPads / iPhone 15 系列及以上电池循环原生支持提示** *(Thanks to [@guestwrt](https://github.com/guestwrt) for reporting [#55](https://github.com/Kianuni/Erosion-CN/issues/55) / 感谢 [@guestwrt](https://github.com/guestwrt) 在 [#55](https://github.com/Kianuni/Erosion-CN/issues/55) 反馈)*\n   - Automatically detects models that natively show Battery Cycle Count and Manufacture Date in iOS/iPadOS 17.4+ Settings (iPhone 15 series+ and M2/M4+ iPads), locking `[Beta] Show Battery Cycle Count & Manufacture Date on Legacy Devices` when disabled or advising users to turn it off if previously enabled.\n\n> 📜 Full changelog / 完整更新日志：**[CHANGELOG.md](https://github.com/Kianuni/Erosion-CN/blob/main/CHANGELOG.md)** · User Guide / 使用指南：**[USAGE_GUIDE.md](https://github.com/Kianuni/Erosion-CN/blob/main/USAGE_GUIDE.md)**\n\n---\n\n### Install & Checksum / 下载安装与校验\n\n- **SideStore / AltStore / Feather Official Source / 官方更新源**：`https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json` *(auto-synced by CI after release / 发版后由 GitHub Actions 自动同步)*\n- **IPA Asset / 安装包文件**：`Erosion_v1.0.6_Bilingual.ipa` (`6,948,787` bytes; preserve `App Group` entitlements when signing)\n- **SHA-256**：`72165f09450c9477dcd980b7f0858b8d93f881a825fb76ee2c3d62698d7d7e55`",
-          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.6/Erosion_v1.0.6_Bilingual.ipa",
-          "size": 6948787,
+          "version": "1.0.7",
+          "date": "2026-11-25T03:13:04Z",
+          "localizedDescription": "## Erosion-CN v1.0.7 (Build 32)\n\n> [!IMPORTANT]\n> **System Compatibility / 系统兼容性提示**  \n> - **Supported / 完整支持**：`iOS / iPadOS 27.0 – 27.2.1` and `27.3 beta 1` (`24C503*`).  \n> - **Patched / 已封堵**：Apple patched `worse_query` starting in **`iOS 27.3 beta 2` (`24C5049d+`)**. Do **NOT** update past `27.3 beta 1` if you rely on Erosion-CN.\n\n---\n\n### What's New / 更新内容\n\n1. **Expanded Built-In Splash Ad Blocker Paths (`AdCacheBlockerView`) / 扩充主流应用内置开屏广告路径识别** *(Thanks to [@oooasis](https://github.com/oooasis) and [@itmubai](https://github.com/itmubai) for testing and sharing in [#58](https://github.com/Kianuni/Erosion-CN/issues/58) / 感谢 [@oooasis](https://github.com/oooasis) 与 [@itmubai](https://github.com/itmubai) 在 [#58](https://github.com/Kianuni/Erosion-CN/issues/58) 实测分享)*\n   - Added curated per-app splash/ad cache paths strictly scoped to 7 popular app containers (excluding generic WebView/networking caches, with full one-tap restore and whitelist support):\n     - **Taobao (`com.taobao.taobao4iphone`) / 淘宝**：Added `Documents/TBDocuments/bootImagesDoc` alongside `bootImageDoc` and `bootImagebiz`.\n     - **JD (`com.360buy.jdmobile`) / 京东**：Fixed the official iOS App Store Bundle ID mapping and added `Library/Caches/startADImage`.\n     - **Dianping (`com.dianping.dpscope`) / 大众点评**：Added `Documents/splashes_new`.\n     - **China Mobile (`cn.10086.app`) / 中国移动**：Added `Library/DownloadCenter`.\n     - **Tencent Video (`com.tencent.live4iphone`) / 腾讯视频**：Added `Library/Caches/QAD/PreloadImageAdOrderCache`, `QADWatchHistoryAdCache`, `maxViewAdCacheFolderName`, `Library/Caches/TAD/PushAdPendantCache`, and `TADCache`.\n     - **Fanqie Novel (`com.dragon.read`) / 番茄小说**：Added `Documents/TTAdSplashSimpleCache`.\n     - **Trip.com / Ctrip (`ctrip.com` / `ctrip.wireless`) / 携程旅行**：Added `Library/Caches/LoadingImages`.\n\n2. **Localized Official iOS Bundle ID Display Names (`CSStoreEngine` & `AppDataBackupView`) / 补全官方 iOS Bundle ID 中英文应用名映射**\n   - Added Simplified Chinese and English display-name mappings for the corrected/new official iOS Bundle IDs above across Splash Ad Blocker, App Saves Manager, and Container Scanner.\n\n> 📜 Full changelog / 完整更新日志：**[CHANGELOG.md](https://github.com/Kianuni/Erosion-CN/blob/main/CHANGELOG.md)** · User Guide / 使用指南：**[USAGE_GUIDE.md](https://github.com/Kianuni/Erosion-CN/blob/main/USAGE_GUIDE.md)**\n\n---\n\n### Install & Checksum / 下载安装与校验\n\n- **SideStore / AltStore / Feather Official Source / 官方更新源**：`https://raw.githubusercontent.com/Kianuni/Erosion-CN/main/apps.json` *(auto-synced by CI after release / 发版后由 GitHub Actions 自动同步)*\n- **IPA Asset / 安装包文件**：`Erosion_v1.0.7_Bilingual.ipa` (`6,948,364` bytes; preserve `App Group` entitlements when signing)\n- **SHA-256**：`053796a918eb48b12d8f857ad0b666c9fe584296e9934367751837974cc44e19`",
+          "downloadURL": "https://github.com/Kianuni/Erosion-CN/releases/download/v1.0.7/Erosion_v1.0.7_Bilingual.ipa",
+          "size": 6948364,
+          "minOSVersion": "26.0"
+        }
+      ]
+    },
+    {
+      "name": "EscapeOS",
+      "bundleIdentifier": "com.ipaside.escapeos",
+      "developerName": "pwnapplehat",
+      "subtitle": "On-device file browser and backup tool for another app's Data container",
+      "localizedDescription": "Browse, edit, back up and restore another app's Data container on device: Documents, Library and tmp, file copy and compress/extract (zip, 7z, tar, gz, bz2, xz, lz4, lzma, deb), SQLite viewing, and SHA-256 manifests on every backup. No jailbreak, no Keychain. Requires iOS 26.0 or later, LocalDevVPN and a pairing file placed by iPASide.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/pair.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/settings.webp"
+      ],
+      "tintColor": "#3AA39D",
+      "versions": [
+        {
+          "version": "0.3.2",
+          "date": "2026-11-11T14:19:37Z",
+          "localizedDescription": "## Added\n\n- **App Groups.** An app's page lists its groups when the install record includes them, and opens a group that has a folder. Reset App Data still does not touch groups.\n- **Import a backup.** Backups, Import Backup copies an exported EscapeOS backup zip back into Files, On My iPhone, EscapeOS, Backups. A zip that is not one of these backups is refused. An existing name is kept.\n\n## Changed\n\n- **Search Whole App.** A file opens the folder it is in and marks that file. A folder still opens.\n- **iOS 26.0 is the minimum.** The IPA does not install below that.\n\nApp Groups, search, and backup import were confirmed on device the same day.\n\n`EscapeOS-0.3.2.ipa` SHA-256:\n\n```\n49edbca809d4b07c8863971ba40a2551537d433872f03cedd1c13ce2e0975e1e\n```\n\n`libidevice_ffi.a` is unchanged from 0.3.1:\n\n```\n6524066d54ef23e00d46445c04dfc694e180196d54119d718f68434fa225be35\n```",
+          "downloadURL": "https://github.com/pwnapplehat/EscapeOS/releases/download/v0.3.2/EscapeOS-0.3.2.ipa",
+          "size": 7683406,
           "minOSVersion": "26.0"
         }
       ]
@@ -681,6 +756,29 @@
           "downloadURL": "https://github.com/huami1314/GestaltX/releases/download/v1.1.1/GestaltX_1.1.1.ipa",
           "size": 6774794,
           "minOSVersion": "26.0"
+        }
+      ]
+    },
+    {
+      "name": "Ghost Remote",
+      "bundleIdentifier": "wiki.qaq.GhostRemote",
+      "developerName": "OwnGoal Studio",
+      "subtitle": "Open terminals on your other iGhostVT devices",
+      "localizedDescription": "Ghost Remote opens terminals on your iPhone, iPad or Mac running iGhostVT, from an iPhone or iPad without custom firmware. Turn on remote access on the device running iGhostVT, then tap + in Ghost Remote and pair with the six-digit code it shows. Terminals open over your local network, or from anywhere through a relay you run yourself.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/main.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/settings.webp"
+      ],
+      "tintColor": "#009051",
+      "versions": [
+        {
+          "version": "1.6.41",
+          "date": "2026-11-24T08:59:44Z",
+          "localizedDescription": "iGhostVT 1.6.41 includes the MCP server helper in Mac self-update signature checks and in the Mac install and update scripts; it connects to devices on any 1.6 release.\n\n- Mac self-updates checked the Developer ID team signature of `ighostvtd`, `ighostvtd-io`, `ighostvtd-remote` and `ighostvt-cli`, but omitted `ighostvt-mcp`. The updater now verifies `ighostvt-mcp` on its own alongside the other bundled helpers before installing an update.\n- `Scripts/mac-update-from-github.sh` now re-signs and stops `ighostvt-mcp` when replacing an installed Mac bundle, and `Scripts/mac-install.sh` stops `ighostvt-mcp` alongside the other helpers during an in-place Mac upgrade.\n\nChoose `iphoneos-arm64e` for roothide, `iphoneos-arm64` for a rootless bootstrap, `iGhostVT-1.6.41-macos-notarized.zip` for a Mac — it is signed and notarized, so it opens without clearing quarantine, and updates itself — or `GhostRemote-1.6.41.ipa` for an iPhone or iPad without custom firmware, which your sideloading app signs as it installs it. To run the relay, use the attached `compose.yml`; the image is `ghcr.io/owngoal-dev/ighostvt-relay`, and the digest is in `relay-image.txt`. SHA-256 sums are in `SHA256SUMS`, and the Mac app's in `SHA256SUMS.macos`.",
+          "downloadURL": "https://github.com/owngoal-dev/iGhostVT/releases/download/v1.6.41/GhostRemote-1.6.41.ipa",
+          "size": 7304124,
+          "minOSVersion": "15.0"
         }
       ]
     },
@@ -940,11 +1038,11 @@
       "tintColor": "#45A992",
       "versions": [
         {
-          "version": "3.1.2",
-          "date": "2026-11-23T06:25:05Z",
-          "localizedDescription": "### 新增\n\n- 更新提醒通知可附带番剧封面：只从本地图片缓存取图，没有缓存就不附，不会为此额外联网\n\n### 修复\n\n- 修复在 Bangumi 上改追番状态、打评分、发评论时经常失败的问题：原来把这些操作发到了已经停用的旧地址，现在改回官方接口\n- 修复同步到 Bangumi 失败时只弹一句「同步失败」、看不出为什么的问题，现在会写明具体原因；标记看过也会区分成功与失败，并显示是第几集\n- 修复滑到时间表底部后再大量过滤或换排序，列表卡在可视区外导致整页空白的问题\n\n### 优化\n\n- 时间表同一列内的排序更准：用于排序的时刻与卡片底部「HH:mm 更新」同源，手动添加的条目也会补上时刻\n- 详情页顶部提示条改为胶囊样式并接入安全区，出现和消失更顺滑\n- 缩略图未下载完时先复用已缓存的小图，不再显示空白；小尺寸请求也能直接命中已缓存的大图\n- 「我的」页最近观看卡片提前预取封面，滚动时不再闪白\n\n### 已知问题\n\n- 部分番剧的详情页侧滑退出无法打断，按钮悬空慢淡出。这是 SwiftUI 原生转场机制的限制，暂时没有优化计划",
-          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.1.2/Kazumi_ios_v3.1.2_no_sign.ipa",
-          "size": 24543702,
+          "version": "3.1.3",
+          "date": "2026-11-25T02:28:50Z",
+          "localizedDescription": "### 修复\n\n- 修复点全屏后画面有时缩到左下角并越出边界、必须退出再进一次才恢复的问题\n- 修复在 Bangumi 上标记单集看过失败时只说一句「失败」、看不出原因的问题，现在会说明是令牌失效、单集不存在还是番剧未收藏\n- 修复时间表滑到底后大量过滤或切换排序时整页空白的问题\n- 修复番剧详情页的验证码弹窗在大字号或横屏下撑满整屏的问题，现在限制在半屏高度、内容可滚动\n- 修复截图偶发失败：`screenshot-raw` 取不到帧时先在 GPU 侧按片源分辨率读回，不再为此切换解码器\n\n### 优化\n\n- 横屏播放页的进度条改用独立布局，与时间显示对齐更整齐\n- 弹幕：屏蔽规则预编译复用、轨道判定提速，无弹幕时段降低刷新频率，高密度弹幕下更省电\n- 追番页只按需加载可视区封面，之后 15 张提前预取，滚动更顺\n- 下载重试改为 0.5 秒 → 1.5 秒 → 3 秒的退避；App 被强杀后重开也能按已下载的分片恢复进度\n- 云同步内容没有变化时不再重复上传，上传过程中的提示会分阶段显示进度\n- 更新提醒的封面改为复用同一张图，不再为每条提醒重复准备\n- 图片搜索选图后改为后台压缩再上传，选择大图时不再卡顿\n- 日志缓冲改为固定容量的环形结构，长时间使用后内存占用更稳定\n\n### 已知问题\n\n- 部分番剧的详情页侧滑退出无法打断，按钮悬空慢淡出。这是 SwiftUI 原生转场机制的限制，暂时没有优化计划\n\n**安装：** 在 AltStore / SideStore / Feather 中添加软件源 `https://linkpass888.github.io/Sideload/source.json`，即可直接安装与更新，无需手动下载 IPA。入口页 <https://linkpass888.github.io/Sideload/>",
+          "downloadURL": "https://github.com/LinkPass888/Kazumi-Swift/releases/download/v3.1.3/Kazumi_ios_v3.1.3_no_sign.ipa",
+          "size": 21572090,
           "minOSVersion": "26.0"
         }
       ]
@@ -1011,11 +1109,11 @@
       "tintColor": "#4E4592",
       "versions": [
         {
-          "version": "1.13.2",
-          "date": "2026-10-18T10:47:40Z",
-          "localizedDescription": "- 支持自动更新。\n- 平板端新增侧边导航和左右分栏布局。\n- 阅读器默认开启双页显示。\n- 设置页新增重置所有设置。\n- 我的道具新增使用入口，支持使用改名卡。\n- 搜索页移除页码提示。",
-          "downloadURL": "https://github.com/LightNovelShelf/Flutter/releases/download/v1.13.2/app-ios-unsigned.ipa",
-          "size": 11957867,
+          "version": "1.13.3",
+          "date": "2026-11-25T03:28:26Z",
+          "localizedDescription": "**Full Changelog**: https://github.com/LightNovelShelf/Flutter/compare/v1.13.2...v1.13.3",
+          "downloadURL": "https://github.com/LightNovelShelf/Flutter/releases/download/v1.13.3/app-ios-unsigned.ipa",
+          "size": 11911212,
           "minOSVersion": "15.0"
         }
       ]
@@ -1240,6 +1338,35 @@
       ]
     },
     {
+      "name": "Mori",
+      "bundleIdentifier": "com.mori.downloader",
+      "developerName": "coflyn",
+      "subtitle": "Client-side media downloader for 16 platforms",
+      "localizedDescription": "Save videos, photos and audio from TikTok, Instagram, YouTube, Twitter/X, Spotify, Apple Music, Pinterest, Facebook, Threads, Bandcamp, Pixiv, Bilibili, Douyin, RedNote, Reddit and TeraBox, with built-in tools for stream sniffing, audio extraction, image conversion and PDF compression. Everything runs on-device — no accounts, ads or tracking.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/1.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/2.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/3.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/4.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/5.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/6.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/7.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/8.webp"
+      ],
+      "tintColor": "#27282A",
+      "versions": [
+        {
+          "version": "4.6.1",
+          "date": "2026-11-20T23:42:35Z",
+          "localizedDescription": "# What's New in Mori 4.6.1\r\n\r\n### New Features & Enhancements\r\n\r\n* **Direct iOS Camera Roll Save (#27)**: Added native Photos framework integration (`saveToCameraRoll`) in AppDelegate to save downloaded videos and photos directly to iOS Camera Roll without third-party dialogs.\r\n* **Full Spanish (es) Localization (#30)**: Added complete Spanish language translation across app UI, tools, settings, and documentation.\r\n* **Chinese Share Link Extraction (#26)**: Added parser preserving extraction codes from Chinese cloud drive and media share captions (Quark, UC, Baidu, 115, Lanzou).\r\n* **Multilingual Documentation**: Added localized README and installation guides for Indonesian (`id`), Simplified Chinese (`zh-CN`), and Spanish (`es`) with interactive language switchers.\r\n* **Full i18n Key Synchronization**: Synchronized all 9 locale dictionaries to 630 translation keys and added native Android Indonesian string resources (`values-in`).\r\n\r\n### Bug Fixes & Scraper Repairs\r\n\r\n* **iOS Auto-Zoom on Input Focus (#31)**: Enforced 16px font sizing and locked viewport scale to prevent WebKit auto-zooming when tapping the input or paste bar.\r\n* **Bilibili Akamai 403 & Stream Headers (#31)**: Injected required Referer (`https://www.bilibili.com/`) and User-Agent headers on Akamai CDN streams, removed universal byte-range header to prevent broken HTTP 206 responses, and added HTML error page detection to stop saving corrupt error responses.\r\n* **Mori CLI Playlist Downloads**: Fixed playlist downloads and dynamic version resolution in `@coflyn/mori` (v1.2.2).\r\n\r\n### Performance & Reliability\r\n\r\n* **History & Gallery Memory Optimization**: Cached video thumbnails directly to disk via Filesystem, added paginated progressive rendering for large media lists, and removed redundant background scanning loops.\r\n\r\n**Full Changelog**: https://github.com/coflyn/Mori/compare/v4.6.0...v4.6.1",
+          "downloadURL": "https://github.com/coflyn/Mori/releases/download/v4.6.1/Mori-v4.6.1-iOS-Unsigned.ipa",
+          "size": 2214932,
+          "minOSVersion": "14.0"
+        }
+      ]
+    },
+    {
       "name": "Mornye",
       "bundleIdentifier": "com.zarz.mornye",
       "developerName": "zarzet",
@@ -1281,9 +1408,9 @@
         {
           "version": "2.0.3",
           "date": "2026-11-24T15:57:54Z",
-          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.3`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端 `.strm` 直链播放与全链路音视频对齐**：\n  - iOS、Android、HarmonyOS NEXT 全面支持媒体服务器（Emby / Jellyfin / 绿联影视 / 极空间 / 本地库）、文件管理、整理历史、订阅文件、`moviepilot://play` DeepLink 及系统外部打开 `.strm` 直链播放，支持请求头提取、跨源鉴权隔离与服务端代理流自动兜底。\n  - Android（Media3 ExoPlayer + MediaSessionService）与 HarmonyOS NEXT（AVPlayer + AVSession + PiPWindow）音视频播放能力与 iOS 1:1 对齐，涵盖音轨/外挂与内封字幕切换、LRC 同步歌词、锁屏与通知栏播控、画中画、手势调节及双端播放进度同步。\n- **三端信息架构精简与统一**：\n  - 移除三端「更多」页面中重复的「站点管理」（归属「设置」页）、「追剧日历」与「订阅广场」（归属「订阅」页）入口，聚焦资源媒体流转、插件工作流与系统诊断三大核心分区。\n- **iOS / iPadOS 全原生体验**：\n  - 默认主题切换为「极简石墨」，并深度校准「星夜紫玫」深丝绒渐变与中性通透玻璃卡片质感；订阅页顶部排期与筛选交互去重，订阅广场与日历收敛至右上角快捷入口。\n  - 全面适配 **iPhone**（Liquid Glass 4+1 悬浮导航）、**iPad**（`sidebarAdaptable` 侧边栏工作台与多列 Bento 自适应栅格）及 **iPhone Duo** 竖向侧边操作区。\n- **Android 全原生客户端（Jetpack Compose + Material 3 Expressive）**：\n  - 采用 Material 3 Expressive 视觉体系、圆角悬浮/侧栏自适应导航、统一大胶囊分页栏（`ExpressivePillTabRow`）、Material You 动态取色与 AMOLED 纯黑模式。\n  - 完整对齐发现模块编排、媒体库浏览、探索与全局搜索、全量订阅规则与追剧日历、PT 站点多维筛选与下载控制、多存储文件管理与手动整理、工作流画布、AI 智能助手流式对话、原生 JSON/Vue 插件生态及「我的」页置顶 3D 社区勋章。\n- **HarmonyOS NEXT 全原生客户端（ArkTS / ArkUI + 动态光感）**：\n  - 采用 HarmonyOS 动态光感材质（支持 API 26 旗舰沉浸材质与多代际平滑回退）、无遮挡渐进模糊沉浸顶栏、原生 `bindSheet` 半模态与一多宽屏侧栏。\n  - 完整打通 HUKS 安全会话持久化、同源凭据隔离、全业务场景闭环、常驻迷你音乐续播、「我的」页置顶 3D 社区勋章检视佩戴与全场景品牌 Logo。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.3` | `MoviePilot-2.0.3-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.3` | `MoviePilot-2.0.3-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.3` | `MoviePilot-2.0.3-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.3` | `MoviePilot-2.0.3-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[3f6c265c2511ca361f5bd007356f526762590fa8](https://github.com/jxxghp/MoviePilot-App/commit/3f6c265c2511ca361f5bd007356f526762590fa8)。",
+          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.3`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端 `.strm` 直链播放与全链路音视频对齐**：\n  - iOS、Android、HarmonyOS NEXT 全面支持媒体服务器（Emby / Jellyfin / 绿联影视 / 极空间 / 本地库）、文件管理、整理历史、订阅文件、`moviepilot://play` DeepLink 及系统外部打开 `.strm` 直链播放，支持请求头提取、跨源鉴权隔离与服务端代理流自动兜底。\n  - Android（Media3 ExoPlayer + MediaSessionService）与 HarmonyOS NEXT（AVPlayer + AVSession + PiPWindow）音视频播放能力与 iOS 1:1 对齐，涵盖音轨/外挂与内封字幕切换、LRC 同步歌词、锁屏与通知栏播控、画中画、手势调节及双端播放进度同步。\n- **三端信息架构精简与统一**：\n  - 移除三端「更多」页面中重复的「站点管理」（归属「设置」页）、「追剧日历」与「订阅广场」（归属「订阅」页）入口，聚焦资源媒体流转、插件工作流与系统诊断三大核心分区。\n- **iOS / iPadOS 全原生体验**：\n  - 默认主题切换为「极简石墨」，并深度校准「星夜紫玫」深丝绒渐变与中性通透玻璃卡片质感；订阅页顶部排期与筛选交互去重，订阅广场与日历收敛至右上角快捷入口。\n  - 全面适配 **iPhone**（Liquid Glass 4+1 悬浮导航）、**iPad**（`sidebarAdaptable` 侧边栏工作台与多列 Bento 自适应栅格）及 **iPhone Duo** 竖向侧边操作区。\n- **Android 全原生客户端（Jetpack Compose + Material 3 Expressive）**：\n  - 采用 Material 3 Expressive 视觉体系、圆角悬浮/侧栏自适应导航、统一大胶囊分页栏（`ExpressivePillTabRow`）、Material You 动态取色与 AMOLED 纯黑模式。\n  - 完整对齐发现模块编排、媒体库浏览、探索与全局搜索、全量订阅规则与追剧日历、PT 站点多维筛选与下载控制、多存储文件管理与手动整理、工作流画布、AI 智能助手流式对话、原生 JSON/Vue 插件生态及「我的」页置顶 3D 社区勋章。\n- **HarmonyOS NEXT 全原生客户端（ArkTS / ArkUI + 动态光感）**：\n  - 采用 HarmonyOS 动态光感材质（支持 API 26 旗舰沉浸材质与多代际平滑回退）、无遮挡渐进模糊沉浸顶栏、原生 `bindSheet` 半模态与一多宽屏侧栏。\n  - 完整打通 HUKS 安全会话持久化、同源凭据隔离、全业务场景闭环、常驻迷你音乐续播、「我的」页置顶 3D 社区勋章检视佩戴与全场景品牌 Logo。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.3` | `MoviePilot-2.0.3-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.3` | `MoviePilot-2.0.3-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.3` | `MoviePilot-2.0.3-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.3` | `MoviePilot-2.0.3-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[dfee1c0da4aec0b5420cfe4c8d6c0a6963b15dfc](https://github.com/jxxghp/MoviePilot-App/commit/dfee1c0da4aec0b5420cfe4c8d6c0a6963b15dfc)。",
           "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.3/MoviePilot-2.0.3-ios-unsigned.ipa",
-          "size": 35799360,
+          "size": 35804987,
           "minOSVersion": "17.0"
         }
       ]
@@ -1333,6 +1460,28 @@
           "downloadURL": "https://github.com/dddevid/Musly/releases/download/v2.0.3/musly-ios.ipa",
           "size": 14317899,
           "minOSVersion": "15.0"
+        }
+      ]
+    },
+    {
+      "name": "Nuvio",
+      "bundleIdentifier": "com.nuvio.media",
+      "developerName": "NuvioMedia",
+      "subtitle": "Open-source media client for your own sources",
+      "localizedDescription": "A free, open-source media app that turns your own sources into a library with artwork, ratings, subtitles and your place saved on every screen. Built with Kotlin Multiplatform and Compose Multiplatform; requires iOS 16.1 or later.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/images/main.webp"
+      ],
+      "tintColor": "#1E88E5",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "date": "2026-11-21T14:50:47Z",
+          "localizedDescription": "- c31c30e1 fix(player): ignore gesture insets for bottom controls on android @skoruppa  \r\n- 4baf886e fix(ios): keep downloads out of iCloud and computer backups @claude  \r\n- f81edc65 fix(debrid): match TorBox alternative-hash cache answers @WhiteGiso  \r\n- 103c5e07 fix(trakt): prevent unbounded library refresh queue @enricopro",
+          "downloadURL": "https://github.com/NuvioMedia/NuvioMobile/releases/download/1.0.1/nuvio-1.0.1-full-release.ipa",
+          "size": 69936384,
+          "minOSVersion": "16.1"
         }
       ]
     },
@@ -1836,6 +1985,31 @@
       ]
     },
     {
+      "name": "TDrive",
+      "bundleIdentifier": "com.jeetraj.tdrive",
+      "developerName": "ndgthuan",
+      "subtitle": "Turn your private Telegram storage into a cloud drive",
+      "localizedDescription": "TDrive turns your private Telegram storage into a drive you can browse, search, preview, share and mount, with an AI assistant, automatic photo backup and client-side encryption. Requires Telegram API credentials from my.telegram.org.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_01_home_drive_switcher.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_02_home_shared_drives.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_03_account_folder.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_04_account_drives.webp"
+      ],
+      "tintColor": "#20A0E0",
+      "versions": [
+        {
+          "version": "3.1.9",
+          "date": "2026-11-02T07:08:10Z",
+          "localizedDescription": "# TDrive v3.1.9\n\nThis release changes how Android folder import handles a file that already\nexists on the drive under the same name. Instead of skipping or renaming it\nsilently, TDrive asks what to do. It also creates the folder you picked even\nwhen that folder is empty. Bản phát hành này thay đổi cách nhập thư mục trên\nAndroid khi một tệp đã có trên drive với cùng tên. Thay vì bỏ qua hoặc đổi tên\nâm thầm, TDrive sẽ hỏi bạn muốn làm gì. Thư mục bạn chọn cũng được tạo ngay cả\nkhi thư mục đó trống.\n\n## Highlights\n\n- Same name, different size: before anything is sent, TDrive asks whether to\n  Replace the file on the drive, Keep both, or Skip. Skip is the default, and\n  canceling the question sends nothing. With several clashes, one choice can be\n  applied to all of them.\n- Replace moves the old file to Trash, where you can restore it. The new copy\n  is confirmed on the drive before the old one is moved, and then it takes the\n  original name.\n- Keep both saves the new file as the first free name, such as `photo_1.jpg`.\n  The name also avoids folders that the same import is about to create.\n- An empty folder you pick is created on the drive, even when nothing goes into it.\n- The Transfers entry notes how many files were replaced, kept or skipped.\n\n## Known limits\n\n- Replace uses Trash, so the old file can be restored, but it is not a\n  Telegram revision.\n- A file whose size is unknown, or whose drive check fails, is uploaded as a\n  copy without asking.\n- Retrying a failed import does not carry your clash answers, so the question\n  can appear again.\n- A file name that contains a backslash makes its whole upload batch fail.\n- The Transfers row title can cut off the replaced and kept counts. The full\n  text is in the history and notification.\n- The Android build was tested on an x86_64 emulator with automated tests. The\n  ARM64 release APK was not run on a phone.\n\n## Downloads\n\n| Platform | File | Notes |\n| --- | --- | --- |\n| Windows 10/11 (64-bit) | `TDrive-v3.1.9-windows-amd64-setup.exe` | Installer. A portable `TDrive-v3.1.9-windows-amd64.zip` is also attached. |\n| macOS (Apple silicon) | `TDrive-v3.1.9-macos-arm64.zip` | Unzip and drag TDrive to Applications. |\n| Linux (64-bit) | `TDrive-v3.1.9-x86_64.AppImage` | `chmod +x` it, then run it. Needs glibc 2.35 or newer. |\n| Android 7.0 or newer (ARM64) | `TDrive-v3.1.9-android-arm64.apk` | Allow installs from your browser or file manager when Android asks. |\n| iPhone / iPad (iOS 16 or newer) | `TDrive-v3.1.9-ios-unsigned.ipa` | Not signed. Install with TrollStore, Sideloadly or AltStore. |\n\n## Integrity\n\n- `checksums.txt` lists SHA-256 digests for the downloadable packages.\n- `checksums.txt.sig` authenticates that manifest for the desktop updater using the embedded Ed25519 trust keys.\n- Android release certificate SHA-256: `A8:F4:4A:72:E0:56:E1:79:DE:19:4C:F3:E3:10:84:9D:5C:B6:BA:5A:58:EC:5F:A6:AD:BA:DD:29:FB:DC:22:92`.\n\n## Credits\n\nOriginal TDrive by [Jeetraj](https://github.com/jeetrex17/TDrive), MIT License. This fork is maintained by [Nguyễn Dương Gia Thuận](https://github.com/ndgthuan/tdrive).\n\n**Full changelog:** https://github.com/ndgthuan/tdrive/compare/v3.1.8...v3.1.9",
+          "downloadURL": "https://github.com/ndgthuan/tdrive/releases/download/v3.1.9/TDrive-v3.1.9-ios-unsigned.ipa",
+          "size": 36249723,
+          "minOSVersion": "16.0"
+        }
+      ]
+    },
+    {
       "name": "TiebaPure",
       "bundleIdentifier": "dev.infinityf4p.tiebapure",
       "developerName": "infinityf4p",
@@ -1947,12 +2121,12 @@
       "tintColor": "#2090E0",
       "versions": [
         {
-          "version": "1.18.4",
-          "buildVersion": "253",
-          "date": "2026-11-23T03:27:29Z",
-          "localizedDescription": "### 正式发布与验收\n\n- 发布 `1.18.4+253`，汇总 RC1–RC3 和后续反馈修复。Android 手机／TV、Windows、macOS、iOS、Linux x64／ARM64 从同一正式标签重新构建，公开并核验后推进稳定更新渠道、AltStore 和 Winget 元数据。\n- 鸿蒙改为独立 Actions Beta 分发，继续从准确主线提交构建 ARM64／API 26 未签名 HAP，提供来源 manifest、校验值和独立设备验收模板；本次正式 Release 不附带 HAP，也不声明鸿蒙真机验收通过。历史 RC、正式版及其鸿蒙附件保持原样。\n- #178 的 Android 120 Hz 连续翻页和 #188 的收藏目录切换已获提出者明确确认；#129、#152 已交付可安装修复且超过 72 小时未收到新的失败反馈，按约定接受，不将超时视为真机确认。\n- #166 的强 Cloudflare／TLS 兼容问题及 #186 原设备更新检查网络故障因缺少充分证据暂缓，相关异常处理与诊断改进不代表原始问题已修复。白边裁剪仍会保留带扫描痕迹、压缩灰点或靠边内容的区域；#159 长期外部目录及 #163、#81、#123 等增强继续后续安排。\n- 升级前导出并另存完整应用数据备份、保留原漫画文件；沿用原包名与签名身份覆盖安装，无需清库或重新导入。鸿蒙独立 Beta 仍需用户沿用原密钥自行签装。\n\n### 候选版已交付的功能与修复\n\n- 阅读器提供「锁定阅读菜单」和靠边小锁，锁定期间阻止触摸／右键唤出菜单，保留翻页、滚动、缩放，跨章与旋转保持锁定；TV 确定键先解锁，再次操作打开菜单。纵向连续／瀑布流支持默认关闭的「裁剪左右白边」，后台逐页检测、保留内容和双页中线，原图、下载、保存及导出不变（#139）。\n- 收藏支持从零开始多选、全选／反选、长按范围选择及当前父目录的子目录排序；宽屏常用操作直接显示在顶栏，桌面 Esc 按弹窗、多选、搜索顺序退出。详情收藏面板使用完整可用高度，新建文件夹固定在顶栏，长目录名和大字号布局不再溢出（#152、#155、#157、#158）。\n- 关键词屏蔽提供字面文字包含、独立词、标签完全匹配及逐规则大小写设置，支持编辑、示例试匹配、命中原因和原文高亮；短英文缩写推荐独立词，规则保存、旧数据与备份兼容保留（#115）。\n- Cloudflare 页面检查就绪状态及返回类型，合并并发检查并等待有效 Cookie／User-Agent 持久保存后结束，关闭页面后取消迟到结果（#165）；强验证站点的 TLS／Bot 兼容范围仍受上述限制。\n- 设置保存期间保持控件布局，慢保存才显示进度；阅读器调光预览、底栏和保存状态同步监听实时设置，修复面板跳动及当前页保存后亮度回退，保留失败重试与连续操作（#168、#169、#180）。\n- 收藏按实际输入缓存搜索、规则及历史筛选，图片使用紧凑字节缓冲并合并进度刷新；连续／瀑布流异步尺寸变化保留阅读位置，前章插入等待滚动空闲，减少加载与阅读期间重复工作（#167、#170、#178）。\n- 鸿蒙独立 Beta 延续批量归档和合集 ZIP 导入、完整备份及恢复，统一所有语言的 `VeneraNext` 桌面名称；未实现的长期外部存储、平台应用锁及系统分享入口继续显示准确限制（#159、#162）。\n- 完成测试职责与公共夹具整理，删除已废弃模板及冗余用例；CI 保留实际加载／用例／跳过记录、完整分片与覆盖率、原生所有权和内存检查，以及 Android／TV、Windows、Apple 和真实文档 Provider 验证。\n\n### 安全与依赖\n\n- 更新 QUIC 和证书信任等锁定 Rust 依赖，保留完整 RustSec 扫描与原生平台兼容检查。\n- 将 Rhttp 的 `url` 锁定版本从 2.5.7 更新至 2.5.9，修复嵌套 `blob:` URL 的来源解析可能触发栈溢出的问题（RUSTSEC-2026-0592）；同步采用其要求的 `form_urlencoded` 1.2.3，保留现有 Rust／桥接版本和 iOS 兼容固定值，继续执行完整依赖审查与云端原生构建。\n\n### 本地漫画导入修复\n\n- 解压后的漫画目录复制改为直接检查暂存文件，避免每复制一张图片都重新枚举不断增长的输出目录。待复制页在实际读取时按源清单校验，已复制页仍提前核对源文件，减少首次导入对全部图片的重复读取；保留源目录结构检查、逐文件内容校验、完成证明和中断恢复。\n- 目录及漫画合集导入显示读取、检查、复制和完成校验的文件计数与进度，实际进入登记阶段后才提示保存到漫画库；加载提示保留首帧显示前收到的进度更新。\n\n### 阅读器修复\n\n- 分页布局与状态校验只读取所需设置，并复用同次布局结果，减少连翻时整份设置的重复解析；保留漫画、设备和全局设置优先级、TV 单图限制及过期请求检查。标题栏、底栏操作与亮度控件按输入复用，页码和跳页能力继续更新，实时调光、语言、主题、文字缩放及会话变更仍刷新对应控件（#178）。\n- 图片收藏状态仅缓存当前章节的页码集合，缓存命中仍经过原数据库访问队列；写入、导入、清空和连接变化后失效，查询失败可重试，减少隐藏菜单随连翻重复查询和解析收藏记录（#178）。\n- 分页预加载从页面构建移到翻页意图产生后的帧末合并调度，优先准备已接受的目标页及方向邻页；保留当前／目标页已开始的订阅，限制为两路并行解码和四个准入任务，取消后的原生清理完成前继续占用名额。预解码成功时请求清理所需的帧，空闲画面下也能释放名额并继续队列（#178）。\n- 选页使用活动页通知更新缩放状态，同章节翻页只刷新阅读器外壳及输入有效性，减少整个 Gallery 和阅读内容重建；同页回报不再重复保存进度，分别验证分页通知与视口交接的刷新次数，保留动画交接、章节边界、常亮、墨水屏与退出清理（#178）。\n- 主页导入漫画直接进入根阅读器，避免先创建带封面转场的详情页再立即替换；恢复进度使用当前窗口的历史库。历史、本地、追更、稍后阅读及网格封面使用独立且稳定的转场标识，避免同一本漫画在主页不同区域出现重复标识并留下封面占位（#129）。\n- 连续快速翻页在已有动画尚未完成时直接交接到目标页，避免音量键重复输入不断重启动画；保留旧动画完成的代次校验，墨水屏刷新按视口实际选中的页触发，覆盖正反向、横竖方向和单双页（#178）。\n- 连续与瀑布流恢复进度时保留尚未解码目标页的布局锚点，空闲状态下不按占位图尺寸改写页码，避免邻页先解码时将第 2 页推进到第 3 页；手动滚动与直接跳页仍可切换位置（#178）。\n- 合并重复的旧替代动画回归，在现有控制器交接测试中校验直接跳页、后续动画与迟到完成隔离；其余显式直跳、重置和异常路径的回归继续保留（#178）。\n- 图片收藏状态查询完成时只刷新可见的阅读菜单，隐藏菜单仍保留快捷收藏与失效后的重新查询，并暂停隐藏控件的动画，避免加载指示器持续产帧；同一帧的视口卸载／挂载通知合并发布，仅在最终视口所有者变化时更新菜单，减少阅读期间重复构建（#178）。\n- 阅读器及元数据加载入口铺满不透明的阅读背景，保留首帧、加载、错误重试和内容展示时的背景；阅读器控件在自身 Overlay 内获得 Material，避免依赖上级页面的背景与控件容器（#172）。\n\n### 收藏交互修复\n\n- 保存选中目录时保持收藏侧栏与内容区域的布局，正常写入不再插入临时进度行，避免切换目录时整个收藏区域上下跳动；保存失败仍显示重试，快速切换保留最终选择，退出仍等待已接受的保存（#188）。\n- 大规则集按大小写策略分组执行字面量预检查，精确标签及冒号后首段按索引匹配，减少首次进入或重新读取大收藏列表时逐本、逐规则重复扫描；命中后仍按原规则顺序、字段顺序和 Unicode 边界确定原因与原文位置。小规则集及首条规则的文本命中继续直接匹配，保留现有屏蔽范围（#167）。\n- 收藏搜索输入由页面保存，退出多选后保留检索词及对应结果，修复 Esc、关闭按钮或取消选择后输入框为空而列表仍在筛选的问题；退出搜索或切换目录时统一清空查询，返回输入框后可继续编辑，保留弹窗优先关闭的 Esc 顺序（#152）。\n- 收藏页与网格共用一份关键词屏蔽结果，按漫画快照缓存命中状态，搜索输入、退出搜索和阅读状态切换复用已匹配的漫画；规则或影响描述的显示设置变化时失效，保留屏蔽范围、隐藏数量、原因查看和可见项多选语义（#167）。\n- 阅读状态批量查询改在独立只读连接中执行，与历史写入共用数据访问顺序及关闭保护；按漫画 ID 与来源类型匹配，切换筛选复用完成状态，切换文件夹、历史库或连接后丢弃旧结果。等待和失败可见，查询失败可重试，页面构建不再同步查询整批历史（#167）。\n- 收藏页同时检查自身及外层导航路由，被详情或根阅读器覆盖时合并收藏通知，并延后异步列表与筛选结果的应用，返回后统一刷新。屏蔽规则后台变更只使缓存失效；保留明确的文件夹切换、已接受操作和后来选择的有效性检查（#167）。\n- 收藏页搜索、多选与普通模式保持相同页面结构，按列表、文件夹及选择的实际变化复用网格，避免键盘变化或空查询开关重建可见卡片；保留多次切换后的 Esc 退出与点击偏好菜单刷新。网格被详情或阅读器遮住时延后徽标查询，返回后读取最新进度，减少后台卡片构建（#167）。\n- 阅读状态筛选结果在进入／退出搜索时复用，搜索期间的历史变更仍使正常列表失效；收藏页被详情页遮住时延后整批进度筛选，返回后按最新进度刷新，减少后续阅读页面承担的后台查询（#167）。\n- 没有漫画屏蔽规则时跳过整批漫画元数据匹配，可见收藏直接复用列表；多选工具栏在打开具体操作时才复制漫画数据，仍在排队写入之前保留独立快照，减少进入收藏和多选时的同步工作（#167）。\n\n### 应用更新修复\n\n- 更新检查记录实际请求地址、原始异常、HTTP 状态及 GitHub 限流信息，避免日志只保留笼统的失败描述；手动检查区分连接、超时、限流和无效更新信息，并允许失败后重试（#186）。\n- 更新请求等待超过 30 秒时取消实际 HTTP 操作，并等待原生资源释放后结束；页面关闭和用户取消仍安静退出，保留稳定／预发布渠道及 TV、鸿蒙安装包筛选。\n\n### 开发维护\n\n- 发布与原包恢复流程按原提交中的鸿蒙分发配置选择必需任务；独立 Beta 模式禁止 HAP／设备报告进入普通正式版，普通平台仍须完整成功并逐包核对名称、大小与 SHA-256。历史随版 HAP 的源码、资产和真机报告门禁继续保留，新增分发及失败路径回归。\n- 阅读诊断升级至 schema 3，记录完整保留的逐帧 VSync／构建时间、音量键、动画交接、实际选页及四分之一页位置样本，同时记录缓存上限与占用；默认关闭并限制缓冲大小，旧动画完成不会写入新采集。复制预览保留 60,000 字符限制并分别统计省略的图片、帧及翻页样本，新增主动保存完整 JSON 报告，方便原 Android 120 Hz 设备对照连翻节奏（#178）。\n- PNG／JPEG 混合预缓存后的逐页裁剪回归改用最新窗口接口，补齐有界队列中的后续图片；测试退出同时取消并等待预缓存与图片工作，持续推进清理所需的帧，避免断言失败后卡住后续用例（#178）。\n- 用 #139 提供的两张原始 JPEG 复查白边检测，确认外侧扫描痕迹会阻止该侧裁剪，白边内的压缩灰点会提前限制范围。现有逐页入场回归加入 PNG／JPEG 混合预缓存，补齐深浅灰像素保护；更新中英文指南中的裁剪限制并移除过期的未发布标记，检测阈值与原图保持不变。\n- 漫画源事务中断探针通过标准输出管道发送 PID 和阶段信号，避免 Windows 在读取就绪文件时遇到跨进程占用；保留真实终止、活动所有者拒绝恢复和全部持久化恢复断言。\n- 清理已完成的测试整理、Issue 快照、依赖审计、历史操作与平台实验记录，将当前规则、依赖例外、鸿蒙长期目录条件和排障方法合并进现有指南；原始资料保留在 `v1.18.4-rc.3` 标签和 Git 历史中。\n- 精简发布准备与阅读诊断文档，更新文档索引、审计引用及中英文指南，修正漫画源、PDF 后台导入和收藏交互仍标为未发布的过期说明。\n- 退役已经由导入事务日志替代的旧目录替换工具及五项专属测试，更新架构基线，保留现行事务、真实中断恢复与历史漫画格式兼容回归。\n- 移除固定 QuickJS 已包含的重复数值缓冲实验补丁和 iOS 默认启动图模板说明，保留现行诊断探针、平台资源、许可证及构建输入。\n\n鸿蒙继续通过独立 Actions 工作流提供未签名 Beta 测试包：[HarmonyOS Beta](https://github.com/CyrilPeng/Venera-Next/actions/workflows/harmonyos-release.yml)。本次正式版不包含 HAP，鸿蒙设备验收仍待完成。",
-          "downloadURL": "https://github.com/CyrilPeng/Venera-Next/releases/download/v1.18.4/VeneraNext-ios-1.18.4%2B253.ipa",
-          "size": 21589601,
+          "version": "1.18.5",
+          "buildVersion": "254",
+          "date": "2026-11-25T04:24:33Z",
+          "localizedDescription": "### 正式发布与鸿蒙下载\n\n- 发布 `1.18.5+254`，鸿蒙与 Android 手机／TV、Windows、macOS、iOS、Linux 从同一正式标签重新构建，统一在 GitHub Releases 提供安装包；鸿蒙取消 Beta 分类，用户可从公开发布页直接取得 HAP，应用内稳定更新检查可识别同版本的 HAP 和 manifest。\n- 鸿蒙采用 `distribution: bundled`、`channel: harmonyos` 与可选真机报告，HAP、来源 manifest 和 SHA-256 随 Release 长期提供，四种语言 README 与安装指南同步统一下载入口。保持现有包名、桌面名称及递增构建号，覆盖升级仍需沿用用户原签名密钥。\n- 构建、源码、版本、原生库及原始包摘要核验仍为发布前置条件；HAP 继续如实记录 `signed: false`、`runtime_verified: false` 和已知平台能力限制。缺少真机报告不阻止发布，主动提供的无效或失败报告仍会被拒绝；历史标签读取原提交的分发、渠道和验收策略。\n\n### 新增语言\n\n- 新增德语和日语各 1067 条界面翻译，覆盖设置、阅读器、收藏、导入导出、备份恢复和错误提示；语言设置、系统语言匹配、Flutter 组件及 JS `APP.locale` 同步支持 `de_DE`、`ja_JP`，德语不同地区与日语无地区设置均能识别，保留已有语言选择和系统默认策略。\n- 补充 Apple 平台支持语言声明，日语桌面显示优先使用日文字体；语言菜单的「系统」随界面语言翻译，德日继续保留英文未知文案回退和第三方标签原文，新增实际资源、语言切换以及真实字体下的手机／横屏／桌面与两倍字号设置、菜单、覆盖确认回归。\n- 设置选择器限制长选项的占宽，为标题保留空间；确认窗口的长标题支持换行，操作按钮在空间不足时改为纵向排列，避免德语、日语及大字号下布局失败、省略关键标题或挤出确认操作。\n- GitHub 全平台正式构建和手动构建在实际安装包中核对翻译词典与来源提交一致，避免漏打包或携带旧版译文；继续使用指定 commit 的工作流产物验证新增语言。\n\n### 语言与翻译修复\n\n- 补齐下载备份覆盖本地修改确认提示的繁体翻译，以及漫画源更新取消提示的简繁翻译；润色阅读器横／竖屏图片数量的英文文案并统一中文括号。\n- 将语言选项、持久化标识、Flutter 支持列表和翻译标识集中维护，保留现有简／繁／英文选择及系统语言匹配行为；JS 的 `APP.locale` 在英文下返回约定的 `en_US`，修复原先的 `en_null`，补齐 Flutter 组件本地化代理。\n- 启动时载入简繁内置标签词库，查找按当前语言选择，显式切换和系统语言变化立即生效；避免继续使用启动时的旧词库，并保留英文原标签及未知标签回退。\n- 文案参数按完整名称替换所有出现位置，避免短参数名替换其他名称的前缀或将参数值再次当作文案参数处理；未知参数继续保留原文。\n\n### 应用启动诊断\n\n- Windows 启动记录细化到 COM、工程与参数准备、实例检查、窗口类、显示器／DPI、窗口、引擎和插件阶段，补充应用版本、系统架构与 CPU 指令能力；主线程异常通过预先准备的句柄记录原始异常代码、模块文件名和相对偏移，捕获边界与 C++ 对象生命周期隔离，保留原异常传播及 Windows 错误报告，并验证日志轮转、不可写时的行为及真实安装包启动记录。用于继续定位 #190 的原设备启动失败，尚未确认原始兼容故障已修复。\n\n### 阅读器修复\n\n- 连续／瀑布流阅读在图片旁的空白区域右键保存或复制时，按当前可见图片行确定原图，复用活动滚动视口的几何与来源校验，保留缩放、平移、重复图片及跨章节的实际页码和章节归属；章节分隔和阅读区域外不选择图片，避免返回「没有图片」或选中隐藏预加载页面（#193）。\n\n### 开发维护\n\n- 阅读器保存失败后恢复悬浮章节导航的回归复用受控帧与真实 I/O 推进，等待退出处理完成后再验证恢复结果，修复鸿蒙 SDK 宿主测试中直接等待退出 Future 可能停滞的问题；保留保存期间禁止导航及失败后可重试的实际行为验证。\n- 鸿蒙真机验收报告改为显式 `optional` 策略，随版正式版和候选版均可在缺报告时发布或恢复草稿；已附报告仍核对维护者权限、准确 HAP、源码、版本、摘要和测试结果。继续强制包体与原生库核验，保留未签名和未完成真机验收标记，历史 `required`／`stable_required` 标签仍按原策略恢复。\n- 新增德语和日语完整 README，四份项目说明互相提供语言入口，默认 README 继续使用中文；同步更新翻译贡献、术语与验收说明，赞助名单生成、校验和自动同步覆盖全部四份 README。\n- 使用现有独立 Dart 语法分析工具核对翻译，覆盖跨行、相邻拼接、转义、条件及列表中的静态文案，校验词典键集合、重复 JSON 键、空值／类型、占位符名称与次数及静态调用参数；替换原来的正则扫描，保留动态文案的校验边界，补充真实资源加载、语言切换、英文回退、所有漫画源失败枚举提示和 JS 语言标识回归，以及中英文翻译维护说明。\n- 将正式安装包核验整理为公共工具，按配置推导手机／TV、Windows、macOS、iOS、Linux x64／ARM64 的完整附件清单；实际解包核对版本、架构、源码资源与原生库声明，用 libarchive 读取现有 DEB 的 zstd 压缩内容，明确验证安装目录、ARM64 字体补丁及 Flutter 字体路径编码，采用兼容 Python 3.10 的流式 SHA-256 生成绑定提交、构建运行号与安装包摘要的回执。\n- 发布安装包与平台核验回执的 Actions 保留期统一为 30 天；鸿蒙随版 HAP 的构建产物同步保留 30 天，公开 Release 附件长期保留。\n- 完整构建将固定版本 cargo-audit 的最新 RustSec 扫描和实际包核验汇总作为必需门禁，从审计程序自身读取版本并准备完整锁定依赖索引，查询失败保留诊断并阻止发布，安全回执有效期为 24 小时；手动构建共用核验入口，新增不公开的真实草稿上传、下载回读及中断后原包恢复演练，演练后清理仅属于本次运行的草稿。\n- 正式发布与恢复支持补传缺失原包及复核已经公开的版本，保留已有附件并阻止摘要冲突；恢复按原提交中的门禁政策检查旧构建，并重新扫描原锁文件。来源、安全与平台核验清单作为发布附件长期保留，各阶段和渠道同步状态分别报告。\n- 更新检查的超时回归改用受控时钟，在假 HTTP 请求进入后推进截止时间，继续验证取消与原生收尾的顺序，消除繁忙 CI 运行器上依赖真实 30 毫秒启动窗口的竞态。\n- 完善中英文翻译贡献入口，提供新语种需求、校对和维护的提报要求，以及现有简繁术语参考与同提交的词典、组件、手机／桌面和大字号验收清单；首批语种按实际需求和校对能力确定。\n\n### 安全与依赖\n\n- 将 Rhttp 的 `cookie` 锁定版本从 0.18.1 更新至 0.18.3，消除最新完整锁文件扫描发现的 RUSTSEC-2026-0594；该公告涉及 Unix `fork()` 后生成私有加密 Cookie 的 nonce 重复，当前依赖未启用此功能。仅更新该 crate 的版本与校验值，继续核验现有原生平台兼容性。\n\n鸿蒙安装指南 / HarmonyOS installation: [简体中文](https://github.com/CyrilPeng/Venera-Next/blob/v1.18.5/doc/distribution/harmonyos-reader.zh.md) · [English](https://github.com/CyrilPeng/Venera-Next/blob/v1.18.5/doc/distribution/harmonyos-reader.en.md)",
+          "downloadURL": "https://github.com/CyrilPeng/Venera-Next/releases/download/v1.18.5/VeneraNext-ios-1.18.5%2B254.ipa",
+          "size": 21685908,
           "minOSVersion": "14.0"
         }
       ]
@@ -2152,6 +2326,50 @@
   ],
   "news": [
     {
+      "appID": "com.github.cyrilpeng.veneranext",
+      "title": "VeneraNext 1.18.5 · 25 Nov 2026",
+      "identifier": "VeneraNext-release-v1.18.5",
+      "caption": "VeneraNext 1.18.5 is available.",
+      "date": "2026-11-25T04:24:33Z",
+      "tintColor": "#2090E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.5"
+    },
+    {
+      "appID": "app.lightnovel.shelf",
+      "title": "LightNovelShelf 1.13.3 · 25 Nov 2026",
+      "identifier": "LightNovelShelf-release-v1.13.3",
+      "caption": "LightNovelShelf 1.13.3 is available.",
+      "date": "2026-11-25T03:28:26Z",
+      "tintColor": "#4E4592",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/LightNovelShelf/Flutter/releases/tag/v1.13.3"
+    },
+    {
+      "appID": "com.jbdotparty.Erosion",
+      "title": "Erosion-CN 1.0.7 · 25 Nov 2026",
+      "identifier": "Erosion-CN-release-v1.0.7",
+      "caption": "Erosion-CN 1.0.7 is available.",
+      "date": "2026-11-25T03:13:04Z",
+      "tintColor": "#D07030",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.7"
+    },
+    {
+      "appID": "com.linkpass.kazumi",
+      "title": "Kazumi-Swift 3.1.3 · 25 Nov 2026",
+      "identifier": "Kazumi-Swift-release-v3.1.3",
+      "caption": "Kazumi-Swift 3.1.3 is available.",
+      "date": "2026-11-25T02:28:50Z",
+      "tintColor": "#45A992",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.1.3"
+    },
+    {
       "appID": "com.armsx2.ios",
       "title": "ARMSX2 2.6.0-nightly.20261124.1937 · 25 Nov 2026",
       "identifier": "ARMSX2-release-nightly-20261124",
@@ -2218,6 +2436,17 @@
       "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.3"
     },
     {
+      "appID": "wiki.qaq.GhostRemote",
+      "title": "Ghost Remote 1.6.41 · 24 Nov 2026",
+      "identifier": "Ghost Remote-release-v1.6.41",
+      "caption": "Ghost Remote 1.6.41 is available.",
+      "date": "2026-11-24T08:59:44Z",
+      "tintColor": "#009051",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/owngoal-dev/iGhostVT/releases/tag/v1.6.41"
+    },
+    {
       "appID": "com.suversal.wrappin",
       "title": "WrapPin 1.0.26 · 24 Nov 2026",
       "identifier": "WrapPin-release-v1.0.26",
@@ -2262,17 +2491,6 @@
       "url": "https://github.com/Absenti/iBuilder/releases/tag/v0.1.8"
     },
     {
-      "appID": "com.linkpass.kazumi",
-      "title": "Kazumi-Swift 3.1.2 · 23 Nov 2026",
-      "identifier": "Kazumi-Swift-release-v3.1.2",
-      "caption": "Kazumi-Swift 3.1.2 is available.",
-      "date": "2026-11-23T06:25:05Z",
-      "tintColor": "#45A992",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kazumi-Swift/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/LinkPass888/Kazumi-Swift/releases/tag/v3.1.2"
-    },
-    {
       "appID": "com.thebcd69.bcd",
       "title": "BCD 0.1.712 · 23 Nov 2026",
       "identifier": "BCD-release-v0.1.712",
@@ -2282,17 +2500,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BCD/images/news.webp",
       "notify": true,
       "url": "https://github.com/thebcd69/bcd-games/releases/tag/v0.1.712"
-    },
-    {
-      "appID": "com.github.cyrilpeng.veneranext",
-      "title": "VeneraNext 1.18.4 · 23 Nov 2026",
-      "identifier": "VeneraNext-release-v1.18.4",
-      "caption": "VeneraNext 1.18.4 is available.",
-      "date": "2026-11-23T03:27:29Z",
-      "tintColor": "#2090E0",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Venera-Next/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/CyrilPeng/Venera-Next/releases/tag/v1.18.4"
     },
     {
       "appID": "com.google.ios.youtube",
@@ -2315,6 +2522,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Kumone/images/news.webp",
       "notify": true,
       "url": "https://github.com/missuo/kumone/releases/tag/v0.3.38"
+    },
+    {
+      "appID": "com.xuegao.theosmobilecompiler",
+      "title": "Dylix 1.1.4 · 22 Nov 2026",
+      "identifier": "Dylix-release-v1.1.4",
+      "caption": "Dylix 1.1.4 is available.",
+      "date": "2026-11-22T07:30:21Z",
+      "tintColor": "#F0D080",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Dylix/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/yangokok886/dylix/releases/tag/v1.1.4"
     },
     {
       "appID": "com.example.kazumi",
@@ -2350,6 +2568,17 @@
       "url": "https://github.com/kolbicz/WQFiles/releases/tag/v0.9.20"
     },
     {
+      "appID": "com.nuvio.media",
+      "title": "Nuvio 1.0.1 · 21 Nov 2026",
+      "identifier": "Nuvio-release-1.0.1",
+      "caption": "Nuvio 1.0.1 is available.",
+      "date": "2026-11-21T14:50:47Z",
+      "tintColor": "#1E88E5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/NuvioMedia/NuvioMobile/releases/tag/1.0.1"
+    },
+    {
       "appID": "com.zephyr.breeze",
       "title": "Breeze 3.1.0 · 21 Nov 2026",
       "identifier": "Breeze-release-v3.1.0",
@@ -2370,6 +2599,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.webp",
       "notify": true,
       "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.10.0"
+    },
+    {
+      "appID": "com.mori.downloader",
+      "title": "Mori 4.6.1 · 20 Nov 2026",
+      "identifier": "Mori-release-v4.6.1",
+      "caption": "Mori 4.6.1 is available.",
+      "date": "2026-11-20T23:42:35Z",
+      "tintColor": "#27282A",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mori/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/coflyn/Mori/releases/tag/v4.6.1"
     },
     {
       "appID": "nl.jknaapen.fladder",
@@ -2436,17 +2676,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.webp",
       "notify": true,
       "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.3-2026-11-20"
-    },
-    {
-      "appID": "com.jbdotparty.Erosion",
-      "title": "Erosion-CN 1.0.6 · 19 Nov 2026",
-      "identifier": "Erosion-CN-release-v1.0.6",
-      "caption": "Erosion-CN 1.0.6 is available.",
-      "date": "2026-11-19T13:48:12Z",
-      "tintColor": "#D07030",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Erosion-CN/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/Kianuni/Erosion-CN/releases/tag/v1.0.6"
     },
     {
       "appID": "com.example.HermesEnabler",
@@ -2614,6 +2843,17 @@
       "url": "https://github.com/huamidev/GestaltX/releases/tag/v1.1.1"
     },
     {
+      "appID": "com.music.bitchord",
+      "title": "BitChord 1.0.2 · 13 Nov 2026",
+      "identifier": "BitChord-release-v1.0.2",
+      "caption": "BitChord 1.0.2 is available.",
+      "date": "2026-11-13T12:21:05Z",
+      "tintColor": "#FC546C",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/maanya145/BitChord-iOS/releases/tag/v1.0.2"
+    },
+    {
       "appID": "com.aigch.OpenParsec",
       "title": "OpenParsec 2.0.0 · 13 Nov 2026",
       "identifier": "OpenParsec-release-2.0.0",
@@ -2634,6 +2874,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQToolkit/images/news.webp",
       "notify": true,
       "url": "https://github.com/MchinaMd57764/WQToolkit/releases/tag/v1.0"
+    },
+    {
+      "appID": "com.ipaside.escapeos",
+      "title": "EscapeOS 0.3.2 · 11 Nov 2026",
+      "identifier": "EscapeOS-release-v0.3.2",
+      "caption": "EscapeOS 0.3.2 is available.",
+      "date": "2026-11-11T14:19:37Z",
+      "tintColor": "#3AA39D",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/pwnapplehat/EscapeOS/releases/tag/v0.3.2"
     },
     {
       "appID": "com.neogamelab.neostation",
@@ -2790,6 +3041,17 @@
       "url": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.2"
     },
     {
+      "appID": "com.jeetraj.tdrive",
+      "title": "TDrive 3.1.9 · 02 Nov 2026",
+      "identifier": "TDrive-release-v3.1.9",
+      "caption": "TDrive 3.1.9 is available.",
+      "date": "2026-11-02T07:08:10Z",
+      "tintColor": "#20A0E0",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/ndgthuan/tdrive/releases/tag/v3.1.9"
+    },
+    {
       "appID": "moye.MeloX",
       "title": "MeloX 1.4.1 · 30 Oct 2026",
       "identifier": "MeloX-release-v1.4.1",
@@ -2854,17 +3116,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Musly/images/news.webp",
       "notify": true,
       "url": "https://github.com/dddevid/Musly/releases/tag/v2.0.3"
-    },
-    {
-      "appID": "app.lightnovel.shelf",
-      "title": "LightNovelShelf 1.13.2 · 18 Oct 2026",
-      "identifier": "LightNovelShelf-release-v1.13.2",
-      "caption": "LightNovelShelf 1.13.2 is available.",
-      "date": "2026-10-18T10:47:40Z",
-      "tintColor": "#4E4592",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LightNovelShelf/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/LightNovelShelf/Flutter/releases/tag/v1.13.2"
     },
     {
       "appID": "app.aidoku.Aidoku",

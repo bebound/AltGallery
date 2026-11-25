@@ -1,0 +1,47 @@
+{
+  "name": "BitChord",
+  "subtitle": "BitChord AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for BitChord",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/icon.webp",
+  "website": "https://github.com/maanya145/BitChord-iOS",
+  "tintColor": "#FC546C",
+  "apps": [
+    {
+      "name": "BitChord",
+      "bundleIdentifier": "com.music.bitchord",
+      "developerName": "Hero154",
+      "subtitle": "Open-source YouTube Music client for iPhone and iPad",
+      "localizedDescription": "A native SwiftUI port of BitChord for Android. Search, browse and play the YouTube Music catalogue, with synced lyrics from a dozen providers, downloads, crossfade, Automix, SMB and WebDAV libraries, Last.fm scrobbling and Listen Together. Requires iOS 17 or later.",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/explore.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/library.webp"
+      ],
+      "tintColor": "#FC546C",
+      "versions": [
+        {
+          "version": "1.0.2",
+          "date": "2026-11-13T12:21:05Z",
+          "localizedDescription": "Improves playback on slow connections and resolves tester reported issues.\n\nNew\n- Send lyrics as a card, choose which lines to include.\n- Direct source streaming (new option that is disabled by default). \"Queue only\" starts upcoming songs in the queue on a higher priority source found ahead of time. \"Always\" waits up to 12 seconds for one on each track. YouTube will still be used as fallback.\n- Lockscreen animated covers.\n- App icon selector in Settings (5 icons).\n- Audio Quality shown in Discord card when hovering over the cover.\n- Sign-in and Scrobbling working with Last.fm.\n- Log file is stored on the device. This can be shared via the Settings (row) or disabled.\n\nFixed\n- Songs will now start playing on a slow connection and will no longer cut out or jump to the next song.\n- Crossfade will no longer lag.\n- Songs would cut out halfway through due to downloading in the background.\n- A song can no longer be replaced by a copy more than 5 seconds longer or shorter than it.\n- Lyrics would get ahead if you skip through the song. Now in sync again.\n- Offline Backup set to Always now plays from the device.\n- Cover is now shown with the player and if you skip it shows the next cover instantly.\n- Downloads will now restart the track if a partial file goes missing. Songs that have been duplicated are also counted once.\n- Long lists can be scrolled through without rebuilding each row.\n\nOverwrite the previous app. Downloads, Library & Settings are retained.\n\nInstall from the sideload source `https://bitchord.hero154.com/source.json`. The attached IPA is build 9, the same file as on the source. SHA-256: 96da0c1248ca33fee6e9bba4de369fc63c76caced3f6ec487f3a332e0196af42.",
+          "downloadURL": "https://github.com/maanya145/BitChord-iOS/releases/download/v1.0.2/BitChord-1.0.2-9.ipa",
+          "size": 55046727,
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.music.bitchord",
+      "title": "BitChord 1.0.2 · 13 Nov 2026",
+      "identifier": "BitChord-release-v1.0.2",
+      "caption": "BitChord 1.0.2 is available.",
+      "date": "2026-11-13T12:21:05Z",
+      "tintColor": "#FC546C",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/maanya145/BitChord-iOS/releases/tag/v1.0.2"
+    }
+  ]
+}
