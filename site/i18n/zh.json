@@ -259,5 +259,9 @@
   "com.moffatman.chan": {
     "subtitle": "适用于 iOS 与 Android 的匿名版浏览器",
     "description": "Chance 是一款基于 Flutter 构建的 iOS 与 Android 匿名版浏览器，支持多栏布局、媒体画廊、收藏串帖、过滤器与归档访问等功能。"
+  },
+  "com.g8row.photosbackup": {
+    "subtitle": "设备端 Google Photos 备份",
+    "description": "一款实验性的、完全在设备端运行的 iPhone 应用，可将选定的照片、视频和相册备份到 Google Photos，无需电脑伴侣或托管服务。"
   }
 }

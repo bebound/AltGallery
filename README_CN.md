@@ -247,6 +247,9 @@ Orca（智能体开发环境）的 iPhone 客户端——与智能体对话、�
 ### <img src="apps/PiliPlus/icon.webp" alt="PiliPlus icon" width="24" align="top"> <a href="https://github.com/bggRGjQaUbCoE/PiliPlus">PiliPlus</a>
 使用Flutter开发的BiliBili第三方客户端。
 
+### <img src="apps/PhotosBackup/icon.webp" alt="Photos Backup icon" width="24" align="top"> <a href="https://github.com/g8row/PhotosBackup">Photos Backup</a>
+设备端 Google Photos 备份——无需电脑伴侣，直接从 iPhone 备份选定的照片、视频和相册到 Google Photos。
+
 ### <img src="apps/Pixiv-SwiftUI/icon.webp" alt="Pixiv-SwiftUI icon" width="24" align="top"> <a href="https://github.com/Eslzzyl/Pixiv-SwiftUI">Pixiv-SwiftUI</a>
 基于 SwiftUI 的 Pixiv 第三方客户端，支持 iOS/iPadOS/macOS。
 

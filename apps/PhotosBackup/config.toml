@@ -1,0 +1,41 @@
+# altgen config for the Photos Backup AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "g8row/PhotosBackup"
+
+[source]
+name = "Photos Backup"
+subtitle = "Photos Backup AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Photos Backup"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/icon.webp"
+website = "https://github.com/g8row/PhotosBackup"
+tint_color = "#2080F0"
+
+[app]
+name = "Photos Backup"
+bundle_identifier = "com.g8row.photosbackup"
+developer_name = "g8row"
+subtitle = "On-device Google Photos backup"
+description = "An experimental, fully on-device iPhone app for backing up selected photos, videos, and albums to Google Photos."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/activity.webp",
+]
+tint_color = "#2080F0"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = "PhotosBackup\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/news.webp"
+
+[output]
+path = "apps.json"
