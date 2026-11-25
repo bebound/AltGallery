@@ -133,6 +133,9 @@ iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱——基于 worse_que
 ### <img src="apps/GestaltX/icon.webp" alt="GestaltX icon" width="24" align="top"> <a href="https://github.com/huamidev/GestaltX">GestaltX</a>
 面向 iOS 27 的 MobileGestalt 编辑器——区域代码调整、设备预设、能力开关与带类型的 plist 字段编辑器，支持备份。
 
+### <img src="apps/GhostRemote/icon.webp" alt="Ghost Remote icon" width="24" align="top"> <a href="https://github.com/owngoal-dev/iGhostVT">Ghost Remote</a>
+在另一台 iGhostVT 设备上打开终端——用六位数字代码配对，通过局域网或自建中继访问。
+
 ### <img src="apps/GlobalRefresh/icon.webp" alt="GlobalRefresh icon" width="24" align="top"> <a href="https://github.com/Yoroin/GlobalRefresh-PiP">GlobalRefresh</a>
 基于 iOS 画中画的悬浮窗高刷辅助工具——后台保活与完全隐藏，适配 iOS 15–27。
 

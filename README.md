@@ -133,6 +133,9 @@ A cross-platform Jellyfin frontend built on Flutter — stream or sync media to 
 ### <img src="apps/GestaltX/icon.webp" alt="GestaltX icon" width="24" align="top"> <a href="https://github.com/huamidev/GestaltX">GestaltX</a>
 MobileGestalt editor for iOS 27 with region-code tweaks and presets — capability flags and a typed plist field editor, with backups.
 
+### <img src="apps/GhostRemote/icon.webp" alt="Ghost Remote icon" width="24" align="top"> <a href="https://github.com/owngoal-dev/iGhostVT">Ghost Remote</a>
+Open terminals on your other iGhostVT devices — pair with a six-digit code over your local network or a self-hosted relay.
+
 ### <img src="apps/GlobalRefresh/icon.webp" alt="GlobalRefresh icon" width="24" align="top"> <a href="https://github.com/Yoroin/GlobalRefresh-PiP">GlobalRefresh</a>
 基于 iOS 画中画的悬浮窗高刷辅助工具——后台保活与完全隐藏，适配 iOS 15–27。
 

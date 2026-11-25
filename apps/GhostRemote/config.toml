@@ -1,0 +1,42 @@
+# altgen config for the Ghost Remote AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "owngoal-dev/iGhostVT"
+
+[source]
+name = "Ghost Remote"
+subtitle = "Ghost Remote AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Ghost Remote"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/icon.webp"
+website = "https://github.com/owngoal-dev/iGhostVT"
+tint_color = "#009051"
+
+[app]
+name = "Ghost Remote"
+bundle_identifier = "wiki.qaq.GhostRemote"
+developer_name = "OwnGoal Studio"
+subtitle = "Open terminals on your other iGhostVT devices"
+description = "Ghost Remote opens terminals on your iPhone, iPad or Mac running iGhostVT, from an iPhone or iPad without custom firmware. Turn on remote access on the device running iGhostVT, then tap + in Ghost Remote and pair with the six-digit code it shows. Terminals open over your local network, or from anywhere through a relay you run yourself."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/main.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/settings.webp",
+]
+tint_color = "#009051"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): releases also ship a macOS app, debs
+# and dSYM bundles, so match the Ghost Remote ipa name only.
+asset_pattern = "GhostRemote-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GhostRemote/images/news.webp"
+
+[output]
+path = "apps.json"

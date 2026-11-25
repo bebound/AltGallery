@@ -232,6 +232,10 @@
     "subtitle": "把 Telegram 私人存储变成云盘",
     "description": "TDrive 把 Telegram 私人存储变成可以浏览、搜索、预览、分享与挂载的云盘，并内置 AI 助手、照片自动备份与客户端加密。使用前需在 my.telegram.org 申请 Telegram API 凭据。"
   },
+  "wiki.qaq.GhostRemote": {
+    "subtitle": "在另一台 iGhostVT 设备上打开终端",
+    "description": "Ghost Remote 让未越狱的 iPhone 或 iPad 在运行 iGhostVT 的 iPhone、iPad 或 Mac 上打开终端。先在装有 iGhostVT 的设备上开启远程访问，然后在 Ghost Remote 中点 + 并输入对方显示的六位代码完成配对。终端可通过局域网连接，也可经自建中继从任意位置访问。"
+  },
   "com.ipaside.escapeos": {
     "subtitle": "设备端浏览与备份其他应用 Data 容器的工具",
     "description": "无需越狱即可在设备上浏览、编辑、备份并恢复其他应用的 Data 容器（Documents、Library、tmp）：支持文件复制与压缩/解压（zip、7z、tar、gz、bz2、xz、lz4、lzma、deb）、查看 SQLite 数据库，并为每份备份生成 SHA-256 清单。需要 iOS 26.0 或更高版本、LocalDevVPN，以及 iPASide 写入的配对文件。"
