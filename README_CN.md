@@ -232,6 +232,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <img src="apps/Mornye/icon.webp" alt="Mornye icon" width="24" align="top"> <a href="https://github.com/mornyeapp/Mornye">Mornye</a>
 支持下载的高解析音乐播放器——Flutter 与 Rust 打造，位完美输出、滚动歌词，还可从 SMB、WebDAV 或 Subsonic 串流。
 
+### <img src="apps/NusaNX/icon.webp" alt="NusaNX icon" width="24" align="top"> <a href="https://github.com/optimalabsistem/NusaNX">NusaNX</a>
+在设备上把 Switch 游戏容器转换为原生 iOS/iPadOS 应用——本地解密 .nsp/.xci 并打包成可安装的 .ipa，Switch 着色器直接翻译为 Apple Metal。
+
 ### <img src="apps/Nuvio/icon.webp" alt="Nuvio icon" width="24" align="top"> <a href="https://github.com/NuvioMedia/NuvioMobile">Nuvio</a>
 接入自有片源的开源媒体客户端——自动匹配海报、评分与字幕，进度在手机、桌面与电视之间同步。
 

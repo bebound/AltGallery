@@ -268,6 +268,10 @@
     "subtitle": "《任天堂明星大乱斗DX》的原生移植版",
     "description": "基于反编译项目构建的《任天堂明星大乱斗DX》（NTSC-U 1.02）原生移植版，带来现代渲染与多项易用性改进。游玩需要自行提供原版游戏光盘的转储，不包含任何游戏数据。"
   },
+  "com.nusanx.studio": {
+    "subtitle": "在设备上将 Switch 游戏容器转换为原生 iOS/iPadOS 应用",
+    "description": "在设备上把合法的 Nintendo Switch 游戏容器（.nsp/.xci）直接转换为可独立运行的原生 iOS/iPadOS 应用——ARM64 游戏代码原生运行，Switch 的 NVN/OpenGL 着色器直接翻译为 Apple Metal。需配备 M1 iPad 或 A17 Pro iPhone，并要求 iOS/iPadOS 26 或更高版本。"
+  },
   "org.d2rmobile.app": {
     "subtitle": "在 iPhone 和 iPad 上玩《暗黑破坏神 II：狱火重生》",
     "description": "在 iPhone 和 iPad 上离线玩《暗黑破坏神 II：狱火重生》，支持触屏或手柄操作。需自备 Nintendo Switch 游戏文件——应用本身不包含任何游戏内容。"

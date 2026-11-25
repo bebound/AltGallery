@@ -1,0 +1,42 @@
+# altgen config for the NusaNX AltStore source.
+# NusaNX: converts Nintendo Switch .nsp/.xci containers into native iOS/iPadOS apps.
+
+[github]
+repo = "optimalabsistem/NusaNX"
+
+[source]
+name = "NusaNX"
+subtitle = "NusaNX AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for NusaNX"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NusaNX/icon.webp"
+website = "https://github.com/optimalabsistem/NusaNX"
+tint_color = "#00C2FF"
+
+[app]
+name = "NusaNX"
+bundle_identifier = "com.nusanx.studio"
+developer_name = "optimalabsistem"
+subtitle = "Convert Switch game containers into native iOS/iPadOS apps on device"
+description = "Transforms legal Nintendo Switch game containers (.nsp/.xci) into standalone native iOS/iPadOS apps directly on-device — ARM64 game code runs natively while Switch NVN/OpenGL shaders are translated to Apple Metal. Requires an M1 iPad or A17 Pro iPhone with iOS/iPadOS 26 or newer."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NusaNX/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NusaNX/images/main.webp",
+]
+tint_color = "#00C2FF"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): every release ships exactly one ipa
+# The ipa inside v0.1.1-beta still reports CFBundleShortVersionString 0.1 (build 1),
+# so the tag is the only place the real version lives — do not switch to ipa.
+asset_pattern = ".*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/NusaNX/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -1,0 +1,17 @@
+# render_news.py config: uv run tools/render_news.py --out apps/NusaNX
+# The icon's dominant colour is its crimson wing, which auto-derivation would
+# paint the tagline with; the brand tint is the cyan wing, so the palette is
+# pinned by hand, with tint_alt keeping the crimson as the counter-glow.
+
+name = "NusaNX"
+tagline = "Convert Switch games\ninto native iOS apps"
+
+# Color notes — each key below controls one element of the image.
+[colors]
+tint = "#00C2FF"          # NEW UPDATE badge + top-left glow
+tint_alt = "#FF3B5C"      # bottom-right glow (crimson wing of the icon)
+background = "#DCEEF9"    # gradient base
+bg_mid = "#EDF7FD"        # gradient mid stop
+bg_dark = "#C2E2F5"       # gradient end stop
+# text_color = "#111111"    # app name (auto white/black)
+tagline_color = "#0B8CC0" # tagline text

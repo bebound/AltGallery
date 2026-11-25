@@ -232,6 +232,9 @@ Client-side media downloader for 16 platforms — watermark-free videos, photos 
 ### <img src="apps/Mornye/icon.webp" alt="Mornye icon" width="24" align="top"> <a href="https://github.com/mornyeapp/Mornye">Mornye</a>
 Hi-res music player with downloads — a Flutter and Rust player with bit-perfect output, synced lyrics and streaming from SMB, WebDAV or Subsonic.
 
+### <img src="apps/NusaNX/icon.webp" alt="NusaNX icon" width="24" align="top"> <a href="https://github.com/optimalabsistem/NusaNX">NusaNX</a>
+Convert Switch game containers into native iOS/iPadOS apps on device — .nsp/.xci files are decrypted locally and packaged into installable .ipas, with Switch shaders translated to Apple Metal.
+
 ### <img src="apps/Nuvio/icon.webp" alt="Nuvio icon" width="24" align="top"> <a href="https://github.com/NuvioMedia/NuvioMobile">Nuvio</a>
 Open-source media client for your own sources — artwork, ratings, subtitles and your place saved across phone, desktop and TV.
 
