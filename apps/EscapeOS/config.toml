@@ -1,0 +1,41 @@
+# altgen config for the EscapeOS AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "pwnapplehat/EscapeOS"
+
+[source]
+name = "EscapeOS"
+subtitle = "EscapeOS AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for EscapeOS"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/icon.webp"
+website = "https://github.com/pwnapplehat/EscapeOS"
+tint_color = "#3AA39D"
+
+[app]
+name = "EscapeOS"
+bundle_identifier = "com.ipaside.escapeos"
+developer_name = "pwnapplehat"
+subtitle = "On-device file browser and backup tool for another app's Data container"
+description = "Browse, edit, back up and restore another app's Data container on device: Documents, Library and tmp, file copy and compress/extract (zip, 7z, tar, gz, bz2, xz, lz4, lzma, deb), SQLite viewing, and SHA-256 manifests on every backup. No jailbreak, no Keychain. Requires iOS 26.0 or later, LocalDevVPN and a pairing file placed by iPASide."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/pair.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/settings.webp",
+]
+tint_color = "#3AA39D"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = "EscapeOS-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/EscapeOS/images/news.webp"
+
+[output]
+path = "apps.json"

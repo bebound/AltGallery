@@ -118,6 +118,9 @@ iPhone / iPad 上的 AI 插件开发工作台——内嵌 Clang / LLD 与 Logos 
 ### <img src="apps/Erosion-CN/icon.webp" alt="Erosion-CN icon" width="24" align="top"> <a href="https://github.com/Kianuni/Erosion-CN">Erosion-CN</a>
 iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱——基于 worse_query，内置写入安全加固、应用前差异预览与原厂状态恢复。
 
+### <img src="apps/EscapeOS/icon.webp" alt="EscapeOS icon" width="24" align="top"> <a href="https://github.com/pwnapplehat/EscapeOS">EscapeOS</a>
+设备端浏览与备份其他应用 Data 容器的工具——无需越狱、不碰钥匙串，即可浏览、编辑、备份并恢复其 Documents、Library 与 tmp。
+
 ### <img src="apps/Fathom/icon.webp" alt="Fathom icon" width="24" align="top"> <a href="https://github.com/Leviidev/Fathom">Fathom</a>
 面向 iOS 的 x86-64 PC 模拟器——通过 FEXCore 在运行时将 x86-64 Linux 可执行文件转译为 ARM64 运行。需要 JIT，并在运行时附加调试器。
 

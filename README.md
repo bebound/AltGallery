@@ -118,6 +118,9 @@ An unofficial E-Hentai App for iOS built with SwiftUI & TCA.
 ### <img src="apps/Erosion-CN/icon.webp" alt="Erosion-CN icon" width="24" align="top"> <a href="https://github.com/Kianuni/Erosion-CN">Erosion-CN</a>
 iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱——基于 worse_query，内置写入安全加固、应用前差异预览与原厂状态恢复。
 
+### <img src="apps/EscapeOS/icon.webp" alt="EscapeOS icon" width="24" align="top"> <a href="https://github.com/pwnapplehat/EscapeOS">EscapeOS</a>
+On-device file browser and backup tool for another app's Data container — browse, edit, back up and restore Documents, Library and tmp with no jailbreak or Keychain access.
+
 ### <img src="apps/Fathom/icon.webp" alt="Fathom icon" width="24" align="top"> <a href="https://github.com/Leviidev/Fathom">Fathom</a>
 x86-64 PC emulator for iOS — runs x86-64 Linux executables by translating them to ARM64 at runtime with FEXCore. Requires JIT and a debugger attached at runtime.
 
