@@ -223,6 +223,9 @@ MoviePilot 移动端，基于 Flutter 实现。
 ### <img src="apps/Mornye/icon.webp" alt="Mornye icon" width="24" align="top"> <a href="https://github.com/mornyeapp/Mornye">Mornye</a>
 支持下载的高解析音乐播放器——Flutter 与 Rust 打造，位完美输出、滚动歌词，还可从 SMB、WebDAV 或 Subsonic 串流。
 
+### <img src="apps/Nuvio/icon.webp" alt="Nuvio icon" width="24" align="top"> <a href="https://github.com/NuvioMedia/NuvioMobile">Nuvio</a>
+接入自有片源的开源媒体客户端——自动匹配海报、评分与字幕，进度在手机、桌面与电视之间同步。
+
 ### <img src="apps/Opaline/icon.webp" alt="Opaline icon" width="24" align="top"> <a href="https://github.com/verback2308/Opaline">Opaline</a>
 面向 iOS 12+ 的 YouTube 客户端——轻量、注重隐私，支持 SponsorBlock、Return YouTube Dislike 与最高 1080p 播放。
 

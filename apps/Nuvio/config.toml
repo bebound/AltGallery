@@ -1,0 +1,41 @@
+# altgen config for the Nuvio AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "NuvioMedia/NuvioMobile"
+
+[source]
+name = "Nuvio"
+subtitle = "Nuvio AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Nuvio"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/icon.webp"
+website = "https://github.com/NuvioMedia/NuvioMobile"
+tint_color = "#1E88E5"
+
+[app]
+name = "Nuvio"
+bundle_identifier = "com.nuvio.media"
+developer_name = "NuvioMedia"
+subtitle = "Open-source media client for your own sources"
+description = "A free, open-source media app that turns your own sources into a library with artwork, ratings, subtitles and your place saved on every screen. Built with Kotlin Multiplatform and Compose Multiplatform; requires iOS 16.1 or later."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/images/main.webp",
+]
+tint_color = "#1E88E5"
+min_os_version = "16.1"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release ships one ipa,
+# nuvio-<version>-full-release.ipa, plus several Android apks.
+asset_pattern = "nuvio-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Nuvio/images/news.webp"
+
+[output]
+path = "apps.json"

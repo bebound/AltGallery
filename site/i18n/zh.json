@@ -247,5 +247,9 @@
   "com.music.bitchord": {
     "subtitle": "iPhone 与 iPad 上的开源 YouTube Music 客户端",
     "description": "由 BitChord Android 版移植而来的原生 SwiftUI 应用。可搜索、浏览并播放 YouTube Music 曲库，支持十余家歌词源的同步歌词、下载、交叉淡入淡出、Automix、SMB 与 WebDAV 媒体库、Last.fm 记录以及一起听。需要 iOS 17 或更高版本。"
+  },
+  "com.nuvio.media": {
+    "subtitle": "接入自有片源的开源媒体客户端",
+    "description": "免费开源的媒体应用，把你自己添加的片源整理成一个媒体库，自动匹配海报、评分与字幕，并在手机、桌面与电视之间同步你的播放进度。基于 Kotlin Multiplatform 与 Compose Multiplatform 开发，需要 iOS 16.1 或更高版本。"
   }
 }
