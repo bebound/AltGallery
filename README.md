@@ -271,6 +271,9 @@ On-device JIT enabler and device toolbox for iOS 17.4+, built on idevice.
 ### <img src="apps/Swipt/icon.webp" alt="Swipt icon" width="24" align="top"> <a href="https://github.com/swipt-automation/swipt">Swipt</a>
 The universal iOS automation platform — JavaScript swiplets, a TypeScript SDK and an MCP-compatible API.
 
+### <img src="apps/TDrive/icon.webp" alt="TDrive icon" width="24" align="top"> <a href="https://github.com/ndgthuan/tdrive">TDrive</a>
+Turn your private Telegram storage into a cloud drive — browse, search, preview and mount files kept in your own Telegram account.
+
 ### <img src="apps/TiebaPure/icon.webp" alt="TiebaPure icon" width="24" align="top"> <a href="https://github.com/infinityf4p/TiebaPure-iOS">TiebaPure</a>
 基于 SwiftUI 的第三方百度贴吧客户端——支持 iOS 16.4+，可浏览、搜索、收藏、查看媒体与本地阅读记录。
 

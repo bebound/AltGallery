@@ -1,0 +1,43 @@
+# altgen config for the TDrive AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "ndgthuan/tdrive"
+
+[source]
+name = "TDrive"
+subtitle = "TDrive AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for TDrive"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/icon.webp"
+website = "https://github.com/ndgthuan/tdrive"
+tint_color = "#20A0E0"
+
+[app]
+name = "TDrive"
+bundle_identifier = "com.jeetraj.tdrive"
+developer_name = "ndgthuan"
+subtitle = "Turn your private Telegram storage into a cloud drive"
+description = "TDrive turns your private Telegram storage into a drive you can browse, search, preview, share and mount, with an AI assistant, automatic photo backup and client-side encryption. Requires Telegram API credentials from my.telegram.org."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_01_home_drive_switcher.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_02_home_shared_drives.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_03_account_folder.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/shared_04_account_drives.webp",
+]
+tint_color = "#20A0E0"
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): every release ships one unsigned ipa
+asset_pattern = "TDrive-.*-ios-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/TDrive/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -271,6 +271,9 @@ iOS 端本地应用签名与安装工具 — Feather 分支，附带插件管理
 ### <img src="apps/Swipt/icon.webp" alt="Swipt icon" width="24" align="top"> <a href="https://github.com/swipt-automation/swipt">Swipt</a>
 通用 iOS 自动化平台——JavaScript swiplet、TypeScript SDK 与兼容 MCP 的 API。
 
+### <img src="apps/TDrive/icon.webp" alt="TDrive icon" width="24" align="top"> <a href="https://github.com/ndgthuan/tdrive">TDrive</a>
+把 Telegram 私人存储变成云盘——浏览、搜索、预览并挂载保存在你自己 Telegram 账号中的文件。
+
 ### <img src="apps/TiebaPure/icon.webp" alt="TiebaPure icon" width="24" align="top"> <a href="https://github.com/infinityf4p/TiebaPure-iOS">TiebaPure</a>
 基于 SwiftUI 的第三方百度贴吧客户端——支持 iOS 16.4+，可浏览、搜索、收藏、查看媒体与本地阅读记录。
 
