@@ -1763,11 +1763,11 @@
       "tintColor": "#F0D020",
       "versions": [
         {
-          "version": "1.2.4",
-          "date": "2026-11-16T09:43:34Z",
-          "localizedDescription": "## 谢谢大家\n谢谢每一位在玩、在报 bug、在评论区出主意的朋友，是大家的支持让这个重制版一路更新到现在。\n\n这个重制版一开始只是我用公司给的无限 token，自己做着自己玩的；没想到承蒙大家喜爱，被大家无私地越传越广。**这个游戏属于每一位喜欢大富翁4的玩家：永远不收任何费用，也不做任何商业用途，大家尽管拿去玩就好。**\n\n**1.3 的新地图正在制作中**，工作量比较大，下一个版本要隔比较长的一段时间才会发布。这段时间里，1.2.4 就是大家的主力版本：\n\n- **遇到 bug 或小问题**：可以直接在 [Issues](https://github.com/iam567/rich4-renew-app/issues) 提交，也可以在 B 站 UP 主 **TrustBox**、**阿姆西_MC** 发布的大富翁4 重制版视频下面留言。各个评论区我都会看，能修的一定会修。\n- **在线更新很慢或失败**：这个我暂时没办法解决。在国内提供下载需要办理备案，我个人没办法申请，所以国内的朋友在线更新时请先开代理；或者直接下载这个页面的安装包覆盖安装，效果一样，存档也会保留。\n\n再次感谢大家，我们 1.3 见！\n\n> **1.2.4 是 1.2 之后几个小版本的合集，这次最大的新功能是「排行榜」。** 已经装了 1.2.x 的玩家，在游戏里在线更新就能升到 1.2.4，不用重新下载；新玩家、或者在线更新一直不成功的，直接下载下面的安装包覆盖安装就行，存档、设置都会保留（保险起见，可以先在「游戏设置 → 存档备份」导出一份）。\n\n## v1.2.4 更新内容\n\n- **新增：排行榜。** 标题画面「图鉴」下面多了「排行榜」按钮：\n  - 四个榜：最富榜（通关时资产最多）、最快榜（通关用时最短）、最狠榜、最惨榜；每张地图、每个难度各自排名，显示前 50 名，自己的最好成绩固定在最下面。\n  - 「开始游戏」里 1 个玩家打 3 个电脑、让所有电脑破产，就可能上榜。打进前 50 名会跳出「新纪录」：填名字，选地区（各省、香港、澳门、台湾，海外可以再选国家），还可以留一个社交账号（抖音、B站、YouTube 等，最多 16 个字），显示在排行榜上让大家来找你挑战。上榜后名字、地区和账号都不能再修改。\n  - 最狠榜和最惨榜怎么算分，排行榜里按「怎么算分」可以看。\n  - 为了公平：成绩会经过核对，改过的数据上不了榜；读过存档的局、开局时没有连网的局、玩家自制的地图都不能上榜。\n- **新增：自建地图可以盖「企业大楼」。** 编辑器「格子」页多了保险公司、电脑公司、加油站、汽车公司、航空公司、建设公司，和原版地图一样：\n  - 停在别人当董事长的企业要付费：保险费、电脑费、加油费、修车费，航空公司是出国观光的旅游费，建设公司是帮你的地加盖一层的工程费。\n  - 自己是最大股东时停下有好处：保险公司免费加保险，建设公司免费帮你加盖。\n  - 每座企业大楼占地 2×2 格，要放在两格相连的普通路旁边；每座都是这张地图的一支股票，在「股票」里可以改名。\n  - 可以选建筑风格：保险公司 5 种（台湾、日本、星际、恐龙、武侠），电脑公司 2 种，其他各 1 种。\n- 新增：自建地图的「特殊规则」可以设「道具礼物箱」：路上放 1 个（原版）、5 个、10 个或 15 个礼物箱，每个月月初全部换到新位置，被捡走的也补回来。不放道具店格子，就能做出全靠捡道具、踩卡片格的道具战地图。\n- 修正：部分安卓手机的「有新版本」窗口里，更新说明太长时把「更新」按钮挤到屏幕外，只能删掉游戏重新下载；游戏里其他提示窗口也一起修好了。\n\n## 1.2 到 1.2.4 之间的小版本（这些都已通过游戏内更新发布过，1.2.4 全部包含）\n\n### v1.2.3（2026-11-16，游戏内更新）\n- **「电脑地狱」难度改版**（只改地狱，简单、中等、困难都不变）：\n  - 遥控骰子、路障等道具全场按人数限量（4 人局每种只有 4 个），用掉才回到商店；研究所做的道具不能卖回商店。\n  - 均富卡、均贫卡、恶魔卡、冬眠卡、红卡、黑卡全场各只有 1 张；能整人和防身的卡（陷害、嫁祸、查税、免费、免罪等）全场按人数，每人每种最多 1 张。\n  - 宝箱改为随机 100～500 点；股票不再一路连涨或连跌，更难猜。\n  - 地狱电脑更凶：集中对付玩家，进魔法屋专挑让玩家卖光卡片、卖光道具、住院、坐牢的魔法；会用遥控骰子抢土地公等好神，附身土地公后用乌龟卡一格一格踩玩家的地。\n  - 派对模式里有旧版本的玩家一起玩时，按旧规则进行。\n- 新增：游戏中屏幕保持常亮。围观、AI 托管或等别人走的时候，手机不会再自动锁屏；回到标题画面后恢复正常。\n- 新增：「创作乐园」的地图页可以「直接玩」，不用先下载到「我的地图」。「下载到我的地图」现在只是下载，不会再打开地图编辑器。\n- 「创作乐园」默认按「最多花」排序，顺序改为：最多花、最热门、最新。\n- 围观或进入房间连线时，多了「不看了」「取消」按钮，网络不好时不用一直等。\n- 修正：「游戏大厅」里房间的「围观」「加入」按钮被挤到卡片外面或掉到头像下面。\n- 修正：手机横屏时，「自建地图」窗口的「返回」、编辑器「选单」里的「存档并离开」等按钮跑到屏幕外，点不到也退不出来；现在所有自建地图的窗口都会缩放到屏幕里。横屏时「更新日志」底部的按钮也看得到了。\n- 修正：自建地图里用简体字、日文等起的地块、设施名字，在游戏里显示成方框（例如「水□广□」）；现在名字照原样显示，超过 7 个字也不会被截断。\n- 修正：「新建地图」窗口的样子显示错乱（变成黄色椭圆）。\n- 修正：转盘（例如电脑住进你的旅馆时）点得太快，转盘的音效可能一直响、关不掉。\n- 修正拍卖卡「次次流拍」：电脑出价的上限以前按地价算，盖满（5 级）的地和设施底价比上限还高，电脑永远不出价。现在上限跟着底价走，盖了房子的地也拍得出去。和旧版本一起联机时按旧规则进行。\n\n### v1.2.2（2026-11-15，游戏内更新，紧急修复）\n- **紧急修复 1.2.1 更新带来的问题：派对模式建好房间后，「开始游戏」和「解散房间」按钮点不到，只能聊天，也退不出房间。现在都恢复正常了。**\n- **新增「版本选择」：点标题画面右下角的版本号，或者「更新日志」里的「检查更新」，可以手动检查更新，切换到 1.2.2 以后的任何一个版本（存档会保留）。以后小更新万一有问题，可以先退回稳定的版本继续玩，修好后再更新回来；退回后不会一直提醒更新，等有更新的版本才会再提醒。**\n- 派对模式不再强制更新：1.2.x 的不同小版本可以进同一个房间一起玩（按房间里最旧的版本规则进行）。\n- 修正：用自建地图玩的一局，关掉游戏后再读存档（包括自动存档）会提示「读取存档失败：Load failed」。现在存档里会带上这张地图；之前的存档只要地图还在「我的地图」里、路没有改过，也能读出来。存档列表里显示地图的名字，不再是「地图 5000」。\n- 局域网联机：手机上写明了手机不能开房间，要用 Windows 或 Mac 版的游戏开房，手机在这里加入。\n- 派对模式上方的在线人数，在窄屏手机上会分两行显示，不再超出框外。\n\n### v1.2.1（2026-11-14，游戏内更新）\n- **派对模式新玩法「小游戏捣乱」：有人玩小游戏时，其他玩家和观众都能看到他的画面，还能点画面给他捣乱——企鹅挖宝在宝物亮出来时放假宝物、开挖后在冰面画红点；射气球往屏幕上扔番茄挡视线；喜从天降从上面丢炸弹（接到会晕一下，游戏不会结束）。每人 2 秒一次，被捣乱的人会看到是谁干的。在「追加玩法」里可以关掉（默认开，只在回合制）。**\n- 派对模式：等别人回合的时候，屏幕上方会显示他刚刚买卖了什么（买进、卖出哪支股票多少股，开了几倍杠杆，买了什么道具、卡片）。\n- 派对模式（即时制）围观：可以用「◀ 视角 ▶」选择跟着哪位玩家看；跟着的人破产后，视角自动切到下一位还在玩的人。\n- 自建地图新增「强制修复」：检查出问题时点一下，系统自动把能修的都修好（接上断开的路、把路的尽头接回路上、放医院、监狱、银行、补地块、挪开压住路的建筑……），改了什么会一条条列出来，不满意可以「撤销」。\n- 自建地图：分几笔画的路、挨着的路尽头会自动接上；斜路和直路在拐角处不会再多出一个接不上的格子；不是正方形的地图，试玩时小地图位置对得上，画面也能拖到底。\n- 修正：派对模式里有人玩小游戏时，其他人的画面一直卡在「正在玩小游戏」（各人的「小游戏：亲自玩／自动结算」设定不同造成的，派对模式现在一律亲自玩）；房主退出后再回来，会占到别人的位置；小游戏时间到了画面不关。\n\n## 安装\n- 安卓手机：下载 `rich4-1.2.4.apk`，在手机上打开安装（第一次要允许「安装未知来源的应用」）。\n- 安卓电视／电视盒子：下载 `rich4-1.2.4-androidtv.apk` 安装，桌面上会出现「大富翁4 TV」；用遥控器或手柄玩。手机版的 apk 也能装在电视上（两个是同一个 App，装一个就好）。\n- iPhone：`rich4-1.2.4-unsigned.ipa` 是未签名的安装包，需要自己签名后安装。\n- Windows：下载 `rich4-1.2.4-windows.zip`，解压后打开 `Rich4` 文件夹，双击 `Rich4.exe`。第一次打开如果出现「Windows 已保护你的电脑」，点「更多信息 → 仍要执行」。开局域网房间时如果防火墙询问，请选「允许」。\n- Windows 7 / 8：下载 `rich4-1.2.4-win7.zip`，用法和上面的 Windows 版一样。Windows 10、11 请用上面的 Windows 版。\n- Mac：下载 `rich4-1.2.4-mac.dmg`，打开后把「大富翁4」拖进「应用程序」（Intel 和 M 芯片都能用）。第一次打开请在「应用程序」里对它按右键 →「打开」。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/iam567/rich4-renew-app/releases/download/v1.2.4/rich4-1.2.4-unsigned.ipa",
-          "size": 1445804612,
+          "version": "1.3.0",
+          "date": "2026-11-25T06:52:08Z",
+          "localizedDescription": "## 谢谢大家\n说好的 1.3 来了。谢谢每一位在玩、在报 bug、在评论区出主意的朋友，这一版等得比较久，谢谢大家的耐心。\n\n1.3 最大的心血是两张古代大地图：大唐长安的「开元盛世」，和北宋汴京的「清明上河」——还有八百里水泊梁山。城墙、楼阁、路人、音乐、小报、小游戏，一样一样全是重新做的。\n\n**这个游戏属于每一位喜欢大富翁4的玩家：永远不收任何费用，也不做任何商业用途，大家尽管拿去玩、拿去分享。**\n\n- **想玩两张新地图，请下载这个页面的 1.3.0 安装包覆盖安装**，存档会保留（保险起见，可以先在「游戏设置 → 存档备份」导出一份）。游戏内更新到的是「1.3.0 simple」版：只有几 MB，不含这两张地图，其他功能（私服、联机等）跟完整版一样，可以和完整版的玩家一起玩。iPhone 要连私服，需要装 1.3.0 安装包。\n- **国内下载慢**：在国内提供下载需要备案，我个人没办法申请，建议挂梯子下载，或者等网盘版。\n- **遇到 bug 或小问题**：可以在 [Issues](https://github.com/iam567/rich4-renew-app/issues) 提交，也可以在 B 站 UP 主 **TrustBox**、**阿姆西_MC** 发布的大富翁4 重制版视频下面留言，各个评论区我都会看，能修的一定会修。\n\n祝大家玩得开心，梁山见！\n\n## v1.3 更新内容\n\n- **两张全新的古代大地图，都在「自制地图」里，音乐、界面、开场动画、小报和卦肆（新闻、命运）、路人全是自己的一套，钱也用「文」：**\n  - **开元盛世（大唐长安）**：贡院答题考状元、斗鸡场下注、驿站快马、博戏坊押大小、发配所，路上还有几十个「小事件」格子，踩上去随机前进后退。\n  - **清明上河（北宋汴京）**：城墙、虹桥、樊楼、大相国寺都立起来了。城外是水泊梁山——坐汴河漕运的船过去，打虎、射野猪、跟燕青摔跤、十字坡看碗，抽 108 张「梁山令」，凑齐一组好汉到聚义厅换奖励。\n  - 清明上河的企业各有各的用处：汴河漕运把人送上梁山，东京车坊收加油费，将作监帮你加盖，官窑卖瓷器，常平仓卖保险；当上董事长还有专属好处。\n- **新增「私服」：想自己架一台给朋友玩的人，可以下载「私服架设包」，一条命令装好。** 派对模式的「局域网房间」改成了「私服房间」，里面有局域网、连线私服和私服列表；输入房间码就会自动连到那台私服。私服可以有公告、活动报名、私信、介绍和横幅，掉线两分钟内回来座位还在。iPhone 要装 1.3 的安装包才能连私服。\n- **新增「游戏节奏」：慢节奏、原版、快节奏三种。** 慢节奏：物价涨得慢、过路费六折、周转不灵可以清算资产；快节奏：物价涨得快，房价地价 1.2 倍。排行榜只收原版节奏。\n- **所有股票都能自由买卖：** 企业的保留股份不用再走到那栋楼才能买，在股市就能直接按市价买；买不了的时候会写明原因。\n- **电脑版的存档改放在游戏目录里的 save 文件夹**（Windows 在 Rich4.exe 旁边，Mac 在「大富翁4」旁边），换电脑直接复制走；原来的存档第一次打开会自动复制过去。标题画面多了「回到桌面」。\n- 新增「状态条」：游戏画面右上角显示现在的状态，例如谁坐牢还剩几天、股市休市还剩几天，可以收起来。\n- 结果窗口：一次影响很多人或很多块地时，列成清单慢慢滚动，相同的合并成一行，镜头不再一个个跑。\n- 冬眠的人轮到时只弹一条消息，镜头不再切过去。\n- 地狱难度：研究所做的道具在商店里变灰，点一下老板会说明不能卖。\n- 嫁祸卡可以再嫁祸：被嫁祸的人可以用自己的免罪卡或嫁祸卡，直到有人没有为止。飞弹、核弹炸到旅馆，里面的客人也会受伤住院。\n- 新闻、命运送的道具，只会是商店里买得到的。\n- 大富豪模式：卡片改成全国共用一池，商店没有常备卡片了。\n- 修正：有些新闻的结果写成「undefined 的 12 支股票」。\n- 修正：创作乐园的地图说明太长时，按钮被挤出画面。\n- 修正：很旧的安卓系统和部分电视停在绿色画面打不开（需要装 1.3 的安装包）。\n- 修正：iPhone 上连点屏幕下方会退回主屏幕；现在要滑两次才会退出。\n- 修正：简体显示里「著称」「毕昇」等字。\n- 1.3 只能和 1.3 的玩家一起玩派对模式。存档可以直接沿用。\n\n### v1.2.5（2026-11-17，游戏内更新）\n- 修正：抢夺卡现在是「用抢夺卡换对方一张卡」。卡片栏满了也不会再要你丢掉一张；抢到对方的抢夺卡，自己手里会留下一张（以前地狱难度下两边的抢夺卡都会不见）。派对模式里有旧版本的玩家一起玩时，按旧规则进行。\n- **新增：排行榜「总榜」。** 地图那一排最前面多了「总榜」，所有地图一起排名，每个成绩下面标出是在哪张地图打的。\n- 星座主题、武侠主题、恐龙主题、城市主题四张地图，名字改成「星座」「武侠」「恐龙」「城市」。\n- 自建地图的物件重新分类：地面、道路、格子、地标、建筑、植被、装饰，地标按洲分，建筑、植被、装饰也各有小分类；原版八张地图里的房子、商店、公园、地标也都可以拿来用了。\n\n## 安装\n- 安卓手机：下载 `rich4-1.3.0.apk`，在手机上打开安装（第一次要允许「安装未知来源的应用」）。\n- 安卓电视／电视盒子：下载 `rich4-1.3.0-androidtv.apk` 安装，桌面上会出现「大富翁4 TV」；用遥控器或手柄玩。手机版的 apk 也能装在电视上（两个是同一个 App，装一个就好）。\n- iPhone：`rich4-1.3.0-unsigned.ipa` 是未签名的安装包，需要自己签名后安装。\n- Windows：下载 `rich4-1.3.0-windows.zip`，解压后打开 `Rich4` 文件夹，双击 `Rich4.exe`。第一次打开如果出现「Windows 已保护你的电脑」，点「更多信息 → 仍要执行」。开局域网房间时如果防火墙询问，请选「允许」。存档在 `Rich4` 文件夹里的 `save`。\n- Windows 7 / 8：下载 `rich4-1.3.0-win7.zip`，用法和上面的 Windows 版一样。Windows 10、11 请用上面的 Windows 版。\n- Mac：下载 `rich4-1.3.0-mac.dmg`，打开后把「大富翁4」拖进「应用程序」（Intel 和 M 芯片都能用）。第一次打开请在「应用程序」里对它按右键 →「打开」。\n- 想自己架私服：下载 `rich4-server.zip`，里面有架设说明（README.md）。\n\n装新版会保留原来的存档。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/iam567/rich4-renew-app/releases/download/v1.3.0/rich4-1.3.0-unsigned.ipa",
+          "size": 1698625065,
           "minOSVersion": "15.0"
         }
       ]
@@ -2314,17 +2314,39 @@
       "tintColor": "#0084ff",
       "versions": [
         {
-          "version": "0.10.0",
-          "date": "2026-11-21T03:09:18Z",
-          "localizedDescription": "### What's Changed\r\n\r\n* 下拉刷新不清空已加载列表内容 by @duofuwang in https://github.com/huamurui/zhihu-minus-minus/pull/193\r\n* fix: 个人主页分页拼接时按 id 去重 by @NobetaSena in https://github.com/huamurui/zhihu-minus-minus/pull/198\r\n* 完善划线评论、选区操作与富文本阅读 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/200\r\n* 稳定折叠回答卡片的滚动位置，直接展示同题问题详情 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/201\r\n* fix: 预览列表模式下点回答卡片不发起标题过渡 by @NobetaSena in https://github.com/huamurui/zhihu-minus-minus/pull/202\r\n* 为「我的」页添加随滚动收起的头像和模糊封面 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/205\r\n* fix: 展开问题描述时不再闪出灰色占位条 by @NobetaSena in https://github.com/huamurui/zhihu-minus-minus/pull/203\r\n* 修复 Android 下拉刷新手势，调整 iOS 为 42 个等距齿位 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/206\r\n* 改善 iOS 双栏弹窗，支持知乎扫码登录和无图模式 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/207\r\n* 长图文正文分批渲染，优先显示首屏 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/208\r\n* 让「我的」页头像随滚动融入灵动岛和相机挖孔 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/210\r\n\r\n### New Contributors\r\n* @duofuwang made their first contribution in https://github.com/huamurui/zhihu-minus-minus/pull/193\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.9.10...v0.10.0",
-          "downloadURL": "https://gh-proxy.com/https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.10.0/zhihu-minus-minus-v0.10.0-unsigned.ipa",
-          "size": 14901422,
+          "version": "0.10.1",
+          "date": "2026-11-25T07:00:41Z",
+          "localizedDescription": "uiux小调整；安卓低版本登录修复与性能优化；安卓14+预测性返回（可关闭）；ios 换 xcode27 打包。\r\n\r\n### What's Changed\r\n\r\n* Android 单栏预测性返回与设备圆角（v0.10.1） by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/212\r\n* fix(android): 修复回答横滑误返回，让预览从起手侧露出 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/218\r\n* 增加可切换的信息流性能模式，并记录 Android 8.1 实测 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/223\r\n* 修复 Windows 本地 Release 包冷启动时的 Sentry 模块缺失 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/220\r\n* 修复 Android 8 平板冷启动后无法恢复登录的问题 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/221\r\n* 修复 Android 8 登录恢复，优化正文加载与信息流滚动 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/222\r\n* 固定「最近发布」顶栏并简化翻页控件 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/224\r\n* 统一自绘顶栏返回按钮，补齐文章和游客预览的返回入口 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/225\r\n* 调整回答详情顶栏显隐，增加滚动条越界压缩效果 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/226\r\n* 支持整张底部面板下拉关闭，优化弹出动效 by @huamurui in https://github.com/huamurui/zhihu-minus-minus/pull/227\r\n\r\n\r\n**Full Changelog**: https://github.com/huamurui/zhihu-minus-minus/compare/v0.10.0...v0.10.1",
+          "downloadURL": "https://gh-proxy.com/https://github.com/huamurui/zhihu-minus-minus/releases/download/v0.10.1/zhihu-minus-minus-v0.10.1-unsigned.ipa",
+          "size": 14916202,
           "minOSVersion": "15.1"
         }
       ]
     }
   ],
   "news": [
+    {
+      "appID": "com.huamu013.ZhihuMinusMinus",
+      "title": "ZhihuMinusMinus 0.10.1 · 25 Nov 2026",
+      "identifier": "ZhihuMinusMinus-release-v0.10.1",
+      "caption": "ZhihuMinusMinus 0.10.1 is available.",
+      "date": "2026-11-25T07:00:41Z",
+      "tintColor": "#0084ff",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.10.1"
+    },
+    {
+      "appID": "pro.areu.rich4",
+      "title": "Rich4Renew 1.3.0 · 25 Nov 2026",
+      "identifier": "Rich4Renew-release-v1.3.0",
+      "caption": "Rich4Renew 1.3.0 is available.",
+      "date": "2026-11-25T06:52:08Z",
+      "tintColor": "#F0D020",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/iam567/rich4-renew-app/releases/tag/v1.3.0"
+    },
     {
       "appID": "com.github.cyrilpeng.veneranext",
       "title": "VeneraNext 1.18.5 · 25 Nov 2026",
@@ -2590,17 +2612,6 @@
       "url": "https://github.com/breeze-project-org/Breeze/releases/tag/v3.1.0"
     },
     {
-      "appID": "com.huamu013.ZhihuMinusMinus",
-      "title": "ZhihuMinusMinus 0.10.0 · 21 Nov 2026",
-      "identifier": "ZhihuMinusMinus-release-v0.10.0",
-      "caption": "ZhihuMinusMinus 0.10.0 is available.",
-      "date": "2026-11-21T03:09:18Z",
-      "tintColor": "#0084ff",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/ZhihuMinusMinus/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/huamurui/zhihu-minus-minus/releases/tag/v0.10.0"
-    },
-    {
       "appID": "com.mori.downloader",
       "title": "Mori 4.6.1 · 20 Nov 2026",
       "identifier": "Mori-release-v4.6.1",
@@ -2775,17 +2786,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/VRCM/images/news.webp",
       "notify": true,
       "url": "https://github.com/vrcm-team/VRCM/releases/tag/1.1.6"
-    },
-    {
-      "appID": "pro.areu.rich4",
-      "title": "Rich4Renew 1.2.4 · 16 Nov 2026",
-      "identifier": "Rich4Renew-release-v1.2.4",
-      "caption": "Rich4Renew 1.2.4 is available.",
-      "date": "2026-11-16T09:43:34Z",
-      "tintColor": "#F0D020",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Rich4Renew/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/iam567/rich4-renew-app/releases/tag/v1.2.4"
     },
     {
       "appID": "com.twindesk.ios",
