@@ -243,5 +243,9 @@
   "com.mori.downloader": {
     "subtitle": "支持 16 个平台的本地媒体下载器",
     "description": "从 TikTok、Instagram、YouTube、Twitter/X、Spotify、Apple Music、Pinterest、Facebook、Threads、Bandcamp、Pixiv、Bilibili、抖音、小红书、Reddit 与 TeraBox 保存视频、图片和音频，并内置流嗅探、音频提取、图片转换与 PDF 压缩工具。全部在设备本地运行——无需账号、无广告、无追踪。"
+  },
+  "com.music.bitchord": {
+    "subtitle": "iPhone 与 iPad 上的开源 YouTube Music 客户端",
+    "description": "由 BitChord Android 版移植而来的原生 SwiftUI 应用。可搜索、浏览并播放 YouTube Music 曲库，支持十余家歌词源的同步歌词、下载、交叉淡入淡出、Automix、SMB 与 WebDAV 媒体库、Last.fm 记录以及一起听。需要 iOS 17 或更高版本。"
   }
 }

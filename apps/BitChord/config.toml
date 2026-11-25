@@ -1,0 +1,42 @@
+# altgen config for the BitChord AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "maanya145/BitChord-iOS"
+
+[source]
+name = "BitChord"
+subtitle = "BitChord AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for BitChord"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/icon.webp"
+website = "https://github.com/maanya145/BitChord-iOS"
+tint_color = "#FC546C"
+
+[app]
+name = "BitChord"
+bundle_identifier = "com.music.bitchord"
+developer_name = "Hero154"
+subtitle = "Open-source YouTube Music client for iPhone and iPad"
+description = "A native SwiftUI port of BitChord for Android. Search, browse and play the YouTube Music catalogue, with synced lyrics from a dozen providers, downloads, crossfade, Automix, SMB and WebDAV libraries, Last.fm scrobbling and Listen Together. Requires iOS 17 or later."
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/explore.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/library.webp",
+]
+tint_color = "#FC546C"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob); each release ships BitChord-<version>-<build>.ipa
+asset_pattern = "BitChord-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/BitChord/images/news.webp"
+
+[output]
+path = "apps.json"

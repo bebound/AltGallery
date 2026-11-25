@@ -85,6 +85,9 @@ Windows games on iPhone and iPad — a fast, controller-friendly launcher with S
 ### <img src="apps/BiliSponsorBlock/icon.webp" alt="BiliSponsorBlock icon" width="24" align="top"> <a href="https://github.com/lcmovie/BiliSponsorBlock-ios">BiliSponsorBlock</a>
 官方哔哩哔哩 iOS App 的 SponsorBlock 空降助手插件——自动跳过赞助、自我推广、片头片尾等片段，支持分类独立设置与进度条彩色标记。
 
+### <img src="apps/BitChord/icon.webp" alt="BitChord icon" width="24" align="top"> <a href="https://github.com/maanya145/BitChord-iOS">BitChord</a>
+Open-source YouTube Music client for iPhone and iPad — a SwiftUI port of BitChord for Android with synced lyrics from a dozen providers, downloads and Automix.
+
 ### <img src="apps/Breeze/icon.webp" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
 使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
