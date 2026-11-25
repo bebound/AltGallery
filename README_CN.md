@@ -244,9 +244,6 @@ iPhone 与 iPad 的模拟器前端——基于 NeoStation 的分支，主机风�
 ### <img src="apps/Rich4Renew/icon.webp" alt="Rich4Renew icon" width="24" align="top"> <a href="https://github.com/iam567/rich4-renew-app">Rich4Renew</a>
 大富翁4 高清重制版，新增歌舞伎町地图与大富豪模式 — Vite + TypeScript 重写的游戏本体，Capacitor 打包成 iOS App，规则依原版反组译还原。
 
-### <img src="apps/Roam-Control/icon.webp" alt="Roam Control icon" width="24" align="top"> <a href="https://github.com/seanhowarthdev/Roam-Control">Roam Control</a>
-选择、测试并移动 iPhone 上报的位置——在统一的 Apple 地图界面里模拟步行路线、保存收藏。
-
 ### <img src="apps/RushHours/icon.webp" alt="Rush Hours icon" width="24" align="top"> <a href="https://github.com/ekomlenovic/rush_hour_ios_android">Rush Hours</a>
 移动车辆，让红色小车脱身。免费滑块解谜，700+ 关卡世界地图、每日与每周挑战、关卡编辑器与多人模式。
 

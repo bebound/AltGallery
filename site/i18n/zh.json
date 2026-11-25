@@ -168,10 +168,6 @@
     "subtitle": "iPhone 与 iPad 的模拟器前端",
     "description": "独立维护的 NeoStation iOS/iPadOS 分支，提供适配手柄的主机式游戏库，并内置 Libretro 核心、MeloNX、Dolphin、ARMSX2 与 RPCS3 运行时、JIT 流程，以及用户自备固件、密钥与 BIOS 的支持。"
   },
-  "com.sean.roamcontrol": {
-    "subtitle": "选择、测试并移动 iPhone 上报的位置",
-    "description": "在同一张地图上设定固定的上报位置、预览并模拟 Apple Maps 步行路线、保存收藏与历史记录。需要 iOS 27 或更高版本，以及针对 Wi-Fi 与移动数据的引导式 LocalDevVPN 兼容会话。"
-  },
   "com.rushhours.app": {
     "subtitle": "移动车辆，让红色小车脱身",
     "description": "一款免费的滑动方块交通解谜游戏：沿车道滑动小汽车与卡车，把红色小车开出去。700+ 关卡、每日与每周挑战、关卡编辑器，以及可选的自建多人模式——无广告、无内购、无追踪。"
