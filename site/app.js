@@ -457,8 +457,15 @@
     tile.append(h("span", { class: "icon-letter", "aria-hidden": "true", text: (app.name || "?").slice(0, 1).toUpperCase() }));
     if (app.icon) {
       const icon = h("img", { src: assetURL(app.icon), alt: "", loading: "lazy", decoding: "async" });
+      // The letter is only a placeholder: hide it as soon as the real icon is
+      // painted, or it shows through a transparent icon. A failed load keeps
+      // the letter and drops the image.
+      const showIcon = () => tile.classList.add("has-icon");
+      icon.addEventListener("load", showIcon);
       icon.addEventListener("error", () => icon.remove());
       tile.append(icon);
+      // A cached image can finish before the listener above is attached.
+      if (icon.complete && icon.naturalWidth > 0) showIcon();
     }
     return tile;
   }

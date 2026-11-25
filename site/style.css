@@ -721,6 +721,7 @@
     pointer-events: none;
   }
   .icon-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .icon-tile.has-icon .icon-letter { display: none; }
   .icon-letter {
     font-size: 20px;
     font-weight: 650;
