@@ -1,0 +1,48 @@
+{
+  "name": "D2R Mobile",
+  "subtitle": "D2R Mobile AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for D2R Mobile",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/icon.webp",
+  "website": "https://github.com/d2r-mobile/d2r-mobile",
+  "tintColor": "#F09020",
+  "apps": [
+    {
+      "name": "D2R Mobile",
+      "bundleIdentifier": "org.d2rmobile.app",
+      "developerName": "d2r-mobile",
+      "subtitle": "Play Diablo II: Resurrected on iPhone and iPad",
+      "localizedDescription": "Play Diablo II: Resurrected offline on iPhone and iPad with touch or controller support. Bring your own Nintendo Switch game files — the app includes no game content.",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/map.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/trove.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/score.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/tomb.webp"
+      ],
+      "tintColor": "#F09020",
+      "versions": [
+        {
+          "version": "1.0",
+          "date": "2026-10-13T01:28:21Z",
+          "localizedDescription": "## English\n\n**This release fixes the v1.0 shell, which could not be packaged by anyone.** If you downloaded `D2RMobile-shell.ipa` from v1.0, replace it with the one on this page and update the repository to this version.\n\n### What was wrong in v1.0\n\nPackaging with the v1.0 shell and the public repository went through every step and then stopped at the final check with:\n\n```\n[x] 有 1 项没做出来：dm/bootlist.tsv\n```\n\n(1 item was not produced: `dm/bootlist.tsv`.) The v1.0 shell listed a startup prefetch list among the things the tool must add, but the public repository deliberately does not carry that list, so the tool could never produce it. The shell had been built in a working directory that still held an old copy of the list, and our pre-release check ran in the same directory, so it did not catch the mismatch. Thanks to the reporter of issue #1 for the precise diagnosis.\n\n### What changed\n\n- The shell is now built from the public tree in a fresh working directory; it no longer asks for the prefetch list.\n- When the public tree has no prefetch list, the rewrite step now also removes any old copy left in the build output directory.\n- If the tool still finds an item it could not produce, the error now says the shell and the tool are from different versions and what to do.\n- Before publishing, we now package once with exactly what you get: the shell to be published, the tree to be pushed, and an empty working directory. The shell is published only if that writes an install package. This release passed that check.\n\n### Assets\n\n- `D2RMobile-shell.ipa`: the shell (for both iPhone and iPad). Its checksum is in `SHA256SUMS.txt`. Use it with the source of **this version**.\n\n### Not verified (stated plainly)\n\n- This shell file has not been run on a device. The package made from it was written successfully on a Mac; it has not been signed and installed on a phone.\n- Everything listed as not verified in v1.0 still applies: sideloading tools (Sideloadly, AltStore, ...), devices with 6 GB or 8 GB of RAM, A16 or older chips, `.nsp` game packages, packaging on Linux.\n\n---\n\n## 中文\n\n**这一版修正 v1.0 的壳：它对所有人都做不出安装包。** 如果你下载过 v1.0 的 `D2RMobile-shell.ipa`，请换成本页的这一份，并把仓库更新到这一版。\n\n### v1.0 的问题\n\n用 v1.0 的壳加公开仓库做包，各步都能走完，最后核对时停在：\n\n```\n[x] 有 1 项没做出来：dm/bootlist.tsv\n```\n\nv1.0 的壳把一份启动预取清单列在「工具要补进去的东西」里，而公开仓库有意不带这份清单，工具永远做不出它。出壳用的工作目录里留着这份清单的旧文件，我们发布前的检查又是在同一个目录里做的，所以没有发现两边对不上。感谢 Issue #1 的报告者给出了准确的定位。\n\n### 改了什么\n\n- 壳改为在全新的工作目录里从公开的代码出，不再要求预取清单。\n- 公开的代码没有预取清单时，改写这一步会把产物目录里以前留下的旧清单一并清掉。\n- 工具若仍发现有东西没做出来，报错会直说是壳与工具不是同一版，以及该怎么办。\n- 发布前新增一道检查：用你拿到的那一套——待发布的壳、待推送的代码、空的工作目录——原样做一次包，写出安装包才发布。这一版通过了这道检查。\n\n### 附件\n\n- `D2RMobile-shell.ipa`：壳（同时面向 iPhone 与 iPad），校验值见 `SHA256SUMS.txt`。请与**这一版**的源码一起用。\n\n### 没验过的（直说）\n\n- 这份壳文件本身没上过真机。用它做出的安装包在 Mac 上成功写出，还没有签名装到手机上。\n- v1.0 里列的没验项仍然成立：自签工具（Sideloadly、AltStore 等）、6 GB / 8 GB 内存的机型、A16 及更早的芯片、`.nsp` 格式的游戏包、在 Linux 上做包。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/d2r-mobile/d2r-mobile/releases/download/v1.0.1/D2RMobile-shell.ipa",
+          "size": 4435542,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "org.d2rmobile.app",
+      "title": "D2R Mobile 1.0 · 13 Oct 2026",
+      "identifier": "D2R Mobile-release-v1.0.1",
+      "caption": "D2R Mobile 1.0 is available.",
+      "date": "2026-10-13T01:28:21Z",
+      "tintColor": "#F09020",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/D2RMobile/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/d2r-mobile/d2r-mobile/releases/tag/v1.0.1"
+    }
+  ]
+}
