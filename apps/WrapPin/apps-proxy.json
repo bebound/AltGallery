@@ -22,11 +22,11 @@
       "tintColor": "#1060F0",
       "versions": [
         {
-          "version": "1.0.26",
-          "date": "2026-11-24T07:09:57Z",
-          "localizedDescription": "## WrapPin 1.0.26（Build 96）\n\n- **当前模拟目标** · 固定模拟时，地图单独标出当前目标。选中其他地点后，点「查看模拟位置」可以回到当前目标。#57\n- **精确选点** · 打开地图上的准星按钮，拖动地图或用摇杆微调。点「确认选点」后，再点「开始模拟定位」或「更换模拟位置」应用坐标。#58 #59\n- **选点面板** · 地点标题、收藏和清除按钮固定在面板上方。空间不足时可以滚动下方选项。\n- **收藏重命名** · 在「收藏与历史」里点收藏旁的铅笔，改名后保留原坐标和地址。#61\n\n### 安装\n\n- **Standard** · 使用 SideStore 等工具签装，运行时使用兼容的外部设备隧道。\n- **Tunnel** · 主 App 和内置扩展都需要支持 Packet Tunnel 的签名配置。\n\n两版均为未签名 IPA，支持 iOS/iPadOS 18.0 及以上。覆盖升级时使用原版本类型和签名身份。[安装说明](https://github.com/suversal/WrapPin/blob/v1.0.26/Documentation/Installation.zh-CN.md)\n\n[简体中文更新说明](https://github.com/suversal/WrapPin/blob/v1.0.26/Documentation/Release-1.0.26.zh-CN.md) · [English release notes](https://github.com/suversal/WrapPin/blob/v1.0.26/Documentation/Release-1.0.26.md)",
-          "downloadURL": "https://gh-proxy.com/https://github.com/suversal/WrapPin/releases/download/v1.0.26/WrapPin-Standard-1.0.26-build96-unsigned.ipa",
-          "size": 7161177,
+          "version": "1.0.27",
+          "date": "2026-11-26T14:45:47Z",
+          "localizedDescription": "## WrapPin 1.0.27（Build 106）\n\n### 更新内容\n- **支持保存自定义路线**：可在“收藏与历史”中管理、重命名或删除已保存的自定义路线，一键载入路线途经点、坐标模式与速度。\n- **地图最近搜索记录**：在搜索框下方展示近期搜过的地点，点击即可快速复用。\n- **iOS 26+ Liquid Glass 与交互打磨**：适配 Liquid Glass 视觉风格，优化底部面板拖拽物理手感，以及首页地图、路线编辑和精确选点的浮层细节。\n\n### What's New\n- **Saved Custom Routes**: Save custom routes for reuse, rename or delete them in Saved Places, and reload their waypoints, coordinate mode and speed in one tap.\n- **Recent Map Searches**: Show recent searches below the map search bar for quick reuse without retyping.\n- **iOS 26+ Liquid Glass & Interaction Polish**: Refined Liquid Glass styling, smoother bottom-dock drag physics, and cleaner map overlays across the home map, route editors and precision picker.\n\n### 安装包与校验（iOS/iPadOS 18.0+，未签名）\n- **Standard（SideStore 推荐）**：`WrapPin-Standard-1.0.27-build106-unsigned.ipa`\n  - SHA-256: `e4391ec3f1c0bdc04d90551363fd85212e593cb74a0a40a1b4fec27611ecac1a`\n- **Tunnel（内置隧道，需匹配 Packet Tunnel 签名配置）**：`WrapPin-Tunnel-1.0.27-build106-unsigned.ipa`\n  - SHA-256: `4c20b5b1438e4da4aba38bc1cf0ddac716d008715f6d6d1330c51d260e665653`",
+          "downloadURL": "https://gh-proxy.com/https://github.com/suversal/WrapPin/releases/download/v1.0.27/WrapPin-Standard-1.0.27-build106-unsigned.ipa",
+          "size": 7254821,
           "minOSVersion": "18.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.suversal.wrappin",
-      "title": "WrapPin 1.0.26 · 24 Nov 2026",
-      "identifier": "WrapPin-release-v1.0.26",
-      "caption": "WrapPin 1.0.26 is available.",
-      "date": "2026-11-24T07:09:57Z",
+      "title": "WrapPin 1.0.27 · 26 Nov 2026",
+      "identifier": "WrapPin-release-v1.0.27",
+      "caption": "WrapPin 1.0.27 is available.",
+      "date": "2026-11-26T14:45:47Z",
       "tintColor": "#1060F0",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/images/news.webp",
       "notify": true,
-      "url": "https://github.com/suversal/WrapPin/releases/tag/v1.0.26"
+      "url": "https://github.com/suversal/WrapPin/releases/tag/v1.0.27"
     }
   ]
 }
