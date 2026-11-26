@@ -112,6 +112,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import io
 import json
 import os
@@ -123,7 +124,7 @@ from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from urllib.parse import unquote
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageColor, ImageDraw, ImageFilter, ImageFont, ImageOps
 from tqdm import tqdm
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -131,6 +132,18 @@ DEFAULT_SOURCE = Path("all-apps.json")
 DEFAULT_PROXY = Path("all-apps-proxy.json")
 DEFAULT_SITE = Path("site")
 DEFAULT_OUT_DIR = Path("_site")
+
+# The public address of the deployed page. It is written into the canonical
+# link, the Open Graph tags and the WebSite structured data in
+# site/index.html, and into robots.txt and sitemap.xml here; keeping it in
+# one place means moving the site is one edit. It is a subdomain of its own
+# (not a path under fromkk.com), which is what lets Google show "AltGallery"
+# as the site name instead of the domain-level "fromkk.com".
+SITE_URL = "https://altgallery.fromkk.com/"
+
+# The social/link-preview card. 1200x630 is the size every scraper (Open
+# Graph, Twitter, Slack, iMessage) renders without cropping.
+OG_WIDTH, OG_HEIGHT = 1200, 630
 
 RAW_HOST = "https://raw.githubusercontent.com/"
 RELEASE_DOWNLOAD = re.compile(
@@ -721,6 +734,151 @@ def inline_script(data: bytes) -> str:
     return "<script>\n" + text + "\n</script>"
 
 
+def write_robots(out_dir: Path) -> None:
+    """Write _site/robots.txt.
+
+    A missing robots.txt is not an error — Google treats it as "crawl
+    everything" — but it is what lets the sitemap be advertised. Nothing is
+    disallowed: the page's CSS and JS are requested with ?v=<hash> cache
+    busters, and a rule matching a query string would block the very resources
+    Google needs to render the catalog. Duplicate spellings are the canonical
+    link's job.
+    """
+    body = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "\n"
+        f"Sitemap: {SITE_URL}sitemap.xml\n"
+    )
+    (out_dir / "robots.txt").write_text(body, encoding="utf-8")
+
+
+def write_sitemap(out_dir: Path) -> None:
+    """Write _site/sitemap.xml.
+
+    The catalog is one page: an app opens in a sheet driven by #app=<id>, and a
+    fragment is not part of a URL Google indexes. So the sitemap lists the home
+    page alone. It carries no lastmod: the file is rebuilt on every update, so
+    a lastmod would move for builds that changed nothing.
+    """
+    body = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        "  <url>\n"
+        f"    <loc>{SITE_URL}</loc>\n"
+        "    <changefreq>daily</changefreq>\n"
+        "    <priority>1.0</priority>\n"
+        "  </url>\n"
+        "</urlset>\n"
+    )
+    (out_dir / "sitemap.xml").write_text(body, encoding="utf-8")
+
+
+def write_noscript_catalog(source: dict, out_dir: Path) -> None:
+    """Fill #noscript-catalog in the staged index.html with a plain app index.
+
+    The page draws its catalog in JavaScript, so without it a reader (and a
+    crawler that does not execute scripts) sees only the copy around the grid.
+    This is that copy's substitute: every app as a link with its subtitle, in
+    catalog order, inside the <noscript> block so it never appears for a
+    browser that runs the script and draws the grid itself.
+
+    It is filled here rather than in site/index.html because the shell is
+    static and the catalog changes every six hours.
+    """
+    parts = [
+        f"<h2>{len(source.get('apps', []))} apps in the catalog</h2>",
+        '<ul class="noscript-catalog">',
+    ]
+    for app in source.get("apps", []):
+        name = html.escape(app.get("name") or "")
+        subtitle = html.escape(app.get("subtitle") or "")
+        developer = html.escape(app.get("developerName") or "")
+        # The reader without JavaScript gets a link where the app actually
+        # lives — its GitHub release page — not a JSON file.
+        release = ((app.get("versions") or [{}])[0].get("downloadURL") or "")
+        repo_match = re.match(r"^(https://github\.com/[^/]+/[^/]+)/", release)
+        href = repo_match.group(1) if repo_match else SITE_URL
+        byline = f" — {subtitle}" if subtitle else ""
+        who = f" by {developer}" if developer else ""
+        parts.append(f'<li><a href="{href}">{name}</a>{who}{byline}</li>')
+    parts.append("</ul>")
+    block = "\n".join(parts)
+
+    index_path = out_dir / "index.html"
+    html_text = index_path.read_text(encoding="utf-8")
+    token = '<div id="noscript-catalog"></div>'
+    if token not in html_text:
+        warn("site/index.html has no #noscript-catalog placeholder; skipping the app index")
+        return
+    index_path.write_text(html_text.replace(token, f'<div id="noscript-catalog">\n{block}\n</div>'), encoding="utf-8")
+
+
+def write_og_image(logo_path: Path | None, tint: str, out_dir: Path) -> str | None:
+    """Draw _site/og.png, the card link previews show.
+
+    It mirrors the page's hero: the catalog tint as a soft gradient, the logo
+    on a rounded tile, the name and the short subtitle under it. Nothing here
+    is a screenshot, so it stays right when the page's layout changes.
+
+    Pillow's bundled default font is used for the type: no font is vendored in
+    the repository, and the render machines (CI) have no system fonts to name.
+    """
+    canvas = Image.new("RGB", (OG_WIDTH, OG_HEIGHT), tint)
+    draw = ImageDraw.Draw(canvas)
+
+    # A vertical wash from a lighter tint to the tint itself, plus a soft glow
+    # in one corner: the same "aurora" the page paints behind its hero.
+    base = Image.new("RGB", (1, 2))
+    top = tuple(min(255, c + 34) for c in ImageColor.getrgb(tint))
+    base.putpixel((0, 0), top)
+    base.putpixel((0, 1), ImageColor.getrgb(tint))
+    canvas.paste(base.resize((OG_WIDTH, OG_HEIGHT), Image.Resampling.BILINEAR), (0, 0))
+    # The glow is a blurred ellipse rather than a flat fill: a filled shape
+    # leaves a visible edge across the card, and a blurred one falls off the way
+    # the page's aurora does. It is a small mask scaled up and blurred, which is
+    # far cheaper than blurring the full-size canvas.
+    mask = Image.new("L", (OG_WIDTH // 4, OG_HEIGHT // 4), 0)
+    ImageDraw.Draw(mask).ellipse((0, 0, 220, 200), fill=52)
+    mask = mask.resize((OG_WIDTH, OG_HEIGHT), Image.Resampling.BILINEAR)
+    mask = mask.filter(ImageFilter.GaussianBlur(120))
+    glow = Image.new("RGBA", (OG_WIDTH, OG_HEIGHT), (255, 255, 255, 0))
+    glow.putalpha(mask)
+    canvas = Image.alpha_composite(canvas.convert("RGBA"), glow).convert("RGB")
+    draw = ImageDraw.Draw(canvas)
+
+    logo_size = 168
+    margin = 96
+    if logo_path is not None:
+        logo = Image.open(logo_path)
+        logo.load()
+        tile = ImageOps.fit(
+            logo.convert("RGBA"), (logo_size, logo_size), Image.Resampling.LANCZOS
+        )
+        mask = Image.new("L", (logo_size, logo_size), 0)
+        ImageDraw.Draw(mask).rounded_rectangle(
+            (0, 0, logo_size - 1, logo_size - 1), radius=int(logo_size * 0.23), fill=255
+        )
+        canvas.paste(tile, (margin, 92), mask)
+
+    name_font = ImageFont.load_default(size=84)
+    sub_font = ImageFont.load_default(size=34)
+    text_x = margin + (logo_size + 40 if logo_path is not None else 0)
+    name = "AltGallery"
+    name_box = draw.textbbox((0, 0), name, font=name_font)
+    draw.text(
+        (text_x, 92 + (logo_size - (name_box[3] - name_box[1])) // 2 - name_box[1] - 14),
+        name,
+        font=name_font,
+        fill=(255, 255, 255),
+    )
+
+    subtitle = "AltStore sources for open-source iOS apps on GitHub"
+    draw.text((margin, OG_HEIGHT - 96 - 34), subtitle, font=sub_font, fill=(255, 255, 255, 230))
+    canvas.save(out_dir / "og.png", optimize=True)
+    return "og.png"
+
+
 def build_preview(index_html: str, style: bytes, script: bytes, vendor: dict[str, bytes],
                   vendor_tags: dict[str, str], source: dict, config: dict,
                   style_tag: str, script_tag: str) -> str:
@@ -788,14 +946,18 @@ def main() -> int:
     media_files = stage_media(source, raw_base, out_dir, max(1, args.jobs))
 
     logo_relative = repo_relative(source.get("iconURL") or "", raw_base)
+    logo_path = REPO_ROOT / logo_relative if logo_relative else None
+    if logo_path is not None and not logo_path.is_file():
+        logo_path = None
     icon_names: list[str] = []
-    if logo_relative and (REPO_ROOT / logo_relative).is_file():
-        icon_names = write_site_icons(
-            REPO_ROOT / logo_relative, out_dir, tint_color(source)
-        )
+    if logo_path is not None:
+        icon_names = write_site_icons(logo_path, out_dir, tint_color(source))
     else:
         warn("cannot find the site logo in the working tree; the page will have no icon")
     write_manifest(source, out_dir)
+    write_robots(out_dir)
+    write_sitemap(out_dir)
+    og_name = write_og_image(logo_path, tint_color(source), out_dir)
     i18n = load_i18n(site_dir, source)
 
     style = (site_dir / "style.css").read_bytes()
@@ -804,6 +966,15 @@ def main() -> int:
 
     if 'href="style.css"' not in html or 'src="app.js"' not in html:
         raise SystemExit("error: site/index.html must reference style.css and app.js")
+
+    # The page names its own public address in the canonical link, the Open
+    # Graph tags and the WebSite structured data; robots.txt and sitemap.xml
+    # take it from SITE_URL. One host, so the two spellings must agree or the
+    # build would advertise a URL the page then disowns.
+    if f'<link rel="canonical" href="{SITE_URL}">' not in html:
+        raise SystemExit(
+            f"error: site/index.html must carry <link rel=\"canonical\" href=\"{SITE_URL}\">"
+        )
 
     style_tag = f'<link rel="stylesheet" href="style.css?v={content_hash(style)}">'
     script_tag = f'<script src="app.js?v={content_hash(script)}" defer></script>'
@@ -838,6 +1009,7 @@ def main() -> int:
     }
 
     (out_dir / "index.html").write_text(html, encoding="utf-8")
+    write_noscript_catalog(source, out_dir)
     (out_dir / "style.css").write_bytes(style)
     (out_dir / "app.js").write_bytes(script)
     vendor_out = out_dir / VENDOR_DIR
@@ -850,7 +1022,7 @@ def main() -> int:
         json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     preview = build_preview(
-        html, style, script, vendor, vendor_tags, source, config, style_tag, script_tag
+        (out_dir / "index.html").read_text(encoding="utf-8"), style, script, vendor, vendor_tags, source, config, style_tag, script_tag
     )
     (out_dir / "preview.html").write_text(preview, encoding="utf-8")
 
@@ -864,18 +1036,23 @@ def main() -> int:
         f"Built {len(source['apps'])} apps and {len(source.get('news', []))} news entries "
         f"(proxy: {proxy_prefix})"
     )
-    for name in (
+    reported = [
         "index.html",
         "style.css",
         "app.js",
         *icon_names,
         "site.webmanifest",
+        "robots.txt",
+        "sitemap.xml",
         "all-apps.json",
         "all-apps-proxy.json",
         "config.json",
         "preview.html",
         *(f"{VENDOR_DIR}/{name}" for name in VENDOR_FILES),
-    ):
+    ]
+    if og_name:
+        reported.append(og_name)
+    for name in reported:
         path = out_dir / name
         if path.is_file():
             print(f"  {display(path)}  {path.stat().st_size / 1024:.0f} KB")

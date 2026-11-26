@@ -44,7 +44,7 @@
       "nav.overview": "Overview",
       "nav.library": "Library",
       "hero.eyebrow": "AltStore sources",
-      "hero.sub": "Curated AltStore sources for IPA projects on GitHub.",
+      "hero.sub": "Curated AltStore sources for open-source iOS apps on GitHub.",
       "hero.clients": "Works with AltStore, SideStore, LiveContainer and other compatible clients.",
       "hero.addAll": "Add all sources",
       "hero.repo": "View on GitHub",
@@ -95,7 +95,7 @@
       "nav.overview": "概览",
       "nav.library": "应用库",
       "hero.eyebrow": "AltStore 软件源",
-      "hero.sub": "精选 AltStore 软件源：汇聚 GitHub 优质 IPA 开源项目",
+      "hero.sub": "精选 AltStore 软件源：汇聚 GitHub 上的开源 iOS 应用",
       "hero.clients": "兼容 AltStore、SideStore、LiveContainer 等客户端。",
       "hero.addAll": "添加全部源",
       "hero.repo": "在 GitHub 查看",
@@ -398,7 +398,12 @@
 
   function applyLabels() {
     document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
-    document.title = "AltGallery";
+    // The title the search results and the browser tab show. site/index.html
+    // carries the English one for crawlers that never run this script; a
+    // language switch re-labels it here.
+    document.title = state.lang === "zh"
+      ? "AltGallery — GitHub 开源 iOS 应用 AltStore 软件源"
+      : "AltGallery — AltStore Sources for iOS Apps on GitHub";
 
     document.querySelectorAll("[data-i18n]").forEach((element) => {
       element.textContent = t(element.dataset.i18n);

@@ -6,7 +6,7 @@
 
 <p align="center"><b>English</b> | <a href="README_CN.md">简体中文</a></p>
 
-<p>Curated AltStore sources for IPA projects on GitHub. All sources are generated with <a href="https://github.com/bebound/AltGen">AltGen</a>. It can be used with <a href="https://github.com/altstoreio/Altstore">AltStore</a>, <a href="https://github.com/SideStore/SideStore">SideStore</a>, <a href="https://github.com/LiveContainer/LiveContainer">LiveContainer</a>, <a href="https://github.com/claration/Feather">Feather</a> or other compatible apps.</p>
+<p>Curated AltStore sources for open-source iOS apps on GitHub. All sources are generated with <a href="https://github.com/bebound/AltGen">AltGen</a>. It can be used with <a href="https://github.com/altstoreio/Altstore">AltStore</a>, <a href="https://github.com/SideStore/SideStore">SideStore</a>, <a href="https://github.com/LiveContainer/LiveContainer">LiveContainer</a>, <a href="https://github.com/claration/Feather">Feather</a> or other compatible apps.</p>
 
 <p>Browse the AltGallery in your browser: <a href="https://altgallery.fromkk.com/">altgallery.fromkk.com</a></p>
 

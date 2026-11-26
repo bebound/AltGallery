@@ -822,12 +822,35 @@
   /* Only rendered with JavaScript off, where the catalog never gets built. */
   .noscript {
     margin: 0;
-    padding: calc(var(--nav-total) + 24px) 20px 0;
+    /* Inside the library section, below the grid the script never filled. */
+    padding: 8px 20px 0;
     text-align: center;
     color: var(--muted);
     font-size: 14px;
   }
   .noscript a { color: var(--accent-ink); }
+  /* The no-JavaScript app index the build writes into <noscript>. It is the
+     crawler's (and a script-less reader's) substitute for the grid. */
+  #noscript-catalog {
+    max-width: 760px;
+    margin: 28px auto 0;
+    padding: 0 20px;
+    text-align: left;
+  }
+  #noscript-catalog h2 {
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+  }
+  .noscript-catalog {
+    margin: 14px 0 0;
+    padding-left: 18px;
+    color: var(--soft);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .noscript-catalog a { color: var(--accent-ink); text-decoration: none; }
+  .noscript-catalog a:hover { text-decoration: underline; }
   .footer {
     display: flex;
     flex-direction: column;

@@ -217,6 +217,31 @@ built from the generated sources:
   build); it turns itself off when stderr is not a terminal, so CI logs keep
   just the `Staged N display images` line, and the warnings the loop collects
   are printed after the bar clears instead of being painted over.
+- Search & link previews. The page is a single JavaScript-rendered document,
+  which is why the shell itself has to carry the text Google reads: the
+  `meta description`, `<title>` and the hero copy are written out in
+  `site/index.html` (English, matching what `app.js` sets for `en`), not left
+  empty for the script to fill. On top of that the shell carries a
+  `<link rel="canonical">`, an `og:`/`twitter:` set with `_site/og.png`
+  (drawn by `build_site.py`, 1200×630, no screenshot), and a `WebSite`
+  JSON-LD block. **That block is what makes Google show "AltGallery" instead
+  of the domain-level `fromkk.com`:** site names are resolved per domain and
+  per subdomain, and only the subdomain's own home page can claim one. Its
+  `url` must be `SITE_URL`, which is also the canonical and the address
+  `robots.txt` / `sitemap.xml` are generated for — one constant at the top of
+  `build_site.py`, and the build refuses to run if the page's canonical
+  disagrees with it. `_site/robots.txt` allows everything (the CSS/JS carry
+  `?v=` hashes, so no rule may match a query string) and advertises the
+  sitemap; `_site/sitemap.xml` lists the home page alone, because an app is a
+  `#app=` sheet and a fragment is not an indexed URL. The favicon follows the
+  same per-hostname rule: `favicon-96x96.png` (96 is a multiple of 48, the
+  smallest size Google Search draws) is declared first, and nothing is
+  disallowed — Googlebot-Image has to be able to fetch it.
+- A `<noscript>` block at the end of the library is the catalog's static
+  copy: `build_site.py` fills `#noscript-catalog` with every app as a link to
+  its GitHub release page plus its subtitle, so a reader or crawler without
+  JavaScript still gets the 103 apps as text. It also forces `[data-reveal]`
+  visible, since the reveal observer lives in `app.js`.
 - `.github/workflows/pages.yml` — builds and deploys only when the update
   workflow finishes (an update run triggered by the push, including the
   bot's own commits, which never trigger `push` workflows), plus manual

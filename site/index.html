@@ -6,16 +6,49 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="description" content="Curated AltStore sources for IPA projects on GitHub.">
-<title>AltGallery</title>
+<meta name="description" content="Curated AltStore sources for open-source iOS apps on GitHub — browse the catalog and add it to AltStore, SideStore or LiveContainer.">
+<title>AltGallery — AltStore Sources for iOS Apps on GitHub</title>
 <meta name="application-name" content="AltGallery">
 <meta name="apple-mobile-web-app-title" content="AltGallery">
-<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="canonical" href="https://altgallery.fromkk.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<!-- The favicon is declared for the hostname, not the page: Google Search
+     draws one icon per site, and it only uses an image at least 48px on a
+     side. The 96px PNG is listed first for that reason; favicon.ico stays for
+     the clients that request the file by name. -->
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AltGallery">
+<meta property="og:title" content="AltGallery — AltStore Sources for iOS Apps on GitHub">
+<meta property="og:description" content="Curated AltStore sources for open-source iOS apps on GitHub — browse the catalog and add it to AltStore, SideStore or LiveContainer.">
+<meta property="og:url" content="https://altgallery.fromkk.com/">
+<meta property="og:image" content="https://altgallery.fromkk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AltGallery — AltStore sources for open-source iOS apps on GitHub">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AltGallery — AltStore Sources for iOS Apps on GitHub">
+<meta name="twitter:description" content="Curated AltStore sources for open-source iOS apps on GitHub — browse the catalog and add it to AltStore, SideStore or LiveContainer.">
+<meta name="twitter:image" content="https://altgallery.fromkk.com/og.png">
+<!-- The site name Google shows in search results (and the name in link
+     previews). It is a WebSite entity with this subdomain's home page as its
+     url — without it Google falls back to the domain-level name, fromkk.com. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AltGallery",
+  "alternateName": ["AltGallery — AltStore Sources", "altgallery.fromkk.com"],
+  "url": "https://altgallery.fromkk.com/",
+  "description": "Curated AltStore sources for open-source iOS apps on GitHub — browse the catalog and add it to AltStore, SideStore or LiveContainer.",
+  "inLanguage": ["en", "zh-CN"]
+}
+</script>
 <script defer src="https://uma.fromkk.com/stat.js" data-website-id="1b60658d-53d2-45af-b679-8a87a3e3fa7a" data-domains="altgallery.fromkk.com"></script>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -31,18 +64,18 @@
       <img class="brand-mark" id="brand-mark" alt="" width="24" height="24" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
       <span>AltGallery</span>
     </a>
-    <nav class="nav-links" data-i18n-aria="nav.label">
+    <nav class="nav-links" data-i18n-aria="nav.label" aria-label="Sections">
       <a href="#overview" data-i18n="nav.overview" class="active">Overview</a>
       <a href="#library" data-i18n="nav.library">Library</a>
     </nav>
     <div class="controls">
-      <div class="segment" id="lang-seg" role="group" data-i18n-aria="lang.label">
+      <div class="segment" id="lang-seg" role="group" data-i18n-aria="lang.label" aria-label="Language">
         <button type="button" data-lang="en">English</button>
         <button type="button" data-lang="zh">中文</button>
       </div>
-      <div class="segment" id="mode-seg" role="group" data-i18n-aria="mode.label">
-        <button type="button" data-mode="direct" data-i18n="mode.direct"></button>
-        <button type="button" data-mode="mirror" data-i18n="mode.mirror"></button>
+      <div class="segment" id="mode-seg" role="group" data-i18n-aria="mode.label" aria-label="Connection">
+        <button type="button" data-mode="direct" data-i18n="mode.direct">Direct</button>
+        <button type="button" data-mode="mirror" data-i18n="mode.mirror">Mirror</button>
       </div>
     </div>
   </div>
@@ -50,24 +83,28 @@
 
 <main>
   <noscript>
-    <p class="noscript">The catalog is drawn by JavaScript. The AltStore source itself is <a href="all-apps.json">all-apps.json</a>.</p>
+    <style>
+      /* The page reveals its sections with an observer app.js installs; with
+         no script there is nobody to add .in, and they would stay invisible. */
+      [data-reveal] { opacity: 1; transform: none; }
+    </style>
   </noscript>
 
   <section class="page hero-page" id="overview">
     <div class="hero">
       <img class="hero-icon" id="hero-icon" alt="AltGallery" width="96" height="96" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-      <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+      <p class="eyebrow" data-i18n="hero.eyebrow">AltStore sources</p>
       <h1>AltGallery</h1>
-      <p class="hero-sub" data-i18n="hero.sub"></p>
+      <p class="hero-sub" data-i18n="hero.sub">Curated AltStore sources for open-source iOS apps on GitHub.</p>
       <p class="hero-meta" id="hero-meta"></p>
       <div class="hero-actions">
         <a class="btn btn-primary" id="add-all" target="_blank" rel="noopener" aria-disabled="true" data-umami-event="Add all sources">
           <span id="add-all-icon" aria-hidden="true"></span>
-          <span data-i18n="hero.addAll"></span>
+          <span data-i18n="hero.addAll">Add all sources</span>
         </a>
-        <a class="btn btn-ghost" id="repo-btn" target="_blank" rel="noopener" data-i18n="hero.repo"></a>
+        <a class="btn btn-ghost" id="repo-btn" href="https://github.com/bebound/AltGallery" target="_blank" rel="noopener" data-i18n="hero.repo">View on GitHub</a>
       </div>
-      <p class="hero-clients" data-i18n="hero.clients"></p>
+      <p class="hero-clients" data-i18n="hero.clients">Works with AltStore, SideStore, LiveContainer and other compatible clients.</p>
       <p class="mode-note" id="mode-note"></p>
     </div>
 
@@ -75,10 +112,10 @@
       <div class="recent-head">
         <h2 data-i18n="updates.title"></h2>
         <div class="rail-tools">
-          <button type="button" class="rail-btn" id="rail-prev" data-i18n-aria="rail.prev" disabled>
+          <button type="button" class="rail-btn" id="rail-prev" data-i18n-aria="rail.prev" aria-label="Previous updates" disabled>
             <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M9.6 3.6 5.2 8l4.4 4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <button type="button" class="rail-btn" id="rail-next" data-i18n-aria="rail.next" disabled>
+          <button type="button" class="rail-btn" id="rail-next" data-i18n-aria="rail.next" aria-label="Next updates" disabled>
             <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M6.4 3.6 10.8 8l-4.4 4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
@@ -89,15 +126,15 @@
     </section>
 
     <a class="scroll-cue" href="#library">
-      <span data-i18n="hero.scroll"></span>
+      <span data-i18n="hero.scroll">Browse the library</span>
       <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </section>
 
   <section class="page library-page" id="library">
     <div class="library-head" data-reveal>
-      <p class="eyebrow" data-i18n="apps.collection"></p>
-      <h2 class="display" data-i18n="apps.title"></h2>
+      <p class="eyebrow" data-i18n="apps.collection">The collection</p>
+      <h2 class="display" data-i18n="apps.title">All apps</h2>
       <p class="library-count" id="apps-count" aria-live="polite"></p>
     </div>
 
@@ -107,37 +144,46 @@
           <circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
           <path d="M13.2 13.2 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
         </svg>
-        <input id="search" type="search" autocomplete="off" spellcheck="false" disabled data-i18n-placeholder="search.placeholder" data-i18n-aria="search.label">
+        <input id="search" type="search" autocomplete="off" spellcheck="false" disabled placeholder="Search apps, developers or keywords" data-i18n-placeholder="search.placeholder" data-i18n-aria="search.label" aria-label="Search apps">
       </div>
-      <div class="segment sort-seg" id="sort-seg" role="group" data-i18n-aria="apps.sortLabel">
-        <button type="button" data-sort="updated" data-i18n="sort.updated" aria-pressed="true"></button>
-        <button type="button" data-sort="name" data-i18n="sort.name" aria-pressed="false"></button>
+      <div class="segment sort-seg" id="sort-seg" role="group" data-i18n-aria="apps.sortLabel" aria-label="Sort">
+        <button type="button" data-sort="updated" data-i18n="sort.updated" aria-pressed="true">Recently updated</button>
+        <button type="button" data-sort="name" data-i18n="sort.name" aria-pressed="false">Name A–Z</button>
       </div>
     </div>
 
     <div class="grid" id="grid" aria-busy="true"></div>
     <p class="status" id="status" hidden role="status"></p>
-    <p class="empty" id="empty" hidden data-i18n="apps.empty"></p>
+    <p class="empty" id="empty" hidden data-i18n="apps.empty">No apps match your search.</p>
 
     <footer class="footer">
-      <p data-i18n="footer.note"></p>
+      <p data-i18n="footer.note">Catalog generated from GitHub Releases with AltGen; sources refresh every 6 hours.</p>
       <p class="footer-links">
         <a id="footer-source" target="_blank" rel="noopener">all-apps.json</a>
         <span aria-hidden="true">·</span>
         <a id="footer-proxy" target="_blank" rel="noopener">all-apps-proxy.json</a>
         <span aria-hidden="true">·</span>
-        <a href="https://github.com/bebound/AltGallery/issues/new" target="_blank" rel="noopener" data-i18n="footer.request"></a>
+        <a href="https://github.com/bebound/AltGallery/issues/new" target="_blank" rel="noopener" data-i18n="footer.request">Request an app</a>
         <span aria-hidden="true">·</span>
         <a href="https://github.com/bebound/AltGen" target="_blank" rel="noopener">AltGen</a>
       </p>
     </footer>
+
+    <noscript>
+      <p class="noscript">The catalog above is drawn by JavaScript. The AltStore source itself is <a href="all-apps.json">all-apps.json</a> — add that URL to AltStore, SideStore or LiveContainer.</p>
+      <!-- Filled by tools/build_site.py: a plain index of every app (name,
+           subtitle, link) for readers and crawlers without JavaScript. It is
+           inside <noscript> so it never shows for a browser that draws the
+           grid itself. -->
+      <div id="noscript-catalog"></div>
+    </noscript>
   </section>
 </main>
 
 <div class="modal" id="modal" hidden>
   <div class="modal-backdrop"></div>
   <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
-    <button type="button" class="modal-close" id="modal-close" data-i18n-aria="modal.close">
+    <button type="button" class="modal-close" id="modal-close" data-i18n-aria="modal.close" aria-label="Close">
       <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
     <div class="modal-scroll" id="modal-body"></div>

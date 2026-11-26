@@ -9,7 +9,7 @@
 
 [source]
 name = "AltGallery"
-subtitle = "Curated AltStore sources for IPA projects on GitHub"
+subtitle = "Curated AltStore sources for open-source iOS apps on GitHub"
 description = "AltStore sources generated from GitHub Releases by AltGallery"
 icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/assets/icon.png"
 website = "https://github.com/bebound/AltGallery"
