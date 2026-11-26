@@ -1,0 +1,44 @@
+# altgen config for the RepoPocket AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "wm0104/RepoPocket"
+
+[source]
+name = "RepoPocket"
+subtitle = "RepoPocket AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for RepoPocket"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/icon.webp"
+website = "https://github.com/wm0104/RepoPocket"
+tint_color = "#1080F0"
+
+[app]
+name = "RepoPocket"
+bundle_identifier = "com.wm0104.RepoPocket"
+developer_name = "wm0104"
+subtitle = "在 iPhone、iPad 上浏览 GitHub 与管理 Git 项目"
+description = "借助 Codex 辅助开发的 iOS 简易 GitHub 工具：浏览仓库与代码、编辑提交、管理发行版与 Actions，并支持本地 Git 操作。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/app-home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/app-repository.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/app-release-detail.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/git-workspace.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/git-staging.webp",
+]
+tint_color = "#1080F0"
+min_os_version = "15.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): the release ships exactly one ipa
+asset_pattern = "RepoPocket\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -271,6 +271,9 @@ iPhone 上的 PC 游戏，原生运行、无需串流——64 位与 32 位 Wind
 ### <img src="apps/PureLive/icon.webp" alt="PureLive icon" width="24" align="top"> <a href="https://github.com/liuchuancong/pure_live">PureLive</a>
 基于 Flutter 的开源多平台直播聚合播放器，支持 Bilibili、虎牙、斗鱼、快手、抖音、网易 CC、Twitch 及自定义 M3U/M3U8 直播源。
 
+### <img src="apps/RepoPocket/icon.webp" alt="RepoPocket icon" width="24" align="top"> <a href="https://github.com/wm0104/RepoPocket">RepoPocket</a>
+在 iPhone、iPad 上浏览 GitHub 与管理 Git 项目 — 支持阅读代码与 README、编辑提交、下载文件，并管理发行版与 Actions。
+
 ### <img src="apps/RewindBox/icon.webp" alt="RewindBox icon" width="24" align="top"> <a href="https://github.com/TarbleFR/RewindBox">RewindBox</a>
 iPhone 与 iPad 的模拟器前端——基于 NeoStation 的分支，主机风格资料库搭配 Libretro 核心、Dolphin、ARMSX2、MeloNX 与 RPCS3。
 
