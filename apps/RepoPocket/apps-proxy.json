@@ -1,0 +1,49 @@
+{
+  "name": "RepoPocket",
+  "subtitle": "RepoPocket AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for RepoPocket",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/icon.webp",
+  "website": "https://github.com/wm0104/RepoPocket",
+  "tintColor": "#1080F0",
+  "apps": [
+    {
+      "name": "RepoPocket",
+      "bundleIdentifier": "com.wm0104.RepoPocket",
+      "developerName": "wm0104",
+      "subtitle": "在 iPhone、iPad 上浏览 GitHub 与管理 Git 项目",
+      "localizedDescription": "借助 Codex 辅助开发的 iOS 简易 GitHub 工具：浏览仓库与代码、编辑提交、管理发行版与 Actions，并支持本地 Git 操作。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/app-home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/app-repository.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/app-release-detail.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/git-workspace.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/git-staging.webp"
+      ],
+      "tintColor": "#1080F0",
+      "versions": [
+        {
+          "version": "1.2.8",
+          "date": "2026-11-25T07:40:38Z",
+          "localizedDescription": "完善 1.2.8 分支与工作流操作\n\n修复分支同步、草稿发布、上传和工作流多选，优化本地 Git、编辑器与 IPA 校验。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/wm0104/RepoPocket/releases/download/v1.2.8/RepoPocket.ipa",
+          "size": 13507558,
+          "minOSVersion": "15.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.wm0104.RepoPocket",
+      "title": "RepoPocket 1.2.8 · 25 Nov 2026",
+      "identifier": "RepoPocket-release-v1.2.8",
+      "caption": "RepoPocket 1.2.8 is available.",
+      "date": "2026-11-25T07:40:38Z",
+      "tintColor": "#1080F0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RepoPocket/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/wm0104/RepoPocket/releases/tag/v1.2.8"
+    }
+  ]
+}

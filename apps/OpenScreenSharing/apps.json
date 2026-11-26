@@ -19,11 +19,11 @@
       "tintColor": "#1060F0",
       "versions": [
         {
-          "version": "1.0.10",
-          "date": "2026-11-24T04:34:33Z",
-          "localizedDescription": "* Replace floating toolbar handle with assistive ball\n* Fixes and improvements",
-          "downloadURL": "https://github.com/nekohasekai/open-screen-sharing/releases/download/v1.0.10/OpenScreenSharing.ipa",
-          "size": 11765704,
+          "version": "1.0.11",
+          "date": "2026-11-26T04:39:39Z",
+          "localizedDescription": "* Stash idle assistive ball into screen edge\n* Fixes and improvements",
+          "downloadURL": "https://github.com/nekohasekai/open-screen-sharing/releases/download/v1.0.11/OpenScreenSharing.ipa",
+          "size": 11813792,
           "minOSVersion": "15.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "io.nekohasekai.screensharing",
-      "title": "Open Screen Sharing 1.0.10 · 24 Nov 2026",
-      "identifier": "Open Screen Sharing-release-v1.0.10",
-      "caption": "Open Screen Sharing 1.0.10 is available.",
-      "date": "2026-11-24T04:34:33Z",
+      "title": "Open Screen Sharing 1.0.11 · 26 Nov 2026",
+      "identifier": "Open Screen Sharing-release-v1.0.11",
+      "caption": "Open Screen Sharing 1.0.11 is available.",
+      "date": "2026-11-26T04:39:39Z",
       "tintColor": "#1060F0",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/OpenScreenSharing/images/news.webp",
       "notify": true,
-      "url": "https://github.com/nekohasekai/open-screen-sharing/releases/tag/v1.0.10"
+      "url": "https://github.com/nekohasekai/open-screen-sharing/releases/tag/v1.0.11"
     }
   ]
 }

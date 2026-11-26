@@ -19,11 +19,11 @@
       "tintColor": "#C96FAD",
       "versions": [
         {
-          "version": "4.1.0",
-          "date": "2026-11-18T16:37:57Z",
-          "localizedDescription": "## What's new in 4.1.0\n\n### New\n\n- Added Update All to Sources updates with search, a source picker for each app, and a choice to add, sign, or sign and install\n- Added long press actions to grouped updates, including Ignore Updates\n- Added a Versions to Delete option to Automatic Cleanup to also remove same or newer copies after installing\n- Added your Library's identifiers for the same app to the Identifier editor when signing\n\n### Improvements\n\n- Improved updates to keep the bundle identifier of your installed or signed copy, so they replace it instead of installing a second app\n\n### Fixes\n\n- Fixed apps missing their provisioning profile after signing and Remove Provisioning not working\n- Fixed large apps timing out or showing Failed while still installing\n- Fixed installs getting stuck halfway\n- Fixed tiny apps showing Failed after installing\n- Fixed the wrong app icon showing in Sources updates after another app finished updating\n- Fixed a black screen when using View in Sources from an update's source list\n\n\n## Install\n\n- Download **RyukSign.ipa** from the assets below and sign it, or\n- Add the RyukSign source to get updates in the app: `https://raw.githubusercontent.com/faroukbmiled/RyukSign/main/app-repo.json`\n\n**Full changelog:** https://github.com/faroukbmiled/RyukSign/compare/v4.0.0...v4.1.0\n\n<sub>Built 2026-11-18 from [`fc365a3`](https://github.com/faroukbmiled/RyukSign/commit/fc365a31fb0981681a4d9a03ceabf344f53191ed)</sub>",
-          "downloadURL": "https://github.com/faroukbmiled/RyukSign/releases/download/v4.1.0/RyukSign.ipa",
-          "size": 22041701,
+          "version": "4.2.0",
+          "date": "2026-11-25T22:41:34Z",
+          "localizedDescription": "## What's new in 4.2.0\n\n### New\n\n- Added on-device pairing on iOS 27, no computer needed for a pairing file\n- Added certificate reordering with Move to Top, used everywhere you pick a certificate\n- Added certificate search\n- Added Japanese translation by @kinboy56\n\n### Improvements\n\n- Improved installs to show progress while the app is sent to iOS\n\n### Fixes\n\n- Fixed installs failing after the SSL certificate renews\n- Fixed installs staying stuck halfway when iOS hides install progress\n- Fixed untranslated text in the Tweak Manager\n\n\n## Install\n\n- Download **RyukSign.ipa** from the assets below and sign it, or\n- Add the RyukSign source to get updates in the app: `https://raw.githubusercontent.com/faroukbmiled/RyukSign/main/app-repo.json`\n\n**Full changelog:** https://github.com/faroukbmiled/RyukSign/compare/v4.1.0...v4.2.0\n\n<sub>Built 2026-11-25 from [`49ccb30`](https://github.com/faroukbmiled/RyukSign/commit/49ccb3040ad6cf9753a420a8619f33faa186ca31)</sub>",
+          "downloadURL": "https://github.com/faroukbmiled/RyukSign/releases/download/v4.2.0/RyukSign.ipa",
+          "size": 22247678,
           "minOSVersion": "16.0"
         }
       ]
@@ -32,14 +32,14 @@
   "news": [
     {
       "appID": "ryuk2.anoxclan.com",
-      "title": "RyukSign 4.1.0 · 18 Nov 2026",
-      "identifier": "RyukSign-release-v4.1.0",
-      "caption": "RyukSign 4.1.0 is available.",
-      "date": "2026-11-18T16:37:57Z",
+      "title": "RyukSign 4.2.0 · 25 Nov 2026",
+      "identifier": "RyukSign-release-v4.2.0",
+      "caption": "RyukSign 4.2.0 is available.",
+      "date": "2026-11-25T22:41:34Z",
       "tintColor": "#C96FAD",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RyukSign/images/news.webp",
       "notify": true,
-      "url": "https://github.com/faroukbmiled/RyukSign/releases/tag/v4.1.0"
+      "url": "https://github.com/faroukbmiled/RyukSign/releases/tag/v4.2.0"
     }
   ]
 }
