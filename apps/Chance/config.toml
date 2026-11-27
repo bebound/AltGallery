@@ -32,7 +32,7 @@ include_prereleases = false
 # Tags are like v1.2.9+126-forked-engine; extract the clean semver from the
 # release name (v1.2.9+126), which matches the ipa's version (1.2.9).
 version_source = "release"
-version_pattern = "^v?(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^v?(\\d+\\.\\d+(?:\\.\\d+)?)"
 # Each release ships a single iOS ipa named Chance.ipa.
 asset_pattern = "Chance\\.ipa$"
 

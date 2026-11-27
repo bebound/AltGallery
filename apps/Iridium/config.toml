@@ -31,7 +31,7 @@ strip_v_prefix = true
 include_prereleases = false
 # The repo also tags build dependencies (e.g. deps-metal-shader-converter-…),
 # which never start with a digit, so the anchored pattern skips them.
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob); the release ships Iridium-unsigned.ipa
 asset_pattern = "Iridium-unsigned\\.ipa$"
 

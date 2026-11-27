@@ -173,6 +173,10 @@ which app was meant.
    - `strip_v_prefix`, `version_pattern`, `build_version_pattern`, and
      `include_prereleases` only when the new tags/assets need them — drop
      stale patterns that encode the old repo's scheme;
+   - ⚠️ a version regex must accept **both `1.2.3` and `1.2`**: write the
+     patch part optional, `(\\d+\\.\\d+(?:\\.\\d+)?)`, not `(\\d+\\.\\d+\\.\\d+)`
+     — releases without a patch number would otherwise be dropped. Keep the
+     anchors/affixes the new repo's tags need derivable from them;
    - `version_source = "ipa"` is **re-decided, never inherited blindly**: keep
      it only when step 3's check against the new repo still finds a
      tag/filename-vs-ipa mismatch; add it when the check now differs; drop it

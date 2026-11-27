@@ -34,7 +34,7 @@ include_prereleases = false
 asset_pattern = ".*\\.ipa$"
 # Tags are like 5.0.7+0811; extract the clean semver from the release name (5.0.7)
 version_source = "release"
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 build_version_pattern = "\\+(\\d+).*\\.ipa$"
 
 [news]

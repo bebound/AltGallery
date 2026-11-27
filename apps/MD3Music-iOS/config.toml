@@ -36,7 +36,7 @@ include_prereleases = false
 # ipas, so keep the 3D-cover build only and take the plain version out of the
 # release name ("MD3Music iOS v6.2.0+53") — the ipa inside reports 6.2.0
 # (build 53).
-version_pattern = "(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): MD3Music-3D-unsigned.ipa, not the
 # plain MD3Music-unsigned.ipa that sits beside it in every release.
 asset_pattern = "MD3Music-3D-unsigned\\.ipa$"

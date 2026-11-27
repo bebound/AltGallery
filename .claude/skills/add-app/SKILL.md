@@ -278,6 +278,14 @@ change between apps.
      `downloadURL` from step 2 gives the exact name. Add `version_pattern` /
      `build_version_pattern` only when the release tags need them (the
      template carries PiliPlus's own — replace or drop them as appropriate).
+     ⚠️ **A version regex must accept both `1.2.3` and `1.2`** — releases do
+     not all carry a patch number, so write the patch part optional:
+     `(\\d+\\.\\d+(?:\\.\\d+)?)` (`(?:\\.\\d+)?` is the patch group; an
+     optional minor is *not* wanted, a plain `1` is not a version here). A
+     pattern like `^(\\d+\\.\\d+\\.\\d+)` silently drops every two-part
+     release. Keep any anchors/affixes the tag scheme needs around it
+     (`^v?…`, `…-iOS\\.ipa$`, a trailing `$`), and leave a release **name**
+     in prose unanchored so the number matches wherever it sits.
      Add `version_source = "ipa"` **only** when step 2f found the ipa's
      version differs from the tag/filename-derived one (e.g. AltStore's tag
      `v2.3` vs. ipa `2.3.1`), with a one-line English comment naming both
@@ -454,6 +462,7 @@ change between apps.
 - [ ] fields extracted from the project's own AltStore source (when one exists); `tintColor` normalized to `#RRGGBB`
 - [ ] `bundle_identifier` and `min_os_version` from the source or the ipa (`tools/ipa_bundle_id.py`) — no `com.example.*` placeholder
 - [ ] version confirmed against the ipa (step 2f): `version_source = "ipa"` (with a comment) when the tag/filename differs, left out when it matches
+- [ ] every version regex accepts both `1.2.3` and `1.2` — the patch group is optional, `(\\d+\\.\\d+(?:\\.\\d+)?)`, never a hard `\\d+\\.\\d+\\.\\d+`
 - [ ] ipa deleted afterwards
 - [ ] `apps/<AppName>/{config.toml, news.toml, icon.<ext>, images/*}` all present
 - [ ] icon and screenshots converted to WebP (step 3b) **before** rendering news; every `icon_url`, README `src` and `[app] screenshots` entry names the `.webp` file

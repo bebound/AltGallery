@@ -32,7 +32,7 @@ strip_v_prefix = false
 include_prereleases = false
 # The repo also carries a lineage-v2 tag for VM disk images (no ipa); anchoring
 # on strict semver keeps it out of the app's version list.
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)$"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)$"
 # asset_pattern is a regex (not glob): every app release ships exactly one
 # unsigned ipa named Husk.ipa.
 asset_pattern = "^Husk\\.ipa$"

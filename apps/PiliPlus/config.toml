@@ -30,7 +30,7 @@ min_os_version = "14.0"
 [versions]
 strip_v_prefix = true
 include_prereleases = false
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
 # Compatible with two historical naming schemes: PiliPlus_ios_*.ipa and ios-release-no-sign.ipa
 asset_pattern = ".*\\.ipa$"

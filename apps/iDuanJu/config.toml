@@ -36,7 +36,7 @@ strip_v_prefix = true
 include_prereleases = false
 # Tags are like v1.6b41 and assets are STV-1.6b41-unsigned.ipa; extract the
 # clean version (1.6) and the beta/build number (41) from the tag/filename.
-version_pattern = "^(\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 build_version_pattern = "b(\\d+)"
 # asset_pattern is a regex (not glob): matches STV-<version>-unsigned.ipa
 asset_pattern = "STV-.*\\.ipa$"

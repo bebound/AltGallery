@@ -33,7 +33,7 @@ strip_v_prefix = true
 include_prereleases = false
 # Tags look like v2.0.7-b65 and release names like "Rush Hours v2.0.7 (Build 65)":
 # take the clean app version (2.0.7) from the release name.
-version_pattern = "v(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "v(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): each release ships one unsigned ipa
 asset_pattern = "^rush-hours-unsigned\\.ipa$"
 # Asset names carry no build number, so build_version_pattern keeps the

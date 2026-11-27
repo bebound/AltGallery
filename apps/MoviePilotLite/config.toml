@@ -38,7 +38,7 @@ asset_pattern = "(ios-.*|app-unsigned)\\.ipa$"
 # Tags are like release-v1.2.3-2026-08-21; extract the clean semver (1.2.3)
 # from the release name (v1.2.3-2026-08-21).
 version_source = "release"
-version_pattern = "v?(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "v?(\\d+\\.\\d+(?:\\.\\d+)?)"
 
 [news]
 title_template = "{name} {version} · {date}"

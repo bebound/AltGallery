@@ -30,7 +30,7 @@ min_os_version = "16.0"
 [versions]
 strip_v_prefix = true
 include_prereleases = false
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): every release ships iRAM-Plus.ipa
 asset_pattern = "iRAM-Plus\\.ipa$"
 

@@ -29,7 +29,7 @@ min_os_version = "15.0"
 [versions]
 strip_v_prefix = true
 include_prereleases = false
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): every release ships one ipa named
 # app-ios-unsigned.ipa (e.g. v1.13.2 -> app-ios-unsigned.ipa)
 asset_pattern = "app-ios-unsigned\\.ipa$"

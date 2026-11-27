@@ -30,7 +30,7 @@ min_os_version = "15.0"
 [versions]
 strip_v_prefix = true
 include_prereleases = false
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): each release ships both a SideloadJIT
 # and a TrollStoreJIT ipa; keep the AltStore-appropriate SideloadJIT build
 asset_pattern = "SideloadJIT\\.ipa$"

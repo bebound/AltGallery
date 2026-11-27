@@ -30,7 +30,7 @@ min_os_version = "15.1"
 [versions]
 strip_v_prefix = true
 include_prereleases = false
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): each release ships one unsigned ipa
 # named zhihu-minus-minus-v<version>-unsigned.ipa
 asset_pattern = "zhihu-minus-minus-.*\\.ipa$"

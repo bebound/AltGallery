@@ -32,7 +32,7 @@ min_os_version = "12.0"
 [versions]
 strip_v_prefix = true
 include_prereleases = false
-version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
 # The project was renamed from YTLite in 1.8.0, so releases up to 1.7.2 ship
 # YTLite_*.ipa and 1.8.0 onwards ship Opaline_*.ipa — both must match to keep

@@ -38,7 +38,7 @@ include_prereleases = false
 # MARKETING_VERSION, so every ipa reports a constant "1.0" (build 1) while the
 # release tags carry the real version (v6.0.0 here, matching the Gradle
 # `version = "6.0.0"`). Read the version from the tag, not the ipa.
-version_pattern = "^v?(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "^v?(\\d+\\.\\d+(?:\\.\\d+)?)"
 # The ipa asset was renamed from Spotube-iOS.ipa to Spotube-ios.ipa, so match
 # any ipa rather than one exact file name.
 asset_pattern = ".*\\.ipa$"

@@ -29,7 +29,7 @@ min_os_version = "26.0"
 [versions]
 strip_v_prefix = true
 include_prereleases = true
-version_pattern = "v(\\d+\\.\\d+\\.\\d+)"
+version_pattern = "v(\\d+\\.\\d+(?:\\.\\d+)?)"
 # asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
 # Matches versioned alpha assets such as iDeck-0.1.3-alpha.2-build56.ipa.
 asset_pattern = "^iDeck-.*\\.ipa$"

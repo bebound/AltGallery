@@ -37,7 +37,7 @@ include_prereleases = true
 asset_pattern = "Stats-.*-iOS\\.ipa$"
 # Take the app version from the asset filename: the release tag is v0.3.6 while
 # the asset attached to it is Stats-v0.3.3-iOS.ipa (app version 0.3.3).
-version_pattern = "v(\\d+\\.\\d+\\.\\d+)-iOS\\.ipa$"
+version_pattern = "v(\\d+\\.\\d+(?:\\.\\d+)?)-iOS\\.ipa$"
 version_source = "filename"
 
 [news]
