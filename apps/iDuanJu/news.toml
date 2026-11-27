@@ -1,0 +1,15 @@
+# Config for rendering the shared news promo image (tools/render_news.py).
+# All keys are optional; colors are auto-derived from config.toml tints and the
+# icon's dominant color when unset. Renders to apps/<AppName>/images/news.webp.
+
+name = "i短剧"
+tagline = "免费开源的多源短剧/视频\n聚合播放器"
+
+# Optional color overrides (hex). Unset values are sampled from the icon.
+# [colors]
+# tint = "#73B480"        # top of the background gradient
+# tint_alt = "#5A9C68"    # bottom of the background gradient
+# background = "#F2F9F4"  # icon card fill
+# bg_mid = "#E5F3E8"      # mid icon-card gradient
+# bg_dark = "#D4EAD9"     # deep icon-card gradient
+# tagline_color = "#89BA96"

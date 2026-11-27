@@ -169,6 +169,9 @@ Switch games, built on your iPhone — turns your own game dump into a native iO
 ### <img src="apps/iDeck/icon.webp" alt="iDeck icon" width="24" align="top"> <a href="https://github.com/kuscholar/iDeck">iDeck</a>
 Steam Big Picture on iPhone and iPad — runs Valve's client and compatible Windows games locally through Madeira's runtime.
 
+### <img src="apps/iDuanJu/icon.webp" alt="i短剧 icon" width="24" align="top"> <a href="https://github.com/my-name-is-alan/iDuanJu">i短剧</a>
+免费开源的多源短剧/视频/漫画/Telegram 聚合播放器 — 通过插件、TVBox 配置、本地小说与 Telegram 频道自行导入内容
+
 ### <img src="apps/iPadn/icon.webp" alt="iPadn icon" width="24" align="top"> <a href="https://github.com/mengangs/ipadn">iPadn</a>
 下载 App Store 的历史版本与已下架应用——搜索并安装你已拥有的应用，支持区域价格比较与 11 种语言。
 

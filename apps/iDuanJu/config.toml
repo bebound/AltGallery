@@ -1,0 +1,50 @@
+# altgen config for the iDuanJu AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "my-name-is-alan/iDuanJu"
+
+[source]
+name = "iDuanJu"
+subtitle = "iDuanJu AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for iDuanJu"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/icon.webp"
+website = "https://github.com/my-name-is-alan/iDuanJu"
+tint_color = "#F05060"
+
+[app]
+name = "i短剧"
+bundle_identifier = "com.local.STV"
+developer_name = "my-name-is-alan"
+subtitle = "免费开源的多源短剧/视频/漫画/Telegram 聚合播放器"
+description = "i短剧是一款面向 iOS / iPadOS（16.0+）的跨端播放与阅读框架。App 本身不内置任何片源、书源、漫画源或频道，支持通过插件、TVBox 配置、本地小说与 Telegram 频道导入内容，提供视频播放、漫画阅读、小说听书等功能。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/01-home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/02-channels.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/04-detail.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/05-player.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/07-danmaku.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/08-plugins.webp",
+
+]
+tint_color = "#F05060"
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# Tags are like v1.6b41 and assets are STV-1.6b41-unsigned.ipa; extract the
+# clean version (1.6) and the beta/build number (41) from the tag/filename.
+version_pattern = "^(\\d+\\.\\d+)"
+build_version_pattern = "b(\\d+)"
+# asset_pattern is a regex (not glob): matches STV-<version>-unsigned.ipa
+asset_pattern = "STV-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/news.webp"
+
+[output]
+path = "apps.json"
