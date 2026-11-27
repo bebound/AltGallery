@@ -121,6 +121,9 @@ Linux.do 的原生 iOS 客户端。
 ### <img src="apps/DolphiniOS/icon.webp" alt="DolphiniOS icon" width="24" align="top"> <a href="https://github.com/OatmealDome/dolphin-ios">DolphiniOS</a>
 iOS/iPadOS 的 GameCube 与 Wii 模拟器——基于全新 DolphiniOS 代码库的 Dolphin 移植版。
 
+### <img src="apps/DouDuo/icon.webp" alt="DouDuo icon" width="24" align="top"> <a href="https://github.com/81199000/DouDuo">DouDuo</a>
+原生 SwiftUI 第三方抖音客户端，适配折叠屏与 iPad — 开源免费，支持 iOS 26.0 及以上，安装包为未签名 IPA。
+
 ### <img src="apps/DukeX/icon.webp" alt="DukeX icon" width="24" align="top"> <a href="https://github.com/MaftyManicEMU/DukeX">DukeX</a>
 iOS 上的初代 Xbox 模拟器，基于 xemu 构建并配有原生 Swift 界面。
 

@@ -121,6 +121,9 @@ A native iOS client for Linux.do.
 ### <img src="apps/DolphiniOS/icon.webp" alt="DolphiniOS icon" width="24" align="top"> <a href="https://github.com/OatmealDome/dolphin-ios">DolphiniOS</a>
 GameCube and Wii emulator for iOS/iPadOS — a port of the Dolphin Emulator, built on the new DolphiniOS codebase.
 
+### <img src="apps/DouDuo/icon.webp" alt="DouDuo icon" width="24" align="top"> <a href="https://github.com/81199000/DouDuo">DouDuo</a>
+原生 SwiftUI 第三方抖音客户端，适配折叠屏与 iPad — 开源免费，支持 iOS 26.0 及以上，安装包为未签名 IPA。
+
 ### <img src="apps/DukeX/icon.webp" alt="DukeX icon" width="24" align="top"> <a href="https://github.com/MaftyManicEMU/DukeX">DukeX</a>
 Original Xbox emulation for iOS, built from xemu with a native Swift interface.
 

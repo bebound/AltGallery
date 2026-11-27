@@ -1,0 +1,41 @@
+# altgen config for the DouDuo AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "81199000/DouDuo"
+
+[source]
+name = "DouDuo"
+subtitle = "DouDuo AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for DouDuo"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/icon.webp"
+website = "https://github.com/81199000/DouDuo"
+tint_color = "#FE2C55"
+
+[app]
+name = "DouDuo"
+bundle_identifier = "me.rrmm.douduo"
+developer_name = "81199000"
+subtitle = "原生 SwiftUI 第三方抖音客户端，适配折叠屏与 iPad"
+description = "DouDuo：开源免费的第三方抖音客户端（非官方），原生 SwiftUI，适配 iPhone Duo 折叠屏、iPad 与普通 iPhone。安装包为未签名 IPA，需要用自己的证书签名。仅供个人学习交流。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/images/home.webp",
+]
+tint_color = "#FE2C55"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+# Each release ships a single DouDuo-<version>-unsigned.ipa.
+asset_pattern = ".*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/images/news.webp"
+
+[output]
+path = "apps.json"

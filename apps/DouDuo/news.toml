@@ -1,0 +1,18 @@
+# render_news.py config: uv run tools/render_news.py --out apps/DouDuo
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "DouDuo"
+# Explicit break: keep "适配折叠屏与 iPad" on its own line.
+tagline = "原生第三方抖音客户端\n适配折叠屏与 iPad"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+[colors]
+# tint = "#FE2C55"          # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+# tint_alt = "#FE2C55"      # bottom-right glow (default: [source] tint_color)
+# background = "#E8E8E8"    # gradient base (derived from the icon's dominant color)
+# bg_mid = "#F3F3F3"        # gradient mid stop (derived from background)
+# bg_dark = "#D4D4D4"       # gradient end stop (derived from background)
+# text_color = "#111111"    # app name (auto white/black)
+# tagline_color = "#FE2C55" # tagline text (derived from background)
