@@ -22,11 +22,11 @@
       "tintColor": "#14C8F5",
       "versions": [
         {
-          "version": "1.0.41",
-          "date": "2026-11-27T10:11:57Z",
-          "localizedDescription": "**布局与搜索**\n\n- 恢复设置卡片和消息列表的左右留白，修复部分页面紧贴屏幕边缘的问题。\n- iPad 横屏启用侧边栏后，首页、动态和我的入口移到左下角的紧凑图标栏。修复宽屏列表点进视频时缩放过大或转场卡住的问题。\n- Duo 外屏横屏打开搜索时预留状态栏和输入框周围的空间，修复弹出键盘时页面可能卡住的问题。\n- 调整搜索转场中标签栏的收起时机，避免打开搜索、弹出键盘时反复布局。\n\n**播放**\n\n- 从详情页进入竖屏播放，再返回详情时，接续当前进度。保留切换时的播放或暂停状态，并按视频和分 P 交接进度。\n- iPad 横屏播放竖屏流时，首帧和正式画面按原比例完整显示，避免为了填满横屏裁掉画面。宽屏设备旋转进入竖屏流时也显示完整画面。\n- 修复 AVPlayer 播放部分视频时持续转圈或反复缓冲的问题。持续缓冲时可为当前视频切到较低清晰度，保留播放进度和默认清晰度设置。修复 AVPlayer 播放中切到后台或关闭视频时，未完成的加载请求可能导致闪退的问题。\n- 调整视频前台播放时的系统媒体控制，避免普通视频以音频的形式显示在灵动岛；后台播放和「听视频」继续使用各自的播放控制。\n- 「设置 → 详情与播放控制 → 详情页播放器按钮」可以选择显示截图按钮和「听视频」按钮。\n\n**推荐、消息与下载**\n\n- 推荐请求遇到 412 时显示明确提示，可重试或手动切换网页推荐。\n- 修复消息列表刷新时的闪动，以及删除或隐藏行后回到列表顶部失效的问题。\n- 恢复旧版本后台下载会话的兼容性。\n- 发布页附有 `LiLite-source.json`，可在 AltStore Classic 和 SideStore 中订阅轻哩更新。\n\n附件为未签名 IPA，需要自行签名安装。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.41/LiLite-1.0.41-unsigned.ipa",
-          "size": 28856852,
+          "version": "1.0.42",
+          "date": "2026-11-27T18:31:56Z",
+          "localizedDescription": "**播放器和返回动画**\n\n- 应用内小窗缩小、还原时接续同一播放画面。点还原后仍可按住画面反拖，松手后也能重新接手。\n- 调整首页视频卡片返回和详情页分页加载，减少转场期间的布局工作。\n- 调整玻璃进度条，已缓存区间单独显示。普通视频和剧集的「听视频」移至播放器右上角的更多菜单。\n\n**弹幕**\n\n- 直播画面支持整条表情和文字内的多个表情。表情加载沿用当前弹道，竖屏首行避开顶部控件。\n- 切集时清理旧集的弹幕图层与解码任务。密集弹幕优先保留已在画面中的条目，减少途中消失、重新出现的问题。\n\n**视频线路**\n\n- 在「设置 → 网络连接 → 视频线路」输入 HTTPS CDN 域名即可使用自定义线路。支持测速、音频独立选线和原地址回退。\n\n**验证**\n\niPhone 15 Pro Max 使用同一视频，逐轮记录 Instruments 的整段显示延迟。普通小窗缩小和双击还原的累计延迟中位数从 442 ms 降至 358 ms，首页卡片返回从 542 ms 降至 331 ms，还原途中按住反拖从 375 ms 降至 313 ms。真机仍可测到长帧。\n\nGitHub 侧载版，构建 67，本地源码提交 `a987af0`。下载未签名 IPA 后需自行签名安装。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.42/LiLite-1.0.42-unsigned.ipa",
+          "size": 29095363,
           "minOSVersion": "17.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.liuliuya.PiliNative",
-      "title": "LiLite 1.0.41 · 27 Nov 2026",
-      "identifier": "LiLite-release-v1.0.41",
-      "caption": "LiLite 1.0.41 is available.",
-      "date": "2026-11-27T10:11:57Z",
+      "title": "LiLite 1.0.42 · 27 Nov 2026",
+      "identifier": "LiLite-release-v1.0.42",
+      "caption": "LiLite 1.0.42 is available.",
+      "date": "2026-11-27T18:31:56Z",
       "tintColor": "#14C8F5",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
       "notify": true,
-      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.41"
+      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.42"
     }
   ]
 }

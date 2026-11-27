@@ -1351,11 +1351,11 @@
       "tintColor": "#14C8F5",
       "versions": [
         {
-          "version": "1.0.41",
-          "date": "2026-11-27T10:11:57Z",
-          "localizedDescription": "**布局与搜索**\n\n- 恢复设置卡片和消息列表的左右留白，修复部分页面紧贴屏幕边缘的问题。\n- iPad 横屏启用侧边栏后，首页、动态和我的入口移到左下角的紧凑图标栏。修复宽屏列表点进视频时缩放过大或转场卡住的问题。\n- Duo 外屏横屏打开搜索时预留状态栏和输入框周围的空间，修复弹出键盘时页面可能卡住的问题。\n- 调整搜索转场中标签栏的收起时机，避免打开搜索、弹出键盘时反复布局。\n\n**播放**\n\n- 从详情页进入竖屏播放，再返回详情时，接续当前进度。保留切换时的播放或暂停状态，并按视频和分 P 交接进度。\n- iPad 横屏播放竖屏流时，首帧和正式画面按原比例完整显示，避免为了填满横屏裁掉画面。宽屏设备旋转进入竖屏流时也显示完整画面。\n- 修复 AVPlayer 播放部分视频时持续转圈或反复缓冲的问题。持续缓冲时可为当前视频切到较低清晰度，保留播放进度和默认清晰度设置。修复 AVPlayer 播放中切到后台或关闭视频时，未完成的加载请求可能导致闪退的问题。\n- 调整视频前台播放时的系统媒体控制，避免普通视频以音频的形式显示在灵动岛；后台播放和「听视频」继续使用各自的播放控制。\n- 「设置 → 详情与播放控制 → 详情页播放器按钮」可以选择显示截图按钮和「听视频」按钮。\n\n**推荐、消息与下载**\n\n- 推荐请求遇到 412 时显示明确提示，可重试或手动切换网页推荐。\n- 修复消息列表刷新时的闪动，以及删除或隐藏行后回到列表顶部失效的问题。\n- 恢复旧版本后台下载会话的兼容性。\n- 发布页附有 `LiLite-source.json`，可在 AltStore Classic 和 SideStore 中订阅轻哩更新。\n\n附件为未签名 IPA，需要自行签名安装。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.41/LiLite-1.0.41-unsigned.ipa",
-          "size": 28856852,
+          "version": "1.0.42",
+          "date": "2026-11-27T18:31:56Z",
+          "localizedDescription": "**播放器和返回动画**\n\n- 应用内小窗缩小、还原时接续同一播放画面。点还原后仍可按住画面反拖，松手后也能重新接手。\n- 调整首页视频卡片返回和详情页分页加载，减少转场期间的布局工作。\n- 调整玻璃进度条，已缓存区间单独显示。普通视频和剧集的「听视频」移至播放器右上角的更多菜单。\n\n**弹幕**\n\n- 直播画面支持整条表情和文字内的多个表情。表情加载沿用当前弹道，竖屏首行避开顶部控件。\n- 切集时清理旧集的弹幕图层与解码任务。密集弹幕优先保留已在画面中的条目，减少途中消失、重新出现的问题。\n\n**视频线路**\n\n- 在「设置 → 网络连接 → 视频线路」输入 HTTPS CDN 域名即可使用自定义线路。支持测速、音频独立选线和原地址回退。\n\n**验证**\n\niPhone 15 Pro Max 使用同一视频，逐轮记录 Instruments 的整段显示延迟。普通小窗缩小和双击还原的累计延迟中位数从 442 ms 降至 358 ms，首页卡片返回从 542 ms 降至 331 ms，还原途中按住反拖从 375 ms 降至 313 ms。真机仍可测到长帧。\n\nGitHub 侧载版，构建 67，本地源码提交 `a987af0`。下载未签名 IPA 后需自行签名安装。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.42/LiLite-1.0.42-unsigned.ipa",
+          "size": 29095363,
           "minOSVersion": "17.0"
         }
       ]
@@ -1673,11 +1673,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "2.0.9",
-          "date": "2026-11-27T09:10:04Z",
-          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.9`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端全面支持通行密钥（Passkey）无密码登录**：\n  - iOS / iPadOS、Android 与 HarmonyOS NEXT 统一接入 `moviepilot.passkey` v1 安全认证协议，自动探测服务端 `/api/v1/auth/providers` 启用状态并校验前端静态协议与安全来源。\n  - 支持免输账号密码一键唤起系统通行密钥面板（或按已输入用户名精确发起挑战），事务令牌严格驻留客户端内存，完成浏览器同源与挑战签名校验后自动激活会话并遵循「保持登录」偏好。\n- **三端登录界面视觉层级与按钮布局优化**：\n  - 重构主「登录」实心胶囊与「使用通行密钥登录」玻璃描边次级按钮的视觉主次关系，无需填写表单即可直接点击通行密钥登录；Android 与鸿蒙在短宽横屏下自动切换为左右双列并排按钮布局。\n  - 精简登录页冗余配置项，并在未触发网关拦截且未持有网关会话时将 `Cloudflare Access` 入口收敛为轻量胶囊按钮，消除多卡片堆叠感。\n- **修复外挂字幕显示但提示加载失败的问题**：\n  - 修复 Android 在媒体库详情等直链（`strm_direct` / `server_wan`）起播场景下未透传实例同源基准地址与鉴权头，导致外挂字幕请求缺失凭据触发加载失败的问题，并补齐 Cloudflare Access 同源网关头透传与跨源剥离。\n  - 三端新增反向代理与子路径部署下的 `/api/v1/...` 实例地址安全重绑能力，解决反代环境下后端生成 `http://` 字幕或歌词地址引发的协议失配；同步修正 iOS 省略 `server` 参数时的字幕地址校验规则。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.9` | `MoviePilot-2.0.9-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.9` | `MoviePilot-2.0.9-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.9` | `MoviePilot-2.0.9-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.9` | `MoviePilot-2.0.9-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[71897d764880cf79467c4856d2d9115015db651c](https://github.com/jxxghp/MoviePilot-App/commit/71897d764880cf79467c4856d2d9115015db651c)。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.9/MoviePilot-2.0.9-ios-unsigned.ipa",
-          "size": 51682733,
+          "version": "2.0.10",
+          "date": "2026-11-27T19:37:53Z",
+          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.10`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **发现页与影视详情页支持免配置多元评分展示**：\n  - 无需额外部署或填写第三方密钥，详情页与发现流自动聚合展示 IMDb、TMDB、豆瓣、烂番茄与 Bangumi 多元评分徽标，并在关联 Emby / Plex 媒体库时自动融合媒体服务器侧评分元数据。\n- **三端播放器投屏入口与卡片列表交互优化**：\n  - iOS（系统 AirPlay 路由面板）、Android 与 HarmonyOS NEXT 播放器顶栏统一配备原生投屏图标按钮。\n  - 订阅卡片与下载任务卡片统一收敛为长按唤出删除操作，移除常驻冗余删除按钮；修正订阅页加载骨架屏占位卡片宽度与实际卡片完全对齐。\n- **iOS MPV 增强播放内核体验全面修复**：\n  - **彻底修复内嵌简繁中文字幕显示为方框的问题**：针对新版 iOS 系统苹方字体改用私有 `hvgl` 轮廓表导致 `libass` / `FreeType` 回退为空心方框的问题，新增基于 `CoreText` 矢量轮廓提取的沙盒缓存 `subfont.ttf` 合成管线（覆盖近 3 万个简繁日韩汉字与标点符号），同时保留内封特效字体（`embeddedfonts`）加载能力。\n  - **远端 HTTPS 流经本机环回代理安全起播（`#87`）**：MPV 远端流统一经本机环回代理由系统 `URLSession` 出网，解决内置 GnuTLS 在 iOS 上读不到系统根证书导致 HTTPS 直链无法起播的问题，并杜绝跨源 `302` 重定向泄露实例凭据。\n  - **修复横屏画面偏移、支持小窗画中画并优化锁屏按钮**：修复横竖屏旋转时 `MoltenVK` 画布未重配导致画面偏移至左下角的问题；新增 MPV 系统画中画小窗播放（后台自动切换纯 CPU 软渲染管线防 GPU 挂起强杀）；修复 iOS 26 液态玻璃锁定按钮激活后填充纯白圆块遮挡锁头图标的问题。\n- **插件最小化胶囊贴边「超级最小化」与音频缓冲状态栏同步修复（`#88` / `#89`）**：\n  - **最小化胶囊安全区约束、固定紧凑宽度与贴边半圆收缩（`#88`）**：三端应用内悬浮胶囊与 Android `TYPE_APPLICATION_OVERLAY` 系统级悬浮窗统一引入安全区边界约束与归一化坐标持久化，彻底杜绝拖出屏幕外找不回的问题；胶囊文字区固定为紧凑宽度（总宽恒定约 `206dp`）并新增 `capsuleTitle` / `capsuleArtist` 短文案支持，切歌、刷新歌词或播放状态切换不再引起胶囊忽长忽短；拖至左右边缘（默认 `< 24dp`，支持通过 `edgeSnapThresholdDp` 自定义）松手自动吸附并收缩为贴边半圆「超级最小化」胶囊，点击即恢复完整单行播控胶囊。\n  - **缓冲或未真正出声时钉住通知栏媒体进度条（`#89`）**：三端原生内联音频在起播缓冲、在线流 Seek 及弱网重缓冲期间统一上报 `audio.play.state = \"buffering\"` 并暂停推进 `positionMs`，同时将 Android `MediaSession`（`STATE_BUFFERING` + `0f` 倍速）、iOS `MPNowPlayingInfoCenter` 与 HarmonyOS `AVSession` 倍速归零，等真正输出音频后再恢复时间轴推进。\n- **SMB 共享流式播放兼容性增强**：\n  - 配套 V3 后端放宽 SMB 流媒体读取句柄共享锁权限，避免并发流探测与起播期间发生文件占用冲突。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.10` | `MoviePilot-2.0.10-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.10` | `MoviePilot-2.0.10-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.10` | `MoviePilot-2.0.10-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.10` | `MoviePilot-2.0.10-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[d9cb1a5f76409c1cb24a096e96b31d1cc6e44d24](https://github.com/jxxghp/MoviePilot-App/commit/d9cb1a5f76409c1cb24a096e96b31d1cc6e44d24)。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.10/MoviePilot-2.0.10-ios-unsigned.ipa",
+          "size": 51818796,
           "minOSVersion": "17.0"
         }
       ]
@@ -2762,6 +2762,28 @@
   ],
   "news": [
     {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 2.0.10 · 27 Nov 2026",
+      "identifier": "MoviePilot-release-v2.0.10",
+      "caption": "MoviePilot 2.0.10 is available.",
+      "date": "2026-11-27T19:37:53Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.10"
+    },
+    {
+      "appID": "com.liuliuya.PiliNative",
+      "title": "LiLite 1.0.42 · 27 Nov 2026",
+      "identifier": "LiLite-release-v1.0.42",
+      "caption": "LiLite 1.0.42 is available.",
+      "date": "2026-11-27T18:31:56Z",
+      "tintColor": "#14C8F5",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.42"
+    },
+    {
       "appID": "com.g8row.photosbackup",
       "title": "Photos Backup 0.4.1 · 27 Nov 2026",
       "identifier": "Photos Backup-release-0.4.1",
@@ -2782,28 +2804,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/news.webp",
       "notify": true,
       "url": "https://github.com/Reukix/Reloc/releases/tag/v1.0.4"
-    },
-    {
-      "appID": "com.liuliuya.PiliNative",
-      "title": "LiLite 1.0.41 · 27 Nov 2026",
-      "identifier": "LiLite-release-v1.0.41",
-      "caption": "LiLite 1.0.41 is available.",
-      "date": "2026-11-27T10:11:57Z",
-      "tintColor": "#14C8F5",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.41"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 2.0.9 · 27 Nov 2026",
-      "identifier": "MoviePilot-release-v2.0.9",
-      "caption": "MoviePilot 2.0.9 is available.",
-      "date": "2026-11-27T09:10:04Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.9"
     },
     {
       "appID": "com.kdt.livecontainer",
