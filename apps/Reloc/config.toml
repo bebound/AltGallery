@@ -1,0 +1,41 @@
+# altgen config for the Reloc AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Reukix/Reloc"
+
+[source]
+name = "Reloc"
+subtitle = "Reloc AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Reloc"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/icon.webp"
+website = "https://github.com/Reukix/Reloc"
+tint_color = "#FD7A65"
+
+[app]
+name = "Reloc"
+bundle_identifier = "dev.reloc.ios"
+developer_name = "Reukix"
+subtitle = "面向 iPhone 的外设级定位模拟工具"
+description = "通过本机回环连接系统的 com.apple.carkit.service 服务，以 iAP2 / MFi-v3 / NMEA 外设身份向系统下发实时坐标。需要外部代理提供指向 10.7.0.1 的本机回环，并先导入配对文件；仅支持 iPhone（iOS 17.0+）。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/location.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/pair.webp",
+]
+tint_color = "#FD7A65"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): every release ships one Reloc.ipa
+asset_pattern = "Reloc\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/news.webp"
+
+[output]
+path = "apps.json"

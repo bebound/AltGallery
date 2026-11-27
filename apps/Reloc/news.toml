@@ -1,0 +1,11 @@
+# render_news.py config: uv run tools/render_news.py --out apps/Reloc
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "Reloc"
+tagline = "外设级定位模拟"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Real values are filled in after the
+# first render.
+[colors]

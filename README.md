@@ -274,6 +274,9 @@ PlayStation 3 emulator for iPhone and iPad — built on RPCS3, with community pa
 ### <img src="apps/RepoPocket/icon.webp" alt="RepoPocket icon" width="24" align="top"> <a href="https://github.com/wm0104/RepoPocket">RepoPocket</a>
 在 iPhone、iPad 上浏览 GitHub 与管理 Git 项目 — 支持阅读代码与 README、编辑提交、下载文件，并管理发行版与 Actions。
 
+### <img src="apps/Reloc/icon.webp" alt="Reloc icon" width="24" align="top"> <a href="https://github.com/Reukix/Reloc">Reloc</a>
+面向 iPhone 的外设级定位模拟工具 — 通过本机回环以 iAP2 / MFi-v3 / NMEA 外设身份向系统注入坐标，需自备指向 10.7.0.1 的回环代理并先导入配对文件。
+
 ### <img src="apps/RewindBox/icon.webp" alt="RewindBox icon" width="24" align="top"> <a href="https://github.com/TarbleFR/RewindBox">RewindBox</a>
 Emulation frontend for iPhone and iPad — a NeoStation fork pairing a console-style library with Libretro cores, Dolphin, ARMSX2, MeloNX and RPCS3.
 
