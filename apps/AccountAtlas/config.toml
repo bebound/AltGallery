@@ -1,0 +1,40 @@
+# altgen config for the Account Atlas AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Ckxkx/account-atlas"
+
+[source]
+name = "Account Atlas"
+subtitle = "Account Atlas AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Account Atlas"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/icon.webp"
+website = "https://github.com/Ckxkx/account-atlas"
+tint_color = "#0A84FF"
+
+[app]
+name = "Account Atlas"
+bundle_identifier = "dev.huichen.atlas"
+developer_name = "Ckxkx"
+subtitle = "记录邮箱和手机号绑定的各类账号"
+description = "记录每个邮箱、手机号注册或绑定了哪些网站和 App。支持卡包视图、关系图、隐私打码与可选的端到端加密同步，数据默认仅保存在本地。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/images/wallet.webp",
+]
+tint_color = "#0A84FF"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release ships Atlas.ipa and Atlas.apk
+asset_pattern = "Atlas\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/images/news.webp"
+
+[output]
+path = "apps.json"

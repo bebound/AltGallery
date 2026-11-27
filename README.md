@@ -43,6 +43,9 @@ Don't see an app you want? [Create an issue](https://github.com/bebound/AltGalle
 
 ## Available Apps
 
+### <img src="apps/AccountAtlas/icon.webp" alt="Account Atlas icon" width="24" align="top"> <a href="https://github.com/Ckxkx/account-atlas">Account Atlas</a>
+记录邮箱和手机号绑定的各类账号 — 支持卡包视图、关系图与可选的端到端加密同步，数据仅存本地。
+
 ### <img src="apps/Aidoku/icon.webp" alt="Aidoku icon" width="24" align="top"> <a href="https://github.com/Aidoku/Aidoku">Aidoku</a>
 Free and open source manga reader for iOS and iPadOS — WASM extension sources, local CBZ files, downloads and AniList/MyAnimeList tracking.
 

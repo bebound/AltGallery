@@ -43,6 +43,9 @@
 
 ## 可用应用
 
+### <img src="apps/AccountAtlas/icon.webp" alt="Account Atlas icon" width="24" align="top"> <a href="https://github.com/Ckxkx/account-atlas">Account Atlas</a>
+记录邮箱和手机号绑定的各类账号 — 支持卡包视图、关系图与可选的端到端加密同步，数据仅存本地。
+
 ### <img src="apps/Aidoku/icon.webp" alt="Aidoku icon" width="24" align="top"> <a href="https://github.com/Aidoku/Aidoku">Aidoku</a>
 免费开源的 iOS 与 iPadOS 漫画阅读器——支持 WASM 扩展源、本地 CBZ、下载与 AniList/MyAnimeList 追番同步。
 
