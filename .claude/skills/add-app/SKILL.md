@@ -423,21 +423,31 @@ change between apps.
    change merges, and a key that matches no bundle identifier is reported
    there.
 
-10. **Warn if no screenshots were found** — this is the LAST step. If step 3
-    could not obtain any screenshots (empty `apps/<AppName>/images/`, no
-    `screenshots` field in the source, no `images`/`assets` folder in the repo,
-    broken URLs, …), output an explicit warning to the user before finishing.
-    Example:
+10. **Final warnings** — this is the LAST step. Before finishing, check for
+    the conditions below and output an explicit warning for each one that
+    applies. These warnings are required — never end the add-app flow silently
+    when they apply.
 
-    ```
-    ⚠️ Warning: no screenshots found for <AppName> — apps/<AppName>/images/ is
-    empty. The app will show without screenshots in the gallery. When you have
-    screenshots, drop them into apps/<AppName>/images/ and update the
-    `[app] screenshots` list in config.toml (then regenerate apps.json).
-    ```
+    - **No screenshots found.** If step 3 could not obtain any screenshots
+      (empty `apps/<AppName>/images/`, no `screenshots` field in the source, no
+      `images`/`assets` folder in the repo, broken URLs, …), warn:
+      ```
+      ⚠️ Warning: no screenshots found for <AppName> — apps/<AppName>/images/ is
+      empty. The app will show without screenshots in the gallery. When you have
+      screenshots, drop them into apps/<AppName>/images/ and update the
+      `[app] screenshots` list in config.toml (then regenerate apps.json).
+      ```
 
-    This warning is required — never end the add-app flow silently while
-    screenshots are missing.
+    - **`version_source = "ipa"` was set.** If step 2f/4 set
+      `version_source = "ipa"` because the tag/filename-derived version differs
+      from the ipa's `CFBundleShortVersionString`, warn:
+      ```
+      ⚠️ Warning: <AppName> uses version_source = "ipa" (tag/filename gives
+      <derived>, ipa reports <ipa-version>). Every CI run will download each ipa
+      to read its version. This is correct here, but it is a recurring cost — keep
+      it only while the mismatch exists.
+      ```
+      Fill in `<derived>` and `<ipa-version>` with the actual values from step 2f.
 
 ## Checklist
 - [ ] `config.toml` copied from `apps/PiliPlus/config.toml` (read at run time, not from memory) — shared header/section order/wording/URLs left untouched, only app-specific values replaced
@@ -460,3 +470,4 @@ change between apps.
 - [ ] `README.md` keeps the project's own language, `README_CN.md` carries a Chinese description (translated when the app is English)
 - [ ] `site/i18n/zh.json` entry added when the catalog text is English (skipped when it is already Chinese) — no local `build_site.py` / `make_proxy.py` run, CI builds both
 - [ ] if no screenshots could be found, the user was explicitly warned (never proceed silently)
+- [ ] if `version_source = "ipa"` was set, the final report included the warning with the derived vs. ipa version values (never proceed silently)
