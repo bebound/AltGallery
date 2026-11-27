@@ -1,0 +1,41 @@
+# altgen config for the cilicili AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Rone89/cilicili"
+
+[source]
+name = "cilicili"
+subtitle = "cilicili AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for cilicili"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/icon.webp"
+website = "https://github.com/Rone89/cilicili"
+tint_color = "#F06090"
+
+[app]
+name = "cilicili"
+bundle_identifier = "com.rayc.cilicili"
+developer_name = "Rone89"
+subtitle = "使用 SwiftUI 开发的哔哩哔哩第三方客户端"
+description = "使用 SwiftUI 开发的第三方 iOS 客户端实验项目，重点探索更轻量的 B 站浏览、动态、视频播放和弹幕体验。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/play.webp",
+]
+tint_color = "#F06090"
+min_os_version = "26.1"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = "bili-release-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/news.webp"
+
+[output]
+path = "apps.json"

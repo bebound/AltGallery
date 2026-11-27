@@ -97,6 +97,9 @@ Open-source YouTube Music client for iPhone and iPad — a SwiftUI port of BitCh
 ### <img src="apps/Chance/icon.webp" alt="Chance icon" width="24" align="top"> <a href="https://github.com/moffatman/chan">Chance</a>
 Imageboard browser for iOS and Android — a Flutter client with multi-column layout, media gallery, saved threads, filters, and archive support.
 
+### <img src="apps/cilicili/icon.webp" alt="cilicili icon" width="24" align="top"> <a href="https://github.com/Rone89/cilicili">cilicili</a>
+使用 SwiftUI 开发的哔哩哔哩第三方客户端 — 专注更轻量的浏览、动态、视频播放和弹幕体验。
+
 ### <img src="apps/Cloudn/icon.webp" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
 网盘分享与短视频高速解析下载 — 支持 19+ 网盘、近 50 个短视频与图集平台，解析全部在手机本地完成。
 

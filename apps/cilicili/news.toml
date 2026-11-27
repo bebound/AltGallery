@@ -1,0 +1,6 @@
+# Shared promo image for cilicili news entries (rendered by tools/render_news.py).
+# Optional [colors] keys: tint, tint_alt, background, bg_mid, bg_dark,
+# tagline_color, name_color, badge_fill, badge_stroke. Omitted = auto-derived.
+
+name = "cilicili"
+tagline = "使用 SwiftUI 开发的\n哔哩哔哩第三方客户端"
