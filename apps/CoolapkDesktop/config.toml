@@ -1,0 +1,43 @@
+# altgen config for the CoolapkDesktop AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "coolapk-desktop/coolapk-desktop"
+
+[source]
+name = "CoolapkDesktop"
+subtitle = "CoolapkDesktop AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for CoolapkDesktop"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/icon.webp"
+website = "https://github.com/coolapk-desktop/coolapk-desktop"
+tint_color = "#24C8DB"
+
+[app]
+name = "CoolapkDesktop"
+bundle_identifier = "com.coolapk.desktop"
+developer_name = "coolapk-desktop"
+subtitle = "非官方酷安第三方客户端"
+description = "基于 Tauri 2、Vue 3 和 Rust 的非官方酷安第三方客户端，支持浏览动态、搜索、收藏、私信等功能。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/comment.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/doscovery.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/home.webp",
+]
+tint_color = "#24C8DB"
+min_os_version = "14.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+\\.\\d+)"
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = ".*-ios-arm64-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -1,0 +1,6 @@
+# render_news.py config: uv run tools/render_news.py --out apps/CoolapkDesktop
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "CoolapkDesktop"
+tagline = "非官方酷安第三方客户端"

@@ -103,6 +103,9 @@ Imageboard browser for iOS and Android — a Flutter client with multi-column la
 ### <img src="apps/Cloudn/icon.webp" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
 网盘分享与短视频高速解析下载 — 支持 19+ 网盘、近 50 个短视频与图集平台，解析全部在手机本地完成。
 
+### <img src="apps/CoolapkDesktop/icon.webp" alt="CoolapkDesktop icon" width="24" align="top"> <a href="https://github.com/coolapk-desktop/coolapk-desktop">CoolapkDesktop</a>
+非官方酷安第三方客户端 — 基于 Tauri 2、Vue 3 和 Rust，支持浏览动态、搜索、收藏与私信。
+
 ### <img src="apps/D2RMobile/icon.webp" alt="D2R Mobile icon" width="24" align="top"> <a href="https://github.com/d2r-mobile/d2r-mobile">D2R Mobile</a>
 Play Diablo II: Resurrected on iPhone and iPad — offline with touch or controller, bring your own Switch game files.
 
