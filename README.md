@@ -280,6 +280,9 @@ Emulation frontend for iPhone and iPad — a NeoStation fork pairing a console-s
 ### <img src="apps/Rich4Renew/icon.webp" alt="Rich4Renew icon" width="24" align="top"> <a href="https://github.com/iam567/rich4-renew-app">Rich4Renew</a>
 大富翁4 高清重制版，新增歌舞伎町地图与大富豪模式 — Vite + TypeScript 重写的游戏本体，Capacitor 打包成 iOS App，规则依原版反组译还原。
 
+### <img src="apps/Roam-Control/icon.webp" alt="Roam Control icon" width="24" align="top"> <a href="https://github.com/seanhowarthdev/Roam-Control">Roam Control</a>
+Choose, test and move your iPhone's reported location — simulate walking routes and keep favourites from one Apple Maps interface.
+
 ### <img src="apps/RushHours/icon.webp" alt="Rush Hours icon" width="24" align="top"> <a href="https://github.com/ekomlenovic/rush_hour_ios_android">Rush Hours</a>
 Slide the cars, free the red one. A free sliding-block puzzle with 700+ levels on a world map, daily and weekly challenges, a level creator and multiplayer.
 
