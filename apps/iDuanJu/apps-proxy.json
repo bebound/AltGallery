@@ -1,0 +1,51 @@
+{
+  "name": "iDuanJu",
+  "subtitle": "iDuanJu AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for iDuanJu",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/icon.webp",
+  "website": "https://github.com/my-name-is-alan/iDuanJu",
+  "tintColor": "#F05060",
+  "apps": [
+    {
+      "name": "i短剧",
+      "bundleIdentifier": "com.local.STV",
+      "developerName": "my-name-is-alan",
+      "subtitle": "免费开源的多源短剧/视频/漫画/Telegram 聚合播放器",
+      "localizedDescription": "i短剧是一款面向 iOS / iPadOS（16.0+）的跨端播放与阅读框架。App 本身不内置任何片源、书源、漫画源或频道，支持通过插件、TVBox 配置、本地小说与 Telegram 频道导入内容，提供视频播放、漫画阅读、小说听书等功能。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/01-home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/02-channels.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/04-detail.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/05-player.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/07-danmaku.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/08-plugins.webp"
+      ],
+      "tintColor": "#F05060",
+      "versions": [
+        {
+          "version": "1.6b41",
+          "buildVersion": "41",
+          "date": "2026-11-26T14:44:55Z",
+          "localizedDescription": "i短剧 iOS 1.6b41 (v1.6b41)\n\n包内版本为 1.6 build 41。IPA 未签名（最低 iOS 16），请自行重签侧载。\n\n请选择 Assets 中的 APK / IPA，不要下载 Source code。SHA-256 见附件。\n构建源码：2fe0b4969274cca1eccd8697af1a6f4fe82ddb4f\n自动构建：https://github.com/my-name-is-alan/iDuanJu/actions/runs/45838169992",
+          "downloadURL": "https://gh-proxy.com/https://github.com/my-name-is-alan/iDuanJu/releases/download/v1.6b41/STV-1.6b41-unsigned.ipa",
+          "size": 54330260,
+          "minOSVersion": "16.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.local.STV",
+      "title": "i短剧 1.6b41 · 26 Nov 2026",
+      "identifier": "i短剧-release-v1.6b41",
+      "caption": "i短剧 1.6b41 is available.",
+      "date": "2026-11-26T14:44:55Z",
+      "tintColor": "#F05060",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/my-name-is-alan/iDuanJu/releases/tag/v1.6b41"
+    }
+  ]
+}

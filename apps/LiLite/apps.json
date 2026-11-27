@@ -1,0 +1,48 @@
+{
+  "name": "LiLite",
+  "subtitle": "LiLite AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for LiLite",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/icon.webp",
+  "website": "https://github.com/liuliuya2333/LiLite",
+  "tintColor": "#14C8F5",
+  "apps": [
+    {
+      "name": "LiLite",
+      "bundleIdentifier": "com.liuliuya.PiliNative",
+      "developerName": "liuliuya2333",
+      "subtitle": "轻盈顺滑的第三方哔哩哔哩客户端",
+      "localizedDescription": "使用 SwiftUI / UIKit 从头编写的原生第三方哔哩哔哩客户端，支持 mpv / AVPlayer 双内核、弹幕、画中画与离线缓存，适配 iOS 26 Liquid Glass。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/play.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/profile.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/stream.webp"
+      ],
+      "tintColor": "#14C8F5",
+      "versions": [
+        {
+          "version": "1.0.41",
+          "date": "2026-11-27T10:11:57Z",
+          "localizedDescription": "**布局与搜索**\n\n- 恢复设置卡片和消息列表的左右留白，修复部分页面紧贴屏幕边缘的问题。\n- iPad 横屏启用侧边栏后，首页、动态和我的入口移到左下角的紧凑图标栏。修复宽屏列表点进视频时缩放过大或转场卡住的问题。\n- Duo 外屏横屏打开搜索时预留状态栏和输入框周围的空间，修复弹出键盘时页面可能卡住的问题。\n- 调整搜索转场中标签栏的收起时机，避免打开搜索、弹出键盘时反复布局。\n\n**播放**\n\n- 从详情页进入竖屏播放，再返回详情时，接续当前进度。保留切换时的播放或暂停状态，并按视频和分 P 交接进度。\n- iPad 横屏播放竖屏流时，首帧和正式画面按原比例完整显示，避免为了填满横屏裁掉画面。宽屏设备旋转进入竖屏流时也显示完整画面。\n- 修复 AVPlayer 播放部分视频时持续转圈或反复缓冲的问题。持续缓冲时可为当前视频切到较低清晰度，保留播放进度和默认清晰度设置。修复 AVPlayer 播放中切到后台或关闭视频时，未完成的加载请求可能导致闪退的问题。\n- 调整视频前台播放时的系统媒体控制，避免普通视频以音频的形式显示在灵动岛；后台播放和「听视频」继续使用各自的播放控制。\n- 「设置 → 详情与播放控制 → 详情页播放器按钮」可以选择显示截图按钮和「听视频」按钮。\n\n**推荐、消息与下载**\n\n- 推荐请求遇到 412 时显示明确提示，可重试或手动切换网页推荐。\n- 修复消息列表刷新时的闪动，以及删除或隐藏行后回到列表顶部失效的问题。\n- 恢复旧版本后台下载会话的兼容性。\n- 发布页附有 `LiLite-source.json`，可在 AltStore Classic 和 SideStore 中订阅轻哩更新。\n\n附件为未签名 IPA，需要自行签名安装。",
+          "downloadURL": "https://github.com/liuliuya2333/LiLite/releases/download/v1.0.41/LiLite-1.0.41-unsigned.ipa",
+          "size": 28856852,
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.liuliuya.PiliNative",
+      "title": "LiLite 1.0.41 · 27 Nov 2026",
+      "identifier": "LiLite-release-v1.0.41",
+      "caption": "LiLite 1.0.41 is available.",
+      "date": "2026-11-27T10:11:57Z",
+      "tintColor": "#14C8F5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.41"
+    }
+  ]
+}

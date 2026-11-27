@@ -1,0 +1,45 @@
+{
+  "name": "DouDuo",
+  "subtitle": "DouDuo AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for DouDuo",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/icon.webp",
+  "website": "https://github.com/81199000/DouDuo",
+  "tintColor": "#FE2C55",
+  "apps": [
+    {
+      "name": "DouDuo",
+      "bundleIdentifier": "me.rrmm.douduo",
+      "developerName": "81199000",
+      "subtitle": "原生 SwiftUI 第三方抖音客户端，适配折叠屏与 iPad",
+      "localizedDescription": "DouDuo：开源免费的第三方抖音客户端（非官方），原生 SwiftUI，适配 iPhone Duo 折叠屏、iPad 与普通 iPhone。安装包为未签名 IPA，需要用自己的证书签名。仅供个人学习交流。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/images/home.webp"
+      ],
+      "tintColor": "#FE2C55",
+      "versions": [
+        {
+          "version": "1.7.5",
+          "date": "2026-11-26T20:01:46Z",
+          "localizedDescription": "# DouDuo 1.7.5 · 长视频开头、快进不卡 · 好友消息加载得出来\n\n包为**未签名 IPA**，需要自行签名安装。\n\n## 长视频：开头不卡、快进不卡\n- **刚划到长视频不再卡在开头**：以前有时缓冲已经有好几秒，画面还停在第一帧不动，要等十几二十秒。现在内容够了就直接开播。\n- **快进拖完马上接着播**：以前拖到远处，画面会停住不动，要再拖一下才走。现在松手 2 秒内就开始播。\n\n## 信息：好友消息加载得出来了\n- 粉丝私信多的账号，好友的会话以前被挤在后面，一直显示「加载更多会话」却加载不出来。现在点一下会一直往下翻，直到翻出好友会话；翻到底会显示「没有更多会话了」。好友会话太少时，进信息页会自动翻一次。\n- 顶部朋友头像排有时是空的，现在先用最近联系人补上。\n\n## 修复\n- 推荐里刷到直播时偶尔闪退（工单 B48）。\n\n## 关注不走失\n项目在 GitHub [81199000/DouDuo](https://github.com/81199000/DouDuo)，点个 Star、关注 @81199000，避免走失。官网 [oneduo.app](https://oneduo.app) 是长期固定入口。\n\n## 验证与仍需确认的边界\n- 长视频开头卡、快进卡：根据作者 iPhone Duo 真机日志修的；快进在模拟器上限速复现过，修前修后对比过，作者真机试过，确认好了很多。\n- 信息页好友会话：作者真机确认能加载出来了。\n- 直播闪退：根据真机崩溃报告修的，没有专门长时间复测。",
+          "downloadURL": "https://github.com/81199000/DouDuo/releases/download/v1.7.5/DouDuo-1.7.5-unsigned.ipa",
+          "size": 23627752,
+          "minOSVersion": "26.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "me.rrmm.douduo",
+      "title": "DouDuo 1.7.5 · 26 Nov 2026",
+      "identifier": "DouDuo-release-v1.7.5",
+      "caption": "DouDuo 1.7.5 is available.",
+      "date": "2026-11-26T20:01:46Z",
+      "tintColor": "#FE2C55",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/81199000/DouDuo/releases/tag/v1.7.5"
+    }
+  ]
+}

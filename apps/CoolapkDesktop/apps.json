@@ -1,0 +1,47 @@
+{
+  "name": "CoolapkDesktop",
+  "subtitle": "CoolapkDesktop AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for CoolapkDesktop",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/icon.webp",
+  "website": "https://github.com/coolapk-desktop/coolapk-desktop",
+  "tintColor": "#24C8DB",
+  "apps": [
+    {
+      "name": "CoolapkDesktop",
+      "bundleIdentifier": "com.coolapk.desktop",
+      "developerName": "coolapk-desktop",
+      "subtitle": "非官方酷安第三方客户端",
+      "localizedDescription": "基于 Tauri 2、Vue 3 和 Rust 的非官方酷安第三方客户端，支持浏览动态、搜索、收藏、私信等功能。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/comment.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/doscovery.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/home.webp"
+      ],
+      "tintColor": "#24C8DB",
+      "versions": [
+        {
+          "version": "1.48.0",
+          "date": "2026-11-24T03:05:28Z",
+          "localizedDescription": "# v1.48.0 更新日志\r\n\r\n比较范围 `v1.47.0 → v1.48.0`\r\n\r\n## 新增\r\n\r\n- 首页支持用 `H` 和 `L` 向前、向后循环切换栏目。\r\n- 外观设置新增三个选项，可居中对齐头条快捷入口和关注分组、隐藏头条快捷入口，以及隐藏页面滚动条。\r\n\r\n## 优化\r\n\r\n- 精简桌面侧栏和窄屏快捷菜单，版本信息、检查更新和反馈可在「关于酷安」查看。\r\n- 开启自动数盟设备 ID 后，启动时会为缺少设备 ID 的当前账号自动获取并保存。\r\n\r\n## 修复\r\n\r\n- 修复快速拖动窗口时首页栏目横向抖动、侧栏反复切换以及窗口边缘闪黑的问题。\r\n- 修复窗口较矮时设置菜单底部条目被裁切的问题，并自动将当前栏目滚动到可见位置。\r\n- 修复移动端打开动态图片时画面跳动的问题。\r\n- 修复部分 H.264 实况照片能在悬停预览播放、打开大图却误报「不支持」的问题。",
+          "downloadURL": "https://github.com/coolapk-desktop/coolapk-desktop/releases/download/v1.48.0/coolapk-v1.48.0-ios-arm64-unsigned.ipa",
+          "size": 8935653,
+          "minOSVersion": "14.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.coolapk.desktop",
+      "title": "CoolapkDesktop 1.48.0 · 24 Nov 2026",
+      "identifier": "CoolapkDesktop-release-v1.48.0",
+      "caption": "CoolapkDesktop 1.48.0 is available.",
+      "date": "2026-11-24T03:05:28Z",
+      "tintColor": "#24C8DB",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/coolapk-desktop/coolapk-desktop/releases/tag/v1.48.0"
+    }
+  ]
+}

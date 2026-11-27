@@ -1,0 +1,46 @@
+{
+  "name": "cilicili",
+  "subtitle": "cilicili AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for cilicili",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/icon.webp",
+  "website": "https://github.com/Rone89/cilicili",
+  "tintColor": "#F06090",
+  "apps": [
+    {
+      "name": "cilicili",
+      "bundleIdentifier": "com.rayc.cilicili",
+      "developerName": "Rone89",
+      "subtitle": "使用 SwiftUI 开发的哔哩哔哩第三方客户端",
+      "localizedDescription": "使用 SwiftUI 开发的第三方 iOS 客户端实验项目，重点探索更轻量的 B 站浏览、动态、视频播放和弹幕体验。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/play.webp"
+      ],
+      "tintColor": "#F06090",
+      "versions": [
+        {
+          "version": "1.1.8",
+          "date": "2026-11-23T17:50:55Z",
+          "localizedDescription": "## v1.1.8 更新内容\n\n### ✨ 新增功能与正式转正\n- **大屏自适应布局正式转正（iPad / iPhone Duo）**：\n  - 宽屏、iPad、iPhone Duo 展开态及分屏窗口全面启用自适应多栏网格、自适应侧边/底部导航、双栏视频详情页与双栏直播间，并移除实验室开关固化为正式默认体验。\n  - 折叠态 iPhone Duo 适配左侧 9:16 主内容区与右侧竖向功能栏，弹窗严格限定在内容区内不遮挡侧边栏。\n- **动态页新增多栏布局与纯文本引用卡排版**：\n  - 支持**列表**、**瀑布流**、**16:9 等高网格**三种布局自由切换，可在动态页顶部菜单或设置页随时调整。\n  - 纯文本短动态按字数自动阶梯放大并居中排布，搭配极淡引号角标与柔和微渐变底纹，消除短句卡片留白空洞感。\n- **播放器长按滑动调速与上滑锁定**：\n  - 长按默认触发 `1.5x` 倍速，左右滑动可丝滑切换档位（`1.25x / 1.5x / 2.0x`），上滑锁定持续倍速播放；点按锁定胶囊即可恢复原速且不唤醒播放控件。\n- **内容过滤新增充电专属屏蔽**：\n  - 支持在过滤设置中按需开启屏蔽首页推荐与动态流中的充电专属及提前看视频（默认关闭）。\n- **搜索与「我的」页交互升级**：\n  - 搜索页支持原生 TabBar 形态切换与宽屏多栏发现/结果网格；「我的」页内嵌原生分组搜索栏。\n\n### 🎨 界面与交互优化\n- **视频详情页 UP 主关注角标优化**：移除头像外圈描边，改为右下角带背景镂空环的微角标（未关注为主题色 `+`，已关注平滑切换为克制的 `✓`）。\n- **卡片视觉更轻盈**：首页有边框自适应布局与动态页瀑布流/等高网格卡片统一去除厚重阴影，并调低描边不透明度（浅色 `0.06` / 深色 `0.10`）。\n- **根 TabBar 过渡与内嵌弹窗打磨**：\n  - 修复详情页返回时根 TabBar 闪现及搜索 Tab 对接异常。\n  - 展开态竖屏与双栏分屏下的分P、合集、分集与评论回复弹窗采用原生 Liquid Glass 内嵌卡片，弹窗弹出时自动隐藏底部工具栏并在关闭后即时恢复页面滚动。\n\n### 🐛 问题修复\n- 修复动态页下拉刷新偶发被取消或阻塞的问题。\n- 修复评论楼中楼回复取消加载后状态卡死、再次进入无法自动重试的问题。\n- 修复外部深链跳转用户主页路由、多账号切换及部分搜索筛选按钮在深浅模式下的文字反色问题。\n\n### 📦 未签名 IPA 信息\n- **Bundle ID**：`com.rayc.cilicili`\n- **版本**：`1.1.8 (233)`\n- **SHA-256**：`03109c17f6a16eee9d3ec175059ec917c78c4a14d7290bcd787f52de227f4434`",
+          "downloadURL": "https://github.com/Rone89/cilicili/releases/download/v1.1.8/bili-release-unsigned.ipa",
+          "size": 25470044,
+          "minOSVersion": "26.1"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "com.rayc.cilicili",
+      "title": "cilicili 1.1.8 · 23 Nov 2026",
+      "identifier": "cilicili-release-v1.1.8",
+      "caption": "cilicili 1.1.8 is available.",
+      "date": "2026-11-23T17:50:55Z",
+      "tintColor": "#F06090",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Rone89/cilicili/releases/tag/v1.1.8"
+    }
+  ]
+}

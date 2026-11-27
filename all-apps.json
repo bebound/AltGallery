@@ -7,6 +7,28 @@
   "tintColor": "#3B82F6",
   "apps": [
     {
+      "name": "Account Atlas",
+      "bundleIdentifier": "dev.huichen.atlas",
+      "developerName": "Ckxkx",
+      "subtitle": "记录邮箱和手机号绑定的各类账号",
+      "localizedDescription": "记录每个邮箱、手机号注册或绑定了哪些网站和 App。支持卡包视图、关系图、隐私打码与可选的端到端加密同步，数据默认仅保存在本地。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/images/wallet.webp"
+      ],
+      "tintColor": "#0A84FF",
+      "versions": [
+        {
+          "version": "2.5",
+          "date": "2026-11-27T07:11:04Z",
+          "localizedDescription": "## 更新内容\n\n- version.json：2.5 更新说明\n- 编辑 App：更换图标菜单加入「从 App Store 搜索」（iOS / 安卓 / 网页）。打开即用当前名称搜索，改名后防抖再搜；点结果立刻显示图标，并按添加流程下载、缩成 128px 保存；取消不改动；没有结果显示「没有找到」，断网显示「网络不可用」；图标下载中暂不能保存，下载失败保留原图标\n- 安卓：弹出页上滑时不画阴影（整屏圆角层的 20dp 阴影每帧重算），停稳后随玻璃一起淡入\n- iOS：切回「全部 App」时分类标签仍会闪成灰白块（录屏确认是页面已显示后玻璃重新生成），未选中标签改用平面玻璃底色、不再用实时 glassEffect；同时恢复 fad995e（关系图页切换主题用定格位图，之前误以为是它导致闪烁而撤回）\n- 安卓：弹出页上滑一直有点卡（液态玻璃之前就有）。加入 profileinstaller，安装时就装好 Compose / Material3 自带的 baseline profile；蓝奏云侧载的 APK 拿不到 Play 的云端配置，之前 Compose 长期以解释 / JIT 运行\n- 安卓：弹出页上滑卡顿（滑动时每帧都对整屏背景重新模糊 + 透镜着色器）。弹出页移动 / 拖动时先用不透明底色，停稳后 0.22 秒淡入液态玻璃；标签栏不变\n- 撤回 fad995e：drawHierarchy 画不出液态玻璃，定格图和屏幕不一致，切换主题时反而闪烁；恢复 snapshotView\n- iOS：关系图页切换白天 / 夜间会闪一下直接变黑（snapshotView 是实时镜像，不是定格画面），改为 drawHierarchy 渲染一张定格位图再做圆形展开\n- iOS 分类管理：拖动排序后点分类改名会卡住（列表常驻编辑模式 + 行内按钮弹文本框 alert）。改为右上角「排序 / 完成」切换排序模式，平时点分类改名、左滑删除；改名 / 添加用小弹页，输入框自动聚焦，名字不行就在原地提示\n- 自定义分类：默认加入「生活」（美团 / 饿了么 / 大众点评归入）；设置 › 分类管理 可添加、改名（用到它的 App 一起改）、删除（App 移到「其他」）、拖动排序，「其他」固定在最后；分类表存在同步数据里（categories + categoriesAt，同步取最近改过的一方，账号用到但表里没有的分类补在末尾）；编辑 App 的分类选择里加「编辑分类…」；全部 App 分组、筛选、添加 App 分组、分享图都按这个顺序；备份 / 恢复点 / 导入带上分类；App Store 的 Lifestyle / 美食佳饮 归入生活（仅在没有更具体的分类时）\n- WebDAV：首次开启坚果云报「找不到这个目录」（坚果云对还没建的 AccountAtlas 文件夹返回 409 而不是 404，读取时 409 也按「还没有文件」处理，随后自动建目录）\n- WebDAV 支持任意服务器：不再预填坚果云地址，改为一排预设（坚果云 / 群晖 NAS / Nextcloud / AList / InfiniCLOUD / Koofr / pCloud / 自定义），点了只填服务器地址；模板地址点后聚焦让用户改主机，没改完会提示；401 等错误不再默认说坚果云；局域网 NAS 可用 http（iOS 仅加 NSAllowsLocalNetworking，安卓仅允许 IP / .local / 单段主机名走 http，外网提示用 https）\n- WebDAV 同步（iOS / 安卓）：同步方式可选 GitHub Gist / Gitee / WebDAV（默认坚果云 dav.jianguoyun.com/dav/，需第三方应用密码）；文件存于 <服务器>/AccountAtlas/atlas.enc.json，与 Gist 同一加密格式和合并逻辑，ETag + If-Match 防覆盖；网页版仍只支持 Gist（坚果云无 CORS），加一行说明\n- iOS：关系图右侧 App 小块偶尔点了没反应 / 延迟（空白处取消聚焦改为底层图层，不再和节点按钮抢手势）；读数据时去掉重复 id，防止列表因重复 id 闪退\n- iOS：从关系图切回「全部 App」时分类标签闪白（iOS 26 液态玻璃不能在半透明父视图里绘制，切页改为只滑入不淡入；标签玻璃合并为一组）\n- 安卓：Liquid Glass 液态玻璃（底部标签栏、弹出页、对话框）\n\n## 下载\n\n- **Atlas.apk**：安卓（Android 8.0+），直接安装；覆盖安装，数据保留。\n- **Atlas.ipa**：iPhone（iOS 17+），未签名，用 SideStore / 爱思助手 / Sideloadly / 全能签自签后安装。\n- 网页版：https://huichen.dev/account-atlas/\n\n完整改动：https://github.com/Ckxkx/account-atlas/compare/v2.4...v2.5",
+          "downloadURL": "https://github.com/Ckxkx/account-atlas/releases/download/v2.5/Atlas.ipa",
+          "size": 4468980,
+          "minOSVersion": "17.0"
+        }
+      ]
+    },
+    {
       "name": "Aidoku",
       "bundleIdentifier": "app.aidoku.Aidoku",
       "developerName": "Skitty",
@@ -421,6 +443,29 @@
       ]
     },
     {
+      "name": "cilicili",
+      "bundleIdentifier": "com.rayc.cilicili",
+      "developerName": "Rone89",
+      "subtitle": "使用 SwiftUI 开发的哔哩哔哩第三方客户端",
+      "localizedDescription": "使用 SwiftUI 开发的第三方 iOS 客户端实验项目，重点探索更轻量的 B 站浏览、动态、视频播放和弹幕体验。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/play.webp"
+      ],
+      "tintColor": "#F06090",
+      "versions": [
+        {
+          "version": "1.1.8",
+          "date": "2026-11-23T17:50:55Z",
+          "localizedDescription": "## v1.1.8 更新内容\n\n### ✨ 新增功能与正式转正\n- **大屏自适应布局正式转正（iPad / iPhone Duo）**：\n  - 宽屏、iPad、iPhone Duo 展开态及分屏窗口全面启用自适应多栏网格、自适应侧边/底部导航、双栏视频详情页与双栏直播间，并移除实验室开关固化为正式默认体验。\n  - 折叠态 iPhone Duo 适配左侧 9:16 主内容区与右侧竖向功能栏，弹窗严格限定在内容区内不遮挡侧边栏。\n- **动态页新增多栏布局与纯文本引用卡排版**：\n  - 支持**列表**、**瀑布流**、**16:9 等高网格**三种布局自由切换，可在动态页顶部菜单或设置页随时调整。\n  - 纯文本短动态按字数自动阶梯放大并居中排布，搭配极淡引号角标与柔和微渐变底纹，消除短句卡片留白空洞感。\n- **播放器长按滑动调速与上滑锁定**：\n  - 长按默认触发 `1.5x` 倍速，左右滑动可丝滑切换档位（`1.25x / 1.5x / 2.0x`），上滑锁定持续倍速播放；点按锁定胶囊即可恢复原速且不唤醒播放控件。\n- **内容过滤新增充电专属屏蔽**：\n  - 支持在过滤设置中按需开启屏蔽首页推荐与动态流中的充电专属及提前看视频（默认关闭）。\n- **搜索与「我的」页交互升级**：\n  - 搜索页支持原生 TabBar 形态切换与宽屏多栏发现/结果网格；「我的」页内嵌原生分组搜索栏。\n\n### 🎨 界面与交互优化\n- **视频详情页 UP 主关注角标优化**：移除头像外圈描边，改为右下角带背景镂空环的微角标（未关注为主题色 `+`，已关注平滑切换为克制的 `✓`）。\n- **卡片视觉更轻盈**：首页有边框自适应布局与动态页瀑布流/等高网格卡片统一去除厚重阴影，并调低描边不透明度（浅色 `0.06` / 深色 `0.10`）。\n- **根 TabBar 过渡与内嵌弹窗打磨**：\n  - 修复详情页返回时根 TabBar 闪现及搜索 Tab 对接异常。\n  - 展开态竖屏与双栏分屏下的分P、合集、分集与评论回复弹窗采用原生 Liquid Glass 内嵌卡片，弹窗弹出时自动隐藏底部工具栏并在关闭后即时恢复页面滚动。\n\n### 🐛 问题修复\n- 修复动态页下拉刷新偶发被取消或阻塞的问题。\n- 修复评论楼中楼回复取消加载后状态卡死、再次进入无法自动重试的问题。\n- 修复外部深链跳转用户主页路由、多账号切换及部分搜索筛选按钮在深浅模式下的文字反色问题。\n\n### 📦 未签名 IPA 信息\n- **Bundle ID**：`com.rayc.cilicili`\n- **版本**：`1.1.8 (233)`\n- **SHA-256**：`03109c17f6a16eee9d3ec175059ec917c78c4a14d7290bcd787f52de227f4434`",
+          "downloadURL": "https://github.com/Rone89/cilicili/releases/download/v1.1.8/bili-release-unsigned.ipa",
+          "size": 25470044,
+          "minOSVersion": "26.1"
+        }
+      ]
+    },
+    {
       "name": "Cloudn",
       "bundleIdentifier": "com.mengangs.Cloudn",
       "developerName": "mengangs",
@@ -441,6 +486,30 @@
           "downloadURL": "https://github.com/mengangs/Cloudn/releases/download/v1.4.2/Cloudn-v1.4.2.ipa",
           "size": 9034290,
           "minOSVersion": "17.0"
+        }
+      ]
+    },
+    {
+      "name": "CoolapkDesktop",
+      "bundleIdentifier": "com.coolapk.desktop",
+      "developerName": "coolapk-desktop",
+      "subtitle": "非官方酷安第三方客户端",
+      "localizedDescription": "基于 Tauri 2、Vue 3 和 Rust 的非官方酷安第三方客户端，支持浏览动态、搜索、收藏、私信等功能。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/comment.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/doscovery.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/home.webp"
+      ],
+      "tintColor": "#24C8DB",
+      "versions": [
+        {
+          "version": "1.48.0",
+          "date": "2026-11-24T03:05:28Z",
+          "localizedDescription": "# v1.48.0 更新日志\r\n\r\n比较范围 `v1.47.0 → v1.48.0`\r\n\r\n## 新增\r\n\r\n- 首页支持用 `H` 和 `L` 向前、向后循环切换栏目。\r\n- 外观设置新增三个选项，可居中对齐头条快捷入口和关注分组、隐藏头条快捷入口，以及隐藏页面滚动条。\r\n\r\n## 优化\r\n\r\n- 精简桌面侧栏和窄屏快捷菜单，版本信息、检查更新和反馈可在「关于酷安」查看。\r\n- 开启自动数盟设备 ID 后，启动时会为缺少设备 ID 的当前账号自动获取并保存。\r\n\r\n## 修复\r\n\r\n- 修复快速拖动窗口时首页栏目横向抖动、侧栏反复切换以及窗口边缘闪黑的问题。\r\n- 修复窗口较矮时设置菜单底部条目被裁切的问题，并自动将当前栏目滚动到可见位置。\r\n- 修复移动端打开动态图片时画面跳动的问题。\r\n- 修复部分 H.264 实况照片能在悬停预览播放、打开大图却误报「不支持」的问题。",
+          "downloadURL": "https://github.com/coolapk-desktop/coolapk-desktop/releases/download/v1.48.0/coolapk-v1.48.0-ios-arm64-unsigned.ipa",
+          "size": 8935653,
+          "minOSVersion": "14.0"
         }
       ]
     },
@@ -562,6 +631,28 @@
           "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
           "size": 17963367,
           "minOSVersion": "14.0"
+        }
+      ]
+    },
+    {
+      "name": "DouDuo",
+      "bundleIdentifier": "me.rrmm.douduo",
+      "developerName": "81199000",
+      "subtitle": "原生 SwiftUI 第三方抖音客户端，适配折叠屏与 iPad",
+      "localizedDescription": "DouDuo：开源免费的第三方抖音客户端（非官方），原生 SwiftUI，适配 iPhone Duo 折叠屏、iPad 与普通 iPhone。安装包为未签名 IPA，需要用自己的证书签名。仅供个人学习交流。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/images/home.webp"
+      ],
+      "tintColor": "#FE2C55",
+      "versions": [
+        {
+          "version": "1.7.5",
+          "date": "2026-11-26T20:01:46Z",
+          "localizedDescription": "# DouDuo 1.7.5 · 长视频开头、快进不卡 · 好友消息加载得出来\n\n包为**未签名 IPA**，需要自行签名安装。\n\n## 长视频：开头不卡、快进不卡\n- **刚划到长视频不再卡在开头**：以前有时缓冲已经有好几秒，画面还停在第一帧不动，要等十几二十秒。现在内容够了就直接开播。\n- **快进拖完马上接着播**：以前拖到远处，画面会停住不动，要再拖一下才走。现在松手 2 秒内就开始播。\n\n## 信息：好友消息加载得出来了\n- 粉丝私信多的账号，好友的会话以前被挤在后面，一直显示「加载更多会话」却加载不出来。现在点一下会一直往下翻，直到翻出好友会话；翻到底会显示「没有更多会话了」。好友会话太少时，进信息页会自动翻一次。\n- 顶部朋友头像排有时是空的，现在先用最近联系人补上。\n\n## 修复\n- 推荐里刷到直播时偶尔闪退（工单 B48）。\n\n## 关注不走失\n项目在 GitHub [81199000/DouDuo](https://github.com/81199000/DouDuo)，点个 Star、关注 @81199000，避免走失。官网 [oneduo.app](https://oneduo.app) 是长期固定入口。\n\n## 验证与仍需确认的边界\n- 长视频开头卡、快进卡：根据作者 iPhone Duo 真机日志修的；快进在模拟器上限速复现过，修前修后对比过，作者真机试过，确认好了很多。\n- 信息页好友会话：作者真机确认能加载出来了。\n- 直播闪退：根据真机崩溃报告修的，没有专门长时间复测。",
+          "downloadURL": "https://github.com/81199000/DouDuo/releases/download/v1.7.5/DouDuo-1.7.5-unsigned.ipa",
+          "size": 23627752,
+          "minOSVersion": "26.0"
         }
       ]
     },
@@ -855,6 +946,30 @@
       ]
     },
     {
+      "name": "GuoDuo",
+      "bundleIdentifier": "me.rrmm.hongguo",
+      "developerName": "81199000",
+      "subtitle": "原生 SwiftUI 红果短剧客户端，适配折叠屏与 iPad",
+      "localizedDescription": "GuoDuo：开源免费的红果短剧客户端（非官方），原生 SwiftUI，适配 iPhone Duo 折叠屏、iPad 与普通 iPhone。安装包为未签名 IPA，需要用自己的证书签名。仅供个人学习交流。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/play.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/search.webp"
+      ],
+      "tintColor": "#EE3B45",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "date": "2026-11-26T16:49:45Z",
+          "localizedDescription": "# GuoDuo 1.0.1\n\n## 修复\n- 修复每部剧只显示前 3 集的问题：红果官网收紧了分集列表，现在改从红果 App 接口取完整分集，所有集数都能看到、都能播。\n\n## 播放\n- 边下边播：点开一集，文件头一到就开始播，不用等整集下完；往后拖到还没下到的地方也能接着播。\n- 上滑下一集更顺：下一集提前准备好，滑过去直接接上，不再闪黑、不再先铺满再缩回。\n- 滑动切集时不再闪出暂停键和标题（极简模式同样）。\n- 折叠屏外屏：横竖屏切换不再从头播放，竖屏转横屏不再黑一下。",
+          "downloadURL": "https://github.com/81199000/GuoDuo/releases/download/v1.0.1/GuoDuo-1.0.1-unsigned.ipa",
+          "size": 5439351,
+          "minOSVersion": "18.4"
+        }
+      ]
+    },
+    {
       "name": "HermesEnabler",
       "bundleIdentifier": "com.example.HermesEnabler",
       "developerName": "pookjw",
@@ -1044,6 +1159,34 @@
       ]
     },
     {
+      "name": "i短剧",
+      "bundleIdentifier": "com.local.STV",
+      "developerName": "my-name-is-alan",
+      "subtitle": "免费开源的多源短剧/视频/漫画/Telegram 聚合播放器",
+      "localizedDescription": "i短剧是一款面向 iOS / iPadOS（16.0+）的跨端播放与阅读框架。App 本身不内置任何片源、书源、漫画源或频道，支持通过插件、TVBox 配置、本地小说与 Telegram 频道导入内容，提供视频播放、漫画阅读、小说听书等功能。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/01-home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/02-channels.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/04-detail.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/05-player.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/07-danmaku.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/08-plugins.webp"
+      ],
+      "tintColor": "#F05060",
+      "versions": [
+        {
+          "version": "1.6b41",
+          "buildVersion": "41",
+          "date": "2026-11-26T14:44:55Z",
+          "localizedDescription": "i短剧 iOS 1.6b41 (v1.6b41)\n\n包内版本为 1.6 build 41。IPA 未签名（最低 iOS 16），请自行重签侧载。\n\n请选择 Assets 中的 APK / IPA，不要下载 Source code。SHA-256 见附件。\n构建源码：2fe0b4969274cca1eccd8697af1a6f4fe82ddb4f\n自动构建：https://github.com/my-name-is-alan/iDuanJu/actions/runs/45838169992",
+          "downloadURL": "https://github.com/my-name-is-alan/iDuanJu/releases/download/v1.6b41/STV-1.6b41-unsigned.ipa",
+          "size": 54330260,
+          "minOSVersion": "16.0"
+        }
+      ]
+    },
+    {
       "name": "Kazumi",
       "bundleIdentifier": "com.example.kazumi",
       "developerName": "Predidit",
@@ -1166,6 +1309,31 @@
       ]
     },
     {
+      "name": "LiLite",
+      "bundleIdentifier": "com.liuliuya.PiliNative",
+      "developerName": "liuliuya2333",
+      "subtitle": "轻盈顺滑的第三方哔哩哔哩客户端",
+      "localizedDescription": "使用 SwiftUI / UIKit 从头编写的原生第三方哔哩哔哩客户端，支持 mpv / AVPlayer 双内核、弹幕、画中画与离线缓存，适配 iOS 26 Liquid Glass。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/play.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/profile.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/stream.webp"
+      ],
+      "tintColor": "#14C8F5",
+      "versions": [
+        {
+          "version": "1.0.41",
+          "date": "2026-11-27T10:11:57Z",
+          "localizedDescription": "**布局与搜索**\n\n- 恢复设置卡片和消息列表的左右留白，修复部分页面紧贴屏幕边缘的问题。\n- iPad 横屏启用侧边栏后，首页、动态和我的入口移到左下角的紧凑图标栏。修复宽屏列表点进视频时缩放过大或转场卡住的问题。\n- Duo 外屏横屏打开搜索时预留状态栏和输入框周围的空间，修复弹出键盘时页面可能卡住的问题。\n- 调整搜索转场中标签栏的收起时机，避免打开搜索、弹出键盘时反复布局。\n\n**播放**\n\n- 从详情页进入竖屏播放，再返回详情时，接续当前进度。保留切换时的播放或暂停状态，并按视频和分 P 交接进度。\n- iPad 横屏播放竖屏流时，首帧和正式画面按原比例完整显示，避免为了填满横屏裁掉画面。宽屏设备旋转进入竖屏流时也显示完整画面。\n- 修复 AVPlayer 播放部分视频时持续转圈或反复缓冲的问题。持续缓冲时可为当前视频切到较低清晰度，保留播放进度和默认清晰度设置。修复 AVPlayer 播放中切到后台或关闭视频时，未完成的加载请求可能导致闪退的问题。\n- 调整视频前台播放时的系统媒体控制，避免普通视频以音频的形式显示在灵动岛；后台播放和「听视频」继续使用各自的播放控制。\n- 「设置 → 详情与播放控制 → 详情页播放器按钮」可以选择显示截图按钮和「听视频」按钮。\n\n**推荐、消息与下载**\n\n- 推荐请求遇到 412 时显示明确提示，可重试或手动切换网页推荐。\n- 修复消息列表刷新时的闪动，以及删除或隐藏行后回到列表顶部失效的问题。\n- 恢复旧版本后台下载会话的兼容性。\n- 发布页附有 `LiLite-source.json`，可在 AltStore Classic 和 SideStore 中订阅轻哩更新。\n\n附件为未签名 IPA，需要自行签名安装。",
+          "downloadURL": "https://github.com/liuliuya2333/LiLite/releases/download/v1.0.41/LiLite-1.0.41-unsigned.ipa",
+          "size": 28856852,
+          "minOSVersion": "17.0"
+        }
+      ]
+    },
+    {
       "name": "LinuxRunner",
       "bundleIdentifier": "dev.linuxrunner.app",
       "developerName": "Leminos",
@@ -1205,10 +1373,10 @@
       "versions": [
         {
           "version": "3.8.14",
-          "date": "2026-11-20T15:07:22Z",
-          "localizedDescription": "**Commit:** [b0f53e8934df325970e9b6ff52932a43b585c424](https://github.com/LiveContainer/LiveContainer/commit/b0f53e8934df325970e9b6ff52932a43b585c424)\n**Message:** fix build\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/44759628484/attempts/1).",
+          "date": "2026-11-27T08:54:37Z",
+          "localizedDescription": "**Commit:** [f7965ef83fe281f008de180c2ac4a90f093451f9](https://github.com/LiveContainer/LiveContainer/commit/f7965ef83fe281f008de180c2ac4a90f093451f9)\n**Message:** Fix Launch App Intent open-url parameter handling\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/45969131746/attempts/1).",
           "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 23997201,
+          "size": 23997759,
           "minOSVersion": "15.0"
         }
       ]
@@ -1478,11 +1646,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "2.0.8",
-          "date": "2026-11-27T03:33:44Z",
-          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.8`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端流畅度、高刷滚动与页面秒开深度性能优化**：\n  - **Android 全面减负提速**：引入全局 Compose Compiler 稳定性配置（`compose_stability.conf`），让跨模块 DTO 与列表项全面支持智能跳过无效重组；移除主壳与详情页全屏嵌套 `hazeSource` 离屏纹理拷贝及逐像素动态模糊半径重建，将首页与影视详情页的视差、顶栏柔化罩全部下沉至纯绘制层执行，实现零整页重组丝滑滚动；一级主导航（发现、订阅、我的、更多）升级为常驻内存保活并扩展设置与插件中心会话缓存，切换页签与返回上级达到 0ms 瞬开；Coil 图片管线补齐 256MB 磁盘缓存、25% 内存缓存、缩略图按需降采样与代理图片持久化缓存策略。\n  - **iOS 与 HarmonyOS 渲染及并发优化**：iOS 海报与剧照缩略图在后台线程提前完成 `preparingForDisplay()` 位图解压并提升同源图片并发连接池上限，消除 120Hz ProMotion 滚动首帧解码卡顿；HarmonyOS 远程图片加载器新增有界并发队列与更大 LRU 容量，收敛发现页滚动状态更新阈值并为插件网格启用节点预缓存。\n- **全面接入后端全局图片缓存（`GLOBAL_IMAGE_CACHE`）与代理链路**：\n  - 三端登录后自动从 `/api/v1/system/global?token=moviepilot` 同步后端全局图片配置（含 `GLOBAL_IMAGE_CACHE`、`TMDB_IMAGE_DOMAIN`、`FANART_ENABLE` 等）；开启全局图片缓存时统一走后端 `/api/v1/system/cache/image?url=...` 缓存代理加载海报与剧照，未开启时优先公开源直连并在受限网络下自动回退 `/api/v1/system/img/1` 代理，行为与 Web 端完全一致。\n- **插件市场与已安装插件体验修复**：\n  - 三端插件市场与插件排序菜单补齐「最新发布」排序（对齐 Web 端 `add_time` 排序规则）。\n  - 修复插件市场安装/重新安装弹窗主操作按钮对比度不足、视觉上误显灰态不可点的问题。\n  - 已安装插件列表自动合并市场更新元数据，有新版本时直接展示醒目的「更新」按钮与可更新标识。\n- **音乐播放界面精简优化**：\n  - 移除三端全屏音乐播放界面右下角冗余的倍速胶囊按钮，播放倍速统一收纳于右上角 `…` 更多菜单中调节（并完善鸿蒙端菜单停止并关闭后台音频会话释放）。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.8` | `MoviePilot-2.0.8-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.8` | `MoviePilot-2.0.8-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.8` | `MoviePilot-2.0.8-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.8` | `MoviePilot-2.0.8-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[c590a8696f8d1e2810d35ee7518eab43e6e53893](https://github.com/jxxghp/MoviePilot-App/commit/c590a8696f8d1e2810d35ee7518eab43e6e53893)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.8/MoviePilot-2.0.8-ios-unsigned.ipa",
-          "size": 51640679,
+          "version": "2.0.9",
+          "date": "2026-11-27T09:10:04Z",
+          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.9`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端全面支持通行密钥（Passkey）无密码登录**：\n  - iOS / iPadOS、Android 与 HarmonyOS NEXT 统一接入 `moviepilot.passkey` v1 安全认证协议，自动探测服务端 `/api/v1/auth/providers` 启用状态并校验前端静态协议与安全来源。\n  - 支持免输账号密码一键唤起系统通行密钥面板（或按已输入用户名精确发起挑战），事务令牌严格驻留客户端内存，完成浏览器同源与挑战签名校验后自动激活会话并遵循「保持登录」偏好。\n- **三端登录界面视觉层级与按钮布局优化**：\n  - 重构主「登录」实心胶囊与「使用通行密钥登录」玻璃描边次级按钮的视觉主次关系，无需填写表单即可直接点击通行密钥登录；Android 与鸿蒙在短宽横屏下自动切换为左右双列并排按钮布局。\n  - 精简登录页冗余配置项，并在未触发网关拦截且未持有网关会话时将 `Cloudflare Access` 入口收敛为轻量胶囊按钮，消除多卡片堆叠感。\n- **修复外挂字幕显示但提示加载失败的问题**：\n  - 修复 Android 在媒体库详情等直链（`strm_direct` / `server_wan`）起播场景下未透传实例同源基准地址与鉴权头，导致外挂字幕请求缺失凭据触发加载失败的问题，并补齐 Cloudflare Access 同源网关头透传与跨源剥离。\n  - 三端新增反向代理与子路径部署下的 `/api/v1/...` 实例地址安全重绑能力，解决反代环境下后端生成 `http://` 字幕或歌词地址引发的协议失配；同步修正 iOS 省略 `server` 参数时的字幕地址校验规则。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.9` | `MoviePilot-2.0.9-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.9` | `MoviePilot-2.0.9-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.9` | `MoviePilot-2.0.9-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.9` | `MoviePilot-2.0.9-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[71897d764880cf79467c4856d2d9115015db651c](https://github.com/jxxghp/MoviePilot-App/commit/71897d764880cf79467c4856d2d9115015db651c)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.9/MoviePilot-2.0.9-ios-unsigned.ipa",
+          "size": 51682733,
           "minOSVersion": "17.0"
         }
       ]
@@ -1834,6 +2002,29 @@
           "downloadURL": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/PureLive-3.1.19-4108-ios-arm64-trollstore.ipa",
           "size": 66858114,
           "minOSVersion": "15.6"
+        }
+      ]
+    },
+    {
+      "name": "Reloc",
+      "bundleIdentifier": "dev.reloc.ios",
+      "developerName": "Reukix",
+      "subtitle": "面向 iPhone 的外设级定位模拟工具",
+      "localizedDescription": "通过本机回环连接系统的 com.apple.carkit.service 服务，以 iAP2 / MFi-v3 / NMEA 外设身份向系统下发实时坐标。需要外部代理提供指向 10.7.0.1 的本机回环，并先导入配对文件；仅支持 iPhone（iOS 17.0+）。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/location.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/pair.webp"
+      ],
+      "tintColor": "#FD7A65",
+      "versions": [
+        {
+          "version": "1.0.3",
+          "date": "2026-11-27T10:53:45Z",
+          "localizedDescription": "## Reloc v1.0.3\n\n### 更新\n- **全新模式**：重新实现定位方式，现在无需电脑、无需配对文件，也无需代理、VPN 或依赖 Wi-Fi，**蜂窝网络下同样可以直接使用**，安装后打开即用。\n\n### 新增功能\n- **海拔高度支持**：地图选点、地址搜索或输入坐标时会自动匹配对应地点的真实海拔；底部卡片与状态栏直接显示当前海拔，点击即可手动调整；搜索框支持直接输入 `纬度, 经度, 海拔`；开启自然微漂移时也会同步模拟细微海拔变化。\n- **英文与中文双语支持**：新增完整英文版本，默认跟随系统语言，并可在「设置 → 应用语言 / Language」中即时切换，地名解析也会随当前语言自动适配。\n\n### 优化与稳定性提升\n- **界面精简**：移除了设置页中多余的通道状态区域，操作更简洁。\n- **稳定性增强**：大幅优化运行过程中的连接与保活表现，修复异常频繁重连与后台容易中断的问题，支持中途掉线自动恢复；切换音频设备（如断开蓝牙耳机）时不再影响后台运行。\n\n### 致谢\n感谢 [**huami**](https://github.com/huami1314) 提供的思路。\n\n---\n\n### What's New\n- **New Mode**: Rebuilt for direct on-device use — no computer, pairing files, proxy, VPN, or Wi-Fi required. **Works over cellular data** as well; install and start right away.\n\n### New Features\n- **Elevation Support**: Automatically matches real terrain altitude when picking a point on the map, searching, or entering coordinates. Live altitude is shown in the location card and status bar and can be edited manually; the search bar also accepts `lat, lon, alt`; Micro-Jitter now includes subtle altitude variation.\n- **English & Simplified Chinese**: Added full English localization. Follows your system language by default and can be switched instantly in **Settings → Language**, with place names matching your chosen language.\n\n### Improvements & Stability\n- **Cleaner Settings**: Removed redundant channel status sections from Settings.\n- **Improved Reliability**: Improved connection and background keep-alive stability, fixed repeated reconnection loops, added automatic recovery on drop, and kept background sessions running across audio route changes (such as disconnecting Bluetooth headphones).\n\n### Acknowledgements\nThanks to [**huami**](https://github.com/huami1314) for the idea.",
+          "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.3/Reloc.ipa",
+          "size": 3483270,
+          "minOSVersion": "17.0"
         }
       ]
     },
@@ -2544,6 +2735,61 @@
   ],
   "news": [
     {
+      "appID": "dev.reloc.ios",
+      "title": "Reloc 1.0.3 · 27 Nov 2026",
+      "identifier": "Reloc-release-v1.0.3",
+      "caption": "Reloc 1.0.3 is available.",
+      "date": "2026-11-27T10:53:45Z",
+      "tintColor": "#FD7A65",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Reukix/Reloc/releases/tag/v1.0.3"
+    },
+    {
+      "appID": "com.liuliuya.PiliNative",
+      "title": "LiLite 1.0.41 · 27 Nov 2026",
+      "identifier": "LiLite-release-v1.0.41",
+      "caption": "LiLite 1.0.41 is available.",
+      "date": "2026-11-27T10:11:57Z",
+      "tintColor": "#14C8F5",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.41"
+    },
+    {
+      "appID": "org.moviepilot.app",
+      "title": "MoviePilot 2.0.9 · 27 Nov 2026",
+      "identifier": "MoviePilot-release-v2.0.9",
+      "caption": "MoviePilot 2.0.9 is available.",
+      "date": "2026-11-27T09:10:04Z",
+      "tintColor": "#8844F6",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.9"
+    },
+    {
+      "appID": "com.kdt.livecontainer",
+      "title": "LiveContainer+SideStore 3.8.14 · 27 Nov 2026",
+      "identifier": "LiveContainer+SideStore-release-nightly",
+      "caption": "LiveContainer+SideStore 3.8.14 is available.",
+      "date": "2026-11-27T08:54:37Z",
+      "tintColor": "#0784FC",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/nightly"
+    },
+    {
+      "appID": "dev.huichen.atlas",
+      "title": "Account Atlas 2.5 · 27 Nov 2026",
+      "identifier": "Account Atlas-release-v2.5",
+      "caption": "Account Atlas 2.5 is available.",
+      "date": "2026-11-27T07:11:04Z",
+      "tintColor": "#0A84FF",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Ckxkx/account-atlas/releases/tag/v2.5"
+    },
+    {
       "appID": "com.altman.moviepilot",
       "title": "MoviePilotLite 1.3.3 · 27 Nov 2026",
       "identifier": "MoviePilotLite-release-release-v1.3.3-2026-11-27",
@@ -2553,17 +2799,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilotLite/images/news.webp",
       "notify": true,
       "url": "https://github.com/singleton-altman/MoviePilotLite/releases/tag/release-v1.3.3-2026-11-27"
-    },
-    {
-      "appID": "org.moviepilot.app",
-      "title": "MoviePilot 2.0.8 · 27 Nov 2026",
-      "identifier": "MoviePilot-release-v2.0.8",
-      "caption": "MoviePilot 2.0.8 is available.",
-      "date": "2026-11-27T03:33:44Z",
-      "tintColor": "#8844F6",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.8"
     },
     {
       "appID": "app.anich",
@@ -2577,6 +2812,28 @@
       "url": "https://github.com/Sle2p/AniCh/releases/tag/1.5.28"
     },
     {
+      "appID": "me.rrmm.douduo",
+      "title": "DouDuo 1.7.5 · 26 Nov 2026",
+      "identifier": "DouDuo-release-v1.7.5",
+      "caption": "DouDuo 1.7.5 is available.",
+      "date": "2026-11-26T20:01:46Z",
+      "tintColor": "#FE2C55",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/DouDuo/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/81199000/DouDuo/releases/tag/v1.7.5"
+    },
+    {
+      "appID": "me.rrmm.hongguo",
+      "title": "GuoDuo 1.0.1 · 26 Nov 2026",
+      "identifier": "GuoDuo-release-v1.0.1",
+      "caption": "GuoDuo 1.0.1 is available.",
+      "date": "2026-11-26T16:49:45Z",
+      "tintColor": "#EE3B45",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/81199000/GuoDuo/releases/tag/v1.0.1"
+    },
+    {
       "appID": "com.suversal.wrappin",
       "title": "WrapPin 1.0.27 · 26 Nov 2026",
       "identifier": "WrapPin-release-v1.0.27",
@@ -2586,6 +2843,17 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WrapPin/images/news.webp",
       "notify": true,
       "url": "https://github.com/suversal/WrapPin/releases/tag/v1.0.27"
+    },
+    {
+      "appID": "com.local.STV",
+      "title": "i短剧 1.6b41 · 26 Nov 2026",
+      "identifier": "i短剧-release-v1.6b41",
+      "caption": "i短剧 1.6b41 is available.",
+      "date": "2026-11-26T14:44:55Z",
+      "tintColor": "#F05060",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/iDuanJu/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/my-name-is-alan/iDuanJu/releases/tag/v1.6b41"
     },
     {
       "appID": "cz.kolbi.wqfiles",
@@ -2786,6 +3054,28 @@
       "url": "https://github.com/owngoal-dev/iGhostVT/releases/tag/v1.6.41"
     },
     {
+      "appID": "com.coolapk.desktop",
+      "title": "CoolapkDesktop 1.48.0 · 24 Nov 2026",
+      "identifier": "CoolapkDesktop-release-v1.48.0",
+      "caption": "CoolapkDesktop 1.48.0 is available.",
+      "date": "2026-11-24T03:05:28Z",
+      "tintColor": "#24C8DB",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/CoolapkDesktop/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/coolapk-desktop/coolapk-desktop/releases/tag/v1.48.0"
+    },
+    {
+      "appID": "com.rayc.cilicili",
+      "title": "cilicili 1.1.8 · 23 Nov 2026",
+      "identifier": "cilicili-release-v1.1.8",
+      "caption": "cilicili 1.1.8 is available.",
+      "date": "2026-11-23T17:50:55Z",
+      "tintColor": "#F06090",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/cilicili/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Rone89/cilicili/releases/tag/v1.1.8"
+    },
+    {
       "appID": "app.local.iPadn",
       "title": "iPadn 2.3.5 · 23 Nov 2026",
       "identifier": "iPadn-release-v2.3.5",
@@ -2916,17 +3206,6 @@
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Mangayomi/images/news.webp",
       "notify": true,
       "url": "https://github.com/kodjodevf/mangayomi/releases/tag/v0.9.97"
-    },
-    {
-      "appID": "com.kdt.livecontainer",
-      "title": "LiveContainer+SideStore 3.8.14 · 20 Nov 2026",
-      "identifier": "LiveContainer+SideStore-release-nightly",
-      "caption": "LiveContainer+SideStore 3.8.14 is available.",
-      "date": "2026-11-20T15:07:22Z",
-      "tintColor": "#0784FC",
-      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/master/apps/LiveContainer+SideStore/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/LiveContainer/LiveContainer/releases/tag/nightly"
     },
     {
       "appID": "com.yoroin.globalrefresh",

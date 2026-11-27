@@ -1,0 +1,45 @@
+{
+  "name": "Account Atlas",
+  "subtitle": "Account Atlas AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Account Atlas",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/icon.webp",
+  "website": "https://github.com/Ckxkx/account-atlas",
+  "tintColor": "#0A84FF",
+  "apps": [
+    {
+      "name": "Account Atlas",
+      "bundleIdentifier": "dev.huichen.atlas",
+      "developerName": "Ckxkx",
+      "subtitle": "记录邮箱和手机号绑定的各类账号",
+      "localizedDescription": "记录每个邮箱、手机号注册或绑定了哪些网站和 App。支持卡包视图、关系图、隐私打码与可选的端到端加密同步，数据默认仅保存在本地。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/images/wallet.webp"
+      ],
+      "tintColor": "#0A84FF",
+      "versions": [
+        {
+          "version": "2.5",
+          "date": "2026-11-27T07:11:04Z",
+          "localizedDescription": "## 更新内容\n\n- version.json：2.5 更新说明\n- 编辑 App：更换图标菜单加入「从 App Store 搜索」（iOS / 安卓 / 网页）。打开即用当前名称搜索，改名后防抖再搜；点结果立刻显示图标，并按添加流程下载、缩成 128px 保存；取消不改动；没有结果显示「没有找到」，断网显示「网络不可用」；图标下载中暂不能保存，下载失败保留原图标\n- 安卓：弹出页上滑时不画阴影（整屏圆角层的 20dp 阴影每帧重算），停稳后随玻璃一起淡入\n- iOS：切回「全部 App」时分类标签仍会闪成灰白块（录屏确认是页面已显示后玻璃重新生成），未选中标签改用平面玻璃底色、不再用实时 glassEffect；同时恢复 fad995e（关系图页切换主题用定格位图，之前误以为是它导致闪烁而撤回）\n- 安卓：弹出页上滑一直有点卡（液态玻璃之前就有）。加入 profileinstaller，安装时就装好 Compose / Material3 自带的 baseline profile；蓝奏云侧载的 APK 拿不到 Play 的云端配置，之前 Compose 长期以解释 / JIT 运行\n- 安卓：弹出页上滑卡顿（滑动时每帧都对整屏背景重新模糊 + 透镜着色器）。弹出页移动 / 拖动时先用不透明底色，停稳后 0.22 秒淡入液态玻璃；标签栏不变\n- 撤回 fad995e：drawHierarchy 画不出液态玻璃，定格图和屏幕不一致，切换主题时反而闪烁；恢复 snapshotView\n- iOS：关系图页切换白天 / 夜间会闪一下直接变黑（snapshotView 是实时镜像，不是定格画面），改为 drawHierarchy 渲染一张定格位图再做圆形展开\n- iOS 分类管理：拖动排序后点分类改名会卡住（列表常驻编辑模式 + 行内按钮弹文本框 alert）。改为右上角「排序 / 完成」切换排序模式，平时点分类改名、左滑删除；改名 / 添加用小弹页，输入框自动聚焦，名字不行就在原地提示\n- 自定义分类：默认加入「生活」（美团 / 饿了么 / 大众点评归入）；设置 › 分类管理 可添加、改名（用到它的 App 一起改）、删除（App 移到「其他」）、拖动排序，「其他」固定在最后；分类表存在同步数据里（categories + categoriesAt，同步取最近改过的一方，账号用到但表里没有的分类补在末尾）；编辑 App 的分类选择里加「编辑分类…」；全部 App 分组、筛选、添加 App 分组、分享图都按这个顺序；备份 / 恢复点 / 导入带上分类；App Store 的 Lifestyle / 美食佳饮 归入生活（仅在没有更具体的分类时）\n- WebDAV：首次开启坚果云报「找不到这个目录」（坚果云对还没建的 AccountAtlas 文件夹返回 409 而不是 404，读取时 409 也按「还没有文件」处理，随后自动建目录）\n- WebDAV 支持任意服务器：不再预填坚果云地址，改为一排预设（坚果云 / 群晖 NAS / Nextcloud / AList / InfiniCLOUD / Koofr / pCloud / 自定义），点了只填服务器地址；模板地址点后聚焦让用户改主机，没改完会提示；401 等错误不再默认说坚果云；局域网 NAS 可用 http（iOS 仅加 NSAllowsLocalNetworking，安卓仅允许 IP / .local / 单段主机名走 http，外网提示用 https）\n- WebDAV 同步（iOS / 安卓）：同步方式可选 GitHub Gist / Gitee / WebDAV（默认坚果云 dav.jianguoyun.com/dav/，需第三方应用密码）；文件存于 <服务器>/AccountAtlas/atlas.enc.json，与 Gist 同一加密格式和合并逻辑，ETag + If-Match 防覆盖；网页版仍只支持 Gist（坚果云无 CORS），加一行说明\n- iOS：关系图右侧 App 小块偶尔点了没反应 / 延迟（空白处取消聚焦改为底层图层，不再和节点按钮抢手势）；读数据时去掉重复 id，防止列表因重复 id 闪退\n- iOS：从关系图切回「全部 App」时分类标签闪白（iOS 26 液态玻璃不能在半透明父视图里绘制，切页改为只滑入不淡入；标签玻璃合并为一组）\n- 安卓：Liquid Glass 液态玻璃（底部标签栏、弹出页、对话框）\n\n## 下载\n\n- **Atlas.apk**：安卓（Android 8.0+），直接安装；覆盖安装，数据保留。\n- **Atlas.ipa**：iPhone（iOS 17+），未签名，用 SideStore / 爱思助手 / Sideloadly / 全能签自签后安装。\n- 网页版：https://huichen.dev/account-atlas/\n\n完整改动：https://github.com/Ckxkx/account-atlas/compare/v2.4...v2.5",
+          "downloadURL": "https://gh-proxy.com/https://github.com/Ckxkx/account-atlas/releases/download/v2.5/Atlas.ipa",
+          "size": 4468980,
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "dev.huichen.atlas",
+      "title": "Account Atlas 2.5 · 27 Nov 2026",
+      "identifier": "Account Atlas-release-v2.5",
+      "caption": "Account Atlas 2.5 is available.",
+      "date": "2026-11-27T07:11:04Z",
+      "tintColor": "#0A84FF",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AccountAtlas/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Ckxkx/account-atlas/releases/tag/v2.5"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "GuoDuo",
+  "subtitle": "GuoDuo AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for GuoDuo",
+  "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/icon.webp",
+  "website": "https://github.com/81199000/GuoDuo",
+  "tintColor": "#EE3B45",
+  "apps": [
+    {
+      "name": "GuoDuo",
+      "bundleIdentifier": "me.rrmm.hongguo",
+      "developerName": "81199000",
+      "subtitle": "原生 SwiftUI 红果短剧客户端，适配折叠屏与 iPad",
+      "localizedDescription": "GuoDuo：开源免费的红果短剧客户端（非官方），原生 SwiftUI，适配 iPhone Duo 折叠屏、iPad 与普通 iPhone。安装包为未签名 IPA，需要用自己的证书签名。仅供个人学习交流。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/home.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/play.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/search.webp"
+      ],
+      "tintColor": "#EE3B45",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "date": "2026-11-26T16:49:45Z",
+          "localizedDescription": "# GuoDuo 1.0.1\n\n## 修复\n- 修复每部剧只显示前 3 集的问题：红果官网收紧了分集列表，现在改从红果 App 接口取完整分集，所有集数都能看到、都能播。\n\n## 播放\n- 边下边播：点开一集，文件头一到就开始播，不用等整集下完；往后拖到还没下到的地方也能接着播。\n- 上滑下一集更顺：下一集提前准备好，滑过去直接接上，不再闪黑、不再先铺满再缩回。\n- 滑动切集时不再闪出暂停键和标题（极简模式同样）。\n- 折叠屏外屏：横竖屏切换不再从头播放，竖屏转横屏不再黑一下。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/81199000/GuoDuo/releases/download/v1.0.1/GuoDuo-1.0.1-unsigned.ipa",
+          "size": 5439351,
+          "minOSVersion": "18.4"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "me.rrmm.hongguo",
+      "title": "GuoDuo 1.0.1 · 26 Nov 2026",
+      "identifier": "GuoDuo-release-v1.0.1",
+      "caption": "GuoDuo 1.0.1 is available.",
+      "date": "2026-11-26T16:49:45Z",
+      "tintColor": "#EE3B45",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/81199000/GuoDuo/releases/tag/v1.0.1"
+    }
+  ]
+}

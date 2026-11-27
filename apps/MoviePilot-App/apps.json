@@ -21,11 +21,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "2.0.8",
-          "date": "2026-11-27T03:33:44Z",
-          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.8`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端流畅度、高刷滚动与页面秒开深度性能优化**：\n  - **Android 全面减负提速**：引入全局 Compose Compiler 稳定性配置（`compose_stability.conf`），让跨模块 DTO 与列表项全面支持智能跳过无效重组；移除主壳与详情页全屏嵌套 `hazeSource` 离屏纹理拷贝及逐像素动态模糊半径重建，将首页与影视详情页的视差、顶栏柔化罩全部下沉至纯绘制层执行，实现零整页重组丝滑滚动；一级主导航（发现、订阅、我的、更多）升级为常驻内存保活并扩展设置与插件中心会话缓存，切换页签与返回上级达到 0ms 瞬开；Coil 图片管线补齐 256MB 磁盘缓存、25% 内存缓存、缩略图按需降采样与代理图片持久化缓存策略。\n  - **iOS 与 HarmonyOS 渲染及并发优化**：iOS 海报与剧照缩略图在后台线程提前完成 `preparingForDisplay()` 位图解压并提升同源图片并发连接池上限，消除 120Hz ProMotion 滚动首帧解码卡顿；HarmonyOS 远程图片加载器新增有界并发队列与更大 LRU 容量，收敛发现页滚动状态更新阈值并为插件网格启用节点预缓存。\n- **全面接入后端全局图片缓存（`GLOBAL_IMAGE_CACHE`）与代理链路**：\n  - 三端登录后自动从 `/api/v1/system/global?token=moviepilot` 同步后端全局图片配置（含 `GLOBAL_IMAGE_CACHE`、`TMDB_IMAGE_DOMAIN`、`FANART_ENABLE` 等）；开启全局图片缓存时统一走后端 `/api/v1/system/cache/image?url=...` 缓存代理加载海报与剧照，未开启时优先公开源直连并在受限网络下自动回退 `/api/v1/system/img/1` 代理，行为与 Web 端完全一致。\n- **插件市场与已安装插件体验修复**：\n  - 三端插件市场与插件排序菜单补齐「最新发布」排序（对齐 Web 端 `add_time` 排序规则）。\n  - 修复插件市场安装/重新安装弹窗主操作按钮对比度不足、视觉上误显灰态不可点的问题。\n  - 已安装插件列表自动合并市场更新元数据，有新版本时直接展示醒目的「更新」按钮与可更新标识。\n- **音乐播放界面精简优化**：\n  - 移除三端全屏音乐播放界面右下角冗余的倍速胶囊按钮，播放倍速统一收纳于右上角 `…` 更多菜单中调节（并完善鸿蒙端菜单停止并关闭后台音频会话释放）。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.8` | `MoviePilot-2.0.8-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.8` | `MoviePilot-2.0.8-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.8` | `MoviePilot-2.0.8-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.8` | `MoviePilot-2.0.8-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[c590a8696f8d1e2810d35ee7518eab43e6e53893](https://github.com/jxxghp/MoviePilot-App/commit/c590a8696f8d1e2810d35ee7518eab43e6e53893)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.8/MoviePilot-2.0.8-ios-unsigned.ipa",
-          "size": 51640679,
+          "version": "2.0.9",
+          "date": "2026-11-27T09:10:04Z",
+          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.9`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端全面支持通行密钥（Passkey）无密码登录**：\n  - iOS / iPadOS、Android 与 HarmonyOS NEXT 统一接入 `moviepilot.passkey` v1 安全认证协议，自动探测服务端 `/api/v1/auth/providers` 启用状态并校验前端静态协议与安全来源。\n  - 支持免输账号密码一键唤起系统通行密钥面板（或按已输入用户名精确发起挑战），事务令牌严格驻留客户端内存，完成浏览器同源与挑战签名校验后自动激活会话并遵循「保持登录」偏好。\n- **三端登录界面视觉层级与按钮布局优化**：\n  - 重构主「登录」实心胶囊与「使用通行密钥登录」玻璃描边次级按钮的视觉主次关系，无需填写表单即可直接点击通行密钥登录；Android 与鸿蒙在短宽横屏下自动切换为左右双列并排按钮布局。\n  - 精简登录页冗余配置项，并在未触发网关拦截且未持有网关会话时将 `Cloudflare Access` 入口收敛为轻量胶囊按钮，消除多卡片堆叠感。\n- **修复外挂字幕显示但提示加载失败的问题**：\n  - 修复 Android 在媒体库详情等直链（`strm_direct` / `server_wan`）起播场景下未透传实例同源基准地址与鉴权头，导致外挂字幕请求缺失凭据触发加载失败的问题，并补齐 Cloudflare Access 同源网关头透传与跨源剥离。\n  - 三端新增反向代理与子路径部署下的 `/api/v1/...` 实例地址安全重绑能力，解决反代环境下后端生成 `http://` 字幕或歌词地址引发的协议失配；同步修正 iOS 省略 `server` 参数时的字幕地址校验规则。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.9` | `MoviePilot-2.0.9-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.9` | `MoviePilot-2.0.9-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.9` | `MoviePilot-2.0.9-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.9` | `MoviePilot-2.0.9-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[71897d764880cf79467c4856d2d9115015db651c](https://github.com/jxxghp/MoviePilot-App/commit/71897d764880cf79467c4856d2d9115015db651c)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.9/MoviePilot-2.0.9-ios-unsigned.ipa",
+          "size": 51682733,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 2.0.8 · 27 Nov 2026",
-      "identifier": "MoviePilot-release-v2.0.8",
-      "caption": "MoviePilot 2.0.8 is available.",
-      "date": "2026-11-27T03:33:44Z",
+      "title": "MoviePilot 2.0.9 · 27 Nov 2026",
+      "identifier": "MoviePilot-release-v2.0.9",
+      "caption": "MoviePilot 2.0.9 is available.",
+      "date": "2026-11-27T09:10:04Z",
       "tintColor": "#8844F6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
       "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.8"
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.9"
     }
   ]
 }
