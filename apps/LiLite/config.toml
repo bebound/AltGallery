@@ -1,0 +1,43 @@
+# altgen config for the LiLite AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "liuliuya2333/LiLite"
+
+[source]
+name = "LiLite"
+subtitle = "LiLite AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for LiLite"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/icon.webp"
+website = "https://github.com/liuliuya2333/LiLite"
+tint_color = "#14C8F5"
+
+[app]
+name = "LiLite"
+bundle_identifier = "com.liuliuya.PiliNative"
+developer_name = "liuliuya2333"
+subtitle = "轻盈顺滑的第三方哔哩哔哩客户端"
+description = "使用 SwiftUI / UIKit 从头编写的原生第三方哔哩哔哩客户端，支持 mpv / AVPlayer 双内核、弹幕、画中画与离线缓存，适配 iOS 26 Liquid Glass。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/play.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/profile.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/stream.webp",
+]
+tint_color = "#14C8F5"
+min_os_version = "17.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): each release ships one unsigned ipa
+asset_pattern = "LiLite-.*-unsigned\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp"
+
+[output]
+path = "apps.json"

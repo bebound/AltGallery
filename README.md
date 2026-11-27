@@ -190,6 +190,9 @@ Torrent client for iOS.
 ### <img src="apps/Kumone/icon.webp" alt="Kumone icon" width="24" align="top"> <a href="https://github.com/missuo/kumone">Kumone</a>
 原生 NetEase Cloud Music iOS 客户端（雲の音），直连网易云音乐真实 API，支持灰色歌曲解锁与歌词。
 
+### <img src="apps/LiLite/icon.webp" alt="LiLite icon" width="24" align="top"> <a href="https://github.com/liuliuya2333/LiLite">LiLite</a>
+轻盈顺滑的第三方哔哩哔哩客户端 — SwiftUI / UIKit 原生编写，支持 mpv / AVPlayer 双内核、弹幕与离线缓存。
+
 ### <img src="apps/LightNovelShelf/icon.webp" alt="LightNovelShelf icon" width="24" align="top"> <a href="https://github.com/LightNovelShelf/Flutter">LightNovelShelf</a>
 轻书架官方 Flutter 客户端，支持书架管理、在线阅读与翻页动画。
 
