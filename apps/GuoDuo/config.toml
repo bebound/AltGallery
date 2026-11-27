@@ -1,0 +1,43 @@
+# altgen config for the GuoDuo AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "81199000/GuoDuo"
+
+[source]
+name = "GuoDuo"
+subtitle = "GuoDuo AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for GuoDuo"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/icon.webp"
+website = "https://github.com/81199000/GuoDuo"
+tint_color = "#EE3B45"
+
+[app]
+name = "GuoDuo"
+bundle_identifier = "me.rrmm.hongguo"
+developer_name = "81199000"
+subtitle = "原生 SwiftUI 红果短剧客户端，适配折叠屏与 iPad"
+description = "GuoDuo：开源免费的红果短剧客户端（非官方），原生 SwiftUI，适配 iPhone Duo 折叠屏、iPad 与普通 iPhone。安装包为未签名 IPA，需要用自己的证书签名。仅供个人学习交流。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/play.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/search.webp",
+]
+tint_color = "#EE3B45"
+min_os_version = "18.4"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+# Each release ships a single GuoDuo-<version>-unsigned.ipa.
+asset_pattern = ".*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/GuoDuo/images/news.webp"
+
+[output]
+path = "apps.json"

@@ -160,6 +160,9 @@ iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱——基于 worse_que
 ### <img src="apps/GlobalRefresh/icon.webp" alt="GlobalRefresh icon" width="24" align="top"> <a href="https://github.com/Yoroin/GlobalRefresh-PiP">GlobalRefresh</a>
 基于 iOS 画中画的悬浮窗高刷辅助工具——后台保活与完全隐藏，适配 iOS 15–27。
 
+### <img src="apps/GuoDuo/icon.webp" alt="GuoDuo icon" width="24" align="top"> <a href="https://github.com/81199000/GuoDuo">GuoDuo</a>
+原生 SwiftUI 红果短剧客户端，适配折叠屏与 iPad — 开源免费，支持 iOS 18.4 及以上，安装包为未签名 IPA。
+
 ### <img src="apps/HermesEnabler/icon.webp" alt="HermesEnabler icon" width="24" align="top"> <a href="https://github.com/pookjw/HermesEnabler">HermesEnabler</a>
 在任意 Apple Watch 上启用 Hermès 表盘——另含 Ultra 表盘以及手表端显示、传感器与 Siri 调整。需要 watchOS 27.0–27.3 beta 1。
 

@@ -160,6 +160,9 @@ Open terminals on your other iGhostVT devices — pair with a six-digit code ove
 ### <img src="apps/GlobalRefresh/icon.webp" alt="GlobalRefresh icon" width="24" align="top"> <a href="https://github.com/Yoroin/GlobalRefresh-PiP">GlobalRefresh</a>
 基于 iOS 画中画的悬浮窗高刷辅助工具——后台保活与完全隐藏，适配 iOS 15–27。
 
+### <img src="apps/GuoDuo/icon.webp" alt="GuoDuo icon" width="24" align="top"> <a href="https://github.com/81199000/GuoDuo">GuoDuo</a>
+原生 SwiftUI 红果短剧客户端，适配折叠屏与 iPad — 开源免费，支持 iOS 18.4 及以上，安装包为未签名 IPA。
+
 ### <img src="apps/HermesEnabler/icon.webp" alt="HermesEnabler icon" width="24" align="top"> <a href="https://github.com/pookjw/HermesEnabler">HermesEnabler</a>
 Enable Hermès Watch Faces on any Apple Watch — plus Ultra faces and on-watch display, sensor and Siri tweaks. Needs watchOS 27.0–27.3 beta 1.
 
