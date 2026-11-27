@@ -387,7 +387,13 @@ for col, n in Counter(im.get_flattened_data()).most_common(8):
     print('#%02X%02X%02X' % col, n)"
 ```
 
-Branch once:
+**Those two snippets are the whole toolkit** — `extract_icon_color()` and
+this one histogram. Do not write more Pillow code around them: no crops at
+guessed coordinates, no bounding-box search for "the accent colour", no
+`colorsys` hue bucketing, no second histogram at another size. Each of those
+re-reads the same icon and prints the same colours back.
+
+Branch once, on the colours already printed:
 
 - **One saturated colour next to black/white** — that colour is the brand
   tint. Pin it, move on.
@@ -397,15 +403,22 @@ Branch once:
   `bg_dark` a light grey ramp, `tagline_color` a mid grey. `apps/Iridium/`,
   `apps/iPadn/` and `apps/Orca/` are the worked examples, each with a comment
   saying why it is pinned.
-- **Two saturated colours** — genuinely ambiguous, the one case worth asking
-  the user about.
+- **Several different hues — two saturated colours, or an illustration with a
+  handful of them** — genuinely ambiguous, the one case worth asking the user
+  about. Ask right away, offering the colours from the histogram already in
+  hand and what each comes from; do not go looking for the "real" accent
+  colour in the artwork first. A pixel-art or mascot icon is pastel by
+  nature, so its most common colour is usually the background, not a brand
+  colour — the user picks.
 
-⚠️ **A monochrome mark means the project has no brand colour — do not go
-looking for one.** Searching the upstream website, the desktop `main.css`,
-`mobile-theme.ts`, the logo SVG or the app's asset catalog after the
-histogram already said "greys only" cannot change the answer; it only defers
-a decision the histogram has made. Orca's black-on-white icon cost 28 shell
-calls of exactly this search and still ended on a pinned neutral grey.
+⚠️ **Do not look for a colour the icon does not have.** Searching the
+upstream website, the desktop `main.css`, `mobile-theme.ts`, the logo SVG or
+the app's asset catalog after the histogram already answered cannot change
+the answer; it only defers a decision the histogram has made. Orca's
+black-on-white icon cost 28 shell calls of exactly this search and still
+ended on a pinned neutral grey. Reloc's pastel pixel-art icon then cost a
+round of custom hue bucketing and hand-estimated crops, all of which
+re-printed the same blues and creams the first histogram had already shown.
 
 ### Icon format
 

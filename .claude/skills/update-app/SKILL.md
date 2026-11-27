@@ -223,6 +223,9 @@ which app was meant.
    a neutral grey scale instead of hunting the new project's site, CSS tokens
    or theme source for a colour it does not have (AGENTS.md → [Deciding the
    tint](../../../AGENTS.md#deciding-the-tint--one-histogram-then-stop)).
+   When it shows several hues — two saturated colours, or a pastel/illustration
+   icon — ask the user with the colours already printed rather than writing
+   more sampling code; the two snippets in AGENTS.md are the whole toolkit.
 
    Print the effective palette for the (new or unchanged) icon — run this
    block as-is; it stays at column 0 so the heredoc delimiter works:

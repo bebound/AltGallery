@@ -306,14 +306,21 @@ change between apps.
    ⚠️ **This is a one-decision step, not a research task.** Run the sampler,
    then the histogram at AGENTS.md → [Deciding the
    tint](../../../AGENTS.md#deciding-the-tint--one-histogram-then-stop), and
-   branch:
+   branch. **Those two snippets are the whole toolkit** — do not write further
+   Pillow code around them (crops at guessed coordinates, a bounding-box hunt
+   for the accent colour, `colorsys` hue bucketing, another histogram at a
+   different size); they read the same icon and print the same colours:
 
    - one saturated colour beside black/white → that is the tint;
    - **greys only → the icon is monochrome and the project has no brand
      colour**: pin a neutral grey scale in `news.toml` (step 6) and move on.
      Do **not** go looking for one in the project's site, CSS tokens, theme
      source, logo SVG or asset catalog — the histogram has already answered;
-   - two saturated colours → ask the user.
+   - **several hues — two saturated colours, or a pastel/illustration or
+     mascot icon** → ask the user right away, offering the histogram's
+     colours and what each comes from ("the background", "the map pin"). A
+     pastel icon's most common colour is usually its background, not a brand
+     colour, so the pick is the user's, not another sampling pass.
 
    Worked examples: `apps/Iridium/`, `apps/iPadn/`, `apps/Orca/`.
 
