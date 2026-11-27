@@ -2019,11 +2019,11 @@
       "tintColor": "#FD7A65",
       "versions": [
         {
-          "version": "1.0.3",
-          "date": "2026-11-27T10:53:45Z",
-          "localizedDescription": "## Reloc v1.0.3\n\n### 更新\n- **全新模式**：重新实现定位方式，现在无需电脑、无需配对文件，也无需代理、VPN 或依赖 Wi-Fi，**蜂窝网络下同样可以直接使用**，安装后打开即用。\n\n### 新增功能\n- **海拔高度支持**：地图选点、地址搜索或输入坐标时会自动匹配对应地点的真实海拔；底部卡片与状态栏直接显示当前海拔，点击即可手动调整；搜索框支持直接输入 `纬度, 经度, 海拔`；开启自然微漂移时也会同步模拟细微海拔变化。\n- **英文与中文双语支持**：新增完整英文版本，默认跟随系统语言，并可在「设置 → 应用语言 / Language」中即时切换，地名解析也会随当前语言自动适配。\n\n### 优化与稳定性提升\n- **界面精简**：移除了设置页中多余的通道状态区域，操作更简洁。\n- **稳定性增强**：大幅优化运行过程中的连接与保活表现，修复异常频繁重连与后台容易中断的问题，支持中途掉线自动恢复；切换音频设备（如断开蓝牙耳机）时不再影响后台运行。\n\n### 致谢\n感谢 [**huami**](https://github.com/huami1314) 提供的思路。\n\n---\n\n### What's New\n- **New Mode**: Rebuilt for direct on-device use — no computer, pairing files, proxy, VPN, or Wi-Fi required. **Works over cellular data** as well; install and start right away.\n\n### New Features\n- **Elevation Support**: Automatically matches real terrain altitude when picking a point on the map, searching, or entering coordinates. Live altitude is shown in the location card and status bar and can be edited manually; the search bar also accepts `lat, lon, alt`; Micro-Jitter now includes subtle altitude variation.\n- **English & Simplified Chinese**: Added full English localization. Follows your system language by default and can be switched instantly in **Settings → Language**, with place names matching your chosen language.\n\n### Improvements & Stability\n- **Cleaner Settings**: Removed redundant channel status sections from Settings.\n- **Improved Reliability**: Improved connection and background keep-alive stability, fixed repeated reconnection loops, added automatic recovery on drop, and kept background sessions running across audio route changes (such as disconnecting Bluetooth headphones).\n\n### Acknowledgements\nThanks to [**huami**](https://github.com/huami1314) for the idea.",
-          "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.3/Reloc.ipa",
-          "size": 3483270,
+          "version": "1.0.4",
+          "date": "2026-11-27T11:22:31Z",
+          "localizedDescription": "## Reloc v1.0.4\n\n### 更新\n- **正式支持 iPad**：移除原有的仅限 iPhone 限制，现已支持 iPad（iPadOS 17.0+）直接使用，真机实测正常。\n\n---\n\n### What's New\n- **iPad Support**: Removed the iPhone-only restriction — Reloc now supports iPad (iPadOS 17.0+) and has been verified on real iPad hardware.",
+          "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.4/Reloc.ipa",
+          "size": 3475407,
           "minOSVersion": "17.0"
         }
       ]
@@ -2736,14 +2736,14 @@
   "news": [
     {
       "appID": "dev.reloc.ios",
-      "title": "Reloc 1.0.3 · 27 Nov 2026",
-      "identifier": "Reloc-release-v1.0.3",
-      "caption": "Reloc 1.0.3 is available.",
-      "date": "2026-11-27T10:53:45Z",
+      "title": "Reloc 1.0.4 · 27 Nov 2026",
+      "identifier": "Reloc-release-v1.0.4",
+      "caption": "Reloc 1.0.4 is available.",
+      "date": "2026-11-27T11:22:31Z",
       "tintColor": "#FD7A65",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/news.webp",
       "notify": true,
-      "url": "https://github.com/Reukix/Reloc/releases/tag/v1.0.3"
+      "url": "https://github.com/Reukix/Reloc/releases/tag/v1.0.4"
     },
     {
       "appID": "com.liuliuya.PiliNative",
