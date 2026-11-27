@@ -1,0 +1,20 @@
+# render_news.py config: uv run tools/render_news.py --out apps/Camlo
+# Colors left unset are auto-derived: tint from config.toml, background as
+# a light shade of the icon's dominant color.
+
+name = "Camlo"
+# Explicit break: keep "滑动解锁变身" on its own line.
+tagline = "滑动解锁变身\n动态锁屏壁纸工坊"
+
+# Color notes — each key below controls one element of the image. All are
+# optional: unset keys are auto-derived. Shown values are the current result.
+# Pinned: the icon's dominant color is its peach/pink wallpaper, which tints
+# the whole promo peach — these keep it on the app's purple brand color.
+[colors]
+tint = "#6B4EFF"            # NEW UPDATE badge + top-left glow (default: [app] tint_color)
+tint_alt = "#E8A0C0"        # bottom-right glow (default: [source] tint_color)
+background = "#EDE7FB"      # gradient base (derived from the icon's dominant color)
+bg_mid = "#F5F0FC"          # gradient mid stop (derived from background)
+bg_dark = "#CDBEEA"         # gradient end stop (derived from background)
+text_color = "#111111"      # app name (auto white/black)
+tagline_color = "#5B3FD1"   # tagline text (derived from background)

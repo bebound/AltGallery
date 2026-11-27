@@ -94,6 +94,9 @@ Open-source YouTube Music client for iPhone and iPad — a SwiftUI port of BitCh
 ### <img src="apps/Breeze/icon.webp" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
 使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
+### <img src="apps/Camlo/icon.webp" alt="Camlo icon" width="24" align="top"> <a href="https://github.com/Kianuni/Camlo">Camlo</a>
+开幕 · 零门槛「滑动解锁变身 + 动态锁屏」壁纸工坊 — 内置 76 套官方云端壁纸，免电脑、免越狱一键直写 iOS 26 / 27 锁屏。
+
 ### <img src="apps/Chance/icon.webp" alt="Chance icon" width="24" align="top"> <a href="https://github.com/moffatman/chan">Chance</a>
 Imageboard browser for iOS and Android — a Flutter client with multi-column layout, media gallery, saved threads, filters, and archive support.
 

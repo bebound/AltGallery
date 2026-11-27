@@ -94,6 +94,9 @@ iPhone 与 iPad 上的 Windows 游戏——由 Wine、FEX 与 Metal 驱动、内
 ### <img src="apps/Breeze/icon.webp" alt="Breeze icon" width="24" align="top"> <a href="https://github.com/breeze-project-org/Breeze">Breeze</a>
 使用 Flutter 开发的插件化漫画阅读器——插件列表已收录 MangaDex、拷贝漫画、漫画柜等数十个图源，并支持本地与云收藏。
 
+### <img src="apps/Camlo/icon.webp" alt="Camlo icon" width="24" align="top"> <a href="https://github.com/Kianuni/Camlo">Camlo</a>
+开幕 · 零门槛「滑动解锁变身 + 动态锁屏」壁纸工坊 — 内置 76 套官方云端壁纸，免电脑、免越狱一键直写 iOS 26 / 27 锁屏。
+
 ### <img src="apps/Chance/icon.webp" alt="Chance icon" width="24" align="top"> <a href="https://github.com/moffatman/chan">Chance</a>
 适用于 iOS 与 Android 的匿名版浏览器——基于 Flutter 的客户端，支持多栏布局、媒体画廊、收藏串帖、过滤器与归档支持。
 

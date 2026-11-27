@@ -1,0 +1,45 @@
+# altgen config for the Camlo AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Kianuni/Camlo"
+
+[source]
+name = "Camlo"
+subtitle = "Camlo AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Camlo"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/icon.webp"
+website = "https://github.com/Kianuni/Camlo"
+tint_color = "#6B4EFF"
+
+[app]
+name = "Camlo"
+bundle_identifier = "com.kianuni.Camlo"
+developer_name = "Kianuni"
+subtitle = "开幕 · 零门槛「滑动解锁变身 + 动态锁屏」壁纸工坊"
+description = "Camlo（开幕）是一款零门槛 iOS / iPadOS 原生 Core Animation 动态与滑动变身锁屏制作工坊：120Hz 实时试穿、陀螺仪 3D 裸眼视差、昼夜双生壁纸、AI 主体抠图遮挡时钟、视频/实况抽帧无缝循环，并支持免电脑一键直写锁屏。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/rembrandt_cellist_reverie.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/anime_ink_sketch_bloom.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/anime_cyber_visor_protocol.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/vangogh_cypress_wheatfield.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/guoxi_early_spring_jade_mist.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/saturn_equinox_eclipse.webp",
+]
+tint_color = "#6B4EFF"
+min_os_version = "26.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = "Camlo_.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/news.webp"
+
+[output]
+path = "apps.json"
