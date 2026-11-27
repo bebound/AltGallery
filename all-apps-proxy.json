@@ -421,6 +421,33 @@
       ]
     },
     {
+      "name": "Camlo",
+      "bundleIdentifier": "com.kianuni.Camlo",
+      "developerName": "Kianuni",
+      "subtitle": "开幕 · 零门槛「滑动解锁变身 + 动态锁屏」壁纸工坊",
+      "localizedDescription": "Camlo（开幕）是一款零门槛 iOS / iPadOS 原生 Core Animation 动态与滑动变身锁屏制作工坊：120Hz 实时试穿、陀螺仪 3D 裸眼视差、昼夜双生壁纸、AI 主体抠图遮挡时钟、视频/实况抽帧无缝循环，并支持免电脑一键直写锁屏。",
+      "iconURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/icon.webp",
+      "screenshots": [
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/rembrandt_cellist_reverie.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/anime_ink_sketch_bloom.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/anime_cyber_visor_protocol.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/vangogh_cypress_wheatfield.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/guoxi_early_spring_jade_mist.webp",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/saturn_equinox_eclipse.webp"
+      ],
+      "tintColor": "#6B4EFF",
+      "versions": [
+        {
+          "version": "1.3.4",
+          "date": "2026-11-20T07:44:48Z",
+          "localizedDescription": "## Camlo v1.3.4 (Build 27)\n\n### 彻底修复 iOS 真机锁屏景深破框不触发 (#7, #3)\n- **定位并满足 `WallpaperKit` 原生景深白名单校验**：通过逆向 iOS `WallpaperKit.framework` (`supportsDepthEffect`)，确认系统会在切换真机锁屏前强制检查路径中是否包含 `Clownfish` 标记（`ParameterizedCA` 检查 `wallpaper.ca` 所在 `.wallpaper` 路径；`LayeredAnimation` 检查 `floatingAnimationFileNameKey` 指向的 `Floating.ca` 路径）；若不满足，系统即记录 `Depth not supported, collapsing floating view into foreground view` 并将前景层降级压到系统时间之后（导致在 Camlo App 内能遮挡 `09:41`，回到系统真机锁屏却总是时间压人物）。\n- **双引擎与历史壁纸自动原地自愈**：现已全面升级 3D `ParameterizedCA`（`7920.Camlo_Clownfish_3D-...wallpaper`）与滑动变身/实况 `LayeredAnimation`（`7400.Clownfish_WWDC_2022-...wallpaper` / `7400.WWDC_2022_Clownfish_Floating-...ca`）；**已保存在金库或外部导入的旧版 `.tendies` 壁纸**在升级至 `v1.3.4` 后会自动原地自愈迁移，无需重新创作。\n\n### 重塑 3D 陀螺仪 (`ParameterizedCA`) 立体视差与消重影 (#3)\n- **消除主体背后「双重轮廓重影」**：将背景 (`BG`) 与前景抠图 (`FG`) 的静止超采样倍率对齐为严格 `1:1`（`1.065x`），彻底解决旧版 `1.104x` 与 `1.052x` 尺寸不一致导致静止或晃动时人物头部、剑柄外侧露出一圈较大残影的问题。\n- **自动背景遮挡补全 (Occlusion Inpainting)**：在编译 3D 陀螺仪壁纸及金库自愈旧包时，自动对被前景抠图遮住的背景区域执行多尺度金字塔与水平扫线上下文补全，晃动手机错位时背后露出自然衔接的天空/云海/背景纹理，不再出现克隆人影。\n- **增加 `sublayerTransform` 3D 透视与立体倾斜**：收窄合理平移幅度并加入 `transform.rotation.x` / `transform.rotation.y` 空间倾角变换，还原接近原生的立体视差体验。\n- **云端全部 76 套官方 `.tendies` 同步升级**：涵盖「次元 3D」「海岸海报 3D」「iPhone Duo」「馆藏名画」共 76 套官方云端包已全部重新编译并通过 `CAPackage` 与 SHA-256 校验。\n\n---\n\n### Fix On-Device Lock Screen Clock-Depth (#7, #3)\n- **Satisfies `WallpaperKit` `Clownfish` Depth Gate**: Disassembling `WallpaperKit.framework` (`supportsDepthEffect`) confirmed that iOS collapses `FLOATING` behind the system clock (`\"Depth not supported, collapsing floating view into foreground view\"`) unless `\"Clownfish\"` appears in the `ParameterizedCA` bundle path or `LayeredAnimation` `Floating.ca` path. Both Camlo compilers (`7920.Camlo_Clownfish_3D-...wallpaper` & `7400.WWDC_2022_Clownfish_Floating-...ca`), all 76 cloud `.tendies` packs, and automatic in-place Vault/import self-healing now conform cleanly.\n\n### Overhaul 3D Gyroscope (`ParameterizedCA`) Spatial Depth & Ghosting Fix (#3)\n- **Exact 1:1 Rest Registration (`1.065x`)**: Aligns `Camlo_BG_Overscan` and `Camlo_FG_Overscan` scale identically so subjects register pixel-for-pixel at neutral rest.\n- **Exterior-Inward Background Occlusion Inpainting**: Automatically inpaints the occluded region behind `cutout_lock.png` / `cutout_unlock.png` in background JPEGs so tilting reveals continuous background scenery instead of a duplicated ghost silhouette.\n- **True 3D Perspective Tilt**: Adds `sublayerTransform` perspective projection (`m34 = -0.0010`), matched `zPosition=\"0\"` parallax planes, and subtle `transform.rotation.x/y` angular tilt alongside tight balanced translation.\n\n> ⚠️ **iOS Compatibility Reminder**: On-device Computer-Free Direct Write supports **iOS / iPadOS 26.0 – 27.3 beta 1** (Apple patched `worse_query` in `27.3 beta 2`). Creation, 120Hz preview, and `.tendies` export continue to work on all versions.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/Kianuni/Camlo/releases/download/v1.3.4/Camlo_v1.3.4_Bilingual.ipa",
+          "size": 9563095,
+          "minOSVersion": "26.0"
+        }
+      ]
+    },
+    {
       "name": "Chance",
       "bundleIdentifier": "com.moffatman.chan",
       "developerName": "Callum Moffat",
@@ -1875,11 +1902,11 @@
       "tintColor": "#2080F0",
       "versions": [
         {
-          "version": "0.3.8",
-          "date": "2026-11-10T17:28:17Z",
-          "localizedDescription": "## New\n\n- **Keep Running in Background.** On by default, in **Settings → Background**. While a backup has work iOS won't move on its own, the app keeps itself from being suspended the way SideStore does, by playing silence mixed with whatever else is playing. No permission is needed, and the backup keeps going with the app closed or the phone locked. When the queue is done, after 12 hours, or if iOS interrupts it, it stops and the app sleeps again. If calls or music keep stopping it, switch **Method** to **Location**, which asks for location permission and uses coarse updates instead. ([#2](https://github.com/g8row/PhotosBackup/issues/2), [#41](https://github.com/g8row/PhotosBackup/pull/41))\n\n- **Backup keeps going after you leave the app (iOS 26), for real this time.** 0.3.7's IPA was built with Xcode 16.4, which left this feature out, so there was no Live Activity. Releases are now built with Xcode 26.3. ([#39](https://github.com/g8row/PhotosBackup/pull/39))\n\n- **An edited video's original is backed up too**, so the Google Photos app counts it, including Cinematic videos, which the camera saves as edited. ([#38](https://github.com/g8row/PhotosBackup/pull/38), thanks @saileshbro)\n\n- **Back Up Live Photo Motion is now on by default.** ([#38](https://github.com/g8row/PhotosBackup/pull/38))\n\n## Fixed\n\n- **The app forgot what it had already backed up.** ([#34](https://github.com/g8row/PhotosBackup/issues/34), [#22](https://github.com/g8row/PhotosBackup/issues/22), [#40](https://github.com/g8row/PhotosBackup/pull/40), thanks @josippapez) The app forgot every photo iOS reported as changed, and iOS reports a lot more than edits: favourites, albums, and the photo analysis it redoes on the whole library after an iOS update. One report had a single background window forget 36,615 backups. A photo is now only re-checked when its edit actually changed, and photos backed up before this release keep their record.\n\n- **Big backups are much lighter on CPU and disk.** ([#13](https://github.com/g8row/PhotosBackup/issues/13), [#34](https://github.com/g8row/PhotosBackup/issues/34), [#42](https://github.com/g8row/PhotosBackup/pull/42)) Uploads were hashing one file at a time, and the queue was rewritten to disk several times a second. That's what iOS was closing the app for in the reports. Hashing now runs alongside the uploads, and the queue is saved at most once a second.\n\n- **The screen stays on while a backup runs in the app** if Keep Running in Background is off. With it on, the phone can lock normally. ([#37](https://github.com/g8row/PhotosBackup/issues/37))\n\n- **The Activity tab is fast on big backups.** ([#8](https://github.com/g8row/PhotosBackup/issues/8), [#42](https://github.com/g8row/PhotosBackup/pull/42)) It drew a row for every item in the queue. It now shows what's in progress or failed, the next 20 and the last 50 finished, and says how many more there are.\n\n## Worth knowing\n\n- **If your progress already reset on 0.3.7**, the first launch may go over those photos once more. Most settle without uploading anything, and it shouldn't happen again.\n- **Keep Running in Background uses more battery**, and swiping the app away in the app switcher still stops it. Charging overnight is still the best time for a big backup.\n- The diagnostic report now has a **Keep-alive** line saying whether it was running.\n\n## Notes\n\n- 208 tests, 206 passing (2 opt-in live tests skipped).\n- Tested on iOS 26.5 and 18.6 simulators. Not tested on a device yet. If something is off, **Settings → Support → Create Diagnostic Report** and attach it to an issue.",
-          "downloadURL": "https://gh-proxy.com/https://github.com/g8row/PhotosBackup/releases/download/0.3.8/PhotosBackup.ipa",
-          "size": 2816914,
+          "version": "0.4.1",
+          "date": "2026-11-27T13:11:42Z",
+          "localizedDescription": "### What's new\n\n- **Backup filters & limits (#14, #23, #32):**\n  - **Media Types** (`Settings → Backup`): choose **Photos & Videos**, **Photos Only**, or **Videos Only** across selected albums and picked folders.\n  - **Only Back Up After Date** (`Settings → Backup`): back up only items created on or after a chosen date/time, with a quick **Set to Now** button.\n  - **Only While Charging**, **Minimum Battery**, and **Daily Upload Limit** (500 MB–10 GB/day, counting only bytes actually uploaded — duplicates already in Google Photos don't count — and resuming automatically the next day).\n- **Edited photo originals (#33):** Opt-in **Back Up Edited Photo Originals** toggle under `Settings → Backup` to upload the unedited original alongside the edited version (and backfill originals for edited photos already backed up).\n- **Export / Import Backup History (#34):** Save or restore a privacy-safe JSON archive of backed-up item records and Google album links under `Settings → Support → Storage` (no credentials or media), so reinstalling or switching signing certificates doesn't require re-checking your whole library.\n- **Background backup improvements (#47):**\n  - Added `BGAppRefreshTask` scheduling alongside `BGProcessingTask` for more frequent background discovery.\n  - Decoupled background `URLSession` transfer handoff (up to 8 concurrent transfers with a 512 MB staging budget while keeping local export/hashing at 2).\n  - Moved PhotoKit library change scans off the main thread so background expiry and UI turns stay responsive.\n  - Opt-in **Wake on Location Change** (`Settings → Background`, requires Always location permission) to wake and discover new photos when travelling or arriving home; coordinates are ignored.\n\n### Install\n- SideStore / AltStore / Feather source: `https://g8row.github.io/PhotosBackup/apps.json`\n- Or download `PhotosBackup.ipa` (built by GitHub Actions from this tag, verified by `PhotosBackup.ipa.sha256`) once the release workflow finishes attaching it.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/g8row/PhotosBackup/releases/download/0.4.1/PhotosBackup.ipa",
+          "size": 2973509,
           "minOSVersion": "15.0"
         }
       ]
@@ -2735,6 +2762,17 @@
   ],
   "news": [
     {
+      "appID": "com.g8row.photosbackup",
+      "title": "Photos Backup 0.4.1 · 27 Nov 2026",
+      "identifier": "Photos Backup-release-0.4.1",
+      "caption": "Photos Backup 0.4.1 is available.",
+      "date": "2026-11-27T13:11:42Z",
+      "tintColor": "#2080F0",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/g8row/PhotosBackup/releases/tag/0.4.1"
+    },
+    {
       "appID": "dev.reloc.ios",
       "title": "Reloc 1.0.4 · 27 Nov 2026",
       "identifier": "Reloc-release-v1.0.4",
@@ -3230,6 +3268,17 @@
       "url": "https://github.com/Kianuni/WQGuard/releases/tag/v1.3.6"
     },
     {
+      "appID": "com.kianuni.Camlo",
+      "title": "Camlo 1.3.4 · 20 Nov 2026",
+      "identifier": "Camlo-release-v1.3.4",
+      "caption": "Camlo 1.3.4 is available.",
+      "date": "2026-11-20T07:44:48Z",
+      "tintColor": "#6B4EFF",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Camlo/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Kianuni/Camlo/releases/tag/v1.3.4"
+    },
+    {
       "appID": "com.example.HermesEnabler",
       "title": "HermesEnabler 1.0 · 19 Nov 2026",
       "identifier": "HermesEnabler-release-1.6.3",
@@ -3448,17 +3497,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/RushHours/images/news.webp",
       "notify": true,
       "url": "https://github.com/ekomlenovic/rush_hour_ios_android/releases/tag/v2.2.2-b70"
-    },
-    {
-      "appID": "com.g8row.photosbackup",
-      "title": "Photos Backup 0.3.8 · 10 Nov 2026",
-      "identifier": "Photos Backup-release-0.3.8",
-      "caption": "Photos Backup 0.3.8 is available.",
-      "date": "2026-11-10T17:28:17Z",
-      "tintColor": "#2080F0",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/PhotosBackup/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/g8row/PhotosBackup/releases/tag/0.3.8"
     },
     {
       "appID": "org.spotube.spotube.Spotube",
