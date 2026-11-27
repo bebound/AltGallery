@@ -371,8 +371,14 @@ def optimized_bytes(kind: str, local: Path) -> bytes:
     """The smallest WebP encoding worth serving for this image.
 
     Icons and the logo are small and flat, so lossless usually beats lossy;
-    screenshots are photographic and only worth a lossy encode.
+    screenshots are photographic and only worth a lossy encode. An animated
+    screenshot (the wallpaper previews are frame loops) is served verbatim:
+    it is already a tuned WebP, Pillow's re-encode of it comes out larger, and
+    a still frame of it would lose the point of the artwork.
     """
+    source = Image.open(local)
+    if getattr(source, "n_frames", 1) > 1:
+        return local.read_bytes()
     image, profile = open_image(local)
     if kind == "logo":
         image = fit_box(image, LOGO_PX)
