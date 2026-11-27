@@ -21,11 +21,11 @@
       "tintColor": "#F0E0D0",
       "versions": [
         {
-          "version": "1.5.27",
-          "date": "2026-10-05T03:15:29Z",
-          "localizedDescription": "- 修复内存泄漏的问题",
-          "downloadURL": "https://gh-proxy.com/https://github.com/Sle2p/AniCh/releases/download/1.5.27/anich-ios-no_sign-1.5.27.ipa",
-          "size": 41226765,
+          "version": "1.5.28",
+          "date": "2026-11-27T01:01:29Z",
+          "localizedDescription": "- 播放信息中新增软硬解码状态显示功能\r\n- 画廊来源地址支持点击复制\r\n- 修复画廊每次打开详情评论都会重新加载的问题\r\n- 修复部分线路花屏或缺少前几秒画面的问题\r\n- 修复处于画中画模式时弹幕开关被隐藏的问题\r\n- 修复打开线路面板导致界面卡死的问题\r\n- 修复线路面板部分视频无法正确探测大小的问题\r\n- 修复线路面板无法正确显示错误码的问题\r\n- 修复触控板无法双指滑动滚动的问题 (#107)\r\n- 升级battery_plus的版本 (#106)",
+          "downloadURL": "https://gh-proxy.com/https://github.com/Sle2p/AniCh/releases/download/1.5.28/anich-ios-no_sign-1.5.28.ipa",
+          "size": 41232889,
           "minOSVersion": "12.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "app.anich",
-      "title": "AniCh 1.5.27 · 05 Oct 2026",
-      "identifier": "AniCh-release-1.5.27",
-      "caption": "AniCh 1.5.27 is available.",
-      "date": "2026-10-05T03:15:29Z",
+      "title": "AniCh 1.5.28 · 27 Nov 2026",
+      "identifier": "AniCh-release-1.5.28",
+      "caption": "AniCh 1.5.28 is available.",
+      "date": "2026-11-27T01:01:29Z",
       "tintColor": "#F0E0D0",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/AniCh/images/news.webp",
       "notify": true,
-      "url": "https://github.com/Sle2p/AniCh/releases/tag/1.5.27"
+      "url": "https://github.com/Sle2p/AniCh/releases/tag/1.5.28"
     }
   ]
 }

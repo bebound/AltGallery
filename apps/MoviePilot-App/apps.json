@@ -21,11 +21,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "2.0.6",
-          "date": "2026-11-26T16:14:51Z",
-          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.6`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **发现页动态接入插件推荐榜单模块**：\n  - 复用 Web 端 `ChainEventType.RecommendSource`（`GET /api/v1/recommend/source`）插件推荐源注册机制，三端「管理发现模块 / 编辑发现模块」现已支持自动发现、显隐开关、上下/拖拽排序及完整网格浏览由已启用插件动态贡献的推荐榜单，插件停用或卸载后自动清理无残留。\n- **Vue 联邦插件无顶栏沉浸展示、返回键委托与最小化悬浮胶囊**：\n  - 模块联邦（`render_mode == \"vue\"`）插件全屏展示时自动隐藏宿主顶栏与退出按钮，释放上方可视空间（`#72`）。\n  - 插件 SDK 与容器桥新增 `hostSdk.navigation.onBack`（LIFO 返回栈 + 300ms 异步超时兜底）、`hostSdk.shell.close()` / `navigation.close()`，并加固 `window.__mpPluginHostReceive` 防覆盖保护，确保系统侧滑/返回键优先委托给插件内部多级页面且 `api.request` 响应永不丢失（`#76`、`#77`）。\n  - 新增插件无损最小化能力（`hostSdk.shell.minimize` / `updateCapsule` / `restore` / `onCapsuleAction`）：最小化后保持底层 WebView 实例与音视频/任务运行不断连，跨页常驻可拖拽的快捷跳转胶囊或迷你控制卡，Android 端授权悬浮窗权限后支持退回系统桌面继续悬浮显示（`#73`）。\n- **媒体会话歌词同步、红心收藏与通知栏体验闭环**：\n  - 三端 `audio.setNowPlaying` 扩展支持 `lyrics` / `lyricLines` 实时时间轴歌词（同步展示于系统媒体控制卡片、锁屏与通知栏副标题）、`liked` 红心状态切换回调与 `customActions` 自定义动作按钮；支持相对路径 `artworkUrl`（`/api/v1/plugin/...`）自动拼接实例地址并代附鉴权下载封面，设置系统媒体通知点击直达 App 内对应插件页面，并在容器侧抑制 WebView 重复注册 Web MediaSession（`#77`）。\n- **Android 自定义插件与插件仪表盘桌面小部件**：\n  - 新增可配置的 Android Glance 桌面小部件：支持添加任意已安装插件的桌面一键直达快捷方式，或将支持仪表盘数据的插件直接渲染为桌面实时指标卡片并支持手动刷新（`#75`）。\n- **Android / 鸿蒙卡片更多菜单对齐与体验修复**：\n  - 对齐 iOS 卡片交互体验：Android 与鸿蒙插件中心支持长按卡片与右上角更多按钮双入口呼出原生操作面板（支持打开数据页、参数配置、查看插件实时日志、重新加载插件、重置与卸载），订阅、下载、工作流、站点与影视海报卡片同步补齐长按快捷上下文菜单。\n  - 修复 Android「订阅广场」二级分类胶囊文字截断问题，以及「健康检查」模块列表路径兼容问题。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.6` | `MoviePilot-2.0.6-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.6` | `MoviePilot-2.0.6-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.6` | `MoviePilot-2.0.6-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.6` | `MoviePilot-2.0.6-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[77806f184da8209d814977a2c3f104ee6f2da06d](https://github.com/jxxghp/MoviePilot-App/commit/77806f184da8209d814977a2c3f104ee6f2da06d)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.6/MoviePilot-2.0.6-ios-unsigned.ipa",
-          "size": 51278859,
+          "version": "2.0.8",
+          "date": "2026-11-27T03:33:44Z",
+          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.8`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端流畅度、高刷滚动与页面秒开深度性能优化**：\n  - **Android 全面减负提速**：引入全局 Compose Compiler 稳定性配置（`compose_stability.conf`），让跨模块 DTO 与列表项全面支持智能跳过无效重组；移除主壳与详情页全屏嵌套 `hazeSource` 离屏纹理拷贝及逐像素动态模糊半径重建，将首页与影视详情页的视差、顶栏柔化罩全部下沉至纯绘制层执行，实现零整页重组丝滑滚动；一级主导航（发现、订阅、我的、更多）升级为常驻内存保活并扩展设置与插件中心会话缓存，切换页签与返回上级达到 0ms 瞬开；Coil 图片管线补齐 256MB 磁盘缓存、25% 内存缓存、缩略图按需降采样与代理图片持久化缓存策略。\n  - **iOS 与 HarmonyOS 渲染及并发优化**：iOS 海报与剧照缩略图在后台线程提前完成 `preparingForDisplay()` 位图解压并提升同源图片并发连接池上限，消除 120Hz ProMotion 滚动首帧解码卡顿；HarmonyOS 远程图片加载器新增有界并发队列与更大 LRU 容量，收敛发现页滚动状态更新阈值并为插件网格启用节点预缓存。\n- **全面接入后端全局图片缓存（`GLOBAL_IMAGE_CACHE`）与代理链路**：\n  - 三端登录后自动从 `/api/v1/system/global?token=moviepilot` 同步后端全局图片配置（含 `GLOBAL_IMAGE_CACHE`、`TMDB_IMAGE_DOMAIN`、`FANART_ENABLE` 等）；开启全局图片缓存时统一走后端 `/api/v1/system/cache/image?url=...` 缓存代理加载海报与剧照，未开启时优先公开源直连并在受限网络下自动回退 `/api/v1/system/img/1` 代理，行为与 Web 端完全一致。\n- **插件市场与已安装插件体验修复**：\n  - 三端插件市场与插件排序菜单补齐「最新发布」排序（对齐 Web 端 `add_time` 排序规则）。\n  - 修复插件市场安装/重新安装弹窗主操作按钮对比度不足、视觉上误显灰态不可点的问题。\n  - 已安装插件列表自动合并市场更新元数据，有新版本时直接展示醒目的「更新」按钮与可更新标识。\n- **音乐播放界面精简优化**：\n  - 移除三端全屏音乐播放界面右下角冗余的倍速胶囊按钮，播放倍速统一收纳于右上角 `…` 更多菜单中调节（并完善鸿蒙端菜单停止并关闭后台音频会话释放）。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.8` | `MoviePilot-2.0.8-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.8` | `MoviePilot-2.0.8-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.8` | `MoviePilot-2.0.8-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.8` | `MoviePilot-2.0.8-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[c590a8696f8d1e2810d35ee7518eab43e6e53893](https://github.com/jxxghp/MoviePilot-App/commit/c590a8696f8d1e2810d35ee7518eab43e6e53893)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.8/MoviePilot-2.0.8-ios-unsigned.ipa",
+          "size": 51640679,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 2.0.6 · 26 Nov 2026",
-      "identifier": "MoviePilot-release-v2.0.6",
-      "caption": "MoviePilot 2.0.6 is available.",
-      "date": "2026-11-26T16:14:51Z",
+      "title": "MoviePilot 2.0.8 · 27 Nov 2026",
+      "identifier": "MoviePilot-release-v2.0.8",
+      "caption": "MoviePilot 2.0.8 is available.",
+      "date": "2026-11-27T03:33:44Z",
       "tintColor": "#8844F6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
       "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.6"
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.8"
     }
   ]
 }
