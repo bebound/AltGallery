@@ -106,6 +106,9 @@ Imageboard browser for iOS and Android — a Flutter client with multi-column la
 ### <img src="apps/Cloudn/icon.webp" alt="Cloudn icon" width="24" align="top"> <a href="https://github.com/mengangs/Cloudn">Cloudn</a>
 网盘分享与短视频高速解析下载 — 支持 19+ 网盘、近 50 个短视频与图集平台，解析全部在手机本地完成。
 
+### <img src="apps/Coda/icon.webp" alt="Coda icon" width="24" align="top"> <a href="https://github.com/Wow-CaiCai/Coda">Coda</a>
+多平台原生音乐客户端 — 在同一界面搜索、收藏、播放网易云音乐、QQ 音乐、酷狗音乐、汽水音乐与波点音乐。
+
 ### <img src="apps/CoolapkDesktop/icon.webp" alt="CoolapkDesktop icon" width="24" align="top"> <a href="https://github.com/coolapk-desktop/coolapk-desktop">CoolapkDesktop</a>
 非官方酷安第三方客户端 — 基于 Tauri 2、Vue 3 和 Rust，支持浏览动态、搜索、收藏与私信。
 

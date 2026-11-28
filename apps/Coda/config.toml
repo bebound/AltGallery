@@ -1,0 +1,45 @@
+# altgen config for the Coda AltStore source.
+# Run: uvx altgen -c config.toml
+
+[github]
+repo = "Wow-CaiCai/Coda"
+
+[source]
+name = "Coda"
+subtitle = "Coda AltStore source by AltGallery & AltGen"
+description = "Auto-updated AltStore source for Coda"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/icon.webp"
+website = "https://github.com/Wow-CaiCai/Coda"
+tint_color = "#EC4949"
+
+[app]
+name = "Coda"
+bundle_identifier = "wow.caicai.coda"
+developer_name = "Wow-CaiCai"
+subtitle = "多平台原生音乐客户端"
+description = "面向 Mac、iPhone 与 iPad 的原生 SwiftUI 音乐客户端，在同一界面搜索、收藏、播放网易云音乐、QQ 音乐、酷狗音乐、汽水音乐与波点音乐。"
+icon_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/icon.webp"
+screenshots = [
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/home.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/search.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/album-12.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/artist-3.webp",
+  "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/player-7.webp",
+]
+tint_color = "#EC4949"
+min_os_version = "16.0"
+
+[versions]
+strip_v_prefix = true
+include_prereleases = false
+version_pattern = "^(\\d+\\.\\d+(?:\\.\\d+)?)"
+# asset_pattern is a regex (not glob): .*\.ipa$ matches all ipa assets
+asset_pattern = "Coda-iOS-.*\\.ipa$"
+
+[news]
+title_template = "{name} {version} · {date}"
+# shared promo image rendered by tools/render_news.py
+image_url = "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/news.webp"
+
+[output]
+path = "apps.json"
