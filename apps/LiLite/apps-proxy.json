@@ -22,11 +22,11 @@
       "tintColor": "#14C8F5",
       "versions": [
         {
-          "version": "1.0.46",
-          "date": "2026-11-28T08:09:25Z",
-          "localizedDescription": "**设置**\n\n- 设置重新分类，iPhone 和 iPad 使用同一套目录和搜索；iPad 系统设置式的分栏与表单宽度在横竖屏下保持一致。\n- 精简设置：移除一批偏技术、意义不大的选项，统一使用默认行为（如连接重试、缓冲容量、音画同步、解码顺序、滚动回弹参数、弹幕时长与行高等）。旧的设置备份仍可正常恢复。\n- 删除「页面过渡效果」，页面切换固定使用系统动画；「卡片一镜到底」移到「界面与手势」的实验性功能。\n- 修复关闭设置搜索后列表上移、第一项被搜索框遮住的问题。\n\n**触感**\n\n- 触感反馈默认开启，开关移到「外观与布局 → 界面与手势」。\n- 全应用按操作含义统一震感：切换选择轻点、确认提交稍重、发送和关注等操作按服务器结果给出成功或失败反馈、删除清空给出提醒；打开页面不再震动。滑动调节音量和亮度保持每 5% 一格。\n\n**界面缩放**\n\n- 修复界面缩放不为 100% 时页面顶部和底部的白边、弹层底部被截断、弹出键盘时列表底部多出空白，以及视频详情页顶部伸进状态栏或多出黑边的问题。\n\n**首页与搜索**\n\n- 首页搜索支持从屏幕左边缘右滑返回。\n- iPad 横屏的图标栏悬浮在首页左下角，不再占用一整列。\n\n**播放**\n\n- 双击快进快退时，顶部的进度提示不再闪跳；连点第三下起继续累加，不再弹出控件或弹幕操作。\n- 视频详情页封面点任意位置即可开始播放。\n- iPad 上双指张开进入全屏，全屏中双指捏合退出。\n- 竖屏刷视频：播完自动翻到下一条（播放顺序选了单个循环时继续循环）；弹幕从返回按钮下方开始显示；评论改为贴边抽屉，发弹幕改为键盘上方输入条。\n\n**直播**\n\n- 直播间显示表情包弹幕：整条表情在弹幕和聊天列表中以图片显示，文字里的 [dog] 等小表情内嵌显示。\n- 直播底栏暂停键旁加入「重新连接」按钮。\n\n**评论**\n\n- 评论区限制发言时，发表按钮仍可点按并说明原因；关闭评论输入框时不再跳动。\n\n**侧载**\n\n- 显示名改为 LiLite（中文系统仍显示「轻哩」），修复 SideStore 安装时提示 App ID 名称无效的问题。\n\n附件为未签名 IPA，需要自行签名安装；`LiLite-source.json` 可在 AltStore Classic 和 SideStore 中订阅更新。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.46/LiLite-1.0.46-unsigned.ipa",
-          "size": 28933293,
+          "version": "1.0.47",
+          "date": "2026-11-28T13:28:53Z",
+          "localizedDescription": "**弹窗与动画**\n\n- 评论输入框和发弹幕输入栏改用系统键盘机制：输入框跟着键盘一起升起和收回，不再跳动、错位或留白；表情、更多、弹幕样式面板直接换到键盘的位置，切换时工具栏不动，点文字即可切回键盘。\n- 评论详情、对话列表、选集、更多内容、展开的播放列表改为系统面板：停在播放器下方，视频保持可见，可下拉关闭，进入下一级也有系统动画。\n- 直播间竖屏的高能用户、醒目留言、弹幕屏蔽等面板，以及动态页的 UP 主面板，改为系统面板。\n- 下拉刷新改为系统样式。\n- 图片查看器改用系统分页滑动；观看历史和云收藏的搜索改为系统搜索框；多选和保存操作栏改为系统底部工具栏。\n- 全屏发弹幕面板打开时，键盘与面板同时弹出。\n\n**更新提醒**\n\n- 修复 GitHub 版不再提醒新版本的问题：回到前台时也会检查（至多每 6 小时一次），提醒不再被其他弹层挡住，GitHub 接口访问失败时改从发布附件读取版本信息。\n\n**搜索**\n\n- 搜索结果各分类页加上左右留白，专栏、直播间、用户和视频结果不再贴边，各页风格统一。\n- 修复切换搜索分类和结果加载时的掉帧。\n\n**播放**\n\n- 修复视频暂停后接续播放时，横版封面一直盖在画面上的问题；竖屏视频不再用横版封面占位。\n\n**iPhone Duo 与大屏**\n\n- 动态页分类栏、视频详情左右分栏的标签栏、搜索结果分类栏、动态详情操作栏改为悬浮液态玻璃胶囊。\n- 动态列表在侧边栏旁留出间隙。\n- 视频详情左右分栏和直播间放大时隐藏系统状态栏。\n\n附件为未签名 IPA，需要自行签名安装；`LiLite-source.json` 可在 AltStore Classic 和 SideStore 中订阅更新。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.47/LiLite-1.0.47-unsigned.ipa",
+          "size": 28875149,
           "minOSVersion": "17.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.liuliuya.PiliNative",
-      "title": "LiLite 1.0.46 · 28 Nov 2026",
-      "identifier": "LiLite-release-v1.0.46",
-      "caption": "LiLite 1.0.46 is available.",
-      "date": "2026-11-28T08:09:25Z",
+      "title": "LiLite 1.0.47 · 28 Nov 2026",
+      "identifier": "LiLite-release-v1.0.47",
+      "caption": "LiLite 1.0.47 is available.",
+      "date": "2026-11-28T13:28:53Z",
       "tintColor": "#14C8F5",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
       "notify": true,
-      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.46"
+      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.47"
     }
   ]
 }

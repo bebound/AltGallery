@@ -1377,11 +1377,11 @@
       "tintColor": "#14C8F5",
       "versions": [
         {
-          "version": "1.0.46",
-          "date": "2026-11-28T08:09:25Z",
-          "localizedDescription": "**设置**\n\n- 设置重新分类，iPhone 和 iPad 使用同一套目录和搜索；iPad 系统设置式的分栏与表单宽度在横竖屏下保持一致。\n- 精简设置：移除一批偏技术、意义不大的选项，统一使用默认行为（如连接重试、缓冲容量、音画同步、解码顺序、滚动回弹参数、弹幕时长与行高等）。旧的设置备份仍可正常恢复。\n- 删除「页面过渡效果」，页面切换固定使用系统动画；「卡片一镜到底」移到「界面与手势」的实验性功能。\n- 修复关闭设置搜索后列表上移、第一项被搜索框遮住的问题。\n\n**触感**\n\n- 触感反馈默认开启，开关移到「外观与布局 → 界面与手势」。\n- 全应用按操作含义统一震感：切换选择轻点、确认提交稍重、发送和关注等操作按服务器结果给出成功或失败反馈、删除清空给出提醒；打开页面不再震动。滑动调节音量和亮度保持每 5% 一格。\n\n**界面缩放**\n\n- 修复界面缩放不为 100% 时页面顶部和底部的白边、弹层底部被截断、弹出键盘时列表底部多出空白，以及视频详情页顶部伸进状态栏或多出黑边的问题。\n\n**首页与搜索**\n\n- 首页搜索支持从屏幕左边缘右滑返回。\n- iPad 横屏的图标栏悬浮在首页左下角，不再占用一整列。\n\n**播放**\n\n- 双击快进快退时，顶部的进度提示不再闪跳；连点第三下起继续累加，不再弹出控件或弹幕操作。\n- 视频详情页封面点任意位置即可开始播放。\n- iPad 上双指张开进入全屏，全屏中双指捏合退出。\n- 竖屏刷视频：播完自动翻到下一条（播放顺序选了单个循环时继续循环）；弹幕从返回按钮下方开始显示；评论改为贴边抽屉，发弹幕改为键盘上方输入条。\n\n**直播**\n\n- 直播间显示表情包弹幕：整条表情在弹幕和聊天列表中以图片显示，文字里的 [dog] 等小表情内嵌显示。\n- 直播底栏暂停键旁加入「重新连接」按钮。\n\n**评论**\n\n- 评论区限制发言时，发表按钮仍可点按并说明原因；关闭评论输入框时不再跳动。\n\n**侧载**\n\n- 显示名改为 LiLite（中文系统仍显示「轻哩」），修复 SideStore 安装时提示 App ID 名称无效的问题。\n\n附件为未签名 IPA，需要自行签名安装；`LiLite-source.json` 可在 AltStore Classic 和 SideStore 中订阅更新。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.46/LiLite-1.0.46-unsigned.ipa",
-          "size": 28933293,
+          "version": "1.0.47",
+          "date": "2026-11-28T13:28:53Z",
+          "localizedDescription": "**弹窗与动画**\n\n- 评论输入框和发弹幕输入栏改用系统键盘机制：输入框跟着键盘一起升起和收回，不再跳动、错位或留白；表情、更多、弹幕样式面板直接换到键盘的位置，切换时工具栏不动，点文字即可切回键盘。\n- 评论详情、对话列表、选集、更多内容、展开的播放列表改为系统面板：停在播放器下方，视频保持可见，可下拉关闭，进入下一级也有系统动画。\n- 直播间竖屏的高能用户、醒目留言、弹幕屏蔽等面板，以及动态页的 UP 主面板，改为系统面板。\n- 下拉刷新改为系统样式。\n- 图片查看器改用系统分页滑动；观看历史和云收藏的搜索改为系统搜索框；多选和保存操作栏改为系统底部工具栏。\n- 全屏发弹幕面板打开时，键盘与面板同时弹出。\n\n**更新提醒**\n\n- 修复 GitHub 版不再提醒新版本的问题：回到前台时也会检查（至多每 6 小时一次），提醒不再被其他弹层挡住，GitHub 接口访问失败时改从发布附件读取版本信息。\n\n**搜索**\n\n- 搜索结果各分类页加上左右留白，专栏、直播间、用户和视频结果不再贴边，各页风格统一。\n- 修复切换搜索分类和结果加载时的掉帧。\n\n**播放**\n\n- 修复视频暂停后接续播放时，横版封面一直盖在画面上的问题；竖屏视频不再用横版封面占位。\n\n**iPhone Duo 与大屏**\n\n- 动态页分类栏、视频详情左右分栏的标签栏、搜索结果分类栏、动态详情操作栏改为悬浮液态玻璃胶囊。\n- 动态列表在侧边栏旁留出间隙。\n- 视频详情左右分栏和直播间放大时隐藏系统状态栏。\n\n附件为未签名 IPA，需要自行签名安装；`LiLite-source.json` 可在 AltStore Classic 和 SideStore 中订阅更新。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.47/LiLite-1.0.47-unsigned.ipa",
+          "size": 28875149,
           "minOSVersion": "17.0"
         }
       ]
@@ -2679,11 +2679,11 @@
       "tintColor": "#242529",
       "versions": [
         {
-          "version": "0.5.1",
-          "date": "2026-11-28T12:15:02Z",
-          "localizedDescription": "0.5.1（构建 5）：共享容器总览、目录快照、扫描连续性。\n\n**新增**\n- 共享容器只读总览（应用工具 →「共享容器」）：按容器身份去重，按证据分四段（已验证 / 名称推断 / 归属未知 / 扩展），只读浏览 + 选择性导出，不写入任何共享容器。\n- 目录快照（存储详情 →「文件夹」）：记一份仅元数据的快照，对比最近两次定位目录增长，可跳空间透镜。\n- 首页索引扫描切页后继续，进度胶囊不跟到其他页面、不挡那边的备份/导出。\n\n**修复**\n- 结构化文件按文件头识别格式；取消工作副本真的会停；翻过末页提示最后一页。\n- 存储详情显示最新测量值，趋势在覆盖变化处断开，不再当成增长。\n\n**安装**：未签名，需自行重签；重签必须保留 App Group `group.mumu.wqmanager`。\n\n**验证**：单测 26 个程序、XCUITest 19 例全通过，Release 构建成功。\n\n产物：`WQManager-0.5.1-build5-unsigned.ipa`（1,013,154 字节，sha256 `63db60b9…a06dde`）、`WQManager-0.5.1-build5-dSYM.zip`。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/hseons/WQManager/releases/download/v0.5.1/WQManager-0.5.1-build5-unsigned.ipa",
-          "size": 1013154,
+          "version": "0.6.0",
+          "date": "2026-11-28T13:39:34Z",
+          "localizedDescription": "## 这次多了什么\n\n- **共享容器可以清理了**（issue #4 的后半）：应用工具 →「共享容器」，只有本构建拥有 App Group 的那个容器标「可清理」。选中文件或文件夹 →「移到回收站」→ 确认。项目进入 WQManager 自己的回收站（设置 → 回收站），随时还原；每次移动都记进「记录」。\n- **无法证明归属的容器仍然只读**：其他 App 的 Group 只给浏览和导出，不提供删除。这是刻意的——拆掉别人正在用的数据是找不回来的。\n- **空间变化折线更好读**：涨红、跌绿，右上直接给本次增量，左上给最新大小；长历史自动抽稀，容器变化处才断开。\n\n## 顺手修掉\n\n- 扫描历史里一条日期越界会让整份历史读不出来（无符号乘法回绕写坏了 plist）。现在记录时拒绝越界日期，加载时跳过坏行。\n\n## 安装\n\n未签名包，需要用自己的描述文件重签，**保留 App Group `group.mumu.wqmanager`**（App 与分享扩展都要）。构建号 6，比 5 大，覆盖安装是升级。\n\n## 验证\n\n- 26 个单元测试程序全过；20 个 UI 用例全过（新增清理全流程：可清理标记 → 选择 → 销毁按钮 → 确认 → 文件离开容器 → 空态）。\n- Release 构建主 App 与扩展均为 0.6.0 / 6。\n\n`WQManager-0.6.0-build6-unsigned.ipa` · `WQManager-0.6.0-build6-dSYM.zip`",
+          "downloadURL": "https://gh-proxy.com/https://github.com/hseons/WQManager/releases/download/v0.6.0/WQManager-0.6.0-build6-unsigned.ipa",
+          "size": 1022757,
           "minOSVersion": "26.0"
         }
       ]
@@ -2789,14 +2789,25 @@
   "news": [
     {
       "appID": "mumu.pduola.WQManager",
-      "title": "WQManager 0.5.1 · 28 Nov 2026",
-      "identifier": "WQManager-release-v0.5.1",
-      "caption": "WQManager 0.5.1 is available.",
-      "date": "2026-11-28T12:15:02Z",
+      "title": "WQManager 0.6.0 · 28 Nov 2026",
+      "identifier": "WQManager-release-v0.6.0",
+      "caption": "WQManager 0.6.0 is available.",
+      "date": "2026-11-28T13:39:34Z",
       "tintColor": "#242529",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/news.webp",
       "notify": true,
-      "url": "https://github.com/hseons/WQManager/releases/tag/v0.5.1"
+      "url": "https://github.com/hseons/WQManager/releases/tag/v0.6.0"
+    },
+    {
+      "appID": "com.liuliuya.PiliNative",
+      "title": "LiLite 1.0.47 · 28 Nov 2026",
+      "identifier": "LiLite-release-v1.0.47",
+      "caption": "LiLite 1.0.47 is available.",
+      "date": "2026-11-28T13:28:53Z",
+      "tintColor": "#14C8F5",
+      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.47"
     },
     {
       "appID": "com.nusanx.studio",
@@ -2830,17 +2841,6 @@
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Swipt/images/news.webp",
       "notify": true,
       "url": "https://github.com/swipt-automation/swipt/releases/tag/nightly"
-    },
-    {
-      "appID": "com.liuliuya.PiliNative",
-      "title": "LiLite 1.0.46 · 28 Nov 2026",
-      "identifier": "LiLite-release-v1.0.46",
-      "caption": "LiLite 1.0.46 is available.",
-      "date": "2026-11-28T08:09:25Z",
-      "tintColor": "#14C8F5",
-      "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
-      "notify": true,
-      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.46"
     },
     {
       "appID": "dev.reloc.ios",
