@@ -20,11 +20,11 @@
       "tintColor": "#FD7A65",
       "versions": [
         {
-          "version": "1.0.4",
-          "date": "2026-11-27T11:22:31Z",
-          "localizedDescription": "## Reloc v1.0.4\n\n### 更新\n- **正式支持 iPad**：移除原有的仅限 iPhone 限制，现已支持 iPad（iPadOS 17.0+）直接使用，真机实测正常。\n\n---\n\n### What's New\n- **iPad Support**: Removed the iPhone-only restriction — Reloc now supports iPad (iPadOS 17.0+) and has been verified on real iPad hardware.",
-          "downloadURL": "https://gh-proxy.com/https://github.com/Reukix/Reloc/releases/download/v1.0.4/Reloc.ipa",
-          "size": 3475407,
+          "version": "1.0.5",
+          "date": "2026-11-28T04:36:14Z",
+          "localizedDescription": "## Reloc v1.0.5\n\n### 更新\n- 新增**轨迹模拟**模式：支持地图选点/搜索沿真实道路规划轨迹（多途经点、步行/跑步/骑行/驾车预设、实时调速、拟真波动、往返/循环及收藏路线）。\n- 新增 **Apple 快捷指令**支持：提供「开始虚拟定位」（选收藏点 → 启动定位 → 跳转系统定位页清缓存）与「关闭虚拟定位」（停止并跳转系统定位页恢复真实 GPS）两项快捷动作。\n- 移除常驻静默音频保活，改用纯原生定位后台模式，降低功耗并避免音频冲突。\n- 优化轨迹锁定与防冻结检测，脱锁时自动原地暂停等待重新锁定。\n- 最低系统支持降至 **iOS / iPadOS 16.0**（真机实测正常），并修复 iOS 16.0 日志页闪退问题。\n- 提示：超过 15 km 的跨城 / 跨国轨迹模拟建议开启飞行模式；远距离定格刷新若未生效，请再次关闭系统「定位服务」并延长等待时间后再重新开启。\n\n---\n\n### What's New\n- **Trajectory Simulation**: Plan road-snapped routes with multiple waypoints, Walk/Run/Cycle/Drive presets, live speed control, natural motion, round-trip/loop modes, and saved routes.\n- **Apple Shortcuts Support**: Two focused native actions — Start Virtual Location (pick favorite → start GPS → jump to Location Services to clear cache) and Stop Virtual Location (stop & jump to Location Services to restore real GPS).\n- **Native Background Mode**: Removed silent audio keep-alive in favor of pure native iOS background location mode for lower power and zero audio conflicts.\n- **Improved Trajectory Locking**: Added dead-reckoning freeze detection and auto-hold on lock loss.\n- **iOS / iPadOS 16.0 Support**: Verified on iOS/iPadOS 16.0+ devices and fixed an iOS 16.0 logs-view crash.\n- **Tips**: Use Airplane Mode for continuous routes >15 km away; for distant fixed locations that don't switch after 7s, turn Location Services off again and wait longer before re-enabling.",
+          "downloadURL": "https://gh-proxy.com/https://github.com/Reukix/Reloc/releases/download/v1.0.5/Reloc.ipa",
+          "size": 3777311,
           "minOSVersion": "17.0"
         }
       ]
@@ -33,14 +33,14 @@
   "news": [
     {
       "appID": "dev.reloc.ios",
-      "title": "Reloc 1.0.4 · 27 Nov 2026",
-      "identifier": "Reloc-release-v1.0.4",
-      "caption": "Reloc 1.0.4 is available.",
-      "date": "2026-11-27T11:22:31Z",
+      "title": "Reloc 1.0.5 · 28 Nov 2026",
+      "identifier": "Reloc-release-v1.0.5",
+      "caption": "Reloc 1.0.5 is available.",
+      "date": "2026-11-28T04:36:14Z",
       "tintColor": "#FD7A65",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Reloc/images/news.webp",
       "notify": true,
-      "url": "https://github.com/Reukix/Reloc/releases/tag/v1.0.4"
+      "url": "https://github.com/Reukix/Reloc/releases/tag/v1.0.5"
     }
   ]
 }

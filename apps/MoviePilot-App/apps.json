@@ -21,11 +21,11 @@
       "tintColor": "#8844F6",
       "versions": [
         {
-          "version": "2.0.10",
-          "date": "2026-11-27T19:37:53Z",
-          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.10`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **发现页与影视详情页支持免配置多元评分展示**：\n  - 无需额外部署或填写第三方密钥，详情页与发现流自动聚合展示 IMDb、TMDB、豆瓣、烂番茄与 Bangumi 多元评分徽标，并在关联 Emby / Plex 媒体库时自动融合媒体服务器侧评分元数据。\n- **三端播放器投屏入口与卡片列表交互优化**：\n  - iOS（系统 AirPlay 路由面板）、Android 与 HarmonyOS NEXT 播放器顶栏统一配备原生投屏图标按钮。\n  - 订阅卡片与下载任务卡片统一收敛为长按唤出删除操作，移除常驻冗余删除按钮；修正订阅页加载骨架屏占位卡片宽度与实际卡片完全对齐。\n- **iOS MPV 增强播放内核体验全面修复**：\n  - **彻底修复内嵌简繁中文字幕显示为方框的问题**：针对新版 iOS 系统苹方字体改用私有 `hvgl` 轮廓表导致 `libass` / `FreeType` 回退为空心方框的问题，新增基于 `CoreText` 矢量轮廓提取的沙盒缓存 `subfont.ttf` 合成管线（覆盖近 3 万个简繁日韩汉字与标点符号），同时保留内封特效字体（`embeddedfonts`）加载能力。\n  - **远端 HTTPS 流经本机环回代理安全起播（`#87`）**：MPV 远端流统一经本机环回代理由系统 `URLSession` 出网，解决内置 GnuTLS 在 iOS 上读不到系统根证书导致 HTTPS 直链无法起播的问题，并杜绝跨源 `302` 重定向泄露实例凭据。\n  - **修复横屏画面偏移、支持小窗画中画并优化锁屏按钮**：修复横竖屏旋转时 `MoltenVK` 画布未重配导致画面偏移至左下角的问题；新增 MPV 系统画中画小窗播放（后台自动切换纯 CPU 软渲染管线防 GPU 挂起强杀）；修复 iOS 26 液态玻璃锁定按钮激活后填充纯白圆块遮挡锁头图标的问题。\n- **插件最小化胶囊贴边「超级最小化」与音频缓冲状态栏同步修复（`#88` / `#89`）**：\n  - **最小化胶囊安全区约束、固定紧凑宽度与贴边半圆收缩（`#88`）**：三端应用内悬浮胶囊与 Android `TYPE_APPLICATION_OVERLAY` 系统级悬浮窗统一引入安全区边界约束与归一化坐标持久化，彻底杜绝拖出屏幕外找不回的问题；胶囊文字区固定为紧凑宽度（总宽恒定约 `206dp`）并新增 `capsuleTitle` / `capsuleArtist` 短文案支持，切歌、刷新歌词或播放状态切换不再引起胶囊忽长忽短；拖至左右边缘（默认 `< 24dp`，支持通过 `edgeSnapThresholdDp` 自定义）松手自动吸附并收缩为贴边半圆「超级最小化」胶囊，点击即恢复完整单行播控胶囊。\n  - **缓冲或未真正出声时钉住通知栏媒体进度条（`#89`）**：三端原生内联音频在起播缓冲、在线流 Seek 及弱网重缓冲期间统一上报 `audio.play.state = \"buffering\"` 并暂停推进 `positionMs`，同时将 Android `MediaSession`（`STATE_BUFFERING` + `0f` 倍速）、iOS `MPNowPlayingInfoCenter` 与 HarmonyOS `AVSession` 倍速归零，等真正输出音频后再恢复时间轴推进。\n- **SMB 共享流式播放兼容性增强**：\n  - 配套 V3 后端放宽 SMB 流媒体读取句柄共享锁权限，避免并发流探测与起播期间发生文件占用冲突。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.10` | `MoviePilot-2.0.10-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.10` | `MoviePilot-2.0.10-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.10` | `MoviePilot-2.0.10-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.10` | `MoviePilot-2.0.10-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[d9cb1a5f76409c1cb24a096e96b31d1cc6e44d24](https://github.com/jxxghp/MoviePilot-App/commit/d9cb1a5f76409c1cb24a096e96b31d1cc6e44d24)。",
-          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.10/MoviePilot-2.0.10-ios-unsigned.ipa",
-          "size": 51818796,
+          "version": "2.0.11",
+          "date": "2026-11-28T05:49:25Z",
+          "localizedDescription": "MoviePilot 现已全面提供 **iOS / iPadOS**、**Android** 与 **HarmonyOS NEXT** 三端全原生客户端（统一版本 **`2.0.11`**），基于 Rust 共享业务内核直连 MoviePilot V3 后端，带来一致的核心功能闭环与地道原生界面体验。\n\n### 本版本核心亮点\n\n- **三端深色视觉层次与界面细节全面打磨**：\n  - **更深邃的默认「极简石墨」画布与 iOS OLED 纯黑模式**：同步压深三端默认极简石墨深色底色（`#101218 → #0C0E14`），并在 iOS「主题与外观」新增 **OLED 纯黑模式（`#000000`）** 开关；优化实时预览卡片严格同心圆角，仅在选中「自定义」预设时展开拾色器。\n  - **影视详情页海报主色丝绒融底与内容减框**：iOS 详情页动态提取海报主色调平滑融底，强化中下部渐变遮罩确保纯白片名清晰无重影；三端详情页「剧情简介」去掉多余外框，改为直排阅读流与内联展开控制；鸿蒙详情页收敛杂色标签胶囊，采用清晰年份 · 类型 · 来源排版与柔和「已入库」徽标。\n  - **悬浮 AI 助手克制避让与自动贴边半隐**：三端悬浮机器人统一缩小体量并柔化描边，3.2 秒无交互后自动半隐贴靠最近侧边缘（点击/拖拽立即唤醒），iOS 同步对齐二级子页面自动隐藏策略；发现页「继续观看」卡片新增半透明圆形播放图标，底栏用户头像在未选中时自动轻降饱和度以融入系统导航材质。\n  - **社区勋章与媒体库统计视觉提纯**：三端社区勋章角标移除 Emoji 改用矢量勋章图标，新解锁提示与角标圆点由警示红升级为温润香槟金（`#E8C678`）；媒体库本月新增为 `0` 时弱化为静默次级文案，减少无效红/灰徽章干扰。\n  - **高频业务页降噪与图表可读性修复**：\n    - 「更多」工作台按业务域收束图标色系，Android 与鸿蒙在两列奇数分组末尾自动展宽通栏卡片消除留白缺口；\n    - iOS「站点资源」精简搜索占位防截断，并把多枚参数胶囊收束为清晰等宽规格条；「我的订阅」收轻卡片边界与操作按钮，鸿蒙订阅卡片将外露红色删除钮收进「更多操作」菜单；\n    - iOS「插件中心」移除标题前重复状态绿点并为深色模式下的白底图标增加柔光压暗层；「站点数据」魔力积分与增幅补齐千分位分隔符，修复历史流量趋势图 X 轴末位日期截断与相邻刻度重叠问题。\n- **Android 第三方插件图标加载修复（`#91`）**：\n  - 支持解析 `plugin_icon` 裸文件名图标，统一对齐同源静态资源路径与官方仓库回退逻辑，修复部分插件图标空白或加载失败问题。\n- **本地联邦插件壳样式基线同步**：\n  - 同步更新三端内置本地联邦插件壳完整样式基线与原生适配产物（对齐前端 `635f7e9b`），提升远程插件页面在深浅主题与移动端视图下的视觉一致性。\n\n### 安装包说明\n\n| 平台 | 版本 | 产物文件 | 适用设备与安装说明 |\n| :--- | :--- | :--- | :--- |\n| **iOS / iPadOS** | `2.0.11` | `MoviePilot-2.0.11-ios-unsigned.ipa` | 需要 **iOS 16+**（小组件需 iOS 17+），下载后使用个人或企业证书重签安装（重签小组件请保持一致的 App Groups）。 |\n| **Android（推荐）** | `2.0.11` | `MoviePilot-2.0.11-android-arm64-v8a.apk` | 适用于绝大多数现代 64 位 ARM 手机与平板（**Android 10 / API 29+**），体积更小，可直接安装。 |\n| **Android（通用）** | `2.0.11` | `MoviePilot-2.0.11-android-universal.apk` | 同时包含 `arm64-v8a`、`armeabi-v7a` 与 `x86_64` 架构，兼容 32 位旧设备、电视盒子与桌面模拟器。 |\n| **HarmonyOS NEXT** | `2.0.11` | `MoviePilot-2.0.11-harmony-unsigned.hap` | 适用于 **HarmonyOS NEXT（API 12+）**，供开发者使用 DevEco Studio / 签名工具配置证书后安装至真机或模拟器。 |\n\nRelease 同时提供统一校验文件 `SHA256SUMS`。\n\n构建源码：[24fd15727f622e3fd89542bd8d7d52f30584d76d](https://github.com/jxxghp/MoviePilot-App/commit/24fd15727f622e3fd89542bd8d7d52f30584d76d)。",
+          "downloadURL": "https://github.com/jxxghp/MoviePilot-App/releases/download/v2.0.11/MoviePilot-2.0.11-ios-unsigned.ipa",
+          "size": 51880150,
           "minOSVersion": "17.0"
         }
       ]
@@ -34,14 +34,14 @@
   "news": [
     {
       "appID": "org.moviepilot.app",
-      "title": "MoviePilot 2.0.10 · 27 Nov 2026",
-      "identifier": "MoviePilot-release-v2.0.10",
-      "caption": "MoviePilot 2.0.10 is available.",
-      "date": "2026-11-27T19:37:53Z",
+      "title": "MoviePilot 2.0.11 · 28 Nov 2026",
+      "identifier": "MoviePilot-release-v2.0.11",
+      "caption": "MoviePilot 2.0.11 is available.",
+      "date": "2026-11-28T05:49:25Z",
       "tintColor": "#8844F6",
       "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/MoviePilot-App/images/news.webp",
       "notify": true,
-      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.10"
+      "url": "https://github.com/jxxghp/MoviePilot-App/releases/tag/v2.0.11"
     }
   ]
 }

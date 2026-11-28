@@ -22,11 +22,11 @@
       "tintColor": "#14C8F5",
       "versions": [
         {
-          "version": "1.0.42",
-          "date": "2026-11-27T18:31:56Z",
-          "localizedDescription": "**播放器和返回动画**\n\n- 应用内小窗缩小、还原时接续同一播放画面。点还原后仍可按住画面反拖，松手后也能重新接手。\n- 调整首页视频卡片返回和详情页分页加载，减少转场期间的布局工作。\n- 调整玻璃进度条，已缓存区间单独显示。普通视频和剧集的「听视频」移至播放器右上角的更多菜单。\n\n**弹幕**\n\n- 直播画面支持整条表情和文字内的多个表情。表情加载沿用当前弹道，竖屏首行避开顶部控件。\n- 切集时清理旧集的弹幕图层与解码任务。密集弹幕优先保留已在画面中的条目，减少途中消失、重新出现的问题。\n\n**视频线路**\n\n- 在「设置 → 网络连接 → 视频线路」输入 HTTPS CDN 域名即可使用自定义线路。支持测速、音频独立选线和原地址回退。\n\n**验证**\n\niPhone 15 Pro Max 使用同一视频，逐轮记录 Instruments 的整段显示延迟。普通小窗缩小和双击还原的累计延迟中位数从 442 ms 降至 358 ms，首页卡片返回从 542 ms 降至 331 ms，还原途中按住反拖从 375 ms 降至 313 ms。真机仍可测到长帧。\n\nGitHub 侧载版，构建 67，本地源码提交 `a987af0`。下载未签名 IPA 后需自行签名安装。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.42/LiLite-1.0.42-unsigned.ipa",
-          "size": 29095363,
+          "version": "1.0.45",
+          "date": "2026-11-28T02:50:14Z",
+          "localizedDescription": "- 修复 iPhone 在 100% 界面缩放下，「我的」「导航布局」「页面动画与回弹」等分组列表左右贴边的问题，恢复系统列表留白。\n- 首页视频卡片的「一镜到底」实验选项延续上一版设置，默认关闭。\n\nGitHub 侧载版，构建 70，本地源码提交 `1419243`。未签名 IPA 需自行签名安装。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/liuliuya2333/LiLite/releases/download/v1.0.45/LiLite-1.0.45-unsigned.ipa",
+          "size": 29104183,
           "minOSVersion": "17.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "com.liuliuya.PiliNative",
-      "title": "LiLite 1.0.42 · 27 Nov 2026",
-      "identifier": "LiLite-release-v1.0.42",
-      "caption": "LiLite 1.0.42 is available.",
-      "date": "2026-11-27T18:31:56Z",
+      "title": "LiLite 1.0.45 · 28 Nov 2026",
+      "identifier": "LiLite-release-v1.0.45",
+      "caption": "LiLite 1.0.45 is available.",
+      "date": "2026-11-28T02:50:14Z",
       "tintColor": "#14C8F5",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/LiLite/images/news.webp",
       "notify": true,
-      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.42"
+      "url": "https://github.com/liuliuya2333/LiLite/releases/tag/v1.0.45"
     }
   ]
 }
