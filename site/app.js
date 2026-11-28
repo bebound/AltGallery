@@ -1156,7 +1156,7 @@
       )
     );
     if (app.repo) {
-      actions.append(h("a", { class: "btn btn-ghost", href: app.repo, target: "_blank", rel: "noopener", text: t("card.github") }));
+      actions.append(h("a", { class: "btn btn-ghost", href: app.repo, target: "_blank", rel: "noopener", "data-umami-event": "View on GitHub", "data-umami-event-app": app.name, text: t("card.github") }));
     }
     if (app.download) {
       actions.append(h("a", { class: "btn btn-ghost", href: proxyURL(app.download), target: "_blank", rel: "noopener", text: t("card.download") }));
