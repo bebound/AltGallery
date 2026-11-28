@@ -1,0 +1,49 @@
+{
+  "name": "Coda",
+  "subtitle": "Coda AltStore source by AltGallery & AltGen",
+  "description": "Auto-updated AltStore source for Coda",
+  "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/icon.webp",
+  "website": "https://github.com/Wow-CaiCai/Coda",
+  "tintColor": "#EC4949",
+  "apps": [
+    {
+      "name": "Coda",
+      "bundleIdentifier": "wow.caicai.coda",
+      "developerName": "Wow-CaiCai",
+      "subtitle": "多平台原生音乐客户端",
+      "localizedDescription": "面向 Mac、iPhone 与 iPad 的原生 SwiftUI 音乐客户端，在同一界面搜索、收藏、播放网易云音乐、QQ 音乐、酷狗音乐、汽水音乐与波点音乐。",
+      "iconURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/icon.webp",
+      "screenshots": [
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/home.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/search.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/album-12.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/artist-3.webp",
+        "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/player-7.webp"
+      ],
+      "tintColor": "#EC4949",
+      "versions": [
+        {
+          "version": "0.1.3",
+          "date": "2026-11-27T06:37:17Z",
+          "localizedDescription": "### 新增\n\n- 新增波点音乐：支持波点音乐 App 扫码登录与会员状态；首页按波点发现页展示个性化歌单、偶遇心动单曲、宝藏歌单库、心动收藏相似推荐、你的主题歌单与波波排行榜，「每日推荐」对应潮趣日推，并提供私人漫游按钮；搜索歌曲、歌手、专辑与歌单，并提供搜索建议与热搜；歌单广场分类、歌单、专辑与歌手页、私人漫游、歌曲评论、逐字歌词；我的歌单的新建、删除、重命名与增删歌曲，收藏歌单与专辑、关注歌手、红心收藏；「最近播放」读取波点账号的播放历史，在 Coda 里起播的歌也会同步到波点手机端的最近播放。\n- 歌词自动优选与手动切换来源新增波点音乐，其他平台的歌曲也可匹配波点的逐字歌词。\n- 新增「设置 → 自定义音源」：可从文件或链接导入Lx自定义音源。\n\n### 修复\n\n- 修复 Mac 主窗口在内容区按住拖动（含触控板单指拖动）时整个窗口跟着移动的问题，现在只有顶部标题栏可以拖动窗口。\n\n### 改进\n\n- iPhone 与竖屏播放详情页的歌词、评论、待播清单与加入歌单改为互相独立的页面：从封面直接切到对应面板，关闭后直接回到封面，不再途经歌词页。\n- Mac 与 iPad 宽屏播放详情页左侧按屏幕高度自适应：封面、歌曲信息、进度条与播放控件随可用高度同步缩放，多余空间均分到上下两侧，不再在 4:3 iPad、4:3 与 5:4 外接显示器或竖放显示器上留下大块空白。\n- 改善 iPadOS 26 等系统上的窗口与转场流畅度：底部播放栏与播放详情页的进度条由逐帧刷新改为每秒 30 次，逐字歌词也不再让屏幕维持高刷新率；进入后台卡片、下拉控制中心等应用不在前台时，播放页背景动画、逐字歌词与进度条暂停，回到前台后恢复。\n- 打开和关闭播放详情页、以及应用不在前台时，歌词列暂时取消逐行模糊，转场结束后恢复，减轻 iPad 横屏歌词较多时的转场卡顿；非当前歌词行去掉不可见的阴影。\n- 优化推荐页在窗口缩放与转场时的卡顿：歌单播放量角标改为纯色底，不再为每个角标实时模糊背景；顶部大卡片与歌单、专辑封面卡各自合成为单张图像绘制。\n- 侧边栏、底部播放栏等玻璃表面在指针悬停时高光跟随指针，按钮按下时有弹性形变并回弹。\n- QQ 音乐（QQ、QQ 音乐 App 扫码）与酷狗音乐扫码登录支持单设备切屏：切到官方 App 扫码期间网络中断不再直接报错，回到 Coda 后沿用原二维码继续等待确认；iOS 上提示可截图二维码到官方 App 相册识别，并说明可能同时需要另一个设备用以登录，微信扫码则提示可能不支持相册识别。\n\n---\n\n### macOS 安装说明 / Installing on macOS\n\n本版 Mac 应用未经 Apple 公证（ad-hoc 签名）。首次打开时 macOS 会提示无法验证开发者：\n\n1. 解压 `Coda-*.zip`，把 **Coda** 拖到「应用程序」。\n2. 双击打开，出现提示后点「完成」。\n3. 打开「系统设置 → 隐私与安全性」，在页面下方点「仍要打开」，输入密码确认。\n\n也可以在终端移除下载隔离标记后直接打开：\n\n```sh\nxattr -dr com.apple.quarantine /Applications/Coda.app\n```\n\nThis build is ad-hoc signed and not notarized. After the first launch is blocked, open **System Settings → Privacy & Security** and click **Open Anyway**, or run the command above.",
+          "downloadURL": "https://github.com/Wow-CaiCai/Coda/releases/download/v0.1.3/Coda-iOS-0.1.3.ipa",
+          "size": 8828035,
+          "minOSVersion": "16.0"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "appID": "wow.caicai.coda",
+      "title": "Coda 0.1.3 · 27 Nov 2026",
+      "identifier": "Coda-release-v0.1.3",
+      "caption": "Coda 0.1.3 is available.",
+      "date": "2026-11-27T06:37:17Z",
+      "tintColor": "#EC4949",
+      "imageURL": "https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/Coda/images/news.webp",
+      "notify": true,
+      "url": "https://github.com/Wow-CaiCai/Coda/releases/tag/v0.1.3"
+    }
+  ]
+}

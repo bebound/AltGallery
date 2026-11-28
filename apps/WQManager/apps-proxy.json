@@ -22,11 +22,11 @@
       "tintColor": "#242529",
       "versions": [
         {
-          "version": "0.5",
-          "date": "2026-11-18T11:48:53Z",
-          "localizedDescription": "显示版本 **0.5**，构建 **1**；内部发布修订 **0.5.0**。\n\n这个版本的主题是「找得到、看得懂、拿得走」：\n\n- **全局文件搜索**：跨 App 搜索用户文件，结果边扫边出；支持文件名 / 相对路径 / App 名、类型与最小大小筛选、路径 / 大小 / 最新排序。结果可原地预览或打开所在目录，扫描中可取消。\n- **空间变化**：按「较上次 / 近 7 天 / 近 30 天」比较，按增长排序并显示合计占用与净变化；新增全部 App 合计趋势图，单 App 详情保留当前大小、较上次、近 7 天与扫描历史。\n- **文件审计与导出**：大文件 / 重复文件按 App 分组，重复项经 SHA-256 确认；清理时每个 App 至少保留一份，删除进入空间透镜回收站。导出中心可分享或存储到「文件」，目标写入完成才记成功，取消 / 失败会清理临时目录。\n- **安全与一致性**：跨 App 的相同文件不再被当成可互相替代；重复清理不能选中某个 App 的最后一份；上次中断的导出在重开后显示「已中断」；清理 14 个无用本地化 key，中英文 813 个 key 对齐。\n- **界面**：修复空间变化页底部被悬浮 Tab Bar 遮挡；补充全局搜索、空间趋势、导出选择面板的中英文文案。\n\n验证：23 个本地测试程序、9 条模拟器 UI 流程、Debug 模拟器与 Release arm64 构建、`xcodebuild analyze` 全部通过，编译警告 0 条。\n\n已知边界：本轮 IPA 未签名，未在真机安装；超大 App 的冷扫描耗时、App Group 签名、分享 / 存储到「文件」以及强制中断场景仍需真机验收。空间趋势样本不足时显示「—」，这是预期行为。\n\n**遇到问题或有建议，欢迎到 [GitHub Issues](https://github.com/hseons/WQManager/issues) 提出**。请尽量附上系统版本、App 名称、复现步骤和截图；崩溃日志可配合附件中的 dSYM 定位。\n\n附件为**未签名 IPA**、SHA-256 和 dSYM，请按项目说明保留 App Group 权限重新签名后安装。",
-          "downloadURL": "https://gh-proxy.com/https://github.com/hseons/WQManager/releases/download/v0.5.0/WQManager-0.5-build1-unsigned.ipa",
-          "size": 952702,
+          "version": "0.5.1",
+          "date": "2026-11-28T12:15:02Z",
+          "localizedDescription": "0.5.1（构建 5）：共享容器总览、目录快照、扫描连续性。\n\n**新增**\n- 共享容器只读总览（应用工具 →「共享容器」）：按容器身份去重，按证据分四段（已验证 / 名称推断 / 归属未知 / 扩展），只读浏览 + 选择性导出，不写入任何共享容器。\n- 目录快照（存储详情 →「文件夹」）：记一份仅元数据的快照，对比最近两次定位目录增长，可跳空间透镜。\n- 首页索引扫描切页后继续，进度胶囊不跟到其他页面、不挡那边的备份/导出。\n\n**修复**\n- 结构化文件按文件头识别格式；取消工作副本真的会停；翻过末页提示最后一页。\n- 存储详情显示最新测量值，趋势在覆盖变化处断开，不再当成增长。\n\n**安装**：未签名，需自行重签；重签必须保留 App Group `group.mumu.wqmanager`。\n\n**验证**：单测 26 个程序、XCUITest 19 例全通过，Release 构建成功。\n\n产物：`WQManager-0.5.1-build5-unsigned.ipa`（1,013,154 字节，sha256 `63db60b9…a06dde`）、`WQManager-0.5.1-build5-dSYM.zip`。",
+          "downloadURL": "https://gh-proxy.com/https://github.com/hseons/WQManager/releases/download/v0.5.1/WQManager-0.5.1-build5-unsigned.ipa",
+          "size": 1013154,
           "minOSVersion": "26.0"
         }
       ]
@@ -35,14 +35,14 @@
   "news": [
     {
       "appID": "mumu.pduola.WQManager",
-      "title": "WQManager 0.5 · 18 Nov 2026",
-      "identifier": "WQManager-release-v0.5.0",
-      "caption": "WQManager 0.5 is available.",
-      "date": "2026-11-18T11:48:53Z",
+      "title": "WQManager 0.5.1 · 28 Nov 2026",
+      "identifier": "WQManager-release-v0.5.1",
+      "caption": "WQManager 0.5.1 is available.",
+      "date": "2026-11-28T12:15:02Z",
       "tintColor": "#242529",
       "imageURL": "https://gh-proxy.com/https://raw.githubusercontent.com/bebound/AltGallery/refs/heads/master/apps/WQManager/images/news.webp",
       "notify": true,
-      "url": "https://github.com/hseons/WQManager/releases/tag/v0.5.0"
+      "url": "https://github.com/hseons/WQManager/releases/tag/v0.5.1"
     }
   ]
 }
