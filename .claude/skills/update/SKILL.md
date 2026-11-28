@@ -1,6 +1,6 @@
 ---
 name: update
-description: Regenerate everything in the AltGallery repo — run ./update.sh (regenerate every apps/<AppName>/apps.json from config.toml and merge them into all-apps.json) and ./update_news.sh (re-render every app's images/news.webp from its news.toml). apps.json / all-apps.json are gitignored (committed by the workflow); leave re-rendered images/news.webp files uncommitted for the user to review. Use when the user wants to refresh / update / regenerate all app sources and news images.
+description: Regenerate everything in the AltGallery repo — run ./update.sh (regenerate every apps/<AppName>/apps.json from config.toml and merge them into all-apps.json) and re-render every app's images/news.webp from its news.toml with tools/render_news.py. apps.json / all-apps.json are gitignored (committed by the workflow); leave re-rendered images/news.webp files uncommitted for the user to review. Use when the user wants to refresh / update / regenerate all app sources and news images.
 ---
 
 # Update All App Sources & News Images
@@ -15,7 +15,9 @@ Refresh every generated artifact in the repo:
 2. **Re-render every news image** — each `apps/<AppName>/images/news.webp`
    from its `news.toml`:
    ```bash
-   ./update_news.sh
+   for app_dir in apps/*/; do
+     [ -f "$app_dir/news.toml" ] && uv run tools/render_news.py --out "$app_dir"
+   done
    ```
    It runs each render through `uv run tools/render_news.py`; the script's
    inline PEP 723 metadata supplies Pillow, so there is no venv to set up and

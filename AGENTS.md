@@ -284,15 +284,16 @@ only when you actually want to look at the page.
 ## Generating News Images
 
 Each app has a shared `news.webp` ("NEW UPDATE" — icon, name, tagline)
-referenced by all its news entries via `[news] image_url`. Re-render every
-app's image (from each app's `news.toml`: `name`, `tagline`, optional
-`[colors]`) with:
+referenced by all its news entries via `[news] image_url`. Re-render one
+app's image (from its `news.toml`: `name`, `tagline`, optional `[colors]`)
+with:
 
 ```bash
-./update_news.sh
+uv run tools/render_news.py --out apps/<AppName>
 ```
 
-or a single app with `uv run tools/render_news.py --out apps/<AppName>`.
+To re-render every app, loop over `apps/*/news.toml` and run the same command
+for each.
 Unset colors are auto-derived from `config.toml` tints and the icon's dominant
 color (Pillow comes from the script's inline metadata, so there is nothing to
 install first — no external rasterizer either). The icon is found by stem, so
@@ -434,7 +435,7 @@ altgen copies the URL verbatim.
 
 `tools/render_news.py` resolves the stem itself (`resolve_icon()`): with no
 `--icon` it picks the first of `icon.png` / `icon.webp` / `icon.jpg` /
-`icon.jpeg` that exists, so `./update_news.sh` needs no per-app flag; passing
+`icon.jpeg` that exists, so no per-app icon flag is needed; passing
 `--icon <file>` uses that file when it exists, else its stem is resolved the
 same way. When importing `extract_icon_color()` by hand (above), substitute
 the app's real file name — a `.png` path for what is now `icon.webp` just
